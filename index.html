@@ -3,12 +3,26 @@ layout: default
 title: Home
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
+{% for post in paginator.posts %}
+<article class="post">
+  <header>
+    {% assign a = site.authors[post.author] %}
+    <h2 class="post-title">{{ post.title }}</h2>
+    <h5 class="post-meta">
+      {% if a.gravatar %}
+        <img class="gravatar" src="http://gravatar.com/avatar/{{ a.gravatar }}?s=48">
+      {% endif %}
+      {% if a %}
+        by {{ a.name }}
+        {% if a.twitter %}
+          (<a href="http://twitter.com/{{ a.twitter }}">@{{ a.twitter }}</a>)
+        {% endif %}
+      {% endif %}
+      on {{ post.date | date_to_string }}
+    </h5>
+  </header>
+
+  {{ post.content }}
+</article>
+{% endfor %}
 
