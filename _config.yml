@@ -3,4 +3,12 @@ markdown: rdiscount
 pygments: true
 exclude: ['Gemfile*', 'rakefile.rb', 'README.md', 'shared']
 paginate: 5
+authors:
+  keith:
+    name: Keith Smiley
+    twitter: SmileyKeith
+    gravatar: 6ab7ae85b84ebb323fab427b11500742
+  orta:
+    name: Orta Therox
+    twitter: orta
 
