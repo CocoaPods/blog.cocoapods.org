@@ -10,7 +10,7 @@ title: Home
     <h2 class="post-title">{{ post.title }}</h2>
     <h5 class="post-meta">
       {% if a.gravatar %}
-        <img class="gravatar" src="http://gravatar.com/avatar/{{ a.gravatar }}?s=48">
+        <img class="gravatar" src="{{ a.gravatar | gravatar_url }}">
       {% endif %}
       {% if a %}
         by {{ a.name }}
