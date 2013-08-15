@@ -18,7 +18,7 @@ title: Home
           (<a href="http://twitter.com/{{ a.twitter }}">@{{ a.twitter }}</a>)
         {% endif %}
       {% endif %}
-      on {{ post.date | date_to_string }}
+      on {{ post.date | date_slash }}
     </h5>
   </header>
 
