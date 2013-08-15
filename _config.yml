@@ -1,4 +1,5 @@
 name: CocoaPods Blog
 markdown: rdiscount
 pygments: true
+exclude: ['Gemfile*', 'rakefile.rb', 'README.md']
 
