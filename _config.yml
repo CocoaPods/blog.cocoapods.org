@@ -1,0 +1,4 @@
+name: CocoaPods Blog
+markdown: rdiscount
+pygments: true
+
