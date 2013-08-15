@@ -1,3 +1,6 @@
 [submodule "shared"]
 	path = shared
 	url = https://github.com/CocoaPods/shared_resources.git
+[submodule "js/FitText"]
+	path = js/FitText
+	url = https://github.com/davatron5000/FitText.js
