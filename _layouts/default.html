@@ -28,28 +28,35 @@
     <section class="container row">
       <header class="col-md-12" id="blog-header">
         {{ site.name }}
+        <div class="horizontal-divider"><div class="arrow-down"></div><div class="enclosed-arrow-down"></div></div>
       </header>
     </section>
 
-    <section class="container row">
-      <article class="content col-md-8">
-        {{ content }}
-      </article>
+    <section id="content-wrapper">
+      <section class="container row">
+        <article class="content col-md-8">
+          {{ content }}
+        </article>
 
-      <aside class="sidebar col-md-4">
-        {% include sidebar.html %}
-      </aside>
+        <aside class="sidebar col-md-4">
+          {% include sidebar.html %}
+        </aside>
+      </section>
     </section>
 
-    <section class="container row">
-      <footer class="col-md-12">
-        {% include footer.html %}
-      </footer>
-    </section>
+    <!-- <section class="container row"> -->
+    <!--   <footer class="col-md-12"> -->
+    <!--     {% include footer.html %} -->
+    <!--   </footer> -->
+    <!-- </section> -->
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/sharedjs/jquery.min.js"><\/script>')</script>
     <script src="/sharedjs/bootstrap.min.js/"></script>
+    <script src="/js/FitText/jquery.fittext.js"></script>
+    <script type="text/javascript">
+      jQuery('#blog-header').fitText(1, {minFontSize:'35px', maxFontSize:'60px'});
+    </script>
     <!-- <script> -->
     <!--   var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; -->
     <!--   (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0]; -->
