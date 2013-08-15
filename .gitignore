@@ -1,3 +1,5 @@
 _site
-.sass-cache/
+.sass-cache
+css
+!css/.gitkeep
 
