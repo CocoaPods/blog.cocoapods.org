@@ -23,11 +23,11 @@
       <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
 
-    {% include header.html %}
+    {{ "header" | shared_include }}
 
     <section class="container row">
-      <header class="col-md-12" id="blog-header">
-        {{ site.name }}
+      <header class="col-md-12 headline index">
+        <h1>{{ site.name }}</h1>
         <div class="horizontal-divider"><div class="arrow-down"></div><div class="enclosed-arrow-down"></div></div>
       </header>
     </section>
@@ -39,7 +39,7 @@
         </article>
 
         <aside class="sidebar col-md-4">
-          {% include sidebar.html %}
+          {% include blog-sidebar.html %}
         </aside>
       </section>
     </section>
