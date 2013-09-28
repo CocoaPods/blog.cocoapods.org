@@ -3,6 +3,7 @@ markdown: rdiscount
 pygments: true
 exclude: ['Gemfile*', 'rakefile.rb', 'README.md', 'shared']
 paginate: 5
+
 authors:
   keith:
     name: Keith Smiley

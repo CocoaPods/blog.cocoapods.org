@@ -5,6 +5,7 @@ title: Home
 
 {% for post in paginator.posts %}
 <article class="post">
+
   <header>
     {% assign a = site.authors[post.author] %}
     <h2 class="post-title">{{ post.title }}</h2>
