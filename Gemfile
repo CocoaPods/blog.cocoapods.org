@@ -4,7 +4,6 @@ gem 'rdiscount'
 gem 'jekyll'
 gem 'sass'
 
-
-# for sass --watch
+# For sass --watch
 gem 'rb-fsevent', '~> 0.9', :group => :development
 
