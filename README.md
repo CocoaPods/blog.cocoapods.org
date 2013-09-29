@@ -11,7 +11,7 @@ Run `rake build` to build the site into the `_site` directory
 
 Use `jekyll serve --watch` and go to `http://localhost:4000` to see
 changes  to the site.     
-Use `sass --watch _sass/main.scss:css/main.css` to watch for changes in
+Use `sass --watch _sass:css` to watch for changes in
 the main stylesheet.
 
 ### License
