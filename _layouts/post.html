@@ -2,10 +2,39 @@
 layout: default
 ---
 
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
+<section class="container row">
+  <header class="col-md-12 headline blog-post">
+    <h1>{{ page.title }}</h1>
+  </header>
+</section>
 
-<div class="post">
-  {{ content }}
-</div>
+<section id="content-wrapper post">
+  <section class="container row">
+    
+    <article class="content col-md-8">
+      {{ content }}
+    </article>
+
+    <article class="author metadata col-md-4">
+      <header>
+
+        {% assign a = site.authors[page.author] %}
+          {% if a.gravatar %}
+            <img class="gravatar large" src="{{ a.gravatar | gravatar_url }}">
+          {% endif %}
+          {% if a %}
+            {% if a.twitter %}
+              <p><a href="http://twitter.com/{{ a.twitter }}">@{{ a.name }}</a></p>
+            {% endif %}
+          {% endif %}
+           <p>{{ page.date | date_slash }}</p>
+        </h5>
+      </header>
+      
+    </article>
+  </section>
+</section>
+
+
+<h2></h2>
 

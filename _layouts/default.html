@@ -24,26 +24,9 @@
     <![endif]-->
 
     {{ "header" | shared_include }}
-
-    <section class="container row">
-      <header class="col-md-12 headline index">
-        <h1>{{ site.name }}</h1>
-        <div class="horizontal-divider"><div class="arrow-down"></div><div class="enclosed-arrow-down"></div></div>
-      </header>
-    </section>
-
-    <section id="content-wrapper">
-      <section class="container row">
-        <article class="content col-md-8">
-          {{ content }}
-        </article>
-
-        <aside class="sidebar col-md-4">
-          {% include blog-sidebar.html %}
-        </aside>
-      </section>
-    </section>
-
+ 
+    {{ content }}
+ 
     <!-- <section class="container row"> -->
     <!--   <footer class="col-md-12"> -->
     <!--     {% include footer.html %} -->
