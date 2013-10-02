@@ -8,26 +8,25 @@ layout: default
   </header>
 </section>
 
-<section id="content-wrapper post">
+<section id="content-wrapper" class="post">
   <section class="container row">
     
-    <article class="content col-md-8">
+    <article class="content col-md-9">
       {{ content }}
     </article>
 
-    <article class="author metadata col-md-4">
+    <article class="author metadata col-md-3">
       <header>
-
         {% assign a = site.authors[page.author] %}
           {% if a.gravatar %}
-            <img class="gravatar large" src="{{ a.gravatar | gravatar_url }}">
+            <img class="gravatar large" src="{{ a.gravatar | gravatar_url }}" height=72 width=72>
           {% endif %}
           {% if a %}
             {% if a.twitter %}
-              <p><a href="http://twitter.com/{{ a.twitter }}">@{{ a.name }}</a></p>
+              <p><a href="http://twitter.com/{{ a.twitter }}">{{ a.name }}</a></p>
             {% endif %}
           {% endif %}
-           <p>{{ page.date | date_slash }}</p>
+           <p>{{ page.date | date: "%-d %B %Y" }}</p>
         </h5>
       </header>
       
