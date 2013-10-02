@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+      <title>Grape API Performance - CocoaPods Blog</title>
+    
+
+    <meta name="description" content="The blog for CocoaPods.org an Objective-C dependency manager">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/blog.css">
+    <script src="/sharedjs/modernizr.min.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="navbar navbar-static-top" role="navigation">
+  <section class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-header-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"></a>
+    </div>
+
+    <div class="collapse navbar-collapse navbar-header-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://cocoapods.org">About</a></li>
+        <li><a href="http://docs.cocoapods.org">API Docs</a></li>
+        <li><a href="http://docs.cocoapods.org/guides/index.html">Guides</a></li>
+        <li class="active"><a href="/">Blog</a></li>
+      </ul>
+    </div>
+  </section>
+</nav>
+
+
+ 
+    <section class="container row">
+  <header class="col-md-12 headline blog-post">
+    <h1>Grape API Performance</h1>
+  </header>
+</section>
+
+<section id="content-wrapper" class="post">
+  <section class="container row">
+    
+    <article class="content col-md-9">
+      <p>Knowing how well your API performs in real time is essential to any successful project. That&#39;s because you can&#39;t fix what you can&#39;t measure.</p>
+
+<p>We use and heavily contribute to <a href="http://github.com/intridea/grape">Grape</a>, a Ruby API DSL. Grape is a Rack middleware and we have been reporting API performance data to <a href="http://newrelic.com/">NewRelic</a> with code from <a href="http://code.dblock.org/new-relic-performance-instrumentation-with-grape-api">my older blog post</a>.</p>
+
+<p>It&#39;s time to improve the reporting implementation and address performance monitoring in both development and production environments. Here&#39;s what a single API request breakdown is going to look like.</p>
+
+<p><img src="/images/2012-11-29-measuring-performance-in-grape-apis-with-new-relic/transaction-detail.png"></p>
+
+<!-- more -->
+
+<h2>NewRelic RPM</h2>
+
+<p>The first step is to add the <code>newrelic_rpm</code> gem to Gemfile, which implements the actual realtime performance reporting to NewRelic. We also use <a href="https://github.com/mongoid/mongoid">Mongoid</a> and the <a href="https://github.com/mongoid/moped">Moped</a> MongoDB Ruby driver, which can be instrumented with <code>newrelic_moped</code>.</p>
+
+<p><code>ruby Gemfile
+gem &quot;newrelic_moped&quot;, &quot;0.0.3&quot;
+gem &quot;newrelic_rpm&quot;, &quot;3.3.3&quot;
+</code></p>
+
+<p>You will need <code>config/newrelic.yml</code> in your application. Ours can be found in <a href="https://gist.github.com/4170458">this gist</a> and works well both locally and on Heroku.</p>
+
+<h2>Instrumenting Grape</h2>
+
+<p>In the past we used <a href="https://gist.github.com/1233422">NewRelic::Agent::Instrumentation::API</a>, which works for any generic Rack middleware. This would report all API calls to NewRelic, but would treat requests to <em>/api/artist/andy-warhol</em> and <em>/api/artist/wassily-kandinsky</em> as unrelated. That is because the instrumenter is a Rack middleware that wraps Grape requests <em>before</em> they reach Grape. The only information available is the request URL, and not the actual API route that is going to be matched when the request is processed.</p>
+
+<p>We want both requests to <em>/api/artist/andy-warhol</em> and <em>/api/artist/wassily-kandinsky</em> to be treated as <em>/api/artist/:id</em>. Lets insert a middleware inside Grape itself, once the URL has been matched to a route.</p>
+
+<p><code>ruby api.rb
+class API &lt;&lt; Grape::API
+  use ApiNewRelicInstrumenter
+  ...
+end
+</code></p>
+
+<p>The new instrumenter has access to the current API endpoint via <code>env[&#39;api.endpoint&#39;]</code> and reports data via NewRelic&#39;s <code>ControllerInstrumentation</code>.</p>
+<div class="highlight"><pre><code class="ruby language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">ApiNewRelicInstrumenter</span> <span class="o">&lt;</span> <span class="ss">Grape</span><span class="p">:</span><span class="ss">:Middleware</span><span class="o">::</span><span class="no">Base</span>
+  <span class="kp">include</span> <span class="ss">NewRelic</span><span class="p">:</span><span class="ss">:Agent</span><span class="o">::</span><span class="ss">Instrumentation</span><span class="p">:</span><span class="ss">:ControllerInstrumentation</span>
+
+  <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+    <span class="n">trace_options</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="ss">category</span><span class="p">:</span> <span class="ss">:rack</span><span class="p">,</span>
+      <span class="ss">path</span><span class="p">:</span> <span class="n">env</span><span class="o">[</span><span class="s1">&#39;api.endpoint&#39;</span><span class="o">].</span><span class="n">routes</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">route_path</span><span class="p">,</span>
+      <span class="ss">request</span><span class="p">:</span> <span class="n">request</span><span class="p">,</span>
+      <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+    <span class="p">}</span>
+
+    <span class="n">perform_action_with_newrelic_trace</span><span class="p">(</span><span class="n">trace_options</span><span class="p">)</span> <span class="k">do</span>
+      <span class="k">yield</span>
+    <span class="k">end</span>
+
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>The complete code for <code>ApiNewRelicInstrumenter</code> can be found in <a href="https://gist.github.com/4170469">this gist</a>. It supports enabling and disabling performance reporting by setting <code>NEW_RELIC_ID</code> and works around NewRelic&#39;s method name limitations (these cannot contain slashes).</p>
+
+<h2>Development Environment</h2>
+
+<p>You can now see NewRelic performance data in development mode, too. If you mount Grape inside Rails run <code>NEW_RELIC_ID=foo rails s</code>. Navigate to <em>http://localhost:3000/newrelic</em> to see your local traces.</p>
+
+<p><img src="/images/2012-11-29-measuring-performance-in-grape-apis-with-new-relic/developer-mode.png"></p>
+
+<p>Drill into an individual request to find several detailed breakdowns of how time was spent, including specific MongoDB queries (under &quot;SQL&quot;, naturally).</p>
+
+<p><img src="/images/2012-11-29-measuring-performance-in-grape-apis-with-new-relic/sql-detail.png"></p>
+
+<p>NewRelic is a commercial product, but you can run development mode for free! Note that enabling this will triple your local Rails boot time: we enable development mode by setting <code>development_mode: &lt;%= !!ENV[&#39;NEW_RELIC_ID&#39;] %&gt;</code> in <a href="https://gist.github.com/4170458">newrelic.rpm</a>.</p>
+
+    </article>
+
+    <article class="author metadata col-md-3">
+      <header>
+        
+          
+            <img class="gravatar large" src="http://gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb?s=72" height=72 width=72>
+          
+          
+            
+              <p><a href="http://twitter.com/orta">Orta Therox</a></p>
+            
+          
+           <p>15 August 2013</p>
+        </h5>
+      </header>
+      
+    </article>
+  </section>
+</section>
+
+ 
+    <!-- <section class="container row"> -->
+    <!--   <footer class="col-md-12"> -->
+    <!--     Included file 'footer.html' not found in _includes directory -->
+    <!--   </footer> -->
+    <!-- </section> -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/sharedjs/jquery.min.js"><\/script>')</script>
+    <script src="/sharedjs/bootstrap.min.js/"></script>
+
+    <!-- <script> -->
+    <!--   var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; -->
+    <!--   (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0]; -->
+    <!--   g.src='//www.google-analytics.com/ga.js'; -->
+    <!--   s.parentNode.insertBefore(g,s)}(document,'script')); -->
+    <!-- </script> -->
+  </body>
+</html>
+
