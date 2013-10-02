@@ -9,10 +9,13 @@ Run `rake build` to build the site into the `_site` directory
 
 ## Development
 
-Use `jekyll serve --watch` and go to `http://localhost:4000` to see
-changes  to the site.     
-Use `sass --watch _sass:css` to watch for changes in
-the main stylesheet.
+Get started by running `rake init` this will install the submodules.
+`rake dev` will start sass & jekyll running for development.
+`rake end` will close the two processes.
+
+This project uses two submodules,
+   `_gh-pages` is the gh-pages of this repo. `rake deploy`` will push the built version of the site to that branch and push to the server pulling in any changes.
+   `shared` is the cocoapods [shared resources](https://github.com/CocoaPods/shared_resources) repo that holds shared design notes and assets.
 
 ### License
 
