@@ -1,7 +1,7 @@
 #!/usr/bin/env rake
 
 desc 'Initial setup'
-task init do
+task :init do
   puts "Cloning submodules..."
   puts %x[git submodule update --init --recursive]
 end

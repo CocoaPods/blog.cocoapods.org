@@ -12,7 +12,7 @@ We use and heavily contribute to [Grape](http://github.com/intridea/grape), a Ru
 
 It's time to improve the reporting implementation and address performance monitoring in both development and production environments. Here's what a single API request breakdown is going to look like.
 
-<img src="/images/2012-11-29-measuring-performance-in-grape-apis-with-new-relic/transaction-detail.png">
+<img src="https://ortastuff.s3.amazonaws.com/gifs/delisa-nah.gif">
 
 <!-- more -->
 
@@ -71,10 +71,10 @@ Development Environment
 
 You can now see NewRelic performance data in development mode, too. If you mount Grape inside Rails run `NEW_RELIC_ID=foo rails s`. Navigate to *http://localhost:3000/newrelic* to see your local traces.
 
-<img src="/images/2012-11-29-measuring-performance-in-grape-apis-with-new-relic/developer-mode.png">
+<img src="https://ortastuff.s3.amazonaws.com/gifs/fabio-two-thumbs.gif">
 
 Drill into an individual request to find several detailed breakdowns of how time was spent, including specific MongoDB queries (under "SQL", naturally).
 
-<img src="/images/2012-11-29-measuring-performance-in-grape-apis-with-new-relic/sql-detail.png">
+<img src="http://i.imgur.com/gZMnlqr.gif">
 
 NewRelic is a commercial product, but you can run development mode for free! Note that enabling this will triple your local Rails boot time: we enable development mode by setting `development_mode: <%= !!ENV['NEW_RELIC_ID'] %>` in [newrelic.rpm](https://gist.github.com/4170458).
