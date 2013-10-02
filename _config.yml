@@ -1,5 +1,5 @@
 name: CocoaPods Blog
-markdown: rdiscount
+markdown: redcarpet
 pygments: true
 exclude: ['Gemfile*', 'rakefile.rb', 'README.md', 'shared']
 paginate: 5
