@@ -4443,6 +4443,8 @@ p {
 
 a {
   color: #fb0006; }
+  a:hover, a:focus {
+    color: #380200; }
 
 .navbar {
   background-color: #451206;
@@ -4457,7 +4459,8 @@ a {
   text-transform: uppercase;
   padding-top: 24px;
   padding-bottom: 6px;
-  height: 50px; }
+  height: 50px;
+  letter-spacing: 1.2pt; }
   .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
     color: white;
     background-color: #451206;
@@ -4540,3 +4543,16 @@ a {
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%; }
+
+footer.page-footer {
+  background-color: #380200;
+  padding: 50px 0;
+  color: white; }
+  footer.page-footer p {
+    margin: 0 0 20px;
+    font-size: 18px; }
+  footer.page-footer article.minor p {
+    margin: 0 0 14px;
+    font-size: 14px; }
+  footer.page-footer a:hover, footer.page-footer a:focus {
+    color: white; }

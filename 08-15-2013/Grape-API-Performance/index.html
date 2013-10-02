@@ -48,7 +48,7 @@
 
  
     <section class="container row">
-  <header class="col-md-12 headline blog-post">
+  <header class="col-md-8 col-md-offset-2 headline blog-post">
     <h1>Grape API Performance</h1>
   </header>
 </section>
@@ -56,7 +56,7 @@
 <section id="content-wrapper" class="post">
   <section class="container row">
     
-    <article class="content col-md-9">
+    <article class="content col-md-8 col-md-offset-2">
       <p>Knowing how well your API performs in real time is essential to any successful project. That&#39;s because you can&#39;t fix what you can&#39;t measure.</p>
 
 <p>We use and heavily contribute to <a href="http://github.com/intridea/grape">Grape</a>, a Ruby API DSL. Grape is a Rack middleware and we have been reporting API performance data to <a href="http://newrelic.com/">NewRelic</a> with code from <a href="http://code.dblock.org/new-relic-performance-instrumentation-with-grape-api">my older blog post</a>.</p>
@@ -70,12 +70,9 @@
 <h2>NewRelic RPM</h2>
 
 <p>The first step is to add the <code>newrelic_rpm</code> gem to Gemfile, which implements the actual realtime performance reporting to NewRelic. We also use <a href="https://github.com/mongoid/mongoid">Mongoid</a> and the <a href="https://github.com/mongoid/moped">Moped</a> MongoDB Ruby driver, which can be instrumented with <code>newrelic_moped</code>.</p>
-
-<p><code>ruby Gemfile
-gem &quot;newrelic_moped&quot;, &quot;0.0.3&quot;
-gem &quot;newrelic_rpm&quot;, &quot;3.3.3&quot;
-</code></p>
-
+<div class="highlight"><pre><code class="ruby language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="s2">&quot;newrelic_moped&quot;</span><span class="p">,</span> <span class="s2">&quot;0.0.3&quot;</span>
+<span class="n">gem</span> <span class="s2">&quot;newrelic_rpm&quot;</span><span class="p">,</span> <span class="s2">&quot;3.3.3&quot;</span>
+</code></pre></div>
 <p>You will need <code>config/newrelic.yml</code> in your application. Ours can be found in <a href="https://gist.github.com/4170458">this gist</a> and works well both locally and on Heroku.</p>
 
 <h2>Instrumenting Grape</h2>
@@ -83,14 +80,11 @@ gem &quot;newrelic_rpm&quot;, &quot;3.3.3&quot;
 <p>In the past we used <a href="https://gist.github.com/1233422">NewRelic::Agent::Instrumentation::API</a>, which works for any generic Rack middleware. This would report all API calls to NewRelic, but would treat requests to <em>/api/artist/andy-warhol</em> and <em>/api/artist/wassily-kandinsky</em> as unrelated. That is because the instrumenter is a Rack middleware that wraps Grape requests <em>before</em> they reach Grape. The only information available is the request URL, and not the actual API route that is going to be matched when the request is processed.</p>
 
 <p>We want both requests to <em>/api/artist/andy-warhol</em> and <em>/api/artist/wassily-kandinsky</em> to be treated as <em>/api/artist/:id</em>. Lets insert a middleware inside Grape itself, once the URL has been matched to a route.</p>
-
-<p><code>ruby api.rb
-class API &lt;&lt; Grape::API
-  use ApiNewRelicInstrumenter
-  ...
-end
-</code></p>
-
+<div class="highlight"><pre><code class="ruby language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">API</span> <span class="o">&lt;&lt;</span> <span class="ss">Grape</span><span class="p">:</span><span class="ss">:API</span>
+  <span class="n">use</span> <span class="no">ApiNewRelicInstrumenter</span>
+  <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+<span class="k">end</span>
+</code></pre></div>
 <p>The new instrumenter has access to the current API endpoint via <code>env[&#39;api.endpoint&#39;]</code> and reports data via NewRelic&#39;s <code>ControllerInstrumentation</code>.</p>
 <div class="highlight"><pre><code class="ruby language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">ApiNewRelicInstrumenter</span> <span class="o">&lt;</span> <span class="ss">Grape</span><span class="p">:</span><span class="ss">:Middleware</span><span class="o">::</span><span class="no">Base</span>
   <span class="kp">include</span> <span class="ss">NewRelic</span><span class="p">:</span><span class="ss">:Agent</span><span class="o">::</span><span class="ss">Instrumentation</span><span class="p">:</span><span class="ss">:ControllerInstrumentation</span>
@@ -126,7 +120,7 @@ end
 
     </article>
 
-    <article class="author metadata col-md-3">
+    <article class="author metadata col-md-2">
       <header>
         
           
@@ -146,12 +140,21 @@ end
 </section>
 
  
-    <!-- <section class="container row"> -->
-    <!--   <footer class="col-md-12"> -->
-    <!--     Included file footer.html not found in _includes directory -->
-    <!--   </footer> -->
-    <!-- </section> -->
-
+    <footer class="page-footer">
+  <section class="container row">
+    <article class="col-md-4 col-md-offset-2">
+      <p>CocoaPods is a project from <a href="https://github.com/alloy">Eloy Durán</a> and The CocoaPods Dev Team with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p>
+      <p>Sponsored by <a href="http://www.fngtps.com">Fingertips</a>, <a href = "http://www.hipbyte.com">Hipbyte</a>, <a href="http://artsy.net">Artsy</a> and <a href="https://www.sauspiel.de">Sauspiel</a>.</p>
+    </article>
+    
+    <article class="col-md-4 minor">
+      <p>Website and API by <a href="http://twitter.com/hanke">Florian Hanke</a>, The CocoaPods Dev Team and <a href="http://twitter.com/manfreds">Manfred Stienstra</a>.</p>
+      <p>Design by <a href="http://andy-myers.co.uk">Andy Myers</a>, <a href="http://orta.github.io">Orta Therox</a>, <a href="http://markovics.com">Philipp Markovics</a> and <a href="http://twitter.com/hanke">Florian Hanke</a>.</p>
+      <p>Original CocoapodsPods Logo by Max Steenbergen.</p>
+    </article>
+  </section>
+</footer>
+ 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/sharedjs/jquery.min.js"><\/script>')</script>
     <script src="/sharedjs/bootstrap.min.js/"></script>
