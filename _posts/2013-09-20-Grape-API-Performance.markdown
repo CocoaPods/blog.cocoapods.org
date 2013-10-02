@@ -21,7 +21,7 @@ NewRelic RPM
 
 The first step is to add the `newrelic_rpm` gem to Gemfile, which implements the actual realtime performance reporting to NewRelic. We also use [Mongoid](https://github.com/mongoid/mongoid) and the [Moped](https://github.com/mongoid/moped) MongoDB Ruby driver, which can be instrumented with `newrelic_moped`.
 
-``` ruby Gemfile
+``` ruby
 gem "newrelic_moped", "0.0.3"
 gem "newrelic_rpm", "3.3.3"
 ```
@@ -35,7 +35,7 @@ In the past we used [NewRelic::Agent::Instrumentation::API](https://gist.github.
 
 We want both requests to */api/artist/andy-warhol* and */api/artist/wassily-kandinsky* to be treated as */api/artist/:id*. Lets insert a middleware inside Grape itself, once the URL has been matched to a route.
 
-``` ruby api.rb
+``` ruby
 class API << Grape::API
   use ApiNewRelicInstrumenter
   ...

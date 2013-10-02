@@ -10,8 +10,10 @@ Run `rake build` to build the site into the `_site` directory
 ## Development
 
 Get started by running `rake init` this will install the submodules.
-`rake dev` will start sass & jekyll running for development.
-`rake end` will close the two processes.
+
+Two commands to get dev up and running: `jekyll serve --detach` then `sass --watch _sass:css`.
+
+`rake end` will close the related processes.
 
 This project uses two submodules,
    `_gh-pages` is the gh-pages of this repo. `rake deploy`` will push the built version of the site to that branch and push to the server pulling in any changes.

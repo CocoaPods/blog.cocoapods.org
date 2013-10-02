@@ -3,7 +3,7 @@ layout: default
 ---
 
 <section class="container row">
-  <header class="col-md-12 headline blog-post">
+  <header class="col-md-8 col-md-offset-2 headline blog-post">
     <h1>{{ page.title }}</h1>
   </header>
 </section>
@@ -11,11 +11,11 @@ layout: default
 <section id="content-wrapper" class="post">
   <section class="container row">
     
-    <article class="content col-md-9">
+    <article class="content col-md-8 col-md-offset-2">
       {{ content }}
     </article>
 
-    <article class="author metadata col-md-3">
+    <article class="author metadata col-md-2">
       <header>
         {% assign a = site.authors[page.author] %}
           {% if a.gravatar %}

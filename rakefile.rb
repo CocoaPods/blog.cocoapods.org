@@ -1,10 +1,9 @@
 #!/usr/bin/env rake
 
-desc 'Start up the jekyll & sasss processed'
-task :dev do
-  puts "Starting Jekyll & Sass"
-  puts %x[jekyll serve --detach]
-  puts %w[sass --watch _sass/css &]
+desc 'Initial setup'
+task init do
+  puts "Cloning submodules..."
+  puts %x[git submodule update --init --recursive]
 end
 
 desc 'Close the dev environment'
@@ -12,12 +11,6 @@ task :end do
   puts "Closing jekyll & sass"
   puts %x[killall jekyll]
   puts %w[killall sass]
-end
-
-desc 'Build the site for deployment'
-task :build do
-  puts "Cloning submodules..."
-  puts %x[git submodule update --init --recursive]
 end
 
 desc 'Deploy the site to the gh_pages branch and push'

@@ -1,7 +1,7 @@
 name: CocoaPods Blog
 markdown: redcarpet
 pygments: true
-permalink: /:month-:day-:year/:title.html
+permalink: /:month-:day-:year/:title
 exclude: ['Gemfile*', 'rakefile.rb', 'README.md', 'shared']
 paginate: 5
 
