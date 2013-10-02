@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+      <title>Home - CocoaPods Blog</title>
+    
+
+    <meta name="description" content="The blog for CocoaPods.org an Objective-C dependency manager">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/blog.css">
+    <script src="/sharedjs/modernizr.min.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="navbar navbar-static-top" role="navigation">
+  <section class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-header-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"></a>
+    </div>
+
+    <div class="collapse navbar-collapse navbar-header-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://cocoapods.org">About</a></li>
+        <li><a href="http://docs.cocoapods.org">API Docs</a></li>
+        <li><a href="http://docs.cocoapods.org/guides/index.html">Guides</a></li>
+        <li class="active"><a href="/">Blog</a></li>
+      </ul>
+    </div>
+  </section>
+</nav>
+
+
+ 
+    <section class="container row">
+  <header class="col-md-12 headline index">
+    <h1>CocoaPods Blog</h1>
+    <div class="horizontal-divider"><div class="arrow-down"></div><div class="enclosed-arrow-down"></div></div>
+  </header>
+</section>
+
+<section id="content-wrapper">
+  <section class="container row">
+    <article class="content col-md-8">
+      
+<article class="post">
+
+  <header>
+    
+    <h2 class="post-title">Grape API Performance</h2>
+    <h5 class="post-meta">
+      
+        <img class="gravatar" src="http://gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb?s=72">
+      
+      
+        by Orta Therox
+        
+          (<a href="http://twitter.com/orta">@orta</a>)
+        
+      
+      on 15/08/2013
+    </h5>
+  </header>
+
+  
+      <p>Knowing how well your API performs in real time is essential to any successful project. That&#39;s because you can&#39;t fix what you can&#39;t measure.</p>
+
+<p>We use and heavily contribute to <a href="http://github.com/intridea/grape">Grape</a>, a Ruby API DSL. Grape is a Rack middleware and we have been reporting API performance data to <a href="http://newrelic.com/">NewRelic</a> with code from <a href="http://code.dblock.org/new-relic-performance-instrumentation-with-grape-api">my older blog post</a>.</p>
+
+<p>It&#39;s time to improve the reporting implementation and address performance monitoring in both development and production environments. Here&#39;s what a single API request breakdown is going to look like.</p>
+
+<p><img src="/images/2012-11-29-measuring-performance-in-grape-apis-with-new-relic/transaction-detail.png"></p>
+
+
+      <p><a href="/jekyll/cocoapods/2013/08/15/Grape-API-Performance.html">Continue...</a></p>
+  
+
+
+</article>
+
+<article class="post">
+
+  <header>
+    
+    <h2 class="post-title">ARAnalytics - Analytics for iOS Apps</h2>
+    <h5 class="post-meta">
+      
+        <img class="gravatar" src="http://gravatar.com/avatar/6ab7ae85b84ebb323fab427b11500742?s=72">
+      
+      
+        by Keith Smiley
+        
+          (<a href="http://twitter.com/SmileyKeith">@SmileyKeith</a>)
+        
+      
+      on 15/08/2013
+    </h5>
+  </header>
+
+  
+      <p>In both my <a href="http://orta.github.com">personal apps</a> and Artsy Folio, I&#39;m always after a deeper understanding of how people use the app. There&#39;s three ways to do this: ask users, watch users and track usage. I&#39;d like to talk about the third of these.</p>
+
+<p>We&#39;ve experimented with quite a lot of analytics tools for the Artsy website, and it seemed fitting to do the same for our mobile app. We wanted the freedom to change the analytics tool without having to change the code, and so <a href="http://github.com/orta/ARAnalytics">ARAnalytics</a> was born.</p>
+
+
+      <p><a href="/jekyll/cocoapods/2013/08/15/welcome-to-jekyll.html">Continue...</a></p>
+  
+
+
+</article>
+
+
+
+    </article>
+
+    <aside class="sidebar col-md-4">
+      The sidebar
+
+
+    </aside>
+  </section>
+</section>
+
+ 
+    <!-- <section class="container row"> -->
+    <!--   <footer class="col-md-12"> -->
+    <!--     Included file 'footer.html' not found in _includes directory -->
+    <!--   </footer> -->
+    <!-- </section> -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/sharedjs/jquery.min.js"><\/script>')</script>
+    <script src="/sharedjs/bootstrap.min.js/"></script>
+
+    <!-- <script> -->
+    <!--   var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; -->
+    <!--   (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0]; -->
+    <!--   g.src='//www.google-analytics.com/ga.js'; -->
+    <!--   s.parentNode.insertBefore(g,s)}(document,'script')); -->
+    <!-- </script> -->
+  </body>
+</html>
+
