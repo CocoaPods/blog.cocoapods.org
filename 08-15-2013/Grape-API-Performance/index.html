@@ -63,7 +63,7 @@
 
 <p>It&#39;s time to improve the reporting implementation and address performance monitoring in both development and production environments. Here&#39;s what a single API request breakdown is going to look like.</p>
 
-<p><img src="/images/2012-11-29-measuring-performance-in-grape-apis-with-new-relic/transaction-detail.png"></p>
+<p><img src="https://ortastuff.s3.amazonaws.com/gifs/delisa-nah.gif"></p>
 
 <!-- more -->
 
@@ -110,11 +110,11 @@
 
 <p>You can now see NewRelic performance data in development mode, too. If you mount Grape inside Rails run <code>NEW_RELIC_ID=foo rails s</code>. Navigate to <em>http://localhost:3000/newrelic</em> to see your local traces.</p>
 
-<p><img src="/images/2012-11-29-measuring-performance-in-grape-apis-with-new-relic/developer-mode.png"></p>
+<p><img src="https://ortastuff.s3.amazonaws.com/gifs/fabio-two-thumbs.gif"></p>
 
 <p>Drill into an individual request to find several detailed breakdowns of how time was spent, including specific MongoDB queries (under &quot;SQL&quot;, naturally).</p>
 
-<p><img src="/images/2012-11-29-measuring-performance-in-grape-apis-with-new-relic/sql-detail.png"></p>
+<p><img src="http://i.imgur.com/gZMnlqr.gif"></p>
 
 <p>NewRelic is a commercial product, but you can run development mode for free! Note that enabling this will triple your local Rails boot time: we enable development mode by setting <code>development_mode: &lt;%= !!ENV[&#39;NEW_RELIC_ID&#39;] %&gt;</code> in <a href="https://gist.github.com/4170458">newrelic.rpm</a>.</p>
 
@@ -150,7 +150,7 @@
     <article class="col-md-4 minor">
       <p>Website and API by <a href="http://twitter.com/hanke">Florian Hanke</a>, The CocoaPods Dev Team and <a href="http://twitter.com/manfreds">Manfred Stienstra</a>.</p>
       <p>Design by <a href="http://andy-myers.co.uk">Andy Myers</a>, <a href="http://orta.github.io">Orta Therox</a>, <a href="http://markovics.com">Philipp Markovics</a> and <a href="http://twitter.com/hanke">Florian Hanke</a>.</p>
-      <p>Original CocoapodsPods Logo by Max Steenbergen.</p>
+      <p>Original CocoapodsPods Logo by <a href="http://twitter/maxsteenbergen">Max Steenbergen</a>.</p>
     </article>
   </section>
 </footer>

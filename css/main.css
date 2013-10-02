@@ -4530,14 +4530,9 @@ a {
   width: 0; }
 
 #content-wrapper {
-  background-color: #f5f5f5;
+  background-color: whitesmoke;
   margin: 0;
   padding: 0; }
-
-.sidebar {
-  border-left: 2px solid #bbbbbb;
-  display: block;
-  height: 100%; }
 
 .gravatar {
   border-radius: 50%;
