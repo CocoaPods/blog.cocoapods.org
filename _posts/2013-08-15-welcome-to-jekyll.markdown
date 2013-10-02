@@ -25,4 +25,12 @@ The list of supported libraries is pretty vast ( _TestFlight, Mixpanel, Localyti
  
 There is another tool worth mentioning and that is [Analytics](http://cocoadocs.org/dosets/Analytics/0.0.5/) which is a new port of Analytics.js which does a similar _simple API to different analytics providers_ but works by offloading the work to the server. I think there are advantages and disadvantages to both of these approaches, but I think one or the other should cover nearly all use cases!
 
+``` html
+<section class="container row">
+  <header class="col-md-12 headline blog-post">
+    <h1>{{ page.title }}</h1>
+  </header>
+</section>
+```
+
 ARAnalytics is available on Github at [orta/ARAnalytics](http://github.com/orta/ARAnalytics) and documented on [Cocoadocs](http://cocoadocs.org/docsets/ARAnalytics/1.2/) (which Artsy proudly sponsors!)
