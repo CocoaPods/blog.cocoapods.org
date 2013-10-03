@@ -11,7 +11,7 @@ Run `rake build` to build the site into the `_site` directory
 
 Get started by running `rake init` this will install the submodules.
 
-Two commands to get dev up and running: `jekyll serve --detach` then `sass --watch _sass:css`.
+Two commands to get dev up and running: `jekyll serve --detach` then `sass --watch shared/sass/:/assets/css`.
 
 `rake end` will close the related processes.
 
