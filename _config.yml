@@ -5,6 +5,8 @@ permalink: /:month-:day-:year/:title
 exclude: ['Gemfile*', 'rakefile.rb', 'README.md', 'shared']
 paginate: 5
 
+github-post-folder-url: http://github.com/CocoaPods/blog.cocoapods.org/master/
+
 authors:
   keith:
     name: Keith Smiley

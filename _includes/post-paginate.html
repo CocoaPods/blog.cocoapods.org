@@ -1,0 +1,29 @@
+<section id="post-info" class="container row">
+  <article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next">
+    {% if page.previous.url %}
+    {% assign author = site.authors[page.previous.author] %}
+    
+    <a href="{{page.previous.url}}" title=" {{page.previous.title}}">      
+      <header><h4>Previous Post</h4></header>
+      <h3>{{page.previous.title}}</h3>
+      <p>By {{author.name}}</p>
+    </a>
+    
+    {% endif %}
+    
+  </article>
+  
+  <article class="content col-6 col-sm-6 col-md-4 previous">
+     
+    {% if page.next.url %}
+    {% assign author = site.authors[page.next.author] %}
+    <a href="{{page.next.url}}" title=" {{page.next.title}}">      
+      <header><h4>Next Post</h4></header>
+      <h3>{{page.next.title}}</h3>
+      <p>By {{author.name}}</p>
+    </a>
+    
+    {% endif %}
+    
+  </article>
+</section>
