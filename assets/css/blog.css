@@ -8,9 +8,23 @@ header.blog-post h1 {
 
 article.author.metadata header {
   text-align: center;
-  margin-top: -36px; }
+  margin-top: -56px; }
   article.author.metadata header img {
     margin-bottom: 20px; }
   article.author.metadata header p {
     margin-bottom: 4px;
     margin-top: 0px; }
+
+@media (max-width: 1024px) {
+  article.author.metadata header {
+    margin-top: 32px; } }
+.sidebar {
+  text-align: center; }
+  .sidebar ol {
+    padding-top: 20px; }
+    .sidebar ol li {
+      text-align: left; }
+
+footer.page-footer {
+  background-color: #380200;
+  color: white; }

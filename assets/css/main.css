@@ -4073,6 +4073,34 @@ th.visible-print, td.visible-print {
 
   th.hidden-print, td.hidden-print {
     display: none !important; } }
+@font-face {
+  font-family: 'gt_walsheim_bold';
+  src: url("/assets/fonts/gt-walsheim-bold-web.eot");
+  src: url("/assets/fonts/gt-walsheim-bold-web.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/gt-walsheim-bold-web.woff") format("woff"), url("/assets/fonts/gt-walsheim-bold-web.ttf") format("truetype"), url("/assets/fonts/gt-walsheim-bold-web.svg#gt_walsheim_bold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'gt_walsheim_bold_oblique';
+  src: url("/assets/fonts/gt-walsheim-bold-oblique-web.eot");
+  src: url("/assets/fonts/gt-walsheim-bold-oblique-web.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/gt-walsheim-bold-oblique-web.woff") format("woff"), url("/assets/fonts/gt-walsheim-bold-oblique-web.ttf") format("truetype"), url("/assets/fonts/gt-walsheim-bold-oblique-web.svg#gt_walsheim_bold_oblique") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'gt_walsheim_regular';
+  src: url("/assets/fonts/gt-walsheim-web.eot");
+  src: url("/assets/fonts/gt-walsheim-web.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/gt-walsheim-web.woff") format("woff"), url("/assets/fonts/gt-walsheim-web.ttf") format("truetype"), url("/assets/fonts/gt-walsheim-web.svg#gt_walsheim_regular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'gt_walsheim_regular_oblique';
+  src: url("/assets/fonts/gt-walsheim-regular-oblique-web.eot");
+  src: url("/assets/fonts/gt-walsheim-regular-oblique-web.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/gt-walsheim-regular-oblique-web.woff") format("woff"), url("/assets/fonts/gt-walsheim-regular-oblique-web.ttf") format("truetype"), url("/assets/fonts/gt-walsheim-regular-oblique-web.svg#gt_walsheim_regular_oblique") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 pre {
   background-color: transparent;
   border: none; }
@@ -4431,10 +4459,10 @@ pre {
 
 /* Literal.Number.Integer.Long */
 body {
-  font-family: "GT Walsheim Trial", "Georgia"; }
+  font-family: "GT Walsheim", "gt_walsheim_regular", "Avant Garde Gothic ITCW01Dm", "Avant Garde", "Heletica Neue", "Arial"; }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "GT Walsheim Trial", "Georgia"; }
+  font-family: "GT Walsheim", "gt_walsheim_regular", "Avant Garde Gothic ITCW01Dm", "Avant Garde", "Heletica Neue", "Arial"; }
 
 p {
   font-size: 18px;
@@ -4453,7 +4481,7 @@ a {
   padding: 0; }
 
 .navbar-nav > li > a {
-  font-family: "GT Walsheim Trial";
+  font-family: "GT Walsheim";
   font-size: 16px;
   color: white;
   text-transform: uppercase;
@@ -4478,7 +4506,7 @@ a {
     background-color: #451206; }
 
 .navbar-brand {
-  background: url("/img/CP_logo_rough.png") no-repeat left center;
+  background: url("/img/cocoapods_logo.png") no-repeat left center;
   height: 50px;
   width: 201px; }
 
@@ -4501,7 +4529,7 @@ a {
   text-align: center; }
   .headline.index h1 {
     font-size: 72px;
-    padding-top: 90px;
+    padding-top: 110px;
     padding-bottom: 18px; }
 
 .horizontal-divider {
@@ -4511,6 +4539,15 @@ a {
   height: 1px;
   margin: 0 auto;
   width: 50%; }
+
+.sidebar .enclosed-arrow-down {
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-top: 13px solid whitesmoke;
+  height: 0;
+  margin: 0 auto;
+  width: 0;
+  margin-top: -15px; }
 
 .enclosed-arrow-down {
   border-left: 13px solid transparent;
@@ -4533,6 +4570,9 @@ a {
   background-color: whitesmoke;
   margin: 0;
   padding: 0; }
+
+.row {
+  padding: 20px 0; }
 
 .gravatar {
   border-radius: 50%;
