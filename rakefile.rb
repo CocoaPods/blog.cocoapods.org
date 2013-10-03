@@ -17,7 +17,7 @@ desc 'Deploy the site to the gh_pages branch and push'
 task :deploy do
 
   puts "Compiling sass."
-  puts %x[sass _sass/*.scss css/ --style=compressed]
+  puts %x[sass shared/sass/*.scss assets/css --style=compressed]
 
   puts "Building site."
   puts %x[jekyll build -d _gh-pages]
