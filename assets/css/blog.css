@@ -25,6 +25,30 @@ article.author.metadata header {
     .sidebar ol li {
       text-align: left; }
 
+#post-accessories {
+  background-color: whitesmoke;
+  text-align: right; }
+  #post-accessories .row {
+    padding: 0; }
+
+#post-info {
+  padding-top: 48px; }
+  #post-info .previous {
+    text-align: right; }
+  #post-info h3 {
+    margin: 8px 0 4px; }
+  #post-info p {
+    margin: 8px 0 30px; }
+  #post-info a:hover h4, #post-info a:focus h4 {
+    color: #380200;
+    text-decoration: none; }
+  #post-info header h4 {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #380200;
+    text-decoration: none;
+    font-weight: normal; }
+
 footer.page-footer {
   background-color: #380200;
   color: white; }

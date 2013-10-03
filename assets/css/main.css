@@ -4532,6 +4532,9 @@ a {
     padding-top: 110px;
     padding-bottom: 18px; }
 
+@media (max-width: 768px) {
+  .headline.index h1 {
+    font-size: 48px; } }
 .horizontal-divider {
   background-color: #bbbbbb;
   box-shadow: 1px 1px 1px #ddd;
@@ -4580,8 +4583,8 @@ a {
   -webkit-border-radius: 50%; }
 
 footer.page-footer {
-  background-color: #380200;
   padding: 50px 0;
+  background-color: #380200;
   color: white; }
   footer.page-footer p {
     margin: 0 0 20px;
