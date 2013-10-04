@@ -5,7 +5,7 @@ permalink: /:month-:day-:year/:title
 exclude: ['Gemfile*', 'rakefile.rb', 'README.md', 'shared']
 paginate: 5
 
-github-post-folder-url: http://github.com/CocoaPods/blog.cocoapods.org/master/
+github_pr_url: https://github.com/CocoaPods/blog.cocoapods.org/tree/master/
 
 authors:
   keith:
@@ -16,3 +16,11 @@ authors:
     name: Orta Therox
     twitter: orta
     gravatar: f116cb3be23153ec08b94e8bd4dbcfeb
+
+
+assets:
+  sources:
+    - shared/img
+    - shared/fonts
+    - shared/js
+    - shared/sass

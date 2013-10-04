@@ -4,20 +4,11 @@ desc 'Initial setup'
 task :init do
   puts "Cloning submodules..."
   puts %x[git submodule update --init --recursive]
-end
-
-desc 'Close the dev environment'
-task :end do
-  puts "Closing jekyll & sass"
-  puts %x[killall jekyll]
-  puts %w[killall sass]
+  puts %x[bundle install]
 end
 
 desc 'Deploy the site to the gh_pages branch and push'
 task :deploy do
-
-  puts "Compiling sass."
-  puts %x[sass shared/sass/*.scss assets/css --style=compressed]
 
   puts "Building site."
   puts %x[jekyll build -d _gh-pages]

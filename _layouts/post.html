@@ -27,13 +27,12 @@ layout: default
             {% endif %}
           {% endif %}
            <p>{{ page.date | date: "%-d %B %Y" }}</p>
-        </h5>
       </header>
       
     </article>
   </section>
 </section>
 
-{% include post-accessories.html %}
+{% shared_include blog/post-accessories %}
 
-{% include post-paginate.html %}
+{% shared_include blog/post-paginate %}
