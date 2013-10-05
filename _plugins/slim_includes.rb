@@ -13,9 +13,8 @@ module Jekyll
       current_dir = File.dirname(File.expand_path(__FILE__))
       shared_include = current_dir + "/../shared/includes/" + @path.strip + ".slim"
 
-      template = Tilt::new(shared_include)
-      
-      template.render( context.registers)
+      template = Tilt::new shared_include
+      template.render context.registers
     end
   end
 end
