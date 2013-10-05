@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+      <title>Using Acknowledgements - CocoaPods Blog</title>
+
+      <title>CocoaPods Blog</title>
+    
+
+    <meta name="description" content="The blog for CocoaPods.org an Objective-C dependency manager">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="/assets/main-d476ff71cf5f27d2ef31c28cfbb06212.css">
+    <link rel="stylesheet" href="/assets/blog-27c89a0558a7bf5c4808f2d73aeff20e.css">
+
+    <script src="/assets/modernizr-c744ba14cbf42007bf401a6dd60772e8.min"></script>
+    
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-header-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="/"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://cocoapods.org">About</a></li><li><a href="http://docs.cocoapods.org">API Docs</a></li><li><a href="http://docs.cocoapods.org/guides/index.html">Guides</a></li><li class="active"><a href="/">Blog</a></li></ul></div></section></nav>
+ 
+    <section class="container row">
+  <header class="col-md-8 col-md-offset-2 headline blog-post">
+    <h1>Using Acknowledgements</h1>
+  </header>
+</section>
+
+<section id="content-wrapper" class="post">
+  <section class="container row">
+
+    <article class="author metadata col-md-2 col-md-push-10">
+      <header>
+        
+          
+            <img class="gravatar large" src="http://gravatar.com/avatar/b6dde1a78e6215a592768c1e78a54adc?s=72" height=72 width=72>
+          
+          
+            
+              <p><a href="http://twitter.com/fabio">Fabio Pelosin</a></p>
+            
+          
+           <p>10 August 2013</p>
+      </header>
+    </article>
+    
+    <article class="content col-md-8">
+      <p>CocoaPods will generate two &#39;Acknowledgements&#39; files for each target specified in your Podfile. If the pods are coming from the master repo, then they must include one. Private pods done. These contain the License details for each Pod and for most of the part having them in your acknowledgements will be enough to conform to the license.</p>
+
+<p>CocoaPods generates a markdown file for general consumption, as well as a property list file that can be added to a settings bundle for an iOS application. You don&#39;t need to do anything for this to happen, it will just work. If you&#39;d like to know more about extra things you can do with this, read on.</p>
+
+<!-- more -->
+
+<h2>Customization</h2>
+
+<p>If you&#39;re not happy with the default boilerplate text generated for the title, header
+and footnotes in the files, it&#39;s possible to customise these by overriding the methods
+that generate the text in your <code>Podfile</code> like this:</p>
+<div class="highlight">      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="row container">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="k">class</span> <span class="o">::</span><span class="ss">Pod</span><span class="p">:</span><span class="ss">:Generator</span><span class="o">::</span><span class="no">Acknowledgements</span>
+  <span class="k">def</span> <span class="nf">header_text</span>
+    <span class="s2">&quot;My custom header text&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>      </article>
+      </section>
+      </div>
+      
+      <section class="container row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>You can even go one step further and customise the text on a per target basis by checking against the target name, like this:</p>
+<div class="highlight">      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="row container">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="k">class</span> <span class="o">::</span><span class="ss">Pod</span><span class="p">:</span><span class="ss">:Generator</span><span class="o">::</span><span class="no">Acknowledgements</span>
+  <span class="k">def</span> <span class="nf">header_text</span>
+    <span class="k">if</span> <span class="vi">@target_definition</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">end_with?</span><span class="p">(</span><span class="s2">&quot;MyTargetName&quot;</span><span class="p">)</span>
+      <span class="s2">&quot;Custom header text for MyTargetName&quot;</span>
+    <span class="k">else</span>
+      <span class="s2">&quot;Custom header text for other targets&quot;</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>      </article>
+      </section>
+      </div>
+      
+      <section class="container row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>These are the available methods to override: <code>header_title</code>, <code>header_text</code>, <code>footnote_title</code> &amp; <code>footnote_text</code>.</p>
+
+<h2>iOS Settings Bundle</h2>
+
+<p>If you are using the generated <code>plist</code> in your settings bundle you might want to update the file every time that you update your pods. This can be accomplished by adding to your <code>Podfile</code> the following <code>post_install</code> hook.</p>
+<div class="highlight">      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="row container">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">post_install</span> <span class="k">do</span> <span class="o">|</span> <span class="n">installer</span> <span class="o">|</span>
+  <span class="nb">require</span> <span class="s1">&#39;fileutils&#39;</span>
+  <span class="no">FileUtils</span><span class="o">.</span><span class="n">cp_r</span><span class="p">(</span><span class="s1">&#39;Pods/Pods-Acknowledgements.plist&#39;</span><span class="p">,</span> <span class="s1">&#39;Resources/Settings.bundle/Acknowledgements.plist&#39;</span><span class="p">,</span> <span class="ss">:remove_destination</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre>      </article>
+      </section>
+      </div>
+      
+      <section class="container row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>To access this from your Setting Bundle&#39;s Root.plist replace your Root.plist with this:</p>
+<div class="highlight">      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="row container">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="xml language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="cp">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;</span>
+<span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;dict&gt;</span>
+    <span class="nt">&lt;key&gt;</span>StringsTable<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>Root<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;key&gt;</span>PreferenceSpecifiers<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;array&gt;</span>
+        <span class="nt">&lt;dict&gt;</span>
+            <span class="nt">&lt;key&gt;</span>Type<span class="nt">&lt;/key&gt;</span>
+            <span class="nt">&lt;string&gt;</span>PSChildPaneSpecifier<span class="nt">&lt;/string&gt;</span>
+            <span class="nt">&lt;key&gt;</span>Title<span class="nt">&lt;/key&gt;</span>
+            <span class="nt">&lt;string&gt;</span>Acknowledgements<span class="nt">&lt;/string&gt;</span>
+            <span class="nt">&lt;key&gt;</span>File<span class="nt">&lt;/key&gt;</span>
+            <span class="nt">&lt;string&gt;</span>Acknowledgements<span class="nt">&lt;/string&gt;</span>
+        <span class="nt">&lt;/dict&gt;</span>
+    <span class="nt">&lt;/array&gt;</span>
+<span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/plist&gt;</span>
+</code></pre>      </article>
+      </section>
+      </div>
+      
+      <section class="container row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Further details can be found in <a href="http://martinhicks.net/2012/04/how-to-create-license-section-in-ios-settings-app">Martin Hicks&#39;s blog</a></p>
+
+    </article>
+
+  </section>
+</section>
+
+<section id="post-accessories"><section class="container row"><article class="content col-md-8 col-md-offset-2"><a href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2013-08-10-Acknowledgements.markdown"><img height="50" src="/assets/pull-request-image-fa02f5cc5a9233971ad04ee2c59caafc.png" style="background-color:#fb0006" width="50" /></a></article></section></section>
+
+<section class="container row" id="post-info"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "></article><article class="content col-6 col-sm-6 col-md-4 previous"><a href="/09-23-2013/Why-we-dont-accept-donations" title="Why we don't accept donations"><header><h4>Next Post</h4></header><h3>Why we don't accept donations</h3><p>By Eloy Durán</p></a></article></section>
+
+ 
+    <footer class="page-footer"><section class="container row"><article class="col-md-4 col-md-offset-2"><p>CocoaPods is a project from <a href="https://github.com/alloy">Eloy Durán</a> and The CocoaPods Dev Team with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p><p>Sponsored by <a href="http://www.fngtps.com">Fingertips</a>, <a href = "http://www.hipbyte.com">Hipbyte</a>, <a href="http://artsy.net">Artsy</a> and <a href="https://www.sauspiel.de">Sauspiel</a>.</p></article><article class="col-md-4 minor"><p>Website and API by <a href="http://twitter.com/hanke">Florian Hanke</a>, The CocoaPods Dev Team and <a href="http://twitter.com/manfreds">Manfred Stienstra</a>.</p><p>Design by <a href="http://andy-myers.co.uk">Andy Myers</a>, <a href="http://orta.github.io">Orta Therox</a>, <a href="http://markovics.com">Philipp Markovics</a> and <a href="http://twitter.com/hanke">Florian Hanke</a>.</p><p>Original CocoapodsPods Logo by <a href="http://twitter/maxsteenbergen">Max Steenbergen</a>.</p></article></section></footer>
+ 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/js/jquery.min.js"><\/script>')</script>
+    <script src="/assets/js/bootstrap.min.js/"></script>
+
+    <!-- <script> -->
+    <!--   var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; -->
+    <!--   (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0]; -->
+    <!--   g.src='//www.google-analytics.com/ga.js'; -->
+    <!--   s.parentNode.insertBefore(g,s)}(document,'script')); -->
+    <!-- </script> -->
+  </body>
+</html>
