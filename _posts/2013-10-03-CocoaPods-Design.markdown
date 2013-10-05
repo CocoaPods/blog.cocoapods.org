@@ -16,18 +16,18 @@ Starting from May 2013, I've been working with [Andy Myers](http://andy-myers.co
 
 The first and most obvious change is the logo. Here it is in mono-colour.
 
-<img src="/assets/blog_img/design/logo.png" style="width:100%;background-color:white;">
+{% breaking_image /assets/blog_img/design/logo.png %}
 
 We took ideas from the Objective-C import directives, OS metaphors for text selection and colours from the Cocoa Pods themselves to create a new modern logo.
 
-CocoaPods itself is a collection of projects like the mulitple gems that create the terminal tool, the search engine, CocoaDocs and more. We needed to find a way that we can provide a similar identity between all the different sub-projects that are public facing. In my opinion the [jQuery](http://jquery.com) foundation did a great job at this. By having the logo neatly split along the selected and unselected edge we can easily extend the logo depending on our needs.
+CocoaPods itself is a collection of projects like the multiple gems that create the terminal tool, the search engine, CocoaDocs and more. We needed to find a way that we can provide a similar identity between all the different sub-projects that are public facing. In my opinion the [jQuery](http://jquery.com) foundation did a great job at this. By having the logo neatly split along the selected and unselected edge we can easily extend the logo depending on our needs.
 
 Once we had the logo down the visual identity was starting to appear, we spent some time looking at the analytics for cocoapods.org and tried to get a feel for how the website is used. Turns out most of the outgoing links are based on search queries. So we priorised the initial screen to give precedence for searching and then to go straight into learning for people who have just heard of the project.
 
-<img src="/assets/blog_img/design/desktop-website.png" style="width:100%;background-color:#380200;">
+<a href="https://github.com/CocoaPods/shared_resources/tree/master/design/cocoapods.org"><img src="/assets/blog_img/design/desktop-website.png" style="width:100%;background-color:#380200;"></a>
 
 Whilst looking at the analytics we were surprised to find that the percentage of mobile browsers wasn't what we hoped it to be. So the designs were done in parallel for mobile and for desktop. 
 
-<img src="/assets/blog_img/design/mobile-website.png" style="width:100%;background-color:#380200;">
+<a href="https://github.com/CocoaPods/shared_resources/tree/master/design/cocoapods.org"><img src="/assets/blog_img/design/mobile-website.png" style="width:100%;background-color:#380200;"></a>
 
 The work on the CocoaPods design is on-going and has just started; there's a lot of focus now on the blog so that we can be sure of the foundations before moving on to the new user documentation. But that is a blog post for another time.
