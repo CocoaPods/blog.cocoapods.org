@@ -1,9 +1,10 @@
 name: CocoaPods Blog
 markdown: redcarpet
 pygments: true
-permalink: /:month-:day-:year/:title
+permalink: /:title
 exclude: ['Gemfile*', 'rakefile.rb', 'README.md', 'shared']
 paginate: 5
+
 
 github_pr_url: https://github.com/CocoaPods/blog.cocoapods.org/tree/master/
 
@@ -12,14 +13,17 @@ authors:
     name: Keith Smiley
     twitter: SmileyKeith
     gravatar: 6ab7ae85b84ebb323fab427b11500742
+
   orta:
     name: Orta Therox
     twitter: orta
     gravatar: f116cb3be23153ec08b94e8bd4dbcfeb
+
   eloy:
     name: Eloy Durán
     twitter: alloy
     gravatar: 424a9ce662b059c35063b405e160461d
+
   fabio:
     name: Fabio Pelosin
     twitter: fabio
