@@ -1,3 +1,20 @@
+.headline.index {
+  text-align: center; }
+  .headline.index h1 {
+    font-size: 72px;
+    padding-top: 110px;
+    padding-bottom: 18px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -mr-user-select: none;
+    user-select: none;
+    cursor: default; }
+
+@media (max-width: 768px) {
+  .headline.index h1 {
+    font-size: 48px; } }
 header.blog-post h1 {
   position: absolute;
   bottom: 18px;
@@ -19,12 +36,21 @@ article.author.metadata header {
   article.author.metadata header {
     margin-top: 32px; } }
 .sidebar {
-  text-align: center; }
+  text-align: center;
+  padding-top: 64px; }
+  .sidebar h3 {
+    color: #380200;
+    font-size: 32px; }
   .sidebar ol {
-    padding-top: 20px; }
+    padding: 20px;
+    list-style: none;
+    font-size: 18px; }
     .sidebar ol li {
       text-align: left; }
 
+@media (max-width: 1024px) {
+  .sidebar {
+    padding-top: 16px; } }
 #post-accessories {
   background-color: whitesmoke;
   text-align: right; }
