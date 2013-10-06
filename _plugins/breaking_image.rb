@@ -3,7 +3,14 @@ module Jekyll
 
     def initialize(tag_name, text, tokens)
       super
-      @path = text
+      
+      if text.split(" ").count > 1
+        @path = text.split(" ").first
+        @url = text.split(" ").last
+      else
+        @path = text
+      end
+      
     end
 
     def render(context)      
@@ -27,6 +34,9 @@ module Jekyll
       eos
 
       img = "<img src='#{image_url}'>"
+      if @url
+        img = "<a href='#{@url}'>" + img + "</a>"
+      end
 
       return pre + img + post
     end
