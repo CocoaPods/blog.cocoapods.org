@@ -16,12 +16,13 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{% asset_path feed.xml%}">
 
     {% stylesheet main %}
     {% stylesheet blog %}
 
     {% javascript modernizr.min %}
-    
+
   </head>
   <body>
     <!--[if lt IE 7]>
@@ -29,15 +30,15 @@
     <![endif]-->
 
     {% shared_include header %}
- 
+
     {{ content }}
- 
+
     {% shared_include footer %}
- 
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/assets/js/jquery.min.js"><\/script>')</script>
     {% javascript bootstrap.min %}
-    
+
 
     <!-- <script> -->
     <!--   var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; -->
