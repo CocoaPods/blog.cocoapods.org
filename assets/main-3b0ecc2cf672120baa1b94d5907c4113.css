@@ -4580,6 +4580,8 @@ a {
   background-color: whitesmoke;
   margin: 0;
   padding: 0; }
+  #content-wrapper img {
+    max-width: 100%; }
 
 .row {
   padding: 20px 0; }
