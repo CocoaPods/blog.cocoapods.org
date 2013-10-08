@@ -1,4 +1,7 @@
 name: CocoaPods Blog
+description: Updates for the fascinating developments happening in the CocoaPods world.
+url: http://blog.cocoapods.org
+
 markdown: redcarpet
 pygments: true
 permalink: /:title
