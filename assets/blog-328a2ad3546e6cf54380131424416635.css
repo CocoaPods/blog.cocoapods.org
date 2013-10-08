@@ -12,6 +12,11 @@
     user-select: none;
     cursor: default; }
 
+@media screen and (max-width: 400px) {
+  .headline {
+    height: 180px; }
+    .headline.blog-post h1 {
+      font-size: 32px; } }
 @media (max-width: 768px) {
   .headline.index h1 {
     font-size: 48px; } }
@@ -21,7 +26,8 @@ header.blog-post h1 {
   left: 15px;
   font-weight: normal;
   font-size: 48px;
-  width: 75%; }
+  width: 75%;
+  word-wrap: break-word; }
 
 article.author.metadata header {
   text-align: center;
