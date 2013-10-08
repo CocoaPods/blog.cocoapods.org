@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-      <title>On Design - CocoaPods Blog</title>
+      <title>CocoaPods 0.26 - CocoaPods Blog</title>
 
       <title>CocoaPods Blog</title>
     
@@ -32,7 +32,7 @@
  
     <section class="container row">
   <header class="col-md-8 col-md-offset-2 headline blog-post">
-    <h1>On Design</h1>
+    <h1>CocoaPods 0.26</h1>
   </header>
 </section>
 
@@ -43,64 +43,68 @@
       <header>
         
           
-            <img class="gravatar large" src="http://gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb?s=144" height=72 width=72>
+            <img class="gravatar large" src="http://gravatar.com/avatar/b6dde1a78e6215a592768c1e78a54adc?s=144" height=72 width=72>
           
           
             
-              <p><a href="http://twitter.com/orta">Orta Therox</a></p>
+              <p><a href="http://twitter.com/fabiopelosin">Fabio Pelosin</a></p>
             
           
-           <p>3 October 2013</p>
+           <p>8 October 2013</p>
       </header>
     </article>
     
     <article class="content col-md-8">
-      <p>CocoaPods is arguably one of the most important open source project in the Objective-C community. It&#39;s used in thousands of applications and has hundreds of thousands of downloads.</p>
+      <p>Today we are releasing CocoaPods 0.26.</p>
 
-<p>Building the tool, the community and the ecosystem around the project has happened organically with a mix of people coming and helping out to get us to a position where CocoaPods is essential to any project. </p>
+<p>The most visible change is that CocoaPods now hides the schemes of the Pod
+targets. If this doesn&#39;t ring a bell the following image should.</p>
 
-<p>Starting from May 2013, I&#39;ve been working with <a href="http://andy-myers.co.uk">Andy Myers</a> to try and re-think the systems around CocoaPods, ranging from how we do documentation to the branding. This blog post is to open up our process a bit and to explain how we came to some of these ideas.</p>
+<p><img src="/assets/blog_img/CocoaPods-0.26/Schemes-comparison.png" style="display:block;margin-left:auto;margin-right:auto;"></a></p>
 
 <!-- more -->
 
-<p>The first and most obvious change is the logo. Here it is in mono-colour.</p>
+<p>Don&#39;t fear though, the schemes are still there and if you need to check that a
+CocoaPods generated target is behaving correctly you can easily make its
+scheme visible.</p>
 
-<p></article>
-</section></p>
+<p><img src="/assets/blog_img/CocoaPods-0.26/Schemes-show.png" style="border:2px solid white;display:block;margin-left:auto;margin-right:auto;"></a></p>
 
-<div style="background-color:white;">
-<section class="row container">
-<article class="content col-md-8 col-md-offset-2">
-<img src='/assets/blog_img/design/logo.png '></article>
-</section>
-</div>
+<p>Other improvements include the restoration of the compatibility with Xcode 4
+which was creating issues in our linting process and the reorganization of the
+Pods project.</p>
+
+<p>This release also features a contribution from the latest entry to our core
+team: <a href="https://twitter.com/kylefuller">Kyle Fuller</a></p>
+
+<p>To install the last release of CocoaPods you can run:</p>
+<div class="highlight">      </article>
+      </section>
       
+      <div style="background-color:white;">
+      <section class="row container">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="text language-text" data-lang="text">$ [sudo] gem install cocoapods
+</code></pre>      </article>
+      </section>
+      </div>
+      
+      <section class="container row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Until version 1.0 we strongly encourage you to keep CocoaPods up to date.</p>
 
-<p><section class="container row">
-<article class="content col-md-8 col-md-offset-2"></p>
-
-<p>We took ideas from the Objective-C import directives, OS metaphors for text selection and colours from the Cocoa Pods themselves to create a new modern logo.</p>
-
-<p>CocoaPods itself is a collection of projects like the multiple gems that create the terminal tool, the search engine, CocoaDocs and more. We needed to find a way that we can provide a similar identity between all the different sub-projects that are public facing. In my opinion the <a href="http://jquery.com">jQuery</a> foundation did a great job at this. By having the logo neatly split along the selected and unselected edge we can easily extend the logo depending on our needs.</p>
-
-<p>Once we had the logo down the visual identity was starting to appear, we spent some time looking at the analytics for cocoapods.org and tried to get a feel for how the website is used. Turns out most of the outgoing links are based on search queries. So we priorised the initial screen to give precedence for searching and then to go straight into learning for people who have just heard of the project.</p>
-
-<p><a href="https://github.com/CocoaPods/shared_resources/tree/master/design/cocoapods.org"><img src="/assets/blog_img/design/desktop-website.png" style="width:100%;background-color:#380200;border:2px solid white;"></a></p>
-
-<p>Whilst looking at the analytics we were surprised to find that the percentage of mobile browsers wasn&#39;t what we hoped it to be. So the designs were done in parallel for mobile and for desktop. </p>
-
-<p><a href="https://github.com/CocoaPods/shared_resources/tree/master/design/cocoapods.org"><img src="/assets/blog_img/design/mobile-website.png" style="width:100%;background-color:#380200;border:2px solid white;"></a></p>
-
-<p>The work on the CocoaPods design is on-going and has just started; there&#39;s a lot of focus now on the blog so that we can be sure of the foundations before moving on to the new user documentation. But that is a blog post for another time.</p>
+<p>For all the details, don&#39;t miss the
+<a href="https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md">Changelog</a>.</p>
 
     </article>
 
   </section>
 </section>
 
-<section id="post-accessories"><section class="container row"><article class="content col-md-8 col-md-offset-2"><a href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2013-10-03-redesign.markdown"><img height="50" src="/assets/pull-request-image-fa02f5cc5a9233971ad04ee2c59caafc.png" style="background-color:#fb0006" width="50" /></a></article></section></section>
+<section id="post-accessories"><section class="container row"><article class="content col-md-8 col-md-offset-2"><a href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2013-10-08-CocoaPods-0.26.markdown"><img height="50" src="/assets/pull-request-image-fa02f5cc5a9233971ad04ee2c59caafc.png" style="background-color:#fb0006" width="50" /></a></article></section></section>
 
-<section class="container row" id="post-info"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/Why-we-dont-accept-donations" title="Why we don&#39;t accept donations"><header><h4>Previous Post</h4></header><h3>Why we don&#39;t accept donations</h3><p>Eloy Durán</p></a></article><article class="content col-6 col-sm-6 col-md-4 previous"><a href="/CocoaPods-0.26" title="CocoaPods 0.26"><header><h4>Next Post</h4></header><h3>CocoaPods 0.26</h3><p>By Fabio Pelosin</p></a></article></section>
+<section class="container row" id="post-info"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/redesign" title="On Design"><header><h4>Previous Post</h4></header><h3>On Design</h3><p>Orta Therox</p></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></section>
 
  
     <footer class="page-footer"><section class="container row"><article class="col-md-8 col-md-offset-2"><p>CocoaPods is a project from <a href="https://twitter.com/alloy">Eloy Durán</a>, <a href="https://twitter.com/fabiopelosin">Fabio Pelosin</a>, <a href="https://orta.github.io">Orta Therox</a>,  and The CocoaPods Dev Team with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p><p>Lovingly sponsored by <a href="http://www.fngtps.com">Fingertips</a>, <a href = "http://www.hipbyte.com">Hipbyte</a>, <a href="http://artsy.net">Artsy</a> and <a href="https://www.sauspiel.de">Sauspiel</a>.</p></article><article class="col-md-4 minor col-md-offset-2"><p>Website and API by <a href="http://twitter.com/hanke">Florian Hanke</a>, The CocoaPods Dev Team and <a href="http://twitter.com/manfreds">Manfred Stienstra</a>.</p></article><article class="col-md-4 minor"><p>Design by <a href="http://andy-myers.co.uk">Andy Myers</a>, <a href="http://orta.github.io">Orta Therox</a>, <a href="http://twitter.com/hanke">Florian Hanke</a> and <a href="http://twitter.com/maxsteenbergen">Max Steenbergen</a></p></article><article class="col-md-8 col-md-offset-2 minor"><p><a href="http://cocoapods.org/support">Support</a>, <a href="https://github.com/CocoaPods/CocoaPods">Github Repo</a>, <a href="https://github.com/CocoaPods/Specs">Podspecs Repo</a>, <a href="https://guides.cocoapods.org">Podspec Documentation</a>, <span class="visible-lg-span"><a href="https://api.cocoapods.org">Developer Reference</a>, </span><a href="http://groups.google.com/group/cocoapods">Mailing List</a> &amp; <a href="http://twitter.com/CocoaPods">@CocoaPods</a>. </p></article></section></footer>
