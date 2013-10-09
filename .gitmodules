@@ -4,7 +4,3 @@
 [submodule "js/FitText"]
 	path = js/FitText
 	url = https://github.com/davatron5000/FitText.js
-[submodule "_gh-pages"]
-	path = _gh-pages
-	url = https://github.com/CocoaPods/blog.cocoapods.org.git
-	branch = gh-pages
