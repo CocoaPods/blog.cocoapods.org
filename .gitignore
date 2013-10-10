@@ -1,5 +1,3 @@
 _site
 .sass-cache
-assets/css/*
-!assets/css/.gitkeep
-
+_gh-pages
