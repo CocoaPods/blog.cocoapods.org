@@ -6,7 +6,7 @@ author: fabio
 categories: ios xcode 
 ---
 
-CocoaPods will generate two 'Acknowledgements' files for each target specified in your Podfile. If the pods are coming from the master repo, then they must include one. Private pods done. These contain the License details for each Pod and for most of the part having them in your acknowledgements will be enough to conform to the license.
+CocoaPods will generate two 'Acknowledgements' files for each target specified in your Podfile. If the pods are coming from the master repo, then they must include one. Private pods don't require one. These contain the License details for each Pod and for most of the part having them in your acknowledgements will be enough to conform to the license.
 
 CocoaPods generates a markdown file for general consumption, as well as a property list file that can be added to a settings bundle for an iOS application. You don't need to do anything for this to happen, it will just work. If you'd like to know more about extra things you can do with this, read on.
 
