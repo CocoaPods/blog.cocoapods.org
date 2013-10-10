@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>CocoaPods Blog - Articles</title>
+		<description>Updates for the fascinating developments happening in the CocoaPods world.</description>
+		<link>http://blog.cocoapods.org</link>
+		<atom:link href="http://blog.cocoapods.org/feed.articles.xml" rel="self" type="application/rss+xml" />
+		
+			
+			<item>
+				<title>CocoaPods 0.26</title>
+        
+        
+          <description>&lt;p&gt;Today we are releasing CocoaPods 0.26.&lt;/p&gt;
+
+&lt;p&gt;The most visible change is that CocoaPods now hides the schemes of the Pod
+targets. If this doesn&amp;#39;t ring a bell the following image should.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/blog_img/CocoaPods-0.26/schemes-comparison.png&quot; style=&quot;display:block;margin-left:auto;margin-right:auto;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+</description>  
+        
+        
+				<pubDate>Tue, 08 Oct 2013 00:00:00 +0100</pubDate>
+				<link>http://blog.cocoapods.org/CocoaPods-0.26</link>
+				<guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.26</guid>
+			</item>
+			
+		
+			
+			<item>
+				<title>On Design</title>
+        
+        
+          <description>&lt;p&gt;CocoaPods is arguably one of the most important open source project in the Objective-C community. It&amp;#39;s used in thousands of applications and has hundreds of thousands of downloads.&lt;/p&gt;
+
+&lt;p&gt;Building the tool, the community and the ecosystem around the project has happened organically with a mix of people coming and helping out to get us to a position where CocoaPods is essential to any project. &lt;/p&gt;
+
+&lt;p&gt;Starting from May 2013, I&amp;#39;ve been working with &lt;a href=&quot;http://andy-myers.co.uk&quot;&gt;Andy Myers&lt;/a&gt; to try and re-think the systems around CocoaPods, ranging from how we do documentation to the branding. This blog post is to open up our process a bit and to explain how we came to some of these ideas.&lt;/p&gt;
+
+</description>  
+        
+        
+				<pubDate>Thu, 03 Oct 2013 02:20:16 +0100</pubDate>
+				<link>http://blog.cocoapods.org/redesign</link>
+				<guid isPermaLink="true">http://blog.cocoapods.org/redesign</guid>
+			</item>
+			
+		
+			
+			<item>
+				<title>Why we don't accept donations</title>
+        
+        
+          <description>&lt;p&gt;TL;DR: While we very much appreciate the sentiment, the project (as an entity) does not accept financial donations. &lt;/p&gt;
+
+</description>  
+        
+        
+				<pubDate>Mon, 23 Sep 2013 02:20:16 +0100</pubDate>
+				<link>http://blog.cocoapods.org/Why-we-dont-accept-donations</link>
+				<guid isPermaLink="true">http://blog.cocoapods.org/Why-we-dont-accept-donations</guid>
+			</item>
+			
+		
+			
+			<item>
+				<title>Using Acknowledgements</title>
+        
+        
+          <description>&lt;p&gt;CocoaPods will generate two &amp;#39;Acknowledgements&amp;#39; files for each target specified in your Podfile. If the pods are coming from the master repo, then they must include one. Private pods done. These contain the License details for each Pod and for most of the part having them in your acknowledgements will be enough to conform to the license.&lt;/p&gt;
+
+&lt;p&gt;CocoaPods generates a markdown file for general consumption, as well as a property list file that can be added to a settings bundle for an iOS application. You don&amp;#39;t need to do anything for this to happen, it will just work. If you&amp;#39;d like to know more about extra things you can do with this, read on.&lt;/p&gt;
+
+</description>  
+        
+        
+				<pubDate>Sat, 10 Aug 2013 00:00:00 +0100</pubDate>
+				<link>http://blog.cocoapods.org/Acknowledgements</link>
+				<guid isPermaLink="true">http://blog.cocoapods.org/Acknowledgements</guid>
+			</item>
+			
+		
+	</channel>
+</rss>
