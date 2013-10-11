@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Cocoa Kucha <br/> 20 Nov 2013"
+title:  "Cocoa Kucha - 20 Nov 2013"
+post_title:  "Cocoa Kucha <br/> 20 Nov 2013"
 date:   2013-10-13
 author: orta
 categories: community cocoakucha
