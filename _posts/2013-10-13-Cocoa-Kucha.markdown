@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "Cocoa Kucha </br> 20 Nov 2013"
+date:   2013-10-13
+author: orta
+categories: community cocoakucha
+---
+
+CocoaPods is more than just a tool, CocoaPods is a community of over a [thousand commiters](https://github.com/CocoaPods/Specs/graphs/contributors), six thousand Podspecs and hundreds of thousands of users. To say the community is growing is a [mild understatement](https://github.com/CocoaPods/Specs/graphs/code-frequency). One of the cool things about a big community is that there's the chance that people will get clumped enough together to make meeting up and sharing ideas a possible. I'd like to announce our first attempt at trying to bring people together, starting in New York City this November.
+
+<!-- more -->
+
+Cocoa Kucha is a meetup in the style of [Pecha Kucha](http://www.pechakucha.org/faq). The idea is we get 8 people to talk about a topic related to Objective-C for 6 minutes and 20 seconds. 20 slides at 20 seconds. Mix that with some drinks, and conversation and I think we've got a nice evening.
+
+The format of a Pecha Kuchas makes it a great way to start experimenting with public speaking. The first time I ever spoke publicy was a Pecha Kucha on [folk dancing](https://github.com/orta/pechakucha/tree/1b92dd66d13654b7aa3024ced2ec6d052bfe6b1d) in the UK and then later on the history of the [game monopoly](http://orta.github.io/pechakucha/). At this point I'd like to open invites for people to talk, currently all of the slots are open and I will edit this post when all the slots are closed. 
+
+If you're interested in speaking, drop me an email to [orta@cocoapods.org](mailto:orta@cocoapods.org). I will be created a meetup event next week, it shall be held at the [Meetup.com HQ](http://meetup.com) on the 20th. With me being English all meetups must involve alcohol, and that is provided by [Artsy](http://artsy.net).
