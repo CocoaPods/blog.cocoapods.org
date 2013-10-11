@@ -28,7 +28,7 @@ task :deploy do
 
   Dir.chdir("_gh-pages") do
     puts "Pulling changes from server."
-    puts %x[git git reset --hard]
+    puts %x[git reset --hard]
     puts %x[git clean -xdf]
     puts %x[git checkout gh-pages]
     puts %x[git pull origin gh-pages]
