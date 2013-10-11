@@ -7,7 +7,21 @@
 		<atom:link href="http://blog.cocoapods.org/feed.articles.xml" rel="self" type="application/rss+xml" />
 		
 			
-			<item>
+				<title>Cocoa Kucha  20 Nov 2013</title>
+        
+        
+          <description>&lt;p&gt;CocoaPods is more than just a tool, CocoaPods is a community of over a &lt;a href=&quot;https://github.com/CocoaPods/Specs/graphs/contributors&quot;&gt;thousand commiters&lt;/a&gt;, six thousand Podspecs and &lt;a href=&quot;http://rubygems.org/gems/cocoapods&quot;&gt;hundreds of thousands of users&lt;/a&gt;. To say the community is growing is a &lt;a href=&quot;https://github.com/CocoaPods/Specs/graphs/code-frequency&quot;&gt;mild understatement&lt;/a&gt;. One of the cool things about a big community is that there&amp;#39;s the chance that people will get clumped enough together to make meeting up and sharing ideas a possible. I&amp;#39;d like to announce our first attempt at trying to bring people together, starting in New York City this November.&lt;/p&gt;
+
+</description>  
+        
+        
+				<pubDate>Sun, 13 Oct 2013 00:00:00 +0100</pubDate>
+				<link>http://blog.cocoapods.org/Cocoa-Kucha</link>
+				<guid isPermaLink="true">http://blog.cocoapods.org/Cocoa-Kucha</guid>
+			</item>
+			
+		
+			
 				<title>CocoaPods 0.26</title>
         
         
@@ -21,14 +35,13 @@ targets. If this doesn&amp;#39;t ring a bell the following image should.&lt;/p&g
 </description>  
         
         
-				<pubDate>Tue, 08 Oct 2013 00:00:00 +0200</pubDate>
+				<pubDate>Tue, 08 Oct 2013 00:00:00 +0100</pubDate>
 				<link>http://blog.cocoapods.org/CocoaPods-0.26</link>
 				<guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.26</guid>
 			</item>
 			
 		
 			
-			<item>
 				<title>On Design</title>
         
         
@@ -41,14 +54,13 @@ targets. If this doesn&amp;#39;t ring a bell the following image should.&lt;/p&g
 </description>  
         
         
-				<pubDate>Thu, 03 Oct 2013 03:20:16 +0200</pubDate>
+				<pubDate>Thu, 03 Oct 2013 02:20:16 +0100</pubDate>
 				<link>http://blog.cocoapods.org/redesign</link>
 				<guid isPermaLink="true">http://blog.cocoapods.org/redesign</guid>
 			</item>
 			
 		
 			
-			<item>
 				<title>Why we don't accept donations</title>
         
         
@@ -57,14 +69,13 @@ targets. If this doesn&amp;#39;t ring a bell the following image should.&lt;/p&g
 </description>  
         
         
-				<pubDate>Mon, 23 Sep 2013 03:20:16 +0200</pubDate>
+				<pubDate>Mon, 23 Sep 2013 02:20:16 +0100</pubDate>
 				<link>http://blog.cocoapods.org/Why-we-dont-accept-donations</link>
 				<guid isPermaLink="true">http://blog.cocoapods.org/Why-we-dont-accept-donations</guid>
 			</item>
 			
 		
 			
-			<item>
 				<title>Using Acknowledgements</title>
         
         
@@ -75,7 +86,7 @@ targets. If this doesn&amp;#39;t ring a bell the following image should.&lt;/p&g
 </description>  
         
         
-				<pubDate>Sat, 10 Aug 2013 00:00:00 +0200</pubDate>
+				<pubDate>Sat, 10 Aug 2013 00:00:00 +0100</pubDate>
 				<link>http://blog.cocoapods.org/Acknowledgements</link>
 				<guid isPermaLink="true">http://blog.cocoapods.org/Acknowledgements</guid>
 			</item>
