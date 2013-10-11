@@ -16,6 +16,13 @@ task :init do
   puts %x[bundle install]
 end
 
+desc 'Runs the web server locally and watches for changes'
+task :run do
+  puts "Starting the sever locally on http://localhost:4000"
+  sh "jekyll serve --watch --port 4000"
+end
+
+
 desc 'Deploy the site to the gh_pages branch and push'
 task :deploy do
 
