@@ -26,6 +26,14 @@ end
 desc 'Deploy the site to the gh_pages branch and push'
 task :deploy do
 
+  Dir.chdir("_gh-pages") do
+    puts "Pulling changes from server."
+    puts %x[git git reset --hard]
+    puts %x[git clean -xdf]
+    puts %x[git checkout gh-pages]
+    puts %x[git pull origin gh-pages]
+  end
+
   puts "Building site."
   puts %x[jekyll build -d _gh-pages]
 
