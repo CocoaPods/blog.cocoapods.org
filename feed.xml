@@ -10,8 +10,7 @@ layout: none
 		<atom:link href="{{ site.url }}/feed.articles.xml" rel="self" type="application/rss+xml" />
 		{% for post in site.posts %}
 			{% unless post.link %}
-			<item>
-				<title>{{ post.title }}</title>
+				<title>{{ post.title | replace:'<br/>','' }}</title>
         
         {% if post.content contains '<!-- more -->' %}
           <description>{{ post.content | split:'<!-- more -->' | first | xml_escape }}</description>  
