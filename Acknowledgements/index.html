@@ -56,7 +56,7 @@
     </article>
     
     <article class="content col-md-8">
-      <p>CocoaPods will generate two &#39;Acknowledgements&#39; files for each target specified in your Podfile. If the pods are coming from the master repo, then they must include one. Private pods done. These contain the License details for each Pod and for most of the part having them in your acknowledgements will be enough to conform to the license.</p>
+      <p>CocoaPods will generate two &#39;Acknowledgements&#39; files for each target specified in your Podfile. If the pods are coming from the master repo, then they must include one. Private pods don&#39;t require one. These contain the License details for each Pod and for most of the part having them in your acknowledgements will be enough to conform to the license.</p>
 
 <p>CocoaPods generates a markdown file for general consumption, as well as a property list file that can be added to a settings bundle for an iOS application. You don&#39;t need to do anything for this to happen, it will just work. If you&#39;d like to know more about extra things you can do with this, read on.</p>
 
@@ -172,7 +172,7 @@ that generate the text in your <code>Podfile</code> like this:</p>
 
 <section id="post-accessories"><section class="container row"><article class="content col-md-8 col-md-offset-2"><a href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2013-08-10-Acknowledgements.markdown"><img height="50" src="/assets/pull-request-image-fa02f5cc5a9233971ad04ee2c59caafc.png" style="background-color:#fb0006" width="50" /></a></article></section></section>
 
-<section class="container row" id="post-info"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "></article><article class="content col-6 col-sm-6 col-md-4 previous"><a href="/Why-we-dont-accept-donations" title="Why we don't accept donations"><header><h4>Next Post</h4></header><h3>Why we don't accept donations</h3><p>By Eloy Durán</p></a></article></section>
+<section class="container row" id="post-info"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "></article><article class="content col-6 col-sm-6 col-md-4 previous"><a href="/Why-we-dont-accept-donations" title="Why we don&#39;t accept donations"><header><h4>Next Post</h4></header><h3>Why we don&#39;t accept donations</h3><p>By Eloy Durán</p></a></article></section>
 
 
     <footer class="page-footer"><section class="container row"><article class="col-md-8 col-md-offset-2"><p>CocoaPods is a project from <a href="https://twitter.com/alloy">Eloy Durán</a>, <a href="https://twitter.com/fabiopelosin">Fabio Pelosin</a>, <a href="https://orta.github.io">Orta Therox</a>,  and The CocoaPods Dev Team with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p><p>Lovingly sponsored by <a href="http://www.fngtps.com">Fingertips</a>, <a href = "http://www.hipbyte.com">Hipbyte</a>, <a href="http://artsy.net">Artsy</a> and <a href="https://www.sauspiel.de">Sauspiel</a>.</p></article><article class="col-md-4 minor col-md-offset-2"><p>Website and API by <a href="http://twitter.com/hanke">Florian Hanke</a>, The CocoaPods Dev Team and <a href="http://twitter.com/manfreds">Manfred Stienstra</a>.</p></article><article class="col-md-4 minor"><p>Design by <a href="http://andy-myers.co.uk">Andy Myers</a>, <a href="http://orta.github.io">Orta Therox</a>, <a href="http://twitter.com/hanke">Florian Hanke</a> and <a href="http://twitter.com/maxsteenbergen">Max Steenbergen</a></p></article><article class="col-md-8 col-md-offset-2 minor"><p><a href="http://cocoapods.org/support">Support</a>, <a href="https://github.com/CocoaPods/CocoaPods">Github Repo</a>, <a href="https://github.com/CocoaPods/Specs">Podspecs Repo</a>, <a href="https://guides.cocoapods.org">Podspec Documentation</a>, <span class="visible-lg-span"><a href="https://api.cocoapods.org">Developer Reference</a>, </span><a href="http://groups.google.com/group/cocoapods">Mailing List</a> &amp; <a href="http://twitter.com/CocoaPods">@CocoaPods</a>. </p></article></section></footer>
@@ -181,12 +181,16 @@ that generate the text in your <code>Podfile</code> like this:</p>
     <script>window.jQuery || document.write('<script src="/assets/js/jquery.min.js"><\/script>')</script>
     <script src="/assets/bootstrap-431d83a320ff29a41203f5184136fc53.min"></script>
 
-
-    <!-- <script> -->
-    <!--   var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; -->
-    <!--   (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0]; -->
-    <!--   g.src='//www.google-analytics.com/ga.js'; -->
-    <!--   s.parentNode.insertBefore(g,s)}(document,'script')); -->
-    <!-- </script> -->
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-29866548-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </body>
 </html>

@@ -99,7 +99,7 @@ targets. If this doesn&#39;t ring a bell the following image should.</p>
   </header>
 
   
-      <p>CocoaPods will generate two &#39;Acknowledgements&#39; files for each target specified in your Podfile. If the pods are coming from the master repo, then they must include one. Private pods done. These contain the License details for each Pod and for most of the part having them in your acknowledgements will be enough to conform to the license.</p>
+      <p>CocoaPods will generate two &#39;Acknowledgements&#39; files for each target specified in your Podfile. If the pods are coming from the master repo, then they must include one. Private pods don&#39;t require one. These contain the License details for each Pod and for most of the part having them in your acknowledgements will be enough to conform to the license.</p>
 
 <p>CocoaPods generates a markdown file for general consumption, as well as a property list file that can be added to a settings bundle for an iOS application. You don&#39;t need to do anything for this to happen, it will just work. If you&#39;d like to know more about extra things you can do with this, read on.</p>
 
@@ -148,12 +148,16 @@ targets. If this doesn&#39;t ring a bell the following image should.</p>
     <script>window.jQuery || document.write('<script src="/assets/js/jquery.min.js"><\/script>')</script>
     <script src="/assets/bootstrap-431d83a320ff29a41203f5184136fc53.min"></script>
 
-
-    <!-- <script> -->
-    <!--   var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; -->
-    <!--   (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0]; -->
-    <!--   g.src='//www.google-analytics.com/ga.js'; -->
-    <!--   s.parentNode.insertBefore(g,s)}(document,'script')); -->
-    <!-- </script> -->
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-29866548-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </body>
 </html>

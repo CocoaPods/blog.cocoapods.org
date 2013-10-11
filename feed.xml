@@ -21,7 +21,7 @@ targets. If this doesn&amp;#39;t ring a bell the following image should.&lt;/p&g
 </description>  
         
         
-				<pubDate>Tue, 08 Oct 2013 00:00:00 +0100</pubDate>
+				<pubDate>Tue, 08 Oct 2013 00:00:00 +0200</pubDate>
 				<link>http://blog.cocoapods.org/CocoaPods-0.26</link>
 				<guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.26</guid>
 			</item>
@@ -41,7 +41,7 @@ targets. If this doesn&amp;#39;t ring a bell the following image should.&lt;/p&g
 </description>  
         
         
-				<pubDate>Thu, 03 Oct 2013 02:20:16 +0100</pubDate>
+				<pubDate>Thu, 03 Oct 2013 03:20:16 +0200</pubDate>
 				<link>http://blog.cocoapods.org/redesign</link>
 				<guid isPermaLink="true">http://blog.cocoapods.org/redesign</guid>
 			</item>
@@ -57,7 +57,7 @@ targets. If this doesn&amp;#39;t ring a bell the following image should.&lt;/p&g
 </description>  
         
         
-				<pubDate>Mon, 23 Sep 2013 02:20:16 +0100</pubDate>
+				<pubDate>Mon, 23 Sep 2013 03:20:16 +0200</pubDate>
 				<link>http://blog.cocoapods.org/Why-we-dont-accept-donations</link>
 				<guid isPermaLink="true">http://blog.cocoapods.org/Why-we-dont-accept-donations</guid>
 			</item>
@@ -68,14 +68,14 @@ targets. If this doesn&amp;#39;t ring a bell the following image should.&lt;/p&g
 				<title>Using Acknowledgements</title>
         
         
-          <description>&lt;p&gt;CocoaPods will generate two &amp;#39;Acknowledgements&amp;#39; files for each target specified in your Podfile. If the pods are coming from the master repo, then they must include one. Private pods done. These contain the License details for each Pod and for most of the part having them in your acknowledgements will be enough to conform to the license.&lt;/p&gt;
+          <description>&lt;p&gt;CocoaPods will generate two &amp;#39;Acknowledgements&amp;#39; files for each target specified in your Podfile. If the pods are coming from the master repo, then they must include one. Private pods don&amp;#39;t require one. These contain the License details for each Pod and for most of the part having them in your acknowledgements will be enough to conform to the license.&lt;/p&gt;
 
 &lt;p&gt;CocoaPods generates a markdown file for general consumption, as well as a property list file that can be added to a settings bundle for an iOS application. You don&amp;#39;t need to do anything for this to happen, it will just work. If you&amp;#39;d like to know more about extra things you can do with this, read on.&lt;/p&gt;
 
 </description>  
         
         
-				<pubDate>Sat, 10 Aug 2013 00:00:00 +0100</pubDate>
+				<pubDate>Sat, 10 Aug 2013 00:00:00 +0200</pubDate>
 				<link>http://blog.cocoapods.org/Acknowledgements</link>
 				<guid isPermaLink="true">http://blog.cocoapods.org/Acknowledgements</guid>
 			</item>
