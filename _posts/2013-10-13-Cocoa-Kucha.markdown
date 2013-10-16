@@ -19,11 +19,16 @@ If you're interested in speaking, drop an email to [orta@cocoapods.org](mailto:o
 
 Currently confirmed for the 20th
 
-* Blake Watters - [github](https://github.com/blakewatters/) - [@blakewatters](http://twitter.com/blakewatters)
-* Nils Hayat - [github](https://github.com/nilsou) - [@nilsou](http://twitter.com/nilsou)
-* Daniel Amitay - [github](https://github.com/danielamitay) - [@danielamitay](http://twitter.com/danielamitay)
-* Dustin Barker - [github](https://github.com/dstnbrkr) - [@dstnbrkr](http://twitter.com/dstnbrkr)
+* Blake Watters -  [@blakewatters](http://twitter.com/blakewatters) - [![blakewatters](/assets/blog_img/github_octokitty.png)](https://github.com/blakewatters/)
 
-* Bryan Irace - [github](https://github.com/irace) - [@irace](http://twitter.com/irace)
-* Klaas Pieter - [github](https://github.com/klaaspieter) - [@klaaspieter](http://twitter.com/klaaspieter)
-* Billy Gray - [github](https://github.com/billymeltdown) - [@billymeltdown](http://twitter.com/billymeltdown)
+* Nils Hayat - [@nilsou](http://twitter.com/nilsou) - [![nilsou](/assets/blog_img/github_octokitty.png)](https://github.com/nilsou/)
+
+* Daniel Amitay - [@danielamitay](http://twitter.com/danielamitay) - [![danielamitay](/assets/blog_img/github_octokitty.png)](https://github.com/danielamitay/) 
+
+* Dustin Barker - [@dstnbrkr](http://twitter.com/dstnbrkr) - [![dstnbrkr](/assets/blog_img/github_octokitty.png)](https://github.com/dstnbrkr/)
+
+* Bryan Irace - [@irace](http://twitter.com/irace) - [![irace](/assets/blog_img/github_octokitty.png)](https://github.com/irace/)
+
+* Klaas Pieter - [@klaaspieter](http://twitter.com/klaaspieter) - [![klaaspieter](/assets/blog_img/github_octokitty.png)](https://github.com/klaaspieter/)
+
+* Billy Gray - [@billymeltdown](http://twitter.com/billymeltdown) - [![billymeltdown](/assets/blog_img/github_octokitty.png)](https://github.com/billymeltdown/)
