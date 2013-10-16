@@ -19,8 +19,11 @@ If you're interested in speaking, drop an email to [orta@cocoapods.org](mailto:o
 
 Currently confirmed for the 20th
 
-* Blake Watters - [github](https://github.com/blakewatters/)
-* Nils Hayat - [github](https://github.com/nilsou)
-* Daniel Amitay - [github](https://github.com/danielamitay)
-* Dustin Barker - [github](https://github.com/dstnbrkr)
-* Bryan Irace - [github](https://github.com/irace)
+* Blake Watters - [github](https://github.com/blakewatters/) - [@blakewatters](http://twitter.com/blakewatters)
+* Nils Hayat - [github](https://github.com/nilsou) - [@nilsou](http://twitter.com/nilsou)
+* Daniel Amitay - [github](https://github.com/danielamitay) - [@danielamitay](http://twitter.com/danielamitay)
+* Dustin Barker - [github](https://github.com/dstnbrkr) - [@dstnbrkr](http://twitter.com/dstnbrkr)
+
+* Bryan Irace - [github](https://github.com/irace) - [@irace](http://twitter.com/irace)
+* Klaas Pieter - [github](https://github.com/klaaspieter) - [@klaaspieter](http://twitter.com/klaaspieter)
+* Billy Gray - [github](https://github.com/billymeltdown) - [@billymeltdown](http://twitter.com/billymeltdown)
