@@ -32,3 +32,5 @@ Currently confirmed for the 20th
 * Klaas Pieter - [@klaaspieter](http://twitter.com/klaaspieter) - [![klaaspieter](/assets/blog_img/github_octokitty.png)](https://github.com/klaaspieter/)
 
 * Billy Gray - [@billymeltdown](http://twitter.com/billymeltdown) - [![billymeltdown](/assets/blog_img/github_octokitty.png)](https://github.com/billymeltdown/)
+
+* Jack Flintermann - [@jflinter](http://twitter.com/jflinter) - [![jflinter](/assets/blog_img/github_octokitty.png)](https://github.com/jflinter/)
