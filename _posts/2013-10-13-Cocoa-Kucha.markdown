@@ -23,3 +23,4 @@ Currently confirmed for the 20th
 * Nils Hayat - [github](https://github.com/nilsou)
 * Daniel Amitay - [github](https://github.com/danielamitay)
 * Dustin Barker - [github](https://github.com/dstnbrkr)
+* Bryan Irace - [github](https://github.com/irace)
