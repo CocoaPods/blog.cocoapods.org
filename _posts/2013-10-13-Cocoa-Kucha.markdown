@@ -15,7 +15,7 @@ Cocoa Kucha is a meetup in the style of [Pecha Kucha](http://www.pechakucha.org/
 
 The format of a Pecha Kuchas makes it a great way to start experimenting with public speaking. The first time I spoke publicy was at a Pecha Kucha on [folk dancing](https://github.com/orta/pechakucha/tree/1b92dd66d13654b7aa3024ced2ec6d052bfe6b1d) in the UK, and then later on the history of the game [monopoly](http://orta.github.io/pechakucha/). At this point I'd like to open invites for people to talk, currently all of the slots are open and I will edit this post when all the slots are closed. 
 
-If you're interested in speaking, drop an email to [orta@cocoapods.org](mailto:orta@cocoapods.org). You can join our [NYC meetup group](http://www.meetup.com/CocoaPods-NYC/) to keep up to date, and the event will allow RSVPs 2 weeks before on the 6th Nov. Thanks to [@W5mith](http://twitter.com/W5mith) & [meetup.com](http://meetup.com) for hosting us this time.
+You can join our [NYC meetup group](http://www.meetup.com/CocoaPods-NYC/) to keep up to date, and the event will allow RSVPs 2 weeks before on the 6th Nov. Thanks to [@W5mith](http://twitter.com/W5mith) & [meetup.com](http://meetup.com) for hosting us this time.
 
 Currently confirmed for the 20th
 
