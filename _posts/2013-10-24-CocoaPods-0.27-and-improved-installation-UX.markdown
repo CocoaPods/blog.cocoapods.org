@@ -133,6 +133,13 @@ The solution is simple and, in our case, two-fold:
   `XCODEPROJ_BUILD` environment variable. Set it to `1` to _always_ compile or
   to `0` to _never_ compile.
 
+  Note that you can recognize that you’re using the prebuilt binary by the
+  following sentence in the `gem install` output:
+
+```
+[!] You are using the prebuilt binary version of the xcodeproj gem.
+```
+
 
 ## Notes for RubyGems developers
 
