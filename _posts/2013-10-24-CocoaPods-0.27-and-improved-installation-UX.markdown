@@ -15,6 +15,11 @@ headers location on OS X (Mountain Lion _and_ Mavericks).
 
 <!-- more -->
 
+<center>
+
+![Cocoapods 0 27 Install](https://raw.github.com/CocoaPods/blog.cocoapods.org/master/assets/blog_img/CocoaPods-0.27/cocoapods-0-27-install.gif)
+
+</center>
 
 ## History on the underlying problem
 
