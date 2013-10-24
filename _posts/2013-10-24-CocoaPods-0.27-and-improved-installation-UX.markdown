@@ -68,8 +68,12 @@ Here’s [a recent blog post](http://bit.ly/14B38md) that gives this illusion an
 here’s a typical tweet that illustrates how this suggestion leads a pure Ruby
 user astray:
 
+<center>
+
 <blockquote class="twitter-tweet"><p>Soooo... I need to install homebrew for rvm, ruby-install, and rbenv, and then will be able to `gem install cocoa pods`? <a href="https://twitter.com/search?q=%23shitshow&amp;src=hash">#shitshow</a></p>&mdash; ¡ɜɿoɾɪɹℲ (@frijole) <a href="https://twitter.com/frijole/statuses/392339577232703488">October 21, 2013</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+</center>
 
 Shitshow indeed.
 
