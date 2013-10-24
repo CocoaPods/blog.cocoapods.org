@@ -7,6 +7,26 @@
 		<atom:link href="http://blog.cocoapods.org/feed.articles.xml" rel="self" type="application/rss+xml" />
 		
 			
+				<title>CocoaPods 0.27 and improved installation UX</title>
+        
+        
+          <description>&lt;p&gt;TL;DR: &lt;em&gt;Compilation as part of the CocoaPods gem install process is dead. Long
+live precompiled gems!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The CocoaPods gems will now be installable &lt;em&gt;without&lt;/em&gt;
+the need for installing the Xcode Command Line Tools and fixing the Ruby
+headers location on OS X (Mountain Lion &lt;em&gt;and&lt;/em&gt; Mavericks).&lt;/p&gt;
+
+</description>  
+        
+        
+				<pubDate>Thu, 24 Oct 2013 00:00:00 +0100</pubDate>
+				<link>http://blog.cocoapods.org/CocoaPods-0.27-and-improved-installation-UX</link>
+				<guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.27-and-improved-installation-UX</guid>
+			</item>
+			
+		
+			
 				<title>Cocoa Kucha - 20 Nov 2013</title>
         
         

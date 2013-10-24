@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+      <title>CocoaPods 0.27 and improved installation UX - CocoaPods Blog</title>
+    
+
+    <meta name="description" content="The blog for CocoaPods.org an Objective-C dependency manager">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <link rel="alternate" type="application/rss+xml" title="CocoaPods Blog" href="/feed.xml">
+
+    <link rel="stylesheet" href="/assets/main-3b0ecc2cf672120baa1b94d5907c4113.css">
+    <link rel="stylesheet" href="/assets/blog-a0f344522120729fa1192a7c1868326b.css">
+
+    <script src="/assets/modernizr-c744ba14cbf42007bf401a6dd60772e8.min"></script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-29866548-3', 'cocoapods.org');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-header-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="/"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://cocoapods.org">About</a></li><li><a href="http://docs.cocoapods.org">API Docs</a></li><li><a href="http://docs.cocoapods.org/guides/index.html">Guides</a></li><li class="active"><a href="/">Blog</a></li></ul></div></section></nav>
+
+    <section class="container row">
+  <header class="col-md-8 col-md-offset-2 headline blog-post">
+    
+      <h1>CocoaPods 0.27 and improved installation UX</h1>
+    
+    
+  </header>
+</section>
+
+<section id="content-wrapper" class="post">
+  <section class="container row">
+
+    <article class="author metadata col-md-2 col-md-push-10">
+      <header>
+        
+          
+            <img class="gravatar large" src="http://gravatar.com/avatar/424a9ce662b059c35063b405e160461d?s=144" height=72 width=72>
+          
+          
+            
+              <p><a href="http://twitter.com/alloy">Eloy Durán</a></p>
+            
+          
+           <p>24 October 2013</p>
+      </header>
+    </article>
+    
+    <article class="content col-md-8">
+      <p>TL;DR: <em>Compilation as part of the CocoaPods gem install process is dead. Long
+live precompiled gems!</em></p>
+
+<p>The CocoaPods gems will now be installable <em>without</em>
+the need for installing the Xcode Command Line Tools and fixing the Ruby
+headers location on OS X (Mountain Lion <em>and</em> Mavericks).</p>
+
+<!-- more -->
+
+<p><center></p>
+
+<p><img src="https://raw.github.com/CocoaPods/blog.cocoapods.org/master/assets/blog_img/CocoaPods-0.27/cocoapods-0-27-install.gif" alt="Cocoapods 0 27 Install"></p>
+
+<p></center></p>
+
+<h2>History on the underlying problem</h2>
+
+<p>While CocoaPods and most of its dependencies are implemented in pure Ruby there
+is one dependency that requires a bit of C code, or –in Ruby parlance– a
+‘Ruby C extension’.</p>
+
+<p>Typically, a ‘Ruby C extension’ will be compiled on the user’s machine during
+installation of the gem it belongs to. While this leads to better portability,
+it <em>does</em> add the requirement of having a compiler and the Ruby C headers, both
+of which are <strong>not</strong> available on OS X by default.</p>
+
+<p><em>To be fair, Mavericks does come with the Command Line Tools pre-installed, and
+thus with a compiler, but it does not place the Ruby C headers in the right
+location and <a href="https://gist.github.com/goshakkk/5763489">manual intervention</a> is
+required.</em></p>
+
+<p>The dependency with a C extension that we have is
+<a href="https://github.com/CocoaPods/Xcodeproj">Xcodeproj</a>, the library that powers
+our Xcode project parsing and generation. It does this by utilising the OS X
+Core Foundation API called <a href="http://bit.ly/1a9irJT">CFPropertyList</a>. This API
+allows us to read <em>any type</em> of PList, including the deprecated ASCII format
+that Xcode still uses, and generate a PList readable by Xcode. While there were
+–at the time of implementing Xcodeproj– some pure Ruby libraries to read or
+write one of the PList formats, there was none that implemented them all to our
+satisfaction. Finally, as a Xcode project is an undocumented format, we did not
+want to spend a lot of time on implementing and possibly having to replace it
+in the future if Apple would ever decide to change the format.</p>
+
+<h2>UX Perspective</h2>
+
+<p><em>You can skip to ‘The solution’ if you’re not interested in a discussion on the
+ramifications of how to get things done with Ruby and the status quo.</em></p>
+
+<p>These sorts of issues make the out-of-the-box UX for pure Ruby <strong>users</strong> really
+bad. CocoaPods is such a tool that has many more users whom are <strong>not</strong> Ruby
+developers. I.e. Ruby is somewhat of an implementation detail. This
+understandably leads to frustrated users.</p>
+
+<p>To add insult to injury, such users –in their willingness to give CocoaPods a
+second chance– will usually google for a solution leading them into, what I
+call, the ‘developer bubble’ of Ruby developers.</p>
+
+<p>In this ‘developer bubble’ there is <strong>no sane</strong> Ruby environment <em>unless</em> you
+<em>at least</em> build your own Ruby, but <em>preferably</em> including one or more of the
+following tools: <a href="http://brew.sh">homebrew</a>, <a href="https://rvm.io">RVM</a>,
+<a href="http://rbenv.org">rbenv</a>, and many other alternatives.</p>
+
+<p>Here’s <a href="http://bit.ly/14B38md">a recent blog post</a> that gives this illusion and
+here’s a typical tweet that illustrates how this suggestion leads a pure Ruby
+user astray:</p>
+
+<p><center></p>
+
+<blockquote class="twitter-tweet"><p>Soooo... I need to install homebrew for rvm, ruby-install, and rbenv, and then will be able to `gem install cocoa pods`? <a href="https://twitter.com/search?q=%23shitshow&amp;src=hash">#shitshow</a></p>&mdash; ¡ɜɿoɾɪɹℲ (@frijole) <a href="https://twitter.com/frijole/statuses/392339577232703488">October 21, 2013</a></blockquote>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p></center></p>
+
+<p>Shitshow indeed.</p>
+
+<p>The sad part is, it isn’t even necessary. Not if you <em>are</em> a Ruby developer,
+let alone if you are a pure user. We in the Ruby community need to fix this
+perspective and look at the mess we’ve gotten ourselves in <em>from the outside</em>
+and better frame our suggestions in context. But I digress, for now.</p>
+
+<h2>Solution</h2>
+
+<p>The solution is simple and, in our case, two-fold:</p>
+
+<h3><em>Recommend the use of the Ruby version that comes with OS X.</em></h3>
+
+<p>The only remaining –but very valid– concern is that, by default, you will
+  have to use <code>sudo</code> when installing gems. (This is only an issue for the
+  duration of the gem installation, though.)</p>
+
+<p>If you do <strong>not</strong> want to grant RubyGems admin privileges for this process,
+  you can tell RubyGems to install into your user directory by passing either
+  the <code>--user-install</code> flag to <code>gem install</code> or by configuring the RubyGems
+  environment. The latter is in our opinion the best solution. To do this,
+  edit the <code>.profile</code> file in your home directory and add or amend it to
+  include these lines:</p>
+<div class="highlight">      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="row container">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="sh language-sh" data-lang="sh">  <span class="nb">export </span><span class="nv">GEM_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/gems
+  <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$GEM_HOME</span>/bin:<span class="nv">$PATH</span>
+</code></pre>      </article>
+      </section>
+      </div>
+      
+      <section class="container row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Note that if you choose to use the <code>--user-install</code> option, you will still
+  have to configure your <code>.profile</code> file to set the <code>PATH</code> or use the command
+  prepended by the full path. You can find out where a gem is installed with
+  <code>gem which cocoapods</code>. E.g.</p>
+<div class="highlight">      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="row container">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="sh language-sh" data-lang="sh">  <span class="nv">$ </span>gem install cocoapods --user-install
+  <span class="nv">$ </span>gem which cocoapods
+  /Users/eloy/.gem/ruby/1.8/gems/cocoapods-0.27.0/lib/cocoapods.rb
+  <span class="nv">$ </span>/Users/eloy/.gem/ruby/1.8/gems/cocoapods-0.27.0/bin/pod install
+</code></pre>      </article>
+      </section>
+      </div>
+      
+      <section class="container row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<h3><em>Provide prebuilt binaries for the Ruby versions that come with OS X.</em></h3>
+
+<p>In our case this means a prebuilt version of the C extension for Ruby 1.8.7
+  on OS X 10.8.x and for Ruby 2.0.0 on OS X 10.9.x. On these versions, the
+  user does <strong>not</strong> have to install the Xcode Command Line Tools, nor fix the
+  Ruby C headers.</p>
+
+<p>If you are using a custom Ruby version, however, regardless of it being the
+  exact same Ruby version for which we provide prebuilt binaries, you <em>will</em>
+  have to compile the C extension and thus need the Xcode Command Line Tools.</p>
+
+<p>This all works transperantly, so you don’t need to think about it much. If,
+  however, for whatever reason you wish to control this then you can use the
+  <code>XCODEPROJ_BUILD</code> environment variable. Set it to <code>1</code> to <em>always</em> compile or
+  to <code>0</code> to <em>never</em> compile.</p>
+
+<p>Note that you can recognize that you’re using the prebuilt binary by the
+  following sentence in the <code>gem install</code> output:</p>
+<div class="highlight">      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="row container">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="text language-text" data-lang="text">[!] You are using the prebuilt binary version of the xcodeproj gem.
+</code></pre>      </article>
+      </section>
+      </div>
+      
+      <section class="container row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<h2>Notes for RubyGems developers</h2>
+
+<p>Over the course of figuring out the best way to cater to our users, I came to
+the following insights:</p>
+
+<h3><em>RubyGems built-in prebuilt binaries support.</em></h3>
+
+<p>RubyGems automagically installs a CPU-architecture + OS-version specific
+  version of your gem if one exists with the following filename:
+  <code>[NAME]-[VERSION]-[ARCH]-[PLATFORM].gem</code>.
+  E.g.: <code>xcodeproj-0.14.0-universal.x86_64-darwin13.gem</code>.</p>
+
+<p>While this allows you to prebuilt for specific architectures and OS versions,
+  it doesn’t allow for control over which Ruby version you have. This means it
+  is not an option for us, as we have to check if the Ruby you are using is in
+  fact a pre-installed OS X Ruby version. (In case there <em>is</em> a modifier to
+  control the Ruby version, please let me know and I will update this section.)</p>
+
+<h3><em>RubyGems installation without the need for <code>make</code>.</em></h3>
+
+<p>Because we have to check if the Ruby version you are using is a version that
+  comes pre-installed with OS X, we have to perform these checks at the time
+  that the gem is being installed. Typically, RubyGems authors ‘abuse’ their
+  <code>extconf.rb</code> to generate a no-op <code>Makefile</code> in the case that no compilation
+  is required. This, however, means that the user will still need to have
+  <code>make</code> installed, which is not the case on OS X 10.8.</p>
+
+<p>Luckily <a href="https://twitter.com/drbrain">Eric Hodel</a>, one of the RubyGems
+  maintainers, pointed me to an undocumented feature. Instead of specifying the
+  extension like so:</p>
+<div class="highlight">      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="row container">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby">  <span class="n">s</span><span class="o">.</span><span class="n">extensions</span> <span class="o">=</span> <span class="s2">&quot;ext/xcodeproj/extconf.rb&quot;</span>
+</code></pre>      </article>
+      </section>
+      </div>
+      
+      <section class="container row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>You can alternatively specify a <code>Rakefile</code>, in which case RubyGems will leave
+  running <code>make</code>, or whatever you need to run, up to your rake task:</p>
+<div class="highlight">      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="row container">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby">  <span class="n">s</span><span class="o">.</span><span class="n">extensions</span> <span class="o">=</span> <span class="s2">&quot;ext/xcodeproj/Rakefile&quot;</span>
+</code></pre>      </article>
+      </section>
+      </div>
+      
+      <section class="container row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<h3><em>Prebuilt binary packaging helpers.</em></h3>
+
+<p>The <a href="https://github.com/luislavena/rake-compiler">rake-compiler</a> library is
+  very helpful in prebuilding extensions and understanding how RubyGems handles
+  these gem filename formats. However, if you are going to target very specific
+  Ruby versions which are the same regardless of user/machine –like we do– then
+  it’s much simpler to just vendor the result of your <code>extconf.rb</code> (i.e. the
+  <code>Makefile</code> and possibly <code>extconf.h</code>) and use those to build your extensions.
+  Here’s <a href="http://bit.ly/1a9tp25">our final solution</a>.</p>
+
+    </article>
+
+  </section>
+</section>
+
+<section id="post-accessories"><section class="container row"><article class="content col-md-8 col-md-offset-2"><a href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2013-10-24-CocoaPods-0.27-and-improved-installation-UX.markdown"><img height="50" src="/assets/pull-request-image-fa02f5cc5a9233971ad04ee2c59caafc.png" style="background-color:#fb0006" width="50" /></a></article></section></section>
+
+<section class="container row" id="post-info"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/Cocoa-Kucha" title="Cocoa Kucha - 20 Nov 2013"><header><h4>Previous Post</h4></header><h3>Cocoa Kucha - 20 Nov 2013</h3><p>Orta Therox</p></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></section>
+
+
+    <footer class="page-footer"><section class="container row"><article class="col-md-8 col-md-offset-2"><p>CocoaPods is a project from <a href="https://twitter.com/alloy">Eloy Durán</a>, <a href="https://twitter.com/fabiopelosin">Fabio Pelosin</a>, <a href="https://orta.github.io">Orta Therox</a>,  and The CocoaPods Dev Team with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p><p>Lovingly sponsored by <a href="http://www.fngtps.com">Fingertips</a>, <a href = "http://www.hipbyte.com">Hipbyte</a>, <a href="http://artsy.net">Artsy</a> and <a href="https://www.sauspiel.de">Sauspiel</a>.</p></article><article class="col-md-4 minor col-md-offset-2"><p>Website and API by <a href="http://twitter.com/hanke">Florian Hanke</a>, The CocoaPods Dev Team and <a href="http://twitter.com/manfreds">Manfred Stienstra</a>.</p></article><article class="col-md-4 minor"><p>Design by <a href="http://andy-myers.co.uk">Andy Myers</a>, <a href="http://orta.github.io">Orta Therox</a>, <a href="http://twitter.com/hanke">Florian Hanke</a> and <a href="http://twitter.com/maxsteenbergen">Max Steenbergen</a></p></article><article class="col-md-8 col-md-offset-2 minor"><p><a href="http://cocoapods.org/support">Support</a>, <a href="https://github.com/CocoaPods/CocoaPods">Github Repo</a>, <a href="https://github.com/CocoaPods/Specs">Podspecs Repo</a>, <a href="https://guides.cocoapods.org">Podspec Documentation</a>, <span class="visible-lg-span"><a href="https://api.cocoapods.org">Developer Reference</a>, </span><a href="http://groups.google.com/group/cocoapods">Mailing List</a> &amp; <a href="http://twitter.com/CocoaPods">@CocoaPods</a>. </p></article></section></footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/js/jquery.min.js"><\/script>')</script>
+    <script src="/assets/bootstrap-431d83a320ff29a41203f5184136fc53.min"></script>
+  </body>
+</html>
