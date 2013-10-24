@@ -87,7 +87,7 @@ and better frame our suggestions in context. But I digress, for now.
 
 The solution is simple and, in our case, two-fold:
 
-### _Advice users to use the Ruby version that comes pre-installed on OS X._
+### _Recommend the use of the Ruby version that comes with OS X._
 
   The only remaining –but very valid– concern is that, by default, you will
   have to use `sudo` when installing gems. (This is only an issue for the
