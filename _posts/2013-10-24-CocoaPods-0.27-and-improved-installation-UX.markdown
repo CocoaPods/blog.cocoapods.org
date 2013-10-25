@@ -133,7 +133,7 @@ The solution is simple and, in our case, two-fold:
   exact same Ruby version for which we provide prebuilt binaries, you _will_
   have to compile the C extension and thus need the Xcode Command Line Tools.
 
-  This all works transperantly, so you don’t need to think about it much. If,
+  This all works transparently, so you don’t need to think about it much. If,
   however, for whatever reason you wish to control this then you can use the
   `XCODEPROJ_BUILD` environment variable. Set it to `1` to _always_ compile or
   to `0` to _never_ compile.
