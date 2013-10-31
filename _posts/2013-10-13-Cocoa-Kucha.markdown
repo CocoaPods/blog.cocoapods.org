@@ -19,18 +19,11 @@ You can join our [NYC meetup group](http://www.meetup.com/CocoaPods-NYC/) to kee
 
 Currently confirmed for the 20th
 
-* Blake Watters -  [@blakewatters](http://twitter.com/blakewatters) - [![blakewatters](/assets/blog_img/github_octokitty.png)](https://github.com/blakewatters/)
-
-* Nils Hayat - [@nilsou](http://twitter.com/nilsou) - [![nilsou](/assets/blog_img/github_octokitty.png)](https://github.com/nilsou/)
-
-* Daniel Amitay - [@danielamitay](http://twitter.com/danielamitay) - [![danielamitay](/assets/blog_img/github_octokitty.png)](https://github.com/danielamitay/) 
-
-* Dustin Barker - [@dstnbrkr](http://twitter.com/dstnbrkr) - [![dstnbrkr](/assets/blog_img/github_octokitty.png)](https://github.com/dstnbrkr/)
-
-* Bryan Irace - [@irace](http://twitter.com/irace) - [![irace](/assets/blog_img/github_octokitty.png)](https://github.com/irace/)
-
-* Klaas Pieter - [@klaaspieter](http://twitter.com/klaaspieter) - [![klaaspieter](/assets/blog_img/github_octokitty.png)](https://github.com/klaaspieter/)
-
-* Billy Gray - [@billymeltdown](http://twitter.com/billymeltdown) - [![billymeltdown](/assets/blog_img/github_octokitty.png)](https://github.com/billymeltdown/)
-
-* Jack Flintermann - [@jflinter](http://twitter.com/jflinter) - [![jflinter](/assets/blog_img/github_octokitty.png)](https://github.com/jflinter/)
+* [![blakewatters](/assets/blog_img/github_octokitty.png)](https://github.com/blakewatters/)  Blake Watters -  [@blakewatters](http://twitter.com/blakewatters)
+* [![nilsou](/assets/blog_img/github_octokitty.png)](https://github.com/nilsou/)  Nils Hayat - [@nilsou](http://twitter.com/nilsou)
+* [![danielamitay](/assets/blog_img/github_octokitty.png)](https://github.com/danielamitay/)   Daniel Amitay - [@danielamitay](http://twitter.com/danielamitay)
+* [![dstnbrkr](/assets/blog_img/github_octokitty.png)](https://github.com/dstnbrkr/)  Dustin Barker - [@dstnbrkr](http://twitter.com/dstnbrkr)
+* [![irace](/assets/blog_img/github_octokitty.png)](https://github.com/irace/)  Bryan Irace - [@irace](http://twitter.com/irace)
+* [![klaaspieter](/assets/blog_img/github_octokitty.png)](https://github.com/klaaspieter/)  Klaas Pieter - [@klaaspieter](http://twitter.com/klaaspieter)
+* [![billymeltdown](/assets/blog_img/github_octokitty.png)](https://github.com/billymeltdown/)  Billy Gray - [@billymeltdown](http://twitter.com/billymeltdown)
+* [![jflinter](/assets/blog_img/github_octokitty.png)](https://github.com/jflinter/)  Jack Flintermann - [@jflinter](http://twitter.com/jflinter)
