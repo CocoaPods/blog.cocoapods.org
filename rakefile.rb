@@ -25,6 +25,12 @@ end
 
 desc 'Deploy the site to the gh_pages branch and push'
 task :deploy do
+  FileUtils.rm_rf '_gh-pages'
+  puts "Cloning gh-pages branch..."
+  puts %x[git clone git@github.com:CocoaPods/blog.cocoapods.org.git _gh-pages]
+  Dir.chdir('_gh-pages') do
+    puts %x[git checkout gh-pages]
+  end
 
   Dir.chdir("_gh-pages") do
     puts "Pulling changes from server."
