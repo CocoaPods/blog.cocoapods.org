@@ -8,7 +8,7 @@ categories: cocoapods twitter
 
 TL;DR: _New library notifications have moved from the [@CocoaPods](http://twitter.com/CocoaPods) twitter to the [@CocoaPodsFeed](http://twitter.com/CocoaPodsFeed) twitter account_
 
-<a href="https://twitter.com/CocoaPods" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @CocoaPods</a> → <a href="https://twitter.com/CocoaPodsFeed" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @CocoaPodsFeed</a>
+If you want to follow the new libraries on CocoaPods, <a href="https://twitter.com/CocoaPodsFeed" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @CocoaPodsFeed</a>
 
 <!-- more -->
 
