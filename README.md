@@ -22,7 +22,15 @@ The `_gh-pages` folder (which is ignored) is used to checkout the gh-pages of
 this repo. `rake deploy` will push the built version of the site to that branch
 and push to the server pulling in any changes.
 
-### License
+## Drafts
+
+Drafts are stored in the `_drafts` folder to leverage the [drafts feature] of
+jekyll. The `rake run` task is configured to show the drafts.
+
+[drafts feature]: http://jekyllrb.com/docs/drafts/
+
+
+## License
 
 This repository and CocoaPods are available under the MIT license.
 
