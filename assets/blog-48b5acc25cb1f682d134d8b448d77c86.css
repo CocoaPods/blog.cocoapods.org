@@ -1,3 +1,10 @@
+h1, h2, h3 {
+  font-weight: normal; }
+
+p iframe {
+  position: relative;
+  top: 4px; }
+
 .headline.index {
   text-align: center; }
   .headline.index h1 {
