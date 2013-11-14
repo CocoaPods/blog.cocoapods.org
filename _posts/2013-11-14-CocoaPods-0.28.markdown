@@ -1,0 +1,139 @@
+---
+layout: post
+title:  "CocoaPods 0.28"
+date:   2013-11-14
+author: fabio
+categories: cocoapods releases
+---
+
+TL;DR: _CocoaPods 0.28 introduces support for plugins._
+
+Fighting feature creep in CocoaPods is no easy, we hear about a lot of great
+ideas and many of them don't make the cut as they would not be useful for at
+least the 80% of our users. The ideal solution, would be support for third
+party plugins and, lucky, an elegant and lean patch from [Les Hill] has
+introduced it.
+
+[Les Hill]: http://blog.leshill.org
+
+<!-- more -->
+
+Plugins support allows to tweak the internals of CocoaPods and to insert
+additional commands. As a matter of fact two new commands are available right
+from the start:
+
+[cocoapods-open]: https://github.com/leshill/open_pod_bay
+[cocoapods-docs]: https://github.com/CocoaPods/cocoapods-docs
+
+The discoverability of plugins is another important topic that we considered.
+Our solution is to adopt a non-enforced convention: plugins should be named
+after the `cocoapods-PLUGIN_NAME` format. In this way, to check for the
+available plugins, you can just use this handy [RubyGems search].
+
+[RubyGems search]: http://rubygems.org/search?utf8=✓&query=cocoapods-
+
+This release also includes a galore of bug fixes, mostly related to the
+handling of xcassets resources.
+
+## Creating plugins
+
+A CocoaPods plugin is a gem which includes a file named `cocoapods_plugin.rb`.
+CocoaPods will load this file, for any installed gem which includes it. The
+file will be loaded before running any command but after CocoaPods files (and
+the one of its dependencies) have been loaded. The convention is to use this
+file to require the actual implementation of the plugin.
+
+For example [cocoapods-open] has the following `cocoapods_plugin.rb`
+
+```ruby
+require 'pod/command/open'
+```
+
+To create a new gem you can use [bundler] which provides a convenient command:
+
+[bundler]: http://bundler.io
+
+```
+$ bundle gem NAME
+```
+
+### Adding subcommands
+
+Adding new commands is very easy. You just need to create a subclass of the
+command which will be used as the namespace. Subsequently it is necessary to
+provide the metadata of the new command and its logic. For more information you
+can check the documentation of the [CLAide] gem and the [source code] of the
+CocoaPods commands.
+
+[CLAide]:https://github.com/CocoaPods/CLAide
+[source code]:https://github.com/CocoaPods/CocoaPods/tree/master/lib/cocoapods/command
+
+If this sounds complicated, don't be scared; we love simplicity! Actually the
+implementation of those steps is simpler than their description. Following you
+can find the __complete__ implementation of the `pod spec doc` command.
+
+```ruby
+# lib/pod/command/spec/doc.rb
+
+module Pod
+  class Command
+    class Spec
+      class Doc < Spec
+        self.summary = "Opens the web documentation of a Pod."
+
+        self.description = <<-DESC
+          Opens the web documentation of the Pod with the given NAME.
+        DESC
+
+        self.arguments = 'NAME'
+
+        def initialize(argv)
+          @name = argv.shift_argument
+          super
+        end
+
+        def validate!
+          super
+          help! "A Pod name is required." unless @name
+        end
+
+        def run
+          path = get_path_of_spec(@name)
+          spec = Specification.from_file(path)
+          UI.puts "Opening #{spec.name} documentation"
+          `open "http://cocoadocs.org/docsets/#{spec.name}"`
+        end
+      end
+    end
+  end
+end
+```
+
+### APIs
+
+As of yet, an explicit API to access CocoaPods logic has not be defined. So try
+to fail as gracefully as possible in case a future version of CocoaPods breaks
+your usage. Also please let us know about your needs, so we can take them into
+account to finalize APIs.
+
+### Checklist
+
+- Name the plugin after the `cocoapods-PLUGIN_NAME` convention.
+- Include a `cocoapods_plugin.rb` file.
+- Use the `cocoapods_plugin.rb` file to load the actual implementation.
+- Fail gracefully when relying on CocoaPods methods.
+- Let us know if you make something cool!
+
+## Updating
+
+To install the last release of CocoaPods you can run:
+
+```
+$ [sudo] gem install cocoapods
+```
+
+Until version 1.0 we strongly encourage you to keep CocoaPods up to date.
+
+For all the details, don't miss the
+[Changelog](https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md).
+
