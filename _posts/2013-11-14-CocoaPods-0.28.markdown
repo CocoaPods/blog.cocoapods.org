@@ -8,22 +8,22 @@ categories: cocoapods releases
 
 TL;DR: _CocoaPods 0.28 introduces support for plugins._
 
-Fighting feature creep in CocoaPods is no easy, we hear about a lot of great
+Fighting feature creep in CocoaPods is not easy. We hear about a lot of great
 ideas and many of them don't make the cut as they would not be useful for at
-least the 80% of our users. The ideal solution, would be support for third
-party plugins and, lucky, an elegant and lean patch from [Les Hill] has
-introduced it.
+least 80% of our users. The ideal solution would be support for third-party
+plugins and, luckily, an elegant and lean patch from [Les Hill] has introduced
+it.
 
 [Les Hill]: http://blog.leshill.org
 
 <!-- more -->
 
-Plugins support allows to tweak the internals of CocoaPods and to insert
-additional commands. As a matter of fact two new commands are available right
+Plugin support allows one to tweak the internals of CocoaPods and to insert
+additional commands. As a matter of fact, two new commands are available right
 from the start:
 
-[cocoapods-open]: https://github.com/leshill/open_pod_bay
-[cocoapods-docs]: https://github.com/CocoaPods/cocoapods-docs
+* [cocoapods-open](https://github.com/leshill/open_pod_bay)
+* [cocoapods-docs](https://github.com/CocoaPods/cocoapods-docs)
 
 The discoverability of plugins is another important topic that we considered.
 Our solution is to adopt a non-enforced convention: plugins should be named
@@ -38,12 +38,13 @@ handling of xcassets resources.
 ## Creating plugins
 
 A CocoaPods plugin is a gem which includes a file named `cocoapods_plugin.rb`.
-CocoaPods will load this file, for any installed gem which includes it. The
-file will be loaded before running any command but after CocoaPods files (and
-the one of its dependencies) have been loaded. The convention is to use this
+CocoaPods will load this file for any installed gem that includes it. The file
+will be loaded before running any command, but _after_ CocoaPods’ files (and
+those of its dependencies) have been loaded. The convention is to use this
 file to require the actual implementation of the plugin.
 
-For example [cocoapods-open] has the following `cocoapods_plugin.rb`
+For example [cocoapods-open](https://github.com/leshill/open_pod_bay/blob/master/lib/cocoapods_plugin.rb)
+has the following `cocoapods_plugin.rb`:
 
 ```ruby
 require 'pod/command/open'
@@ -59,8 +60,8 @@ $ bundle gem NAME
 
 ### Adding subcommands
 
-Adding new commands is very easy. You just need to create a subclass of the
-command which will be used as the namespace. Subsequently it is necessary to
+Adding new subcommands is very easy. You just need to create a subclass of the
+command that will be used as the namespace. Subsequently, it is necessary to
 provide the metadata of the new command and its logic. For more information you
 can check the documentation of the [CLAide] gem and the [source code] of the
 CocoaPods commands.
@@ -68,7 +69,7 @@ CocoaPods commands.
 [CLAide]:https://github.com/CocoaPods/CLAide
 [source code]:https://github.com/CocoaPods/CocoaPods/tree/master/lib/cocoapods/command
 
-If this sounds complicated, don't be scared; we love simplicity! Actually the
+If this sounds complicated, don’t be scared; we love simplicity! Actually the
 implementation of those steps is simpler than their description. Following you
 can find the __complete__ implementation of the `pod spec doc` command.
 
