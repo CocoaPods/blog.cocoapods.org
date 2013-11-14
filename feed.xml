@@ -13,11 +13,11 @@
       
       <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 0.28 introduces support for plugins.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;Fighting feature creep in CocoaPods is no easy, we hear about a lot of great
+&lt;p&gt;Fighting feature creep in CocoaPods is not easy. We hear about a lot of great
 ideas and many of them don&amp;#39;t make the cut as they would not be useful for at
-least the 80% of our users. The ideal solution, would be support for third
-party plugins and, lucky, an elegant and lean patch from &lt;a href=&quot;http://blog.leshill.org&quot;&gt;Les Hill&lt;/a&gt; has
-introduced it.&lt;/p&gt;
+least 80% of our users. The ideal solution would be support for third-party
+plugins and, luckily, an elegant and lean patch from &lt;a href=&quot;http://blog.leshill.org&quot;&gt;Les Hill&lt;/a&gt; has introduced
+it.&lt;/p&gt;
 
 </description>  
       
@@ -118,7 +118,7 @@ targets. If this doesn&amp;#39;t ring a bell the following image should.&lt;/p&g
 </description>  
       
 
-      <pubDate>Thu, 03 Oct 2013 03:20:16 +0200</pubDate>
+      <pubDate>Thu, 03 Oct 2013 01:20:16 +0000</pubDate>
       <link>http://blog.cocoapods.org/redesign</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/redesign</guid>
     </item>
@@ -134,7 +134,7 @@ targets. If this doesn&amp;#39;t ring a bell the following image should.&lt;/p&g
 </description>  
       
 
-      <pubDate>Mon, 23 Sep 2013 03:20:16 +0200</pubDate>
+      <pubDate>Mon, 23 Sep 2013 01:20:16 +0000</pubDate>
       <link>http://blog.cocoapods.org/Why-we-dont-accept-donations</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/Why-we-dont-accept-donations</guid>
     </item>
