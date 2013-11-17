@@ -6,7 +6,7 @@ markdown: redcarpet
 pygments: true
 permalink: /:title
 exclude: ['Gemfile*', 'rakefile.rb', 'README.md', 'shared']
-paginate: 5
+paginate: 10
 
 
 github_pr_url: https://github.com/CocoaPods/blog.cocoapods.org/tree/master/
