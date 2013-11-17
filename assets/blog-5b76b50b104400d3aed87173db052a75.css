@@ -5,30 +5,6 @@ p iframe {
   position: relative;
   top: 4px; }
 
-.headline.index {
-  text-align: center; }
-  .headline.index h1 {
-    font-size: 72px;
-    padding-top: 110px;
-    padding-bottom: 18px;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -mr-user-select: none;
-    user-select: none;
-    cursor: default; }
-
-@media screen and (max-width: 400px) {
-  .headline {
-    height: 180px; }
-    .headline.index h1 {
-      padding-top: 30px; }
-    .headline.blog-post h1 {
-      font-size: 32px; } }
-@media (max-width: 768px) {
-  .headline.index h1 {
-    font-size: 48px; } }
 header.blog-post h1 {
   position: absolute;
   bottom: 18px;
