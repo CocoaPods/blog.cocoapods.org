@@ -19,7 +19,7 @@ You can join our [NYC meetup group](http://www.meetup.com/CocoaPods-NYC/) to kee
 
 Currently confirmed for the 20th
 
-* [![blakewatters](/assets/blog_img/github_octokitty.png)](https://github.com/blakewatters/)  Blake Watters -  [@blakewatters](http://twitter.com/blakewatters)
+* [![adamhowardprice](/assets/blog_img/github_octokitty.png)](https://github.com/adamhowardprice/)  Blake Watters -  [@adamhowardprice](http://twitter.com/adamhowardprice)
 * [![nilsou](/assets/blog_img/github_octokitty.png)](https://github.com/nilsou/)  Nils Hayat - [@nilsou](http://twitter.com/nilsou)
 * [![danielamitay](/assets/blog_img/github_octokitty.png)](https://github.com/danielamitay/)   Daniel Amitay - [@danielamitay](http://twitter.com/danielamitay)
 * [![dstnbrkr](/assets/blog_img/github_octokitty.png)](https://github.com/dstnbrkr/)  Dustin Barker - [@dstnbrkr](http://twitter.com/dstnbrkr)
