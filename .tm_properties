@@ -1,0 +1,3 @@
+myExtraExcludes = "_site,_gh-pages"
+excludeInFileChooser  = "{$excludeInFileChooser,$myExtraExcludes}"
+excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}"

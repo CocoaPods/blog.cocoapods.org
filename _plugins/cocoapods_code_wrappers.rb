@@ -8,19 +8,23 @@ module Jekyll
             
             pre = <<-eos      
       </article>
+      </article>
       </section>
       
       <div style="background-color:white;">
-      <section class="row container">
+      <section class="container">
+      <article class="row">
       <article class="content col-md-8 col-md-offset-2">
             eos
 
             post = <<-eos              
       </article>
+      </article>
       </section>
       </div>
       
-      <section class="container row">
+      <section class="container">
+      <article class="row">
       <article class="content col-md-8 col-md-offset-2">
             eos
             

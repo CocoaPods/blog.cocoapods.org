@@ -2,18 +2,21 @@
 layout: default
 ---
 
-<section class="container row">
-  <header class="col-md-12 headline index">
-    <h1>{{ site.name }}</h1>
-    <div class="horizontal-divider"><div class="arrow-down"></div><div class="enclosed-arrow-down"></div></div>
-  </header>
+<section class="container">
+  <article class="row">
+    <header class="col-md-12 headline index">
+      <h1>{{ site.name }}</h1>
+      <div class="horizontal-divider"><div class="arrow-down"></div><div class="enclosed-arrow-down"></div></div>
+    </header>
+  </article>
 </section>
 
 <section id="content-wrapper" class="homepage">
-  <section class="container row">
-    <article class="content col-md-8 col-md-offset-2">
-      {{ content }}
-    </article>
+  <section class="container">
+    <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+        {{ content }}
+      </article>
 
     <!-- <aside class="sidebar col-md-4">
       
@@ -29,5 +32,6 @@ layout: default
       </ol>
       
     </aside> -->
+      </article>
   </section>
 </section>
