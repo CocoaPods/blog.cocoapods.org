@@ -38,4 +38,4 @@ There's still a bunch of work to be done, like the about page, and some more wor
 
 {% breaking_image https://ortastuff.s3.amazonaws.com/gifs/cheers-boxing.gif %}
 
-Let us know what you think either on twitter ([@CocoaPods](http://twitter.com/CocoaPods)) or if your idea is too big for 140 characters, email me at [orta@cocoapods.org](mailto:orta@cocoapods.org?subject=CocoaPods.org Feedback). This was a team effort, and I'm super proud to have been a part of it. !m!
+Let us know what you think either on twitter ([@CocoaPods](http://twitter.com/CocoaPods)) or if your idea is too big for 140 characters, [write us an issue](https://github.com/cocoapods/beta.cocoapods.org/issues). This was a team effort, and I'm super proud to have been a part of it. !m!
