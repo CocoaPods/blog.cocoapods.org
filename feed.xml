@@ -8,6 +8,26 @@
     
     
     <item>
+      <title>CocoaPods Beta</title>
+
+      
+      <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods just got a facelift.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I believe design is important. CocoaPods is probably the most public facing Objective-C project. Applying design to open source projects is a sign of maturity, and of stability. Whilst we&amp;#39;re still not 1.0 yet, having a cohesive brand is a step towards that. &lt;/p&gt;
+
+&lt;p&gt;This post documents some of the work involved in making the new CocoaPods web properties.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Sun, 24 Nov 2013 00:00:00 -0500</pubDate>
+      <link>http://blog.cocoapods.org/Beta</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/Beta</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>CocoaPods 0.28</title>
 
       
