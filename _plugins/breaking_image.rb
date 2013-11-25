@@ -19,23 +19,19 @@ module Jekyll
 </article>
 </div>
 </section>
-      
 <div style="background-color:white;">
-<section class="container">
-<div class="row">
-<article class="content col-md-8 col-md-offset-2">
-      eos
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+eos
 
       post = <<-eos              
-</article>
+</center></article>
 </div>
 </section>
-</div>
-      
+</div>    
 <section class="container">
 <div class="row">
 <article class="content col-md-8 col-md-offset-2">
-      eos
+eos
 
       img = "<img src='#{image_url}'>"
       if @url
