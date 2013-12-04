@@ -25,8 +25,7 @@ Pod. It can be used to test the quality of the implementation of a library,
 very useful for user interface elements, or to pick up how to use it from the
 demo project.
 
-<img src="/assets/blog_img/CocoaPods-0.29/pod-try.gif" style="display:block;margin-left:auto;margin-right:auto;"></a>
-
+{% breaking_image /assets/blog_img/CocoaPods-0.29/pod-try.gif %}
 
 In other words the command automates the following steps:
 
