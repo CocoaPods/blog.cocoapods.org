@@ -10,20 +10,19 @@ warnings._
 
 Every now and then we hear about tiny yet huge feature requests for CocoaPods.
 Pod try is one of these. Suggested by [Laurent Sansonetti], pod try quickly
-gained a spot among the feature of CocoaPods which I love the most. But…
+gained a spot among the features of CocoaPods that I love the most. But…
 What is it?
 
 [Laurent Sansonetti]: https://twitter.com/lrz
 
 <!-- more -->
 
-
 ## Pod Try
 
-Pod try is a new subcommand which allows to quickly test the demo project of a
-Pod. It can be used to test the quality of the implementation of a library,
-very useful for user interface elements, or to pick up how to use it from the
-demo project.
+Pod try is a new subcommand which allows you to quickly test the demo project
+of a Pod. It can be used to test the quality of the implementation of a
+library, very useful for user interface elements, or to pick up how to use it
+from the demo project.
 
 {% breaking_image /assets/blog_img/CocoaPods-0.29/pod-try.gif %}
 
@@ -42,8 +41,8 @@ $ pod try LMAlertView
 
 ## Header warnings
 
-Another great feature in this release is the ability to silence also the 
-warnings of the headers of the Pods.
+Another great feature in this release is the ability to completely silence also
+the warnings of the headers of the Pods.
 
 This feature was contributed by the new core team member [swizzlr]
 
