@@ -8,6 +8,24 @@
     
     
     <item>
+      <title>Cool URIs don't change.</title>
+
+      
+      <description>&lt;p&gt;TL;DR: &lt;em&gt;We broke some URIs but this is how we ensure people still get the info they were looking for.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;To try and simplify where you can find CocoaPods documentation we deprecated &lt;a href=&quot;http://docs.cocoapods.org&quot;&gt;docs.cocoapods.org&lt;/a&gt; in favour of &lt;a href=&quot;http://guides.cocoapods.org&quot;&gt;guides.cocoapods.org&lt;/a&gt; and there will be further subsites with different focuses. To ensure a smooth transition I built a small sinatra app that might be of use to other people.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Mon, 02 Dec 2013 00:00:00 -0500</pubDate>
+      <link>http://blog.cocoapods.org/Cool-URIs-Don%27t-Change</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/Cool-URIs-Don%27t-Change</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>CocoaPods Beta</title>
 
       
