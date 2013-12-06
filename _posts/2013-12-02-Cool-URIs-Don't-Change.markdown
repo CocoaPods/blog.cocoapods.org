@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Cool URIs don't change."
-date:   2013-11-30
+date:   2013-12-02
 author: orta
 categories: cocoapods website
 ---
@@ -12,7 +12,7 @@ To try and simplify where you can find CocoaPods documentation we deprecated [do
 
 <!-- more -->
 
-Whilst not entirely living up to the [W3C dream](http://www.w3.org/Provider/Style/URI.html) of the content changing but the URI not changing I felt a system of smart HTTP 302 redirects would work quite elegantly for our system. Previously we had a static site that was held on github pages, this meant we had no ability to do true redirects, only `<meta http-equiv="refresh" content="0;URL=http://guides.cocoapods.org">`. This is a sledgehammer approach to redirects and we wanted to use a smaller tool. 
+Whilst not entirely living up to the [W3C dream](http://www.w3.org/Provider/Style/URI.html) of the content changing but the URI not changing I felt a system of smart HTTP 302 redirects would work quite elegantly for our system. Previously we had a static site that was held on github pages, this meant we had no ability to do true redirects, only HTMLs property `<meta http-equiv="refresh">`. This is a sledgehammer approach to redirects and we wanted to use a smaller tool. 
 
 So I brought out ruby, the language CocoaPods is built in and created a small app using [sinatra](http://sinatrarb.com) that can be used to make a map of URLs to redirect to. Luckily there were not that many pages in the docs and we had equivilent pages in the guides. This is then turned into a [heroku](https://www.heroku.com) app and made to be the new [docs.cocoapods.org](http://docs.cocoapods.org) silently redirecting people to the new website with the same information they were looking for.
 
@@ -69,3 +69,5 @@ ROUTES.each_key do |key|
    redirect NEW_URL + request.query_string
  end
  ```
+ 
+ The repo can be found here [github.com/orta/CocoaPods-Docs-Redirector/](https://github.com/orta/CocoaPods-Docs-Redirector/)
