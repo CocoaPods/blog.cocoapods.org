@@ -20,7 +20,7 @@
     <link rel="shortcut icon" href="http://beta.cocoapods.org/favicons/favicon.ico" type="image/x-icon" /><link rel="apple-touch-icon" href="http://beta.cocoapods.org/favicons/apple-touch-icon.png" /><link rel="apple-touch-icon" sizes="57x57" href="http://beta.cocoapods.org/favicons/apple-touch-icon-57x57.png" /><link rel="apple-touch-icon" sizes="60x60" href="http://beta.cocoapods.org/favicons/apple-touch-icon-60x60.png" /><link rel="apple-touch-icon" sizes="72x72" href="http://beta.cocoapods.org/favicons/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon" sizes="76x76" href="http://beta.cocoapods.org/favicons/apple-touch-icon-76x76.png" /><link rel="apple-touch-icon" sizes="114x114" href="http://beta.cocoapods.org/favicons/apple-touch-icon-114x114.png" /><link rel="apple-touch-icon" sizes="120x120" href="http://beta.cocoapods.org/favicons/apple-touch-icon-120x120.png" /><link rel="apple-touch-icon" sizes="144x144" href="http://beta.cocoapods.org/favicons/apple-touch-icon-144x144.png" /><link rel="apple-touch-icon" sizes="152x152" href="http://beta.cocoapods.org/favicons/apple-touch-icon-152x152.png" />
 
     <link rel="stylesheet" href="/assets/bootstrap-87270f5e5c31201f334e98fd5ca08aba.css">
-    <link rel="stylesheet" href="/assets/main-16b1dffdfa65954fed324d4efc80c938.css">
+    <link rel="stylesheet" href="/assets/main-7283dc37b0ecb1e01185fe7531756273.css">
     <link rel="stylesheet" href="/assets/blog-5b76b50b104400d3aed87173db052a75.css">
 
 
@@ -39,7 +39,7 @@
       <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
 
-    <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="http://beta.cocoapods.org"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://beta.cocoapods.org/about">About</a></li><li><a href="http://guides.cocoapods.org">Guides</a></li><li class="active"><a href="http://blog.cocoapods.org">Blog</a></li></ul></div></section></nav>
+    <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="glyphicon-plus"></span></button><a class="navbar-brand" href="http://beta.cocoapods.org"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://beta.cocoapods.org/about">About</a></li><li><a href="http://guides.cocoapods.org">Guides</a></li><li class="active"><a href="http://blog.cocoapods.org">Blog</a></li></ul></div></section></nav>
 
     <section class="container">
   <article class="row">
@@ -77,7 +77,7 @@
 
 <!-- more -->
 
-<p>Whilst not entirely living up to the <a href="http://www.w3.org/Provider/Style/URI.html">W3C dream</a> of the content changing but the URI not changing I felt a system of smart HTTP 302 redirects would work quite elegantly for our system. Previously we had a static site that was held on github pages, this meant we had no ability to do true redirects, only HTMLs property <code>&lt;meta http-equiv=&quot;refresh&quot;&gt;</code>. This is a sledgehammer approach to redirects and we wanted to use a smaller tool. </p>
+<p>Whilst not entirely living up to the <a href="http://www.w3.org/Provider/Style/URI.html">W3C dream</a> of the content changing but the URI not changing I felt a system of smart HTTP 302 permanent redirects would work quite elegantly for our system. Previously we had a static site that was held on github pages, this meant we had no ability to do true redirects, only HTMLs property <code>&lt;meta http-equiv=&quot;refresh&quot;&gt;</code>. This is a sledgehammer approach to redirects and we wanted to use a smaller tool. </p>
 
 <p>So I brought out ruby, the language CocoaPods is built in and created a small app using <a href="http://sinatrarb.com">sinatra</a> that can be used to make a map of URLs to redirect to. Luckily there were not that many pages in the docs and we had equivilent pages in the guides. This is then turned into a <a href="https://www.heroku.com">heroku</a> app and made to be the new <a href="http://docs.cocoapods.org">docs.cocoapods.org</a> silently redirecting people to the new website with the same information they were looking for.</p>
 <div class="highlight">      </article>
@@ -89,9 +89,6 @@
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 <pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">&#39;sinatra&#39;</span>
-
-<span class="c1"># Create a dictionary of local URLs and places that they redirect to </span>
-<span class="c1"># as the values.</span>
 
 <span class="no">NEW_URL</span> <span class="o">=</span> <span class="s2">&quot;http://guides.cocoapods.org&quot;</span>
 <span class="no">ROUTES</span> <span class="o">=</span> <span class="p">{</span>
@@ -127,9 +124,10 @@
 
    <span class="n">get</span> <span class="n">key</span> <span class="k">do</span>
      <span class="k">if</span> <span class="p">(</span><span class="no">ROUTES</span><span class="o">[</span><span class="n">key</span><span class="o">][</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">3</span><span class="o">]</span> <span class="o">==</span> <span class="s2">&quot;http&quot;</span><span class="p">)</span> 
-       <span class="n">redirect</span> <span class="no">ROUTES</span><span class="o">[</span><span class="n">key</span><span class="o">]</span>
+       <span class="n">redirect</span> <span class="no">ROUTES</span><span class="o">[</span><span class="n">key</span><span class="o">]</span><span class="p">,</span> <span class="mi">302</span>
      <span class="k">else</span>
-      <span class="n">redirect</span> <span class="no">NEW_URL</span> <span class="o">+</span> <span class="no">ROUTES</span><span class="o">[</span><span class="n">key</span><span class="o">]</span> <span class="o">+</span> <span class="n">request</span><span class="o">.</span><span class="n">query_string</span>
+       <span class="n">url</span> <span class="o">=</span> <span class="no">NEW_URL</span> <span class="o">+</span> <span class="no">ROUTES</span><span class="o">[</span><span class="n">key</span><span class="o">]</span> <span class="o">+</span> <span class="n">request</span><span class="o">.</span><span class="n">query_string</span>
+      <span class="n">redirect</span> <span class="n">url</span><span class="p">,</span> <span class="mi">302</span>
      <span class="k">end</span>
    <span class="k">end</span>
  <span class="k">end</span> 

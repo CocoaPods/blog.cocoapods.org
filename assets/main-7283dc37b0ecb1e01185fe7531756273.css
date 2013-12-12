@@ -395,6 +395,7 @@
 
 /* Literal.Number.Integer.Long */
 body {
+  font-size: 18px;
   font-family: "GT Walsheim", "gt_walsheim_regular", "Avant Garde Gothic ITCW01Dm", "Avant Garde", "Helvetica Neue", "Arial"; }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -407,7 +408,7 @@ h2 {
   margin-top: 40px; }
 
 h5 {
-  font-size: 22px; }
+  font-size: 1.2em; }
 
 aside {
   margin-top: -20px; }
@@ -426,8 +427,7 @@ pre.highlight {
   margin-bottom: 0;
   border-radius: 0px; }
 
-p, ol, ul {
-  font-size: 18px;
+p, ol, ul, label {
   line-height: 1.4em;
   margin: 24px 0 32px; }
 
@@ -447,7 +447,7 @@ a {
   transition: opacity 0.3s ease-in-out; }
 
 .navbar-nav > li > a {
-  font-size: 16px;
+  font-size: 0.9em;
   color: white;
   text-transform: uppercase;
   padding-top: 14px;
@@ -481,7 +481,12 @@ a {
   background-size: 220px 48px; }
 
 .navbar-toggle {
-  border-color: white; }
+  border-color: none;
+  height: 32px; }
+  .navbar-toggle .glyphicon-plus {
+    font-size: 3em;
+    color: white;
+    margin-top: -20px; }
   .navbar-toggle:hover, .navbar-toggle:focus {
     background-color: white; }
     .navbar-toggle:hover .icon-bar, .navbar-toggle:focus .icon-bar {
@@ -492,13 +497,12 @@ a {
 .headline {
   color: #fb0006;
   display: block;
-  font-size: 40px;
   height: 340px; }
 
 .headline.index {
   text-align: center; }
   .headline.index h1 {
-    font-size: 72px;
+    font-size: 4em;
     padding-top: 110px;
     padding-bottom: 18px;
     -webkit-touch-callout: none;
@@ -516,10 +520,10 @@ a {
     .headline.index h1 {
       padding-top: 30px; }
     .headline.blog-post h1 {
-      font-size: 32px; } }
+      font-size: 1.8em; } }
 @media (max-width: 768px) {
   .headline.index h1 {
-    font-size: 48px; } }
+    font-size: 2.7em; } }
 .horizontal-divider {
   background-color: #bbbbbb;
   box-shadow: 1px 1px 1px #ddd;
@@ -592,21 +596,20 @@ footer.page-footer {
   background-color: #380200;
   color: white; }
   footer.page-footer .contributors {
-    font-size: 24px; }
+    font-size: 1.33em; }
   footer.page-footer .sponsors {
-    font-size: 20px;
+    font-size: 1.1em;
     margin-bottom: 0px; }
   footer.page-footer h4 {
     text-transform: uppercase;
     color: #6f6f6f;
-    font-size: 14px;
+    font-size: 0.8em;
     margin-bottom: 0px; }
   footer.page-footer p {
-    margin: 0 0 20px;
-    font-size: 18px; }
+    margin: 0 0 20px; }
   footer.page-footer article.minor p {
     margin: 0 0 14px;
-    font-size: 14px; }
+    font-size: 0.8em; }
   footer.page-footer a:hover, footer.page-footer a:focus {
     color: white; }
 footer.footer-links {
@@ -617,7 +620,7 @@ footer.footer-links {
   footer.footer-links li {
     border-right: 2px solid rgba(251, 0, 6, 0.5);
     list-style-type: none;
-    font-size: 12px;
+    font-size: 0.66em;
     padding-bottom: 6px; }
     footer.footer-links li:hover {
       border-right: 2px solid #fb0006; }
