@@ -436,6 +436,14 @@ a {
   a:hover, a:focus {
     color: #380200; }
 
+.has-flash {
+  display: none; }
+
+html.flash .has-flash {
+  display: block; }
+html.flash .no-flash {
+  display: none; }
+
 .navbar {
   background-color: #380200;
   border: none;
