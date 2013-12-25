@@ -8,6 +8,28 @@
     
     
     <item>
+      <title>CocoaPods 0.29</title>
+
+      
+      <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 0.29 introduces the pod try subcommand, the social media URL
+podspec attribute &amp;amp; complete inhibition of header warnings.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Every now and then we hear about tiny yet huge feature requests for CocoaPods.
+Pod try is one of these. Suggested by &lt;a href=&quot;https://twitter.com/lrz&quot;&gt;Laurent Sansonetti&lt;/a&gt;, pod try quickly
+gained a spot among the features of CocoaPods that I love the most. But…
+What is it?&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Tue, 24 Dec 2013 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/CocoaPods-0.29</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.29</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>Cocoa Kucha 2 - 16 Jan 2014</title>
 
       
@@ -22,7 +44,7 @@ will be there. Orta has organised this event, and it&amp;#39;s kindly hosted by
 </description>  
       
 
-      <pubDate>Tue, 17 Dec 2013 00:00:00 +0100</pubDate>
+      <pubDate>Tue, 17 Dec 2013 00:00:00 +0000</pubDate>
       <link>http://blog.cocoapods.org/Cocoa-Kucha-2</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/Cocoa-Kucha-2</guid>
     </item>
@@ -40,7 +62,7 @@ will be there. Orta has organised this event, and it&amp;#39;s kindly hosted by
 </description>  
       
 
-      <pubDate>Mon, 02 Dec 2013 00:00:00 +0100</pubDate>
+      <pubDate>Mon, 02 Dec 2013 00:00:00 +0000</pubDate>
       <link>http://blog.cocoapods.org/Cool-URIs-Don%27t-Change</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/Cool-URIs-Don%27t-Change</guid>
     </item>
@@ -60,7 +82,7 @@ will be there. Orta has organised this event, and it&amp;#39;s kindly hosted by
 </description>  
       
 
-      <pubDate>Sun, 24 Nov 2013 00:00:00 +0100</pubDate>
+      <pubDate>Sun, 24 Nov 2013 00:00:00 +0000</pubDate>
       <link>http://blog.cocoapods.org/Beta</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/Beta</guid>
     </item>
@@ -82,7 +104,7 @@ it.&lt;/p&gt;
 </description>  
       
 
-      <pubDate>Thu, 14 Nov 2013 00:00:00 +0100</pubDate>
+      <pubDate>Thu, 14 Nov 2013 00:00:00 +0000</pubDate>
       <link>http://blog.cocoapods.org/CocoaPods-0.28</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.28</guid>
     </item>
@@ -100,7 +122,7 @@ it.&lt;/p&gt;
 </description>  
       
 
-      <pubDate>Thu, 07 Nov 2013 00:00:00 +0100</pubDate>
+      <pubDate>Thu, 07 Nov 2013 00:00:00 +0000</pubDate>
       <link>http://blog.cocoapods.org/CocoaPodsFeed</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPodsFeed</guid>
     </item>
@@ -121,7 +143,7 @@ headers location on OS X (Mountain Lion &lt;em&gt;and&lt;/em&gt; Mavericks).&lt;
 </description>  
       
 
-      <pubDate>Thu, 24 Oct 2013 00:00:00 +0200</pubDate>
+      <pubDate>Thu, 24 Oct 2013 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/CocoaPods-0.27-and-improved-installation-UX</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.27-and-improved-installation-UX</guid>
     </item>
@@ -137,7 +159,7 @@ headers location on OS X (Mountain Lion &lt;em&gt;and&lt;/em&gt; Mavericks).&lt;
 </description>  
       
 
-      <pubDate>Sun, 13 Oct 2013 00:00:00 +0200</pubDate>
+      <pubDate>Sun, 13 Oct 2013 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/Cocoa-Kucha</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/Cocoa-Kucha</guid>
     </item>
@@ -158,7 +180,7 @@ targets. If this doesn&amp;#39;t ring a bell the following image should.&lt;/p&g
 </description>  
       
 
-      <pubDate>Tue, 08 Oct 2013 00:00:00 +0200</pubDate>
+      <pubDate>Tue, 08 Oct 2013 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/CocoaPods-0.26</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.26</guid>
     </item>
@@ -212,7 +234,7 @@ targets. If this doesn&amp;#39;t ring a bell the following image should.&lt;/p&g
 </description>  
       
 
-      <pubDate>Sat, 10 Aug 2013 00:00:00 +0200</pubDate>
+      <pubDate>Sat, 10 Aug 2013 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/Acknowledgements</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/Acknowledgements</guid>
     </item>
