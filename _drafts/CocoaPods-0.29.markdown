@@ -67,7 +67,7 @@ tweet (shortening the description of the Pod if needed). We expect this feature
 to improve the visibility of Pods authors and increase the engagement with
 their libraries. The result is the following:
 
-<blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p>[MPMoviePlayerController-Subtitles] Easy way to show SRT files on MPMoviePlayerController <a href="https://t.co/SWyuNTyRkF">https://t.co/SWyuNTyRkF</a></p>&mdash; CocoaPods New Pods (@CocoaPodsFeed) <a href="https://twitter.com/CocoaPodsFeed/statuses/408303077691629568">December 4, 2013</a></blockquote>
+<blockquote class="twitter-tweet" lang="en"><p>[AOCUDL by <a href="https://twitter.com/hypercrypt">@hypercrypt</a>] An alternative shorthand syntax to Dustin Bachrach&#39;s OCUDL. <a href="http://t.co/HURVc1080e">http://t.co/HURVc1080e</a></p>&mdash; CocoaPods New Pods (@CocoaPodsFeed) <a href="https://twitter.com/CocoaPodsFeed/statuses/409601855845851136">December 8, 2013</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## Header warnings
