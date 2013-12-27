@@ -28,6 +28,6 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap requires jQuery");+func
 
 
 $(document).ready(function () {
-    $('#pull-request').popover()
+    $('#pull-request, #archives' ).popover()
 })
 ;
