@@ -1,0 +1,14 @@
+{% capture category %}{{ post.categories | size }}{% endcapture %}
+{% capture date_formatted %}{{ page.date_formatted }}{{ post.date_formatted }}{% endcapture %}
+{% assign author = site.authors[post.author] %}
+
+<a href="{{ root_url }}{{ post.url }}">
+  <h3>{{post.title}}</h1>
+  <time datetime="{{ post.date | datetime | date_to_xmlschema }}" pubdate>{{ date_formatted }}</time>
+</a>
+<p> by {{ author.name }}</p>
+{% if category != '0' %}
+<footer>
+  <!-- <span class="categories">posted in {{ post.categories | category_links }}</span> -->
+</footer>
+{% endif %}
