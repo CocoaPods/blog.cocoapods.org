@@ -35,7 +35,7 @@ Currently confirmed for the 16th
 * [![lukabernardi](/assets/blog_img/github_octokitty.png)](https://github.com/lukabernardi/)  Luca Bernardi - [@luka_bernardi](http://twitter.com/luka_bernardi)
 * [![RolandasRazma](/assets/blog_img/github_octokitty.png)](https://github.com/RolandasRazma/)  Rolandas Razma - [@rolandas_razma](http://twitter.com/rolandas_razma)
 * [![stig](/assets/blog_img/github_octokitty.png)](https://github.com/stig/)  Stig Brautaset -  [@stigbra](http://twitter.com/stigbra)
-* Sally Shepard - [linkedin](uk.linkedin.com/pub/sally-shepard/18/563/7a3)
+* Sally Shepard - [@mostgood](http://twitter.com/mostgood)
 
 You can join the [NSLondon meetup group](http://www.meetup.com/NSLondon/) to
 keep up to date, and the [event](http://www.meetup.com/NSLondon/events/155953132/)
