@@ -19,7 +19,7 @@ talks related to Objective-C for 6 minutes and 20 seconds. The speaker must go
 though 20 slides, 20 seconds per slide. This keeps them to the point and makes
 it a lot easier for people to get started.
 
-As the timeframe for the event is sooner than I normally plan them I'd like to open the doors to speakers. 
+As the timeframe for the event is smaller than I normally plan, I'd like to open the doors to speakers. 
 [We accept pull reqeusts including yourself on the roster](https://github.com/CocoaPods/blog.cocoapods.org/pull/8). Like most CocoaHead Berlin events is hosted at [CodeKollektiv](http://www.codekollektiv.de/) and starts at 19h. Add it to your kalendar.
 
 Currently confirmed for the 22nd
