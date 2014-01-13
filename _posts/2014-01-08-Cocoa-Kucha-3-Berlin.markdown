@@ -27,5 +27,6 @@ Currently confirmed for the 22nd
 * [![Claudiu-Vlad Ursache](/assets/blog_img/github_octokitty.png)](https://github.com/ursachec/)  Claudiu-Vlad Ursache - [@ursachec](http://twitter.com/ursachec) - About his work on Tor on iOS.
 * [![Juan Manuel Serruya](/assets/blog_img/github_octokitty.png)](https://github.com/JMSerruya)  Juan Manuel Serruya - [@jmserruya](http://twitter.com/jmserruya) - About his work on HowDo on iOS.
 * [![Robb Böhnke](/assets/blog_img/github_octokitty.png)](https://github.com/robb)  Robb Böhnke - [@ceterum_censeo](http://twitter.com/ceterum_censeo) - What's coming in Mantle 2.0
+* [![Wojtek Czekalski](/assets/blog_img/github_octokitty.png)](https://github.com/wczekalski)  Wojtek Czekalski *[voy•tech check•all•ski]* - [@wczekalski](http://twitter.com/wczekalski) - I have created a popular open source project. And I hate it.
 
 You can keep up to date by either watching my [organization issue](https://github.com/orta/life/issues/17), or by keeping track on the [CocoaHeads google](https://groups.google.com/forum/?hl=de#!topic/berlin-cocoaheads/VPxPyrCohX0) group.
