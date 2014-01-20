@@ -28,6 +28,7 @@ Currently confirmed for the 22nd:
 * [![Robb Böhnke](/assets/blog_img/github_octokitty.png)](https://github.com/robb)  Robb Böhnke - [@ceterum_censeo](http://twitter.com/ceterum_censeo) - What's coming in Mantle 2.0
 * [![Wojtek Czekalski](/assets/blog_img/github_octokitty.png)](https://github.com/wczekalski)  Wojtek Czekalski *[voy•tech check•all•ski]* - [@wczekalski](http://twitter.com/wczekalski) - I have created a popular open source project. And I hate it.
 * [![Florian Hanke](/assets/blog_img/github_octokitty.png)](https://github.com/floere)  Florian Hanke - [@hanke](http://twitter.com/hanke)
+* [![Jens Ravens](/assets/blog_img/github_octokitty.png)](https://github.com/JensRavens)  Jens Ravens - [@JensRavens](http://twitter.com/JensRavens) - Meteor, Realtime APIs and CoreData
 
 
 [Florian Hanke](https://github.com/floere) is one of the CocoaPods Dev team, he is the man responsible for the search API and has been collaborating with me on all aspects on the website. I'm really excited to both meet him for the first time & see him talk.
