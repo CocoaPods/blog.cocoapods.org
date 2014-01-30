@@ -78,5 +78,7 @@ together.
 - Roberto Tyley ([@rtyley](https://github.com/rtyley))
 - Abizer Nasir ([@Abizern](https://github.com/Abizern))
 
-We're sorry for the inconvenience this may cause.
-
+We are very sorry for _all_ time this issue takes away from our great early
+adopters and pod providers. We are very thankful for your patience and
+understanding while we work towards a smoothly functioning version 1 of
+CocoaPods and its architecture.
