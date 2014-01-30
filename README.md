@@ -4,11 +4,32 @@ The blog for CocoaPods
 
 ## Setup
 
-Run `rake init` to install submodules and grab ruby dependencies.
+To install git submodules and grab ruby dependencies:
+
+```
+$ rake bootstrap
+```
 
 ## Development
 
-One command to get dev up and running: `rake run`, after the initial `rake init`
+To start a local server that shows all posts **including** drafts:
+
+```
+$ rake run:drafts
+```
+
+_This is also the default task, so just `rake` will do the same._
+
+----
+
+Or if you want to see the blog **without* any draft posts, as the blog would
+look if it were to be deployed right now:
+
+```
+$ rake run:published
+```
+
+----
 
 The `shared` submodule is the cocoapods [shared
 resources](https://github.com/CocoaPods/shared_resources) repo that holds
