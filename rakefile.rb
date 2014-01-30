@@ -16,12 +16,19 @@ task :init do
   puts %x[bundle install]
 end
 
-desc 'Runs the web server locally with the drafts posts and watches for changes'
-task :run do
-  puts "Starting the sever locally on http://localhost:4000"
-  sh "jekyll serve --watch --drafts --port 4000"
-end
+namespace :run do
+  desc 'Runs a local server *with* draft posts and watches for changes'
+  task :drafts do
+    puts "Starting the server locally on http://localhost:4000"
+    sh "jekyll serve --watch --drafts --port 4000"
+  end
 
+  desc 'Runs a local server *without* draft posts and watches for changes'
+  task :published do
+    puts "Starting the server locally on http://localhost:4000"
+    sh "jekyll serve --watch --port 4000"
+  end
+end
 
 desc 'Deploy the site to the gh_pages branch and push'
 task :deploy do
@@ -59,4 +66,5 @@ task :deploy do
   end
 end
 
-task :default => :run
+desc 'Defaults to run:drafts'
+task :default => 'run:drafts'
