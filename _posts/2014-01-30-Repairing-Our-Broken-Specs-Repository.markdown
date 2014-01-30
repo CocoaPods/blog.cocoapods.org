@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Repairing Our Broken Specs Repository”"
+title:  "Repairing Our Broken Specs Repository"
 date:   2014-01-30
 author: kyle
 categories: cocoapods
