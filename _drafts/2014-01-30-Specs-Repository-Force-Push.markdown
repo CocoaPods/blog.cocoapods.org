@@ -41,23 +41,38 @@ repository should never be affected by issues in other spec repositories._
 
 ### Why did this break?
 
-The Specs repository has unfortunately broken due to a bug in libgit2 which
-powers [GitHub's web editor][web-editor]. This has [caused our git repository
-to become corrupt][spec-ticket] and the only solution is to rewrite the history
-of the repository and force push the rewritten tree.
+The Specs repository has unfortunately broken due to [a bug in
+libgit2][libgit2-ticket] which powers [GitHub's web editor][web-editor]. This
+has [caused our git repository to become corrupt][spec-ticket]:
 
-Rolling out this fix basically means that all copies of the repository have to
-be reset. This can be a delicate process, so deleting and re-cloning is the
-safest and simplest way to do so.
+> As fsck noted, it has duplicate entries, which is a violation of Git's object
+> format. GitHub check objects as they are pushed into each fork; anyone who
+> has built on top of the broken tree will have their push rejected, as they
+> are trying to bring the broken object into their fork (as a result of it
+> being reachable from their new commits).
+>
+> We are looking into how this broken object got into the repository in the
+> first place. At this point it looks like a web-edit […], that was then merged
+> on the site via a pull request ([…] it looks like a bug in GitHub rather than
+> any kind of user error). We're looking both into fixing the bug, but also
+> into giving better protection to broken objects entering the repository (i.e.
+> this is the exact sort of problem that the fsck-on-push checks are there to
+> prevent, but they do not currently extend to web edits).
 
+The only solution is to rewrite the history of the repository and force push
+the rewritten tree. Rolling out this fix basically means that all copies of the
+repository have to be reset. This can be a delicate process, so deleting and
+re-cloning is the safest and simplest way to do so.
+
+[libgit2-ticket]: https://github.com/libgit2/libgit2/pull/2085
 [web-editor]: https://help.github.com/articles/creating-and-editing-files-in-your-repository
-[spec-ticket]: https://github.com/CocoaPods/Specs/issues/7029
+[spec-ticket]: https://github.com/CocoaPods/Specs/issues/7029#issuecomment-33429321
 
 ### Will this happen again?
 
-There is a [fix](https://github.com/libgit2/libgit2/pull/2085) in the works
-to fix the bug in libgit2. This fixes a bug which would prevent libgit2 from
-corrupting a repository in this particular case.
+There is a [fix][libgit2-ticket] in the works to fix the bug in libgit2. This
+fixes a bug which would prevent libgit2 from corrupting a repository in this
+particular case.
 
 GitHub are also working on putting checking measures in-place on the
 web-editor so that it wouldn't be possible to save a corrupt repository, and to
