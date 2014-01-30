@@ -5,9 +5,11 @@ author: florian
 categories: cocoapods search design
 ---
 
-TL;DR: _Just starting a search server and pumping some data into it is only going half
+Just starting a search server and pumping some data into it is only going half
 of the way towards a good search engine. To go all the way means adapting it to the
-domain and needs of the users. I'll explain our rationale behind cocoapods.org along the way._
+domain and needs of the users. I'll explain our rationale behind cocoapods.org along the way.
+
+<!-- more -->
 
 If you haven't yet seen [our search engine](http://cocoapods.org), please [give it a try](http://cocoapods.org) before reading this post.
 
