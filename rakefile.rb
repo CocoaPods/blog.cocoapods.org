@@ -1,7 +1,7 @@
 #!/usr/bin/env rake
 
 desc 'Initial setup'
-task :init do
+task :bootstrap do
   FileUtils.rm_rf '_gh-pages'
   puts "Cloning gh-pages branch..."
   puts %x[git clone git@github.com:CocoaPods/blog.cocoapods.org.git _gh-pages]
@@ -15,6 +15,10 @@ task :init do
   puts "Installing Bundle..."
   puts %x[bundle install]
 end
+
+# Deprecated, but leaving shortcut in because I'm sure Orta, at least, has this
+# in his muscle-memory.
+task :init => :bootstrap
 
 namespace :run do
   desc 'Runs a local server *with* draft posts and watches for changes'
