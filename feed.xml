@@ -8,6 +8,50 @@
     
     
     <item>
+      <title>Repairing Our Broken Specs Repository”</title>
+
+      
+      <description>&lt;p&gt;Unfortunately we&amp;#39;ve encountered a bug in libgit2 and we are going to have to
+&lt;strong&gt;force push&lt;/strong&gt; into &lt;a href=&quot;https://github.com/CocoaPods/Specs&quot;&gt;the Specs repository&lt;/a&gt;. (Also known as the
+‘master’ spec repo.)&lt;/p&gt;
+
+&lt;h3&gt;What does this mean for you?&lt;/h3&gt;
+
+&lt;p&gt;Well, basically your CocoaPods setup &lt;strong&gt;is going to break&lt;/strong&gt;. You are going to
+have to manually delete &lt;em&gt;any&lt;/em&gt; local copies of the Specs repository and re-clone
+the new version of the Specs repository. You can do that with the following
+commands:&lt;/p&gt;
+
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code&gt;
+    $ pod repo remove master
+    $ pod setup
+    
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;NOTE 1:&lt;/strong&gt; If you have any local commits or changes to the Specs repository
+which are not merged, you should ensure you have a copy of them. I would
+recommend that you manually copy these changes over and re-commit them. You can
+fix your repository without deleting, however, this is not a simple process, so
+we are instead recommending that you delete your copy of the Specs repository
+and any forks of it.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;NOTE 2:&lt;/strong&gt; In case you are storing private podspecs in your clone of the
+Specs repository or you have a private spec repo that was forked from the
+Specs repository, this is a great time to clean that up by using private spec
+repositories &lt;a href=&quot;http://guides.cocoapods.org/making/private-cocoapods.html&quot;&gt;The Proper Way&lt;/a&gt;. This way your private spec
+repository should never be affected by issues in other spec repositories.&lt;/em&gt;&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Thu, 30 Jan 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/Repairing-Our-Broken-Specs-Repository</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/Repairing-Our-Broken-Specs-Repository</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>Cocoa Kucha 3 - Berlin - 22nd Jan 2014</title>
 
       
