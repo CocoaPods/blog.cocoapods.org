@@ -99,3 +99,7 @@ understanding while we work towards a smoothly functioning version 1 of
 CocoaPods and its architecture.
 
 **<3**
+
+– [@kylefuller](https://twitter.com/kylefuller),
+[@SmileyKeith](https://twitter.com/SmileyKeith), and
+[@alloy](https://twitter.com/alloy)
