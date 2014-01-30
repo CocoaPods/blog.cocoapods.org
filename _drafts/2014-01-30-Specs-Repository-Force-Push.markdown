@@ -69,8 +69,10 @@ prevent any similar problems in the future. (As is already the case when using
 
 ### Acknowledgements
 
-I would like to personally thank the following people for their help in both
-investigating and resolving this matter.
+We would like to thoroughly thank the following people for their help in both
+investigating and resolving this matter. It is very much appreciated by all of
+us at CocoaPods HQ and shows the power of a (larger) community of people coming
+together.
 
 - Jeff King ([@peff](https://github.com/peff))
 - Roberto Tyley ([@rtyley](https://github.com/rtyley))
