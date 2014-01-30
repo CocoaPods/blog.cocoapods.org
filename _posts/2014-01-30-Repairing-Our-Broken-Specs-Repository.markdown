@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Specs repository - Force Push"
+title:  "Repairing Our Broken Specs Repository”"
 date:   2014-01-30
 author: kyle
 categories: cocoapods
@@ -41,6 +41,11 @@ repository should never be affected by issues in other spec repositories._
 [private-repos]: http://guides.cocoapods.org/making/private-cocoapods.html
 
 <!-- more -->
+
+_If you really know what you’re doing and don’t want to re-download the
+complete repo, follow [these][advanced-instructions] instructions._
+
+[advanced-instructions]: https://github.com/CocoaPods/Specs/issues/7029#issuecomment-33708256
 
 ### Why did this break?
 
