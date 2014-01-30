@@ -19,8 +19,11 @@ have to manually delete _any_ local copies of the Specs repository and re-clone
 the new version of the Specs repository. You can do that with the following
 commands:
 
+<pre class='highlight'><code>
     $ pod repo remove master
     $ pod setup
+    
+</code></pre>
 
 _**NOTE 1:** If you have any local commits or changes to the Specs repository
 which are not merged, you should ensure you have a copy of them. I would
@@ -99,3 +102,7 @@ understanding while we work towards a smoothly functioning version 1 of
 CocoaPods and its architecture.
 
 **<3**
+
+– [@kylefuller](https://twitter.com/kylefuller),
+[@SmileyKeith](https://twitter.com/SmileyKeith), and
+[@alloy](https://twitter.com/alloy)
