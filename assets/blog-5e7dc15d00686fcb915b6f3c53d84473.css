@@ -22,6 +22,8 @@ article.author.metadata header {
   article.author.metadata header p {
     margin-bottom: 4px;
     margin-top: 0px; }
+  article.author.metadata header .twitter-follow-button {
+    margin-top: 20px; }
 
 @media (max-width: 1024px) {
   article.author.metadata header {
