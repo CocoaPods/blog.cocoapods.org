@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-      <title>CocoaPods 0.28 - CocoaPods Blog</title>
+      <title>Search API Version 1 - CocoaPods Blog</title>
     
 
     <meta name="description" content="The blog for CocoaPods.org an Objective-C dependency manager">
@@ -45,7 +45,7 @@
   <article class="row">
   <header class="col-md-8 col-md-offset-2 headline blog-post">
     
-      <h1>CocoaPods 0.28</h1>
+      <h1>Search API Version 1</h1>
     
     
   </header>
@@ -59,61 +59,33 @@
         <header>
           
             
-              <img class="gravatar large" src="http://gravatar.com/avatar/b6dde1a78e6215a592768c1e78a54adc?s=144" height=72 width=72>
+              <img class="gravatar large" src="http://gravatar.com/avatar/de2d64478e715fb02266f77a3f5641f6?s=144" height=72 width=72>
             
             
               
-                <p><a href="http://twitter.com/fabiopelosin">Fabio Pelosin</a></p>
+                <p><a href="http://twitter.com/hanke">Florian Hanke</a></p>
               
             
-             <p>14 November 2013</p>
+             <p>2 February 2014</p>
 
             
-              <a href="https://twitter.com/fabiopelosin" class="twitter-follow-button" data-show-count="false" data-lang="en">
-                Follow @fabiopelosin
+              <a href="https://twitter.com/hanke" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @hanke
               </a>
             
         </header>
       </article>
     
       <article class="content col-md-8">
-        <p>TL;DR: <em>CocoaPods 0.28 introduces support for plugins.</em></p>
+        <p>I&#39;m going to break up the doom &amp; gloom around the <a href="/Repairing-Our-Broken-Specs-Repository/">Specs Repo change</a> with some good news. We have opened up v1 of our search API!</p>
 
-<p>Fighting feature creep in CocoaPods is not easy. We hear about a lot of great
-ideas and many of them don&#39;t make the cut as they would not be useful for at
-least 80% of our users. The ideal solution would be support for third-party
-plugins and, luckily, an elegant and lean patch from <a href="http://blog.leshill.org">Les Hill</a> has introduced
-it.</p>
+<p>This is the API used in <a href="http://cocoapods.org">CocoaPods.org</a> and soon on <a href="http://cocoadocs.org">CocoaDocs</a>. Read on to find out how to use it in your own applications, I&#39;m really excited to see what people do with it.</p>
 
 <!-- more -->
 
-<p>Plugin support allows one to tweak the internals of CocoaPods and to insert
-additional commands. As a matter of fact, two new commands are available right
-from the start:</p>
+<h2>API Description</h2>
 
-<ul>
-<li><a href="https://github.com/leshill/open_pod_bay">cocoapods-open</a></li>
-<li><a href="https://github.com/CocoaPods/cocoapods-docs">cocoapods-docs</a></li>
-</ul>
-
-<p>The discoverability of plugins is another important topic that we considered.
-Our solution is to adopt a non-enforced convention: plugins should be named
-after the <code>cocoapods-PLUGIN_NAME</code> format. In this way, to check for the
-available plugins, you can just use this handy <a href="http://rubygems.org/search?utf8=%E2%9C%93&amp;query=cocoapods-">RubyGems search</a>.</p>
-
-<p>This release also includes a galore of bug fixes, mostly related to the
-handling of xcassets resources.</p>
-
-<h2>Creating plugins</h2>
-
-<p>A CocoaPods plugin is a gem which includes a file named <code>cocoapods_plugin.rb</code>.
-CocoaPods will load this file for any installed gem that includes it. The file
-will be loaded before running any command, but <em>after</em> CocoaPods’ files (and
-those of its dependencies) have been loaded. The convention is to use this
-file to require the actual implementation of the plugin.</p>
-
-<p>For example <a href="https://github.com/leshill/open_pod_bay/blob/master/lib/cocoapods_plugin.rb">cocoapods-open</a>
-has the following <code>cocoapods_plugin.rb</code>:</p>
+<h3>Pods Endpoint</h3>
 <div class="highlight">      </article>
       </article>
       </section>
@@ -122,7 +94,7 @@ has the following <code>cocoapods_plugin.rb</code>:</p>
       <section class="container">
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">&#39;pod/command/open&#39;</span>
+<pre class='highlight'><code class="text language-text" data-lang="text">http://search.cocoapods.org/api/pods
 </code></pre>      </article>
       </article>
       </section>
@@ -132,7 +104,7 @@ has the following <code>cocoapods_plugin.rb</code>:</p>
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<p>To create a new gem you can use <a href="http://bundler.io">bundler</a> which provides a convenient command:</p>
+<h3>Query String Parameters</h3>
 <div class="highlight">      </article>
       </article>
       </section>
@@ -141,7 +113,9 @@ has the following <code>cocoapods_plugin.rb</code>:</p>
       <section class="container">
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="text language-text" data-lang="text">$ bundle gem NAME
+<pre class='highlight'><code class="text language-text" data-lang="text">query:    The query string.
+amount:   The number of results requested [Default: 20].
+start-at: The offset in the set of results [Default: 0].
 </code></pre>      </article>
       </article>
       </section>
@@ -151,17 +125,7 @@ has the following <code>cocoapods_plugin.rb</code>:</p>
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h3>Adding subcommands</h3>
-
-<p>Adding new subcommands is very easy. You just need to create a subclass of the
-command that will be used as the namespace. Subsequently, it is necessary to
-provide the metadata of the new command and its logic. For more information you
-can check the documentation of the <a href="https://github.com/CocoaPods/CLAide">CLAide</a> gem and the <a href="https://github.com/CocoaPods/CocoaPods/tree/master/lib/cocoapods/command">source code</a> of the
-CocoaPods commands.</p>
-
-<p>If this sounds complicated, don’t be scared; we love simplicity! Actually the
-implementation of those steps is simpler than their description. Following you
-can find the <strong>complete</strong> implementation of the <code>pod spec doc</code> command.</p>
+<h4>Example</h4>
 <div class="highlight">      </article>
       </article>
       </section>
@@ -170,40 +134,7 @@ can find the <strong>complete</strong> implementation of the <code>pod spec doc<
       <section class="container">
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="c1"># lib/pod/command/spec/doc.rb</span>
-
-<span class="k">module</span> <span class="nn">Pod</span>
-  <span class="k">class</span> <span class="nc">Command</span>
-    <span class="k">class</span> <span class="nc">Spec</span>
-      <span class="k">class</span> <span class="nc">Doc</span> <span class="o">&lt;</span> <span class="no">Spec</span>
-        <span class="nb">self</span><span class="o">.</span><span class="n">summary</span> <span class="o">=</span> <span class="s2">&quot;Opens the web documentation of a Pod.&quot;</span>
-
-        <span class="nb">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="o">&lt;&lt;-</span><span class="no">DESC</span>
-<span class="sh">          Opens the web documentation of the Pod with the given NAME.</span>
-<span class="no">        DESC</span>
-
-        <span class="nb">self</span><span class="o">.</span><span class="n">arguments</span> <span class="o">=</span> <span class="s1">&#39;NAME&#39;</span>
-
-        <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span>
-          <span class="vi">@name</span> <span class="o">=</span> <span class="n">argv</span><span class="o">.</span><span class="n">shift_argument</span>
-          <span class="k">super</span>
-        <span class="k">end</span>
-
-        <span class="k">def</span> <span class="nf">validate!</span>
-          <span class="k">super</span>
-          <span class="n">help!</span> <span class="s2">&quot;A Pod name is required.&quot;</span> <span class="k">unless</span> <span class="vi">@name</span>
-        <span class="k">end</span>
-
-        <span class="k">def</span> <span class="nf">run</span>
-          <span class="n">path</span> <span class="o">=</span> <span class="n">get_path_of_spec</span><span class="p">(</span><span class="vi">@name</span><span class="p">)</span>
-          <span class="n">spec</span> <span class="o">=</span> <span class="no">Specification</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-          <span class="no">UI</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;Opening </span><span class="si">#{</span><span class="n">spec</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> documentation&quot;</span>
-          <span class="sb">`open &quot;http://cocoadocs.org/docsets/</span><span class="si">#{</span><span class="n">spec</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="sb">&quot;`</span>
-        <span class="k">end</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+<pre class='highlight'><code class="text language-text" data-lang="text">http://search.cocoapods.org/api/pods?query=test&amp;amount=100&amp;start-at=50
 </code></pre>      </article>
       </article>
       </section>
@@ -213,26 +144,11 @@ can find the <strong>complete</strong> implementation of the <code>pod spec doc<
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h3>APIs</h3>
+<h4>What query string do I use?</h4>
 
-<p>As of yet, an explicit API to access CocoaPods logic has not be defined. So try
-to fail as gracefully as possible in case a future version of CocoaPods breaks
-your usage. Also please let us know about your needs, so we can take them into
-account to finalize APIs.</p>
+<p>The <code>query</code> string you use is what you type into the search engine on <a href="http://cocoapods.org">CocoaPods.org</a>. In addition, you can filter on either or both platforms by prefixing the query string with <code>on:ios</code>, <code>on:osx</code>, or <code>on:ios on:osx</code> (we hide this behind the four radio buttons).</p>
 
-<h3>Checklist</h3>
-
-<ul>
-<li>Name the plugin after the <code>cocoapods-PLUGIN_NAME</code> convention.</li>
-<li>Include a <code>cocoapods_plugin.rb</code> file.</li>
-<li>Use the <code>cocoapods_plugin.rb</code> file to load the actual implementation.</li>
-<li>Fail gracefully when relying on CocoaPods methods.</li>
-<li>Let us know if you make something cool!</li>
-</ul>
-
-<h2>Updating</h2>
-
-<p>To install the last release of CocoaPods you can run:</p>
+<p>For example, if you&#39;d like to only see &quot;test&quot; pods that run on iOS then you prefix the query string with <code>on:ios</code>:</p>
 <div class="highlight">      </article>
       </article>
       </section>
@@ -241,7 +157,7 @@ account to finalize APIs.</p>
       <section class="container">
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="text language-text" data-lang="text">$ [sudo] gem install cocoapods
+<pre class='highlight'><code class="bash language-bash" data-lang="bash">curl <span class="s1">&#39;http://search.cocoapods.org/api/pods?query=on:ios%20test&#39;</span>
 </code></pre>      </article>
       </article>
       </section>
@@ -251,19 +167,101 @@ account to finalize APIs.</p>
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<p>Until version 1.0 we strongly encourage you to keep CocoaPods up to date.</p>
+<h3>Formats</h3>
 
-<p>For all the details, don&#39;t miss the
-<a href="https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md">Changelog</a>.</p>
+<p>We return 4 different formats, all in JSON:</p>
+
+<ol>
+<li><a href="https://github.com/floere/picky/wiki/results-format-and-structure">Picky-style results</a> with pod data as hashes.</li>
+<li><a href="https://github.com/floere/picky/wiki/results-format-and-structure">Picky-style results</a> of pod names as string.</li>
+<li>Flat list of results with pod data as hashes.</li>
+<li>Flat list of results of pod names as string.</li>
+</ol>
+
+<p>What format you&#39;d like you need to provide via the Accept header. The 4 options above translate into:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="text language-text" data-lang="text">Accept: application/vnd.cocoapods.org+picky.hash.json; version=1
+Accept: application/vnd.cocoapods.org+picky.ids.json; version=1
+Accept: application/vnd.cocoapods.org+flat.hash.json; version=1
+Accept: application/vnd.cocoapods.org+flat.ids.json; version=1
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<h4>Defaults</h4>
+
+<p>You don&#39;t have to provide all the details. For example, providing no version will return the latest version. We recommend that you always provide the version nonetheless.</p>
+
+<p>See a list of <a href="https://github.com/CocoaPods/search.cocoapods.org/blob/8908eaaf83a11b3075d36032cb8c5896e37c7366/spec/api/accept_integration_spec.rb#L23-L59">all specs</a>. All of these parameters will return a result.</p>
+
+<p>The default format is Picky-style results with pod information as a hash.</p>
+
+<h3>Examples</h3>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="bash language-bash" data-lang="bash">curl <span class="s1">&#39;http://search.cocoapods.org/api/pods?query=hello&#39;</span> <span class="se">\</span>
+  -H <span class="s2">&quot;Accept: application/vnd.cocoapods.org+picky.hash.json; version=1&quot;</span>
+
+curl <span class="s1">&#39;http://search.cocoapods.org/api/pods?query=name:test&#39;</span> <span class="se">\</span>
+  -H <span class="s2">&quot;Accept: application/vnd.cocoapods.org+flat.ids.json&quot;</span>
+
+curl <span class="s1">&#39;http://search.cocoapods.org/api/pods?query=name:test&amp;start-at=3&#39;</span> <span class="se">\</span>
+  -H <span class="s2">&quot;Accept: application/vnd.cocoapods.org+flat.ids.json&quot;</span>
+
+curl <span class="s1">&#39;http://search.cocoapods.org/api/pods?query=s&amp;amount=1000&#39;</span> <span class="se">\</span>
+  -H <span class="s2">&quot;Accept: application/vnd.cocoapods.org+flat.ids.json&quot;</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<h3>Convenience Endpoints</h3>
+
+<p>It&#39;s not always convenient to use curl on the command line and type the Accept header. So we also offer 4 further endpoints, for quick result viewing in a browser.</p>
+
+<ol>
+<li><a href="http://search.cocoapods.org/api/v1/pods.picky.hash.json?query=test">http://search.cocoapods.org/api/v1/pods.picky.hash.json?query=test</a></li>
+<li><a href="http://search.cocoapods.org/api/v1/pods.picky.ids.json?query=test">http://search.cocoapods.org/api/v1/pods.picky.ids.json?query=test</a></li>
+<li><a href="http://search.cocoapods.org/api/v1/pods.flat.hash.json?query=test">http://search.cocoapods.org/api/v1/pods.flat.hash.json?query=test</a></li>
+<li><a href="http://search.cocoapods.org/api/v1/pods.flat.ids.json?query=test">http://search.cocoapods.org/api/v1/pods.flat.ids.json?query=test</a></li>
+</ol>
+
+<h2>Caveats</h2>
+
+<p>As we improve the search engine, it might be down for half a minute at a time, sporadically. Please allow for this eventuality in any user interfaces.</p>
+
+<p>Have fun with it - we are curious what you all are coming up with! Personally, I&#39;d love a CocoaPod that parsed <a href="https://github.com/floere/picky/wiki/results-format-and-structure">Picky-style results</a> and provided it to other applications &lt;3</p>
 
       </article>
     </article>
   </section>
 </section>
 
-<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2013-11-14-CocoaPods-0.28.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a></article></div></section></section>
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2014-02-02-Search-API-Version-1.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a></article></div></section></section>
 
-<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaPodsFeed" title="CocoaPods → CocoaPodsFeed"><header><h4>Previous Post</h4></header><h3>CocoaPods → CocoaPodsFeed</h3><p>By Orta Therox</p><a class="chevron_placeholder back" href="/CocoaPodsFeed"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"><a href="/Beta" title="CocoaPods Beta"><header><h4>Next Post</h4></header><h3>CocoaPods Beta</h3><p>By Orta Therox</p><a class="chevron_placeholder next" href="/Beta"></a></a></article></div></section>
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/Repairing-Our-Broken-Specs-Repository" title="Repairing Our Broken Specs Repository"><header><h4>Previous Post</h4></header><h3>Repairing Our Broken Specs Repository</h3><p>By Kyle Fuller</p><a class="chevron_placeholder back" href="/Repairing-Our-Broken-Specs-Repository"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 

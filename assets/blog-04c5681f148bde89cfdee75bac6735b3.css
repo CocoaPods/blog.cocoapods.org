@@ -5,6 +5,12 @@ p iframe {
   position: relative;
   top: 4px; }
 
+code {
+  color: black;
+  background-color: white;
+  font-size: 0.7em;
+  padding: 0.4em 0.6em; }
+
 header.blog-post h1 {
   position: absolute;
   bottom: 18px;
