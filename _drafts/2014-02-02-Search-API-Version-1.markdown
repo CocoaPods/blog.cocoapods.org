@@ -5,9 +5,9 @@ author: florian
 categories: search api
 ---
 
-We're going to break up the doom & gloom around the [Specs Repo change](/Repairing-Our-Broken-Specs-Repository/) with good news - we have opened up v1 of our search API!
+I'm going to break up the doom & gloom around the [Specs Repo change](/Repairing-Our-Broken-Specs-Repository/) with some good news. We have opened up v1 of our search API!
 
-This is the API used in [CocoaPods.org](http://cocoapods.org) and soon on [CocoaDocs](http://cocoadocs.org). Read on to find out how to use it in your own applications, we're really excited to see what people do with it.
+This is the API used in [CocoaPods.org](http://cocoapods.org) and soon on [CocoaDocs](http://cocoadocs.org). Read on to find out how to use it in your own applications, I'm really excited to see what people do with it.
 
 <!-- more -->
 
