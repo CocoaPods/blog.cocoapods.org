@@ -104,10 +104,12 @@ curl 'http://search.cocoapods.org/api/pods?query=s&amount=1000' \
 
 It's not always convenient to use curl on the command line and type the Accept header. So we also offer 4 further endpoints, for quick result viewing in a browser.
 
-1. [http://search.cocoapods.org/api/v1/pods.picky.hash.json?query=test](http://search.cocoapods.org/api/v1/pods.picky.hash.json?query=test)
-1. [http://search.cocoapods.org/api/v1/pods.picky.ids.json?query=test](http://search.cocoapods.org/api/v1/pods.picky.ids.json?query=test)
-1. [http://search.cocoapods.org/api/v1/pods.flat.hash.json?query=test](http://search.cocoapods.org/api/v1/pods.flat.hash.json?query=test)
-1. [http://search.cocoapods.org/api/v1/pods.flat.ids.json?query=test](http://search.cocoapods.org/api/v1/pods.flat.ids.json?query=test)
+```
+http://search.cocoapods.org/api/v1/pods.picky.hash.json?query=test
+http://search.cocoapods.org/api/v1/pods.picky.ids.json?query=test
+http://search.cocoapods.org/api/v1/pods.flat.hash.json?query=test
+http://search.cocoapods.org/api/v1/pods.flat.ids.json?query=test
+```
 
 ## Caveats
 
