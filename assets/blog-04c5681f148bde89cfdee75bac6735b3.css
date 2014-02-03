@@ -5,6 +5,12 @@ p iframe {
   position: relative;
   top: 4px; }
 
+code {
+  color: black;
+  background-color: white;
+  font-size: 0.7em;
+  padding: 0.4em 0.6em; }
+
 header.blog-post h1 {
   position: absolute;
   bottom: 18px;
@@ -22,6 +28,8 @@ article.author.metadata header {
   article.author.metadata header p {
     margin-bottom: 4px;
     margin-top: 0px; }
+  article.author.metadata header .twitter-follow-button {
+    margin-top: 20px; }
 
 @media (max-width: 1024px) {
   article.author.metadata header {
@@ -101,10 +109,3 @@ a#archives {
   background-size: 50px 50px;
   float: right;
   margin-right: 8px; }
-
-.people {
-  padding-left: 0; }
-  .people li {
-    /* padding:12px 10px;
-    background-color:#5c5c5c; */
-    list-style: none; }
