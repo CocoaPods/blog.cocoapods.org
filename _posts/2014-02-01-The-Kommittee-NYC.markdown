@@ -35,3 +35,7 @@ We are graciously being hosted by Spotify, at their [NYC HQ](https://www.google.
 {% include person.html name="Paul Young" github="paulyoung" twitter="py" %}
 {% include person.html name="Brian Gerstle" github="btgerst" twitter="btgerst" %}
 </div>
+
+## Meetup Page
+
+[Here](http://www.meetup.com/CocoaPods-NYC/events/164278492/)
