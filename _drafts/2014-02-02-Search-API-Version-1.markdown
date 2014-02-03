@@ -5,7 +5,9 @@ author: florian
 categories: search api
 ---
 
-Good news, friends - we have opened up v1 of our search API that is also used by [cocoapods.org](http://cocoapods.org). Please give it a try and let us know what you build with it!
+We're going to break up the doom & gloom around the [Specs Repo change](/Repairing-Our-Broken-Specs-Repository/) with good news - we have opened up v1 of our search API!
+
+This is the API used in [CocoaPods.org](http://cocoapods.org) and soon on [CocoaDocs](http://cocoadocs.org). Read on to find out how to use it in your own applications, we're really excited to see what people do with it.
 
 <!-- more -->
 
@@ -33,9 +35,9 @@ http://search.cocoapods.org/api/pods?query=test&amount=100&start-at=50
 
 #### What query string do I use?
 
-The `query` string you use is what you type into the search engine on [cocoapods.org](http://cocoapods.org). In addition, you can filter on either or both platforms by prefixing the query string with `on:ios`, `on:osx`, or `on:ios on:osx` (we hide this behind the four radio buttons).
+The `query` string you use is what you type into the search engine on [CocoaPods.org](http://cocoapods.org). In addition, you can filter on either or both platforms by prefixing the query string with `on:ios`, `on:osx`, or `on:ios on:osx` (we hide this behind the four radio buttons).
 
-For example, if you'd like to only see "test" pods that run on ios then you prefix the query string with `on:ios`:
+For example, if you'd like to only see "test" pods that run on iOS then you prefix the query string with `on:ios`:
 
 ```bash
 curl 'http://search.cocoapods.org/api/pods?query=on:ios%20test'
