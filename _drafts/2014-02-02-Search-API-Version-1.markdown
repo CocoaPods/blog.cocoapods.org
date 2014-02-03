@@ -5,7 +5,7 @@ author: florian
 categories: search api
 ---
 
-Good news, friends - we have opened up v1 of our search API that is also used by [cocoapods.org](http://cocoapods.org). Please give it a try and let us know what you have built with it!
+Good news, friends - we have opened up v1 of our search API that is also used by [cocoapods.org](http://cocoapods.org). Please give it a try and let us know what you build with it!
 
 <!-- more -->
 
@@ -37,8 +37,8 @@ The `query` string you use is what you type into the search engine on [cocoapods
 
 For example, if you'd like to only see "test" pods that run on ios then you prefix the query string with `on:ios`:
 
-```
-curl http://search.cocoapods.org/api/pods?query=on:ios%20test
+```bash
+curl 'http://search.cocoapods.org/api/pods?query=on:ios%20test'
 ```
 
 ### Formats
@@ -69,7 +69,7 @@ The default format is Picky-style results with pod information as a hash.
 
 ### Examples
 
-```
+```bash
 curl 'http://search.cocoapods.org/api/pods?query=hello' \
   -H "Accept: application/vnd.cocoapods.org+picky.hash.json; version=1"
 
