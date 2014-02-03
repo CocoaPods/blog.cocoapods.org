@@ -71,10 +71,25 @@ The default format is Picky-style results with pod information as a hash.
 
 ### Examples
 
+#### Formats
+
 ```bash
-curl 'http://search.cocoapods.org/api/pods?query=hello' \
+curl 'http://search.cocoapods.org/api/pods?query=name:kiwi' \
   -H "Accept: application/vnd.cocoapods.org+picky.hash.json; version=1"
 
+curl 'http://search.cocoapods.org/api/pods?query=name:kiwi' \
+  -H "Accept: application/vnd.cocoapods.org+picky.ids.json; version=1"
+
+curl 'http://search.cocoapods.org/api/pods?query=name:kiwi' \
+  -H "Accept: application/vnd.cocoapods.org+flat.hash.json; version=1"
+
+curl 'http://search.cocoapods.org/api/pods?query=name:kiwi' \
+  -H "Accept: application/vnd.cocoapods.org+flat.ids.json; version=1"
+```
+
+#### Query Params
+
+```bash
 curl 'http://search.cocoapods.org/api/pods?query=name:test' \
   -H "Accept: application/vnd.cocoapods.org+flat.ids.json"
 
