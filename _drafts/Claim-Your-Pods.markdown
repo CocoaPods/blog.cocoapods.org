@@ -56,4 +56,15 @@ contributers [here]().
 
 We will take submissions for ownership until most specs have owners.
 After this any new specs you submit will default to your ownership. In
-the future ownership claims will be handled by (?).
+the future ownership claims will be handled by (?). One important side
+effect of this new workflow is how submitting pods will change besides
+just using the `push` command. Currently many spec authors rely on
+Travis to validate the correctness of their new spec version. We will no
+longer be using Travis for CI builds. When submitting a new version of
+your podspec the command line tool will run a local `pod spec lint`
+verifying the spec's validity. After submitting a new version of a spec
+any revisions to that version must be submitted as a pull request to the
+[master repo](https://github.com/CocoaPods/Specs). Because of this I
+would recommend that you thoroughly test your spec with the lint
+[tools](http://guides.cocoapods.org/terminal/commands.html#pod_lib_lint)
+to make sure everything works as expected.
