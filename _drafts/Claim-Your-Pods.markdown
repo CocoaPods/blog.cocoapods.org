@@ -17,41 +17,43 @@ control over submissions of their specs to the master repo.
 
 <!-- more -->
 
-Moving forward this ownership will be determined initially by the first
-user to submit a new spec. With existing podspecs the ownership will be
-a little more complicated.
+Moving forward this ownership will be determined by the first user to
+submit a new spec. With existing podspecs granting ownership will be a
+little more complicated.
 
 
 ## Claim your Pod
 ### Claim submission
 
-For the next few days we will be taking applications for spec authors to
-claim their pods. This will add set initial ownership for your libraries
-within the trunk app allowing you, and the people you grant access, to
-push new specs for your library. **To do this we'll need you to submit
-(how?) a small amount of information, the email address you would like
-to identify you as an owner and the pod name you're claiming.**
+For the next few days we will be taking applications from spec authors
+to claim their pods. This will set initial ownership for your libraries
+within the trunk app allowing you, and the people you allow, to push new
+specs for the given library. To do this we'll need you to fill out
+this [form]() with the email address you would like use to identify you
+as an owner and the pod name you're claiming. Be sure to use the email
+address you use with Github so the commit logs will show your Github
+account.
 
 ### Claim collisions
 
 In the case that someone has already submitted a claim for the pod you
 are claiming we'll have to grant ownership differently. If you are a one
 of many maintainers of the pod it's likely that your co-maintainers have
-already gained ownership to the repo and can add you as a owner as well.
+already gained ownership to the repo and can add you as a owner as well
+by going [here]().
 
-If someone who you believe shouldn't be the owner of a pod has gained
-ownership, please send us (how?) a *short* description of what is going
-on along with the pod's name and what you believe should be the correct
-ownership email address.
+If someone who you don't believe should be the owner of a pod has gained
+ownership, please fill out [this form]() explaining the situation.
 
 ### Co-maintainer access
 
-If there are multiple people who maintain your library's spec, you can
-add them all as owners to the spec. (Instructions?)
+If you maintain a spec along with a few other contributers you can all
+be added as owners to that spec. The initial owner can add other
+contributers [here]().
 
 
 ## Moving forward
 
-We will take submissions for ownership for the next few days. After this
-any new specs you submit will default to your ownership. In the future
-ownership claims will be handled by (?).
+We will take submissions for ownership until most specs have owners.
+After this any new specs you submit will default to your ownership. In
+the future ownership claims will be handled by (?).
