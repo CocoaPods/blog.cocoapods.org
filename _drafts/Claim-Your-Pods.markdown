@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Claim Your Pods"
-date:   2014-02-05
 author: keith
 categories: cocoapods
 ---
@@ -16,6 +15,7 @@ Along with these changes we are adding a hierarchy of ownership to
 submitted podspecs. This way library maintainers will have complete
 control over submissions of their specs to the master repo.
 
+<!-- more -->
 
 Moving forward this ownership will be determined initially by the first
 user to submit a new spec. With existing podspecs the ownership will be
