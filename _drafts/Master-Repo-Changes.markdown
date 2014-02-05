@@ -42,7 +42,7 @@ exists.
 
 ### How can I distinguish the format of a podspec.
 
-Podspecs using the Ruby DSL will use the `.podspec` extension, json based
+Podspecs using the Ruby DSL will use the `.podspec` extension, JSON based
 podspecs will use `.podspec.json`.
 
 ### Will the specs in the Ruby format be deprecated?
@@ -53,7 +53,7 @@ care of converting them.
 ### Will private repos need to adopt the JSON format?
 
 No. Moreover pod push will keep the old behaviour. Though if two files are
-available CocoaPods will prefer the Json format.
+available CocoaPods will prefer the JSON format.
 
 ### Can I access the specs via http?
 
