@@ -20,7 +20,7 @@ the new version of the Specs repository. You can do that with the following
 commands:
 
 <pre class='highlight'><code>
-    $ pod repo remove master
+    $ sudo rm -fr ~/.cocoapods/repos/master
     $ pod setup
     
 </code></pre>
