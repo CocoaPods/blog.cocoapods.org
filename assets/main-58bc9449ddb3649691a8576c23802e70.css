@@ -631,7 +631,8 @@ footer.footer-links {
   background-color: #bc0004; }
   footer.footer-links ul {
     margin-left: -16px;
-    padding-left: 0; }
+    padding-left: 0;
+    margin-top: 0px; }
   footer.footer-links li {
     border-right: 2px solid rgba(251, 0, 6, 0.5);
     list-style-type: none;
