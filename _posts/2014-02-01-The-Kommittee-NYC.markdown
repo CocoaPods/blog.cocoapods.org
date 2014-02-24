@@ -30,7 +30,7 @@ We are graciously being hosted by Spotify, at their [NYC HQ](https://www.google.
 <ul class='people'>
 {% include person.html name="db" github="dblock" twitter="dblockdotorg" %}
 {% include person.html name="Benjamin Jackson" github="benjaminjackson" twitter="benjaminjackson" %}
-{% include person.html name="Make Lazer-Walker" github="lazerwalker" twitter="lazerwalker" %}
+{% include person.html name="Mike Lazer-Walker" github="lazerwalker" twitter="lazerwalker" %}
 {% include person.html name="Klaas Pieter" github="klaaspieter" twitter="klaaspieter" %}
 {% include person.html name="Paul Young" github="paulyoung" twitter="py" %}
 {% include person.html name="Brian Gerstle" github="btgerst" twitter="btgerst" %}
