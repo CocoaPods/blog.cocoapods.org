@@ -4,7 +4,8 @@ desc 'Initial setup'
 task :bootstrap do
   FileUtils.rm_rf '_gh-pages'
   puts "Cloning gh-pages branch..."
-  puts %x[git clone git@github.com:CocoaPods/blog.cocoapods.org.git _gh-pages]
+  url = %x[git ls-remote --get-url origin]
+  puts `git clone #{url.strip} _gh-pages`
   Dir.chdir('_gh-pages') do
     puts %x[git checkout gh-pages]
   end
@@ -38,7 +39,8 @@ desc 'Deploy the site to the gh_pages branch and push'
 task :deploy do
   FileUtils.rm_rf '_gh-pages'
   puts "Cloning gh-pages branch..."
-  puts %x[git clone git@github.com:CocoaPods/blog.cocoapods.org.git _gh-pages]
+  url = %x[git ls-remote --get-url origin]
+  puts %x[git clone #{url.strip} _gh-pages]
   Dir.chdir('_gh-pages') do
     puts %x[git checkout gh-pages]
   end
