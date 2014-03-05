@@ -5,8 +5,11 @@ branches:
 rvm:
 - 2.0.0
 install:
+- git config --global user.email "bots@cocoapods.org"
+- git config --global user.name "CocoaPods Bot"
 - rake bootstrap
 script:
+- git remote set-url origin "https://${GH_TOKEN}@github.com/CocoaPods/blog.cocoapods.org.git"
 - rake deploy
 env:
   global:
