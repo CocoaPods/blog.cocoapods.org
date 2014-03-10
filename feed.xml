@@ -8,6 +8,154 @@
     
     
     <item>
+      <title>Guides and Blog Deploys with Travis-CI</title>
+
+      
+      <description>&lt;p&gt;TL;DR Both the Guides and Blog now auto-deploy when we push to master.&lt;/p&gt;
+
+&lt;p&gt;We are always looking for ways to make contributing to CocoaPods easier, and a quick win for us is auto-deploying the guides and blog. Now any member of the team can accept a PR, and Travis will deploy the changes within minutes.&lt;/p&gt;
+
+&lt;h2&gt;Scripts&lt;/h2&gt;
+
+&lt;p&gt;Travis needs instructions on how to build this code. While you can add all of those commands to the Travis config directly, that is difficult to debug and removes the ability to manually setup and deploy.&lt;/p&gt;
+
+&lt;p&gt;Every CocoaPods repository has a &lt;code&gt;rake bootstrap&lt;/code&gt; command to ensure the environment is setup, and every site has a &lt;code&gt;rake deploy&lt;/code&gt; command. Taking the time to set these up in the past made it incredibly easy to integrate this process with Travis.&lt;/p&gt;
+
+&lt;h2&gt;Pushing to Github Pages with Travis&lt;/h2&gt;
+
+&lt;p&gt;Setting up these two repositories to push to Github pages was pretty trivial, once I figured out the correct steps.&lt;/p&gt;
+
+&lt;h3&gt;1. Travis needs to be a user&lt;/h3&gt;
+
+&lt;p&gt;Since Travis needs to push to Github, it needs a user. Pick or create a user, and get a Personal Access Token. This token is generated in Account Settings on Github. We chose to use the &lt;a href=&quot;https://github.com/CocoaPodsBot&quot;&gt;CocoaPods Bot&lt;/a&gt; account. &lt;/p&gt;
+
+&lt;h3&gt;2. Authenticate with that user&lt;/h3&gt;
+
+&lt;p&gt;In order to identify as this user, Travis needs credentials. I chose to encrypt the user information using the  &lt;code&gt;travis&lt;/code&gt; gem. I ran the command below from within the project directory with the &lt;code&gt;add&lt;/code&gt; flag so it automatically adds the encrypted output to the &lt;code&gt;.travis.yml&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;travis encrypt &amp;#39;GIT_NAME=&amp;quot;Account Name&amp;quot; GIT_EMAIL=example@example.com GH_TOKEN=SOMEREALLYLONGSTRING&amp;#39; --add
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;h3&gt;3. Setup and Deploy&lt;/h3&gt;
+
+&lt;p&gt;Travis build on a completely fresh checkout, so setting up the environment is key. Thankfully both sites had the &lt;code&gt;rake bootstrap&lt;/code&gt; command, so I was able to reuse that.&lt;/p&gt;
+
+&lt;p&gt;The deploy script turned out to be the tricky part. The important step here is to make sure the deploy script relies upon the &lt;code&gt;git remote&lt;/code&gt; that&amp;#39;s setup. All of our static sites have a &lt;code&gt;rake deploy&lt;/code&gt; command, which I modified to remove the hardcoding of the remote.&lt;/p&gt;
+
+&lt;h3&gt;4. travis.yml&lt;/h3&gt;
+
+&lt;p&gt;Configure git settings in &lt;code&gt;.travis.yml&lt;/code&gt;. By default, Travis doesn&amp;#39;t have a user, so you should set the &lt;code&gt;user.email&lt;/code&gt; and &lt;code&gt;user.name&lt;/code&gt; to push with. These should match the credentials you encrypted with the token.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;install:
+- git config --global user.email &amp;quot;bots@cocoapods.org&amp;quot;
+- git config --global user.name &amp;quot;CocoaPods Bot&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;h3&gt;5. Updating the remote&lt;/h3&gt;
+
+&lt;p&gt;In this setup, Travis doesn&amp;#39;t have ssh access to the repository. Change the &lt;code&gt;git remote&lt;/code&gt; to point to &lt;code&gt;https&lt;/code&gt; with your token attached. The token is used to authenticate the push. Here&amp;#39;s what the Blog setup looks like:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;git remote set-url origin &amp;quot;https://${GH_TOKEN}@github.com/CocoaPods/blog.cocoapods.org.git&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;h3&gt;6. Turn on Travis builds&lt;/h3&gt;
+
+&lt;p&gt;This is done from Settings. Also, since this is a deploying build, make sure that you &lt;em&gt;do not&lt;/em&gt; build when pull requests are made.&lt;/p&gt;
+
+&lt;h3&gt;7. Commit and push your changes.&lt;/h3&gt;
+
+&lt;p&gt;Hopefully everything will work. If not, you can make more changes, push, and wait for Travis to build.&lt;/p&gt;
+
+&lt;h5&gt;The .travis.yml&lt;/h5&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;language: ruby
+branches:
+  only:
+  - master
+rvm:
+- 2.0.0
+install:
+- git config --global user.email &amp;quot;bots@cocoapods.org&amp;quot;
+- git config --global user.name &amp;quot;CocoaPods Bot&amp;quot;
+- rake bootstrap
+script:
+- git remote set-url origin &amp;quot;https://${GH_TOKEN}@github.com/CocoaPods/blog.cocoapods.org.git&amp;quot;
+- rake deploy
+env:
+  global:
+    secure: XXXX
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;h2&gt;In Conclusion&lt;/h2&gt;
+
+&lt;p&gt;So that&amp;#39;s how we have our Travis deploys setup now. CocoaPods is a community effort, so lowering the barrier for contributions has been one of our goals. This new setup does just that. Edit away!&lt;/p&gt;
+</description>
+      
+
+      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/Guides-And-Blog-Travis-Deploy</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/Guides-And-Blog-Travis-Deploy</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>SoundCloud Announcement</title>
 
       
