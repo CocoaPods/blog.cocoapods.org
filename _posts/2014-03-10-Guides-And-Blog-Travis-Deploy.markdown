@@ -9,6 +9,8 @@ TL;DR Both the Guides and Blog now auto-deploy when we push to master.
 
 We are always looking for ways to make contributing to CocoaPods easier, and a quick win for us is auto-deploying the guides and blog. Now any member of the team can accept a PR, and Travis will deploy the changes within minutes.
 
+<!-- more -->
+
 ##Scripts
 Travis needs instructions on how to build this code. While you can add all of those commands to the Travis config directly, that is difficult to debug and removes the ability to manually setup and deploy.
 
