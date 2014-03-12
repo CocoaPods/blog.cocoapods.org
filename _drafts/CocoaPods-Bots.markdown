@@ -7,7 +7,7 @@ categories: cocoapods bots
 
 Last WWDC, Apple announced a new feature shipping with Xcode 5 and OS X Server, called Bots. This continuous integration server was designed to build and test Mac and iOS projects with ease. It includes the ability to setup new integrations (re: projects) with Xcode, and provides a nice web-based dashboard for monitoring and configuring your builds.
 
-<!-- more -->1
+<!-- more -->
 
 ##Shortcut
 This blog post is centered around getting `pod install` to run in a Scheme pre-action, which means the `Pods` folder is not checked in. As far as we have tested, **if you check in your `Pods` folder, Bots will just work.** But we know a number of users prefer to not have that folder in their repository ( author included), so this post explains the how and why to setting that up.
