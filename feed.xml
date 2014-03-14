@@ -8,6 +8,24 @@
     
     
     <item>
+      <title>CocoaPods Bug Bash</title>
+
+      
+      <description>&lt;p&gt;With the announcement that Fabio will be &lt;a href=&quot;/SoundCloud/&quot;&gt;working full time on CocoaPods&lt;/a&gt; (thanks &lt;a href=&quot;https://soundcloud.com/&quot;&gt;SoundCloud!&lt;/a&gt;) for three months, we looked for ways to get the most bang for our buck on his time. In true Open Source style we looked at ways of getting people to help out cleaning out the GitHub issues. &lt;/p&gt;
+
+&lt;p&gt;We then looked for interesting incentives, and we have some compelling icing on the proverbial cake.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Fri, 14 Mar 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/CocoaPods-Bug-Bash</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-Bug-Bash</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>Guides and Blog Deploys with Travis-CI</title>
 
       
