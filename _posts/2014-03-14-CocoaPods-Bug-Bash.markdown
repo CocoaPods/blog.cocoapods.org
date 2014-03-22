@@ -26,7 +26,7 @@ On the last weekend of March, the 29th / 30th [we](http://cocoapods.org/about) w
 Well, we reached out to some of the great indie dev tool makers - tools I use everyday - asking if they would be kind enough to donate a license or two. We'll be able to give out licenses for the top contributors for the following apps: 
 
 * [AppCode](https://www.jetbrains.com/objc) - The alternative Objective-C IDE.
-* [Bee](http://neat.io/bee/) - A Github Issues, FogBugz & JIRA ticket tracker.
+* [Bee](http://neat.io/bee/) - Mac issue tracker supporting GitHub Issues, FogBugz and JIRA.
 * [Dash](http://kapeli.com/dash) - Instantly access developer documentation.
 * [GIFBrewery](http://www.helloresolven.com/portfolio/gifbrewery) - The best tool for converting MP4 to .gif.
 * [Reveal](http://revealapp.com) - The best way to explore the iOS view hierarchy.
