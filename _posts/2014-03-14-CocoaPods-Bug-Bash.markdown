@@ -19,7 +19,7 @@ Fixing issues themselves would be lovely, but it's not the focus. This means you
 
 ### How will it work?
 
-On the last weekend of March, the 28th / 29th [we](http://cocoapods.org/about) will be in the CocoaPods IRC channel ( [chat.freenode.net#cocoapods](irc://chat.freenode.net#cocoapods) ) offering help to people. There will be an IRC bot that will assign people random CocoaPods GitHub issues when they request them, they then can triage it. We will then generate a leaderboard from the number of issues dealt with and give out some prizes at the end. This is a great opportunity to give back to the CocoaPods project and to say hi to the authors and other Objective-C developers in the chat room.
+On the last weekend of March, the 29th / 30th [we](http://cocoapods.org/about) will be in the CocoaPods IRC channel ( [chat.freenode.net#cocoapods](irc://chat.freenode.net#cocoapods) ) offering help to people. There will be an IRC bot that will assign people random CocoaPods GitHub issues when they request them, they then can triage it. We will then generate a leaderboard from the number of issues dealt with and give out some prizes at the end. This is a great opportunity to give back to the CocoaPods project and to say hi to the authors and other Objective-C developers in the chat room.
 
 ### You mentioned prizes?
 
