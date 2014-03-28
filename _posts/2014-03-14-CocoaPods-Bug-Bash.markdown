@@ -30,3 +30,4 @@ Well, we reached out to some of the great indie dev tool makers - tools I use ev
 * [Dash](http://kapeli.com/dash) - Instantly access developer documentation.
 * [GIFBrewery](http://www.helloresolven.com/portfolio/gifbrewery) - The best tool for converting MP4 to .gif.
 * [Reveal](http://revealapp.com) - The best way to explore the iOS view hierarchy.
+* [RubyMotion](http://www.rubymotion.com) - An awesome toolchain that lets you quickly develop and test iOS and OS X using Ruby.
