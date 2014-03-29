@@ -6,7 +6,7 @@ author: fabio
 categories: cocoapods releases
 ---
 
-TL;DR: _CocoaPods 0.30 dramatically reduces the setup time & bandwidth, introduces compatibility adjustments for Xcode 5.1 and the Rainforest!_
+TL;DR: _CocoaPods 0.30 dramatically reduces setup time & download size, introduces compatibility adjustments for Xcode 5.1 and the Rainforest!_
 
 <!-- more -->
 
