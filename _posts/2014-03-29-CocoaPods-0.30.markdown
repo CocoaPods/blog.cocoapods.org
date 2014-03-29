@@ -1,0 +1,67 @@
+---
+layout: post
+title:  "CocoaPods 0.30"
+date:   2014-03-29
+author: fabio
+categories: cocoapods releases
+---
+
+TL;DR: _CocoaPods 0.30 dramatically reduces the setup time & bandwidth, introduces compatibility adjustments for Xcode 5.1 and the Rainforest!_
+
+<!-- more -->
+
+## Smarter Setup
+
+Sometimes the small changes are the ones which can lead to biggest impacts. Rejoice folks with slow interwebs because this is the case of this [patch](https://github.com/CocoaPods/CocoaPods/pull/1803/files#diff-5b25375a43a40f866bc3d26e7227d581L37) contributed by [Jeff Verkoeyen](https://github.com/jverkoey). The change will prevent the download of the history of the master repo during setup and consequently will dramatically reduce the download size (from `>200MB` to roughly `3.5MB`).
+
+## Xcode 5.1
+
+Finally can say bye bye (at least until the next update of Xcode) to that pesky warning about updating the build settings of the Pods thanks to [Romans Karpelcevs](https://github.com/coverback). Additionally, the file references of frameworks have been fixed to work on Xcode 5.1.
+
+
+## Rainforest
+
+If you are a CocoaPods contributor or if you plan to hack on it, this new repo will definitely interest you. Rainforest is the home of CocoaPods development and makes hacking on it and on its dependencies as it always should have been: super simple!
+
+```
+$ git clone https://github.com/CocoaPods/Rainforest.git
+$ cd Rainforest
+$ rake set_up
+$ CocoaPods/bin/pod --version
+0.30.0
+```
+
+And now lets experiment with some real hacking:
+
+```
+$ sed -i '' 's/UI.puts VERSION/UI.puts "#{VERSION} Hacked!"/' CocoaPods/lib/cocoapods/command.rb
+$ CocoaPods/bin/pod --version
+0.30.0 Hacked!
+```
+
+Whoah!
+
+## Other Improvements
+
+This release is decorated with minor touches all around the way, from word wrapping help banners to the terminal width to saving in the Podfile the name of the project in `pod init`.
+
+- [Mike Walker](https://github.com/lazerwalker) improved robustness against spaces and quotes in paths.
+- [banjun](https://github.com/banjun) added support to ignore SVN externals.
+- [Kyle Fuller](https://github.com/kylef) added support for the `docset_url` attribute.
+- [Piet Brauer](https://github.com/pietbrauer) added the support for the specification of a template URL for the pod lib create command.
+- [Carson McDonald](https://github.com/carsonmcdonald) had been on fire and added a bunch of missing tests – let me sneak in a personal thanks to him – to CocoaPods.
+
+
+## Updating
+
+To install the last release of CocoaPods you can run:
+
+```
+$ [sudo] gem install cocoapods
+```
+
+Until version 1.0 we strongly encourage you to keep CocoaPods up to date.
+
+For all the details, don't miss the
+[Changelog](https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md).
+
