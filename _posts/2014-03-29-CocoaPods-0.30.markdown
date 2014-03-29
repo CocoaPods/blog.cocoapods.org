@@ -12,7 +12,7 @@ TL;DR: _CocoaPods 0.30 dramatically reduces setup time & download size, introduc
 
 ## Smarter Setup
 
-Sometimes the small changes have the biggest impact. Folk with slow interwebs can finally rejoice! Because this [patch](https://github.com/CocoaPods/CocoaPods/pull/1803/files#diff-5b25375a43a40f866bc3d26e7227d581L37) contributed by [Jeff Verkoeyen](https://github.com/jverkoey) will prevent the download of the history of the master repo during setup and consequently will dramatically reduce the download size (from `>200MB` to roughly `3.5MB`). Nippy.
+Sometimes the small changes have the biggest impact. Folks with slow interwebs, rejoice! Because this [patch](https://github.com/CocoaPods/CocoaPods/pull/1803/files#diff-5b25375a43a40f866bc3d26e7227d581L37) contributed by [Jeff Verkoeyen](https://github.com/jverkoey) will prevent the download of the history of the master repo during setup and consequently will dramatically reduce the download size (from `>200MB` to roughly `3.5MB`). Nippy.
 
 
 ## Xcode 5.1
