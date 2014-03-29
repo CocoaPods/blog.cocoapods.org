@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-      <title>CocoaPods Bug Bash - CocoaPods Blog</title>
+      <title>CocoaPods 0.30 - CocoaPods Blog</title>
     
 
     <meta name="description" content="The blog for CocoaPods.org an Objective-C dependency manager">
@@ -45,7 +45,7 @@
   <article class="row">
   <header class="col-md-8 col-md-offset-2 headline blog-post">
     
-      <h1>CocoaPods Bug Bash</h1>
+      <h1>CocoaPods 0.30</h1>
     
     
   </header>
@@ -59,61 +59,130 @@
         <header>
           
             
-              <img class="gravatar large" src="http://gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb?s=144" height=72 width=72>
+              <img class="gravatar large" src="http://gravatar.com/avatar/b6dde1a78e6215a592768c1e78a54adc?s=144" height=72 width=72>
             
             
               
-                <p><a href="http://twitter.com/orta">Orta Therox</a></p>
+                <p><a href="http://twitter.com/fabiopelosin">Fabio Pelosin</a></p>
               
             
-             <p>14 March 2014</p>
+             <p>29 March 2014</p>
 
             
-              <a href="https://twitter.com/orta" class="twitter-follow-button" data-show-count="false" data-lang="en">
-                Follow @orta
+              <a href="https://twitter.com/fabiopelosin" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @fabiopelosin
               </a>
             
         </header>
       </article>
     
       <article class="content col-md-8">
-        <p>With the announcement that Fabio will be <a href="/SoundCloud/">working full time on CocoaPods</a> (thanks <a href="https://soundcloud.com/">SoundCloud!</a>) for three months, we looked for ways to get the most bang for our buck on his time. In true Open Source style we looked at ways of getting people to help out cleaning out the GitHub issues. </p>
-
-<p>We then looked for interesting incentives, and we have some compelling icing on the proverbial cake.</p>
+        <p>TL;DR: <em>CocoaPods 0.30 dramatically reduces the setup time &amp; bandwidth, introduces compatibility adjustments for Xcode 5.1 and the Rainforest!</em></p>
 
 <!-- more -->
 
-<h2>The Plan</h2>
+<h2>Smarter Setup</h2>
 
-<p>We want to clean up our issues, remove duplicates, improve the writing and make them easily reproducible. </p>
+<p>Sometimes the small changes are the ones which can lead to biggest impacts. Rejoice folks with slow interwebs because this is the case of this <a href="https://github.com/CocoaPods/CocoaPods/pull/1803/files#diff-5b25375a43a40f866bc3d26e7227d581L37">patch</a> contributed by <a href="https://github.com/jverkoey">Jeff Verkoeyen</a>. The change will prevent the download of the history of the master repo during setup and consequently will dramatically reduce the download size (from <code>&gt;200MB</code> to roughly <code>3.5MB</code>).</p>
 
-<p>Fixing issues themselves would be lovely, but it&#39;s not the focus. This means you don&#39;t have to know a lot of ruby, but more apply general debugging skills to the problem.</p>
+<h2>Xcode 5.1</h2>
 
-<h3>How will it work?</h3>
+<p>Finally can say bye bye (at least until the next update of Xcode) to that pesky warning about updating the build settings of the Pods thanks to <a href="https://github.com/coverback">Romans Karpelcevs</a>. Additionally, the file references of frameworks have been fixed to work on Xcode 5.1.</p>
 
-<p>On the last weekend of March, the 29th / 30th <a href="http://cocoapods.org/about">we</a> will be in the CocoaPods IRC channel ( <a href="irc://chat.freenode.net#cocoapods">chat.freenode.net#cocoapods</a> ) offering help to people. There will be an IRC bot that will assign people random CocoaPods GitHub issues when they request them, they then can triage it. We will then generate a leaderboard from the number of issues dealt with and give out some prizes at the end. This is a great opportunity to give back to the CocoaPods project and to say hi to the authors and other Objective-C developers in the chat room.</p>
+<h2>Rainforest</h2>
 
-<h3>You mentioned prizes?</h3>
+<p>If you are a CocoaPods contributor or if you plan to hack on it, this new repo will definitely interest you. Rainforest is the home of CocoaPods development and makes hacking on it and on its dependencies as it always should have been: super simple!</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="text language-text" data-lang="text">$ git clone https://github.com/CocoaPods/Rainforest.git
+$ cd Rainforest
+$ rake set_up
+$ CocoaPods/bin/pod --version
+0.30.0
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>And now lets experiment with some real hacking:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="text language-text" data-lang="text">$ sed -i &#39;&#39; &#39;s/UI.puts VERSION/UI.puts &quot;#{VERSION} Hacked!&quot;/&#39; CocoaPods/lib/cocoapods/command.rb
+$ CocoaPods/bin/pod --version
+0.30.0 Hacked!
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Whoah!</p>
 
-<p>Well, we reached out to some of the great indie dev tool makers - tools I use everyday - asking if they would be kind enough to donate a license or two. We&#39;ll be able to give out licenses for the top contributors for the following apps: </p>
+<h2>Other Improvements</h2>
+
+<p>This release is decorated with minor touches all around the way, from word wrapping help banners to the terminal width to saving in the Podfile the name of the project in <code>pod init</code>.</p>
 
 <ul>
-<li><a href="https://www.jetbrains.com/objc">AppCode</a> - The alternative Objective-C IDE.</li>
-<li><a href="http://neat.io/bee/">Bee</a> - Mac issue tracker supporting GitHub Issues, FogBugz and JIRA.</li>
-<li><a href="http://kapeli.com/dash">Dash</a> - Instantly access developer documentation.</li>
-<li><a href="http://www.helloresolven.com/portfolio/gifbrewery">GIFBrewery</a> - The best tool for converting MP4 to .gif.</li>
-<li><a href="http://revealapp.com">Reveal</a> - The best way to explore the iOS view hierarchy.</li>
-<li><a href="http://www.rubymotion.com">RubyMotion</a> - An awesome toolchain that lets you quickly develop and test iOS and OS X using Ruby.</li>
+<li><a href="https://github.com/lazerwalker">Mike Walker</a> improved robustness against spaces and quotes in paths.</li>
+<li><a href="https://github.com/banjun">banjun</a> added support to ignore SVN externals.</li>
+<li><a href="https://github.com/kylef">Kyle Fuller</a> added support for the <code>docset_url</code> attribute.</li>
+<li><a href="https://github.com/pietbrauer">Piet Brauer</a> added the support for the specification of a template URL for the pod lib create command.</li>
+<li><a href="https://github.com/carsonmcdonald">Carson McDonald</a> had been on fire and added a bunch of missing tests – let me sneak in a personal thanks to him – to CocoaPods.</li>
 </ul>
+
+<h2>Updating</h2>
+
+<p>To install the last release of CocoaPods you can run:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="text language-text" data-lang="text">$ [sudo] gem install cocoapods
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Until version 1.0 we strongly encourage you to keep CocoaPods up to date.</p>
+
+<p>For all the details, don&#39;t miss the
+<a href="https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md">Changelog</a>.</p>
 
       </article>
     </article>
   </section>
 </section>
 
-<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2014-03-14-CocoaPods-Bug-Bash.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a></article></div></section></section>
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2014-03-29-CocoaPods-0.30.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a></article></div></section></section>
 
-<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/Guides-And-Blog-Travis-Deploy" title="Guides and Blog Deploys with Travis-CI"><header><h4>Previous Post</h4></header><h3>Guides and Blog Deploys with Travis-CI</h3><p>By Michele Titolo</p><a class="chevron_placeholder back" href="/Guides-And-Blog-Travis-Deploy"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"><a href="/CocoaPods-0.30" title="CocoaPods 0.30"><header><h4>Next Post</h4></header><h3>CocoaPods 0.30</h3><p>By Fabio Pelosin</p><a class="chevron_placeholder next" href="/CocoaPods-0.30"></a></a></article></div></section>
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaPods-Bug-Bash" title="CocoaPods Bug Bash"><header><h4>Previous Post</h4></header><h3>CocoaPods Bug Bash</h3><p>By Orta Therox</p><a class="chevron_placeholder back" href="/CocoaPods-Bug-Bash"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
