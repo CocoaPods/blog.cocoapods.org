@@ -8,6 +8,22 @@
     
     
     <item>
+      <title>CocoaPods 0.31</title>
+
+      
+      <description>&lt;p&gt;TL;DR: &lt;em&gt;The bug bash has been a massive success: all the tickets have been triaged at least once, almost 80 were closed, with 16 Pull Requests sent to fix or enhance CocoaPods. The result? CocoaPods 0.31!&lt;/em&gt;&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Mon, 31 Mar 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/CocoaPods-0.31</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.31</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>CocoaPods 0.30</title>
 
       
