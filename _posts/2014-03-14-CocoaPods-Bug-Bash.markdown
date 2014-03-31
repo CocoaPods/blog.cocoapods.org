@@ -5,12 +5,6 @@ author: orta
 categories: cocoapods bugbash
 ---
 
-## Whilst it's running.
-
-We recommend looking at the [FAQ to get started](http://bit.ly/1lcIwu4), 
-We have a [leaderboard up and running](http://cocoapods.org/bugbash).
-Finally you can see what's been happening by checking out the [bot's activity](https://github.com/CocoaPodsBot?tab=activity).
-
 With the announcement that Fabio will be [working full time on CocoaPods](/SoundCloud/) (thanks [SoundCloud!](https://soundcloud.com/)) for three months, we looked for ways to get the most bang for our buck on his time. In true Open Source style we looked at ways of getting people to help out cleaning out the GitHub issues. 
 
 We then looked for interesting incentives, and we have some compelling icing on the proverbial cake.
