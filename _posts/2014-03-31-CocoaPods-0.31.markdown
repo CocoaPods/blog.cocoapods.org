@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "CocoaPods 0.31"
-date:   2014-03-30
+date:   2014-03-31
 author: orta
 categories: cocoapods releases
 ---
