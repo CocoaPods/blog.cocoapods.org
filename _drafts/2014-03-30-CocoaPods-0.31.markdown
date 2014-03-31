@@ -6,15 +6,22 @@ author: orta
 categories: cocoapods releases
 ---
 
-TL;DR: _CocoaPods 0.31 is a big community effort!_
+TL;DR: _The bug bash has been a massive success: all the tickets have been triaged at least once, almost 80 were closed, with 16 Pull Requests sent to fix or enhance CocoaPods. The result? CocoaPods 0.31!_
 
 <!-- more -->
 
-## Features from the CocoaPods Bug Bash
+##The CocoaPods Bug Bash
 
-The [CocoaPods Dev team](http://cocoapods.org/about) is knackered after the bug bash, we managed to get a lot more contributors to CocoaPods squashed a lot of bugs and triaged a tonne of tickets. 
+```
+  4 meetups world wide, 
+  33 people, 
+  16 pull requests, 
+  6  claimed issues still being worked on, 
+  86 issues confirmed as existing, 
+  55 closed issues, and a total of 428 triage actions by participants.
+```
 
-So rather than trying to get started on the next big feature (build configuration dependant pods, I hear.) Fabio opted for making a community release first. No big features, but a lot of thanks. Anyone who contributed is now in the commiters section in the lower half of the [About page](http://cocoapods.org/about).
+We managed to raise the number of participants in the [CocoaPods dev tools](http://cocoapods.org/about) to over 170 contributors. With the top contributor [Neonichu](https://github.com/neonichu) submitting 9 PRs, and still finding time to contribute to other projects during the weekend. Mind-blowing.
 
 ## Things new to CocoaPods
 
@@ -27,60 +34,14 @@ So rather than trying to get started on the next big feature (build configuratio
 * [Marc Boquet](https://github.com/apalancat) Unset the `CDPATH` env variable before shelling-out to `prepare_command`.
 
 
-## Fixes
+## The most important fix
 
 
 * Resolve crash related to the I18n deprecation warning.  
   [Eloy Durán](https://github.com/alloy)
   [#1950](https://github.com/CocoaPods/CocoaPods/issues/1950)
 
-* Fix compilation issues related to the native Extension of Xcodeproj.  
-  [Eloy Durán](https://github.com/alloy)
-
-* Robustness against user Git configuration and against merge commits in `pod
-  repo` subcommands.  
-  [Boris Bügling](https://github.com/neonichu)
-  [#1949](https://github.com/CocoaPods/CocoaPods/issues/1949)
-  [#1978](https://github.com/CocoaPods/CocoaPods/pull/1978)
-
-* Gracefully inform the user if the `:head` option is not supported for a given
-  download strategy.  
-  [Boris Bügling](https://github.com/neonichu)
-  [#1947](https://github.com/CocoaPods/CocoaPods/issues/1947)
-  [#1958](https://github.com/CocoaPods/CocoaPods/pull/1958)
-
-* Cleanup a pod directory if error occurs while downloading.  
-  [Alex Rothenberg](https://github.com/alexrothenberg)
-  [#1842](https://github.com/CocoaPods/CocoaPods/issues/1842)
-  [#1960](https://github.com/CocoaPods/CocoaPods/pull/1960)
-
-* No longer warn for Github repositories with OAuth authentication.  
-  [Boris Bügling](https://github.com/neonichu)
-  [#1928](https://github.com/CocoaPods/CocoaPods/issues/1928)
-  [Core#77](https://github.com/CocoaPods/Core/pull/77)
-
-* Fix for when using `s.version` as the `:tag` for a git repository in a
-  Podspec.  
-  [Joel Parsons](https://github.com/joelparsons)
-  [#1721](https://github.com/CocoaPods/CocoaPods/issues/1721)
-  [Core#72](https://github.com/CocoaPods/Core/pull/72)
-
-* Improved escaping of paths in Git downloader.  
-  [Vladimir Burdukov](https://github.com/chipp)
-  [cocoapods-downloader#14](https://github.com/CocoaPods/cocoapods-downloader/pull/14)
-
-* Podspec without explicitly set `requires_arc` attribute no longer passes the
-  lint.  
-  [Richard Lee](https://github.com/dlackty)
-  [#1840](https://github.com/CocoaPods/CocoaPods/issues/1840)
-  [Core#71](https://github.com/CocoaPods/Core/pull/71)
-
-* Properly quote headers in the `-isystem` compiler flag of the aggregate
-  targets.  
-  [Eloy Durán](https://github.com/alloy)
-  [#1862](https://github.com/CocoaPods/CocoaPods/issues/1862)
-  [#1894](https://github.com/CocoaPods/CocoaPods/pull/1894)
-
+For all the other fixes, check the [Changelog](https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md).
 
 ## Updating
 
