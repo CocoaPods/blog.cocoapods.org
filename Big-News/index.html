@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-      <title>CocoaPods 0.31 - CocoaPods Blog</title>
+      <title>AppIe Acquires CocoaPods - CocoaPods Blog</title>
     
 
     <meta name="description" content="The blog for CocoaPods.org an Objective-C dependency manager">
@@ -45,7 +45,7 @@
   <article class="row">
   <header class="col-md-8 col-md-offset-2 headline blog-post">
     
-      <h1>CocoaPods 0.31</h1>
+      <h1>AppIe Acquires CocoaPods</h1>
     
     
   </header>
@@ -59,107 +59,78 @@
         <header>
           
             
-              <img class="gravatar large" src="http://gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb?s=144" height=72 width=72>
+              <img class="gravatar large" src="http://gravatar.com/avatar/de2d64478e715fb02266f77a3f5641f6?s=144" height=72 width=72>
             
             
               
-                <p><a href="http://twitter.com/orta">Orta Therox</a></p>
+                <p><a href="http://twitter.com/hanke">Florian Hanke</a></p>
               
             
-             <p>31 March 2014</p>
+             <p>1 April 2014</p>
 
             
-              <a href="https://twitter.com/orta" class="twitter-follow-button" data-show-count="false" data-lang="en">
-                Follow @orta
+              <a href="https://twitter.com/hanke" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @hanke
               </a>
             
         </header>
       </article>
     
       <article class="content col-md-8">
-        <p>TL;DR: <em>The bug bash has been a massive success: all the tickets have been triaged at least once, almost 80 were closed, with 16 Pull Requests sent to fix or enhance CocoaPods. The result? CocoaPods 0.31!</em></p>
+        <p>Big news, everybody! AppIe* has finally acquired CocoaPods. Continue below the fold…</p>
 
 <!-- more -->
 
-<h2>The CocoaPods Bug Bash</h2>
-<div class="highlight">      </article>
-      </article>
-      </section>
-      
-      <div style="background-color:white;">
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="text language-text" data-lang="text">  4 meetups world wide, 
-  33 people, 
-  16 pull requests, 
-  6  claimed issues still being worked on, 
-  86 issues confirmed as existing, 
-  55 closed issues, and a total of 428 triage actions by participants.
-</code></pre>      </article>
-      </article>
-      </section>
-      </div>
-      
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-</div>
-<p>We managed to raise the number of participants in the <a href="http://cocoapods.org/about">CocoaPods dev tools</a> to over 170 contributors. With the top contributor <a href="https://github.com/neonichu">Neonichu</a> submitting 9 PRs, and still finding time to contribute to other projects during the weekend. Mind-blowing.</p>
+<p>After several months of discussions and meetings we are proud to finally be able to announce big news:
+CocoaPods has been acquired by AppIe for US$ 20 Million on the 1st of April, today.</p>
 
-<h2>Things new to CocoaPods</h2>
+<h2>CocoaPods @ AppIe</h2>
 
-<ul>
-<li><p><a href="https://github.com/lrz">Laurent Sansonetti</a> Ordered the output of pods correctly when versions went over two digits in the <code>pod spec</code> commands.</p></li>
-<li><p><a href="https://github.com/dlackty">Richard Lee</a> made linter checks if your homepage works so you won&#39;t accidentally link to the wrong place, on top of that he made sure that when running <code>pod install</code> on Travis CI it runs with the right shell encoding.</p></li>
-<li><p><a href="https://github.com/z00b">Robert Zuber</a> wrapped up <a href="https://github.com/StefanDamm">Stefan Damm</a>&#39;s PR to include the versions of the Pods to the output of <code>pod list</code>.</p></li>
-<li><p><a href="https://github.com/apalancat">Marc Boquet</a> Unset the <code>CDPATH</code> env variable before shelling-out to <code>prepare_command</code>.</p></li>
-</ul>
+<p>With one exception (see below), the existing CocoaPods Core Team will move to the AppIe Campus.
+We can&#39;t describe how excited we are to continue to improve giving you the best in pod-based dependency handling under AppIe&#39;s fold.</p>
 
-<h2>The most important fix</h2>
+<p>CocoaPods will become an extension to Xcode.
+For just $4.99 you get access to over 3000 existing pods, and this is a one-time purchase, valid forever.</p>
 
-<ul>
-<li>Resolve crash related to the I18n deprecation warning.<br>
-<a href="https://github.com/alloy">Eloy Durán</a>
-<a href="https://github.com/CocoaPods/CocoaPods/issues/1950">#1950</a></li>
-</ul>
+<h3>What this means for you</h3>
 
-<p>For all the other fixes, check the <a href="https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md">Changelog</a>.</p>
+<p>We anticipate not everybody agreeing with our course of action.
+So here&#39;s what this move means for you, our most appreciated pod writers.</p>
 
-<h2>Updating</h2>
+<p>Existing pod owners will be remunerated via one of our generous plans: Bean, Pod, or Plantation (details on the sizes will follow).
+If you do not feel happy with one of our plans, please contact us privately, and we will be able to work out a deal that will benefit all parties.</p>
 
-<p>To install the last release of CocoaPods you can run:</p>
-<div class="highlight">      </article>
-      </article>
-      </section>
-      
-      <div style="background-color:white;">
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="text language-text" data-lang="text">$ [sudo] gem install cocoapods
-</code></pre>      </article>
-      </article>
-      </section>
-      </div>
-      
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-</div>
-<p>Until version 1.0 we strongly encourage you to keep CocoaPods up to date.</p>
+<h3>Future Developments</h3>
 
-<p>For all the details, don&#39;t miss the
-<a href="https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md">Changelog</a>.</p>
+<p>We have several exciting plans for the future:
+Each pod will be able to charge a price and also offer in-pod purchases.
+It will also be possible to remotely remove a faulty pod from a client.
+We feel that this will enhance security and usability for our clients.
+Initially, we will charge a price for each uploaded version, but we are aiming to remove this by the middle of 2014.</p>
+
+<h3>Eloy Durán</h3>
+
+<p>Sadly, we have to add a bitter drop to this otherwise sweet nectar.
+While the CocoaPods core team stood as one behind this decision, founder Eloy Durán could not be persuaded to stay on board and was convinced to leave the OSS group he had founded, even after we offered him a generous severance package (in his own words): &quot;Please accept this free license for life for CocoaPods.&quot;</p>
+
+<p>We regret his decision but wish him all the best and good luck in future endeavours.
+We also hope that he can somehow support his idealistic lifestyle despite not recognizing great financial opportunities.</p>
+
+<h3>See you soon</h3>
+
+<p>The CocoaPods Core Team will be taking a few weeks off in Hawaii as part of this deal.
+See you on soon on an Xcode near you!</p>
+
+<p>*Here&#39;s <a href="https://twitter.com/AppieDuran/status/450975104395390976/photo/1">a company portrait of AppIe</a>.</p>
 
       </article>
     </article>
   </section>
 </section>
 
-<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2014-03-31-CocoaPods-0.31.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a></article></div></section></section>
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2014-04-01-Big-News.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a></article></div></section></section>
 
-<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaPods-0.30" title="CocoaPods 0.30"><header><h4>Previous Post</h4></header><h3>CocoaPods 0.30</h3><p>By Fabio Pelosin</p><a class="chevron_placeholder back" href="/CocoaPods-0.30"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"><a href="/Big-News" title="AppIe Acquires CocoaPods"><header><h4>Next Post</h4></header><h3>AppIe Acquires CocoaPods</h3><p>By Florian Hanke</p><a class="chevron_placeholder next" href="/Big-News"></a></a></article></div></section>
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaPods-0.31" title="CocoaPods 0.31"><header><h4>Previous Post</h4></header><h3>CocoaPods 0.31</h3><p>By Orta Therox</p><a class="chevron_placeholder back" href="/CocoaPods-0.31"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
