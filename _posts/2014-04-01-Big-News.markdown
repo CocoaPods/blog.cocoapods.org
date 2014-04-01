@@ -45,6 +45,8 @@ While the CocoaPods core team stood as one behind this decision, founder Eloy Du
 We regret his decision but wish him all the best and good luck in future endeavours.
 We also hope that he can somehow support his idealistic lifestyle despite not recognizing great financial opportunities.
 
+Update: [RubyMotion](http://www.rubymotion.com/) has just announced Eloy's real reasons to leave CocoaPods. Read more about it in [their tweet](https://twitter.com/RubyMotion/status/450955155551555584).
+
 ### See you soon
 
 The CocoaPods Core Team will be taking a few weeks off in Hawaii as part of this deal.
