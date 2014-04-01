@@ -6,7 +6,7 @@ author: florian
 categories: cocoapods appie
 ---
 
-Big news, everybody! AppIe* has finally acquired CocoaPods. Continue below the fold…
+Big news, everybody! AppIe* has finally acquired CocoaPods.
 
 <!-- more -->
 
