@@ -17,7 +17,7 @@ CocoaPods has been acquired by Apple Inc. for US$ 20 Million on the 1st of April
 With one exception (see below), the existing CocoaPods Core Team will move to the Apple Campus in Cupertino.
 We can't describe how excited we are to continue to improve giving you the best in pod-based dependency handling under Apple's fold.
 
-CocoaPods will become an extension to XCode.
+CocoaPods will become an extension to Xcode.
 For just $4.99 you get access to over 3000 existing pods, and this is a one-time purchase, valid forever*.
 
 ### What this means for you
@@ -46,4 +46,4 @@ We also hope that he can somehow support his idealistic lifestyle despite not re
 ### See you soon
 
 The CocoaPods Core Team will be taking a few weeks off in Hawaii as part of this deal.
-See you on soon on an XCode near you!
+See you on soon on an Xcode near you!
