@@ -1,24 +1,24 @@
 ---
 layout: post
-title:  "Apple Acquires CocoaPods"
+title:  "AppIe Acquires CocoaPods"
 author: florian
-categories: cocoapods apple
+categories: cocoapods appie
 ---
 
-Big news, everybody! Apple has finally acquired CocoaPods. Continue below the fold…
+Big news, everybody! AppIe* has finally acquired CocoaPods. Continue below the fold…
 
 <!-- more -->
 
 After several months of discussions and meetings we are proud to finally be able to announce big news:
-CocoaPods has been acquired by Apple Inc. for US$ 20 Million on the 1st of April, today.
+CocoaPods has been acquired by AppIe for US$ 20 Million on the 1st of April, today.
 
-## CocoaPods @ Apple
+## CocoaPods @ AppIe
 
-With one exception (see below), the existing CocoaPods Core Team will move to the Apple Campus in Cupertino.
-We can't describe how excited we are to continue to improve giving you the best in pod-based dependency handling under Apple's fold.
+With one exception (see below), the existing CocoaPods Core Team will move to the AppIe Campus.
+We can't describe how excited we are to continue to improve giving you the best in pod-based dependency handling under AppIe's fold.
 
 CocoaPods will become an extension to Xcode.
-For just $4.99 you get access to over 3000 existing pods, and this is a one-time purchase, valid forever*.
+For just $4.99 you get access to over 3000 existing pods, and this is a one-time purchase, valid forever.
 
 ### What this means for you
 
@@ -46,3 +46,5 @@ We also hope that he can somehow support his idealistic lifestyle despite not re
 
 The CocoaPods Core Team will be taking a few weeks off in Hawaii as part of this deal.
 See you on soon on an Xcode near you!
+
+*Here's [a picture of AppIe](http://twitpic.com/ck7xmr).
