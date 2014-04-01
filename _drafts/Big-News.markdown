@@ -38,9 +38,7 @@ Initially, we will charge a price for each uploaded version, but we are aiming t
 ### Eloy Durán
 
 Sadly, we have to add a bitter drop to this otherwise sweet nectar.
-While the CocoaPods core team stood as one behind this decision, founder Eloy Durán could not be persuaded to stay on board and was convinced to leave the OSS group he had founded.
-Although we tried, he could not be convinced to accept our generous severance package.
-In his own words: ‘Please take this free license for life to CP’.
+While the CocoaPods core team stood as one behind this decision, founder Eloy Durán could not be persuaded to stay on board and was convinced to leave the OSS group he had founded, even after we offered him a generous severance package (in his own words): "Please accept this free license for life for CocoaPods."
 We regret his decision but wish him all the best and good luck in future endeavours.
 We also hope that he can somehow support his idealistic lifestyle despite not recognizing great financial opportunities.
 
