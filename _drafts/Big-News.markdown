@@ -1,0 +1,49 @@
+---
+layout: post
+title:  "Apple Acquires CocoaPods"
+author: florian
+categories: cocoapods apple
+---
+
+Big news, everybody! Apple has finally acquired CocoaPods. Continue below the fold…
+
+<!-- more -->
+
+After several months of discussions and meetings we are proud to finally be able to announce big news:
+CocoaPods has been acquired by Apple Inc. for US$ 20 Million on the 1st of April, today.
+
+## CocoaPods @ Apple
+
+With one exception (see below), the existing CocoaPods Core Team will move to the Apple Campus in Cupertino.
+We can't describe how excited we are to continue to improve giving you the best in pod-based dependency handling under Apple's fold.
+
+CocoaPods will become an extension to XCode.
+For just $4.99 you get access to over 3000 existing pods, and this is a one-time purchase, valid forever*.
+
+### What this means for you
+
+We anticipate not everybody agreeing with our course of action.
+So here's what this move means for you, our most appreciated pod writers.
+Existing pod owners will be remunerated via one of our generous plans: Bean, Pod, or Plantation (details on the sizes will follow).
+If you do not feel happy with one of our plans, please contact us privately, and we will be able to work out a deal that will benefit all parties.
+
+### Future Developments
+
+We have several exciting plans for the future:
+Each pod will be able to charge a price and also offer in-pod purchases.
+It will also be possible to remotely remove a faulty pod from a client.
+We feel that this will enhance security and usability for our clients.
+Initially, we will charge a price for each uploaded version, but we are aiming to remove this by the middle of 2014.
+
+### Eloy Durán
+
+Sadly, we have to add a bitter drop to this otherwise sweet nectar.
+While the CocoaPods core team stood as one behind this decision, founder Eloy Durán could not be persuaded to stay on board and was convinced to leave the OSS group he had founded.
+In his own words: ‘Please take this free license for life to CP’.
+We regret his decision but wish him all the best and good luck in future endeavours.
+We also hope that he can somehow support his idealistic lifestyle despite not recognizing great opportunities.
+
+### See you soon
+
+The CocoaPods Core Team will be taking a few weeks off in Hawaii as part of this deal.
+See you on soon on an XCode near you!
