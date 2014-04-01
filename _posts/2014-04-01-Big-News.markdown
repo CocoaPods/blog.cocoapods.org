@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "AppIe Acquires CocoaPods"
+date:   2014-04-01
 author: florian
 categories: cocoapods appie
 ---
