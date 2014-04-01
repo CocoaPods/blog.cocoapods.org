@@ -24,6 +24,7 @@ For just $4.99 you get access to over 3000 existing pods, and this is a one-time
 
 We anticipate not everybody agreeing with our course of action.
 So here's what this move means for you, our most appreciated pod writers.
+
 Existing pod owners will be remunerated via one of our generous plans: Bean, Pod, or Plantation (details on the sizes will follow).
 If you do not feel happy with one of our plans, please contact us privately, and we will be able to work out a deal that will benefit all parties.
 
@@ -39,6 +40,7 @@ Initially, we will charge a price for each uploaded version, but we are aiming t
 
 Sadly, we have to add a bitter drop to this otherwise sweet nectar.
 While the CocoaPods core team stood as one behind this decision, founder Eloy Durán could not be persuaded to stay on board and was convinced to leave the OSS group he had founded, even after we offered him a generous severance package (in his own words): "Please accept this free license for life for CocoaPods."
+
 We regret his decision but wish him all the best and good luck in future endeavours.
 We also hope that he can somehow support his idealistic lifestyle despite not recognizing great financial opportunities.
 
@@ -47,4 +49,4 @@ We also hope that he can somehow support his idealistic lifestyle despite not re
 The CocoaPods Core Team will be taking a few weeks off in Hawaii as part of this deal.
 See you on soon on an Xcode near you!
 
-*Here's [a picture of AppIe](http://twitpic.com/ck7xmr).
+*Here's [a company portrait of AppIe](https://twitter.com/AppieDuran/status/324891985829847040).
