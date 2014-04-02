@@ -6,6 +6,10 @@ author: florian
 categories: cocoapods appie
 ---
 
+**Update:** We hope you enjoyed our April Fools’ day prank! We are still an independent open-source project and fully committed to you, our users. In case it wasn’t completely clear to you, you _may_ have thought that this post mentions a big well-known technology company, however, it in fact mentions ‘Appie’, which –with our sans-serif font– looks different when spelled with a capital ‘I’ ;) [Appie](https://twitter.com/AppieDuran/status/450975104395390976/photo/1) is Eloy’s dog, we are not sure whether or not this prank was planned years ahead…
+
+----
+
 Big news, everybody! AppIe* has finally acquired CocoaPods.
 
 <!-- more -->
