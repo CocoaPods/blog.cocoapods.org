@@ -35,6 +35,9 @@ namespace :run do
   end
 end
 
+desc 'Runs a local server with draft posts and watches for changes'
+task :run => 'run:drafts'
+
 desc 'Deploy the site to the gh_pages branch and push'
 task :deploy do
   FileUtils.rm_rf '_gh-pages'
