@@ -62,11 +62,17 @@ The linter has seen a lot of activity and now is more aggressive than ever.
 Expect some great linting on the new Pods. Now it even checks the validity of
 screenshots.
 
-## feeds.cocoapods.org
+## Updated CocoaPods Feed
 
-Feeds.cocoapods.org has been revamped!
+[feeds.cocoapods.org](http://feeds.cocoapods.org) now shows the latest 
+new CocoaPods libraries  released in the last few days. Consider it an 
+alternative to  the [@CocoaPodsFeed](http://twitter.com/cocoapodsfeed) twitter feed
 
-TODO: Add picture
+<center><a href="http://feeds.cocoapods.org">
+  
+![Feeds](/assets/blog_img/CocoaPods-0.32/feeds.png)
+
+</a></center>
 
 ## Updating
 
