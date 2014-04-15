@@ -8,6 +8,23 @@
     
     
     <item>
+      <title>CocoaPods 0.32</title>
+
+      
+      <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPod 0.32 is here! It brings a vastly improved &lt;code&gt;update&lt;/code&gt;
+command and a galore of improvements. Including the ability to deprecate pods.&lt;/em&gt;&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/CocoaPods-0.32</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.32</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>AppIe Acquires CocoaPods</title>
 
       
