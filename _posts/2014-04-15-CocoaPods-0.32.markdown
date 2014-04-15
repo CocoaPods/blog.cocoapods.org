@@ -64,12 +64,12 @@ screenshots.
 
 ## Updated CocoaPods Feed
 
-[feeds.cocoapods.org](http://feeds.cocoapods.org) now shows the latest 
-new CocoaPods libraries  released in the last few days. Consider it an 
-alternative to  the [@CocoaPodsFeed](http://twitter.com/cocoapodsfeed) twitter feed
+[feeds.cocoapods.org](http://feeds.cocoapods.org) now shows the latest new
+CocoaPods libraries  released in the last few days. Consider it an alternative
+to the [@CocoaPodsFeed](http://twitter.com/cocoapodsfeed) twitter feed.
 
 <center><a href="http://feeds.cocoapods.org">
-  
+
 ![Feeds](/assets/blog_img/CocoaPods-0.32/feeds.png)
 
 </a></center>
