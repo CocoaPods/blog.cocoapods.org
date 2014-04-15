@@ -38,8 +38,7 @@ Ford](https://github.com/samuelwford)
 
 Another feature that had a lot of requests is support for Pod deprecation.
 Thanks to the work of [Paul Young](https://github.com/paulyoung) this feature
-is already supported at the DSL level. (Enforcement of this during installation
-will be added in a future update.)
+is already supported at the DSL level.
 
 You can either specify whether a Pod is just deprecated:
 
