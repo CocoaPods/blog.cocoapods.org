@@ -6,8 +6,8 @@ author: fabio
 categories: cocoapods releases
 ---
 
-TL;DR: _CocoaPod 0.32 is here! It brings an up-to-date and updated `update`
-command and a galore of improvements._
+TL;DR: _CocoaPod 0.32 is here! It brings vastly improved `update`
+command and a galore of improvements. Including the ability to deprecate pods._
 
 <!-- more -->
 
@@ -31,12 +31,12 @@ being updated.
 ## Development Pods
 
 Now the file references in Xcode are absolute or relative depending on how they
-where specified in the Podfile. This feature was implemented by [Samuel
+are specified in the Podfile. This feature was implemented by [Samuel
 Ford](https://github.com/samuelwford)
 
 ## Deprecations
 
-Another feature that had a lot of requests is support for Pod deprecation.
+Another feature that we've recieved a lot of requests for is Pod deprecation.
 Thanks to the work of [Paul Young](https://github.com/paulyoung) this feature
 is already supported at the DSL level.
 
@@ -53,7 +53,7 @@ spec.deprecated_in_favor_of = 'NewMoreAwesomePod'
 ```
 
 Unfortunately CocoaPods doesn’t display this information yet, but the super
-prolific [Samuel E. Giddins](https://github.com/segiddins) is [already at
+prolific [Samuel E. Giddins](https://github.com/segiddins) is [already on
 it](https://github.com/CocoaPods/CocoaPods/pull/2044).
 
 ## Linter
