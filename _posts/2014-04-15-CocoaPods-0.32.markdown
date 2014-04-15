@@ -15,51 +15,51 @@ command and a galore of improvements._
 ## Update Command Improvements
 
 [Marius Rackwitz](https://twitter.com/mrackwitz) just added one of the most
-requested  CocoaPods features:
+requested CocoaPods features:
 
 ```
-pod repo udpate NAME
+pod repo update NAME
 ```
 
-Exactly now you can update only one pod.
+Exactly. Now you can scope your update to _only one_ Pod.
 
-This is not the only improvement to the update command as [Andrea
-Mazzini](https://github.com/andreamazz) took care of polishing the experience
-by adding to the installation output the version from which a pod is being
-updated.
+This is not the only improvement to the update command, as [Andrea
+Mazzini](https://github.com/andreamazz) also took care of polishing the
+experience by adding to the installation output the version from which a Pod is
+being updated.
 
 ## Development Pods
 
-Now the file references in Xcode are absolute or relative depending to how they
+Now the file references in Xcode are absolute or relative depending on how they
 where specified in the Podfile. This feature was implemented by [Samuel
 Ford](https://github.com/samuelwford)
 
 ## Deprecations
 
-Another feature that has a lot of requests is support for deprecation. Thanks
-to the work of [Paul Young](https://github.com/paulyoung) this feature is
-already supported at the DSL level.
+Another feature that had a lot of requests is support for Pod deprecation.
+Thanks to the work of [Paul Young](https://github.com/paulyoung) this feature
+is already supported at the DSL level.
 
-You can either specify whether a pod is just deprecated:
+You can either specify whether a Pod is just deprecated:
 
 ```
 spec.deprecated = true
 ```
 
-Or whether it has been deprecated in favor of another Pod:
+Or whether it has been deprecated _in favor of another_ Pod:
 
 ```
 spec.deprecated_in_favor_of = 'NewMoreAwesomePod'
 ```
 
-Unfortunately CocoaPods doesn't display this information yet but the super
+Unfortunately CocoaPods doesn’t display this information yet, but the super
 prolific [Samuel E. Giddins](https://github.com/segiddins) is [already at
 it](https://github.com/CocoaPods/CocoaPods/pull/2044).
 
 ## Linter
 
 The linter has seen a lot of activity and now is more aggressive than ever.
-Expect some great linting in the new Pods. Now it even checks the validity of
+Expect some great linting on the new Pods. Now it even checks the validity of
 screenshots.
 
 ## feeds.cocoapods.org
@@ -76,7 +76,7 @@ To install the last release of CocoaPods you can run:
 $ [sudo] gem install cocoapods
 ```
 
-Until version 1.0 we strongly encourage you to keep CocoaPods up to date.
+Until version 1.0 we strongly encourage you to keep CocoaPods up-to-date.
 
-For all the details, don't miss the
+For all the details, don’t miss the
 [Changelog](https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md).
