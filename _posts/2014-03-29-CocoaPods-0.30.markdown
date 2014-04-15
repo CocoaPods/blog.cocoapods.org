@@ -28,7 +28,7 @@ If you are a CocoaPods contributor or if you plan to hack on it, this new repo w
 $ git clone https://github.com/CocoaPods/Rainforest.git
 $ cd Rainforest
 $ rake bootstrap
-$ rake set_up_local_dependencies
+$ rake local_dependencies_set
 $ CocoaPods/bin/pod --version
 0.30.0
 ```
