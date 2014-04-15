@@ -6,7 +6,7 @@ author: fabio
 categories: cocoapods releases
 ---
 
-TL;DR: _CocoaPod 0.32 is here! It brings vastly improved `update`
+TL;DR: _CocoaPod 0.32 is here! It brings a vastly improved `update`
 command and a galore of improvements. Including the ability to deprecate pods._
 
 <!-- more -->
@@ -36,7 +36,7 @@ Ford](https://github.com/samuelwford)
 
 ## Deprecations
 
-Another feature that we've recieved a lot of requests for is Pod deprecation.
+Another feature that we've received a lot of requests for is Pod deprecation.
 Thanks to the work of [Paul Young](https://github.com/paulyoung) this feature
 is already supported at the DSL level.
 
