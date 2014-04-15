@@ -70,7 +70,9 @@ to the [@CocoaPodsFeed](http://twitter.com/cocoapodsfeed) twitter feed.
 
 <center><a href="http://feeds.cocoapods.org">
 
-![Feeds](/assets/blog_img/CocoaPods-0.32/feeds.png)
+{% breaking_image /assets/blog_img/CocoaPods-0.32/feeds_1.png %}
+{% breaking_image /assets/blog_img/CocoaPods-0.32/feeds_2.gif %}
+
 
 </a></center>
 
