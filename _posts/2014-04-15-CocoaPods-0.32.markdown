@@ -69,12 +69,17 @@ CocoaPods libraries  released in the last few days. Consider it an alternative
 to the [@CocoaPodsFeed](http://twitter.com/cocoapodsfeed) twitter feed.
 
 <center><a href="http://feeds.cocoapods.org">
-
 {% breaking_image /assets/blog_img/CocoaPods-0.32/feeds_1.png %}
-{% breaking_image /assets/blog_img/CocoaPods-0.32/feeds_2.gif %}
-
-
 </a></center>
+
+And off course we display the beautiful screenshots of the Pods (including
+gifs):
+
+<center><a href="http://feeds.cocoapods.org">
+{% breaking_image /assets/blog_img/CocoaPods-0.32/feeds_2.gif %}
+</a></center>
+
+
 
 ## Updating
 
