@@ -21,8 +21,11 @@ We will also have a large contingent of the CocoaPods dev team giving some talks
 * [Boris Bügling](http://vu0.org) - On learning ruby by [contributing](https://github.com/CocoaPods/Core/commits?author=neonichu) [to](https://github.com/CocoaPods/CocoaPods/commits?author=neonichu) CocoaPods.
 * [Marin Usalj](http://supermar.in) - 
 * [Michele Titolo](http://michele.io) - On Private Pods
-<!-- * Delisa Mason -->
 * [Kyle Fuller](http://kylefuller.co.uk) - 
 
 We were planning on hosting it at 7:00pm and should be over by around 10:00pm, this should give everyone chance to then move on to some of the late night parties that will be happening around San Francisco.
 The meetup will be hosted at the [Twilio](https://www.twilio.com/) offices, who are just a short walk away from the Moscone Center. They will be graciously providing both food & beer.
+
+Join our [meetup](http://www.meetup.com/CocoaPods-SF/) group and <a href="http://www.meetup.com/CocoaPods-SF/events/177557362/" data-event="177557362" class="mu-rsvp-btn">RSVP</a> online.
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src="https://secure.meetup.com/script/21021123101537681383/api/mu.btns.js?id=a74a4o9ar6ca0btqqmtk1k5uv2";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","mu-bootjs");</script>
