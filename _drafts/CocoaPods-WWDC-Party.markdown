@@ -18,7 +18,7 @@ There will be a keynote by [Orta Therox](http://orta.github.io) with both [Eloy 
 
 We will also have a large contingent of the CocoaPods dev team giving some talks on some of the work they've been doing around the community:
 
-* [Boris Bügling](http://vu0.org) - On learning ruby by [contributing](https://github.com/CocoaPods/Core/commits?author=neonichu) [to](https://github.com/CocoaPods/CocoaPods/commits?author=neonichu) CocoaPods.
+* [Boris Bügling](http://buegling.com) - On learning Ruby by [contributing](https://github.com/CocoaPods/Core/commits?author=neonichu) [to](https://github.com/CocoaPods/CocoaPods/commits?author=neonichu) CocoaPods.
 * [Marin Usalj](http://supermar.in) - 
 * [Michele Titolo](http://michele.io) - On Private Pods
 * [Kyle Fuller](http://kylefuller.co.uk) - Creating your first CocoaPod
