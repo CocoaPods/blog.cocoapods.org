@@ -21,7 +21,7 @@ We will also have a large contingent of the CocoaPods dev team giving some talks
 * [Boris Bügling](http://vu0.org) - On learning ruby by [contributing](https://github.com/CocoaPods/Core/commits?author=neonichu) [to](https://github.com/CocoaPods/CocoaPods/commits?author=neonichu) CocoaPods.
 * [Marin Usalj](http://supermar.in) - 
 * [Michele Titolo](http://michele.io) - On Private Pods
-* [Kyle Fuller](http://kylefuller.co.uk) - 
+* [Kyle Fuller](http://kylefuller.co.uk) - Creating your first CocoaPod
 
 We were planning on hosting it at 7:00pm and should be over by around 10:00pm, this should give everyone chance to then move on to some of the late night parties that will be happening around San Francisco.
 The meetup will be hosted at the [Twilio](https://www.twilio.com/) offices, who are just a short walk away from the Moscone Center. They will be graciously providing both food & beer.
