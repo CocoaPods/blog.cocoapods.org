@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "CocoaPods 3rd WWDC Meetup: 2nd June 2014"
-date:   2014-04-16
+date:   2014-04-21
 author: orta
 categories: wwdc event
 ---
@@ -19,7 +19,7 @@ There will be a keynote by [Orta Therox](http://orta.github.io) with both [Eloy 
 We will also have a large contingent of the CocoaPods dev team giving some talks on some of the work they've been doing around the community:
 
 * [Boris Bügling](http://buegling.com) - On learning Ruby by [contributing](https://github.com/CocoaPods/Core/commits?author=neonichu) [to](https://github.com/CocoaPods/CocoaPods/commits?author=neonichu) CocoaPods.
-* [Marin Usalj](http://supermar.in) - 
+* [Marin Usalj](http://supermar.in)
 * [Michele Titolo](http://michele.io) - On Private Pods
 * [Kyle Fuller](http://kylefuller.co.uk) - Creating your first Pod
 
@@ -27,5 +27,7 @@ We were planning on hosting it at 7:00pm and should be over by around 10:00pm, t
 The meetup will be hosted at the [Twilio](https://www.twilio.com/) offices, who are just a short walk away from the Moscone Center. They will be graciously providing both food & beer.
 
 Join our [meetup](http://www.meetup.com/CocoaPods-SF/) group and <a href="http://www.meetup.com/CocoaPods-SF/events/177557362/" data-event="177557362" class="mu-rsvp-btn">RSVP</a> online.
+
+We'll start the RSVP on May 1st to give everyone a chance to find out about the event.
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src="https://secure.meetup.com/script/21021123101537681383/api/mu.btns.js?id=a74a4o9ar6ca0btqqmtk1k5uv2";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","mu-bootjs");</script>
