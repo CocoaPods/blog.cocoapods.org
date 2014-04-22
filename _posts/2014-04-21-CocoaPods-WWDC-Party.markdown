@@ -28,6 +28,4 @@ The meetup will be hosted at the [Twilio](https://www.twilio.com/) offices, who 
 
 Join our [meetup](http://www.meetup.com/CocoaPods-SF/) group and <a href="http://www.meetup.com/CocoaPods-SF/events/177557362/" data-event="177557362" class="mu-rsvp-btn">RSVP</a> online.
 
-We'll start the RSVP on May 1st to give everyone a chance to find out about the event.
-
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src="https://secure.meetup.com/script/21021123101537681383/api/mu.btns.js?id=a74a4o9ar6ca0btqqmtk1k5uv2";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","mu-bootjs");</script>
