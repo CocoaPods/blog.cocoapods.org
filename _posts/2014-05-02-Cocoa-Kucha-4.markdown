@@ -2,6 +2,7 @@
 layout: post
 title:  "Cocoa Kucha 4 - San Francisco - 28th May 2014"
 post_title:  "Cocoa Kucha 4<br />San Francisco<br/>28th May 2014"
+date: 2014-05-02
 author: kyle
 categories: community cocoakucha
 ---
