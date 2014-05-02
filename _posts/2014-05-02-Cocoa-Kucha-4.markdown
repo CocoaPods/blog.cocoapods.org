@@ -23,8 +23,8 @@ it a lot easier for people to get started.
 
 ### Speakers
 
-I'm excited to share the list of speakers, which includes four members of the
-Cocoa Pods dev team:
+I'm excited to share the list of speakers, which includes five members of the
+CocoaPods dev team:
 
 * [![Andy Arvanitis](/assets/blog_img/github_octokitty.png)](https://github.com/andyarvanitis)
   Andy Arvanitis - [@andyarvanitis](https://twitter.com/andyarvanitis)
@@ -41,8 +41,10 @@ Cocoa Pods dev team:
 * Rebecca Goldman - [@RebeccaGoldman](https://twitter.com/RebeccaGoldman)
 * [![Sam Soffes](/assets/blog_img/github_octokitty.png)](https://github.com/soffes)
   Sam Soffes - [@soffes](https://twitter.com/soffes)
+* [![Eloy Durán](/assets/blog_img/github_octokitty.png)](https://github.com/alloy)
+  Eloy Durán - [@alloy](https://twitter.com/alloy)
 
 The event is hosted at [Fort Mason](http://www.rubymotion.com/conference/2014/#Location)
-after the first day of the #inspect conference. You can join our
-[meetup](http://www.meetup.com/CocoaPods-SF/) group and RSVP online.
+after the first day of the #inspect conference. Join our [meetup](http://www.meetup.com/CocoaPods-SF/) group and <a href="http://www.meetup.com/CocoaPods-SF/events/180676392/" data-event="180676392" class="mu-rsvp-btn">RSVP</a> online.
 
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src="https://secure.meetup.com/script/21021123101537681383/api/mu.btns.js?id=a74a4o9ar6ca0btqqmtk1k5uv2";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","mu-bootjs");</script>
