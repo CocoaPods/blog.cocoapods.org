@@ -5,10 +5,11 @@ author: keith
 categories: cocoapods trunk breaking
 ---
 
-Today we are introducing the trunk app. An awesome new way for podspec
+Today we are introducing the ‘Trunk’ web-service. An awesome new way for podspec
 authors to submit their libraries to the master specs repository. For
 authors who have previously had push access the workflow should be very
-similar using the `pod push` subcommand.
+similar using the `pod push` subcommand. For more information on the ‘Trunk’
+web-service itself, see [the previous blog post](http://blog.cocoapods.org/CocoaPods-Trunk/).
 
 Along with these changes we are adding a hierarchy of ownership to
 submitted podspecs. This way library maintainers will have complete
@@ -26,12 +27,13 @@ little more complicated.
 
 For the next few days we will be taking applications from spec authors
 to claim their pods. This will set initial ownership for your libraries
-within the trunk app allowing you, and the people you allow, to push new
+within the ‘Trunk’ web-service allowing you, and the people you allow, to push new
 specs for the given library. To do this we'll need you to fill out
 this [form](https://trunk.cocoapods.org/claims/new) with the email address 
 you would like use to identify with as an owner and the pod name you're 
 claiming. Be sure to use the email address you use with Github so the 
 commit logs will show your Github account.
+
 
 ### Claim collisions
 
