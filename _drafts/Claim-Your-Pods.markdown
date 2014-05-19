@@ -39,6 +39,8 @@ In the case that someone has already submitted a claim for the pod you
 are claiming we'll have to grant ownership differently. If you are a one
 of many maintainers of the pod it's likely that your co-maintainers have
 already gained ownership to the repo and can add you.
+
+
 ### Co-maintainer access
 
 If you maintain a spec along with a few other contributors you can all
