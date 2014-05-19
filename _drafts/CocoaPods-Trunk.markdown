@@ -25,13 +25,13 @@ From these reasons stems the simple solution to host these in a simple directory
 
 ## The problem
 
-Our ‘master’ spec-repo boss, Ser [Keith Smiley](http://twitter.com/SmileyKeith), is a review-and-merge-monster and has been able to keep-up with all of the pull-requests that you have been sending his way for the last two years. But, as we can clearly see the rising trend of number of pods being published, at some point even Keith won’t be able to handle your scale.
+Our ‘master’ spec-repo boss, Sir [Keith Smiley](http://twitter.com/SmileyKeith), is a review-and-merge-monster and has been able to keep-up with all of the pull-requests that you have been sending his way for the last two years. But, as we can clearly see the rising trend of number of pods being published, at some point even Keith won’t be able to handle your scale.
 
 Another issue we noticed is that the current workflow of creating a pull-request and automatically getting feedback from Travis in addition to manual reviews from Keith and [Paul](http://twitter.com/squarefrog) has lead to many podspec publishers being too ‘lazy’ and instead of properly testing whether or not a podspec will actually work well for a user by testing it in their own applications, they end-up updating and pushing their specs until it supposedly works. This is not only an abuse of the time our volunteers have, but it also shifts the responsibility to ensure proper working podspecs away from the publisher.
 
 Other people in the community would like to create web-services around CocoaPods and for this they need some form of API and a format _other_ than Ruby, to be able to interpret the podspecs and provide any meaningful service around them.
 
-Finally, at some point, even _the most well-intended person_ will slip up. A good example of this is when an unauthorised person pushed a podspec for an non-existing AFNetworking version. Obviously, the only person that should be allowed to do so is Mattt and possibly other (maintainers) that Mattt gives his blessing to do so.
+Finally, at some point, even _the most well-intended person_ will slip up. A good example of this is when an unauthorised person pushed a podspec for an non-existing AFNetworking version. Obviously, the only person that should be allowed to do so is [Mattt](http://twitter.com/mattt) (the author of AFNetworking) and possibly other (maintainers) that Mattt gives his blessing to do so.
 
 The solution? An automated web-service and a database of registered 'owners' with an ACL layer that only allows designated people to release new versions.
 
