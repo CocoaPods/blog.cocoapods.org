@@ -37,7 +37,7 @@ The solution? An automated web-service and a database of registered 'owners' wit
 
 ## ‘Trunk’, our solution
 
-![Cocoa pods on a trunk](http://upload.wikimedia.org/wikipedia/commons/e/e0/Cocoa_Pods.JPG)
+{% breaking_image /assets/blog_img/trunk/cocoapods-trunk-image.jpg %}
 
 _Cocoa pods in varying levels of ripeness growing on the trunk of a tree._ – [Wikipedia](http://en.wikipedia.org/wiki/Cocoa_production_in_Ivory_Coast)
 
