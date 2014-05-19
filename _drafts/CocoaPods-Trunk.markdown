@@ -53,7 +53,7 @@ Note that we are still hosting the canonical database of available Pods and thei
 
 {% breaking_image /assets/blog_img/trunk/architecture-diagram.png %}
 
-With regards to ensuring that a podspec works properly, _you_, the ‘owner’, and _only_ you are responsible for a podspec workig properly. We only validate your podspec on our end for the bare-minimum metadata that we need to be able to register your podspec. We will **no** longer validate your podspec for you on Travis. And we will **not** accept updates to published podspecs without a rigorous review process that is to be peformed through a pull-request on the ‘master’ spec-repo. Thus, it is _highly_ recommended that you test your podspec in your own real applications and/or demo applications _before_ you publish a podspec.
+With regards to ensuring that a podspec works properly, _you_, the ‘owner’, and _only_ you are responsible for a podspec working properly. We only validate your podspec on our end for the bare-minimum meta-data that we need to be able to register your podspec. We will **no** longer validate your podspec for you on Travis. And we will **not** accept updates to published podspecs without a rigorous review process that is to be performed through a pull-request on the ‘master’ spec-repo. Thus, it is _highly_ recommended that you test your podspec in your own real applications and/or demo applications _before_ you publish a podspec.
 
 Finally, the ‘Trunk’ web-service will no longer store the podspecs in the Ruby format. Instead these will be stored as JSON and thus will directly be usable by people wanting to create other web-services around the CocoaPods ecosystem.
 
@@ -78,12 +78,12 @@ podspecs will use `.podspec.json`.
 
 No, they are here to stay and are the preferred method if you need to be able to perform automatic generation, such as collecting a list of all the source files from disk. The `pod trunk push` command will take care of converting the podspec to JSON. This means that you do _not_ have to change any existing podspecs.
 
-### Will private repos need to adopt the JSON format?
+### Will private repositories need to adopt the JSON format?
 
 No. Moreover, the `pod push` command will keep the old behaviour, except that we are moving this into `pod repo push` to emphasise the distinction.
 Just keep in mind that if two files are available CocoaPods will prefer the JSON format.
 
-### Can I access the specs via http?
+### Can I access the specs via HTTP?
 
 Yes, you can use the following endpoints of the GitHub API. At a later point we will introduce a public API on ‘Trunk’ that you can use to standardise this, although it should be noted that if you do not need more than what the GitHub API already offers, it’s best to just use that, as GitHub will be able to offer better uptimes than we can.
 
