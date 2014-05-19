@@ -13,7 +13,7 @@ TL;DR We have good reasons for why and how we’re going to continue from here, 
 
 ## The past and the why
 
-Many have asked “why doesn’t CocoaPods have a simple way to publish new pods, like RubyGems and NPM etc have?”, so let’s shine some light on that.
+Many have asked “why doesn’t CocoaPods have a simple way to publish new Pods, like RubyGems and NPM etc have?”, so let’s shine some light on that.
 
 Arguably, configuring a black-box such as Xcode and getting native code to be compiled for various platforms, deployment targets, and architectures to build and the permutations thereof is way harder than what RubyGems, NPM, and the likes have to do. Obviously this is a huge benefit of scripting languages, which (often) do not need to deal with these seemingly arcane workflows.
 
@@ -28,7 +28,7 @@ From these reasons stems the simple solution to host these in a simple directory
 
 ## The problem
 
-Our ‘master’ spec-repo boss, Sir [Keith Smiley](http://twitter.com/SmileyKeith), is a review-and-merge-monster and has been able to keep-up with all of the pull-requests that you have been sending his way for the last two years. But, as we can clearly see the rising trend of number of pods being published, at some point even Keith won’t be able to handle your scale.
+Our ‘master’ spec-repo boss, Sir [Keith Smiley](http://twitter.com/SmileyKeith), is a review-and-merge-monster and has been able to keep-up with all of the pull-requests that you have been sending his way for the last two years. But, as we can clearly see the rising trend of number of Pods being published, at some point even Keith won’t be able to handle your scale.
 
 Another issue we noticed is that the current workflow of creating a pull-request and automatically getting feedback from Travis in addition to manual reviews from Keith and [Paul](http://twitter.com/squarefrog) has lead to many podspec publishers being too ‘lazy’ and instead of properly testing whether or not a podspec will actually work well for a user by testing it in their own applications, they end-up updating and pushing their specs until it supposedly works. This is not only an abuse of the time our volunteers have, but it also shifts the responsibility to ensure proper working podspecs away from the publisher.
 
@@ -43,13 +43,13 @@ The solution? An automated web-service and a database of registered 'owners' wit
 
 {% breaking_image /assets/blog_img/trunk/cocoapods-trunk-image.jpg %}
 
-_Cocoa pods in varying levels of ripeness growing on the trunk of a tree._ – [Wikipedia](http://en.wikipedia.org/wiki/Cocoa_production_in_Ivory_Coast)
+_Cocoa Pods in varying levels of ripeness growing on the trunk of a tree._ – [Wikipedia](http://en.wikipedia.org/wiki/Cocoa_production_in_Ivory_Coast)
 
-Today we are launching our web-service to remedy the aforementioned problems. The introduction of the ‘Trunk’ web-service means that publishers can now publish pods directly from the command-line, _without_ the need to create a pull-request.
+Today we are launching our web-service to remedy the aforementioned problems. The introduction of the ‘Trunk’ web-service means that publishers can now publish Pods directly from the command-line, _without_ the need to create a pull-request.
 
 The first person to publish a pod automatically gets designated as the ‘owner’ of that pod name in the scope of the ‘master’ spec-repo. The ‘owner’ can then add other ‘owners’ as they see fit. Only ‘owners’ are allowed to publish subsequent versions of said pod. For more information on this and interacting with ‘Trunk’ in general, see [this guide](http://guides.cocoapods.org/making/getting-setup-with-trunk).
 
-Note that we are still hosting the canonical database of available pods and their specifications in [the same git repo on GitHub](https://github.com/CocoaPods/Specs). This means that if something were to affect the uptime/stability of this database, our users can rely on GitHub’s professional and 24/7 support. Thus, if ‘Trunk’ were to go down, for whatever reason, our normal users are not affected and only ‘owners’ will be unable to publish new pods during that time-frame. All in all, this means better stability for _you_, our users, and less stress on _us_, the volunteers. A simple overview of our architecture is shown in the following diagram:
+Note that we are still hosting the canonical database of available Pods and their specifications in [the same git repo on GitHub](https://github.com/CocoaPods/Specs). This means that if something were to affect the uptime/stability of this database, our users can rely on GitHub’s professional and 24/7 support. Thus, if ‘Trunk’ were to go down, for whatever reason, our normal users are not affected and only ‘owners’ will be unable to publish new Pods during that time-frame. All in all, this means better stability for _you_, our users, and less stress on _us_, the volunteers. A simple overview of our architecture is shown in the following diagram:
 
 {% breaking_image /assets/blog_img/trunk/architecture-diagram.png %}
 
@@ -60,7 +60,7 @@ Finally, the ‘Trunk’ web-service will no longer store the podspecs in the Ru
 
 ## Transition
 
-While we transition to the ‘Trunk’ web-service, we will have a grace-period during which all the currently known pods can be claimed by their respective ‘owners’. Please read Keith’s [blog post on this topic](http://blog.cocoapods.org/Claim-Your-Pods/).
+While we transition to the ‘Trunk’ web-service, we will have a grace-period during which all the currently known Pods can be claimed by their respective ‘owners’. Please read Keith’s [blog post on this topic](http://blog.cocoapods.org/Claim-Your-Pods/).
 
 
 ## Frequently Asked Questions
