@@ -7,14 +7,13 @@ categories: master-repo
 
 TL;DR: _The master repo will use the JSON format._
 
-<!-- more -->
+CocoaPods 0.33 adds support for a new mechanism to push specs to the master repo.
 
-We plan to release CocoaPods 0.30 in date X. This version of CocoaPods will
-support the new mechanism to push the specs to the master repo.
+<!-- more -->
 
 ## Benefits
 
-A podspec format not based on a DSL offers many advantages:
+The authentication server:
 
 - No need to fork the master repo anymore to contribute.
 - Access control list to the Pods.
@@ -27,10 +26,10 @@ For a (hopefully) small time-frame will not be possible to push specs anymore.
 
 - Push access will be removed from the specs repo.
 - The trunk app will go live.
-- Release of CocoaPods 0.30.
+- Release of CocoaPods 0.33.
 
 Once CocoaPods is released you will be able to create an account with the `pod
-trunk register` subcommand. [Note about the initial ACL creation]. You will be
+trunk register` subcommand. This is documented throghly in the guides on [getting setup with Trunk](http://guides.cocoapods.org/making/getting-setup-with-trunk). You will be
 able to add other owners with push privileges to a Pod with the `pod trunk
 add-owner` subcommand.
 
@@ -52,8 +51,8 @@ care of converting them.
 
 ### Will private repos need to adopt the JSON format?
 
-No. Moreover pod push will keep the old behaviour. Though if two files are
-available CocoaPods will prefer the JSON format.
+No. Moreover pod push will keep the old behaviour, however we are moving the 
+command to `pod repo push`. Also, if two files are available CocoaPods will prefer the JSON format.
 
 ### Can I access the specs via http?
 
