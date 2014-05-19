@@ -1,35 +1,33 @@
 ---
 layout: post
-title:  "Master Repo Chances"
+title:  "Master Repo Changes"
 author: fabio
-categories: master-repo
+categories: master-repo breaking trunk
 ---
 
 TL;DR: _The master repo will use the JSON format._
 
-CocoaPods 0.33 adds support for a new mechanism to push specs to the master repo.
+CocoaPods 0.33 adds support for a new mechanism to push specs to the master repo. There is another blog post about the claims system, this one is about how it affects developers who create CocoaPods.
 
 <!-- more -->
 
 ## Benefits
 
-The authentication server:
-
 - No need to fork the master repo anymore to contribute.
-- Access control list to the Pods.
-- Easier programmatic generation and editing of podspecs
+- Access control list to the Pods themselves.
+- Easier programmatic generation and editing of podspecs.
 - Podspecs can be read on every platform.
 
 ## How the transition will be performed
 
-For a (hopefully) small time-frame will not be possible to push specs anymore.
+For asmall time-frame will not be possible to push specs anymore.
 
 - Push access will be removed from the specs repo.
 - The trunk app will go live.
 - Release of CocoaPods 0.33.
 
 Once CocoaPods is released you will be able to create an account with the `pod
-trunk register` subcommand. This is documented throghly in the guides on [getting setup with Trunk](http://guides.cocoapods.org/making/getting-setup-with-trunk). You will be
+trunk register` command. This is documented throughly in the guides on [getting setup with Trunk](http://guides.cocoapods.org/making/getting-setup-with-trunk). You will be
 able to add other owners with push privileges to a Pod with the `pod trunk
 add-owner` subcommand.
 
@@ -47,12 +45,13 @@ podspecs will use `.podspec.json`.
 ### Will the specs in the Ruby format be deprecated?
 
 No. We plan to support them for the foreseeable future and `pod push` will take
-care of converting them.
+care of converting them to JSON. _This means you do not have to change any existing Podspecs._
 
 ### Will private repos need to adopt the JSON format?
 
-No. Moreover pod push will keep the old behaviour, however we are moving the 
-command to `pod repo push`. Also, if two files are available CocoaPods will prefer the JSON format.
+No. Moreover pod push will keep the old behaviour, -note  we are moving the 
+`pod push `command to `pod repo push`. 
+Also, if two files are available CocoaPods will prefer the JSON format.
 
 ### Can I access the specs via http?
 
