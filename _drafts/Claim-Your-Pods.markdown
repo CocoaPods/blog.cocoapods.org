@@ -18,7 +18,7 @@ control over submissions of their specs to the master repo.
 <!-- more -->
 
 Moving forward this ownership will be determined by the first user to
-submit a new spec. With existing podspecs granting ownership will be a
+submit a new spec. With existing podspecs, granting ownership will be a
 little more complicated.
 
 
@@ -38,8 +38,8 @@ commit logs will show your Github account.
 ### Claim collisions
 
 In the case that someone has already submitted a claim for the pod you
-are claiming we'll have to grant ownership differently. If you are a one
-of many maintainers of the pod it's likely that your co-maintainers have
+are claiming we'll have to grant ownership differently. If you are one
+of many maintainers of the pod, it's likely that your co-maintainers have
 already gained ownership to the repo and can add you.
 
 
@@ -69,4 +69,5 @@ After submitting a new version of a spec any revisions to that version must
 be submitted as a pull request to the [master repo](https://github.com/CocoaPods/Specs). 
 Because of this I would recommend that you thoroughly test your spec with the linting
 [tools](http://guides.cocoapods.org/terminal/commands.html#pod_lib_lint)
-to make sure everything works as expected.
+and by using it in your real applications and/or demo applications to make sure
+everything works as expected. This is _your_ responsibility from hereon out.
