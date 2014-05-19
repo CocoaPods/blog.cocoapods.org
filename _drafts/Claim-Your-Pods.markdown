@@ -47,9 +47,9 @@ ownership, please fill out [this form]() explaining the situation.
 
 ### Co-maintainer access
 
-If you maintain a spec along with a few other contributers you can all
+If you maintain a spec along with a few other contributors you can all
 be added as owners to that spec. The initial owner can add other
-contributers [here]().
+contributors [here]().
 
 
 ## Moving forward
