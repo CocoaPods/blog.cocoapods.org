@@ -9,6 +9,8 @@ After a year of architecture design and hard work, we are proud to introduce the
 
 <!-- more -->
 
+TL;DR We have good reasons for why and how we’re going to continue from here, but feel free to skip over the history lessons and straight to: ‘Trunk’, our solution.
+
 ## The past and the why
 
 Many have asked “why doesn’t CocoaPods have a simple way to publish new pods, like RubyGems and NPM etc have?”, so let’s shine some light on that.
@@ -23,6 +25,7 @@ I also wanted to design the architecture so that, for instance, companies that w
 
 From these reasons stems the simple solution to host these in a simple directory structure and use established SCM systems to keep these versioned and simple to distribute. This strategy to keep things simple has served us rather well. However, at a certain scale, and especially in a Open-Source environment such as our ‘master’ spec-repo, there inevitably comes a time where you need to take it to the next level…
 
+
 ## The problem
 
 Our ‘master’ spec-repo boss, Sir [Keith Smiley](http://twitter.com/SmileyKeith), is a review-and-merge-monster and has been able to keep-up with all of the pull-requests that you have been sending his way for the last two years. But, as we can clearly see the rising trend of number of pods being published, at some point even Keith won’t be able to handle your scale.
@@ -34,6 +37,7 @@ Other people in the community would like to create web-services around CocoaPods
 Finally, at some point, even _the most well-intended person_ will slip up. A good example of this is when an unauthorised person pushed a podspec for an non-existing AFNetworking version. Obviously, the only person that should be allowed to do so is [Mattt](http://twitter.com/mattt) (the author of AFNetworking) and possibly other (maintainers) that Mattt gives his blessing to do so.
 
 The solution? An automated web-service and a database of registered 'owners' with an ACL layer that only allows designated people to release new versions.
+
 
 ## ‘Trunk’, our solution
 
@@ -47,13 +51,15 @@ The first person to publish a pod automatically gets designated as the ‘owner�
 
 Note that we are still hosting the canonical database of available pods and their specifications in [the same git repo on GitHub](https://github.com/CocoaPods/Specs). This means that if something were to affect the uptime/stability of this database, our users can rely on GitHub’s professional and 24/7 support. Thus, if ‘Trunk’ were to go down, for whatever reason, our normal users are not affected and only ‘owners’ will be unable to publish new pods during that time-frame. All in all, this means better stability for _you_, our users, and less stress on _us_, the volunteers.
 
-With regards to ensuring that a podspec works properly, _you_, the ‘owner’, and _only_ you are responsible for a podspec workig properly. We only validate your podspec on our end for the bare-minimum metadata that we need to be able to register your podspec. We will **no** longer validate your podspec for you on Travis. And we will **not** accept updates to published podspecs without a rigurous review process. Thus, it is _highly_ recommended that you test your podspec in your own real applications and/or demo applications _before_ you publish a podspec.
+With regards to ensuring that a podspec works properly, _you_, the ‘owner’, and _only_ you are responsible for a podspec workig properly. We only validate your podspec on our end for the bare-minimum metadata that we need to be able to register your podspec. We will **no** longer validate your podspec for you on Travis. And we will **not** accept updates to published podspecs without a rigorous review process that is to be peformed through a pull-request on the ‘master’ spec-repo. Thus, it is _highly_ recommended that you test your podspec in your own real applications and/or demo applications _before_ you publish a podspec.
 
 Finally, the ‘Trunk’ web-service will no longer store the podspecs in the Ruby format. Instead these will be stored as JSON and thus will directly be usable by people wanting to create other web-services around the CocoaPods ecosystem.
+
 
 ## Transition
 
 While we transition to the ‘Trunk’ web-service, we will have a grace-period during which all the currently known pods can be claimed by their respective ‘owners’. Please read Keith’s [blog post on this topic](http://blog.cocoapods.org/Claim-Your-Pods/).
+
 
 ## Frequently Asked Questions
 
