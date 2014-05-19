@@ -9,7 +9,7 @@ After a year of architecture design and hard work, we are proud to introduce the
 
 <!-- more -->
 
-TL;DR We have good reasons for why and how we’re going to continue from here, but feel free to skip over the history lessons and straight to: ‘Trunk’, our solution.
+TL;DR We have good reasons for why and how we’re going to continue from here, but feel free to skip over the history lessons and straight to: <a href="#trunk">‘Trunk’, our solution</a>.
 
 ## The past and the why
 
@@ -39,7 +39,7 @@ Finally, at some point, even _the most well-intended person_ will slip up. A goo
 The solution? An automated web-service and a database of registered 'owners' with an ACL layer that only allows designated people to release new versions.
 
 
-## ‘Trunk’, our solution
+<h2 id="trunk">‘Trunk’, our solution</h2>
 
 {% breaking_image /assets/blog_img/trunk/cocoapods-trunk-image.jpg %}
 
