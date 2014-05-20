@@ -28,7 +28,7 @@ Features:
 </a></center>
 
 There is still some debate about how to handle white backgrounds. So if you
-have an option share your view on [TODO](TODO)
+have an option share your view on [our empty TODO](https://github.com/CocoaPods/CocoaPods/issues/2159)
 
 <center><a href="http://feeds.cocoapods.org">
 {% breaking_image /assets/blog_img/CocoaPods-0.33/pod_help_white.png %}
@@ -65,20 +65,21 @@ pointing to the master repo as the remote.
 During the development of trunk we discovered that some users are not properly
 leveraging private repos:
 
-  * You are using the master repo to add your own private specs, don’t do this.
-  * You are using the name ‘master’ for you own private spec-repo, don’t do this.
+  * If you are using the master repo to add your own private specs, don’t do this.
+  * If you are using the name ‘master’ for you own private spec-repo, don’t do this.
 
-
+Things will break.
 
 ## cocoapods-plugins
 
 [David Grandinetti](https://github.com/dbgrandi) and [Olivier
 Halligon](https://github.com/AliSoftware) have been hard at work to tame the
-proliferation of plugins. The extremely meta `cocoaPods-plugins` plugin now you
-can list, search and check the available versions of the CocoaPods plugins.
+proliferation of plugins. With the extremely meta `cocoaPods-plugins` plugin you
+can now list, search and check the available versions of the CocoaPods plugins.
 Moreover, [Boris Bügling](https://github.com/neonichu) created a template (`pod
-plugins create`) so the proliferation of new plugins can continue.
+plugins create`) so gettng started has never been easier.
 
+A great example of a new CocoaPods plugin is [podroulette](http://podroulette.com).
 
 
 ## Updating
