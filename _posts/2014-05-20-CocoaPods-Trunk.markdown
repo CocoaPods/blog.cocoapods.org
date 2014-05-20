@@ -59,12 +59,16 @@ With regards to ensuring that a podspec works properly, _you_, the ‘owner’, 
 Finally, the ‘Trunk’ web-service will no longer store the podspecs in the Ruby format. Instead these will be stored as JSON and thus will directly be usable by people wanting to create other web-services around the CocoaPods ecosystem.
 
 
-## Transition
+<h2 id="transition">Transition</h2>
 
-While we transition to the ‘Trunk’ web-service, we will have a grace-period during which all the currently known Pods can be claimed by their respective ‘owners’. Please read Keith’s [blog post on this topic](http://blog.cocoapods.org/Claim-Your-Pods/).
+While we transition to the ‘Trunk’ web-service, we will have a grace-period during which all the currently known Pods can be claimed by their respective ‘owners’. During this period `pod trunk push` will be **disabled**, until we are satisfied that the majority of the (important) Pods are claimed. Please read Keith’s [blog post on this topic](http://blog.cocoapods.org/Claim-Your-Pods/) for more information on claiming your Pods.
 
 
 ## Frequently Asked Questions
+
+### I’m getting a "[!] Push access is currently disabled." message, what’s wrong?
+
+During the claims period, `pod push trunk` will be disabled. Please see the ‘<a href="#transition">Transition</a>’ section.
 
 ### Will I still be able to make modifications to a published podspec?
 
