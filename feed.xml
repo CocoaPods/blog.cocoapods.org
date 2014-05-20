@@ -8,22 +8,6 @@
     
     
     <item>
-      <title>CocoaPods Trunk</title>
-
-      
-      <description>&lt;p&gt;After a year of architecture design and hard work, we are proud to introduce the ‘Trunk’ web-service, which will dramatically improve the user-experience of podspec publishers.&lt;/p&gt;
-
-</description>  
-      
-
-      <pubDate>Tue, 20 May 2014 15:37:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-Trunk</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-Trunk</guid>
-    </item>
-    
-    
-    
-    <item>
       <title>Claim Your Pods</title>
 
       
@@ -43,6 +27,22 @@ control over submissions of their specs to the master repo.&lt;/p&gt;
       <pubDate>Tue, 20 May 2014 14:38:00 +0000</pubDate>
       <link>http://blog.cocoapods.org/Claim-Your-Pods</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/Claim-Your-Pods</guid>
+    </item>
+    
+    
+    
+    <item>
+      <title>CocoaPods Trunk</title>
+
+      
+      <description>&lt;p&gt;After a year of architecture design and hard work, we are proud to introduce the ‘Trunk’ web-service, which will dramatically improve the user-experience of podspec publishers.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Tue, 20 May 2014 14:37:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/CocoaPods-Trunk</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-Trunk</guid>
     </item>
     
     
