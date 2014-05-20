@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "CocoaPods Trunk"
-date:   2014-05-20 15:37:00 +0000
+date:   2014-05-20 15:37:00 +0100
 author: eloy
 categories: master-repo
 ---
