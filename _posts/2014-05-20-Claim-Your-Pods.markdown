@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Claim Your Pods"
+date:   2014-05-20 15:38:00 +0100
 author: keith
 categories: cocoapods trunk breaking
 ---
