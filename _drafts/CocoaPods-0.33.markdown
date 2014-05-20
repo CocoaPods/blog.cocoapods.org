@@ -17,10 +17,10 @@ for our community… the support for CocoaPods trunk._
 
 Features:
 
-- Colors for subcommands, options, and arguments
-- More consistent documentation for optional arguments
-- alignment of the descriptions
-- Wrapping of the description to the terminal width with a maximum width considered
+- Colours for subcommands, options, and arguments.
+- More consistent documentation for optional arguments.
+- Alignment of the descriptions.
+- Wrapping of the description to the terminal width with a maximum width considered.
 
 <center><a href="http://feeds.cocoapods.org">
 {% breaking_image /assets/blog_img/CocoaPods-0.33/pod_help.png %}
@@ -42,10 +42,10 @@ the completion script. It takes into account the installed plugins.
 
 Currently only ZSH is supported.
 
-```
-rm -f /usr/local/share/zsh/site-functions/_pod
-pod --completion-script > /usr/local/share/zsh/site-functions/_pod
-exec zsh
+```bash
+$ rm -f /usr/local/share/zsh/site-functions/_pod
+$ pod --completion-script > /usr/local/share/zsh/site-functions/_pod
+$ exec zsh
 ```
 
 <center><a href="http://feeds.cocoapods.org">
@@ -56,11 +56,11 @@ exec zsh
 ## cocoapods-trunk
 
 CocoaPods trunk is the new way to push to the master repo. You can read more
-about it in the dedicated [blog post](TODO). For CocoaPods users it is relevant
-to know that since the `pod push` command is intended for private repos it has
-been moved to `pod repo push` (a temporary alias has been provided). Moreover
-the `pod repo push` command will abort if there is an attempt to push to a repo
-pointing to the master repo as the remote.
+about it in the dedicated [blog post](/CocoaPods-Trunk/). For CocoaPods users
+it is relevant to know that since the `pod push` command is intended for
+private repos it has been moved to `pod repo push` (a temporary alias has
+been provided). Moreover the `pod repo push` command will abort if there is
+an attempt to push to a repo pointing to the master repo as the remote.
 
 During the development of trunk we discovered that some users are not properly
 leveraging private repos:
@@ -77,7 +77,7 @@ Halligon](https://github.com/AliSoftware) have been hard at work to tame the
 proliferation of plugins. With the extremely meta `cocoapods-plugins` plugin you
 can now list, search and check the available versions of the CocoaPods plugins.
 Moreover, [Boris Bügling](https://github.com/neonichu) created a template (`pod
-plugins create`) so gettng started has never been easier.
+plugins create`) so getting started has never been easier.
 
 A great example of a new CocoaPods plugin is [podroulette](http://podroulette.com).
 
@@ -86,7 +86,7 @@ A great example of a new CocoaPods plugin is [podroulette](http://podroulette.co
 
 To install the last release of CocoaPods you can run:
 
-```
+```bash
 $ [sudo] gem install cocoapods
 ```
 
