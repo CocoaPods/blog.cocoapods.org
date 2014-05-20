@@ -74,7 +74,7 @@ Things will break.
 
 [David Grandinetti](https://github.com/dbgrandi) and [Olivier
 Halligon](https://github.com/AliSoftware) have been hard at work to tame the
-proliferation of plugins. With the extremely meta `cocoaPods-plugins` plugin you
+proliferation of plugins. With the extremely meta `cocoapods-plugins` plugin you
 can now list, search and check the available versions of the CocoaPods plugins.
 Moreover, [Boris Bügling](https://github.com/neonichu) created a template (`pod
 plugins create`) so gettng started has never been easier.
