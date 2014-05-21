@@ -6,7 +6,7 @@ author: fabio
 categories: cocoapods releases
 ---
 
-TL;DR: _CocoaPod 0.33 has been released. It is shiny and brings a huge change
+TL;DR: _CocoaPods 0.33 has been released. It is shiny and brings a huge change
 for our community… the support for CocoaPods Trunk._
 
 <!-- more -->
@@ -17,7 +17,7 @@ for our community… the support for CocoaPods Trunk._
 
 The help banners of the command line have been tuned:
 
-- Each element now is consistently identified by a single color. The
+- Each element now is consistently identified by a single colour. The
   highlighting is also performed in the descriptions of the commands to make
   them more readable.
 - The alignment of the various elements and of their description has been
@@ -29,26 +29,26 @@ The help banners of the command line have been tuned:
 {% breaking_image /assets/blog_img/CocoaPods-0.33/pod_help.png /assets/blog_img/CocoaPods-0.33/pod_help.png width="775" %}
 
 There is still some debate about how to handle light backgrounds. So if you
-have an opinion share your view on
+have if you have a well-construed argument share your view on
 [CocoaPods#2159](https://github.com/CocoaPods/CocoaPods/issues/2159).
 
 Another interesting enhancement is the inclusion of a suggestion for
-unrecognized arguments, which makes typos much easier to catch.
+unrecognised arguments, which makes typos much easier to catch.
 
 Finally, a galore of minor tweaks have been implemented:
 
-- The naked `pod` command doesn't default `pod install` anymore because it
-  presented a help banner if he Podfile was not found. This context dependant
-  behaviour is considered confusing for new users.
-- The `--version` option is now only a root option and gained the ability of
-  presenting the versions of the installed plugins if coupled with the
-  `--verbose` option.
+- The naked `pod` command doesn’t default to `pod install` anymore because it
+  presented an error if he Podfile was not found. This context dependant
+  behaviour was not the experience we are looking for our new users.
+- The `--version` option is not available anymore in sub-commands and gained the
+  ability of presenting the versions of the installed plugins if coupled with
+  the `--verbose` option.
 
 ## Command line completion
 
-The ` --completion-script` root option has been implemented. It prints a
-completion script for the current shell (currently only the Z shell is
-supported). The result is faster than ever CocoaPoding:
+The ` --completion-script` option has been implemented for the `pod` command.
+It prints a completion script for the current shell (currently only the Z shell
+is supported). The result is faster than ever CocoaPoding:
 
 {% breaking_image /assets/blog_img/CocoaPods-0.33/pod_search_completion.gif /assets/blog_img/CocoaPods-0.33/pod_search_completion.gif width="500" %}
 
@@ -69,7 +69,7 @@ $ exec zsh
 ## cocoapods-trunk
 
 CocoaPods trunk is the new way to share specs via the CocoaPods Master repo. If
-you haven't heard about it yet, you can read the details about it in the
+you haven’t heard about it yet, you can read the details about it in the
 dedicated [blog post](/CocoaPods-Trunk/). For CocoaPods users it is relevant to
 know that the `pod push` command has been moved to `pod repo push` (a temporary
 alias has been provided) because since this version it is intended to be used
