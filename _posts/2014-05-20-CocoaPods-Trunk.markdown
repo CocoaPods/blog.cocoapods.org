@@ -68,7 +68,7 @@ While we transition to the ‘Trunk’ web-service, we will have a grace-period 
 
 ### I’m getting a "[!] Push access is currently disabled." message, what’s wrong?
 
-During the claims period, `pod push trunk` will be disabled. Please see the ‘<a href="#transition">Transition</a>’ section.
+During the claims period, `pod trunk push` will be disabled. Please see the ‘<a href="#transition">Transition</a>’ section.
 
 ### Will I still be able to make modifications to a published podspec?
 
