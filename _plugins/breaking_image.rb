@@ -3,19 +3,15 @@ module Jekyll
 
     def initialize(tag_name, text, tokens)
       super
-      
-      if text.split(" ").count > 1
-        @path = text.split(" ").first
-        @url = text.split(" ").last
-      else
-        @path = text
-      end
-      
+      components = text.split(" ")
+      @path = components[0]
+      @url = components[1] || @path
+      @attributes = components[2]
     end
 
-    def render(context)      
+    def render(context)
       image_url = @path
-      pre = <<-eos      
+      pre = <<-eos
 </article>
 </div>
 </section>
@@ -23,17 +19,16 @@ module Jekyll
 <section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
 eos
 
-      post = <<-eos              
+      post = <<-eos
 </center></article>
 </div>
 </section>
-</div>    
+</div>
 <section class="container">
 <div class="row">
 <article class="content col-md-8 col-md-offset-2">
 eos
-
-      img = "<img src='#{image_url}'>"
+      img = "<img #{@attributes} src='#{image_url}'>"
       if @url
         img = "<a href='#{@url}'>" + img + "</a>"
       end
