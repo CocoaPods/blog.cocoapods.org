@@ -1,13 +1,13 @@
 ---
 layout: post
 title:  "CocoaPods 0.33"
-date:   2014-05-20
+date:   2014-05-21
 author: fabio
 categories: cocoapods releases
 ---
 
 TL;DR: _CocoaPod 0.33 has been released. It is shiny and brings a huge change
-for our community… the support for CocoaPods trunk._
+for our community… the support for CocoaPods Trunk._
 
 <!-- more -->
 
@@ -15,32 +15,50 @@ for our community… the support for CocoaPods trunk._
 
 ## New command line UI
 
-Features:
+The help banners of the command line have been tuned:
 
-- Colours for subcommands, options, and arguments.
-- More consistent documentation for optional arguments.
-- Alignment of the descriptions.
-- Wrapping of the description to the terminal width with a maximum width considered.
+- Each element now is consistently identified by a single color. The
+  highlighting is also performed in the descriptions of the commands to make
+  them more readable.
+- The alignment of the various elements and of their description has been
+  carefully crafted.
+- The descriptions and other bodies of text now are consistently wrapped to the
+  width of the terminal (or to a maximum value to preserve readability for full
+  screen windows).
 
-<center><a href="http://feeds.cocoapods.org">
-{% breaking_image /assets/blog_img/CocoaPods-0.33/pod_help.png %}
-{% breaking_image /assets/blog_img/CocoaPods-0.33/pod_install_help.png %}
-</a></center>
+{% breaking_image /assets/blog_img/CocoaPods-0.33/pod_help.png /assets/blog_img/CocoaPods-0.33/pod_help.png width="775" %}
 
-There is still some debate about how to handle white backgrounds. So if you
-have an option share your view on [our empty TODO](https://github.com/CocoaPods/CocoaPods/issues/2159)
+There is still some debate about how to handle light backgrounds. So if you
+have an opinion share your view on
+[CocoaPods#2159](https://github.com/CocoaPods/CocoaPods/issues/2159).
 
-<center><a href="http://feeds.cocoapods.org">
-{% breaking_image /assets/blog_img/CocoaPods-0.33/pod_help_white.png %}
-</a></center>
+Another interesting enhancement is the inclusion of a suggestion for
+unrecognized arguments, which makes typos much easier to catch.
 
+Finally, a galore of minor tweaks have been implemented:
 
-## Support for completions scripts
+- The naked `pod` command doesn't default `pod install` anymore because it
+  presented a help banner if he Podfile was not found. This context dependant
+  behaviour is considered confusing for new users.
+- The `--version` option is now only a root option and gained the ability of
+  presenting the versions of the installed plugins if coupled with the
+  `--verbose` option.
 
-A new root option ` --completion-script` has been implemented which generates
-the completion script. It takes into account the installed plugins.
+## Command line completion
 
-Currently only ZSH is supported.
+The ` --completion-script` root option has been implemented. It prints a
+completion script for the current shell (currently only the Z shell is
+supported). The result is faster than ever CocoaPoding:
+
+{% breaking_image /assets/blog_img/CocoaPods-0.33/pod_search_completion.gif /assets/blog_img/CocoaPods-0.33/pod_search_completion.gif width="500" %}
+
+We choose to generate a script because this approach is much faster than
+invoking the `pod` command line tool to provide the completions. Unfortunately
+this approach will not pick changes relate to the installation (or the removal)
+of plugins or changes due to CocoaPods updates.
+
+If you are using a properly configured Z shell, you can install or update the
+completion script with the following commands:
 
 ```bash
 $ rm -f /usr/local/share/zsh/site-functions/_pod
@@ -48,19 +66,16 @@ $ pod --completion-script > /usr/local/share/zsh/site-functions/_pod
 $ exec zsh
 ```
 
-<center><a href="http://feeds.cocoapods.org">
-{% breaking_image /assets/blog_img/CocoaPods-0.33/pod_search_completion.gif %}
-</a></center>
-
-
 ## cocoapods-trunk
 
-CocoaPods trunk is the new way to push to the master repo. You can read more
-about it in the dedicated [blog post](/CocoaPods-Trunk/). For CocoaPods users
-it is relevant to know that since the `pod push` command is intended for
-private repos it has been moved to `pod repo push` (a temporary alias has
-been provided). Moreover the `pod repo push` command will abort if there is
-an attempt to push to a repo pointing to the master repo as the remote.
+CocoaPods trunk is the new way to share specs via the CocoaPods Master repo. If
+you haven't heard about it yet, you can read the details about it in the
+dedicated [blog post](/CocoaPods-Trunk/). For CocoaPods users it is relevant to
+know that the `pod push` command has been moved to `pod repo push` (a temporary
+alias has been provided) because since this version it is intended to be used
+for private repos. Moreover, to prevent users sharing accidentally private
+  specs with world, the `pod repo push` command will abort if there is an
+  attempt to push to a repo where the master repo as the remote.
 
 During the development of trunk we discovered that some users are not properly
 leveraging private repos:
@@ -74,10 +89,11 @@ Things will break.
 
 [David Grandinetti](https://github.com/dbgrandi) and [Olivier
 Halligon](https://github.com/AliSoftware) have been hard at work to tame the
-proliferation of plugins. With the extremely meta `cocoapods-plugins` plugin you
-can now list, search and check the available versions of the CocoaPods plugins.
-Moreover, [Boris Bügling](https://github.com/neonichu) created a template (`pod
-plugins create`) so getting started has never been easier.
+proliferation of plugins. The result is the extremely meta `cocoapods-plugins`
+plugin which can list, search and check the available versions of the most
+useful CocoaPods plugins.  Moreover, [Boris
+Bügling](https://github.com/neonichu) created a template (`pod plugins create`)
+so getting started has never been easier.
 
 A great example of a new CocoaPods plugin is [podroulette](http://podroulette.com).
 
