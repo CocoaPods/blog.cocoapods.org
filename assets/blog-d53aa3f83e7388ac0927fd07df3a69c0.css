@@ -114,5 +114,4 @@ img.image-zoom {
   -webkit-transition-duration: 450ms; }
 
 img:hover.image-zoom {
-  -webkit-transform: scale(1.5, 1.5);
-  -webkit-transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045); }
+  -webkit-transform: scale(1.5, 1.5); }
