@@ -108,3 +108,11 @@ a#archives {
     /* padding:12px 10px;
     background-color:#5c5c5c; */
     list-style: none; }
+
+img.image-zoom {
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transition-duration: 450ms; }
+
+img:hover.image-zoom {
+  -webkit-transform: scale(1.5, 1.5);
+  -webkit-transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045); }
