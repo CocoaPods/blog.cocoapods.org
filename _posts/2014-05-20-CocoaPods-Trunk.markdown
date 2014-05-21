@@ -72,7 +72,11 @@ During the claims period, `pod trunk push` will be disabled. Please see the ‘<
 
 ### Will I still be able to make modifications to a published podspec?
 
-No. At least not in an automated fashion. You are allowed to create a pull-request against the ‘master’ spec-repo, but we will not necessarily accept it and we do **not** offer any guarantees on turn-around time.
+Once a podspec for a specific version of a pod is published, you won't be able to modify it. At least not in an automated fashion.
+The majority of update requests are a results of contributors not sufficiently testing their podspec beforehand.
+Generally what you want to do is to publish a **new version** for a pod, not edit an already published version in-place.
+
+However, if you really fall into some exceptional case and really have to modify an already published podspec for a given version, you may still create a pull-request against the ‘master’ spec-repo; but we will not necessarily accept it and we do not offer any guarantees on turn-around time.
 
 ### How can I distinguish the format of a podspec.
 
