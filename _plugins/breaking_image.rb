@@ -3,7 +3,7 @@ module Jekyll
 
     def initialize(tag_name, text, tokens)
       super
-      components = text.split(" ")
+      components = text.split(", ")
       @path = components[0]
       @url = components[1] || @path
       @attributes = components[2]

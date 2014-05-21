@@ -26,7 +26,7 @@ The help banners of the command line have been tuned:
   width of the terminal (or to a maximum value to preserve readability for full
   screen windows).
 
-{% breaking_image /assets/blog_img/CocoaPods-0.33/pod_help.png /assets/blog_img/CocoaPods-0.33/pod_help.png width="775" %}
+{% breaking_image /assets/blog_img/CocoaPods-0.33/pod_help.png, /assets/blog_img/CocoaPods-0.33/pod_help.png, width="775" class="image-zoom" %}
 
 There is still some debate about how to handle light backgrounds. So if you
 have a well-construed argument share your view on
@@ -50,7 +50,7 @@ The ` --completion-script` option has been implemented for the `pod` command.
 It prints a completion script for the current shell (currently only the Z shell
 is supported). The result is: faster than ever CocoaPoding:
 
-{% breaking_image /assets/blog_img/CocoaPods-0.33/pod_search_completion.gif /assets/blog_img/CocoaPods-0.33/pod_search_completion.gif width="500" %}
+{% breaking_image /assets/blog_img/CocoaPods-0.33/pod_search_completion.gif, /assets/blog_img/CocoaPods-0.33/pod_search_completion.gif, width="500" %}
 
 We choose to generate a script because this approach is much faster than
 invoking the `pod` command line tool to provide the completions. Unfortunately
