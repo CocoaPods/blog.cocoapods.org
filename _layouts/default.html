@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     {% if page.title %}
-      <title>{{ page.title }} - {{ site.name }}</title>
+      <title>{{ page.title | strip_html }} - {{ site.name }}</title>
     {% else %}
       <title>{{ site.name }}</title>
     {% endif %}
@@ -47,8 +47,8 @@
 
     {% shared_include footer %}
     {% javascript blog %}
-    
+
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    
+
   </body>
 </html>

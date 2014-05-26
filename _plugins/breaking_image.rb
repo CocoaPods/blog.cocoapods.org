@@ -7,10 +7,12 @@ module Jekyll
       @path = components[0]
       @url = components[1] || @path
       @attributes = components[2]
+      @no_bottom_margin = components.include? "no-bottom-margin "
     end
 
     def render(context)
       image_url = @path
+
       pre = <<-eos
 </article>
 </div>
@@ -25,12 +27,16 @@ eos
 </section>
 </div>
 <section class="container">
-<div class="row">
-<article class="content col-md-8 col-md-offset-2">
+<div class="row"><article class="content col-md-8 col-md-offset-2">
 eos
-      img = "<img #{@attributes} src='#{image_url}'>"
+
+      if @no_bottom_margin
+        pre.gsub!(/row/m, 'row" style="padding-bottom:0px;')
+      end
+
+      img = "<img #{ @attributes } src='#{image_url}'>"
       if @url
-        img = "<a href='#{@url}'>" + img + "</a>"
+        img = "<a href='#{ @url }'>" + img + "</a>"
       end
 
       return pre + img + post
