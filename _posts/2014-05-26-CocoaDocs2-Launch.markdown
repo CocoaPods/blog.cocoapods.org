@@ -33,6 +33,6 @@ I also felt that CocoaDocs was a black box for developers who didn't want to rea
 
 ## Coming up
 
-This is not a full release of CocoaDocs 2, I'm waiting till post WWDC 2014 to know whether the world has changed yet again to start the process of running CocoaDocs on over 15k libraries. During this time period new libraries get the new style, old libraries keep the old style. There are still a few [open issues](https://github.com/CocoaPods/cocoadocs.org/issues?state=open) on CocoaDocs but there's time, but this is the 95%.
+This is not a full release of CocoaDocs 2, I'm waiting till post-WWDC 2014 to know whether the world has changed yet again to start the process of running CocoaDocs on over 15k libraries. During this time period new libraries get the new style, old libraries keep the old style. There are still a few [open issues](https://github.com/CocoaPods/cocoadocs.org/issues?state=open) on CocoaDocs but there's time, we're at a solid 95% now.
 
 CocoaDocs could not have existed without help from [appledoc](http://gentlebytes.com/appledoc/), [Danger](/assets/blog_img/cocoadocs/danger.jpg), the [CocoaPods Dev Team](http://cocoapods.org/about) and everyone who has contributed a library.
