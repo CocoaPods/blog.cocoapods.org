@@ -6,7 +6,7 @@ categories: cocoadocs new cocoadocs2
 date: 2014-05-26
 ---
 
-In March 2013 I uploaded the [initial commit](https://github.com/CocoaPods/cocoadocs.org/commit/93e9896b04f79eb09be28a9056671b1d23f3143d) for [CocoaDocs](http://cocoadocs.org). This action triggered a roller-coaster [year for me](http://orta.github.io/on/being/27/#cocoadocs). I'm super excited to announce the second iteration of CocoaDocs is now running and parsing new Docsets.
+In March 2013 I uploaded the [initial commit](https://github.com/CocoaPods/cocoadocs.org/commit/93e9896b04f79eb09be28a9056671b1d23f3143d) for [CocoaDocs](http://cocoadocs.org). This action triggered a roller-coaster [year for me](http://orta.github.io/on/being/27/#cocoadocs). I'm super excited to announce the second iteration of CocoaDocs is now running and [parsing](http://cocoadocs.org/docsets/ReactiveCocoa/2.3.1/) [new](http://cocoadocs.org/docsets/ARAnalytics/2.7.2/) [Docsets](http://cocoadocs.org/docsets/BlocksKit/2.2.3/).
 
 <!-- more -->
 
