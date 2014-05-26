@@ -19,7 +19,7 @@ In March 2013 I uploaded the [initial commit](https://github.com/CocoaPods/cocoa
 * Easy access to License info
 * Per <a href="http://cocoadocs.org/readme">library style</a> settings
 * Programming Guides
-* <a href="http://kapeli.com/dash">Dash<a> specific layouts
+* <a href="http://kapeli.com/dash">Dash</a> specific layouts
 
 So it came to me as a surprise that CocoaDocs narrowly beats the CocoaPods Guides in terms of web traffic. It was the original point at which I (<a href="http://orta.github.io">orta</a>) had made a major contribution to the OSS community, and whilst it's great technically, it has always bothered me that I was constrained in the design. It bothered me enough that I [started a redesign process](/redesign/) for the entire of CocoaPods. Now I am free of this burden.
 
