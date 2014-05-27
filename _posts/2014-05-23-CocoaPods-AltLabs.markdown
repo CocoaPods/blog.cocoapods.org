@@ -34,5 +34,7 @@ over if you are in San Francisco for either events.
 
 Join our [meetup](http://www.meetup.com/CocoaPods-SF/) group and <a href="http://www.meetup.com/CocoaPods-SF/events/184789102/" data-event="184789102" class="mu-rsvp-btn">RSVP</a> online.
 
+[Code of Conduct](http://cocoapods.org/legal)
+
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src="https://secure.meetup.com/script/21021123101537681383/api/mu.btns.js?id=a74a4o9ar6ca0btqqmtk1k5uv2";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","mu-bootjs");</script>
 
