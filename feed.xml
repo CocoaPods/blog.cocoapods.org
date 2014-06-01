@@ -12,25 +12,13 @@
 
       
       <description>&lt;p&gt;Have you heard of &lt;a href=&quot;http://podroulette.com&quot;&gt;pod-roulette&lt;/a&gt;? If not, here&amp;#39;s their elevator pitch:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
-      &lt;/article&gt;
-      &lt;/section&gt;
-      
-      &lt;div style=&quot;background-color:white;&quot;&gt;
-      &lt;section class=&quot;container&quot;&gt;
-      &lt;article class=&quot;row&quot;&gt;
-      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
-&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;Just moved to the big city, got a seed investment but don&amp;#39;t have an idea what to do next?    
-Pod Roulette will find three random pods and prepare a project for you in a few seconds.
-&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
-      &lt;/article&gt;
-      &lt;/section&gt;
-      &lt;/div&gt;
-      
-      &lt;section class=&quot;container&quot;&gt;
-      &lt;article class=&quot;row&quot;&gt;
-      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
-&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Just moved to the big city, got a seed investment but don&amp;#39;t have an idea what to do next?&lt;/p&gt;
+
+&lt;p&gt;Pod Roulette will find three random pods and prepare a project for you in a few seconds.&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;p&gt;After seeing this project, we knew that there should be a &lt;strong&gt;hackathon&lt;/strong&gt; using this.&lt;/p&gt;
 
 </description>  
