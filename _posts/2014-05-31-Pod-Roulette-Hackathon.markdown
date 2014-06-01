@@ -9,8 +9,9 @@ categories: community event
 
 Have you heard of [pod-roulette][1]? If not, here's their elevator pitch:
 
-    Just moved to the big city, got a seed investment but don't have an idea what to do next?    
-    Pod Roulette will find three random pods and prepare a project for you in a few seconds.
+> Just moved to the big city, got a seed investment but don't have an idea what to do next?
+
+> Pod Roulette will find three random pods and prepare a project for you in a few seconds.
 
 After seeing this project, we knew that there should be a **hackathon** using this.
 
