@@ -20,8 +20,7 @@
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
-&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;Just moved to the big city, got a seed investment but don&amp;#39;t have an idea what to do next?
-
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;Just moved to the big city, got a seed investment but don&amp;#39;t have an idea what to do next?    
 Pod Roulette will find three random pods and prepare a project for you in a few seconds.
 &lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
       &lt;/article&gt;
@@ -34,16 +33,7 @@ Pod Roulette will find three random pods and prepare a project for you in a few 
 &lt;/div&gt;
 &lt;p&gt;After seeing this project, we knew that there should be a &lt;strong&gt;hackathon&lt;/strong&gt; using this.&lt;/p&gt;
 
-&lt;p&gt;And now there is: right after WWDC, on &lt;strong&gt;Saturday, June 7th 2014&lt;/strong&gt;, we will meet &lt;strong&gt;at 10am&lt;/strong&gt; and hack on our randomly determined projects until 5pm, then there will be presentations from 6pm to 7pm. Of course you can also come around and hack on something else, for example we can set you up with getting started to contribute to CocoaPods itself.&lt;/p&gt;
-
-&lt;p&gt;The hackathon will be &lt;strong&gt;hosted at Layer HQ&lt;/strong&gt;, which can be reached by a &lt;a href=&quot;https://www.google.com/maps/dir/Moscone+Center/470+Alabama+St,+San+Francisco,+CA+94110/@37.7737857,-122.4268309,14z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x808580877d2fc9ad:0xd182ccc332c28697!2m2!1d-122.401557!2d37.784173!1m5!1m1!1s0x808f7e3074359e0f:0x710aa5eaaf53cd94!2m2!1d-122.412559!2d37.763261!3e3&quot;&gt;short bus ride&lt;/a&gt; from Moscone. They will be graciously providing lunch, dinner and drinks - thanks! &lt;/p&gt;
-
-&lt;p&gt;Join our &lt;a href=&quot;http://www.meetup.com/CocoaPods-SF/&quot;&gt;meetup&lt;/a&gt; group and &lt;a href=&quot;http://www.meetup.com/CocoaPods-SF/events/186336602/&quot; data-event=&quot;186336602&quot; class=&quot;mu-rsvp-btn&quot;&gt;RSVP&lt;/a&gt; online.&lt;/p&gt;
-
-&lt;p&gt;As always, don&amp;#39;t be a jerk --&amp;gt; &lt;a href=&quot;http://cocoapods.org/legal&quot;&gt;Code of Conduct&lt;/a&gt;&lt;/p&gt;
-
-&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src=&quot;https://secure.meetup.com/script/21021123101537681383/api/mu.btns.js?id=a74a4o9ar6ca0btqqmtk1k5uv2&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;mu-bootjs&quot;);&lt;/script&gt;
-</description>
+</description>  
       
 
       <pubDate>Sat, 31 May 2014 00:00:00 +0000</pubDate>
