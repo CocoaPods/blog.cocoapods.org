@@ -9,11 +9,12 @@ categories: community event
 
 Have you heard of [pod-roulette][1]? If not, here's their elevator pitch:
 
-    Just moved to the big city, got a seed investment but don't have an idea what to do next?
-    
+    Just moved to the big city, got a seed investment but don't have an idea what to do next?    
     Pod Roulette will find three random pods and prepare a project for you in a few seconds.
 
 After seeing this project, we knew that there should be a **hackathon** using this.
+
+<!-- more -->
 
 And now there is: right after WWDC, on **Saturday, June 7th 2014**, we will meet **at 10am** and hack on our randomly determined projects until 5pm, then there will be presentations from 6pm to 7pm. Of course you can also come around and hack on something else, for example we can set you up with getting started to contribute to CocoaPods itself.
 
