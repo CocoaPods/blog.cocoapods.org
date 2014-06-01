@@ -13,11 +13,11 @@ Have you heard of [pod-roulette][1]? If not, here's their elevator pitch:
     
     Pod Roulette will find three random pods and prepare a project for you in a few seconds.
 
-After seeing this project, we knew that there should be **hackathon** using this.
+After seeing this project, we knew that there should be a **hackathon** using this.
 
 And now there is: right after WWDC, on **Saturday, June 7th 2014**, we will meet **at 10am** and hack on our randomly determined projects until 5pm, then there will be presentations from 6pm to 7pm. Of course you can also come around and hack on something else, for example we can set you up with getting started to contribute to CocoaPods itself.
 
-The hackathon will be **hosted at Layer HQ**, who can be reached by a [short bus ride][2] from Moscone. They will be graciously providing lunch, dinner and drinks - thanks! 
+The hackathon will be **hosted at Layer HQ**, which can be reached by a [short bus ride][2] from Moscone. They will be graciously providing lunch, dinner and drinks - thanks! 
 
 Join our [meetup](http://www.meetup.com/CocoaPods-SF/) group and <a href="http://www.meetup.com/CocoaPods-SF/events/180676392/" data-event="180676392" class="mu-rsvp-btn">RSVP</a> online.
 
