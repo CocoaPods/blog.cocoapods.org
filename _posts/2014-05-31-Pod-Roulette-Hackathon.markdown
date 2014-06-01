@@ -19,7 +19,7 @@ And now there is: right after WWDC, on **Saturday, June 7th 2014**, we will meet
 
 The hackathon will be **hosted at Layer HQ**, which can be reached by a [short bus ride][2] from Moscone. They will be graciously providing lunch, dinner and drinks - thanks! 
 
-Join our [meetup](http://www.meetup.com/CocoaPods-SF/) group and <a href="http://www.meetup.com/CocoaPods-SF/events/180676392/" data-event="180676392" class="mu-rsvp-btn">RSVP</a> online.
+Join our [meetup](http://www.meetup.com/CocoaPods-SF/) group and <a href="http://www.meetup.com/CocoaPods-SF/events/186336602/" data-event="186336602" class="mu-rsvp-btn">RSVP</a> online.
 
 As always, don't be a jerk --> [Code of Conduct][3]
 
