@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Stripe's Open Source Retreat"
+title: "Stripe's Open Source Retreat"
 author: samuel
 categories: sponsorship cocoapods
 ---
