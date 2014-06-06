@@ -8,6 +8,25 @@
     
     
     <item>
+      <title>Stripe's Open Source Retreat</title>
+
+      
+      <description>&lt;p&gt;Today, I am beyond excited to announce that I will be working full-time on CocoaPods this autumn, courtesy of Stripe&amp;#39;s &lt;a href=&quot;https://stripe.com/blog/open-source-retreat-grantees&quot;&gt;Open Source Retreat&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For three months, in addition to my normal work on CocoaPods, I will be working to write a reference implementation of an iterative dependency resolver that will be shared by CocoaPods and &lt;a href=&quot;https://bundler.io/&quot;&gt;Bundler&lt;/a&gt; (and available to any developer that wants to use it).
+As part of the project, I will also be writing a language-agnostic test suite to help standardize behavior across different implementations of resolvers.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Mon, 09 Jun 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/Stripe-Open-Source-Retreat</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/Stripe-Open-Source-Retreat</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>Pod Roulette Hackathon - San Francisco - 7th June 2014</title>
 
       
