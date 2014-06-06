@@ -5,7 +5,7 @@ url: http://blog.cocoapods.org
 markdown: redcarpet
 pygments: true
 permalink: /:title
-exclude: ['Gemfile*', 'rakefile.rb', 'README.md', 'shared']
+exclude: ['Gemfile*', 'rakefile.rb', 'README.md', 'shared', 'vendor']
 paginate: 10
 
 
@@ -26,7 +26,7 @@ authors:
     name: Florian Hanke
     twitter: hanke
     gravatar: de2d64478e715fb02266f77a3f5641f6
-    
+
   keith:
     name: Keith Smiley
     twitter: SmileyKeith
@@ -51,6 +51,11 @@ authors:
     name: Boris Bügling
     twitter: NeoNacho
     gravatar: 66d863ad05a1af75a0e3c5cedc816943
+
+  samuel:
+    name: Samuel E. Giddins
+    twitter: segiddins
+    gravatar: 4d6be90af74894fd132fb06dacec04d7
 
 assets:
   sources:
