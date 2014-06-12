@@ -39,6 +39,8 @@ There's also a timelapse video of the whole event:
 
 <iframe src="https://docs.google.com/file/d/0B_iY-nlLiaNqdm16QTA5Nk9yTm8/preview" width="640" height="385"></iframe>
 
+Thanks a lot to [Layer][18] for hosting the event and graciously providing food and drinks!
+
 
 [1]: http://blog.cocoapods.org/Pod-Roulette-Hackathon/
 [2]: http://podroulette.com
@@ -57,4 +59,4 @@ There's also a timelapse video of the whole event:
 [15]: https://github.com/realm/jazzy
 [16]: https://twitter.com/blakewatters
 [17]: https://github.com/layerhq/FMDBMigrationManager
-
+[18]: https://layer.com
