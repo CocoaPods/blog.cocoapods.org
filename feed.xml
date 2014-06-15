@@ -8,6 +8,26 @@
     
     
     <item>
+      <title>Pod Roulette Hackathon SF Summary</title>
+
+      
+      <description>&lt;iframe src=&quot;https://docs.google.com/file/d/0B_iY-nlLiaNqdm16QTA5Nk9yTm8/preview&quot; width=&quot;100%&quot; height=&quot;480&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Last Saturday we ran the &lt;a href=&quot;http://blog.cocoapods.org/Pod-Roulette-Hackathon/&quot;&gt;first CocoaPods hackathon&lt;/a&gt; with a great turn out especially considering post-WWDC tiredness.&lt;/p&gt;
+
+&lt;p&gt;We ran it based on &lt;a href=&quot;http://podroulette.com&quot;&gt;Pod Roulette&lt;/a&gt;, and surprisingly most projects stayed true to the theme. We assigned each team three random Pods which needed to be used in their projects, adding additional Pods was fine, but you had to use each randomly assigned Pod in some fashion.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Thu, 12 Jun 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/Hackathon-Summary</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/Hackathon-Summary</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>Stripe's Open Source Retreat</title>
 
       
