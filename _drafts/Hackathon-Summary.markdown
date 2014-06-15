@@ -7,39 +7,38 @@ author: boris
 categories: community event
 ---
 
-<div style="float:left"><a href="/assets/blog_img/Hackathon-Summary/welcome.jpg"><img src="/assets/blog_img/Hackathon-Summary/welcome.jpg" width="250"></a></div>
+<iframe src="https://docs.google.com/file/d/0B_iY-nlLiaNqdm16QTA5Nk9yTm8/preview" width="100%" height="480"></iframe>
 
-<div style="float:left"><a href="/assets/blog_img/Hackathon-Summary/kickoff.jpg"><img src="/assets/blog_img/Hackathon-Summary/kickoff.jpg" width="250"></a></div>
+Last Saturday we ran the [first CocoaPods hackathon][1] with a great turn out especially considering post-WWDC tiredness.
 
-<div><a href="/assets/blog_img/Hackathon-Summary/office.jpg"><img src="/assets/blog_img/Hackathon-Summary/office.jpg" width="250"></a></div>
+We ran it based on [Pod Roulette][2], and surprisingly most projects stayed true to the theme. We assigned each team three random Pods which needed to be used in their projects, adding additional Pods was fine, but you had to use each randomly assigned Pod in some fashion.
+
+<!-- more -->
+
+{% breaking_image /assets/blog_img/Hackathon-Summary/kickoff.jpg, /assets/blog_img/Hackathon-Summary/kickoff.jpg %}
 
 
-Last Saturday was the [first CocoaPods hackathon][1], and about 15 developers showed up, despite post-WWDC tiredness.
-
-Most projects stayed true to the [Pod Roulette][2] theme which assigned each team three random Pods which needed to be used in their project. Adding additional Pods was allowed, but you had to use each randomly assigned Pod in some fashion.
-
-Below is a list of what was presented:
+Here's what we ended up with:
 
 - **StickyHeaderFlowLayoutFiltersSortDescriptorWilsonRank**, dubbed the *Instagram of beatboxing* by [@topwobble][5] and team. [Source on GitHub][3] and [Audio Snippet][4].
 
 - **PullToRefreshPopperToolsImageDownloader**, an [Imgur][6] Roulette app by [@alexdaukrainian][7] and team. [Source on GitHub][8] and [Video][9].
 
-- **InterfaCSSStatusBarBlurryTableViewController**, a MultiPeerConnectivity enabled app by [@orta][10] and team. [Source on GitHub][11]. Orta also worked on two iOS 8 keyboards, a very useful Hodor one and one for quick access to animated GIFs.
+- **InterfaCSSStatusBarBlurryTableViewController**, a MultiPeerConnectivity enabled app by [@orta][10] and team. [Source on GitHub][11]. Orta also worked on an iOS 8 keyboard, for offering quick access to popular animated GIFs.
 
 - **GtmHttpFetcherCoreLinkCocoa**, an app for remote controlling a [PJLink-enabled][12] projector with your Pebble by [@hbehrens][13] and team. Source will be available after cleanup.
 
 Apart from those fun projects, we even got some useful stuff as well:
 
-- [@simjp][14] worked on [jazzy][15], a better way to generate documentation using *SourceKit*.
+- [@simjp][14] worked on [jazzy][15], a better way to generate documentation using Xcode's *SourceKit*!
 
 - [@blakewatters][16] released [FMDBMigrationManager][17], a library for managing SQLite database schemas with FMDB.
 
 
-There's also a timelapse video of the whole event:
-
-<iframe src="https://docs.google.com/file/d/0B_iY-nlLiaNqdm16QTA5Nk9yTm8/preview" width="640" height="385"></iframe>
-
 Thanks a lot to [Layer][18] for hosting the event and graciously providing food and drinks!
+
+<a href="/assets/blog_img/Hackathon-Summary/welcome.jpg"><img src="/assets/blog_img/Hackathon-Summary/welcome.jpg" width="50%" style="float:right;"></a>
+<a shref="/assets/blog_img/Hackathon-Summary/office.jpg"><img src="/assets/blog_img/Hackathon-Summary/office.jpg" width="50%" style="float:right;"></a>
 
 
 [1]: http://blog.cocoapods.org/Pod-Roulette-Hackathon/
