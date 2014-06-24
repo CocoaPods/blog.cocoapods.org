@@ -487,6 +487,8 @@ will be there. Orta has organised this event, and it&amp;#39;s kindly hosted by
       
       <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods just got a facelift.&lt;/em&gt;&lt;/p&gt;
 
+&lt;p&gt;Interested in finding the CocoaPods Logo? Check out our &lt;a href=&quot;https://github.com/CocoaPods/shared_resources/tree/master/media&quot;&gt;Media Pack&lt;/a&gt;.&lt;/p&gt;
+
 &lt;p&gt;I believe design is important. CocoaPods is probably the most public facing Objective-C project. Applying design to open source projects is a sign of maturity, and of stability. Whilst we&amp;#39;re still not 1.0 yet, having a cohesive brand is a step towards that. &lt;/p&gt;
 
 &lt;p&gt;This post documents some of the work involved in making the new CocoaPods web properties.&lt;/p&gt;
@@ -603,7 +605,9 @@ targets. If this doesn&amp;#39;t ring a bell the following image should.&lt;/p&g
       <title>On Design</title>
 
       
-      <description>&lt;p&gt;CocoaPods is arguably one of the most important open source project in the Objective-C community. It&amp;#39;s used in thousands of applications and has hundreds of thousands of downloads.&lt;/p&gt;
+      <description>&lt;p&gt;Interested in finding the CocoaPods Logo? Check out our &lt;a href=&quot;https://github.com/CocoaPods/shared_resources/tree/master/media&quot;&gt;Media Pack&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;CocoaPods is arguably one of the most important open source project in the Objective-C community. It&amp;#39;s used in thousands of applications and has hundreds of thousands of downloads.&lt;/p&gt;
 
 &lt;p&gt;Building the tool, the community and the ecosystem around the project has happened organically with a mix of people coming and helping out to get us to a position where CocoaPods is essential to any project. &lt;/p&gt;
 
