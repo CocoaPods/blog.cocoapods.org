@@ -8,6 +8,8 @@ categories: cocoapods design
 
 TL;DR: _CocoaPods just got a facelift._
 
+Interested in finding the CocoaPods Logo? Check out our [Media Pack](https://github.com/CocoaPods/shared_resources/tree/master/media).
+
 I believe design is important. CocoaPods is probably the most public facing Objective-C project. Applying design to open source projects is a sign of maturity, and of stability. Whilst we're still not 1.0 yet, having a cohesive brand is a step towards that. 
 
 This post documents some of the work involved in making the new CocoaPods web properties.
