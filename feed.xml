@@ -8,6 +8,24 @@
     
     
     <item>
+      <title>pod lib create v2</title>
+
+      
+      <description>&lt;p&gt;&lt;code&gt;pod lib create&lt;/code&gt; has been our way of trying to encourage standards, and to make it easy to create a new library. Before today it would leave a &lt;a href=&quot;http://code.dblock.org/reorganizing-cocoapod-folder-structure-for-unit-and-integration-testing&quot;&gt;lot of setup&lt;/a&gt; at the developer&amp;#39;s discretion. The new version automates a lot of common problems away and starts you with a new library structure. Read on for details.&lt;/p&gt;
+
+&lt;p&gt;Or just go straight to the &lt;a href=&quot;http://guides.cocoapods.org/making/using-pod-lib-create.html&quot;&gt;Using Pod Lib Create guide&lt;/a&gt;.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Thu, 26 Jun 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/Pod-Lib-Create</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/Pod-Lib-Create</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>Pod Roulette Hackathon SF Summary</title>
 
       
