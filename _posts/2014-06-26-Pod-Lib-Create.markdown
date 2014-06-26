@@ -20,7 +20,7 @@ Rather than explain what it does, which the guide does a better job of, I want t
 
 1. You can edit your Podspec metadata, like the README and Library Podspec in Xcode.
 * There is an automatically generated project with your own Prefix settings.
-* Extremely easy to start writing library tests, we include stubs for Specta/Expect and Kiwi.
+* Extremely easy to start writing library tests, we include stubs for Specta/Expecta and Kiwi.
 * Your library is set up as a Development Pod.
 * We include some useful Pods for bootstrapping your project.
 
