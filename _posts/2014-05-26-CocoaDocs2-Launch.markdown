@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "On Launching </br>CocoaDocs Version 2"
+title:  "On Launching<br />CocoaDocs Version 2"
 author: orta
 categories: cocoadocs new cocoadocs2
 date: 2014-05-26
