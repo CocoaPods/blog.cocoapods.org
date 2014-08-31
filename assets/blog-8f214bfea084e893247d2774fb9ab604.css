@@ -115,3 +115,6 @@ img.image-zoom {
 
 img:hover.image-zoom {
   -webkit-transform: scale(1.5, 1.5); }
+
+blockquote p {
+  margin-top: 0px; }
