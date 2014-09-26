@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "CocoaPods 0.34"
-date:   2014-09-17
+date:   2014-09-26
 author: fabio
 categories: cocoapods releases
 ---
