@@ -8,6 +8,25 @@
     
     
     <item>
+      <title>CocoaPods 0.34</title>
+
+      
+      <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 0.34&lt;/em&gt; which includes the work sponsored by
+&lt;a href=&quot;https://soundcloud.com&quot;&gt;SoundCloud&lt;/a&gt; has been released. The highlights? Support
+for scoping Pods per build configuration, declaration of source repositories,
+and faster downloads.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Fri, 26 Sep 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/CocoaPods-0.34</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.34</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>pod lib create v2</title>
 
       
