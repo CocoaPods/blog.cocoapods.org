@@ -11,6 +11,8 @@ TL;DR: _CocoaPods 0.34_ which includes the work sponsored by
 for scoping Pods per build configuration, declaration of source repositories,
 and faster downloads.
 
+*This release will require making changes to your [Podfile](https://github.com/artsy/eidolon/blob/master/Podfile#L1-L2)s*
+
 <!-- more -->
 
 I would like to thank [SoundCloud](https://soundcloud.com) and the [Travis
@@ -160,4 +162,3 @@ Until version 1.0 we strongly encourage you to keep CocoaPods up-to-date.
 
 For all the details, don’t miss the
 [Changelog](https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md).
-
