@@ -16,6 +16,8 @@
 for scoping Pods per build configuration, declaration of source repositories,
 and faster downloads.&lt;/p&gt;
 
+&lt;p&gt;&lt;em&gt;This release will require making changes to your &lt;a href=&quot;https://github.com/artsy/eidolon/blob/master/Podfile#L1-L2&quot;&gt;Podfile&lt;/a&gt;s&lt;/em&gt;&lt;/p&gt;
+
 </description>  
       
 
