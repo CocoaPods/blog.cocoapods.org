@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-      <title>CocoaPods Beta - CocoaPods Blog</title>
+      <title>Coins - CocoaPods Blog</title>
     
 
     <meta name="description" content="The blog for CocoaPods.org an Objective-C dependency manager">
@@ -41,12 +41,12 @@
 
     <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="glyphicon-plus"></span></button><a class="navbar-brand" href="http://cocoapods.org"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://cocoapods.org/about">About</a></li><li><a href="http://guides.cocoapods.org">Guides</a></li><li class="active"><a href="http://blog.cocoapods.org">Blog</a></li></ul></div></section></nav>
 
-    <div id ="">
+    <div id ="coins">
 <section class="container" >
   <article class="row">
   <header class="col-md-8 col-md-offset-2 headline blog-post">
     
-      <h1>CocoaPods Beta</h1>
+      <h1>Coins</h1>
     
     
   </header>
@@ -68,7 +68,7 @@
                 <p><a href="http://twitter.com/orta">Orta Therox</a></p>
               
             
-             <p>24 November 2013</p>
+             <p>22 October 2014</p>
 
             
               <a href="https://twitter.com/orta" class="twitter-follow-button" data-show-count="false" data-lang="en">
@@ -79,70 +79,68 @@
       </article>
     
       <article class="content col-md-8">
-        <p>TL;DR: <em>CocoaPods just got a facelift.</em></p>
+        <p>Physical objects for abstract ethemeral work.</p>
 
-<p>Interested in finding the CocoaPods Logo? Check out our <a href="https://github.com/CocoaPods/shared_resources/tree/master/media">Media Pack</a>.</p>
+<p>Working on tools is all about levels of abstraction. CocoaPods abstracts away the idea of dealing with the transmission, setup and installation of a Cocoa Library into just <code>pod &quot;FDModel&quot;</code>. The bits and pieces behind the internals are just as abstracted away from CocoaPods through ruby gems like <code>Xcodeproj</code>, <code>Molinillo</code> and <code>CLAide</code>. </p>
 
-<p>I believe design is important. CocoaPods is probably the most public facing Objective-C project. Applying design to open source projects is a sign of maturity, and of stability. Whilst we&#39;re still not 1.0 yet, having a cohesive brand is a step towards that. </p>
-
-<p>This post documents some of the work involved in making the new CocoaPods web properties.</p>
+<p>Devoting time to CocoaPods is not a thank-less task, those who have become known for their work on CocoaPods have vastly improved their <a href="http://www.slate.com/articles/business/the_bet/2014/05/klout_is_basically_dead_but_it_finally_matters.html">Klout score</a>. Being a person who has submitted two or three pull requests probably hasn&#39;t though. We want to try and do something to say thanks in  a meaningful way. We opted for token of our gratitude in the form of a coin. We&#39;ll be getting these sent out to the top 80 contributors to CocoaPods the tool.</p>
 
 <!-- more -->
 
-<p>The CocoaPods devs welcomed me with open arms after I started regularly contributing via the Specs repo, and encouraged by their work I started a project called <a href="http://cocoadocs.org">CocoaDocs</a>. Once it became quite obvious that CocoaDocs was going to be an important part of the CocoaPods ecosystem I branded it with the CocoaPods styling, and it was treated as a sister project. </p>
-
-<p>Around the same time we were seeing issues with documentation, it was user contributed and spread out among the cocoapods website and a collection of wikis, so <a href="https://twitter.com/micheletitolo">Michele Titolo</a> &amp; I started to mock out the <a href="https://github.com/CocoaPods/cocoapods.github.com/issues/14">guides structure</a> and Michele started collating documents and creating a single source for the markdown files.</p>
-
-<p>Andy and I went back and forth on logos for a few months until we came up with the version shown in the top left and in this blog post <a href="/redesign/">announcing the new blog</a>. Andy (quite correctly) believed that we couldn&#39;t just announce a logo without showing it in context, that meant re-thinking the homepage. I spent some time with <a href="http://florianhanke.com">Florian Hanke</a> digging into the site analytics to try and get an understanding how people were using the current website. Turns out everyone is using it to search for Pods. Who&#39;d have thought?</p>
-
-<p>So that gave us a direction for what the site should orient itself towards. We knew that search should be a high priority, and that a lot of the documentation should move into a guide leaving a lot more breathing space in the homepage. The new design was worked on in secret until we felt there was enough context around the branding. You can&#39;t re-think something <a href="http://marissamayr.tumblr.com/post/60336044815/geeking-out-on-the-logo">this big</a> in a weekend, and showing incremental work isn&#39;t always the best option when you are making drastic moves. Luckily <a href="https://github.com/alloy">Eloy Durán</a> &amp; <a href="https://github.com/irrationalfab/">Fabio Pelosin</a> trusted that we knew what we were doing when I said that the old CocoaPod illustration will have to go.</p>
-
-<p>With buy-in from the rest of the team, and some helpful tips we all discussed the scope of the changes. We&#39;d have to break the current website into 3 separate projects, sharing assets, design and code as much as possible. This meant we could incrementally build the sites as staticly generated content and upload it to github. It was an easy sell that we needed a blog, and it was an easy sell that we should split out the CocoaPods twitter into one specifically for new Pods. The blog meant we could wax lyrical about new releases, keep people up to date and have a sense of permenance in the CocoaPods team voice. <a href="https://smileykeith.com">Keith Smiley</a> started building the blog the moment it had some mockups. Setting up a <a href="https://github.com/CocoaPods/shared_resources">shared repo</a> for all our assets and <a href="https://github.com/CocoaPods/shared_resources/tree/master/design">design notes</a>.</p>
-
-<p>Fabio &amp; I announced the redesign at NSSpain. We had stickers. It went well.</p>
+<style>
+#coins {
+  background: url(/assets/blog_img/coins/core_contributor.jpg) no-repeat center center ; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+</style>
 
 <p></article>
 </div>
 </section>
 <div style="background-color:white;">
 <section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
-<a href='/assets/blog_img/beta/cocoapods-stickers.jpg '><img  src='/assets/blog_img/beta/cocoapods-stickers.jpg '></a></center></article>
+<a href='/assets/blog_img/coins/c.jpg '><img  src='/assets/blog_img/coins/c.jpg'></a></center></article>
 </div>
 </section>
 </div>
 <section class="container">
 <div class="row"><article class="content col-md-8 col-md-offset-2"></p>
 
-<p>Building this blog gave us chance to start dealing with some of the navigation issues that just aren&#39;t obvious during design stage. Andy &amp; I iterated quickly on design and implementation. We used Bootstrap 3 to build the sites and I&#39;m definitely a fan of the system. Everyone on the CocoaPods team took an OSS break for iOS7. Our developers chat room was a desert for a while. Once that hurdle had been jumped a few of us got started thinking about full fleshing the guides out.</p>
+<p>Turns out a friend from my <a href="http://en.wikipedia.org/wiki/Huddersfield">old hometown</a> has started up a company selling <a href="https://www.madebycooper.co.uk">custom metalwork objects</a>. When I was over last they let me share their office and showed me some beautiful pieces they had been making. I knew this was the perfect answer to the question I had been thinking about for a while <em>&quot;How can we give something back?&quot;</em>.</p>
 
-<p>The guides were an interesting navigation problem, we knew roughly the overall structure and a lot of the problems came in dealing with heirarchy and ensuring consistency in the documentation. It took one sentence from Artsy&#39;s head designer <a href="http://robertlenne.com">Robert Lenne</a> and the index page was figured out. </p>
-
-<p>During this period Florian started work on the API changes required for the new site, as it was to be a static site meaning we can dogfood our now <a href="http://florianhanke.com/blog/2012/03/01/cocoapods-search-design.html">2 year old API</a>. We&#39;ve started work on splitting the API out into it&#39;s own project to accomodate the ideas Andy &amp; I wanted for the search experience. Florian has done an amazing job on the feel of the search interface, and it is <em>super</em> fast. We just worked off and on over the course of a few weeks together on the <a href="http://cocoapods.org">cocoapods.org</a> domain until it felt right.</p>
-
-<p>There&#39;s still a bunch of work to be done, like the about page, and some more work on mobile, design tweaks, but overall the experience is definitely a step forwards. We&#39;ve had a lot of help from everyone in the core team, and people who have taken the time to discuss ideas with me and the rest of the team. This is one step of many, and it will probably be a while before we remove that beta in the top corner. In true open source style we take both pull requests and issues, and as much of the content has a button to go directly to the source to submit changes.</p>
+<p>Most commits from people outside of the top 15 are people scratching their own itches. Annoyed at the tool they use isn&#39;t quite working how they&#39;d like. For a lot it&#39;s their first entry into writing ruby code. The dev team guides and helps out as much as possible but it still took someone to take the first step on their own. Our selection process for the top 80 isn&#39;t even that strict, if you submitted a lot of grammer and spelling fixes to the websites you&#39;ve also made a realy useful contribution to the community. It helped.</p>
 
 <p></article>
 </div>
 </section>
 <div style="background-color:white;">
 <section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
-<a href='https://ortastuff.s3.amazonaws.com/gifs/cheers-boxing.gif '><img  src='https://ortastuff.s3.amazonaws.com/gifs/cheers-boxing.gif '></a></center></article>
+<a href='/assets/blog_img/coins/coins.jpg '><img  src='/assets/blog_img/coins/coins.jpg'></a></center></article>
 </div>
 </section>
 </div>
 <section class="container">
 <div class="row"><article class="content col-md-8 col-md-offset-2"></p>
 
-<p>Let us know what you think either on twitter (<a href="http://twitter.com/CocoaPods">@CocoaPods</a>) or if your idea is too big for 140 characters, <a href="https://github.com/cocoapods/cocoapods.org/issues">write us an issue</a>. This was a team effort, and I&#39;m super proud to have been a part of it. !m!</p>
+<p>They&#39;re gold because you&#39;re awesome. They&#39;re hefty because we care. The core dev team aren&#39;t the only people making CocoaPods. </p>
+
+<h3>Thank you all</h3>
+
+<p><a href="https://github.com/fabiopelosin">fabiopelosin</a>, <a href="https://github.com/alloy">alloy</a>, <a href="https://github.com/orta">orta</a>, <a href="https://github.com/floere">floere</a>, <a href="https://github.com/segiddins">segiddins</a>, <a href="https://github.com/kylef">kylef</a>, <a href="https://github.com/neonichu">neonichu</a>, <a href="https://github.com/lukeredpath">lukeredpath</a>, <a href="https://github.com/AliSoftware">AliSoftware</a>, <a href="https://github.com/Keithbsmiley">Keithbsmiley</a>, <a href="https://github.com/mtitolo">mtitolo</a>, <a href="https://github.com/Kapin">Kapin</a>, <a href="https://github.com/nolanw">nolanw</a>, <a href="https://github.com/goonzoid">goonzoid</a>, <a href="https://github.com/mrackwitz">mrackwitz</a>, <a href="https://github.com/siuying">siuying</a>, <a href="https://github.com/supermarin">supermarin</a>, <a href="https://github.com/jasl8r">jasl8r</a>, <a href="https://github.com/yas375">yas375</a>, <a href="https://github.com/dbgrandi">dbgrandi</a>, <a href="https://github.com/subdigital">subdigital</a>, <a href="https://github.com/kommen">kommen</a>, <a href="https://github.com/ianyh">ianyh</a>, <a href="https://github.com/xslim">xslim</a>, <a href="https://github.com/swizzlr">swizzlr</a>, <a href="https://github.com/pietbrauer">pietbrauer</a>, <a href="https://github.com/pbernery">pbernery</a>, <a href="https://github.com/0xced">0xced</a>, <a href="https://github.com/clarkda">clarkda</a>, <a href="https://github.com/mk">mk</a>, <a href="https://github.com/jweinberg">jweinberg</a>, <a href="https://github.com/carsonmcdonald">carsonmcdonald</a>, <a href="https://github.com/Manfred">Manfred</a>, <a href="https://github.com/nevyn">nevyn</a>, <a href="https://github.com/fmccann">fmccann</a>, <a href="https://github.com/k0nserv">k0nserv</a>, <a href="https://github.com/squarefrog">squarefrog</a>, <a href="https://github.com/luisdelarosa">luisdelarosa</a>, <a href="https://github.com/tayhalla">tayhalla</a>, <a href="https://github.com/dlackty">dlackty</a>, <a href="https://github.com/gfontenot">gfontenot</a>, <a href="https://github.com/blakewatters">blakewatters</a>, <a href="https://github.com/Thomvis">Thomvis</a>, <a href="https://github.com/joe-loco">joe-loco</a>, <a href="https://github.com/groue">groue</a>, <a href="https://github.com/AshFurrow">AshFurrow</a>, <a href="https://github.com/heyzooi">heyzooi</a>, <a href="https://github.com/dev4dev">dev4dev</a>, <a href="https://github.com/croach">croach</a>, <a href="https://github.com/farcaller">farcaller</a>, <a href="https://github.com/samstewart">samstewart</a>, <a href="https://github.com/dlvenable">dlvenable</a>, <a href="https://github.com/dcutting">dcutting</a>, <a href="https://github.com/nskboy">nskboy</a>, <a href="https://github.com/Ashton-W">Ashton-W</a>, <a href="https://github.com/rivera-ernesto">rivera-ernesto</a>, <a href="https://github.com/lazerwalker">lazerwalker</a>, <a href="https://github.com/phatblat">phatblat</a>, <a href="https://github.com/ulrikdamm">ulrikdamm</a>, <a href="https://github.com/chriseidhof">chriseidhof</a>, <a href="https://github.com/drodriguez">drodriguez</a>, <a href="https://github.com/olarivain">olarivain</a>, <a href="https://github.com/MaxGabriel">MaxGabriel</a>, <a href="https://github.com/schneiderandre">schneiderandre</a>, <a href="https://github.com/andreamazz">andreamazz</a>, <a href="https://github.com/nmccann">nmccann</a>, <a href="https://github.com/Lascorbe">Lascorbe</a>, <a href="https://github.com/dhoerl">dhoerl</a>, <a href="https://github.com/Noreaster76">Noreaster76</a>, <a href="https://github.com/l4u">l4u</a>, <a href="https://github.com/seivan">seivan</a>, <a href="https://github.com/netbe">netbe</a>, <a href="https://github.com/paulyoung">paulyoung</a>, <a href="https://github.com/kattrali">kattrali</a>, <a href="https://github.com/fluidsonic">fluidsonic</a>, <a href="https://github.com/alexrothenberg">alexrothenberg</a>, <a href="https://github.com/martincik">martincik</a>, <a href="https://github.com/btaylor">btaylor</a>, <a href="https://github.com/listrophy">listrophy</a>, <a href="https://github.com/modocache">modocache</a> and <a href="https://github.com/atomkirk">atomkirk</a>.</p>
+
+<p>I&#39;m not looking forwards to mailing these!</p>
 
       </article>
     </article>
   </section>
 </section>
 
-<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2013-11-24-Beta.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/orta">Follow orta</a></div></article></div></section></section>
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2014-10-22-Coins.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/orta">Follow orta</a></div></article></div></section></section>
 
-<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaPods-0.28" title="CocoaPods 0.28"><header><h4>Previous Post</h4></header><h3>CocoaPods 0.28</h3><p>By Fabio Pelosin</p><a class="chevron_placeholder back" href="/CocoaPods-0.28"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"><a href="/Cool-URIs-Don%27t-Change" title="Cool URIs don&#39;t change."><header><h4>Next Post</h4></header><h3>Cool URIs don&#39;t change.</h3><p>By Orta Therox</p><a class="chevron_placeholder next" href="/Cool-URIs-Don%27t-Change"></a></a></article></div></section>
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaPods-0.34" title="CocoaPods 0.34"><header><h4>Previous Post</h4></header><h3>CocoaPods 0.34</h3><p>By Fabio Pelosin</p><a class="chevron_placeholder back" href="/CocoaPods-0.34"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 

@@ -43,10 +43,21 @@ article.author.metadata header {
   .sidebar {
     padding-top: 16px; } }
 #post-accessories {
-  background-color: whitesmoke;
-  text-align: right; }
+  background-color: whitesmoke; }
   #post-accessories .row {
     padding: 0; }
+  #post-accessories .author-info {
+    text-align: left;
+    background-color: white;
+    display: inline-block;
+    padding: 6px 16px;
+    height: 50px; }
+    #post-accessories .author-info .twitter-follow-button {
+      margin-left: 16px;
+      margin-top: 10px; }
+    #post-accessories .author-info .gravatar {
+      width: 40px;
+      height: 40px; }
 
 #post-info {
   padding-top: 48px; }
