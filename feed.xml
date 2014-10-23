@@ -11,7 +11,7 @@
       <title>Coins</title>
 
       
-      <description>&lt;p&gt;Physical objects for abstract ethemeral work.&lt;/p&gt;
+      <description>&lt;p&gt;Physical objects for abstract ephemeral work.&lt;/p&gt;
 
 &lt;p&gt;Working on tools is all about levels of abstraction. CocoaPods abstracts away the idea of dealing with the transmission, setup and installation of a Cocoa Library into just &lt;code&gt;pod &amp;quot;FDModel&amp;quot;&lt;/code&gt;. The bits and pieces behind the internals are just as abstracted away from CocoaPods through ruby gems like &lt;code&gt;Xcodeproj&lt;/code&gt;, &lt;code&gt;Molinillo&lt;/code&gt; and &lt;code&gt;CLAide&lt;/code&gt;. &lt;/p&gt;
 
