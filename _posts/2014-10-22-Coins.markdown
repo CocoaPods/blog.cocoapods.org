@@ -7,7 +7,7 @@ author: orta
 categories: coins community contibutors
 ---
 
-Physical objects for abstract ethemeral work.
+Physical objects for abstract ephemeral work.
 
 Working on tools is all about levels of abstraction. CocoaPods abstracts away the idea of dealing with the transmission, setup and installation of a Cocoa Library into just `pod "FDModel"`. The bits and pieces behind the internals are just as abstracted away from CocoaPods through ruby gems like `Xcodeproj`, `Molinillo` and `CLAide`. 
 
