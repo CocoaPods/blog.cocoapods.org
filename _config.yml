@@ -56,6 +56,10 @@ authors:
     name: Samuel E. Giddins
     twitter: segiddins
     gravatar: 4d6be90af74894fd132fb06dacec04d7
+  hugo:
+    name: Hugo Tunius
+    twitter: K0nserv
+    gravatar: 0301339c7b91dfc95a263eb27e6fe371
 
 assets:
   sources:
