@@ -8,6 +8,24 @@
     
     
     <item>
+      <title>Starting Open Source</title>
+
+      
+      <description>&lt;p&gt;On July the 7th I attended the &lt;a href=&quot;http://www.meetup.com/CocoaHeads-Stockholm/&quot;&gt;CocoaHeads Stockholm&lt;/a&gt; meetup. For this particular meetup the brilliant, but unknown to me at the time, &lt;a href=&quot;https://twitter.com/orta&quot;&gt;Orta Therox&lt;/a&gt; held a talk about open source, &lt;a href=&quot;http://cocoapods.org/&quot;&gt;CocoaPods&lt;/a&gt; and how they work at &lt;a href=&quot;https://artsy.net/&quot;&gt;Artsy&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For very long time beforehand I had felt that I was not contributing enough back to all the awesome projects that I used daily; CocoaPods being one of them. Orta really inspired me to take the first steps to contribute back. I promptly went home and started working on a issue I found among the &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues&quot;&gt;CocoaPods issues&lt;/a&gt; on GitHub. After finishing that I jumped straight on to another related issue. After a landing a few PRs I was invited to the CocoaPods slack team to discuss further. This post talks about my first steps into contributing back to a large project.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Sat, 25 Oct 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/staring-open-source</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/staring-open-source</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>Coins</title>
 
       
