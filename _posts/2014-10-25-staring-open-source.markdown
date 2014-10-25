@@ -70,7 +70,7 @@ If you want to have more contributors helping out with a project you are maintai
 
 Answer questions when asked and encourage a community where questions should be asked not silenced.
 
-I feel like CocoaPods really is a good project to be inspired by in this regard. It's a truly a good projec to get started with.
+I feel like CocoaPods really is a good project to be inspired by in this regard. It's a truly an awesome project to get started with.
 
 
 ## And Remember
