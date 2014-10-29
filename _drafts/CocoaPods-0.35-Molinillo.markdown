@@ -6,7 +6,7 @@ author:     samuel
 categories: cocoapods releases
 ---
 
-TL;DR: _CocoaPods 0.35_ has been released, with major improvements to the dependency resolution process, [thanks to Stripe's sponsorship] (https://stripe.com/blog/stripe-open-source-retreat). Making the 0.35 release possible is the concurrent release of [Molinillo](https://github.com/CocoaPods/Molinillo) 0.1.0.
+TL;DR: _CocoaPods 0.35_ has been released, with major improvements to the dependency resolution process, [thanks to Stripe's support] (https://stripe.com/blog/stripe-open-source-retreat). Making the 0.35 release possible is the concurrent release of [Molinillo](https://github.com/CocoaPods/Molinillo) 0.1.0.
 
 <!-- more -->
 
