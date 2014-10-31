@@ -44,7 +44,7 @@ Handling of dependencies with external sources (e.g. `pod 'RestKit', git: 'https
 
 Molinillo makes resolving a normal application's Podfile roughly [1.5x faster](https://github.com/CocoaPods/CocoaPods/pull/2637#issuecomment-60422101) than the old resolver, which is astonishing given the wider breadth of its featureset. Additionally, the external source optimizations should make fetching multiple subspecs from an external source many times faster.
 
-The vast majority of this release's performance improvements come from [Alloy's](https://github.com/alloy) work on optimizing expensive operations in [Xcodeproj](https://github.com/CocoaPods/Xcodeproj). This makes CocoaPods' integration steps blaze by!
+The vast majority of this release's performance improvements come from [Eloy's](https://github.com/alloy) work on optimizing expensive operations in [Xcodeproj](https://github.com/CocoaPods/Xcodeproj). This makes CocoaPods' integration steps blaze by!
 
 ## Updating
 
@@ -58,4 +58,3 @@ Until version 1.0 we strongly encourage you to keep CocoaPods up-to-date.
 
 For all the details, don’t miss the
 [Changelog](https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md)!
-
