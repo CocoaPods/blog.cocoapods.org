@@ -10,11 +10,11 @@ TL;DR: _CocoaPods 0.35_ has been released, with major improvements to the depend
 
 <!-- more -->
 
-The CocoaPods 0.35 is much more limited in scope than [0.34 was](http://blog.cocoapods.org/CocoaPods-0.34/), but the improvements in this version center on the heart of what CocoaPods is: a dependency manager. While the list of new features may seem short, don't be dissapointed: this is a major step forward for CocoaPods.
+The CocoaPods 0.35 is much more limited in scope than [0.34 was](http://blog.cocoapods.org/CocoaPods-0.34/), but the improvements in this version center on the heart of what CocoaPods is: a dependency manager. While the list of new features may seem short, don't be disappointed: this is a major step forward for CocoaPods.
 
 ## Dependency Resolution
 
-At the heart of any dependency managers is its `Resolver`, whose job is to take a list of dependencies (defined in a `Podfile`) and transform those explicit  requirements into a complete set of Pods to install. With CocoaPods 0.35, the core dependency resolution code has been completely rewritten. This change should impove the experience of using CocoaPods by making things work in a more predicatable manner and allowing you to focus more on your project instead of making things easier for CocoaPods.
+At the heart of any dependency managers is its `Resolver`, whose job is to take a list of dependencies (defined in a `Podfile`) and transform those explicit  requirements into a complete set of Pods to install. With CocoaPods 0.35, the core dependency resolution code has been completely rewritten. This change should improve the experience of using CocoaPods by making things work in a more predictable manner and allowing you to focus more on your project instead of making things easier for CocoaPods.
 
 ### Automatic Conflict Resolution
 
@@ -26,7 +26,7 @@ pod 'CargoBay'
 pod 'AFOAuth2Client'
 ```
 
-On prior versions of CocoaPods, attempting to `pod install` would yield an error saying `Unable to satisfy the following requirements`. No more. With the transition to [`Molinillo`](https://github.com/CocoaPods/Molinillo), a generic dependency resolution gem I've been writing at Stripe, Podfiles like this will have such conflicts automatically resolved. The development of a [language-agnostic resolver integration suite](https://github.com/CocoaPods/Resolver-Integration-Specs) made this possible, and will hopefully ensure that other dependency managers can provide a consistant resolution process.
+On prior versions of CocoaPods, attempting to `pod install` would yield an error saying `Unable to satisfy the following requirements`. No more. With the transition to [`Molinillo`](https://github.com/CocoaPods/Molinillo), a generic dependency resolution gem I've been writing at Stripe, Podfiles like this will have such conflicts automatically resolved. The development of a [language-agnostic resolver integration suite](https://github.com/CocoaPods/Resolver-Integration-Specs) made this possible, and will hopefully ensure that other dependency managers can provide a consistent resolution process.
 
 ### Improved Locking
 
