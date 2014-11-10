@@ -6,7 +6,7 @@ author:     samuel
 categories: cocoapods releases
 ---
 
-TL;DR: _CocoaPods 0.35_ has been released, with major improvements to the dependency resolution process, [thanks to Stripe's support] (https://stripe.com/blog/stripe-open-source-retreat). Making the 0.35 release possible is the concurrent release of [Molinillo](https://github.com/CocoaPods/Molinillo) 0.1.0.
+TL;DR: _CocoaPods 0.35_ has been released, with major improvements to the dependency resolution process, [thanks to Stripe's support] (https://stripe.com/blog/stripe-open-source-retreat). Making the 0.35 release possible is the concurrent release of [Molinillo](https://github.com/CocoaPods/Molinillo) 0.1.3, our new dependency resolution module.
 
 <!-- more -->
 
@@ -14,7 +14,7 @@ The CocoaPods 0.35 is much more limited in scope than [0.34 was](http://blog.coc
 
 ## Dependency Resolution
 
-At the heart of any dependency managers is its `Resolver`, whose job is to take a list of dependencies (defined in a `Podfile`) and transform those explicit  requirements into a complete set of Pods to install. With CocoaPods 0.35, the core dependency resolution code has been completely rewritten. This change should improve the experience of using CocoaPods by making things work in a more predictable manner and allowing you to focus more on your project instead of making things easier for CocoaPods.
+At the heart of any dependency managers is its `Resolver`, whose job is to take a list of dependencies (defined in a `Podfile`) and transform those explicit  requirements into a complete set of Pods to install. With CocoaPods 0.35, the core dependency resolution code has been completely rewritten, giving birth to Molinillo, a generic dependency resolution module. This change should improve the experience of using CocoaPods by making things work in a more predictable manner and allowing you to focus more on your project instead of making things easier for CocoaPods.
 
 ### Automatic Conflict Resolution
 
@@ -26,7 +26,7 @@ pod 'CargoBay'
 pod 'AFOAuth2Client'
 ```
 
-On prior versions of CocoaPods, attempting to `pod install` would yield an error saying `Unable to satisfy the following requirements`. No more. With the transition to [`Molinillo`](https://github.com/CocoaPods/Molinillo), a generic dependency resolution gem I've been writing at Stripe, Podfiles like this will have such conflicts automatically resolved. The development of a [language-agnostic resolver integration suite](https://github.com/CocoaPods/Resolver-Integration-Specs) made this possible, and will hopefully ensure that other dependency managers can provide a consistent resolution process.
+On prior versions of CocoaPods, attempting to `pod install` would yield an error saying `Unable to satisfy the following requirements` since the latest versions of all three pods have incompatible dependencies on different versions of AFNetworking. With the old resolver, we would naïvely try to activate the latest spec version for the first dependency and continue from there, which would lead to a conflict, since there was no way to get to an older version of `AFNetworking` (or any of the pods that depended upon it). No more. With the transition to [`Molinillo`](https://github.com/CocoaPods/Molinillo), a generic dependency resolution gem I've been writing at Stripe, Podfiles like this will have such conflicts automatically resolved. The resolver is now able to backtrack when conflicts arise, thus allowing it to simultaneously satisfy all dependency constraints, or definitely state that the Podfile is unresolvable. The development of a [language-agnostic resolver integration suite](https://github.com/CocoaPods/Resolver-Integration-Specs) made this possible, and will hopefully ensure that other dependency managers can provide a consistent resolution process.
 
 ### Improved Locking
 
@@ -42,7 +42,7 @@ Handling of dependencies with external sources (e.g. `pod 'RestKit', git: 'https
 
 ## Performance Improvements
 
-Molinillo makes resolving a normal application's Podfile roughly [1.5x faster](https://github.com/CocoaPods/CocoaPods/pull/2637#issuecomment-60422101) than the old resolver, which is astonishing given the wider breadth of its featureset. Additionally, the external source optimizations should make fetching multiple subspecs from an external source many times faster.
+Molinillo makes resolving a normal application's Podfile roughly [1.5x faster](https://github.com/CocoaPods/CocoaPods/pull/2637#issuecomment-60422101) than the old resolver, which is astonishing given the wider breadth of its feature-set. Additionally, the external source optimizations should make fetching multiple subspecs from an external source many times faster.
 
 The vast majority of this release's performance improvements come from [Eloy's](https://github.com/alloy) work on optimizing expensive operations in [Xcodeproj](https://github.com/CocoaPods/Xcodeproj). This makes CocoaPods' integration steps blaze by!
 
