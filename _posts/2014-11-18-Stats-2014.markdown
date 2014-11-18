@@ -22,15 +22,15 @@ The team in general has shifted too. A lot of the current major commiters were n
 
 ## Web Properties
 
-A year ago, documentation existed in four places; the CocoaPods homepage, a developer reference based on the ruby source code, a docs subsite and the github wiki. This was consolidated into a single guides site which everything important goes into, with the expectation that StackOverflow would fill in gaps.
+A year ago, documentation existed in four places; the CocoaPods homepage, a developer reference based on the ruby source code, a docs subsite and the GitHub wiki. This was consolidated into a single guides site which everything important goes into, with the expectation that StackOverflow would fill in gaps.
 
 The traffic for the website went from a 60,000 impressions/month to a combined 180,000. This splits out from cocoapods.org: 120,000, blog.cocoapods.org: 8,000, guides.cocoapods.org: 55,000.
 
 We changed the focus of the homepage to reflect what we were seeing in analytics; people were spending a lot of time using our search. The new design moved search front and center on the website and it shows in our analytics, we went from 70,000 searches per month, to a massive 825,000. It increased its complexity, and was re-written to deal with the scale. It also now uses our metrics to derive a sorting algorithm for popularity. It's not perfect, but it's a great step in where [we want to go](https://github.com/CocoaPods/search.cocoapods.org/issues/51).
 
-We introduced a few new web services, there's a [metrics engine](https://github.com/CocoaPods/metrics.cocoapods.org/) that constantly grabs metrics from github (and soon [CocoaDocs for quality](http://cocoadocs.org/docsets/AFNetworking/2.4.1/stats.json)) for all [Pods](http://metrics.cocoapods.org/api/v1/pods/KFData). This will make up the bulk of a true CocoaPods API.
+We introduced a few new web services, there's a [metrics engine](https://github.com/CocoaPods/metrics.cocoapods.org/) that constantly grabs metrics from GitHub (and soon [CocoaDocs for quality](http://cocoadocs.org/docsets/AFNetworking/2.4.1/stats.json)) for all [Pods](http://metrics.cocoapods.org/api/v1/pods/KFData). This will make up the bulk of a true CocoaPods API.
 
-There's an authentication server, trunk, which provides library authors with the ability to control who can push releases of their library. Previously we were using Pull Requests, of which the community make 12,000+, making us one of github's most [active repos](https://octoverse.github.com). Now it's bigger, and automated. Because of this we saw an increase of contributors to the specs repo go from 1,800 to 4,200. On the other side, we're now seeing roughly 1,500 downloads of the Specs repo a day.
+There's an authentication server, trunk, which provides library authors with the ability to control who can push releases of their library. Previously we were using Pull Requests, of which the community make 12,000+, making us one of GitHub's most [active repos](https://octoverse.github.com). Now it's bigger, and automated. Because of this we saw an increase of contributors to the specs repo go from 1,800 to 4,200. On the other side, we're now seeing roughly 1,500 downloads of the Specs repo a day.
 
 ## Community
 
@@ -40,7 +40,7 @@ On the subject of new Pods, this vastly increased 2,400 to 7,000. I expect this 
 
 ## Events
 
-We ran a some CocoaPods events, a few meetups which went swimmingly. A hackathon based around a CocoaPods plugin. The most interesting was a [CocoaPods bug bash](http://blog.cocoapods.org/CocoaPods-Bug-Bash/). The idea was that we try deal with as many small issues as possible, we planned it for a weekend but had completed by the first day. The second day was spent improving CocoaPods. The bash gave us some great experience in onboarding and [bootstrapping people](http://guides.cocoapods.org/contributing/dev-environment.html) to work on CocoaPods which resulted in a meta-repo, [Rainforest](https://github.com/cocoapods/Rainforest), that holds all the repos. It also introduced new contributors who are invaluble now.
+We ran a some CocoaPods events, a few meetups which went swimmingly. A hackathon based around a CocoaPods plugin. The most interesting was a [CocoaPods bug bash](http://blog.cocoapods.org/CocoaPods-Bug-Bash/). The idea was that we try deal with as many small issues as possible, we planned it for a weekend but had completed by the first day. The second day was spent improving CocoaPods. The bash gave us some great experience in onboarding and [bootstrapping people](http://guides.cocoapods.org/contributing/dev-environment.html) to work on CocoaPods which resulted in a meta-repo, [Rainforest](https://github.com/cocoapods/Rainforest), that holds all the repos. It also introduced new contributors who are invaluable now.
 
 ## CocoaPods
 
