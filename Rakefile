@@ -3,18 +3,18 @@
 desc 'Initial setup'
 task :bootstrap do
   FileUtils.rm_rf '_gh-pages'
-  puts "Cloning gh-pages branch..."
-  url = %x[git ls-remote --get-url origin]
+  puts 'Cloning gh-pages branch...'
+  url = `git ls-remote --get-url origin`
   puts `git clone #{url.strip} _gh-pages`
   Dir.chdir('_gh-pages') do
-    puts %x[git checkout gh-pages]
+    puts `git checkout gh-pages`
   end
 
-  puts "Cloning submodules..."
-  puts %x[git submodule update --init --recursive]
+  puts 'Cloning submodules...'
+  puts `git submodule update --init --recursive`
 
-  puts "Installing Bundle..."
-  puts %x[bundle install]
+  puts 'Installing Bundle...'
+  puts `bundle install`
 end
 
 # Deprecated, but leaving shortcut in because I'm sure Orta, at least, has this
@@ -24,14 +24,14 @@ task :init => :bootstrap
 namespace :run do
   desc 'Runs a local server *with* draft posts and watches for changes'
   task :drafts do
-    puts "Starting the server locally on http://localhost:4000"
-    sh "jekyll serve --watch --drafts --port 4000"
+    puts 'Starting the server locally on http://localhost:4000'
+    sh 'jekyll serve --watch --drafts --port 4000'
   end
 
   desc 'Runs a local server *without* draft posts and watches for changes'
   task :published do
-    puts "Starting the server locally on http://localhost:4000"
-    sh "jekyll serve --watch --port 4000"
+    puts 'Starting the server locally on http://localhost:4000'
+    sh 'jekyll serve --watch --port 4000'
   end
 end
 
@@ -41,37 +41,37 @@ task :run => 'run:drafts'
 desc 'Deploy the site to the gh_pages branch and push'
 task :deploy do
   FileUtils.rm_rf '_gh-pages'
-  puts "Cloning gh-pages branch..."
-  url = %x[git ls-remote --get-url origin]
-  puts %x[git clone #{url.strip} _gh-pages]
+  puts 'Cloning gh-pages branch...'
+  url = `git ls-remote --get-url origin`
+  puts `git clone #{url.strip} _gh-pages`
   Dir.chdir('_gh-pages') do
-    puts %x[git checkout gh-pages]
+    puts `git checkout gh-pages`
   end
 
-  Dir.chdir("_gh-pages") do
-    puts "Pulling changes from server."
-    puts %x[git reset --hard]
-    puts %x[git clean -xdf]
-    puts %x[git checkout gh-pages]
-    puts %x[git pull origin gh-pages]
+  Dir.chdir('_gh-pages') do
+    puts 'Pulling changes from server.'
+    puts `git reset --hard`
+    puts `git clean -xdf`
+    puts `git checkout gh-pages`
+    puts `git pull origin gh-pages`
   end
 
-  puts "Building site."
-  puts %x[jekyll build -d _gh-pages]
+  puts 'Building site.'
+  puts `jekyll build -d _gh-pages`
 
-  Dir.chdir("_gh-pages") do
-    puts "Pulling changes from server."
-    puts %x[git checkout gh-pages]
-    puts %x[git pull origin gh-pages]
+  Dir.chdir('_gh-pages') do
+    puts 'Pulling changes from server.'
+    puts `git checkout gh-pages`
+    puts `git pull origin gh-pages`
 
-    puts "Creating a commit for the deploy."
+    puts 'Creating a commit for the deploy.'
 
-    puts %x[git ls-files --deleted -z | xargs -0 git rm;]
-    puts %x[git add .]
-    puts %x[git commit -m "Deploy"]
+    puts `git ls-files --deleted -z | xargs -0 git rm;`
+    puts `git add .`
+    puts `git commit -m "Deploy"`
 
-    puts "Pushing to github."
-    puts %x[git push ]
+    puts 'Pushing to github.'
+    puts `git push `
   end
 end
 
