@@ -15,24 +15,24 @@ A year ago we unveiled the new CocoaPods branding. It was the culmination of 6 m
 
 ## Contributions
 
-We had two people paid to work full time for a period on CocoaPods this year. The first, Fabio Pelosin, used his time sponsored by [SoundCloud](http://blog.cocoapods.org/SoundCloud/) on refactoring internals, helping to bring in support for CocoaPods plugins and improving the command line interface. The second, Samuel Giddins, has been mostly working on a [iterative dependency resolver](https://github.com/CocoaPods/Molinillo/) for both CocoaPods and Bundler ( CocoaPods for Ruby. )
+We had two people paid to work full time for a period on CocoaPods this year. The first, Fabio Pelosin, used his time sponsored by [SoundCloud](http://blog.cocoapods.org/SoundCloud/) on refactoring internals, helping to bring in support for CocoaPods plugins and per-config Pods, then finally improving the command line interface. The second, Samuel Giddins, has been mostly working on a [iterative dependency resolver](https://github.com/CocoaPods/Molinillo/) for both CocoaPods and Bundler ( CocoaPods for Ruby. )
 
-The team in general has shifted too, a lot of the current major commiters were not working on CocoaPods last year. We've increased the number of active developers from roughly 4 to roughly 8. This is hard to judge because its a side project for most. But there's a lot of new and [very welcome faces](http://blog.cocoapods.org/starting-open-source/) in the contributors chat room.
+The team in general has shifted too. A lot of the current major commiters were not working on CocoaPods last year. We've increased the number of active developers from roughly 4 to roughly 8. This is hard to judge because CocoaPods is a side project for most. But there's a lot of new and [very welcome faces](http://blog.cocoapods.org/starting-open-source/) in the contributors chat room.
 
 
 ## Web Properties
 
-A year ago documentation existed in four places, the CocoaPods homepage, a developer reference based on the ruby source code, a docs subsite and the github wiki. This was consolidated into a single guides site which everything important goes into, with the expectation that StackOverflow would fill in gaps. 
+A year ago, documentation existed in four places; the CocoaPods homepage, a developer reference based on the ruby source code, a docs subsite and the github wiki. This was consolidated into a single guides site which everything important goes into, with the expectation that StackOverflow would fill in gaps.
 
 The traffic for the website went from a 60k impressions/month to a combined 180k. This splits out from cocoapods.org: 120k, blog.cocoapods.org: 8k, guides.cocoapods.org: 55k.
 
-We changed the focus of the homepage to reflect what we were seeing in analytics, people were spending a lot of time using our search. The new design moved search front and center on the website and it shows in our analyics, we went from 70k searches per month, to a massive 825k. It increased it's complexity, and was re-written to deal with the scale. It also now uses our metrics to derive a sorting algorithm for popularity. It's not perfect, but it's a great step in where [we want to go](https://github.com/CocoaPods/search.cocoapods.org/issues/51).
+We changed the focus of the homepage to reflect what we were seeing in analytics; people were spending a lot of time using our search. The new design moved search front and center on the website and it shows in our analyics, we went from 70k searches per month, to a massive 825k. It increased its complexity, and was re-written to deal with the scale. It also now uses our metrics to derive a sorting algorithm for popularity. It's not perfect, but it's a great step in where [we want to go](https://github.com/CocoaPods/search.cocoapods.org/issues/51).
 
 We introduced a few new web services, there's a [metrics engine](https://github.com/CocoaPods/metrics.cocoapods.org/) that constantly grabs metrics from github (and soon [CocoaDocs for quality](http://cocoadocs.org/docsets/AFNetworking/2.4.1/stats.json)) for all [Pods](http://metrics.cocoapods.org/api/v1/pods/KFData). This will make up the bulk of a true CocoaPods API.
 
-There's an authentication server, trunk, it provides library authors with the ability to control who can push releases of their library. Previously we were using Pull Requests, of which the community make 12,000+. Making us one of github's most [active repos](https://octoverse.github.com). Now it's bigger, and automated. Because of this we saw an increase of contributors to the specs repo go from 1,800 to 4,200.
+There's an authentication server, trunk, which provides library authors with the ability to control who can push releases of their library. Previously we were using Pull Requests, of which the community make 12,000+, making us one of github's most [active repos](https://octoverse.github.com). Now it's bigger, and automated. Because of this we saw an increase of contributors to the specs repo go from 1,800 to 4,200.
 
-The web services all run off web-hooks sent from trunk. This is availa
+The web services all run off web-hooks sent from trunk. This is available for anyone else to use, send us a PR adding your endpoint here.
 
 ## Community
 
