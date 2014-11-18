@@ -9,7 +9,7 @@ categories: community stats
 
 CocoaPods is a reflection on the Cocoa community, a mirror that reflects the effort of thousands on individual contributions to a greater idea of sharing and helping each other to improve. As the community grows so does the tooling around it, growing on both complexity and size.
 
-A year ago we unveiled the new CocoaPods branding. It was the culumination of 6 months of design and development work for a few volunteers in their spare time. Let's take a look at what else has changed in the last year.
+A year ago we unveiled the new CocoaPods branding. It was the culmination of 6 months of design and development work for a few volunteers in their spare time. Let's take a look at what else has changed in the last year.
 
 <!-- more -->
 
