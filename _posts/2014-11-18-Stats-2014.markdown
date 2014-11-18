@@ -34,7 +34,7 @@ There's an authentication server, trunk, which provides library authors with the
 
 ## Community
 
-As a nice metric of interest, the @CocoaPods twitter account has gone from 4k to over 10k. We split out the new pod announcements to a separate twitter account @CocoaPodsFeed in order to deal with the number of new pods.
+As a nice metric of interest, the [@CocoaPods](https://twitter.com/CocoaPods) twitter account has gone from 4k to over 10k. We split out the new pod announcements to a separate twitter account [@CocoaPodsFeed](https://twitter.com/CocoaPodsFeed) in order to deal with the number of new pods.
 
 On the subject of new Pods, this vastly increased 2,400 to 7,000. I expect this is in-part due to the network effect, and reducing the barrier to entry. We devoted a considerable amount of time towards making a OSS library very easy with the command `pod lib create` offering [best practices as defaults](http://guides.cocoapods.org/making/using-pod-lib-create.html).
 
