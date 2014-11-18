@@ -1,0 +1,71 @@
+---
+layout: post
+title:  "2014"
+post_title_id:  "2014"
+date:   2014-11-18
+author: orta
+categories: community stats
+---
+
+CocoaPods is a reflection on the Cocoa community, a mirror that reflects the effort of thousands on individual contributions to a greater idea of sharing and helping each other to improve. As the community grows so does the tooling around it, growing on both complexity and size.
+
+A year ago we unveiled the new CocoaPods branding. It was the culumination of 6 months of design and development work for a few volunteers in their spare time. Let's take a look at what else has changed in the last year.
+
+<!-- more -->
+
+## Contributions
+
+We had two people paid to work full time for a period on CocoaPods this year. The first, Fabio Pelosin, used his time sponsored by [SoundCloud](http://blog.cocoapods.org/SoundCloud/) on refactoring internals, helping to bring in support for CocoaPods plugins and improving the command line interface. The second, Samuel Giddins, has been mostly working on a [iterative dependency resolver](https://github.com/CocoaPods/Molinillo/) for both CocoaPods and Bundler ( CocoaPods for Ruby. )
+
+The team in general has shifted too, a lot of the current major commiters were not working on CocoaPods last year. We've increased the number of active developers from roughly 4 to roughly 8. This is hard to judge because its a side project for most. But there's a lot of new and [very welcome faces](http://blog.cocoapods.org/starting-open-source/) in the contributors chat room.
+
+
+## Web Properties
+
+A year ago documentation existed in four places, the CocoaPods homepage, a developer reference based on the ruby source code, a docs subsite and the github wiki. This was consolidated into a single guides site which everything important goes into, with the expectation that StackOverflow would fill in gaps. 
+
+The traffic for the website went from a 60k impressions/month to a combined 180k. This splits out from cocoapods.org: 120k, blog.cocoapods.org: 8k, guides.cocoapods.org: 55k.
+
+We changed the focus of the homepage to reflect what we were seeing in analytics, people were spending a lot of time using our search. The new design moved search front and center on the website and it shows in our analyics, we went from 70k searches per month, to a massive 825k. It increased it's complexity, and was re-written to deal with the scale. It also now uses our metrics to derive a sorting algorithm for popularity. It's not perfect, but it's a great step in where [we want to go](https://github.com/CocoaPods/search.cocoapods.org/issues/51).
+
+We introduced a few new web services, there's a [metrics engine](https://github.com/CocoaPods/metrics.cocoapods.org/) that constantly grabs metrics from github (and soon [CocoaDocs for quality](http://cocoadocs.org/docsets/AFNetworking/2.4.1/stats.json)) for all [Pods](http://metrics.cocoapods.org/api/v1/pods/KFData). This will make up the bulk of a true CocoaPods API.
+
+There's an authentication server, trunk, it provides library authors with the ability to control who can push releases of their library. Previously we were using Pull Requests, of which the community make 12,000+. Making us one of github's most [active repos](https://octoverse.github.com). Now it's bigger, and automated. Because of this we saw an increase of contributors to the specs repo go from 1,800 to 4,200.
+
+The web services all run off web-hooks sent from trunk. This is availa
+
+## Community
+
+As a nice metric of interest, the @CocoaPods twitter account has gone from 4k to over 10k. We split out the new pod announcements to a separate twitter account @CocoaPodsFeed in order to deal with the number of new pods.
+
+On the subject of new Pods, this vastly increased 2,400 to 7,000. I expect this is in-part the network effect, and reducing the barrier to entry. We devoted a considerable amount of time towards making a OSS library very easy with the command `pod lib create` offering [best practices as defaults](http://guides.cocoapods.org/making/using-pod-lib-create.html).
+
+## Events
+
+We ran a some CocoaPods events, a few meetups which went swimmingly. A hackathon based around a CocoaPods plugin. The most interesting was a [CocoaPods bug bash](http://blog.cocoapods.org/CocoaPods-Bug-Bash/). The idea was that we try deal with as many small issues as possible, we planned it for a weekend but had completed by the first day. The second day was spent improving CocoaPods. The bash gave us some great experience in onboarding and [bootstrapping people](http://guides.cocoapods.org/contributing/dev-environment.html) to work on CocoaPods which resulted in a meta-repo, [Rainforest](https://github.com/cocoapods/Rainforest), that holds all the repos. It also introduced new contributors who are invaluble now.
+
+## CocoaPods
+
+We hit 1,000,000 total downloads of the CocoaPods Gem this month.
+
+The last release in October 2013 was CocoaPods 0.26. Since then CocoaPods has added:
+
+* Config based Pods
+* Plugin support
+* Updating a specific pod
+* Vastly reduces networking around local caching
+* Moved to support JSON podspecs
+* Switched to pre-built libraries
+* Added a command to try any Pod instantly
+* Handles Xcodeproj merge conflicts elegantly
+* Added the ability to deprecate a Pod
+* Release Candidates for CocoaPods
+
+## 1.0
+
+The future is very bright with the imminent next release bringing in the work on the resolver. 
+
+Then Swift CocoaPods. This has a singular Pull Request you [can follow](https://github.com/CocoaPods/CocoaPods/pull/2835). I've personally migrated the Artsy iOS Swift App to remove all submodules and [use just CocoaPods](https://github.com/artsy/eidolon/pull/317). Making a Swift pod will be [no different](https://github.com/Alamofire/Alamofire/pull/218) from an Objective-C one.
+
+We've been working towards a stable 1.0 release which means long term support. As an issue can only be in one milestone our official [1.0 milestone](https://github.com/CocoaPods/CocoaPods/milestones) is a little empty. Swift support pushed us back a bit on this, but not considerably.
+
