@@ -58,6 +58,18 @@ pod 'AFNetworking', '~> 2.0.0-RC1'
 
 Handling of dependencies with external sources (e.g., `pod 'RestKit', git: 'https://github.com/RestKit/RestKit.git'`) has been optimized and clarified in this release. CocoaPods now only downloads each Pod with an external source once, which has the nice side effect of making linting specifications that have a lot of subspec dependencies faster. CocoaPods also lets you know when there are conflicting dependencies, so you can remove unwanted duplication from your `Podfile`. Finally, CocoaPods lets you know if you specify the same Pod with different external sources, instead of a random source being chosen.
 
+### Locking Checkout Options
+
+At the intersection of improved locking and external source optimizations is CocoaPods 0.35’s final feature: the lockfile now hold the information necessary to ensure that dependencies directed installed from a repository will be locked to the same revision until updated. That means this Podfile, along with its corresponding Podfile.lock, will ensure that every member of your team is always on the same revision of _all_ of your dependencies:
+
+```ruby
+pod 'AFNetworking', :git => 'https://github.com/AFNetworking/AFNetworking.git'
+pod 'RestKit', :git => 'https://github.com/RestKit/RestKit.git', :branch => 'development'
+pod 'ARAnalytics', '~> 2.9.0'
+```
+
+`AFNetworking` will continue to use the same commit that was downloaded when you first ran `pod install`, so you don’t have to worry about changes sneaking in when you run `pod install` on a new machine. As always, `pod update AFNetworking` will update you to the latest commit.
+
 ## Performance Improvements
 
 Molinillo makes resolving a normal application's Podfile roughly [1.5x faster](https://github.com/CocoaPods/CocoaPods/pull/2637#issuecomment-60422101) than the old resolver, which is astonishing given the wider breadth of its feature-set. Additionally, the external source optimizations should make fetching multiple subspecs from an external source many times faster.
