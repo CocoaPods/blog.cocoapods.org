@@ -8,6 +8,22 @@
     
     
     <item>
+      <title>CocoaPods 0.35 and Molinillo</title>
+
+      
+      <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 0.35&lt;/em&gt; has been released, with major improvements to the dependency resolution process, &lt;a href=&quot;https://stripe.com/blog/stripe-open-source-retreat&quot;&gt;thanks to Stripe&amp;#39;s support&lt;/a&gt;. Making the 0.35 release possible is the concurrent release of &lt;a href=&quot;https://github.com/CocoaPods/Molinillo&quot;&gt;Molinillo&lt;/a&gt; 0.1, our new dependency resolution module.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Wed, 19 Nov 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/CocoaPods-0.35</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.35</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>2014</title>
 
       
