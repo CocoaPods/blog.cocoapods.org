@@ -76,6 +76,10 @@ Molinillo makes resolving a normal application's Podfile roughly [1.5x faster](h
 
 The vast majority of this release's performance improvements come from [Eloy's](https://github.com/alloy) work on optimizing expensive operations in [Xcodeproj](https://github.com/CocoaPods/Xcodeproj). This makes CocoaPods' integration steps blaze by!
 
+## Bonus News
+
+I’ve been working on bringing [Molinillo](https://github.com/CocoaPods/Molinillo) over to [Bundler](https://github.com/bundler/bundler) so we can hopefully share a dependency resolution implementation in the future.
+
 ## Updating
 
 To install the last release of CocoaPods you can run:
