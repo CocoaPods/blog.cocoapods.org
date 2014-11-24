@@ -25,13 +25,13 @@ namespace :serve do
   desc 'Runs a local server *with* draft posts and watches for changes'
   task :drafts do
     puts 'Starting the server locally on http://localhost:4000'
-    sh 'jekyll serve --watch --drafts --port 4000'
+    sh 'bundle exec jekyll serve --watch --drafts --port 4000'
   end
 
   desc 'Runs a local server *without* draft posts and watches for changes'
   task :published do
     puts 'Starting the server locally on http://localhost:4000'
-    sh 'jekyll serve --watch --port 4000'
+    sh 'bundle exec jekyll serve --watch --port 4000'
   end
 end
 
@@ -57,7 +57,7 @@ task :deploy do
   end
 
   puts 'Building site.'
-  puts `jekyll build -d _gh-pages`
+  puts `bundle exec jekyll build -d _gh-pages`
 
   Dir.chdir('_gh-pages') do
     puts 'Pulling changes from server.'
