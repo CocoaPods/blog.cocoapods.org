@@ -21,7 +21,7 @@ end
 # in his muscle-memory.
 task :init => :bootstrap
 
-namespace :run do
+namespace :serve do
   desc 'Runs a local server *with* draft posts and watches for changes'
   task :drafts do
     puts 'Starting the server locally on http://localhost:4000'
@@ -36,7 +36,7 @@ namespace :run do
 end
 
 desc 'Runs a local server with draft posts and watches for changes'
-task :run => 'run:drafts'
+task :serve => 'serve:drafts'
 
 desc 'Deploy the site to the gh_pages branch and push'
 task :deploy do
@@ -75,5 +75,5 @@ task :deploy do
   end
 end
 
-desc 'Defaults to run:drafts'
-task :default => 'run:drafts'
+desc 'Defaults to serve:drafts'
+task :default => 'serve:drafts'
