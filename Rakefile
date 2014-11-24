@@ -21,22 +21,22 @@ end
 # in his muscle-memory.
 task :init => :bootstrap
 
-namespace :run do
+namespace :serve do
   desc 'Runs a local server *with* draft posts and watches for changes'
   task :drafts do
     puts 'Starting the server locally on http://localhost:4000'
-    sh 'jekyll serve --watch --drafts --port 4000'
+    sh 'bundle exec jekyll serve --watch --drafts --port 4000'
   end
 
   desc 'Runs a local server *without* draft posts and watches for changes'
   task :published do
     puts 'Starting the server locally on http://localhost:4000'
-    sh 'jekyll serve --watch --port 4000'
+    sh 'bundle exec jekyll serve --watch --port 4000'
   end
 end
 
 desc 'Runs a local server with draft posts and watches for changes'
-task :run => 'run:drafts'
+task :serve => 'serve:drafts'
 
 desc 'Deploy the site to the gh_pages branch and push'
 task :deploy do
@@ -57,7 +57,7 @@ task :deploy do
   end
 
   puts 'Building site.'
-  puts `jekyll build -d _gh-pages`
+  puts `bundle exec jekyll build -d _gh-pages`
 
   Dir.chdir('_gh-pages') do
     puts 'Pulling changes from server.'
@@ -75,5 +75,5 @@ task :deploy do
   end
 end
 
-desc 'Defaults to run:drafts'
-task :default => 'run:drafts'
+desc 'Defaults to serve:drafts'
+task :default => 'serve:drafts'
