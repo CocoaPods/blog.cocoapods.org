@@ -7,32 +7,33 @@ categories: metrics api
 ---
 
 TL;DR:
-We have a metrics API that you can now use.
+We have a new _metrics_ API that you can now use.
 
 <!-- more -->
 
-For the last nine months we've had a metrics API where we gather data for each pod, currently only from Github.
+For the last nine months we've had a metrics API where we gather data for each pod, currently only from GitHub.
 
 ## API
 
-Currently the API provides Github metrics, per pod.
+Currently the API provides GitHub metrics, per pod.
 The provided format is JSON, which is also the default.
 
 It's best if you give it a try yourself.
 Here's a popular pod:
-http://metrics.cocoapods.org/api/v1/pods/AFNetworking.json
+[http://metrics.cocoapods.org/api/v1/pods/AFNetworking.json](http://metrics.cocoapods.org/api/v1/pods/AFNetworking.json)
+
 And here's a not yet popular pod:
-http://metrics.cocoapods.org/api/v1/pods/KFData.json
+[http://metrics.cocoapods.org/api/v1/pods/KFData.json](http://metrics.cocoapods.org/api/v1/pods/KFData.json)
 
 The API pattern is, you guessed it:
-http://metrics.cocoapods.org/api/v1/pods/PODNAME.json
+[http://metrics.cocoapods.org/api/v1/pods/PODNAME.json](http://metrics.cocoapods.org/api/v1/pods/PODNAME.json)
 
 Each pod's data is updated roughly every 2 hours.
 
 To check the status of the metrics app, you can call:
-http://metrics.cocoapods.org/api/v1/status
+[http://metrics.cocoapods.org/api/v1/status](http://metrics.cocoapods.org/api/v1/status)
 
-This will tell you the total amount of pods, and how many have been found on Github, and how many have not been found after three tries.
+This will tell you the total amount of pods, and how many have been found on GitHub, and how many have not been found after three tries.
 
 ## Design
 
@@ -41,14 +42,14 @@ It lives on Heroku and consists of two pieces:
 A round robin updater, and a resetter.
 
 The updater is forked off as the web app is started.
-It runs forever and goes through each pod at a time, one by one.
-Every second, it queries Github for metrics data of another pod.
-Currently, all pods are updated every 2 hours.
+It runs forever and goes through each pod, one by one.
+Every second, it queries GitHub for metrics data of another pod.
+Currently, all pods are updated roughly every two hours.
 
 If it can't find the pod, it marks the pod as once not found.
-If your pod is not found three times (on Github), roughly 6 hours, it gives up on the pod.
-Currently there are 117 pods which have no corresponding repo page on Github.
-This is ok, as not everybody is or needs to be on Github.
+If your pod is not found three times (on GitHub), roughly 6 hours, it gives up on the pod.
+Currently there are 117 pods which have no corresponding repo page on GitHub.
+This is ok, as not everybody is or needs to be on GitHub.
 
 If a pod is not found, won't metrics ever try again?
 We've got that covered.
@@ -56,13 +57,13 @@ The resetter listens to the Trunk (where you push pods) web hooks.
 The trunk web hook system pings many CocoaPods websites to inform them of updated pods.
 If a new pod has been added, just a new versions, or a new commits – it pings for example the metrics webapp.
 If the metrics app receives the Trunk app's bat signal, it resets the pod's not found count.
-From then on, metrics will try to find the pod's metrics again on Github.
+From then on, metrics will try to find the pod's metrics again on GitHub.
 
 ## Closing words
 
 We hope you'll use the API for success and profit.
 If you do, let us know.
 
-Also, if you feel strongly that another service (besides Github) should be included, let us know.
+Also, if you feel strongly that another service (besides GitHub) should be included, let us know.
 
 Go forth and measure!
