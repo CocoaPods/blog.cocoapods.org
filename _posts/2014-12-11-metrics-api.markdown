@@ -61,6 +61,9 @@ From then on, metrics will try to find the pod's metrics again on GitHub.
 
 ## Closing words
 
+Why use this instead of the GitHub API?
+You can access it via a pod's name and it's designed to be extensible, so more exciting metrics will be added.
+
 We hope you'll use the API for success and profit.
 If you do, let us know.
 
