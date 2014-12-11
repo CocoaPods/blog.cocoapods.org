@@ -11,7 +11,7 @@ We have a new _metrics_ API that you can now use.
 
 <!-- more -->
 
-For the last nine months we've had a metrics API where we gather data for each pod, currently only from GitHub.
+For the past nine months, we've had a metrics API where we gather data for each pod, currently only from GitHub.
 
 ## API
 
