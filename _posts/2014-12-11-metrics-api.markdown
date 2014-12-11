@@ -8,11 +8,6 @@ categories: metrics api
 
 TL;DR:
 We have a metrics API that you can now use.
-Try it:
-http://metrics.cocoapods.org/api/v1/pods/AFNetworking.json
-Use it!
-Play!
-Create!
 
 <!-- more -->
 
