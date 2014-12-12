@@ -30,7 +30,7 @@ First, it is a fast search-as-you-type search – if you don't type for about 20
 The second feature I'd like to look at in more detail in the next section:
 showing combinations of categories where a word was found.
 A third feature lets you know when it hasn't found anything, but offers helpful suggestions, such as when you search for [datanotfound](http://cocoapods.org/?q=datanotfound).
-Yet another feature sorts the results by [popularity](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/models/pod.rb#L40-L44), a metric Orta came up with together with ?.
+Yet another feature sorts the results by [popularity](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/models/pod.rb#L40-L44), a metric [orta](http://twitter.com/orta) came up with together with [David Grandinetti](http://twitter.com/dbgrandi).
 This is the default sorting algorithm right now, but we're [working](https://github.com/CocoaPods/search.cocoapods.org/issues/51#issuecomment-61655760) [on more](https://github.com/CocoaPods/search.cocoapods.org/issues/51#issuecomment-61655811). 
 Other features include storing the query in the URL for easy copying, or a results addination (portmanteau of "adding" and "pagination"), or being able to select which platform the pods are filtered with.
 
@@ -85,7 +85,7 @@ As the CocoaPods team cannot afford a server farm, but only a single server on H
 We started with a list of requirements:
 
 * It should fit and work on a shared Heroku CPU.
-* It should be reindex pods using Trunk web hook calls. So if a pod is pushed to Trunk, search should know about it ASAP (in less than 30 seconds).
+* It should reindex pods using Trunk web hook calls. So if a pod is pushed to Trunk, search should know about it ASAP (in less than 30 seconds).
 * It should be stable. Nobody likes not being able to search.
 * It should have little downtime when restarting.
 
