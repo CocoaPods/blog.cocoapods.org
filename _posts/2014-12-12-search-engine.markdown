@@ -15,7 +15,7 @@ First let's look at some numbers...
 Currently, the CocoaPods search engine indexes [7378 pods](http://metrics.cocoapods.org/api/v1/status).
 From these pods, it indexes [name](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L70-L78), [author](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L79-L89), [version](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L90-L92), [dependencies](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L93-L97), [platform](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L98-L101), [summary](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L102-L107), and [synthesized tags](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L108-L111).
 
-On average, people search [13 times per minute](http://status.cocoapods.org/#custom-metrics-container).
+On average, people search [13 times per minute](http://status.cocoapods.org/#custom-metrics-container), more during the week, less on weekends (switch to the Month view to see that).
 The occasional spike is roughly ten times that, so about twice per second.
 These spikes are not visible on the status page, as the number of requests are averaged over five minutes.
 As you can see, the search engine never rests:
