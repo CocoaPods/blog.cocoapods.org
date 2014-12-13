@@ -7,7 +7,7 @@ categories: cocoapods search
 ---
 
 TL;DR:
-The [CocoaPods search engine](http://cocoapods.org) is not [web scale](http://www.mongodb-is-web-scale.com/). Here's why.
+The [CocoaPods search engine](http://cocoapods.org) is not [web scale](http://www.mongodb-is-web-scale.com/), but instead tailored to our needs. Here's why and how.
 
 <!-- more -->
 
@@ -112,31 +112,33 @@ From running the search engine for a few years, we knew:
 * To index pods while searches are being made, we need it to be done in the same process (since we use the Picky memory index, the fastest option, Redis wasn't an option with our budget).
 * Indexing a pod takes almost negligible time.
 * No downtime on a single Heroku CPU is impossible, because restarts cannot be avoided.
+* We don't need to serve a 1000 requests a second, even though a performance-lover like me wants to. 200 is enough by far, and we should design for that. 
 
 As a result, we arrived at this design:
 
 {% breaking_image /assets/blog_img/search-engine/design.png %}
 
-Before Unicorn spawns 3 web workers, we [fork off an analytics and a search process](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/ARCHITECTURE.md).
+Before Unicorn [spawns two web workers](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/unicorn.rb#L6), we [fork off an analytics and a search process](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/ARCHITECTURE.md).
 Both only load what they need after forking.
 Before we fork any of these, we [open up channels](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/unicorn.rb#L15-L21) so the web workers can communicate with the search process and the analytics process.
 
-When a web worker forks, it chooses one of the above channels to communicate with the search engine process.
-Web workers are very thin – they only send the queries to the search engine process. 
+When a web worker forks, it [chooses one of the above channels](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/unicorn.rb#L38-L39) to communicate with the search engine and analytics process.
+Web workers are very thin – they [only send the queries to the search engine process](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L238). 
 This means any web worker can be restarted without problem, as they are relatively light.
 
 ### Handling queries
 
-If any query comes in, it is [handed off to the search engine process](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L236-L252), and also sent to the analytics process.
+If any query comes in, it is [handed off to the search engine process](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L236-L252), and [also sent to the analytics process](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/app.rb#L165-L178).
 The analytics process is only [concerned with sending analytics](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/analytics_worker.rb#L13-L21) data to Google Analytics.
 We need it to run in a separate process as currently we are using a synchronous library which would block the process.
 
-The search engine process jumps straight into an [event loop](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/channel.rb#L48-L81) after forking.
+The search engine process [jumps straight](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/unicorn.rb#L18) into an [event loop](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/channel.rb#L48-L81) after forking.
 While looping, it [checks if any requests have arrived](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/channel.rb#L65) via channels.
-If not, it [starts indexing pods](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search_worker.rb#L46-L59), taken [from the database](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/pods.rb#L14-L43), a few at a time.
-Like this we can avoid long downtimes, as we can immediately return a few pods.
-A drawback of this technique is that people won't get all pods they would usually get as only 100 pods may yet be in the index.
+After that, it [starts indexing pods](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search_worker.rb#L46-L59), taken [from the database](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/pods.rb#L14-L43), a few at a time.
+In this way we can avoid long downtimes, as we can immediately return a few pods.
+A drawback of this technique is that people won't get all pods they would usually get as for example only 100 pods may yet be in the index.
 However, we index the pods in the order of popularity, so we fill them in from the top of the results list, so to speak.
+So even if the search engine is still indexing, you get relevant results.
 
 This event loop also [counts the queries](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search_worker.rb#L82-L84) for display on [status.cocoapods.org](http://status.cocoapods.org/#custom-metrics-container).
 Every [30 seconds](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search_worker.rb#L63), it [sends the stats](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search_worker.rb#L105-L111) to the statuspage.
@@ -144,15 +146,15 @@ Every [30 seconds](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b
 ### Handling Trunk webhook calls
 
 To be able to index on the fly, any of the three web workers [handle Trunk webhook calls](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/app.rb#L145-L163).
-They then inform the search engine process, also via channels, which then will reload the right pod from the Trunk DB and reindex it.
+They then inform the search engine process, also [via channels](), which then will [reload the right pod](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search_worker.rb#L162) from the Trunk DB and [reindex it](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search_worker.rb#L163).
 This has resulted in a less than 30 second delay between you pushing to Trunk and the search engine spewing out updated results.
 Note that there is some browser caching of results going on, so when you try it, please clean the cache and reload.
 
 ## Summary and The Future
 
-To make a truly pod-specific search engine that would enable us to experiment and at the same time fit on a single shared Heroku instance, we used [Picky](http://pickyrb.com/) and a multiprocessing-based structure (with a single process search event loop), while still being able to serve enough results at a time.
+To make a truly CocoaPod-specific search engine that would enable us to experiment and at the same time fit on a single shared Heroku instance, we used [Picky](http://pickyrb.com/), [Heroku](http://heroku.com/) and a multiprocessing-based structure (with a single process search event loop), while still being able to serve enough results at a time.
 
-We are currently [working towards a CocoaPods search interface version 2](https://github.com/CocoaPods/search.cocoapods.org/issues/51) that will hopefully blow your minds.
+We are currently [working towards a CocoaPods search interface version 2](https://github.com/CocoaPods/search.cocoapods.org/issues/51) that will - I think - blow your minds.
 It will be the culmination of *months* (seriously!) of volunteer work and will pull together data from our many APIs to provide the snazziest pod searching interface possible.
 
 Please leave your ideas, if you have something to add.
