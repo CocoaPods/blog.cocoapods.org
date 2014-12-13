@@ -24,18 +24,19 @@ How do our users search?
 
 CocoaPods can be searched via the [Search API](http://blog.cocoapods.org/Search-API-Version-1/), so for example at [http://search.cocoapods.org/api/v1/pods.flat.hash.json?query=author:eloy](http://search.cocoapods.org/api/v1/pods.flat.hash.json?query=author:eloy), or via [cocoapods.org](cocoapods.org).
 
-The latter, the web site front end is more interesting, so let's have a look at that.
-The frontend on [cocoapods.org](cocoapods.org) has a few interesting features.
-First, it is a fast search-as-you-type search – if you don't type for about 200 ms, it sends a query to the Search API.
-The second feature I'd like to look at in more detail in the next section:
+The latter, the [web site front end interface](cocoapods.org), uses the former and is more interesting, so let's have a look at that.
+
+1. It is a fast search-as-you-type search – if you don't type for about 200 ms, it sends a query to the Search API.
+2. The second feature I'd like to look at in more detail in the next section:
 showing combinations of categories where a word was found.
-A third feature lets you know when it hasn't found anything, but offers helpful suggestions, such as when you search for [datanotfound](http://cocoapods.org/?q=datanotfound).
-Yet another feature sorts the results by [popularity](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/models/pod.rb#L40-L44), a metric [orta](http://twitter.com/orta) came up with together with [David Grandinetti](http://twitter.com/dbgrandi).
+3. It lets you know when it hasn't found anything, but offers helpful suggestions, such as when you search for [datanotfound](http://cocoapods.org/?q=datanotfound).
+4. It sorts the results by [popularity](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/models/pod.rb#L40-L44), a metric [orta](http://twitter.com/orta) came up with together with [David Grandinetti](http://twitter.com/dbgrandi).
 This is the default sorting algorithm right now, but we're [working](https://github.com/CocoaPods/search.cocoapods.org/issues/51#issuecomment-61655760) [on more](https://github.com/CocoaPods/search.cocoapods.org/issues/51#issuecomment-61655811). 
+
 Other features include storing the query in the URL for easy copying, or a results addination (portmanteau of "adding" and "pagination"), or being able to select which platform the pods are filtered with.
 
 With the search-as-you-type feature, we had an interesting issue:
-it was well possible that a later request received an answer earlier than an earlier request.
+Because shorter queries yield more results, and therefore take longer, it was possible that a request made earlier could arrive after a request made later.
 This led to a jarring "jumping" of results.
 
 To solve this issue, we only show results that arrive in the order we sent them.
