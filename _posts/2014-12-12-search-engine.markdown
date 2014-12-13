@@ -145,10 +145,11 @@ Every [30 seconds](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b
 To not stop the event loop, we [fork off](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/stats_sender.rb#L27-L32) these web service calls.
 
 One issue that occurred about 9 hours after putting this live was that the search engine ran out of resources.
-After investigating, I had to shamefully admit that I forgot to [clean up](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/stats_sender.rb#L9-L11) after these calls.
+After investigating, I had to shamefully admit that I forgot to [clean up](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/stats_sender.rb#L9-L11) after these forks.
 This resulted in that single [Heroku](http://heroku.com/) process handling on the order of 2000 child processes until it croaked, which occurred at about 9 hours after restarting.
 I was and am impressed at Heroku going for that long.
 Now, for example, we send calls to the status page every 30 seconds, [remember the child process PID](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/stats_sender.rb#L27) and [clean it up](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/stats_sender.rb#L9-L10) again [before we send off](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/stats_sender.rb#L15) the next call.
+Now the search engine purrs along nicely.
 
 ### Handling Trunk webhook calls
 
