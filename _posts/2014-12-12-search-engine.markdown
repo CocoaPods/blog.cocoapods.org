@@ -25,11 +25,11 @@ How do our users search?
 
 ## Searching on cocoapods.org
 
-CocoaPods can be searched via the [Search API](http://blog.cocoapods.org/Search-API-Version-1/), so for example at [http://search.cocoapods.org/api/v1/pods.flat.hash.json?query=author:tony%20author:arnold](http://search.cocoapods.org/api/v1/pods.flat.hash.json?query=author:eloy), or via [cocoapods.org](cocoapods.org).
+CocoaPods can be searched via the [Search API](http://blog.cocoapods.org/Search-API-Version-1/), so for example at [http://search.cocoapods.org/api/v1/pods.flat.hash.json?query=author:tony%20author:arnold](http://search.cocoapods.org/api/v1/pods.flat.hash.json?query=author:tony%20author:arnold), or via [cocoapods.org](http://cocoapods.org/?q=author:tony%20author:arnold).
 
 The latter, the [web site front end interface](cocoapods.org), uses the former and is more interesting, so let's have a look at that:
 
-1. It is a fast as-you-type search – if you don't type for [166 ms](https://github.com/CocoaPods/cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/middleman/source/javascripts/search.config.js#L229), it sends a query to the Search API.
+1. It is a fast as-you-type search – if you don't type for [166 ms](https://github.com/CocoaPods/cocoapods.org/blob/f93a89e845dc66dd29f78d52921d1c455b8a6b87/middleman/source/javascripts/search.config.js#L229), it sends a query to the Search API.
 2. The second feature I'd like to look at in more detail in the next section:
 showing where your query words were found and offering the most appropriate guess.
 3. It lets you know when it hasn't found anything, but offers helpful suggestions, such as when you search for [datanotfound](http://cocoapods.org/?q=datanotfound). To do that, it [tries to split](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/app.rb#L111-L132) your query [based on the indexed data](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L175). It also displays a [tag facet cloud](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/app.rb#L120-L122).
