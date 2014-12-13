@@ -115,7 +115,7 @@ From running the search engine for a few years, we knew:
 
 As a result, we arrived at this design:
 
-[Design of the engine]
+{% breaking_image /assets/blog_img/search-engine/design.png %}
 
 Before Unicorn spawns 3 web workers, we [fork off an analytics and a search process](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/ARCHITECTURE.md).
 Both only load what they need after forking.
