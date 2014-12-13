@@ -142,6 +142,13 @@ So even if the search engine is still indexing, you get relevant results.
 
 This event loop also [counts the queries](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search_worker.rb#L82-L84) for display on [status.cocoapods.org](http://status.cocoapods.org/#custom-metrics-container).
 Every [30 seconds](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search_worker.rb#L63), it [sends the stats](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search_worker.rb#L105-L111) to the statuspage.
+To not stop the event loop, we [fork off](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/stats_sender.rb#L27-L32) these web service calls.
+
+One issue that occurred about 9 hours after putting this live was that the search engine ran out of resources.
+After investigating, I had to shamefully admit that I forgot to [clean up](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/stats_sender.rb#L9-L11) after these calls.
+This resulted in that single [Heroku](http://heroku.com/) process handling on the order of 2000 child processes until it croaked, which occurred at about 9 hours after restarting.
+I was and am impressed at Heroku going for that long.
+Now, for example, we send calls to the status page every 30 seconds, [remember the child process PID](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/stats_sender.rb#L27) and [clean it up](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/stats_sender.rb#L9-L10) again [before we send off](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/stats_sender.rb#L15) the next call.
 
 ### Handling Trunk webhook calls
 
@@ -157,4 +164,4 @@ To make a truly CocoaPod-specific search engine that would enable us to experime
 We are currently [working towards a CocoaPods search interface version 2](https://github.com/CocoaPods/search.cocoapods.org/issues/51) that will - I think - blow your minds.
 It will be the culmination of *months* (seriously!) of volunteer work and will pull together data from our many APIs to provide the snazziest pod searching interface possible.
 
-Please leave your ideas, if you have something to add.
+Please leave your ideas if you have an idea to add.
