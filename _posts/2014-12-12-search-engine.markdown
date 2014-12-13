@@ -12,8 +12,8 @@ The [CocoaPods search engine](http://cocoapods.org) is not [web scale](http://ww
 <!-- more -->
 
 First let's look at some numbers...
-Currently, the CocoaPods search engine indexes [7372 pods](http://metrics.cocoapods.org/api/v1/status).
-From these pods, it indexes [name, author, version, dependencies, platform, summary, and synthesized tags](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search.rb#L70-L111).
+Currently, the CocoaPods search engine indexes [7378 pods](http://metrics.cocoapods.org/api/v1/status).
+From these pods, it indexes [name](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search.rb#L70-L78), [author](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search.rb#L79-L89), [version](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search.rb#L90-L92), [dependencies](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search.rb#L93-L97), [platform](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search.rb#L98-L101), [summary](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search.rb#L102-L107), and [synthesized tags](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search.rb#L108-L111).
 On average, people search [13 times per minute](http://status.cocoapods.org/#custom-metrics-container).
 The occasional spike is roughly ten times that, so about twice per second.
 These spikes are not visible on the status page, as the number of requests are averaged over five minutes.
