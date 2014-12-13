@@ -13,38 +13,38 @@ The [CocoaPods search engine](http://cocoapods.org) is not [web scale](http://ww
 
 First let's look at some numbers...
 Currently, the CocoaPods search engine indexes [7378 pods](http://metrics.cocoapods.org/api/v1/status).
-From these pods, it indexes [name](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search.rb#L70-L78), [author](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search.rb#L79-L89), [version](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search.rb#L90-L92), [dependencies](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search.rb#L93-L97), [platform](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search.rb#L98-L101), [summary](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search.rb#L102-L107), and [synthesized tags](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search.rb#L108-L111).
+From these pods, it indexes [name](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L70-L78), [author](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L79-L89), [version](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L90-L92), [dependencies](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L93-L97), [platform](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L98-L101), [summary](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L102-L107), and [synthesized tags](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L108-L111).
 
 On average, people search [13 times per minute](http://status.cocoapods.org/#custom-metrics-container).
 The occasional spike is roughly ten times that, so about twice per second.
 These spikes are not visible on the status page, as the number of requests are averaged over five minutes.
 As you can see, the search engine never rests:
-CocoaPods are searched at all times.
+CocoaPods are searched for at all times.
 
 How do our users search?
 
 ## Searching on cocoapods.org
 
-CocoaPods can be searched via the [Search API](http://blog.cocoapods.org/Search-API-Version-1/), so for example at [http://search.cocoapods.org/api/v1/pods.flat.hash.json?query=author:eloy](http://search.cocoapods.org/api/v1/pods.flat.hash.json?query=author:eloy), or via [cocoapods.org](cocoapods.org).
+CocoaPods can be searched via the [Search API](http://blog.cocoapods.org/Search-API-Version-1/), so for example at [http://search.cocoapods.org/api/v1/pods.flat.hash.json?query=author:tony%20author:arnold](http://search.cocoapods.org/api/v1/pods.flat.hash.json?query=author:eloy), or via [cocoapods.org](cocoapods.org).
 
-The latter, the [web site front end interface](cocoapods.org), uses the former and is more interesting, so let's have a look at that.
+The latter, the [web site front end interface](cocoapods.org), uses the former and is more interesting, so let's have a look at that:
 
-1. It is a fast search-as-you-type search – if you don't type for about 200 ms, it sends a query to the Search API.
+1. It is a fast as-you-type search – if you don't type for [166 ms](https://github.com/CocoaPods/cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/middleman/source/javascripts/search.config.js#L229), it sends a query to the Search API.
 2. The second feature I'd like to look at in more detail in the next section:
-showing combinations of categories where a word was found.
-3. It lets you know when it hasn't found anything, but offers helpful suggestions, such as when you search for [datanotfound](http://cocoapods.org/?q=datanotfound).
-4. It sorts the results by [popularity](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/models/pod.rb#L40-L44), a metric [orta](http://twitter.com/orta) came up with together with [David Grandinetti](http://twitter.com/dbgrandi).
-This is the default sorting algorithm right now, but we're [working](https://github.com/CocoaPods/search.cocoapods.org/issues/51#issuecomment-61655760) [on more](https://github.com/CocoaPods/search.cocoapods.org/issues/51#issuecomment-61655811). 
+showing where your query words were found and offering the most appropriate guess.
+3. It lets you know when it hasn't found anything, but offers helpful suggestions, such as when you search for [datanotfound](http://cocoapods.org/?q=datanotfound). To do that, it [tries to split](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/app.rb#L111-L132) your query [based on the indexed data](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L175). It also displays a [tag facet cloud](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/app.rb#L120-L122).
+4. It sorts the results by [popularity](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/models/pod.rb#L40-L44), a metric [orta](http://twitter.com/orta) came up with together with [David Grandinetti](http://twitter.com/dbgrandi).
+This is the default sorting algorithm right now, but we're [working](https://github.com/CocoaPods/search.cocoapods.org/issues/51#issuecomment-61655760) [on more](https://github.com/CocoaPods/search.cocoapods.org/issues/51#issuecomment-61655811). Adding a new algorithm is easy and [has already been done](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L246-L283).
 
 Other features include storing the query in the URL for easy copying, or a results addination (portmanteau of "adding" and "pagination"), or being able to select which platform the pods are filtered with.
 
-With the search-as-you-type feature, we had an interesting issue:
+With the search-as-you-type feature, we encountered an interesting issue:
 Because shorter queries yield more results, and therefore take longer, it was possible that a request made earlier could arrive after a request made later.
 This led to a jarring "jumping" of results.
 
-To solve this issue, we only show results that arrive in the order we sent them.
+To solve this issue, we [only show results that arrive in the order we sent them](https://github.com/CocoaPods/cocoapods.org/blob/161daa79fddea07eca734fc19ce1fd0a915949fb/middleman/source/javascripts/search.config.js#L195-L218).
 If we send requests A, B, and C, and A returns first, we show it. If then C returns, we show it too, as it arrived in order.
-If then B arrives after C, we discard it, as it is out of order.
+If then B arrives after C, [we discard it](https://github.com/CocoaPods/cocoapods.org/blob/161daa79fddea07eca734fc19ce1fd0a915949fb/middleman/source/javascripts/search.config.js#L316-L321), as it is out of order.
 That neatly solves the issue of jumping results, and also ensures a very responsive feeling for a user.
 
 But what is the second feature about?
@@ -54,7 +54,7 @@ But what is the second feature about?
 [Picky](http://pickyrb.com/) is a [semantic text search engine](http://pickyrb.com/details.html), running on Ruby.
 It is fast (it uses C for the core bits), flexible (it uses Ruby for maximum flexibility), and versatile.
 On the other hand it does not yet offer a drop-in server, so if you need a web service, you need to write one, such as we did.
-We use Picky for search.cocoapods.org.
+We use Picky for [search.cocoapods.org](http://search.cocoapods.org).
 
 Using Picky had two main impacts:
 we were able to create a highly specialized search engine for pods, and we can harness the power of a semantic search engine.
@@ -71,17 +71,24 @@ The latter refers to the Mixpanel pod which has two authors:
 Orta and Mixpanel (which is why the M* finds that one).
 
 If you click [one of these suggestions](http://cocoapods.org/?q=author%3Aorta%20name%3Am*), then you can see that it's possible to let Picky know what you are looking for, if you already know ("author:orta name:m").
-Normally you don't necessarily need it, but it can help if you have almost no idea anymore what the pod was called.
+Normally you don't need it, but it can help if you have almost no idea anymore what the pod was called.
 For example, perhaps you still remember that the author may have been Bob or Bert, so you enter a "B".
 The pod almost certainly has a word with a c in it, so you add a "C".
 Then Picky will show you all possibilities that a query like "B* C" results in.
 [This query](http://cocoapods.org/?q=author%3Ab*%20name%3Ac) is the resulting one.
 
+To decide what combination of categories the query words are most likely in, Picky decides based on probability.
+However, since we also know what combinations people will most likely look for, we've told Picky what to prefer:
+for often occurring combinations, [we've added boosts](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L126-L141).
+So if your query is found in name (+3) and dependencies (-4), then it will most likely show the name results on top.
+
 And how is it specialized for pods?
 For example, when indexing pod names, we give the search engine the pieces we expect will be queried for.
-That usually means e.g. for ["TICoreDataSync"](http://cocoapods.org/?q=ticoredatasync), we [split it into the two uppercase initials, and each word starting with an uppercase letter, and also the whole word without the two initials](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/models/pod.rb#L224-L239).
-This enables you to search for ["coredata"](http://cocoapods.org/?q=coredata) and get the above pod.
+That usually means e.g. for ["TICoreDataSync"](http://cocoapods.org/?q=ticoredatasync), we [use the whole word](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/models/pod.rb#L232), [split it into the two uppercase initials](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/models/pod.rb#L233), and [each word starting with an uppercase letter](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/models/pod.rb#L237), and also [the whole word without the two initials](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/models/pod.rb#L234).
+This enables you to search for ["coredata"](http://cocoapods.org/?q=coredata) and get the "TICoreDataSync" pod.
 Or you can search for ["network"](http://cocoapods.org/?q=network), and get AFNetworking.
+
+Personally, I feel very strongly about creating specialized search engines if you want to provide the best experience for your users.
 
 ## Limitations
 
@@ -110,9 +117,9 @@ As a result, we arrived at this design:
 
 [Design of the engine]
 
-Before Unicorn spawns 3 web workers, we [fork off an analytics and a search process](https://github.com/CocoaPods/search.cocoapods.org/blob/master/ARCHITECTURE.md).
+Before Unicorn spawns 3 web workers, we [fork off an analytics and a search process](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/ARCHITECTURE.md).
 Both only load what they need after forking.
-Before we fork any of these, we [open up channels](https://github.com/CocoaPods/search.cocoapods.org/blob/master/unicorn.rb#L15-L21) so the web workers can communicate with the search process and the analytics process.
+Before we fork any of these, we [open up channels](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/unicorn.rb#L15-L21) so the web workers can communicate with the search process and the analytics process.
 
 When a web worker forks, it chooses one of the above channels to communicate with the search engine process.
 Web workers are very thin – they only send the queries to the search engine process. 
@@ -120,23 +127,23 @@ This means any web worker can be restarted without problem, as they are relative
 
 ### Handling queries
 
-If any query comes in, it is [handed off to the search engine process](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search.rb#L236-L252), and also sent to the analytics process.
-The analytics process is only [concerned with sending analytics](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/analytics_worker.rb#L13-L21) data to Google Analytics.
+If any query comes in, it is [handed off to the search engine process](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L236-L252), and also sent to the analytics process.
+The analytics process is only [concerned with sending analytics](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/analytics_worker.rb#L13-L21) data to Google Analytics.
 We need it to run in a separate process as currently we are using a synchronous library which would block the process.
 
-The search engine process jumps straight into an [event loop](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/channel.rb#L48-L81) after forking.
-While looping, it [checks if any requests have arrived](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/channel.rb#L65) via channels.
-If not, it [starts indexing pods](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search_worker.rb#L46-L59), taken [from the database](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/pods.rb#L14-L43), a few at a time.
+The search engine process jumps straight into an [event loop](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/channel.rb#L48-L81) after forking.
+While looping, it [checks if any requests have arrived](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/channel.rb#L65) via channels.
+If not, it [starts indexing pods](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search_worker.rb#L46-L59), taken [from the database](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/pods.rb#L14-L43), a few at a time.
 Like this we can avoid long downtimes, as we can immediately return a few pods.
 A drawback of this technique is that people won't get all pods they would usually get as only 100 pods may yet be in the index.
 However, we index the pods in the order of popularity, so we fill them in from the top of the results list, so to speak.
 
-This event loop also [counts the queries](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search_worker.rb#L82-L84) for display on [status.cocoapods.org](http://status.cocoapods.org/#custom-metrics-container).
-Every [30 seconds](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search_worker.rb#L63), it [sends the stats](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search_worker.rb#L105-L111) to the statuspage.
+This event loop also [counts the queries](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search_worker.rb#L82-L84) for display on [status.cocoapods.org](http://status.cocoapods.org/#custom-metrics-container).
+Every [30 seconds](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search_worker.rb#L63), it [sends the stats](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search_worker.rb#L105-L111) to the statuspage.
 
 ### Handling Trunk webhook calls
 
-To be able to index on the fly, any of the three web workers [handle Trunk webhook calls](https://github.com/CocoaPods/search.cocoapods.org/blob/master/app.rb#L145-L163).
+To be able to index on the fly, any of the three web workers [handle Trunk webhook calls](https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/app.rb#L145-L163).
 They then inform the search engine process, also via channels, which then will reload the right pod from the Trunk DB and reindex it.
 This has resulted in a less than 30 second delay between you pushing to Trunk and the search engine spewing out updated results.
 Note that there is some browser caching of results going on, so when you try it, please clean the cache and reload.
