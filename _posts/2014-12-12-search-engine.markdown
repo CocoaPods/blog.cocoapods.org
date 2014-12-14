@@ -109,7 +109,7 @@ From running the search engine for a few years, we knew:
 * For it to be responsive, we need multiple web workers.
 * Searches are generally fast.
 * To handle Trunk webhook calls (similar to GitHub webhook calls), we needed a HTTP endpoint serving these.
-* To index pods while searches are being made, we need it to be done in the same process (since we use the Picky memory index, the fastest option, Redis wasn't an option with our budget).
+* To index pods while searches are being made, we need it to be done in the same process (since we use the Picky memory index, the fastest option, and Redis wasn't an option with our budget).
 * Indexing a pod takes almost negligible time.
 * No downtime on a single Heroku CPU is impossible, because restarts cannot be avoided.
 * We don't need to serve a 1000 requests a second, even though a performance-lover like me wants to. 20-30 is enough by far (1200-1800 per minute), and we should design for that. 
