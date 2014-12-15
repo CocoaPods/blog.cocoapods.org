@@ -66,9 +66,9 @@ This may not be too exciting.
 
 However, if you enter two words, or parts of words, then Picky can start guessing what you mean.
 For example, if you enter [orta m](http://cocoapods.org/?q=orta%20m), then Picky guesses that you meant "Author+Name" (2 results) first, and "Author" (1 result) second.
-The former refers to the two pods which are named "M*" and have Orta as an author.
+The former refers to the two pods which are named "M\*" and have Orta as an author.
 The latter refers to the Mixpanel pod which has two authors:
-Orta and Mixpanel (which is why the M* finds that one).
+Orta and Mixpanel (which is why the M\* finds that one).
 
 If you click [one of these suggestions](http://cocoapods.org/?q=author%3Aorta%20name%3Am*), then you can see that it's possible to let Picky know what you are looking for, if you already know ("author:orta name:m").
 Normally you don't need it, but it can help if you have almost no idea anymore what the pod was called.
