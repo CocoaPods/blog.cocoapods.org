@@ -86,8 +86,16 @@ To use this subspec in Swift, without a generated umbrella header, you would nee
 
 Public Headers in Podspecs are declared by `s.public_header_files = ["Core/*.h", "Tree/**.h"]`.
 
-If you don't include this specification, then all your headers are public.
-You need then to make sure, that you only
+If you don't include this specification, then all your headers would be public.
+This isn't recommeded in the most of the cases.
+
+Generally you should make sure, that you have self-contained headers and only expose that part of  your implementation, which is consumed by your Pods users. This has several advantages:
+
+* It allows you to refactor the private implementation part without necessarily releasing a major update, which makes the version migration easier and allows you to focus on further improving your pod instead of explain your users how the API has changed.
+* It impedes misusage, because you would need to modify header access to use or manipulate classes or properties, which are not intended to be used externally.
+
+
+#### Common Pitfalls
 
 If you have an header like this:
 
