@@ -68,9 +68,11 @@ If you have an header like this:
 ```objectivec
 /// BKBananaFruit.h
 
+#import "BKBananaTree.h"
 #import "monkey.h"
 
 @interface BKBananaFruit
+@property (nonatomic, weak) BKBananaTree *tree;
 - (void)peel:(Monkey *)monkey;
 @end
 ```
