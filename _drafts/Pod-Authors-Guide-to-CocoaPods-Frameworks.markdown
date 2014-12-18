@@ -30,6 +30,19 @@ This references only one file explicitly: the umbrella header.
 You can simply export as public API for your framework everything which was imported by the umbrella header and *all transitive imported* headers.
 Clang will take care making module exports that can be imported by Objective-C and Swift.
 
+
+### What Means *Transitive Imported* In This Context?
+
+Transitive relations are a [concept from mathematics](http://en.wikipedia.org/wiki/Transitive_relation):
+
+>Whenever an element *a* is related to an element *b*, and *b* is in turn related to an element *c*, then *a* is also related to *c*.
+
+We have here the binary relation of a header file, which imports another header file.
+The transitive closure means that all headers, which are imported by header files, which you have imported from a certain file are indirectly imported to that file, too. That's also the same for all header files, which are imported by the collection of those headers.
+Surely, you know this property from your app target, whenever you import a header, which imports other headers, the classes and symbols, which are defined there, are also available in your app code.
+The same has to apply for import statements in Umbrella Headers and effect the module visibility with Clang modules.
+
+
 ### What are Umbrella Headers?
 
 For our example it could look like this:
