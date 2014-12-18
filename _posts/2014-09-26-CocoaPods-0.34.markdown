@@ -16,10 +16,10 @@ and faster downloads.
 <!-- more -->
 
 I would like to thank [SoundCloud](https://soundcloud.com) and the [Travis
-Foundation](http://foundation.travis-ci.org) for their support. Without this
-contribution, this release wouldn't have been nearly as extensive. Personally,
-I always praise initiatives like this because I think that they constitute an
-important engine to foster the development of the community.
+Foundation](http://foundation.travis-ci.org) for their support. Without their
+contribution, this release wouldn't have been nearly as extensive. Initiatives
+like this constitute an important engine to foster the development of the
+CocoaPods community.
 
 
 ## Dependencies per build configuration
@@ -40,7 +40,7 @@ Bengtsson](https://github.com/nevyn) with what I could describe only as a great
 open source attitude. Joachim was interested in curating the complete
 experience of [Lookback](https://lookback.io), including installation with
 CocoaPods. Instead of just opening an issue he went above and beyond and
-proposed one of the most ambitions pull request which we ever received.
+proposed one of the most ambitious pull requests which we ever received.
 Unfortunately given its implications with the integration strategy, the patch
 entered a limbo where it remained stuck for more than a year. However, thanks
 to the support of SoundCloud (and the patience of Eloy) this feature has been
@@ -57,7 +57,7 @@ There are some caveats to keep in mind though:
 
 ## Private spec repositories
 
-Another feature which has been constantly demanded by our users is the support
+Another feature which our users frequently ask for is the support
 for declaring spec repositories in the Podfile. With this change the Podfile
 becomes fully deterministic. This feature was kickstarted by [François
 Benaiteau](https://github.com/netbe). Here is how it works:
@@ -68,7 +68,7 @@ source 'https://github.com/Organization/Specs'
 ```
 
 You might be wondering what happens when a repository is not already cloned on
-the user’s system? Well wonder no more because [Samuel
+the user’s system. Well, wonder no more, because [Samuel
 Giddins](https://github.com/segiddins) has taken this feature to
 the next level. If a repository is missing, CocoaPods will automatically clone
 it and it will even **finely craft a suitable** name.
@@ -90,7 +90,7 @@ where the last version of a Pod available in the master repo is customised.
 ## Faster downloads
 
 97% of the Pods available in the master repo use a git source (6193 out of 6403
-to be precise). We noticed this trend early-on during the development of
+to be precise). We noticed this trend early on during the development of
 CocoaPods and we have adopted a cache for this download strategy. This solution
 worked reasonably well for users cycling a common pool of Pods and upgrading
 them. However, it had the disadvantage of incurring in a performance hit during
@@ -135,11 +135,11 @@ have been solved. Code-base style and the coverage was taken care of. Solid
 dependencies means that the CocoaPods-Core team now can focus only in the last
 mile, especially in the integration strategies.
 
-Another tiny tiny tiny but very significant change is that now `requires_arc`
-defaults to true on Podspecs. This might look like the easiest patch ever
-(just one line of code) however it provides an insight on the real complexity
-of CocoaPods development: preserving existing installations… a.k.a backwards
-compatibility. So this innocent looking
+Another tiny, tiny, tiny, but very significant change is that now
+`requires_arc` defaults to true on Podspecs. This might look like the easiest
+patch ever (just one line of code) however it provides an insight on the real
+complexity of CocoaPods development: preserving existing installations… a.k.a
+backwards compatibility. So this innocent looking
 [issue](https://github.com/CocoaPods/CocoaPods/issues/267) required to switch
 the entire specs repo to JSON (in order to safely edit all the specs
 programmatically) which in turn required to implement the trunk (in order to

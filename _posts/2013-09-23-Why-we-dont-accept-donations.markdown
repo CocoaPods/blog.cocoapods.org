@@ -34,4 +34,4 @@ TL;DR: While we very much appreciate the sentiment, the project (as an entity) d
 
    Note that we do recognise companies for the work described in this section as ‘sponsors’, of which we keep a list in the README.
 
-4. Finally, as said before, individual people might be in a less fortunate financial position and as such it’s perfectly ok to send donations through means like [Gittip](https://www.gittip.com), if that individual accepts that. These are **not** considered to be specific for the CocoaPods project, though.
+4. Finally, as said before, individual people might be in a less fortunate financial position and as such it’s perfectly ok to send donations through means like [Patreon](https://www.patreon.com), if that individual accepts that. These are **not** considered to be specific for the CocoaPods project, though.
