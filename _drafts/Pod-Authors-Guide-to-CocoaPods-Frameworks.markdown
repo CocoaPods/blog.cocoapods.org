@@ -7,13 +7,15 @@ categories: cocoapods releases
 
 TL;DR: _CocoaPods 0.36_ will bring the long-awaited support for Frameworks and Swift.
 It isn't released and considered stable yet, but a prerelease is now available for everyone.
-Especially pod authors can use that to make sure their pods will work with the official release.
+Pod authors especially will want to try this to make sure their pods will work with the official release. Because if a single dependency in a user's project requires a framework, then your Pod will also become a framework.
 
 <!-- more -->
 
 ## What is special about Frameworks integrated by CocoaPods?
 
-With CocoaPods Frameworks are mostly setup like you would setup them yourself in Xcode to make the entire integration inspectable and understandable. In addition this allows to unleash the power of the whole existing toolchain, because a lot of the tools play only nice together in an Xcode environment where certain build variables are present. Cocoa Touch Frameworks use by default under the hood clang modules, which are also required to link them to your Swift app. Therefore their module map is included. This module map is a declaration of the headers, which form the public and optionally the private interface of the module. Luckily, those have been designed so that they can stay in the background and the developer can faciliate known and existing structures, without having to learn their DSL. The default modulemap looks basically always the same:
+With CocoaPods, Frameworks are mostly setup in way similar to how it is done via Xcode. This is to make the entire integration inspectable, understandable and allows us to unleash the power of the whole existing toolchain. A lot of the tools play only nice together in an Xcode environment where certain build variables are present. Cocoa Touch Frameworks for example use clang modules, which are also required to link them to your Swift app.
+
+This module map is a declaration of the headers, which form the public (or private) interface of the module. Luckily, those have been designed so that they can stay in the background and the developer can faciliate known and existing structures, without having to learn their DSL. The default modulemap looks basically always the same:
 
 ```c
 framework module BananaKit {
@@ -25,7 +27,8 @@ framework module BananaKit {
 ```
 
 This references only one file explicitly: the umbrella header.
-You can simply export as public API for your framework everything which was imported by the umbrella header and *all transitive imported* headers. Clang will take care for you that those will be made available as module exports and can be imported by Objective-C and Swift.
+You can simply export as public API for your framework everything which was imported by the umbrella header and *all transitive imported* headers.
+Clang will take care making module exports that can be imported by Objective-C and Swift.
 
 ### What are Umbrella Headers?
 
@@ -77,7 +80,7 @@ If you have an header like this:
 @end
 ```
 
-And you get an error like below, don't let you fool.
+And you get an error like below, don't let it fool you.
 
 ```
 Include of non-modular header inside framework module 'BananaKit.BKBananaFruit'
