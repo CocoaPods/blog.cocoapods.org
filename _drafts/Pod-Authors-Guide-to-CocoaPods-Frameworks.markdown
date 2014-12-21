@@ -15,7 +15,8 @@ Pod authors especially will want to try this to make sure their pods will work w
 
 With CocoaPods, Frameworks are mostly setup in way similar to how it is done via Xcode.
 This is to make the entire integration inspectable, understandable and allows us to unleash the power of the whole existing toolchain.
-A lot of the tools play only nice together in an Xcode environment where certain build variables are present. Cocoa Touch Frameworks for example use clang modules, which are also required to import and link them to your Swift app.
+A lot of the tools play only nice together in an Xcode environment where certain build variables are present.
+Cocoa Touch Frameworks use Clang Modules, which are also required to import and link them to your Swift app.
 Therefore their module map is included in the built framework bundle.
 
 This module map is a declaration of the headers, which form the public (or private) interface of the module.
