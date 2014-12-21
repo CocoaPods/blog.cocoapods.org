@@ -19,7 +19,30 @@ A lot of the tools play only nice together in an Xcode environment where certain
 Cocoa Touch Frameworks use Clang Modules, which are also required to import and link them to your Swift app.
 Therefore their module map is included in the built framework bundle.
 
-This module map is a declaration of the headers, which form the public (or private) interface of the module.
+
+### Module Names
+
+Names of Clang Modules are limited to be C99ext-identifiers. This means, they can only contain alphanumeric characters and underscores and may not begin with a number. Looking through the official spec repo, we discovered some popular pods, which don't match these requirements.
+
+Before you could already use `header_dir` as pod author to customize the name, which can be used to include your headers from the user target. E.g. if your pod is named `123BánànâKit`, you could set it to `BananaKit`, so it is available by `import <BananaKit/BananaKit.h>` instead of `#import <123BánànâKit/BananaKit.h>`.
+
+We allow to continue this usage, but also introduced a new attribute `module_name`, which you declare in your specs. The usage of the new attribute has the advantage, that it will be properly linted, while we wil transform the `header_dir` or if not set the spec's name to match the Clang Module name requirements.
+
+To put in a nutshell, look at the following Swift snippet, which concisely express the way in which we decude a module name.
+
+```swift
+//let c99ext_identifier: String -> String?
+func module_name(spec: Specification) -> String {
+  return spec.module_name
+    ?? c99ext_identifier(spec.header_dir)
+    ?? c99ext_identifier(spec.name)!
+}
+```
+
+
+### Module Maps
+
+A Module Map is a declaration of the headers, which form the public (or private) interface of a Clang Module.
 Luckily, those have been designed so that they can stay in the background and the developer can faciliate known and existing structures, without having to learn their DSL.
 The default modulemap looks basically always the same:
 
