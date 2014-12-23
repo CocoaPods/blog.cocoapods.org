@@ -7,9 +7,9 @@ categories: cocoapods releases
 
 TL;DR: _CocoaPods 0.36_ has been released, with the long-awaited support for Frameworks and Swift.
 
-<!-- more -->
+This initially supports dynamic framework and by that it also brings enhanced support for dependencies using Apple's new programming language Swift. This has been one of the largest singular projects for CocoaPods, affecting almost all of CocoaPods' subsystems like Xcodeproj.
 
-The CocoaPods 0.36 brings long-awaited functionality: it initially supports dynamic framework and by that it also brings enhanced support for Apple's new programming language Swift.
+<!-- more -->
 
 
 ## And there were Swift & Dynamic Frameworks on iOS
