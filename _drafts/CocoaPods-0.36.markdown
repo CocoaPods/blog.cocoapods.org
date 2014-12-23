@@ -53,9 +53,7 @@ But that's only part, which static libraries covered so far. Belong the further 
 * **The Public Headers** - These are stripped for application targets, as they are only important to distribute the framework as code for compilation. The public headers also include the generated headers for public Swift symbols, e.g. `Alamofire-Swift.h`.
 * **A Code Signature For The Whole Contents** - This has to be (re-)calculated on embedding a framework into an application target, as the headers are stripped before.
 * **Its Resources** - The resources used e.g. Images for UI components.
-*  **Hosted Dynamic Frameworks and Libraries** - e.g. the Swift runtime library. But since Xcode 6's release dynamic frameworks don't include anymore the Swift runtime they were compiled with.
-This would lead to duplication if multiple frameworks are used.
-[We have to care about]() ensuring  the Swift runtime libraries are embedded only once into the application project.
+* **Hosted Dynamic Frameworks and Libraries** - This can be the case for so called Umbrella Frameworks provided by Apple. There is no use-case, where this happens with CocoaPods.
 * **The Clang Module Map** - This is mostly an internal toolchain artifact, which carries declarations about header visibility and module link-ability.
 * **An Info.plist** - This specifies author, version and copyright information.
 
