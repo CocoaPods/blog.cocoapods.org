@@ -50,23 +50,22 @@ Dynamic Frameworks are bundles, which basically means that they are directories,
 They bundle some further data besides a binary, which is in that case dynamically linkable and holds different slices for each architecture.
 But that's only part, which static libraries covered so far. Belong the further data, there are the following:
 
-* The public headers, which are stripped from the bundle for application targets, as those are only important to distribute the interface of the code for compilation.
-The public headers also include the generated headers for public Swift symbols, e.g. `Alamofire-Swift.h`.
-* A code signature over the whole contents, which has to be (re-)calculated on embedding a framework into an application target, as the headers are stripped before.
-* The resources, which are used by e.g. UI components, which the frameworks brings with it
-* It can carry further dynamic frameworks and libraries, like e.g. the Swift runtime library.
-But since Xcode 6-beta7 dynamic frameworks don't include anymore the Swift runtime, they were compiled with, because this would led to duplication, if multiple frameworks are used.
-[We had to care about]() embedding all needed Swift runtime libraries only once into the application project.
-* The clang module map, which is mostly an internal toolchain artifact, which carries declarations about header visibility and module link-ability.
-* An Info.plist, which specifies author, version and copyright information.
+* **The Public Headers** - These are stripped for application targets, as they are only important to distribute the framework as code for compilation. The public headers also include the generated headers for public Swift symbols, e.g. `Alamofire-Swift.h`.
+* **A Code Signature For The Whole Contents** - This has to be (re-)calculated on embedding a framework into an application target, as the headers are stripped before.
+* **Its Resources** - The resources used e.g. Images for UI components.
+*  **Hosted Dynamic Frameworks and Libraries** - e.g. the Swift runtime library. But since Xcode 6's release dynamic frameworks don't include anymore the Swift runtime they were compiled with.
+This would lead to duplication if multiple frameworks are used.
+[We have to care about]() ensuring  the Swift runtime libraries are embedded only once into the application project.
+* **The Clang Module Map** - This is mostly an internal toolchain artifact, which carries declarations about header visibility and module link-ability.
+* **An Info.plist** - This specifies author, version and copyright information.
 
 
 ### Caveats
 
 One caveat about bundling resources is, that until now we had to embed all resources into the application bundle.
-This is referenced programmatically by `[NSBundle mainBundle]`.
-You as Pod author were able to use that kind of referencing to include resources you brought into the app bundle.
-But with frameworks, you have to make sure, that you reference them more specifically by getting a reference to your bundle like that:
+The resources were referenced programmatically by `[NSBundle mainBundle]`.
+Pod authors were able to use `mainBundle` referencing to include resources the Pod brought into the app bundle.
+But with frameworks, you have to make sure that you reference them more specifically by getting a reference to your framework's bundle e.g.
 
 ```objective-c
 [NSBundle bundleForClass:<#ClassFromPodspec#>]
@@ -76,17 +75,19 @@ But with frameworks, you have to make sure, that you reference them more specifi
 NSBundle(forClass: <#ClassFromPodspec#>)
 ```
 
-This will then work for both ways of integration.
+This will then work for both frameworks and static libraries.
 There are only very rare cases, where you want to reference the main bundle directly or indirectly, e.g. by using `[UIImage imageNamed:]`.
 
-The advantage, we have now with the improved resource handling is, that resources wouldn't conflict when they have the same names, because they are namespaced by the framework bundle.
-Furthermore we don't have to apply anymore the build rules ourself to the resources as e.g. asset catalogs and storyboards need to be compiled.
+The advantage to the improved resource handling is that resources won't conflict when they have the same names.
+They are namespaced by the framework bundle.
+Furthermore we don't have to apply the build rules ourself to the resources as e.g. asset catalogs and storyboards need to be compiled.
+This should decrease build times for project using Pods that include many resources.
 
 
 ### More about Frameworks
 
 If you want learn more about Frameworks, take a look into the [Framework Programming Guide](https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPFrameworks/Frameworks.html#//apple_ref/doc/uid/10000183-SW1).
-Even when this was not written specifically for the new Cocoa Touch Frameworks, how Apple calls them in their Xcode target template, those are mostly the same to the classic OS X frameworks, so this document is still a helpful introduction.
+Even though this was not written specifically for the new Cocoa Touch Frameworks, how Apple calls them in their Xcode target template, those are mostly the same to the classic OS X frameworks, so this document is still a helpful introduction.
 
 
 ## Updating
