@@ -14,7 +14,9 @@ The CocoaPods 0.36 brings long-awaited functionality: it initially supports dyna
 
 ## And there were Swift & Dynamic Frameworks on iOS
 
-Dynamic frameworks have always been available on OS X. That's different for iOS. Apple's mobile platform does support dynamic frameworks initially with iOS 8.0. So the least common denominator was found before with using static libraries, which are supported on both platforms.
+Dynamic frameworks have always been available on OS X. That's different for iOS.
+Apple's mobile platform introduced third-party dynamic framework support in iOS 8.
+So the least common denominator was found before with using static libraries, which are supported on both platforms.
 
 To the same time when Dynamic Frameworks were introduced, Apple also introduced Swift. If you have third-party dependencies in Swift, you have only two choices: Either throw them in your project and compile one fat binary, which is no practical solution as this increases build times by the lack of incremental compilation and makes it hard to generically manage very different dependencies, which could require different build settings etc. Or you can facilitate frameworks. Static libraries are not an option anymore.
 
