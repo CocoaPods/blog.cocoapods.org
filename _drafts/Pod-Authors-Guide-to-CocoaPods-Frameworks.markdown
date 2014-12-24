@@ -6,7 +6,7 @@ categories: cocoapods releases
 ---
 
 TL;DR: _CocoaPods 0.36_ will bring the long-awaited support for Frameworks and Swift.
-It isn't released and considered stable yet, but a prerelease is now available for everyone via `[sudo] gem install cocoapods --pre`.
+It isn't released and considered stable yet, but a beta is now available for everyone via `[sudo] gem install cocoapods --pre`.
 Pod authors will especially want to try this version to make sure their pods will work with the upcoming release. This is because if a single dependency in a user's project requires being a framework, then your Pod will also become a framework.
 
 <!-- more -->
@@ -24,11 +24,11 @@ Therefore their module map is included in the built framework bundle.
 
 Names of Clang Modules are limited to be C99ext-identifiers. This means, they can only contain alphanumeric characters and underscores and may not begin with a number. Looking through the official spec repo, we discovered some popular pods, which don't match these requirements.
 
-Before you could already use `header_dir` as pod author to customize the name, which can be used to include your headers from the user target. E.g. if your pod is named `123BánànâKit`, you could set it to `BananaKit`, so it is available by `import <BananaKit/BananaKit.h>` instead of `#import <123BánànâKit/BananaKit.h>`.
+Before as a Pod author you could use `header_dir` to customize the name prefixing your headers from the user target. E.g. if your pod is named `123BánànâKit`, you could set it to `BananaKit`, it is available by `import <BananaKit/BananaKit.h>` instead of `#import <123BánànâKit/BananaKit.h>`.
 
-We are still supporting this usage, but also introducing a new attribute `module_name`, which you declare in your Podspecs. This new attribute has the advantage that it will be properly linted and verified, otherwise we will work from the the `header_dir` option. If either attribute is not present then we will work with the spec's name to match the Clang Module name requirements.
+We are still supporting this usage, but also introducing a new attribute `module_name`, which you declare in your Podspecs. This new attribute has the advantage that it will be properly linted and verified, otherwise we will work from the the `header_dir` option. If either attribute is not present then we will derive with the spec's name to match the Clang Module name requirements.
 
-To put in a nutshell, look at the following Swift snippet, which concisely express the way in which we decide a module name.
+To put in a nutshell, look at the following Swift snippet, which concisely expresses the way in which we decide a module name.
 
 ```swift
 //let c99ext_identifier: String -> String?
@@ -56,7 +56,7 @@ framework module BananaKit {
 
 This references only one file explicitly: the umbrella header.
 
-You can simply export the public API for your framework everything which was imported by the umbrella header and *all transitive imported* headers.
+You can export the public API for your framework inside a umbrella header and *all transitive imported* headers.
 Clang will take care making module exports that can be imported by Objective-C and Swift.
 
 ### What Means *Transitive Imported* In This Context?
@@ -103,7 +103,7 @@ Though it has always been a known pattern to have one public header, which impor
 
 For this reason, CocoaPods takes responsibility and generates a custom Umbrella Header (e.g. `Pods-iOS Example-AFNetworking-umbrella.h`). This is injected by a custom module map, so that we don't run into name ambiguities. Otherwise the default module map would assume it has the same name as the framework, which could already been taken.
 
-Our generated header imports all declared public headers. This also defines the `FOUNDATION_EXPORT`s for the versioning constants, with the name which is used by CocoaPods for the framework to integrate. Furthermore this avoids problems in some special cases: e.g. AFNetworking has a subspec, which provides categories for UIKit, which provides an own mass-import header `AFNetworking+UIKit.h`, which isn't imported by the `AFNetworking.h` header for OSX-compatibility.
+Our generated header imports all declared public headers. This also defines the `FOUNDATION_EXPORT`s for the versioning constants, with the name which is used by CocoaPods for the framework to integrate. Furthermore this avoids problems in some special cases: e.g. AFNetworking has a subspec, which provides categories for UIKit that has it's own mass-import header `AFNetworking+UIKit.h`, which isn't imported by the `AFNetworking.h` header for OSX-compatibility.
 
 To use this subspec in Swift, without a generated umbrella header, you would need to create a bridging header and use an import like `#import <AFNetworking/AFNetworking+UIKit.h`. With the generated umbrella header, you just need to `import AFNetworking`, if you have the subspec included in your Podfile. If your pod shouldn't work out of the box, you can use `pod lib lint --framework <YourPod.podspec>`, to check what is wrong. We tried that with different popular pods and sometimes ran into issues caused by misconfigured public headers.
 
