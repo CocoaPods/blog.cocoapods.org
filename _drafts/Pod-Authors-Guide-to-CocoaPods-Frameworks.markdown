@@ -185,6 +185,16 @@ You can include headers inside frameworks, **but not quoted headers**, which are
 +#import <monkey/monkey.h>
 ````
 
+#### Xcode oddities
+
+We have seen this error a few times during development.
+
+```
+<unknown>:0: error: could not build Objective-C module 'BananaKit'
+```
+
+An error like the above can generally be fixed by Cleaning your Derived Data ( `cmd + shift + k` in Xcode. )
+
 ## Updating
 
 To install the latest Release Candidate of CocoaPods you can run:
