@@ -3,6 +3,7 @@ layout: post
 title:  "Pod Authors Guide to CocoaPods Frameworks"
 author: marius
 categories: cocoapods releases
+date:       2014-12-25
 ---
 
 TL;DR: _CocoaPods 0.36_ will bring the long-awaited support for Frameworks and Swift.
