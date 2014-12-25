@@ -92,8 +92,7 @@ Their original purpose is to index all public headers of a directory to have a s
 
 * With **(Cocoa Touch) Frameworks**: they allow in addition quick access to versioning values defined in their Info.plist by on-the-fly generated C code. Therefore they have to define an interface to make them accessible. These are the constant declarations found in the Xcode template prefixed by `FOUNDATION_EXPORT`.
 * With **Clang modules**: they are used to define the public interface of a module.
-* With **Swift**: they are like Clang Modules, but also the bridging header which imports all what is needed from the (Objective-)C world.
-
+* With **Swift**: they are the bridging header for the framework module, which essentially means that all Objective-C code you're interfacing from Swift within your framework has to be part of it's public API.
 
 ### Current Situation with existing Podspecs
 
@@ -148,9 +147,28 @@ You can include headers inside frameworks, **but not quoted headers**, which are
 ```diff
 -#import "monkey.h"
 +#import <monkey/monkey.h>
-```
+````
 
-### Resources
+## Dynamic Frameworks vs. Static Libraries
+
+![Xcode Template/Product Icons]()
+
+So what's the difference between those both product types?
+
+Dynamic Frameworks are bundles, which basically means that they are directories, which have the file suffix `.framework` and Finder treats them mostly like regular files. If you tap into a framework, you will see a common directory structure:
+
+![Screenshot of BananaKit]()
+
+They bundle some further data besides a binary, which is in that case dynamically linkable and holds different slices for each architecture.
+But that's only part, which static libraries covered so far. Belong the further data, there are the following:
+
+* **The Public Headers** - These are stripped for application targets, as they are only important to distribute the framework as code for compilation. The public headers also include the generated headers for public Swift symbols, e.g. `Alamofire-Swift.h`.
+* **A Code Signature For The Whole Contents** - This has to be (re-)calculated on embedding a framework into an application target, as the headers are stripped before.
+* **Its Resources** - The resources used e.g. Images for UI components.
+* **Hosted Dynamic Frameworks and Libraries** - This can be the case for so called Umbrella Frameworks provided by Apple. There is no use-case, where this happens with CocoaPods.
+* **The Clang Module Map** - This is mostly an internal toolchain artifact, which carries declarations about header visibility and module link-ability.
+* **An Info.plist** - This specifies author, version and copyright information.
+
 
 One caveat about bundling resources is, that until now we had to embed all resources into the application bundle. These resources were referenced programmatically by `[NSBundle mainBundle]`.
 
