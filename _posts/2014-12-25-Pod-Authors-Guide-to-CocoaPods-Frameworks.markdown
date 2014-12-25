@@ -47,10 +47,10 @@ Pod authors were able to use `mainBundle` referencing to include resources the P
 But with frameworks, you have to make sure that you reference them more specifically by getting a reference to your framework's bundle e.g.
 
 ```objective-c
+# in Objective-C
 [NSBundle bundleForClass:<#ClassFromPodspec#>]
-```
 
-```c
+# or in swift
 NSBundle(forClass: <#ClassFromPodspec#>)
 ```
 
@@ -199,13 +199,13 @@ An error like above can appear, if you develop a framework in Xcode, and you alt
 
 ## Updating
 
-To install the latest Release Candidate of CocoaPods you can run:
+To install the latest Beta of CocoaPods you can run:
 
 ```bash
 $ [sudo] gem install cocoapods --prerelease
 ```
 
-Until version 1.0 we strongly encourage you to keep CocoaPods up-to-date.
+Until version 1.0 we strongly encourage you to keep CocoaPods up-to-date. For more user facing changes, you can take a look at our [upcoming official release blog post](https://github.com/CocoaPods/blog.cocoapods.org/pull/59).
 
 For all the details, take a look into the
 [PR](https://github.com/CocoaPods/CocoaPods/pull/2835)!
