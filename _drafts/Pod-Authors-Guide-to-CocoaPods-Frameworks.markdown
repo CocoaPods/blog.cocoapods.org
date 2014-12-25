@@ -193,7 +193,8 @@ We have seen this error a few times during development.
 <unknown>:0: error: could not build Objective-C module 'BananaKit'
 ```
 
-An error like the above can generally be fixed by Cleaning your Derived Data ( `cmd + shift + k` in Xcode. )
+An error like above can appear, if you develop a framework in Xcode, and you alter header visibility to fix build problems like described previously and try to ensure a clean build state by executing the Clean action (**⌘+
+⇧+K** in Xcode). In this situation, it can be helpful to nuke the products build directory (alas `DerivedData`) manually from the file system.
 
 ## Updating
 
