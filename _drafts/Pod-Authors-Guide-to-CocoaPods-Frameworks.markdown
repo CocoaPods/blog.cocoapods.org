@@ -18,7 +18,43 @@ This is to make the entire integration inspectable, understandable and allows us
 
 A lot of the tools play only nice together in an Xcode environment where certain build variables are present.
 Cocoa Touch Frameworks use Clang Modules, which are also required to import and link them to your Swift app.
-Therefore their module map is included in the built framework bundle.
+Therefore the module map is included in the built framework bundle.
+
+## Dynamic Frameworks vs. Static Libraries
+
+So what's the difference between those both product types?
+
+Dynamic Frameworks are bundles, which basically means that they are directories with the file suffix `.framework` and Finder treats them mostly like regular files. If you tap into a framework, you will see a common directory structure:
+
+{% breaking_image /assets/blog_img/Frameworks-Developers/bananakit_framework.png %}
+
+They bundle some further data besides a binary, which is in that case dynamically linkable and holds different slices for each architecture. Up to this point it is the same as a static library. However, a framework holds further data, there are the following:
+
+* **The Public Headers** - These are stripped for application targets, as they are only important to distribute the framework as code for compilation. The public headers also include the generated headers for public Swift symbols, e.g. `Alamofire-Swift.h`.
+* **A Code Signature For The Whole Contents** - This has to be (re-)calculated on embedding a framework into an application target, as the headers are stripped before.
+* **Its Resources** - The resources used e.g. Images for UI components.
+* **Hosted Dynamic Frameworks and Libraries** - This can be the case for so called Umbrella Frameworks provided by Apple. There are no use-cases where this happens with CocoaPods.
+* **The Clang Module Map** - This is mostly an internal toolchain artifact, which carries declarations about header visibility and module link-ability.
+* **An Info.plist** - This specifies author, version and copyright information.
+
+
+One caveat about bundling resources is, that until now we had to embed all resources into the application bundle. These resources were referenced programmatically by `[NSBundle mainBundle]`.
+
+Pod authors were able to use `mainBundle` referencing to include resources the Pod brought into the app bundle.
+But with frameworks, you have to make sure that you reference them more specifically by getting a reference to your framework's bundle e.g.
+
+```objective-c
+[NSBundle bundleForClass:<#ClassFromPodspec#>]
+```
+
+```c
+NSBundle(forClass: <#ClassFromPodspec#>)
+```
+
+This will then work for both frameworks and static libraries. There very few cases where you want to reference the main bundle directly or indirectly, e.g. by using `[UIImage imageNamed:]`.
+
+The advantage to the improved resource handling is that resources won't conflict when they have the same names as they are namespaced by the framework bundle.
+Furthermore we don't have to apply the build rules ourself to the resources as e.g. asset catalogs and storyboards need to be compiled. This should decrease build times for project using Pods that include many resources.
 
 ### Module Names
 
@@ -30,7 +66,7 @@ We are still supporting this usage, but also introducing a new attribute `module
 
 To put in a nutshell, look at the following Swift snippet, which concisely expresses the way in which we decide a module name.
 
-```swift
+```c
 //let c99ext_identifier: String -> String?
 func module_name(spec: Specification) -> String {
   return spec.module_name
@@ -42,7 +78,7 @@ func module_name(spec: Specification) -> String {
 ### Module Maps
 
 A Module Map is a declaration of the headers, which form the public (or private) interface of a Clang Module.
-Luckily, those have been designed so that they can stay in the background and the developer can faciliate known and existing structures, without having to learn their DSL.
+Luckily, those have been designed so that they can stay in the background and the developer can faciliate known and existing structures, without having to learn the DSL.
 The default modulemap looks basically always the same:
 
 ```c
@@ -88,7 +124,7 @@ FOUNDATION_EXPORT double BananaKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char BananaKitVersionString[];
 ```
 
-Their original purpose is to index all public headers of a directory to have a shorthand for imports/includes to access the full API of a library. Over time they began to cover more and more purposes:
+The original purpose is to index all public headers of a directory to have a shorthand for imports/includes to access the full API of a library. Over time they began to cover more and more purposes:
 
 * With **(Cocoa Touch) Frameworks**: they allow in addition quick access to versioning values defined in their Info.plist by on-the-fly generated C code. Therefore they have to define an interface to make them accessible. These are the constant declarations found in the Xcode template prefixed by `FOUNDATION_EXPORT`.
 * With **Clang modules**: they are used to define the public interface of a module.
@@ -138,9 +174,7 @@ If you have an header like this:
 
 And you get an error like below, don't let it fool you.
 
-```
-Include of non-modular header inside framework module 'BananaKit.BKBananaFruit'
-```
+{% breaking_image /assets/blog_img/Frameworks-Developers/bananakit-error-non-modular-headers.png %}
 
 You can include headers inside frameworks, **but not quoted headers**, which are not in scope of the framework's public headers. So you have two choices in this case: Either make the header `BKBananaFruit.h` private by excluding it from the public header declaration or use a system import to import the monkey.
 
@@ -148,45 +182,6 @@ You can include headers inside frameworks, **but not quoted headers**, which are
 -#import "monkey.h"
 +#import <monkey/monkey.h>
 ````
-
-## Dynamic Frameworks vs. Static Libraries
-
-![Xcode Template/Product Icons]()
-
-So what's the difference between those both product types?
-
-Dynamic Frameworks are bundles, which basically means that they are directories, which have the file suffix `.framework` and Finder treats them mostly like regular files. If you tap into a framework, you will see a common directory structure:
-
-![Screenshot of BananaKit]()
-
-They bundle some further data besides a binary, which is in that case dynamically linkable and holds different slices for each architecture.
-But that's only part, which static libraries covered so far. Belong the further data, there are the following:
-
-* **The Public Headers** - These are stripped for application targets, as they are only important to distribute the framework as code for compilation. The public headers also include the generated headers for public Swift symbols, e.g. `Alamofire-Swift.h`.
-* **A Code Signature For The Whole Contents** - This has to be (re-)calculated on embedding a framework into an application target, as the headers are stripped before.
-* **Its Resources** - The resources used e.g. Images for UI components.
-* **Hosted Dynamic Frameworks and Libraries** - This can be the case for so called Umbrella Frameworks provided by Apple. There is no use-case, where this happens with CocoaPods.
-* **The Clang Module Map** - This is mostly an internal toolchain artifact, which carries declarations about header visibility and module link-ability.
-* **An Info.plist** - This specifies author, version and copyright information.
-
-
-One caveat about bundling resources is, that until now we had to embed all resources into the application bundle. These resources were referenced programmatically by `[NSBundle mainBundle]`.
-
-Pod authors were able to use `mainBundle` referencing to include resources the Pod brought into the app bundle.
-But with frameworks, you have to make sure that you reference them more specifically by getting a reference to your framework's bundle e.g.
-
-```objective-c
-[NSBundle bundleForClass:<#ClassFromPodspec#>]
-```
-
-```swift
-NSBundle(forClass: <#ClassFromPodspec#>)
-```
-
-This will then work for both frameworks and static libraries. There very few cases where you want to reference the main bundle directly or indirectly, e.g. by using `[UIImage imageNamed:]`.
-
-The advantage to the improved resource handling is that resources won't conflict when they have the same names as they are namespaced by the framework bundle.
-Furthermore we don't have to apply the build rules ourself to the resources as e.g. asset catalogs and storyboards need to be compiled. This should decrease build times for project using Pods that include many resources.
 
 ## Updating
 
