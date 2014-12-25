@@ -36,7 +36,7 @@ They bundle some further data besides a binary, which is in that case dynamicall
 * **A Code Signature For The Whole Contents** - This has to be (re-)calculated on embedding a framework into an application target, as the headers are stripped before.
 * **Its Resources** - The resources used e.g. Images for UI components.
 * **Hosted Dynamic Frameworks and Libraries** - This can be the case for so called Umbrella Frameworks provided by Apple. There are no use-cases where this happens with CocoaPods.
-* **The Clang Module Map** - This is mostly an internal toolchain artifact, which carries declarations about header visibility and module link-ability.
+* **The Clang Module Map** and **the Swift modules** - These are mostly internal toolchain artifacts, which carry declarations about API / header visibility and module link-ability.
 * **An Info.plist** - This specifies author, version and copyright information.
 
 
