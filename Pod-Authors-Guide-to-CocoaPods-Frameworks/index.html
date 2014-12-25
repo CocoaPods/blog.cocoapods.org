@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+      <title>Pod Authors Guide to CocoaPods Frameworks - CocoaPods Blog</title>
+    
+
+    <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <link rel="alternate" type="application/rss+xml" title="CocoaPods Blog" href="/feed.xml">
+
+    <meta charset="utf-8" /><meta content="cocoapods objective-c objc swift package manager libraries documentation search pods podspec podfile cocoa apple ios library" name="keywords" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="The Dependency Manager for iOS &amp; Mac projects" name="description" /><meta content="CocoaPods Dev Team" name="author" /><meta content="summary" name="twitter:card" /><meta content="@CocoaPods" name="twitter:site" /><meta content="@CocoaPods" name="twitter:creator" /><meta content="CocoaPods" name="twitter:title" /><meta content="The Dependency Manager for iOS &amp; Mac projects." name="twitter:description" /><meta content="https://www.cocoapods.org/" name="twitter:url" />
+    <link rel="shortcut icon" href="http://cocoapods.org/favicons/favicon.ico" type="image/x-icon" /><link rel="apple-touch-icon" href="http://cocoapods.org/favicons/apple-touch-icon.png" /><link rel="apple-touch-icon" sizes="57x57" href="http://cocoapods.org/favicons/apple-touch-icon-57x57.png" /><link rel="apple-touch-icon" sizes="60x60" href="http://cocoapods.org/favicons/apple-touch-icon-60x60.png" /><link rel="apple-touch-icon" sizes="72x72" href="http://cocoapods.org/favicons/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon" sizes="76x76" href="http://cocoapods.org/favicons/apple-touch-icon-76x76.png" /><link rel="apple-touch-icon" sizes="114x114" href="http://cocoapods.org/favicons/apple-touch-icon-114x114.png" /><link rel="apple-touch-icon" sizes="120x120" href="http://cocoapods.org/favicons/apple-touch-icon-120x120.png" /><link rel="apple-touch-icon" sizes="144x144" href="http://cocoapods.org/favicons/apple-touch-icon-144x144.png" /><link rel="apple-touch-icon" sizes="152x152" href="http://cocoapods.org/favicons/apple-touch-icon-152x152.png" />
+
+    <link rel="stylesheet" href="/assets/bootstrap-87270f5e5c31201f334e98fd5ca08aba.css">
+    <link rel="stylesheet" href="/assets/main-61a6400d263e109a7ef4e57a53db14ac.css">
+    <link rel="stylesheet" href="/assets/blog-d12bb4b17c18584e9e72cc8ce2e9608d.css">
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-29866548-3', 'cocoapods.org');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="glyphicon glyphicon-plus"></span></button><a class="navbar-brand" href="http://cocoapods.org"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://cocoapods.org/about">About</a></li><li><a href="http://guides.cocoapods.org">Guides</a></li><li class="active"><a href="http://blog.cocoapods.org">Blog</a></li></ul></div></section></nav>
+
+    <div id ="">
+<section class="container" >
+  <article class="row">
+  <header class="col-md-8 col-md-offset-2 headline blog-post">
+    
+      <h1>Pod Authors Guide to CocoaPods Frameworks</h1>
+    
+    
+  </header>
+  </article>
+</section>
+</div>
+
+<section id="content-wrapper" class="post">
+  <section class="container">
+    <article class="row">
+      <article class="author metadata col-md-2 col-md-push-10">
+        <header>
+          
+            
+              <img class="gravatar large" src="http://gravatar.com/avatar/ca018f2258eadef2d02f5dcea5c25b88?s=144" height=72 width=72>
+            
+            
+              
+                <p><a href="http://twitter.com/mrackwitz">Marius Rackwitz</a></p>
+              
+            
+             <p>25 December 2014</p>
+
+            
+              <a href="https://twitter.com/mrackwitz" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @mrackwitz
+              </a>
+            
+        </header>
+      </article>
+    
+      <article class="content col-md-8">
+        <p>TL;DR: <em>CocoaPods 0.36</em> will bring the long-awaited support for Frameworks and Swift.
+It isn&#39;t released and considered stable yet, but a beta is now available for everyone via <code>[sudo] gem install cocoapods --pre</code>.
+Pod authors will especially want to try this version to make sure their pods will work with the upcoming release. This is because if a single dependency in a user&#39;s project requires being a framework, then your Pod will also become a framework.</p>
+
+<!-- more -->
+
+<h2>What is special about Frameworks integrated by CocoaPods?</h2>
+
+<p>With CocoaPods, Frameworks are mostly setup in way similar to how it is done via Xcode.
+This is to make the entire integration inspectable, understandable and allows us to unleash the power of the whole existing toolchain.</p>
+
+<p>A lot of the tools play only nice together in an Xcode environment where certain build variables are present.
+Cocoa Touch Frameworks use Clang Modules, which are also required to import and link them to your Swift app.
+Therefore the module map is included in the built framework bundle.</p>
+
+<p></article>
+</div>
+</section>
+<div style="background-color:white;">
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='/assets/blog_img/Frameworks-Developers/frameworks_vs_libraries.png '><img  src='/assets/blog_img/Frameworks-Developers/frameworks_vs_libraries.png '></a></center></article>
+</div>
+</section>
+</div>
+<section class="container">
+<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
+
+<h2>Dynamic Frameworks vs. Static Libraries</h2>
+
+<p>So what&#39;s the difference between those both product types?</p>
+
+<p>Dynamic Frameworks are bundles, which basically means that they are directories with the file suffix <code>.framework</code> and Finder treats them mostly like regular files. If you tap into a framework, you will see a common directory structure:</p>
+
+<p></article>
+</div>
+</section>
+<div style="background-color:white;">
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='/assets/blog_img/Frameworks-Developers/bananakit_framework.png '><img  src='/assets/blog_img/Frameworks-Developers/bananakit_framework.png '></a></center></article>
+</div>
+</section>
+</div>
+<section class="container">
+<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
+
+<p>They bundle some further data besides a binary, which is in that case dynamically linkable and holds different slices for each architecture. Up to this point it is the same as a static library. However, a framework holds further data, there are the following:</p>
+
+<ul>
+<li><strong>The Public Headers</strong> - These are stripped for application targets, as they are only important to distribute the framework as code for compilation. The public headers also include the generated headers for public Swift symbols, e.g. <code>Alamofire-Swift.h</code>.</li>
+<li><strong>A Code Signature For The Whole Contents</strong> - This has to be (re-)calculated on embedding a framework into an application target, as the headers are stripped before.</li>
+<li><strong>Its Resources</strong> - The resources used e.g. Images for UI components.</li>
+<li><strong>Hosted Dynamic Frameworks and Libraries</strong> - This can be the case for so called Umbrella Frameworks provided by Apple. There are no use-cases where this happens with CocoaPods.</li>
+<li><strong>The Clang Module Map</strong> and <strong>the Swift modules</strong> - These are mostly internal toolchain artifacts, which carry declarations about API / header visibility and module link-ability.</li>
+<li><strong>An Info.plist</strong> - This specifies author, version and copyright information.</li>
+</ul>
+
+<p>One caveat about bundling resources is, that until now we had to embed all resources into the application bundle. These resources were referenced programmatically by <code>[NSBundle mainBundle]</code>.</p>
+
+<p>Pod authors were able to use <code>mainBundle</code> referencing to include resources the Pod brought into the app bundle.
+But with frameworks, you have to make sure that you reference them more specifically by getting a reference to your framework&#39;s bundle e.g.</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="objective-c language-objective-c" data-lang="objective-c"><span class="p">[</span><span class="n">NSBundle</span> <span class="n">bundleForClass</span><span class="o">:&lt;</span><span class="err">#</span><span class="n">ClassFromPodspec</span><span class="err">#</span><span class="o">&gt;</span><span class="p">]</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div><div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="c language-c" data-lang="c"><span class="n">NSBundle</span><span class="p">(</span><span class="n">forClass</span><span class="o">:</span> <span class="o">&lt;</span><span class="err">#</span><span class="n">ClassFromPodspec</span><span class="err">#</span><span class="o">&gt;</span><span class="p">)</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>This will then work for both frameworks and static libraries. There very few cases where you want to reference the main bundle directly or indirectly, e.g. by using <code>[UIImage imageNamed:]</code>.</p>
+
+<p>The advantage to the improved resource handling is that resources won&#39;t conflict when they have the same names as they are namespaced by the framework bundle.
+Furthermore we don&#39;t have to apply the build rules ourself to the resources as e.g. asset catalogs and storyboards need to be compiled. This should decrease build times for project using Pods that include many resources.</p>
+
+<h3>Module Names</h3>
+
+<p>Names of Clang Modules are limited to be C99ext-identifiers. This means, they can only contain alphanumeric characters and underscores and may not begin with a number. Looking through the official spec repo, we discovered some popular pods, which don&#39;t match these requirements.</p>
+
+<p>Before as a Pod author you could use <code>header_dir</code> to customize the name prefixing your headers from the user target. E.g. if your pod is named <code>123BánànâKit</code>, you could set it to <code>BananaKit</code>, it is available by <code>import &lt;BananaKit/BananaKit.h&gt;</code> instead of <code>#import &lt;123BánànâKit/BananaKit.h&gt;</code>.</p>
+
+<p>We are still supporting this usage, but also introducing a new attribute <code>module_name</code>, which you declare in your Podspecs. This new attribute has the advantage that it will be properly linted and verified, otherwise we will work from the the <code>header_dir</code> option. If either attribute is not present then we will derive with the spec&#39;s name to match the Clang Module name requirements.</p>
+
+<p>To put in a nutshell, look at the following Swift snippet, which concisely expresses the way in which we decide a module name.</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="c language-c" data-lang="c"><span class="c1">//let c99ext_identifier: String -&gt; String?</span>
+<span class="n">func</span> <span class="n">module_name</span><span class="p">(</span><span class="n">spec</span><span class="o">:</span> <span class="n">Specification</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">String</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">spec</span><span class="p">.</span><span class="n">module_name</span>
+    <span class="o">??</span> <span class="n">c99ext_identifier</span><span class="p">(</span><span class="n">spec</span><span class="p">.</span><span class="n">header_dir</span><span class="p">)</span>
+    <span class="o">??</span> <span class="n">c99ext_identifier</span><span class="p">(</span><span class="n">spec</span><span class="p">.</span><span class="n">name</span><span class="p">)</span><span class="o">!</span>
+<span class="p">}</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<h3>Module Maps</h3>
+
+<p>A Module Map is a declaration of the headers, which form the public (or private) interface of a Clang Module.
+Luckily, those have been designed so that they can stay in the background and the developer can faciliate known and existing structures, without having to learn the DSL.
+The default modulemap looks basically always the same:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="c language-c" data-lang="c"><span class="n">framework</span> <span class="n">module</span> <span class="n">BananaKit</span> <span class="p">{</span>
+  <span class="n">umbrella</span> <span class="n">header</span> <span class="s">&quot;BananaKit.h&quot;</span>
+
+  <span class="n">export</span> <span class="o">*</span>
+  <span class="n">module</span> <span class="o">*</span> <span class="p">{</span> <span class="n">export</span> <span class="o">*</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>This references only one file explicitly: the umbrella header.</p>
+
+<p>You can export the public API for your framework inside a umbrella header and <em>all transitive imported</em> headers.
+Clang will take care making module exports that can be imported by Objective-C and Swift.</p>
+
+<h3>What Means <em>Transitive Imported</em> In This Context?</h3>
+
+<p>Transitive relations are a <a href="http://en.wikipedia.org/wiki/Transitive_relation">concept from mathematics</a>:</p>
+
+<blockquote>
+<p>Whenever an element <em>a</em> is related to an element <em>b</em>, and <em>b</em> is in turn related to an element <em>c</em>, then <em>a</em> is also related to <em>c</em>.</p>
+</blockquote>
+
+<p>We have here the binary relation of a header file, which imports another header file.
+The transitive closure means that all headers, which are imported by header files, which you have imported from a certain file are indirectly imported to that file, too. That&#39;s also the same for all header files, which are imported by the collection of those headers.
+Surely, you know this property from your app target, whenever you import a header, which imports other headers, the classes and symbols, which are defined there, are also available in your app code.
+The same has to apply for import statements in Umbrella Headers and effect the module visibility with Clang modules.</p>
+
+<h3>What are Umbrella Headers?</h3>
+
+<p>For our example it could look like this:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="c language-c" data-lang="c"><span class="cp">#import &lt;Foundation/Foundation.h&gt;</span>
+
+<span class="err">@</span><span class="n">import</span> <span class="n">Monkey</span><span class="p">;</span>
+
+<span class="cp">#import &quot;BKBananaFruit.h&quot;</span>
+<span class="cp">#import &quot;BKBananaPalmTree.h&quot;</span>
+<span class="cp">#import &quot;BKBananaPalmTreeLeaf.h&quot;</span>
+
+<span class="n">FOUNDATION_EXPORT</span> <span class="kt">double</span> <span class="n">BananaKitVersionNumber</span><span class="p">;</span>
+<span class="n">FOUNDATION_EXPORT</span> <span class="k">const</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">BananaKitVersionString</span><span class="p">[];</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>The original purpose is to index all public headers of a directory to have a shorthand for imports/includes to access the full API of a library. Over time they began to cover more and more purposes:</p>
+
+<ul>
+<li>With <strong>(Cocoa Touch) Frameworks</strong>: they allow in addition quick access to versioning values defined in their Info.plist by on-the-fly generated C code. Therefore they have to define an interface to make them accessible. These are the constant declarations found in the Xcode template prefixed by <code>FOUNDATION_EXPORT</code>.</li>
+<li>With <strong>Clang modules</strong>: they are used to define the public interface of a module.</li>
+<li>With <strong>Swift</strong>: they are the bridging header for the framework module, which essentially means that all Objective-C code you&#39;re interfacing from Swift within your framework has to be part of it&#39;s public API.</li>
+</ul>
+
+<h3>Current Situation with existing Podspecs</h3>
+
+<p>There has never been a declarable Umbrella Header in Xcode. So Pod authors have never had to specify one.</p>
+
+<p>Though it has always been a known pattern to have one public header, which imports <em>all</em> other public headers <em>transitively</em>. This isn&#39;t always the case.</p>
+
+<p>For this reason, CocoaPods takes responsibility and generates a custom Umbrella Header (e.g. <code>Pods-iOS Example-AFNetworking-umbrella.h</code>). This is injected by a custom module map, so that we don&#39;t run into name ambiguities. Otherwise the default module map would assume it has the same name as the framework, which could already been taken.</p>
+
+<p>Our generated header imports all declared public headers. This also defines the <code>FOUNDATION_EXPORT</code>s for the versioning constants, with the name which is used by CocoaPods for the framework to integrate. Furthermore this avoids problems in some special cases: e.g. AFNetworking has a subspec, which provides categories for UIKit that has it&#39;s own mass-import header <code>AFNetworking+UIKit.h</code>, which isn&#39;t imported by the <code>AFNetworking.h</code> header for OSX-compatibility.</p>
+
+<p>To use this subspec in Swift, without a generated umbrella header, you would need to create a bridging header and use an import like <code>#import &lt;AFNetworking/AFNetworking+UIKit.h</code>. With the generated umbrella header, you just need to <code>import AFNetworking</code>, if you have the subspec included in your Podfile. If your pod shouldn&#39;t work out of the box, you can use <code>pod lib lint --framework &lt;YourPod.podspec&gt;</code>, to check what is wrong. We tried that with different popular pods and sometimes ran into issues caused by misconfigured public headers.</p>
+
+<h4>About Public Headers</h4>
+
+<p>Public Headers in Podspecs are declared by <code>s.public_header_files = [&quot;Core/*.h&quot;, &quot;Tree/**.h&quot;]</code>.</p>
+
+<p>If you don&#39;t include this specification, then all your headers would be public.
+This isn&#39;t recommeded in the most of the cases.</p>
+
+<p>Generally you should make sure that you have self-contained headers and those only expose the parts of your implementation which is consumed by your Pods users. This has several advantages:</p>
+
+<ul>
+<li>It allows you to refactor the private implementation part without necessarily releasing a major update, which makes the version migration easier and allows you to focus on further improving your pod instead of explain your users how the API has changed.</li>
+<li>It impedes misusage, because you would need to modify header access to use or manipulate classes or properties, which are not intended to be used externally.</li>
+</ul>
+
+<h4>Common Header Pitfalls</h4>
+
+<p>If you have an header like this:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="objectivec language-objectivec" data-lang="objectivec"><span class="c1">/// BKBananaFruit.h</span>
+
+<span class="cp">#import &quot;BKBananaTree.h&quot;</span>
+<span class="cp">#import &quot;monkey.h&quot;</span>
+
+<span class="k">@interface</span> <span class="nc">BKBananaFruit</span>
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">weak</span><span class="p">)</span> <span class="n">BKBananaTree</span> <span class="o">*</span><span class="n">tree</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">peel:</span><span class="p">(</span><span class="n">Monkey</span> <span class="o">*</span><span class="p">)</span><span class="nv">monkey</span><span class="p">;</span>
+<span class="k">@end</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>And you get an error like below, don&#39;t let it fool you.</p>
+
+<p></article>
+</div>
+</section>
+<div style="background-color:white;">
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='/assets/blog_img/Frameworks-Developers/bananakit-error-non-modular-headers.png '><img  src='/assets/blog_img/Frameworks-Developers/bananakit-error-non-modular-headers.png '></a></center></article>
+</div>
+</section>
+</div>
+<section class="container">
+<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
+
+<p>You can include headers inside frameworks, <strong>but not quoted headers</strong>, which are not in scope of the framework&#39;s public headers. So you have two choices in this case: Either make the header <code>BKBananaFruit.h</code> private by excluding it from the public header declaration or use a system import to import the monkey.</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="diff language-diff" data-lang="diff"><span class="gd">-#import &quot;monkey.h&quot;</span>
+<span class="gi">+#import &lt;monkey/monkey.h&gt;</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<h4>Xcode oddities</h4>
+
+<p>We have seen this error a few times during development.</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="text language-text" data-lang="text">&lt;unknown&gt;:0: error: could not build Objective-C module &#39;BananaKit&#39;
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>An error like above can appear, if you develop a framework in Xcode, and you alter header visibility to fix build problems like described previously and try to ensure a clean build state by executing the Clean action (<strong>⌘+
+⇧+K</strong> in Xcode). In this situation, it can be helpful to nuke the products build directory (alas <code>DerivedData</code>) manually from the file system.</p>
+
+<h2>Updating</h2>
+
+<p>To install the latest Release Candidate of CocoaPods you can run:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="bash language-bash" data-lang="bash"><span class="nv">$ </span><span class="o">[</span>sudo<span class="o">]</span> gem install cocoapods --prerelease
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Until version 1.0 we strongly encourage you to keep CocoaPods up-to-date.</p>
+
+<p>For all the details, take a look into the
+<a href="https://github.com/CocoaPods/CocoaPods/pull/2835">PR</a>!</p>
+
+      </article>
+    </article>
+  </section>
+</section>
+
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2014-12-25-Pod-Authors-Guide-to-CocoaPods-Frameworks.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/ca018f2258eadef2d02f5dcea5c25b88" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/mrackwitz">Follow mrackwitz</a></div></article></div></section></section>
+
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/search-engine" title="Search Engine"><header><h4>Previous Post</h4></header><h3>Search Engine</h3><p>By Florian Hanke</p><a class="chevron_placeholder back" href="/search-engine"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+    <footer class="page-footer"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><h4>CocoaPods is a project from</h4><p class="contributors"><a href="https://twitter.com/alloy">Eloy Durán</a>,&nbsp;<a href="https://twitter.com/fabiopelosin">Fabio Pelosin</a>,&nbsp;<a href="http://orta.github.io">Orta Therox</a>&nbsp;and&nbsp;<a href="http://cocoapods.org/about">The CocoaPods Dev Team</a>&nbsp;with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p><h4>Lovingly sponsored by</h4><p class="sponsors"><a href="http://artsy.net">Artsy</a>,<a href="http://discontinuity.eu"> Discontinuity</a>,<a href="http://www.fngtps.com"> Fingertips</a>,<a href="https://www.heroku.com"> Heroku</a>,<a href="http://www.rubymotion.com"> RubyMotion</a>,<a href="https://www.sauspiel.de"> Sauspiel</a>,<a href="https://www.slack.com"> Slack</a>,<a href="https://www.soundcloud.com"> SoundCloud</a>,<a href="https://www.stripe.com"> Stripe</a> and<a href="http://www.technologyastronauts.ch"> Technology&nbsp;Astronauts</a>.</p></article></div></section></footer><footer class="footer-links"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><a class="cocoapods-small-logo" href="http://cocoapods.org"></a><ul><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://guides.cocoapods.org/using/troubleshooting.html">Support</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://github.com/CocoaPods/CocoaPods">Github Repo</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://github.com/CocoaPods/Specs">Podspecs Repo</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://twitter.com/CocoaPods">@CocoaPods</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://groups.google.com/group/cocoapods">Mailing List</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://cocoapods.org/about"><span class="visible-lg-span">CocoaPods</span> Dev Team</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://guides.cocoapods.org/syntax/podfile.html">Podfile Doc<span class="hidden-lg-span">s</span><span class="visible-lg-span">umentation</span></a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://cocoapods.org/legal">Legal / Conduct</a></li></ul></article></div></section></footer>
+    <script src="/assets/blog-dceaff1298175a761feee48796373314.js"></script>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  </body>
+</html>

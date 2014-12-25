@@ -8,6 +8,24 @@
     
     
     <item>
+      <title>Pod Authors Guide to CocoaPods Frameworks</title>
+
+      
+      <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 0.36&lt;/em&gt; will bring the long-awaited support for Frameworks and Swift.
+It isn&amp;#39;t released and considered stable yet, but a beta is now available for everyone via &lt;code&gt;[sudo] gem install cocoapods --pre&lt;/code&gt;.
+Pod authors will especially want to try this version to make sure their pods will work with the upcoming release. This is because if a single dependency in a user&amp;#39;s project requires being a framework, then your Pod will also become a framework.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Thu, 25 Dec 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>Search Engine</title>
 
       
@@ -86,7 +104,7 @@ We have a new &lt;em&gt;metrics&lt;/em&gt; API that you can now use.&lt;/p&gt;
 </description>  
       
 
-      <pubDate>Sat, 25 Oct 2014 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 25 Oct 2014 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/starting-open-source</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/starting-open-source</guid>
     </item>
@@ -106,7 +124,7 @@ We have a new &lt;em&gt;metrics&lt;/em&gt; API that you can now use.&lt;/p&gt;
 </description>  
       
 
-      <pubDate>Wed, 22 Oct 2014 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 22 Oct 2014 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/Coins</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/Coins</guid>
     </item>
@@ -127,7 +145,7 @@ and faster downloads.&lt;/p&gt;
 </description>  
       
 
-      <pubDate>Fri, 26 Sep 2014 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 26 Sep 2014 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/CocoaPods-0.34</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.34</guid>
     </item>
@@ -145,7 +163,7 @@ and faster downloads.&lt;/p&gt;
 </description>  
       
 
-      <pubDate>Thu, 26 Jun 2014 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 26 Jun 2014 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/Pod-Lib-Create</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/Pod-Lib-Create</guid>
     </item>
@@ -165,7 +183,7 @@ and faster downloads.&lt;/p&gt;
 </description>  
       
 
-      <pubDate>Thu, 12 Jun 2014 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 12 Jun 2014 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/Hackathon-Summary</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/Hackathon-Summary</guid>
     </item>
@@ -184,7 +202,7 @@ As part of the project, I will also be writing a language-agnostic test suite to
 </description>  
       
 
-      <pubDate>Mon, 09 Jun 2014 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 09 Jun 2014 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/Stripe-Open-Source-Retreat</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/Stripe-Open-Source-Retreat</guid>
     </item>
@@ -208,7 +226,7 @@ As part of the project, I will also be writing a language-agnostic test suite to
 </description>  
       
 
-      <pubDate>Sat, 31 May 2014 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 31 May 2014 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/Pod-Roulette-Hackathon</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/Pod-Roulette-Hackathon</guid>
     </item>
@@ -224,7 +242,7 @@ As part of the project, I will also be writing a language-agnostic test suite to
 </description>  
       
 
-      <pubDate>Mon, 26 May 2014 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 26 May 2014 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/CocoaDocs2-Launch</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/CocoaDocs2-Launch</guid>
     </item>
@@ -244,7 +262,7 @@ hosting the session.&lt;/p&gt;
 </description>  
       
 
-      <pubDate>Fri, 23 May 2014 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 23 May 2014 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/CocoaPods-AltLabs</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-AltLabs</guid>
     </item>
@@ -261,7 +279,7 @@ for our community… the support for CocoaPods Trunk.&lt;/em&gt;&lt;/p&gt;
 </description>  
       
 
-      <pubDate>Wed, 21 May 2014 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 21 May 2014 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/CocoaPods-0.33</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.33</guid>
     </item>
@@ -322,7 +340,7 @@ which is just days before WWDC kicks-off.&lt;/p&gt;
 </description>  
       
 
-      <pubDate>Fri, 02 May 2014 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 02 May 2014 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/Cocoa-Kucha-4</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/Cocoa-Kucha-4</guid>
     </item>
@@ -338,7 +356,7 @@ which is just days before WWDC kicks-off.&lt;/p&gt;
 </description>  
       
 
-      <pubDate>Mon, 21 Apr 2014 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 21 Apr 2014 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/CocoaPods-WWDC-Party</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-WWDC-Party</guid>
     </item>
@@ -355,7 +373,7 @@ command and a galore of improvements. Including the ability to deprecate pods.&l
 </description>  
       
 
-      <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 15 Apr 2014 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/CocoaPods-0.32</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.32</guid>
     </item>
@@ -375,7 +393,7 @@ command and a galore of improvements. Including the ability to deprecate pods.&l
 </description>  
       
 
-      <pubDate>Tue, 01 Apr 2014 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 01 Apr 2014 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/Big-News</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/Big-News</guid>
     </item>
@@ -391,7 +409,7 @@ command and a galore of improvements. Including the ability to deprecate pods.&l
 </description>  
       
 
-      <pubDate>Mon, 31 Mar 2014 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 31 Mar 2014 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/CocoaPods-0.31</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.31</guid>
     </item>
@@ -702,7 +720,7 @@ headers location on OS X (Mountain Lion &lt;em&gt;and&lt;/em&gt; Mavericks).&lt;
 </description>  
       
 
-      <pubDate>Thu, 24 Oct 2013 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 24 Oct 2013 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/CocoaPods-0.27-and-improved-installation-UX</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.27-and-improved-installation-UX</guid>
     </item>
@@ -718,7 +736,7 @@ headers location on OS X (Mountain Lion &lt;em&gt;and&lt;/em&gt; Mavericks).&lt;
 </description>  
       
 
-      <pubDate>Sun, 13 Oct 2013 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 13 Oct 2013 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/Cocoa-Kucha</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/Cocoa-Kucha</guid>
     </item>
@@ -739,7 +757,7 @@ targets. If this doesn&amp;#39;t ring a bell the following image should.&lt;/p&g
 </description>  
       
 
-      <pubDate>Tue, 08 Oct 2013 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 08 Oct 2013 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/CocoaPods-0.26</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.26</guid>
     </item>
@@ -795,7 +813,7 @@ targets. If this doesn&amp;#39;t ring a bell the following image should.&lt;/p&g
 </description>  
       
 
-      <pubDate>Sat, 10 Aug 2013 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 10 Aug 2013 00:00:00 +0100</pubDate>
       <link>http://blog.cocoapods.org/Acknowledgements</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/Acknowledgements</guid>
     </item>
