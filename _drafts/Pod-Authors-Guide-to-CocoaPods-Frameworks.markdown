@@ -20,6 +20,8 @@ A lot of the tools play only nice together in an Xcode environment where certain
 Cocoa Touch Frameworks use Clang Modules, which are also required to import and link them to your Swift app.
 Therefore the module map is included in the built framework bundle.
 
+{% breaking_image /assets/blog_img/Frameworks-Developers/frameworks_vs_libraries.png %}
+
 ## Dynamic Frameworks vs. Static Libraries
 
 So what's the difference between those both product types?
