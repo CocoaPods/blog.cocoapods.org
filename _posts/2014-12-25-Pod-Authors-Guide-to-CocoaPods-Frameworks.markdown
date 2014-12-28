@@ -143,7 +143,7 @@ For this reason, CocoaPods takes responsibility and generates a custom Umbrella 
 
 Our generated header imports all declared public headers. This also defines the `FOUNDATION_EXPORT`s for the versioning constants, with the name which is used by CocoaPods for the framework to integrate. Furthermore this avoids problems in some special cases: e.g. AFNetworking has a subspec, which provides categories for UIKit that has its own mass-import header `AFNetworking+UIKit.h`, which isn't imported by the `AFNetworking.h` header for OSX compatibility.
 
-To use this subspec in Swift without a generated umbrella header, you would need to create a bridging header and use an import like `#import <AFNetworking/AFNetworking+UIKit.h`. With the generated umbrella header, you just need to `import AFNetworking` if you have the subspec included in your Podfile. If your pod doesn't work out of the box, you can use `pod lib lint --use-frameworks <YourPod.podspec>`, to check what is wrong. We tried that with different popular pods and sometimes ran into issues caused by misconfigured public headers.
+To use this subspec in Swift without a generated umbrella header, you would need to create a bridging header and use an import like `#import <AFNetworking/AFNetworking+UIKit.h>`. With the generated umbrella header, you just need to `import AFNetworking` if you have the subspec included in your Podfile. If your pod doesn't work out of the box, you can use `pod lib lint --use-frameworks <YourPod.podspec>`, to check what is wrong. We tried that with different popular pods and sometimes ran into issues caused by misconfigured public headers.
 
 
 #### About Public Headers
