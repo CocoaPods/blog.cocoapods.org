@@ -65,7 +65,7 @@ Names of Clang Modules are limited to be C99ext-identifiers. This means that the
 
 Before, as a Pod author, you could use `header_dir` to customize the name prefixing your headers from the user target. E.g. if your pod is named `123BánànâKit`, you could set it to `BananaKit`, it is available by `import <BananaKit/BananaKit.h>` instead of `#import <123BánànâKit/BananaKit.h>`.
 
-We are still supporting this usage, but also introducing a new attribute `module_name`, which you declare in your Podspecs. This new attribute has the advantage that it will be properly linted and verified, otherwise we will work from the the `header_dir` option. If either attribute is not present then we will derive with the spec's name to match the Clang Module name requirements.
+We are still supporting this usage, but also introducing a new attribute `module_name`, which you declare in your Podspecs. This new attribute has the advantage that it will be properly linted and verified, otherwise we will work from the `header_dir` option. If either attribute is not present then we will derive with the spec's name to match the Clang Module name requirements.
 
 In a nutshell, look at the following Swift snippet, which concisely expresses the way in which we determine the module name.
 
