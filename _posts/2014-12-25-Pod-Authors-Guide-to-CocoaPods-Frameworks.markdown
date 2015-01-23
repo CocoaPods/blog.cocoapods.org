@@ -197,6 +197,25 @@ We have seen this error a few times during development.
 An error like above can appear, if you develop a framework in Xcode, and you alter header visibility to fix build problems like described previously and try to ensure a clean build state by executing the Clean action (**⌘+
 ⇧+K** in Xcode). In this situation, it can be helpful to nuke the products build directory (alas `DerivedData`) manually from the file system.
 
+
+## Availability
+
+CocoaPods only supports Swift on OS X 10.9 and newer, and iOS 8 and newer.
+
+Here's why:
+
+- Swift is supported on OS X 10.9 / iOS 7 and newer, as stated by Apple numerous times.
+- There is [no support for building static archives with Swift](http://openradar.appspot.com/radar?id=5536341827780608).
+- Dynamic frameworks are supported on all versions of OS X.
+- Dynamic frameworks are unsupported on iOS versions prior to 8:
+
+    > ld: warning: embedded dylibs/frameworks only run on iOS 8 or later.
+
+From this we can conclude that it is **not possible** to support Swift on any platforms earlier than OS X 10.9 and iOS 8.
+
+To use Swift libraries on apps that support iOS 7, you must manually copy the files into your application project.
+
+
 ## Updating
 
 To install the latest Beta of CocoaPods you can run:
