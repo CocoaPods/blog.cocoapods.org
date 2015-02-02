@@ -5,7 +5,7 @@ author: eloy
 categories: cocoapods
 ---
 
-_TL:DR I've had a fantastic 5 years making CocoaPods what it is today, but now it is time to care about my other babies: my new job, my house boat, and my actual baby!!! I will still work on CocoaPods, but not as much. Thank you all for a great 5 years!_
+TL:DR I've had a fantastic 5 years making CocoaPods what it is today, but now it is time to care about my other babies: my new job, my house boat, and my actual baby!!! I will still work on CocoaPods, but not as much. Thank you all for a great 5 years!
 
 <!-- more -->
 
@@ -25,9 +25,24 @@ For the past decade, my wife and I have been living on a houseboat in Amsterdam 
 
 While the expected shipping date has been slowly delayed, the new boat is expected to ship in February (pun intended). Around this time I’ll have to spend significant amounts of time on finishing work on the boat.
 
-TODO insert image of new boat.
+</article></article></section>
+<div style="background-color:white;">
+  <section class="container">
+    <div class="row">
+      <article class="content col-md-10 col-md-offset-1">
+        <center>
+          <a href="https://www.flickr.com/photos/98809276@N08/16415833131"><img src="https://farm8.staticflickr.com/7450/16415833131_9f7dcba445_m.jpg" width="200" height="150"></a>
+          <a href="https://www.flickr.com/photos/98809276@N08/16416660772"><img src="https://farm8.staticflickr.com/7385/16416660772_b07c4f9a5c_m.jpg" width="200" height="150"></a>
+          <a href="https://www.flickr.com/photos/98809276@N08/16417589545"><img src="https://farm9.staticflickr.com/8655/16417589545_a4322c32e0_m.jpg" width="200" height="150"></a>
+        </center>
+      </article>
+    </div>
+  </section>
+</div>
+<section class="container"><article class="row"><article class="content col-md-8 col-md-offset-2">
 
-## Actual baby 
+
+## Actual baby
 
 While CocoaPods and the building of our new houseboat could be considered “babies”, there is no substituting for the real deal.
 
