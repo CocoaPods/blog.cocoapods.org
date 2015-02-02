@@ -15,9 +15,9 @@ I don’t know about you, but for me 2015 is going to be a year full of changes.
 
 ## New job
 
-Starting from February, I will commence at my new job as a mobile software engineer at [Artsy](https://artsy.net). This is an exciting opportunity for me, for both the technical challenges and the admirable mission to _bring all visual art online_.
+Starting **today**, I’ll commence at my new job as a mobile software engineer at [Artsy](https://artsy.net). This is an exciting opportunity for me, for both the technical challenges and the admirable mission to _bring all visual art online_.
 
-For now this means that I’ll probably be spending the better part of January on wrapping up work at HipByte to ensure a smooth transition for my dear colleagues and customers there and the better part of February getting up to speed with work at Art.sy.
+For now this means that I’ll be spending the better part of February getting up to speed with work at Artsy.
 
 ## New houseboat 
 
@@ -41,7 +41,6 @@ While the expected shipping date has been slowly delayed, the new boat is expect
 </div>
 <section class="container"><article class="row"><article class="content col-md-8 col-md-offset-2">
 
-
 ## Actual baby
 
 While CocoaPods and the building of our new houseboat could be considered “babies”, there is no substituting for the real deal.
@@ -52,7 +51,7 @@ With the expected delivery set for the end of May, you can imagine the amount of
 
 ## CocoaPods 
 
-When I started on CocoaPods four years ago, I got to implement all the code myself and I had great fun doing that, but I have always wanted CocoaPods to be a community project and not have it stick to my name necessarily.
+When I started on CocoaPods 5 years ago, I got to implement all the code myself and I had great fun doing that, but I have always wanted CocoaPods to be a community project and not have it stick to my name necessarily.
 
 As such, over the past two years I have been doing less and less actual code implementation and more and more lead and maintainer coordination work. Most days I spent at least a couple of hours a day on CocoaPods. The amount of work I put in could easily be considered a part-time job.
 
