@@ -3,6 +3,7 @@ layout: post
 title:  "The captain leaves the bridge"
 author: eloy
 categories: cocoapods
+date: 2015-02-02
 ---
 
 TL:DR I've had a fantastic 5 years making CocoaPods what it is today, but now it is time to care for my other babies: my new job, my house boat, and my actual baby!!! I will still work on CocoaPods, but not as much. Thank you all for a great 5 years!
