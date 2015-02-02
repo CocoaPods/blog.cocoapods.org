@@ -481,7 +481,7 @@ img.image-zoom {
   .headline.index h1 {
     font-size: 2.7em; } }
 .horizontal-divider {
-  background-color: #bbbbbb;
+  background-color: #bbb;
   box-shadow: 1px 1px 1px #ddd;
   display: block;
   height: 1px;
@@ -506,7 +506,7 @@ img.image-zoom {
   width: 0; }
 
 #content-wrapper {
-  background-color: whitesmoke;
+  background-color: #f5f5f5;
   margin: 0;
   padding: 0; }
   #content-wrapper img {
