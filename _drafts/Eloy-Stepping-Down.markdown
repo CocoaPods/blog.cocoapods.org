@@ -29,7 +29,7 @@ TODO insert image of new boat.
 
 ## Actual baby 
 
-While CocoaPods and the building of our new houseboat could be considered creative –and somewhat in labor– as "babies”, there is no substituting for the real deal.
+While CocoaPods and the building of our new houseboat could be considered “babies”, there is no substituting for the real deal.
 
 I'm absolutely thrilled to say that my wife and I have been blessed with the gift of an actual human baby. We’re now at the 20th week mark, we now know it will be a boy, and that he’s in great health.
 
@@ -53,7 +53,7 @@ I am not going away, I am simply moving more to the background. The most importa
 
 Kyle will focus on the technical aspects, such as identifying issues, reviewing patches, and release management; summarized as the technical lead.
 
-Whereas Orta will focus on the user oriented design aspects, ensuring that the command-line interface and DSLs are kept as simple and intuitive as possible; summarized as the user-experience lead.
+Orta, on the other hand, will focus on the user oriented design aspects, ensuring that the command-line interface and DSLs are kept as simple and intuitive as possible; summarized as the user-experience lead.
 
 They have already gradually been taking on these roles over the past months and with great success. With the support of the other core members, myself included, I have no doubt that they will make the homestretch to version 1.0.0 a successful one.
 
