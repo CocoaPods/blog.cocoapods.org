@@ -9,6 +9,8 @@ TL:DR I've had a fantastic 5 years making CocoaPods what it is today, but now it
 
 <!-- more -->
 
+{% breaking_image https://farm8.staticflickr.com/7426/16244476607_e40a27dd1c_c.jpg, https://www.flickr.com/photos/98809276@N08/16244476607/, alt="Got my coin and finally became an official core contributor!" %}
+
 I don’t know about you, but for me 2015 is going to be a year full of changes. I’ll be very busy and as such will have to make some concessions, but I’ll get back to that at the end. First, I’d like to share some of the amazing events that I will encounter this year.
 
 ## New job
