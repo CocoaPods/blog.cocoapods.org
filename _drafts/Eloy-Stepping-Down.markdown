@@ -5,17 +5,15 @@ author: eloy
 categories: cocoapods
 ---
 
-TL:DR I've had a fantastic 5 years making CocoaPods what it is today, but now it is time to care about my other babies: my new job, my house boat, and my actual baby!!! I will still work on CocoaPods, but not as much. Thank you all for a great 5 years!
+TL:DR I've had a fantastic 5 years making CocoaPods what it is today, but now it is time to care for my other babies: my new job, my house boat, and my actual baby!!! I will still work on CocoaPods, but not as much. Thank you all for a great 5 years!
 
 <!-- more -->
 
-Happy new year!
-
-I don’t know about you, but for me 2015 is going to be a year full of changes. I’ll be very busy and as such will have to do some concessions, but I’ll get back to that at the end. First I’d like to share some of the amazing events that I will encounter this year.
+I don’t know about you, but for me 2015 is going to be a year full of changes. I’ll be very busy and as such will have to make some concessions, but I’ll get back to that at the end. First, I’d like to share some of the amazing events that I will encounter this year.
 
 ## New job
 
-Starting **today**, I’ll commence at my new job as a mobile software engineer at [Artsy](https://artsy.net). This is an exciting opportunity for me, for both the technical challenges and the admirable mission to _bring all visual art online_.
+Starting **today**, I’ll commence at my new job as a mobile software engineer at [Artsy](https://artsy.net). This is an exciting opportunity for me, both for the technical challenges and the admirable mission to _bring all visual art online_.
 
 For now this means that I’ll be spending the better part of February getting up to speed with work at Artsy.
 
@@ -23,7 +21,7 @@ For now this means that I’ll be spending the better part of February getting u
 
 For the past decade, my wife and I have been living on a houseboat in Amsterdam and for the last four years we’ve been trying to get a new one built. This time was, unfortunately, mainly spent dealing with bureaucracy, but last year we finally got all permits approved and building commenced.
 
-While the expected shipping date has been slowly delayed, the new boat is expected to ship in February (pun intended). Around this time I’ll have to spend significant amounts of time on finishing work on the boat.
+While the expected shipping date has been slowly delayed, the new boat is expected to ship in February (pun intended). Around this time, I’ll have to spend significant amounts of time on finishing work on the boat.
 
 </article></article></section>
 <div style="background-color:white;">
@@ -43,9 +41,9 @@ While the expected shipping date has been slowly delayed, the new boat is expect
 
 ## Actual baby
 
-While CocoaPods and the building of our new houseboat could be considered “babies”, there is no substituting for the real deal.
+While CocoaPods and the building of our new houseboat could be considered “babies”, there is no substitution for the real deal.
 
-I'm absolutely thrilled to say that my wife and I have been blessed with the gift of an actual human baby. We’re now at the 20th week mark, we now know it will be a boy, and that he’s in great health.
+I'm absolutely thrilled to say that my wife and I have been blessed with the gift of an actual human baby. We’re now at the 20 week mark, we now know it will be a boy, and that he’s in great health.
 
 With the expected delivery set for the end of May, you can imagine the amount of time I will be spending on preparing our new houseboat for the baby.
 
