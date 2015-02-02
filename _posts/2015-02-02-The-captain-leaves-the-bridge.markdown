@@ -32,9 +32,9 @@ While the expected shipping date has been slowly delayed, the new boat is expect
     <div class="row">
       <article class="content col-md-10 col-md-offset-1">
         <center>
-          <a href="https://www.flickr.com/photos/98809276@N08/16415833131"><img src="https://farm8.staticflickr.com/7450/16415833131_9f7dcba445_m.jpg" width="200" height="150"></a>
-          <a href="https://www.flickr.com/photos/98809276@N08/16416660772"><img src="https://farm8.staticflickr.com/7385/16416660772_b07c4f9a5c_m.jpg" width="200" height="150"></a>
-          <a href="https://www.flickr.com/photos/98809276@N08/16417589545"><img src="https://farm9.staticflickr.com/8655/16417589545_a4322c32e0_m.jpg" width="200" height="150"></a>
+          <a href="https://www.flickr.com/gp/98809276@N08/05pKkf/"><img src="https://farm8.staticflickr.com/7450/16415833131_9f7dcba445_m.jpg" width="200" height="150"></a>
+          <a href="https://www.flickr.com/gp/98809276@N08/05pKkf/"><img src="https://farm8.staticflickr.com/7385/16416660772_b07c4f9a5c_m.jpg" width="200" height="150"></a>
+          <a href="https://www.flickr.com/gp/98809276@N08/05pKkf/"><img src="https://farm9.staticflickr.com/8655/16417589545_a4322c32e0_m.jpg" width="200" height="150"></a>
         </center>
       </article>
     </div>
