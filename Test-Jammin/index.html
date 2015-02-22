@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-      <title>Pod Roulette Hackathon - San Francisco - 7th June 2014 - CocoaPods Blog</title>
+      <title>Test Jam - CocoaPods Blog</title>
     
 
     <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
@@ -46,7 +46,7 @@
   <article class="row">
   <header class="col-md-8 col-md-offset-2 headline blog-post">
     
-      <h1>Pod Roulette Hackathon<br />San Francisco<br/>7th June 2014</h1>
+      <h1>Test Jam</h1>
     
     
   </header>
@@ -61,54 +61,64 @@
         <header>
           
             
-              <img class="gravatar large" src="http://gravatar.com/avatar/66d863ad05a1af75a0e3c5cedc816943?s=144" height=72 width=72>
+              <img class="gravatar large" src="http://gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb?s=144" height=72 width=72>
             
             
               
-                <p><a href="http://twitter.com/NeoNacho">Boris Bügling</a></p>
+                <p><a href="http://twitter.com/orta">Orta Therox</a></p>
               
             
-             <p>31 May 2014</p>
+             <p>21 February 2015</p>
 
             
-              <a href="https://twitter.com/NeoNacho" class="twitter-follow-button" data-show-count="false" data-lang="en">
-                Follow @NeoNacho
+              <a href="https://twitter.com/orta" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @orta
               </a>
             
         </header>
       </article>
     
       <article class="content col-md-8">
-        <p>Have you heard of <a href="http://podroulette.com">pod-roulette</a>? If not, here&#39;s their elevator pitch:</p>
+        <p>Last year, around this time, we ran a <a href="http://blog.cocoapods.org/CocoaPods-Bug-Bash/">Bug Bash</a> over a weekend. It went beautifully. We triaged a whole lot of issues, got a lot of minor issues fixed and found some new members for the core team.</p>
 
-<blockquote>
-<p>Just moved to the big city, got a seed investment but don&#39;t have an idea what to do next?</p>
+<p>Not ones to repeat ourselves, we’ve begun preparations on the next big community event. It’s a test jam, and everyone is invited.</p>
 
-<p>Pod Roulette will find three random pods and prepare a project for you in a few seconds.</p>
-</blockquote>
+<p><em>TLDR/Elevator Pitch</em>: If the community is going to move towards Swift, then let’s make sure that our Objective-C is in order by adding tests to established libraries.</p>
 
-<p>After seeing this project, we knew that there should be a <strong>hackathon</strong> using this.</p>
+<p>Find out more below.</p>
 
 <!-- more -->
 
-<p>And now there is: right after WWDC, on <strong>Saturday, June 7th 2014</strong>, we will meet <strong>at 10am</strong> and hack on our randomly determined projects until 5pm, then there will be presentations from 6pm to 7pm. Of course you can also come around and hack on something else, for example we can set you up with getting started to contribute to CocoaPods itself.</p>
+<p>Date: A weekend in late April / early May
+Locations: NYC / SF / + More</p>
 
-<p>The hackathon will be <strong>hosted at Layer HQ</strong>, which can be reached by a <a href="https://www.google.com/maps/dir/Moscone+Center/470+Alabama+St,+San+Francisco,+CA+94110/@37.7737857,-122.4268309,14z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x808580877d2fc9ad:0xd182ccc332c28697!2m2!1d-122.401557!2d37.784173!1m5!1m1!1s0x808f7e3074359e0f:0x710aa5eaaf53cd94!2m2!1d-122.412559!2d37.763261!3e3">short bus ride</a> from Moscone. They will be graciously providing lunch, dinner and drinks - thanks! </p>
+<p>We have picked out 200 pods without tests, or with very low test coverage, ordered by <a href="https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/models/pod.rb#L43-L56">popularity</a>. These are assigned randomly to interested contributors. They then will aim to:</p>
 
-<p>Join our <a href="http://www.meetup.com/CocoaPods-SF/">meetup</a> group and <a href="http://www.meetup.com/CocoaPods-SF/events/186336602/" data-event="186336602" class="mu-rsvp-btn">RSVP</a> online.</p>
+<ul>
+<li>Add tests to the library.</li>
+<li>Add <a href="http://docs.travis-ci.com/user/languages/objective-c/">Travis CI</a>.</li>
+<li>Add <a href="https://coveralls.io">Coveralls Support</a>.</li>
+<li>Submit a Pull Request to the original repo.</li>
+</ul>
 
-<p>As always, don&#39;t be a jerk --&gt; <a href="http://cocoapods.org/legal">Code of Conduct</a></p>
+<p>We will be operating a chat room with a lot of high high profile names in Cocoa testing over the weekend offering advice. So if testing is new to you, it may be a perfect time to start.</p>
 
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src="https://secure.meetup.com/script/21021123101537681383/api/mu.btns.js?id=a74a4o9ar6ca0btqqmtk1k5uv2";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","mu-bootjs");</script>
+<p>Which tool each contributor chooses to write tests is up to the owner of a library. This isn’t about wrestling control from them, but supporting the project. They could prefer <a href="http://www.objc.io/issue-15/xctest.html">XCTest</a>, <a href="https://github.com/specta/specta">Specta</a> / <a href="https://github.com/specta/expecta">Expecta</a> , <a href="https://github.com/kiwi-bdd/Kiwi">Kiwi</a> or <a href="https://github.com/pivotal/cedar">Cedar</a>. Each project will, ideally, have an issue stating this upfront. If not, it’s up to the contributor to decide.</p>
+
+<p>We’re planning on emailing all authors soon offering the chance to opt-out or to advise on how to communicate a project’s testing intentions. </p>
+
+<p>Finally we’ll likely be having office space in <a href="https://foursquare.com/v/artsy/4f53d65de4b0b589399898a1">NYC (Artsy HQ)</a>, SF and more (feel free to <a href="mailto:info@cocoapods.org">email us</a> if you want to do one in your city.) So you can sit with fellow testers, discuss difficulties and share triumphs. </p>
+
+<p>🎉</p>
 
       </article>
     </article>
   </section>
 </section>
 
-<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2014-05-31-Pod-Roulette-Hackathon.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/66d863ad05a1af75a0e3c5cedc816943" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/NeoNacho">Follow NeoNacho</a></div></article></div></section></section>
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2015-02-21-Test-Jammin.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/orta">Follow orta</a></div></article></div></section></section>
 
-<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaDocs2-Launch" title="On Launching&lt;br /&gt;CocoaDocs Version 2"><header><h4>Previous Post</h4></header><h3>On Launching&lt;br /&gt;CocoaDocs Version 2</h3><p>By Orta Therox</p><a class="chevron_placeholder back" href="/CocoaDocs2-Launch"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"><a href="/Stripe-Open-Source-Retreat" title="Stripe&#39;s Open Source Retreat"><header><h4>Next Post</h4></header><h3>Stripe&#39;s Open Source Retreat</h3><p>By Samuel E. Giddins</p><a class="chevron_placeholder next" href="/Stripe-Open-Source-Retreat"></a></a></article></div></section>
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/The-captain-leaves-the-bridge" title="The captain leaves the bridge"><header><h4>Previous Post</h4></header><h3>The captain leaves the bridge</h3><p>By Eloy Durán</p><a class="chevron_placeholder back" href="/The-captain-leaves-the-bridge"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 

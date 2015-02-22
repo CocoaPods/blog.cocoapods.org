@@ -594,17 +594,35 @@ footer.footer-links {
     width: 36px;
     background-size: 36px 36px; }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   footer.footer-links .cocoapods-small-logo {
-    position: static; } }
+    position: static; }
+
+  .hidden-xs-span {
+    display: none; }
+
+  .visible-xs-span {
+    display: inline; } }
 @media (max-width: 1000px) {
   footer.footer-links .cocoapods-small-logo {
-    left: -40px; } }
+    left: -40px; }
+
+  .hidden-xs-span {
+    display: inline; }
+
+  .visible-xs-span {
+    display: none; }
+
+  .hidden-md-span {
+    display: none; } }
 @media (min-width: 1200px) {
   .hidden-lg-span {
     display: none; }
 
   .visible-lg-span {
+    display: inline; }
+
+  .hidden-md-span {
     display: inline; } }
 @media (max-width: 1200px) {
   .hidden-lg-span {

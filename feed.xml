@@ -8,6 +8,28 @@
     
     
     <item>
+      <title>Test Jam</title>
+
+      
+      <description>&lt;p&gt;Last year, around this time, we ran a &lt;a href=&quot;http://blog.cocoapods.org/CocoaPods-Bug-Bash/&quot;&gt;Bug Bash&lt;/a&gt; over a weekend. It went beautifully. We triaged a whole lot of issues, got a lot of minor issues fixed and found some new members for the core team.&lt;/p&gt;
+
+&lt;p&gt;Not ones to repeat ourselves, we’ve begun preparations on the next big community event. It’s a test jam, and everyone is invited.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;TLDR/Elevator Pitch&lt;/em&gt;: If the community is going to move towards Swift, then let’s make sure that our Objective-C is in order by adding tests to established libraries.&lt;/p&gt;
+
+&lt;p&gt;Find out more below.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Sat, 21 Feb 2015 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/Test-Jammin</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/Test-Jammin</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>The captain leaves the bridge</title>
 
       
