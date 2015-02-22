@@ -20,14 +20,14 @@ Find out more below.
 Date: A weekend in late April / early May
 Locations: NYC / SF / + More
 
-We have picked out 200 pods without tests, or with very low test coverage, ordered by [popularity][2]. These are assigned randomly to interested contributors via an IRC bot. They then will aim to:
+We have picked out 200 pods without tests, or with very low test coverage, ordered by [popularity][2]. These are assigned randomly to interested contributors. They then will aim to:
 
 * Add tests to the library.
 * Add [Travis CI][3].
 * Add [Coveralls Support][4].
 * Submit a Pull Request to the original repo.
 
-We will be operating an IRC room with a lot of high high profile names in Cocoa testing over the weekend offering advice. So if testing is new to you, it may be  a perfect time to start.
+We will be operating a chat room with a lot of high high profile names in Cocoa testing over the weekend offering advice. So if testing is new to you, it may be  a perfect time to start.
 
 Which tool each contributor chooses to write tests is up to the owner of a library. This isn’t about wrestling control from them, but supporting the project. They could prefer [XCTest][5], [Specta][6] / [Expecta][7] , [Kiwi][8] or [Cedar][9]. Each project will, ideally, have an issue stating this upfront. If not, it’s up to the contributor to decide.
 
