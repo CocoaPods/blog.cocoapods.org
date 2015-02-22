@@ -27,13 +27,13 @@ We have picked out 200 pods without tests, or with very low test coverage, order
 * Add [Coveralls Support][4].
 * Submit a Pull Request to the original repo.
 
-We will be operating a chat room with a lot of high high profile names in Cocoa testing over the weekend offering advice. So if testing is new to you, it may be  a perfect time to start.
+We will be operating a chat room with a lot of high high profile names in Cocoa testing over the weekend offering advice. So if testing is new to you, it may be a perfect time to start.
 
 Which tool each contributor chooses to write tests is up to the owner of a library. This isn’t about wrestling control from them, but supporting the project. They could prefer [XCTest][5], [Specta][6] / [Expecta][7] , [Kiwi][8] or [Cedar][9]. Each project will, ideally, have an issue stating this upfront. If not, it’s up to the contributor to decide.
 
 We’re planning on emailing all authors soon offering the chance to opt-out or to advise on how to communicate a project’s testing intentions. 
 
-Finally we’ll likely be having office space in [NYC (Artsy HQ)][10], [SF (Realm HQ)][11] and more (feel free to [email us][12] if you want to do one in your city.) So you can sit with fellow testers, discuss difficulties and share triumphs. 
+Finally we’ll likely be having office space in [NYC (Artsy HQ)][10], SF and more (feel free to [email us][12] if you want to do one in your city.) So you can sit with fellow testers, discuss difficulties and share triumphs. 
 
 🎉
 
@@ -47,5 +47,4 @@ Finally we’ll likely be having office space in [NYC (Artsy HQ)][10], [SF (Real
 [8]:	https://github.com/kiwi-bdd/Kiwi
 [9]:	https://github.com/pivotal/cedar
 [10]:	https://foursquare.com/v/artsy/4f53d65de4b0b589399898a1
-[11]:	https://foursquare.com/v/realm-hq/542225f4498ecb1a8a4ca642
 [12]:	mailto:info@cocoapods.org
