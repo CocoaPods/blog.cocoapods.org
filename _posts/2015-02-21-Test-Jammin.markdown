@@ -17,7 +17,7 @@ Find out more below.
 
 <!-- more -->
 
-Date: A weekend in late April / early May
+Date: April 18th + 19th 2015
 Locations: NYC / SF / + More
 
 We have picked out 200 pods without tests, or with very low test coverage, ordered by [popularity][2]. These are assigned randomly to interested contributors. They then will aim to:
