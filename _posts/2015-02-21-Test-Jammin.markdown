@@ -33,7 +33,7 @@ Which tool each contributor chooses to write tests is up to the owner of a libra
 
 We’re planning on emailing all authors soon offering the chance to opt-out or to advise on how to communicate a project’s testing intentions. 
 
-Finally we’ll likely be having office space in [NYC (Artsy HQ)][10], [SF][] and more (feel free to [email us][12] if you want to do one in your city.) So you can sit with fellow testers, discuss difficulties and share triumphs. 
+Finally we’ll likely be having office space in [NYC (Artsy HQ)][10], [SF (Realm HQ)][] and more (feel free to [email us][12] if you want to do one in your city.) So you can sit with fellow testers, discuss difficulties and share triumphs. 
 
 🎉
 
@@ -48,4 +48,4 @@ Finally we’ll likely be having office space in [NYC (Artsy HQ)][10], [SF][] an
 [9]:	https://github.com/pivotal/cedar
 [10]:	https://foursquare.com/v/artsy/4f53d65de4b0b589399898a1
 [12]:	mailto:info@cocoapods.org
-[SF]: http://www.meetup.com/CocoaPods-SF/events/220783749/
+[SF (Realm HQ)]: http://www.meetup.com/CocoaPods-SF/events/220783749/
