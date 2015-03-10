@@ -33,7 +33,7 @@ Furthermore it is desirable to embed them only once and not multiple times, beca
 With this release, we initially allow to use both in combination with CocoaPods.
 You can make CocoaPods integrate to your project via frameworks instead of static libraries by specifying `use_frameworks!`.
 If that's not present, you won't be able to integrate dependencies, if you depend on a pod which includes Swift source code.
-This is an all or nothing approach per integrated target, because as we will later see, we can't ensure to properly build frameworks, whose transitive dependencies are static libraries.
+This is an all or nothing approach per integrated targets, because we can't ensure to properly build frameworks, whose transitive dependencies are static libraries.
 So this release goes along with probably one of the most drastic change set on the whole project, which makes no stop on CocoaPods itself, but also required similar changes to Xcodeproj as well.
 
 
