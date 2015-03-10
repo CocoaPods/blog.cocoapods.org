@@ -48,7 +48,7 @@ Dynamic Frameworks are bundles, which basically means that they are directories,
 They bundle some further data besides a binary, which is in that case dynamically linkable and holds different slices for each architecture.
 But that's only part, which static libraries covered so far. Belong the further data, there are the following:
 
-* **The Public Headers** - These are stripped for application targets, as they are only important to distribute the framework as code for compilation. The public headers also include the generated headers for public Swift symbols, e.g. `Alamofire-Swift.h`.
+* **The Public Headers** - These are stripped for application targets, as they are only important to distribute the framework as code for compilation. The public headers also include the generated headers for public Swift symbols, e.g. `BananaKit-Swift.h`.
 * **A Code Signature For The Whole Contents** - This has to be (re-)calculated on embedding a framework into an application target, as the headers are stripped before.
 * **Its Resources** - The resources used e.g. Images for UI components.
 * **Hosted Dynamic Frameworks and Libraries** - This can be the case for so called Umbrella Frameworks provided by Apple. There is no use-case, where this happens with CocoaPods.
