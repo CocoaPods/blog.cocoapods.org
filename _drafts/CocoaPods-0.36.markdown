@@ -39,13 +39,11 @@ So this release goes along with probably one of the most drastic change set on t
 
 ## Dynamic Frameworks vs. Static Libraries
 
-![Xcode Template/Product Icons]()
-
 So what's the difference between those both product types?
 
 Dynamic Frameworks are bundles, which basically means that they are directories, which have the file suffix `.framework` and Finder treats them mostly like regular files. If you tap into a framework, you will see a common directory structure:
 
-![Screenshot of BananaKit]()
+{% breaking_image /assets/blog_img/CocoaPods-0.36/bananakit_structure.png, /assets/blog_img/CocoaPods-0.36/bananakit_structure.png, width="503" class="image-zooma" %}
 
 They bundle some further data besides a binary, which is in that case dynamically linkable and holds different slices for each architecture.
 But that's only part, which static libraries covered so far. Belong the further data, there are the following:
