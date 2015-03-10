@@ -7,7 +7,7 @@ categories: cocoapods releases
 
 TL;DR: _CocoaPods 0.36_ has been released, with the long-awaited support for Frameworks and Swift.
 
-This initially supports dynamic framework and by that it also brings enhanced support for dependencies using Apple's new programming language Swift. This has been one of the largest singular projects for CocoaPods, affecting almost all of CocoaPods' subsystems like Xcodeproj.
+CocoaPods 0.36 adds support for dynamic frameworks, and with that it also brings enhanced support for dependencies using Apple's new programming language, Swift. This has been one of the largest singular changes in CocoaPods, affecting almost all of CocoaPods' subsystems such as [Xcodeproj](https://github.com/CocoaPods/Xcodeproj#xcodeproj).
 
 <!-- more -->
 
@@ -16,23 +16,23 @@ This initially supports dynamic framework and by that it also brings enhanced su
 
 Dynamic frameworks have always been available on OS X. That's different for iOS.
 Apple's mobile platform introduced third-party dynamic framework support in iOS 8.
-So the least common denominator was found before with using static libraries, which are supported on both platforms.
+So the least common denominator was found before with using static libraries, which have always been supported on both platforms.
 
-To the same time when Dynamic Frameworks were introduced, Apple also introduced Swift.
+At the same time Dynamic Frameworks were introduced on iOS, Apple also introduced Swift.
 If you have third-party dependencies in Swift, you have only two choices:
-Either throw them in your project and compile one fat binary, which is no practical solution as this increases build times by the lack of incremental compilation and makes it hard to generically manage very different dependencies, which could require different build settings etc. Or you can facilitate frameworks.
+Either throw them in your project and compile one fat binary, which is no practical solution as this increases build times by limited availability of incremental compilation and makes it hard to generically manage very different dependencies, which could require different build settings etc. Or you can facilitate frameworks.
 Static libraries are not an option anymore.
 
-Why is that the case? Because Swift is still very open in design and subject to heavy changes. Unlike Objective-C, Apple doesn't ship the Swift standard runtime libraries with iOS.
+Why is that the case? Because Apple doesn't let you build static libraries that contain Swift. Unlike Objective-C, Apple doesn't ship the Swift standard runtime libraries with iOS.
 This decouples the language version from the platform version.
 When you build an app with Swift, you're responsible yourself to ship them.
-The toolchain provides at this place `swift-stdlib-tool`, which [covers the common use cases](http://samdmarshall.com/blog/swift_and_objc.html).
-As those libraries can't be statically linked multiple times, and not at all in different versions.
-Furthermore it is desirable to embed them only once and not embedded multiple times, because of constraints to memory size and network speed, which are relevant for distribution.
+By default, Xcode uses `swift-stdlib-tool` to handle copying the Swift runtime dylibs, [but the tooling falls short when attempting to ship frameworks that use Swift with an app that is Objective-C only](http://samdmarshall.com/blog/swift_and_objc.html).
+Your app executable and the frameworks you ship will all use the same set of dylibs, which are embedded into the `Frameworks` subdirectory of the application bundle. First, that's because you can't link against different versions of the standard libraries.
+Furthermore it is desirable to embed them only once and not multiple times, because of constraints to memory size and network speed, which are relevant for distribution.
 
 With this release, we initially allow to use both in combination with CocoaPods.
-Your project will automatically migrated or integrated, if you depend on a pod which includes Swift source code.
-Furthermore you can use it, if your deployment target on iOS is greater then 8.0 or you're targeting the OS X platform, by specifying `use_frameworks!` in your Podfile.
+You can make CocoaPods integrate to your project via frameworks instead of static libraries by specifying `use_frameworks!`.
+If that's not present, you won't be able to integrate dependencies, if you depend on a pod which includes Swift source code.
 This is an all or nothing approach per integrated target, because as we will later see, we can't ensure to properly build frameworks, whose transitive dependencies are static libraries.
 So this release goes along with probably one of the most drastic change set on the whole project, which makes no stop on CocoaPods itself, but also required similar changes to Xcodeproj as well.
 
