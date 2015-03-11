@@ -8,6 +8,24 @@
     
     
     <item>
+      <title>CocoaPods 0.36 - Framework and Swift Support</title>
+
+      
+      <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 0.36&lt;/em&gt; has been released, with the long-awaited support for Frameworks and Swift.&lt;/p&gt;
+
+&lt;p&gt;CocoaPods 0.36 adds support for dynamic frameworks, and with that it also brings enhanced support for dependencies using Apple&amp;#39;s new programming language, Swift. This has been one of the largest singular changes in CocoaPods, affecting almost all of CocoaPods&amp;#39; subsystems such as &lt;a href=&quot;https://github.com/CocoaPods/Xcodeproj#xcodeproj&quot;&gt;Xcodeproj&lt;/a&gt;.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Wed, 11 Mar 2015 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/CocoaPods-0.36</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.36</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>Test Jam</title>
 
       

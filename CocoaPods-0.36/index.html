@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+      <title>CocoaPods 0.36 - Framework and Swift Support - CocoaPods Blog</title>
+    
+
+    <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <link rel="alternate" type="application/rss+xml" title="CocoaPods Blog" href="/feed.xml">
+
+    <meta charset="utf-8" /><meta content="cocoapods objective-c objc swift package manager libraries documentation search pods podspec podfile cocoa apple ios library" name="keywords" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="The Dependency Manager for iOS &amp; Mac projects" name="description" /><meta content="CocoaPods Dev Team" name="author" /><meta content="summary" name="twitter:card" /><meta content="@CocoaPods" name="twitter:site" /><meta content="@CocoaPods" name="twitter:creator" /><meta content="CocoaPods" name="twitter:title" /><meta content="The Dependency Manager for iOS &amp; Mac projects." name="twitter:description" /><meta content="https://www.cocoapods.org/" name="twitter:url" />
+    <link rel="shortcut icon" href="http://cocoapods.org/favicons/favicon.ico" type="image/x-icon" /><link rel="apple-touch-icon" href="http://cocoapods.org/favicons/apple-touch-icon.png" /><link rel="apple-touch-icon" sizes="57x57" href="http://cocoapods.org/favicons/apple-touch-icon-57x57.png" /><link rel="apple-touch-icon" sizes="60x60" href="http://cocoapods.org/favicons/apple-touch-icon-60x60.png" /><link rel="apple-touch-icon" sizes="72x72" href="http://cocoapods.org/favicons/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon" sizes="76x76" href="http://cocoapods.org/favicons/apple-touch-icon-76x76.png" /><link rel="apple-touch-icon" sizes="114x114" href="http://cocoapods.org/favicons/apple-touch-icon-114x114.png" /><link rel="apple-touch-icon" sizes="120x120" href="http://cocoapods.org/favicons/apple-touch-icon-120x120.png" /><link rel="apple-touch-icon" sizes="144x144" href="http://cocoapods.org/favicons/apple-touch-icon-144x144.png" /><link rel="apple-touch-icon" sizes="152x152" href="http://cocoapods.org/favicons/apple-touch-icon-152x152.png" />
+
+    <link rel="stylesheet" href="/assets/bootstrap-3b61caa441fab92578453d6681fbf963.css">
+    <link rel="stylesheet" href="/assets/main-d40466fbf575ca0527e5a541072474da.css">
+    <link rel="stylesheet" href="/assets/blog-4c079f710dc63bea556d959640ecebd4.css">
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-29866548-3', 'cocoapods.org');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="glyphicon glyphicon-plus"></span></button><a class="navbar-brand" href="http://cocoapods.org"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://cocoapods.org/about">About</a></li><li><a href="http://guides.cocoapods.org">Guides</a></li><li class="active"><a href="http://blog.cocoapods.org">Blog</a></li></ul></div></section></nav>
+
+    <div id ="">
+<section class="container" >
+  <article class="row">
+  <header class="col-md-8 col-md-offset-2 headline blog-post">
+    
+      <h1>CocoaPods 0.36 - Framework and Swift Support</h1>
+    
+    
+  </header>
+  </article>
+</section>
+</div>
+
+<section id="content-wrapper" class="post">
+  <section class="container">
+    <article class="row">
+      <article class="author metadata col-md-2 col-md-push-10">
+        <header>
+          
+            
+              <img class="gravatar large" src="http://gravatar.com/avatar/ca018f2258eadef2d02f5dcea5c25b88?s=144" height=72 width=72>
+            
+            
+              
+                <p><a href="http://twitter.com/mrackwitz">Marius Rackwitz</a></p>
+              
+            
+             <p>11 March 2015</p>
+
+            
+              <a href="https://twitter.com/mrackwitz" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @mrackwitz
+              </a>
+            
+        </header>
+      </article>
+    
+      <article class="content col-md-8">
+        <p>TL;DR: <em>CocoaPods 0.36</em> has been released, with the long-awaited support for Frameworks and Swift.</p>
+
+<p>CocoaPods 0.36 adds support for dynamic frameworks, and with that it also brings enhanced support for dependencies using Apple&#39;s new programming language, Swift. This has been one of the largest singular changes in CocoaPods, affecting almost all of CocoaPods&#39; subsystems such as <a href="https://github.com/CocoaPods/Xcodeproj#xcodeproj">Xcodeproj</a>.</p>
+
+<!-- more -->
+
+<h2>And there were Swift &amp; Dynamic Frameworks on iOS</h2>
+
+<p>Dynamic frameworks have always been available on OS X. That&#39;s different for iOS.
+Apple&#39;s mobile platform introduced third-party dynamic framework support in iOS 8.
+So the least common denominator was found before with using static libraries, which have always been supported on both platforms.</p>
+
+<p>At the same time Dynamic Frameworks were introduced on iOS, Apple also introduced Swift.
+If you have third-party dependencies in Swift, you have only two choices:
+Either throw them in your project and compile one fat binary, which is no practical solution as this increases build times by limited availability of incremental compilation and makes it hard to generically manage very different dependencies, which could require different build settings etc. Or you can facilitate frameworks.
+Static libraries are not an option anymore.</p>
+
+<p>Why is that the case? Because Apple doesn&#39;t let you build static libraries that contain Swift. Unlike Objective-C, Apple doesn&#39;t ship the Swift standard runtime libraries with iOS.
+This decouples the language version from the platform version.
+When you build an app with Swift, you&#39;re responsible yourself to ship them.
+By default, Xcode uses <code>swift-stdlib-tool</code> to handle copying the Swift runtime dylibs, <a href="http://samdmarshall.com/blog/swift_and_objc.html">but the tooling falls short when attempting to ship frameworks that use Swift with an app that is Objective-C only</a>.
+Your app executable and the frameworks you ship will all use the same set of dylibs, which are embedded into the <code>Frameworks</code> subdirectory of the application bundle. First, that&#39;s because you can&#39;t link against different versions of the standard libraries.
+Furthermore it is desirable to embed them only once and not multiple times, because of constraints to memory size and network speed, which are relevant for distribution.</p>
+
+<p>With this release, we initially allow to use both in combination with CocoaPods.
+You can make CocoaPods integrate to your project via frameworks instead of static libraries by specifying <code>use_frameworks!</code>.
+If that&#39;s not present, you won&#39;t be able to integrate dependencies, if you depend on a pod which includes Swift source code.
+This is an all or nothing approach per integrated targets, because we can&#39;t ensure to properly build frameworks, whose transitive dependencies are static libraries.
+So this release goes along with probably one of the most drastic change set on the whole project, which makes no stop on CocoaPods itself, but also required similar changes to Xcodeproj as well.</p>
+
+<h2>Dynamic Frameworks vs. Static Libraries</h2>
+
+<h5>So what&#39;s the difference between those both product types?</h5>
+
+<p>One difference is obvious in their names: Dynamic and Static are opposites.
+This explains how they are linked to your code when integrated.
+Static libraries are just archives of your compiled source code, which can be partly integrated.
+They are <strong>not</strong> linked themselves before they are linked somewhere else.
+Dynamic libraries are final linked executables.
+When they are built, they are linked and the linker encodes what their dependencies are and where those are expected to be.
+Once they are built, the binary itself isn&#39;t altered anymore.</p>
+
+<p>Another difference is their file system representation: Frameworks are bundles, which basically means that they are directories, which have the file suffix <code>.framework</code> and Finder treats them mostly like regular files. While libraries are just single FAT-binaries, which can&#39;t carry any resources as distinct files. If you tap into a framework, you will see a common directory structure:</p>
+
+<p></article>
+</div>
+</section>
+<div style="background-color:white;">
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='/assets/blog_img/CocoaPods-0.36/bananakit_structure.png'><img width="503" class="image-zooma"  src='/assets/blog_img/CocoaPods-0.36/bananakit_structure.png'></a></center></article>
+</div>
+</section>
+</div>
+<section class="container">
+<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
+
+<p>They bundle some further data besides a binary, which is in that case dynamically linkable and holds different slices for each architecture.
+But that&#39;s only part, which static libraries covered so far. Belong the further data, there are the following:</p>
+
+<ul>
+<li><strong>The Public Headers</strong> - These are stripped for application targets, as they are only important to distribute the framework as code for compilation. The public headers also include the generated headers for public Swift symbols, e.g. <code>BananaKit-Swift.h</code>.</li>
+<li><strong>A Code Signature For The Whole Contents</strong> - This has to be (re-)calculated on embedding a framework into an application target, as the headers are stripped before.</li>
+<li><strong>Its Resources</strong> - The resources used e.g. Images for UI components.</li>
+<li><strong>Hosted Dynamic Frameworks and Libraries</strong> - This can be the case for so called Umbrella Frameworks provided by Apple. There is no use-case, where this happens with CocoaPods.</li>
+<li><strong>The Clang Module Map</strong> - This is mostly an internal toolchain artifact, which carries declarations about header visibility and module link-ability.</li>
+<li><strong>An Info.plist</strong> - This specifies author, version and copyright information.</li>
+</ul>
+
+<h3>Caveats</h3>
+
+<p>One caveat about bundling resources is, that until now we had to embed all resources into the application bundle.
+The resources were referenced programmatically by <code>[NSBundle mainBundle]</code>.
+Pod authors were able to use <code>mainBundle</code> referencing to include resources the Pod brought into the app bundle.
+But with frameworks, you have to make sure that you reference them more specifically by getting a reference to your framework&#39;s bundle e.g.</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="objective-c language-objective-c" data-lang="objective-c"><span class="p">[</span><span class="bp">NSBundle</span> <span class="nl">bundleForClass</span><span class="p">:</span><span class="o">&lt;</span><span class="err">#</span><span class="n">ClassFromPodspec</span><span class="err">#</span><span class="o">&gt;</span><span class="p">]</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div><div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="swift language-swift" data-lang="swift"><span class="bp">NSBundle</span><span class="p">(</span><span class="nl">forClass</span><span class="p">:</span> <span class="o">&lt;</span><span class="err">#</span><span class="n">ClassFromPodspec</span><span class="err">#</span><span class="o">&gt;</span><span class="p">)</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>This will then work for both frameworks and static libraries.
+There are only very rare cases, where you want to reference the main bundle directly or indirectly, e.g. by using <code>[UIImage imageNamed:]</code>.</p>
+
+<p>The advantage to the improved resource handling is that resources won&#39;t conflict when they have the same names.
+They are namespaced by the framework bundle.
+Furthermore we don&#39;t have to apply the build rules ourself to the resources as e.g. asset catalogs and storyboards need to be compiled.
+This should decrease build times for project using Pods that include many resources.</p>
+
+<h3><code>@IBDesignable</code> - Another Reason for Frameworks</h3>
+
+<p>Xcode 6 allows you to preview your own custom view components in the interface builder.
+To make use of that, the view component must live in an own framework.</p>
+
+<h3>More about Frameworks</h3>
+
+<p>If you want learn more about Frameworks, take a look into the <a href="https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPFrameworks/Frameworks.html#//apple_ref/doc/uid/10000183-SW1">Framework Programming Guide</a>.
+Even though this was not written specifically for the new Cocoa Touch Frameworks, how Apple calls them in their Xcode target template, those are mostly the same to the classic OS X frameworks, so this document is still a helpful introduction.</p>
+
+<h2>Updating</h2>
+
+<p>To install the last release of CocoaPods you can run:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="bash language-bash" data-lang="bash"><span class="nv">$ </span><span class="o">[</span>sudo<span class="o">]</span> gem install cocoapods
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Until version 1.0 we strongly encourage you to keep CocoaPods up-to-date.</p>
+
+<p>For all the details, don’t miss the
+<a href="https://github.com/CocoaPods/CocoaPods/blob/0.36.0/CHANGELOG.md">Changelog</a>!</p>
+
+      </article>
+    </article>
+  </section>
+</section>
+
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2015-03-11-CocoaPods-0.36.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/ca018f2258eadef2d02f5dcea5c25b88" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/mrackwitz">Follow mrackwitz</a></div></article></div></section></section>
+
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/Test-Jammin" title="Test Jam"><header><h4>Previous Post</h4></header><h3>Test Jam</h3><p>By Orta Therox</p><a class="chevron_placeholder back" href="/Test-Jammin"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+    <footer class="page-footer"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><h4>CocoaPods is a project from</h4><p class="contributors"><a href="https://twitter.com/alloy">Eloy Durán</a>,&nbsp;<a href="https://twitter.com/fabiopelosin">Fabio Pelosin</a>,&nbsp;<a href="http://orta.github.io">Orta Therox</a>&nbsp;and&nbsp;<a href="http://cocoapods.org/about">The CocoaPods Dev Team</a>&nbsp;with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p><h4>Lovingly sponsored by</h4><p class="sponsors"><a href="http://artsy.net">Artsy</a>, <a href="http://discontinuity.eu">Discontinuity</a>, <a href="http://www.fngtps.com">Fingertips</a>, <a href="https://www.heroku.com">Heroku</a>, <a href="http://www.rubymotion.com">RubyMotion</a>, <a href="https://www.sauspiel.de">Sauspiel</a>, <a href="https://www.slack.com">Slack</a>, <a href="https://www.soundcloud.com">SoundCloud</a>, <a href="https://www.stripe.com">Stripe</a> and <a href="http://www.technologyastronauts.ch">Technology&nbsp;Astronauts</a>.</p></article></div></section></footer><footer class="footer-links"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><a class="cocoapods-small-logo" href="http://cocoapods.org"></a><ul><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://guides.cocoapods.org/using/troubleshooting.html">Support</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://github.com/CocoaPods/CocoaPods">Github Repo</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://github.com/CocoaPods/Specs">Podspecs Repo</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://twitter.com/CocoaPods">@CocoaPods</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://groups.google.com/group/cocoapods">Mailing List</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://cocoapods.org/about"><span class="visible-lg-span">CocoaPods</span> Dev Team</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://guides.cocoapods.org/syntax/podfile.html">Podfile Doc<span class="hidden-lg-span">s</span><span class="visible-lg-span">umentation</span></a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://cocoapods.org/legal">Legal / Conduct</a></li></ul></article></div></section></footer>
+    <script src="/assets/blog-c2911afb0e1e77d79b486c5c39fe0cc6.js"></script>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  </body>
+</html>
