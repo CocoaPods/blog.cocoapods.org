@@ -1,0 +1,114 @@
+---
+layout: post
+title:  "CocoaPods 0.36 - Framework and Swift Support"
+author: marius
+categories: cocoapods releases
+---
+
+TL;DR: _CocoaPods 0.36_ has been released, with the long-awaited support for Frameworks and Swift.
+
+CocoaPods 0.36 adds support for dynamic frameworks, and with that it also brings enhanced support for dependencies using Apple's new programming language, Swift. This has been one of the largest singular changes in CocoaPods, affecting almost all of CocoaPods' subsystems such as [Xcodeproj](https://github.com/CocoaPods/Xcodeproj#xcodeproj).
+
+<!-- more -->
+
+
+## And there were Swift & Dynamic Frameworks on iOS
+
+Dynamic frameworks have always been available on OS X. That's different for iOS.
+Apple's mobile platform introduced third-party dynamic framework support in iOS 8.
+So the least common denominator was found before with using static libraries, which have always been supported on both platforms.
+
+At the same time Dynamic Frameworks were introduced on iOS, Apple also introduced Swift.
+If you have third-party dependencies in Swift, you have only two choices:
+Either throw them in your project and compile one fat binary, which is no practical solution as this increases build times by limited availability of incremental compilation and makes it hard to generically manage very different dependencies, which could require different build settings etc. Or you can facilitate frameworks.
+Static libraries are not an option anymore.
+
+Why is that the case? Because Apple doesn't let you build static libraries that contain Swift. Unlike Objective-C, Apple doesn't ship the Swift standard runtime libraries with iOS.
+This decouples the language version from the platform version.
+When you build an app with Swift, you're responsible yourself to ship them.
+By default, Xcode uses `swift-stdlib-tool` to handle copying the Swift runtime dylibs, [but the tooling falls short when attempting to ship frameworks that use Swift with an app that is Objective-C only](http://samdmarshall.com/blog/swift_and_objc.html).
+Your app executable and the frameworks you ship will all use the same set of dylibs, which are embedded into the `Frameworks` subdirectory of the application bundle. First, that's because you can't link against different versions of the standard libraries.
+Furthermore it is desirable to embed them only once and not multiple times, because of constraints to memory size and network speed, which are relevant for distribution.
+
+With this release, we initially allow to use both in combination with CocoaPods.
+You can make CocoaPods integrate to your project via frameworks instead of static libraries by specifying `use_frameworks!`.
+If that's not present, you won't be able to integrate dependencies, if you depend on a pod which includes Swift source code.
+This is an all or nothing approach per integrated targets, because we can't ensure to properly build frameworks, whose transitive dependencies are static libraries.
+So this release goes along with probably one of the most drastic change set on the whole project, which makes no stop on CocoaPods itself, but also required similar changes to Xcodeproj as well.
+
+
+## Dynamic Frameworks vs. Static Libraries
+
+##### So what's the difference between those both product types?
+
+One difference is obvious in their names: Dynamic and Static are opposites.
+This explains how they are linked to your code when integrated.
+Static libraries are just archives of your compiled source code, which can be partly integrated.
+They are **not** linked themselves before they are linked somewhere else.
+Dynamic libraries are final linked executables.
+When they are built, they are linked and the linker encodes what their dependencies are and where those are expected to be.
+Once they are built, the binary itself isn't altered anymore.
+
+Another difference is their file system representation: Frameworks are bundles, which basically means that they are directories, which have the file suffix `.framework` and Finder treats them mostly like regular files. While libraries are just single FAT-binaries, which can't carry any resources as distinct files. If you tap into a framework, you will see a common directory structure:
+
+{% breaking_image /assets/blog_img/CocoaPods-0.36/bananakit_structure.png, /assets/blog_img/CocoaPods-0.36/bananakit_structure.png, width="503" class="image-zooma" %}
+
+They bundle some further data besides a binary, which is in that case dynamically linkable and holds different slices for each architecture.
+But that's only part, which static libraries covered so far. Belong the further data, there are the following:
+
+* **The Public Headers** - These are stripped for application targets, as they are only important to distribute the framework as code for compilation. The public headers also include the generated headers for public Swift symbols, e.g. `BananaKit-Swift.h`.
+* **A Code Signature For The Whole Contents** - This has to be (re-)calculated on embedding a framework into an application target, as the headers are stripped before.
+* **Its Resources** - The resources used e.g. Images for UI components.
+* **Hosted Dynamic Frameworks and Libraries** - This can be the case for so called Umbrella Frameworks provided by Apple. There is no use-case, where this happens with CocoaPods.
+* **The Clang Module Map** - This is mostly an internal toolchain artifact, which carries declarations about header visibility and module link-ability.
+* **An Info.plist** - This specifies author, version and copyright information.
+
+
+### Caveats
+
+One caveat about bundling resources is, that until now we had to embed all resources into the application bundle.
+The resources were referenced programmatically by `[NSBundle mainBundle]`.
+Pod authors were able to use `mainBundle` referencing to include resources the Pod brought into the app bundle.
+But with frameworks, you have to make sure that you reference them more specifically by getting a reference to your framework's bundle e.g.
+
+```objective-c
+[NSBundle bundleForClass:<#ClassFromPodspec#>]
+```
+
+```swift
+NSBundle(forClass: <#ClassFromPodspec#>)
+```
+
+This will then work for both frameworks and static libraries.
+There are only very rare cases, where you want to reference the main bundle directly or indirectly, e.g. by using `[UIImage imageNamed:]`.
+
+The advantage to the improved resource handling is that resources won't conflict when they have the same names.
+They are namespaced by the framework bundle.
+Furthermore we don't have to apply the build rules ourself to the resources as e.g. asset catalogs and storyboards need to be compiled.
+This should decrease build times for project using Pods that include many resources.
+
+
+### `@IBDesignable` - Another Reason for Frameworks
+
+Xcode 6 allows you to preview your own custom view components in the interface builder.
+To make use of that, the view component must live in an own framework.
+
+
+### More about Frameworks
+
+If you want learn more about Frameworks, take a look into the [Framework Programming Guide](https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPFrameworks/Frameworks.html#//apple_ref/doc/uid/10000183-SW1).
+Even though this was not written specifically for the new Cocoa Touch Frameworks, how Apple calls them in their Xcode target template, those are mostly the same to the classic OS X frameworks, so this document is still a helpful introduction.
+
+
+## Updating
+
+To install the last release of CocoaPods you can run:
+
+```bash
+$ [sudo] gem install cocoapods
+```
+
+Until version 1.0 we strongly encourage you to keep CocoaPods up-to-date.
+
+For all the details, don’t miss the
+[Changelog](https://github.com/CocoaPods/CocoaPods/blob/0.36.0/CHANGELOG.md)!
