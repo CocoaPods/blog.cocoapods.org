@@ -111,4 +111,4 @@ $ [sudo] gem install cocoapods
 Until version 1.0 we strongly encourage you to keep CocoaPods up-to-date.
 
 For all the details, don’t miss the
-[Changelog](https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md)!
+[Changelog](https://github.com/CocoaPods/CocoaPods/blob/0.36.0/CHANGELOG.md)!
