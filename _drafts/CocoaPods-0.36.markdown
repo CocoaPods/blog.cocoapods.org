@@ -39,7 +39,7 @@ So this release goes along with probably one of the most drastic change set on t
 
 ## Dynamic Frameworks vs. Static Libraries
 
-So what's the difference between those both product types?
+##### So what's the difference between those both product types?
 
 Dynamic Frameworks are bundles, which basically means that they are directories, which have the file suffix `.framework` and Finder treats them mostly like regular files. If you tap into a framework, you will see a common directory structure:
 
