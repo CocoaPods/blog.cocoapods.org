@@ -41,7 +41,15 @@ So this release goes along with probably one of the most drastic change set on t
 
 ##### So what's the difference between those both product types?
 
-Dynamic Frameworks are bundles, which basically means that they are directories, which have the file suffix `.framework` and Finder treats them mostly like regular files. If you tap into a framework, you will see a common directory structure:
+One difference is obvious in their names: Dynamic and Static are opposites.
+This explains how they are linked to your code when integrated.
+Static libraries are just archives of your compiled source code, which can be partly integrated.
+They are **not** linked themselves before they are linked somewhere else.
+Dynamic libraries are final linked executables.
+When they are built, they are linked and the linker encodes what their dependencies are and where those are expected to be.
+Once they are built, the binary itself isn't altered anymore.
+
+Another difference is their file system representation: Frameworks are bundles, which basically means that they are directories, which have the file suffix `.framework` and Finder treats them mostly like regular files. While libraries are just single FAT-binaries, which can't carry any resources as distinct files. If you tap into a framework, you will see a common directory structure:
 
 {% breaking_image /assets/blog_img/CocoaPods-0.36/bananakit_structure.png, /assets/blog_img/CocoaPods-0.36/bananakit_structure.png, width="503" class="image-zooma" %}
 
