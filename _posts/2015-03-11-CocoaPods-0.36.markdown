@@ -104,14 +104,7 @@ Even though this was not written specifically for the new Cocoa Touch Frameworks
 On a last note, another change in this version is regarding private spec repositories.
 
 For those of you who use those to store your company's [private pods](http://guides.cocoapods.org/making/private-cocoapods.html), you previously had to `pod repo add` your private repository of podspecs and you were ready to go.  
-With 0.36.0 and forward, your `Podfile` needs to explicity list all the spec repo sources to use for finding your Podspecs (including CocoaPods's master spec repo and your own). This change is important for ensuring everybody in your team uses the same reference of specs whatever their local configuration is.  
-
-```
-source 'https://github.com/CocoaPods/Specs.git'
-source 'https://git.mycompany.org/iOS/Specs.git'
-
-... # rest of the Podfile as usual
-```
+With 0.36.0 and forward, your `Podfile` needs to [explicity list all the spec repo sources](http://guides.cocoapods.org/making/private-cocoapods.html#thats-it) to use for finding your Podspecs (including CocoaPods's master spec repo and your own). This change is important for ensuring everybody in your team uses the same reference of specs whatever their local configuration is.
 
 * In addition, if a member of your team runs `pod install` and didn't add your private spec repository before, CocoaPods will `pod repo add` it automatically on the user's machine, ensuring it can find all the pods, including the private ones.
 * If that user already had another, unrelated private spec repo containing pods with the same name as the ones in your `Podfile`, there is no chance of conflict as the `Podfile` will explicitly have to lists the spec repos to use.
