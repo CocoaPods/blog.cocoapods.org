@@ -88,12 +88,6 @@ Furthermore we don't have to apply the build rules ourself to the resources as e
 This should decrease build times for project using Pods that include many resources.
 
 
-### `@IBDesignable` - Another Reason for Frameworks
-
-Xcode 6 allows you to preview your own custom view components in the interface builder.
-To make use of that, the view component must live in an own framework.
-
-
 ### More about Frameworks
 
 If you want to learn more about Frameworks, take a look into the [Framework Programming Guide](https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPFrameworks/Frameworks.html#//apple_ref/doc/uid/10000183-SW1).
