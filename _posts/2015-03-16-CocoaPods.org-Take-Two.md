@@ -18,13 +18,11 @@ TL;DR: [CocoaPods.org][1] version 2.1 has been released, with support for inline
 
 ## Backstory.
 
-The CocoaPods web site is an interesting beast. In October 2013, we set around [rewriting][2] the CocoaPods web pages. We centralized the documentation, created a blog and redesigned everything. 
+The CocoaPods web site is an interesting beast. In October 2013, we started [rewriting][2] the CocoaPods web pages. We centralized the documentation, created a blog and redesigned everything. 
 
-We settled on using a mix of middleman pages and jekyll. Given that, at the time, there was no central database for CocoaPods, it made sense to try and keep it as a static site for speed and maintainability.
+We settled on using a mix of middleman pages and jekyll. Given that, at the time, there was no central database for CocoaPods, it made sense to try to keep it as a static site for speed and maintainability. Once [CocoaDocs v2][3] launched in May 2014, I set my sights on trying to move cocoapods.org a little bit closer to my larger vision of what the website would provide.
 
-Once [CocoaDocs v2][3] launched in May 2014, I set my sights on trying to move cocoapods.org a little bit closer to my larger vision of what the website would provide.
-
-In an ideal world, you should be able to find a library that fits your constraints using just the front page of CocoaPods.org. Often there is more than one library, and that’s where things gets a bit more complex. In previous versions of the site, in order to choose between multiple libraries, you need to open them up on GitHub in separate tabs and compare. Now, you don’t need to. 🎉
+In an ideal world, you should be able to find a library that fits your constraints using just the front page of CocoaPods.org. Often there is more than one library, and that’s where things gets a bit more complex. In previous versions of the site, in order to choose between multiple libraries, you needed to open them up on GitHub in separate tabs and compare. Now, you don’t need to. 🎉
 
 ## Here’s how it works
 
@@ -34,7 +32,7 @@ Let’s take a random pod. [MiniFuture][4]. This is what happens after a Pod is 
 * A webhook from trunk triggers a reindex of the pod in the search engine which uses the generated metadata to sort and display pod results.
 * A another webhook gets sent to CocoaDocs triggering a documentation build
 * The documentation build uses [Jazzy][jazzy] ( or [appledoc][appledoc] for Objective-C projects ) to generate documentation. 
-* After documentation has finished CocoaDocs starts to generating metadata. This provides us with a rich dataset to start providing some useful statistics. This is centralized in [metrics.cocoapods.org][6], where we currently hold up-to-date GitHub metrics also.
+* Then CocoaDocs starts to generating metadata. This provides us with a rich dataset to start providing some useful statistics. This is centralized in [metrics.cocoapods.org][6], where we currently hold up-to-date GitHub metrics also.
 
 ```json
 // http://metrics.cocoapods.org/api/v1/pods/MiniFuture
@@ -108,11 +106,11 @@ Let’s take a random pod. [MiniFuture][4]. This is what happens after a Pod is 
 ]
 ```
 
-This gives enough metadata to start creating a page that represents the library with the kind of context that is specific to our community. In a lot of ways it can be better than the front page of the GitHub repo because of this.
+This gives enough metadata to start creating a page that represents the library with the kind of context that is specific to our community. In a lot of ways it can be better than the front page of the GitHub repo.
 
 ## How it comes together
 
-We use the quality metrics in search, this is used to order the results we get back. There are quite a few different [sorting options](https://github.com/CocoaPods/search.cocoapods.org/blob/238b497872857e7b44ac715170888ef7f5ba046b/lib/search.rb#L345) now, so we may look into offering choices there.
+We use the quality metrics in search to order the results. There are quite a few different [sorting options](https://github.com/CocoaPods/search.cocoapods.org/blob/238b497872857e7b44ac715170888ef7f5ba046b/lib/search.rb#L345) now, so we may look into offering choices there.
 
 We've started exposing a good chunk of the information in a pod's profile pages, and via inline results but not all of it. There's [interesting](https://github.com/CocoaPods/cocoapods.org/issues/107) [issues](https://github.com/CocoaPods/cocoapods.org/issues/106) around how we can expose more.
 
@@ -120,7 +118,7 @@ We've started exposing a good chunk of the information in a pod's profile pages,
 
 The APIs we use are all available for anyone to build things on top of. This data is pretty solid, the API routes won't be changing and work is on-going to make it more accurate. We'll only be expanding from here.
 
-It's not perfect, but a website isn't an app and we can deploy daily. We re-wrote the homepage to run directly from the new databases and it's simplified the development process a lot. So it's easy for anyone to contribute and help out. We'll be iterating on it for a while before stablizing, so we'd love feedback in [an issue](https://github.com/CocoaPods/cocoapods.org/issues/new) or on twitter.
+It's not perfect, but a website isn't an iOS app and we can deploy daily. We re-wrote the homepage to run directly from the new databases and it's simplified the development process a lot. So it's easy for anyone to contribute and help out. We'll be iterating on it for a while before stablizing, so we'd love feedback in [an issue](https://github.com/CocoaPods/cocoapods.org/issues/new) or on twitter.
 
 ## It took a bunch of people too
 
