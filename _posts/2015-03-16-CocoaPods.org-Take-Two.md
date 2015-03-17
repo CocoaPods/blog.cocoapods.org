@@ -5,29 +5,36 @@ author: orta
 categories: cocoapods.org releases website
 ---
 
-TL;DR: [CocoaPods.org][1] version 2 has been released, with support for inline deep search results, and pod pages.
+TL;DR: [CocoaPods.org][1] version 2.1 has been released, with support for inline deep search results, and pod pages.
 
 <!-- more -->
 
+<style>
+  /* for the CP preview */
+.container > .row > .content > center > a > img {
+  border: 1px solid black;
+}
+</style>
 
-## This took way longer than expected.
+## Backstory.
 
-The CocoaPods web site is an interesting beast. In October 2013 we set around [rewriting][2] the CocoaPods web pages. We centralized the documentation, created a blog and redesigned everything. 
+The CocoaPods web site is an interesting beast. In October 2013, we set around [rewriting][2] the CocoaPods web pages. We centralized the documentation, created a blog and redesigned everything. 
 
-We settled on using a mix of middleman pages and jekyll. Given that, at the time, there was no central database for CocoaPods  it made sense to try and keep it as a static site for speed and maintainability.
+We settled on using a mix of middleman pages and jekyll. Given that, at the time, there was no central database for CocoaPods, it made sense to try and keep it as a static site for speed and maintainability.
 
 Once [CocoaDocs v2][3] launched in May 2014, I set my sights on trying to move cocoapods.org a little bit closer to my larger vision of what the website would provide.
 
-In an ideal world, you should be able to find a library that fits your constraints using just the front page of CocoaPods.org. Often there is more than one library, and that’s where the gets a bit more complex. In previous versions of the site, in order to choose between multiple libraries you need to open them up on github in separate tabs and compare. Now you don’t need to.
+In an ideal world, you should be able to find a library that fits your constraints using just the front page of CocoaPods.org. Often there is more than one library, and that’s where things gets a bit more complex. In previous versions of the site, in order to choose between multiple libraries, you need to open them up on GitHub in separate tabs and compare. Now, you don’t need to. 🎉
 
 ## Here’s how it works
 
-Let’s take a random pod. [MiniFuture][4]. This is what happens after a Pod is released.
+Let’s take a random pod. [MiniFuture][4]. This is what happens after a Pod is released:
 
 * A new Podspec version is added to [Trunk][5]
-* A webhook from trunk gets sent to CocoaDocs triggering a documentation build
-* The documentation build uses Jazzy ( or appledoc for Objective-C projects ) to generate documentation. 
-* After documentation has finished we start generating metadata. This provides us with a rich dataset to start providing some useful statistics. This is centralized in [metrics.cocoapods.org][6] where we currently hold up-to-date github metrics also.
+* A webhook from trunk triggers a reindex of the pod in the search engine which uses the generated metadata to sort and display pod results.
+* A another webhook gets sent to CocoaDocs triggering a documentation build
+* The documentation build uses [Jazzy][jazzy] ( or [appledoc][appledoc] for Objective-C projects ) to generate documentation. 
+* After documentation has finished CocoaDocs starts to generating metadata. This provides us with a rich dataset to start providing some useful statistics. This is centralized in [metrics.cocoapods.org][6], where we currently hold up-to-date GitHub metrics also.
 
 ```json
 // http://metrics.cocoapods.org/api/v1/pods/MiniFuture
@@ -67,7 +74,7 @@ Let’s take a random pod. [MiniFuture][4]. This is what happens after a Pod is 
 * A preview image is generated for the library for Social Media, chat, or really anything that supports open graph previews.
   {% breaking_image http://cocoadocs.org/docsets/MiniFuture/0.1.0/preview.png %}
   
-* We then generate an estimated quality number for the library. This is based on a collection of [individual metrics][7] that are applied to the generated metrics data. They take a library and add or remove points based whether the rule applies for that library. These range from the popularity of the library, total test expectations / lines of code to the files and average lines of code per file in the library.
+* We then generate an estimated quality number for the library. This is based on a collection of [individual metrics][7] that are applied to the generated metrics data. They take a library and add or remove points based whether the rule applies for that library. These range from the popularity of the library, total test expectations / lines of code to the files, and average lines of code per file in the library.
 
 ```json
 // https://cocoadocs-api-cocoapods-org.herokuapp.com/pods/MiniFuture/stats
@@ -105,7 +112,7 @@ This gives enough metadata to start creating a page that represents the library 
 
 ## How it comes together
 
-We use the quality metrics in search, this is used to order the results we get back. There are quite a few different [sorting options](https://github.com/CocoaPods/search.cocoapods.org/blob/master/lib/search.rb#L345) now, so we may look into offering choices there.
+We use the quality metrics in search, this is used to order the results we get back. There are quite a few different [sorting options](https://github.com/CocoaPods/search.cocoapods.org/blob/238b497872857e7b44ac715170888ef7f5ba046b/lib/search.rb#L345) now, so we may look into offering choices there.
 
 We've started exposing a good chunk of the information in a pod's profile pages, and via inline results but not all of it. There's [interesting](https://github.com/CocoaPods/cocoapods.org/issues/107) [issues](https://github.com/CocoaPods/cocoapods.org/issues/106) around how we can expose more.
 
@@ -133,10 +140,12 @@ Whilst I have been championing this feature for the last 8 months, I've had a lo
 [7]:	https://github.com/CocoaPods/cocoadocs-api/blob/master/quality_modifiers.rb
 [8]:	http://florianhanke.com
 [9]:	http://segiddins.me
-[10]:	%5Bhttp://www.hugotunius.se
+[10]:	http://www.hugotunius.se
 [11]:	http://kylefuller.co.uk
 [12]:	http://dbgrandi.github.io
 [13]:	http://lazerwalker.com
 [14]:	http://tang.io
 [15]:	http://modocache.svbtle.com
 [16]:	https://twitter.com/dannyhertz
+[jazzy]: https://github.com/realm/jazzy
+[appledoc]: https://github.com/tomaz/appledoc
