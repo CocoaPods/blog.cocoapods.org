@@ -30,9 +30,9 @@ Let’s take a random pod. [MiniFuture][4]. This is what happens after a Pod is 
 
 * A new Podspec version is added to [Trunk][5]
 * A webhook from trunk triggers a reindex of the pod in the search engine which uses the generated metadata to sort and display pod results.
-* A another webhook gets sent to CocoaDocs triggering a documentation build
+* Another webhook gets sent to CocoaDocs triggering a documentation build
 * The documentation build uses [Jazzy][jazzy] ( or [appledoc][appledoc] for Objective-C projects ) to generate documentation. 
-* Then CocoaDocs starts to generating metadata. This provides us with a rich dataset to start providing some useful statistics. This is centralized in [metrics.cocoapods.org][6], where we currently hold up-to-date GitHub metrics also.
+* Then CocoaDocs starts generating metadata. This provides us with a rich dataset to start providing some useful statistics. This is centralized in [metrics.cocoapods.org][6], where we currently hold up-to-date GitHub metrics also.
 
 ```json
 // http://metrics.cocoapods.org/api/v1/pods/MiniFuture
