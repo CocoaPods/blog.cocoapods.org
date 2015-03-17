@@ -103,13 +103,10 @@ Even though this was not written specifically for the new Cocoa Touch Frameworks
 
 On a last note, another change in this version is regarding private spec repositories.
 
-For those of you who use those to store your company's [private pods](http://guides.cocoapods.org/making/private-cocoapods.html), you previously had to `pod repo add` your private repository of podspecs and you were ready to go.  
-With 0.36.0 and forward, your `Podfile` needs to [explicity list all the spec repo sources](http://guides.cocoapods.org/making/private-cocoapods.html#thats-it) to use for finding your Podspecs (including CocoaPods's master spec repo and your own). This change is important for ensuring everybody in your team uses the same reference of specs whatever their local configuration is.
+In CocoaPods 0.36 and onwards, when using pods from private spec repositories, you will need to [explicity list all the spec repositories](http://guides.cocoapods.org/making/private-cocoapods.html#thats-it) that are used, using the `source` directive in your `Podfile`.  
+This is important for ensuring everybody in your team uses the same reference of specs whatever their local configuration is.
 
-* In addition, if a member of your team runs `pod install` and didn't add your private spec repository before, CocoaPods will `pod repo add` it automatically on the user's machine, ensuring it can find all the pods, including the private ones.
-* If that user already had another, unrelated private spec repo containing pods with the same name as the ones in your `Podfile`, there is no chance of conflict as the `Podfile` will explicitly have to lists the spec repos to use.
-
-Note that this does not affect people not having private spec repositories, because if there is no `source` directive in your `Podfile`, CocoaPods will use the official master spec repo as its only podspec source (in previous versions, it used all the repositories listed in `pod repo list`)
+_Note that if you don't use private pods (and only use pods from the official spec repo), you don't need to list any `source` as this will defaults to only using `CocoaPods/Specs`._
 
 ## Updating
 
