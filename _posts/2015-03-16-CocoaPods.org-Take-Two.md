@@ -108,7 +108,7 @@ Let’s take a random pod. [MiniFuture][4]. This is what happens after a Pod is 
 ]
 ```
 
-This gives enough metadata to start creating a page that represents the library with the kind of context that is specific to our community. In a lot of ways it can be better than the front page of the gitub repo because of this.
+This gives enough metadata to start creating a page that represents the library with the kind of context that is specific to our community. In a lot of ways it can be better than the front page of the GitHub repo because of this.
 
 ## How it comes together
 
