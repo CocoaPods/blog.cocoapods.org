@@ -124,7 +124,7 @@ It's not perfect, but a website isn't an iOS app and we can deploy daily. We re-
 
 Whilst I have been championing this feature for the last 8 months, I've had a lot of help:
 
-* [Florian Hanke][8], [Sam Giddins][9], [Hugo Tunis][10] on metrics, search and a CocoaDocs API.
+* [Florian Hanke][8], [Samuel Giddins][9], [Hugo Tunis][10] on metrics, search and a CocoaDocs API.
 * [Kyle Fuller][11] on countless CocoaDocs improvements and maintainace
 * [David Grandinetti][12], [Mike Lazer-Walker][13], [Phil Tang][14], [Brian Gesiak][15] and [Danny Hertz][16] on Quality/Popularity Metrics
 
