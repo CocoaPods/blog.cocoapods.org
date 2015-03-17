@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+      <title>CocoaPods.org Take Two - CocoaPods Blog</title>
+    
+
+    <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <link rel="alternate" type="application/rss+xml" title="CocoaPods Blog" href="/feed.xml">
+
+    <meta charset="utf-8" /><meta content="cocoapods objective-c objc swift package manager libraries documentation search pods podspec podfile cocoa apple ios library" name="keywords" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="The Dependency Manager for iOS &amp; Mac projects" name="description" /><meta content="CocoaPods Dev Team" name="author" /><meta content="summary" name="twitter:card" /><meta content="@CocoaPods" name="twitter:site" /><meta content="@CocoaPods" name="twitter:creator" /><meta content="CocoaPods" name="twitter:title" /><meta content="The Dependency Manager for iOS &amp; Mac projects." name="twitter:description" /><meta content="https://www.cocoapods.org/" name="twitter:url" />
+    <link rel="shortcut icon" href="http://cocoapods.org/favicons/favicon.ico" type="image/x-icon" /><link rel="apple-touch-icon" href="http://cocoapods.org/favicons/apple-touch-icon.png" /><link rel="apple-touch-icon" sizes="57x57" href="http://cocoapods.org/favicons/apple-touch-icon-57x57.png" /><link rel="apple-touch-icon" sizes="60x60" href="http://cocoapods.org/favicons/apple-touch-icon-60x60.png" /><link rel="apple-touch-icon" sizes="72x72" href="http://cocoapods.org/favicons/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon" sizes="76x76" href="http://cocoapods.org/favicons/apple-touch-icon-76x76.png" /><link rel="apple-touch-icon" sizes="114x114" href="http://cocoapods.org/favicons/apple-touch-icon-114x114.png" /><link rel="apple-touch-icon" sizes="120x120" href="http://cocoapods.org/favicons/apple-touch-icon-120x120.png" /><link rel="apple-touch-icon" sizes="144x144" href="http://cocoapods.org/favicons/apple-touch-icon-144x144.png" /><link rel="apple-touch-icon" sizes="152x152" href="http://cocoapods.org/favicons/apple-touch-icon-152x152.png" />
+
+    <link rel="stylesheet" href="/assets/bootstrap-3b61caa441fab92578453d6681fbf963.css">
+    <link rel="stylesheet" href="/assets/main-40a6b7ccf335046d7d5c403bf6921319.css">
+    <link rel="stylesheet" href="/assets/blog-a6cba0ad1ceb964c9a5a5387e033c3ff.css">
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-29866548-3', 'cocoapods.org');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="glyphicon glyphicon-plus"></span></button><a class="navbar-brand" href="http://cocoapods.org"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://cocoapods.org/about">About</a></li><li><a href="http://guides.cocoapods.org">Guides</a></li><li class="active"><a href="http://blog.cocoapods.org">Blog</a></li></ul></div></section></nav>
+
+    <div id ="">
+<section class="container" >
+  <article class="row">
+  <header class="col-md-8 col-md-offset-2 headline blog-post">
+    
+      <h1>CocoaPods.org Take Two</h1>
+    
+    
+  </header>
+  </article>
+</section>
+</div>
+
+<section id="content-wrapper" class="post">
+  <section class="container">
+    <article class="row">
+      <article class="author metadata col-md-2 col-md-push-10">
+        <header>
+          
+            
+              <img class="gravatar large" src="http://gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb?s=144" height=72 width=72>
+            
+            
+              
+                <p><a href="http://twitter.com/orta">Orta Therox</a></p>
+              
+            
+             <p>16 March 2015</p>
+
+            
+              <a href="https://twitter.com/orta" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @orta
+              </a>
+            
+        </header>
+      </article>
+    
+      <article class="content col-md-8">
+        <p>TL;DR: <a href="http://cocoapods.org">CocoaPods.org</a> version 2.1 has been released, with support for inline deep search results, and pod pages.</p>
+
+<!-- more -->
+
+<style>
+  /* for the CP preview */
+.container > .row > .content > center > a > img {
+  border: 1px solid black;
+}
+</style>
+
+<h2>Backstory.</h2>
+
+<p>The CocoaPods web site is an interesting beast. In October 2013, we started <a href="http://blog.cocoapods.org/redesign/">rewriting</a> the CocoaPods web pages. We centralized the documentation, created a blog and redesigned everything. </p>
+
+<p>We settled on using a mix of middleman pages and jekyll. Given that, at the time, there was no central database for CocoaPods, it made sense to try to keep it as a static site for speed and maintainability. Once <a href="http://blog.cocoapods.org/CocoaDocs2-Launch/">CocoaDocs v2</a> launched in May 2014, I set my sights on trying to move cocoapods.org a little bit closer to my larger vision of what the website would provide.</p>
+
+<p>In an ideal world, you should be able to find a library that fits your constraints using just the front page of CocoaPods.org. Often there is more than one library, and that’s where things gets a bit more complex. In previous versions of the site, in order to choose between multiple libraries, you needed to open them up on GitHub in separate tabs and compare. Now, you don’t need to. 🎉</p>
+
+<h2>Here’s how it works</h2>
+
+<p>Let’s take a random pod. <a href="http://cocoapods.org/pods/MiniFuture">MiniFuture</a>. This is what happens after a Pod is released:</p>
+
+<ul>
+<li>A new Podspec version is added to <a href="http://blog.cocoapods.org/CocoaPods-Trunk/">Trunk</a></li>
+<li>A webhook from trunk triggers a reindex of the pod in the search engine which uses the generated metadata to sort and display pod results.</li>
+<li>Another webhook gets sent to CocoaDocs triggering a documentation build</li>
+<li>The documentation build uses <a href="https://github.com/realm/jazzy">Jazzy</a> ( or <a href="https://github.com/tomaz/appledoc">appledoc</a> for Objective-C projects ) to generate documentation. </li>
+<li>Then CocoaDocs starts generating metadata. This provides us with a rich dataset to start providing some useful statistics. This is centralized in <a href="http://blog.cocoapods.org/metrics-api/">metrics.cocoapods.org</a>, where we currently hold up-to-date GitHub metrics also.</li>
+</ul>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="json language-json" data-lang="json"><span class="err">//</span> <span class="err">http://metrics.cocoapods.org/api/v</span><span class="mi">1</span><span class="err">/pods/MiniFuture</span>
+
+<span class="p">{</span>
+    <span class="nt">&quot;cocoadocs&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-03-08 16:48:25 UTC&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;doc_percent&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+        <span class="nt">&quot;dominant_language&quot;</span><span class="p">:</span> <span class="s2">&quot;Swift&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;download_size&quot;</span><span class="p">:</span> <span class="mi">416</span><span class="p">,</span>
+        <span class="nt">&quot;initial_commit_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-03-01 12:03:09 UTC&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;license_canonical_url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://opensource.org/licenses/MIT&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;license_short_name&quot;</span><span class="p">:</span> <span class="s2">&quot;MIT&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;notability&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;quality_estimate&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+        <span class="nt">&quot;readme_complexity&quot;</span><span class="p">:</span> <span class="mi">72</span><span class="p">,</span>
+        <span class="nt">&quot;rendered_readme_url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://cocoadocs.org/docsets/MiniFuture/0.1.0/README.html&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;total_comments&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="nt">&quot;total_files&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="nt">&quot;total_lines_of_code&quot;</span><span class="p">:</span> <span class="mi">327</span><span class="p">,</span>
+        <span class="nt">&quot;total_test_expectations&quot;</span><span class="p">:</span> <span class="mi">204</span><span class="p">,</span>
+        <span class="nt">&quot;updated_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-03-08 16:48:25 UTC&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;github&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;contributors&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-03-01 10:09:08 UTC&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;forks&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;Swift&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;open_issues&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;open_pull_requests&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;stargazers&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="nt">&quot;subscribers&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="nt">&quot;updated_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-03-05 01:01:44 UTC&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<ul>
+<li><p>A preview image is generated for the library for Social Media, chat, or really anything that supports open graph previews.
+</article>
+</div>
+</section>
+<div style="background-color:white;">
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='http://cocoadocs.org/docsets/MiniFuture/0.1.0/preview.png '><img  src='http://cocoadocs.org/docsets/MiniFuture/0.1.0/preview.png '></a></center></article>
+</div>
+</section>
+</div>
+<section class="container">
+<div class="row"><article class="content col-md-8 col-md-offset-2"></p></li>
+<li><p>We then generate an estimated quality number for the library. This is based on a collection of <a href="https://github.com/CocoaPods/cocoadocs-api/blob/master/quality_modifiers.rb">individual metrics</a> that are applied to the generated metrics data. They take a library and add or remove points based whether the rule applies for that library. These range from the popularity of the library, total test expectations / lines of code to the files, and average lines of code per file in the library.</p></li>
+</ul>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="json language-json" data-lang="json"><span class="err">//</span> <span class="err">https://cocoadocs-api-cocoapods-org.herokuapp.com/pods/MiniFuture/stats</span>
+
+<span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;applies_for_pod&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Testing a library shows that the developers care about long term quality on a project as internalized logic is made explicit via testing.&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;modifier&quot;</span><span class="p">:</span> <span class="mi">-20</span><span class="p">,</span>
+        <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Test Expectations / Line of Code&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;applies_for_pod&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Too big of a library can impact startup time, and add redundant assets.&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;modifier&quot;</span><span class="p">:</span> <span class="mi">-10</span><span class="p">,</span>
+        <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Download size&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;applies_for_pod&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Smaller, more composeable classes tend to be easier to understand.&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;modifier&quot;</span><span class="p">:</span> <span class="mi">-8</span><span class="p">,</span>
+        <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Lines of Code / File&quot;</span>
+    <span class="p">},</span>
+    <span class="p">[</span><span class="err">...</span><span class="p">]</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;applies_for_pod&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A popular library means there can be a community to help improve and maintain a project.&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;modifier&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Is popular&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>This gives enough metadata to start creating a page that represents the library with the kind of context that is specific to our community. In a lot of ways it can be better than the front page of the GitHub repo.</p>
+
+<h2>How it comes together</h2>
+
+<p>We use the quality metrics in search to order the results. There are quite a few different <a href="https://github.com/CocoaPods/search.cocoapods.org/blob/238b497872857e7b44ac715170888ef7f5ba046b/lib/search.rb#L345">sorting options</a> now, so we may look into offering choices there.</p>
+
+<p>We&#39;ve started exposing a good chunk of the information in a pod&#39;s profile pages, and via inline results but not all of it. There&#39;s <a href="https://github.com/CocoaPods/cocoapods.org/issues/107">interesting</a> <a href="https://github.com/CocoaPods/cocoapods.org/issues/106">issues</a> around how we can expose more.</p>
+
+<h2>Going forward</h2>
+
+<p>The APIs we use are all available for anyone to build things on top of. This data is pretty solid, the API routes won&#39;t be changing and work is on-going to make it more accurate. We&#39;ll only be expanding from here.</p>
+
+<p>It&#39;s not perfect, but a website isn&#39;t an iOS app and we can deploy daily. We re-wrote the homepage to run directly from the new databases and it&#39;s simplified the development process a lot. So it&#39;s easy for anyone to contribute and help out. We&#39;ll be iterating on it for a while before stablizing, so we&#39;d love feedback in <a href="https://github.com/CocoaPods/cocoapods.org/issues/new">an issue</a> or on twitter.</p>
+
+<h2>It took a bunch of people too</h2>
+
+<p>Whilst I have been championing this feature for the last 8 months, I&#39;ve had a lot of help:</p>
+
+<ul>
+<li><a href="http://florianhanke.com">Florian Hanke</a>, <a href="http://segiddins.me">Samuel Giddins</a>, <a href="http://www.hugotunius.se">Hugo Tunis</a> on metrics, search and a CocoaDocs API.</li>
+<li><a href="http://kylefuller.co.uk">Kyle Fuller</a> on countless CocoaDocs improvements and maintainace</li>
+<li><a href="http://dbgrandi.github.io">David Grandinetti</a>, <a href="http://lazerwalker.com">Mike Lazer-Walker</a>, <a href="http://tang.io">Phil Tang</a>, <a href="http://modocache.svbtle.com">Brian Gesiak</a> and <a href="https://twitter.com/dannyhertz">Danny Hertz</a> on Quality/Popularity Metrics</li>
+</ul>
+
+      </article>
+    </article>
+  </section>
+</section>
+
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2015-03-16-CocoaPods.org-Take-Two.md" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/orta">Follow orta</a></div></article></div></section></section>
+
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaPods-0.36" title="CocoaPods 0.36 - Framework and Swift Support"><header><h4>Previous Post</h4></header><h3>CocoaPods 0.36 - Framework and Swift Support</h3><p>By Marius Rackwitz</p><a class="chevron_placeholder back" href="/CocoaPods-0.36"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+    <footer class="page-footer"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><h4>CocoaPods is a project from</h4><p class="contributors"><a href="http://kylefuller.co.uk">Kyle Fuller</a>, <a href="http://orta.github.io">Orta Therox</a>, <a href="http://segiddins.me">Samuel Giddins</a>, and <a href="http://cocoapods.org/about#team">The CocoaPods Dev Team</a> with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p><h4>Lovingly sponsored by</h4><p class="sponsors"><a href="http://artsy.net">Artsy</a>, <a href="http://www.usebutton.com">Button</a>, <a href="http://discontinuity.eu">Discontinuity</a>, <a href="http://www.fngtps.com">Fingertips</a>, <a href="https://www.heroku.com">Heroku</a>, <a href="http://www.rubymotion.com">RubyMotion</a>, <a href="https://www.sauspiel.de">Sauspiel</a>, <a href="https://www.slack.com">Slack</a>, <a href="https://www.soundcloud.com">SoundCloud</a>, <a href="https://www.stripe.com">Stripe</a> and <a href="http://www.technologyastronauts.ch">Technology&nbsp;Astronauts</a>.</p></article></div></section></footer><footer class="footer-links"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><a class="cocoapods-small-logo" href="http://cocoapods.org"></a><ul><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://guides.cocoapods.org/using/troubleshooting.html">Support</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://github.com/CocoaPods/CocoaPods">Github Repo</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://github.com/CocoaPods/Specs">Podspecs Repo</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://twitter.com/CocoaPods">@CocoaPods</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://groups.google.com/group/cocoapods">Mailing List</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://cocoapods.org/about"><span class="visible-lg-span">CocoaPods</span> Dev Team</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://guides.cocoapods.org/syntax/podfile.html">Podfile Doc<span class="hidden-lg-span">s</span><span class="visible-lg-span">umentation</span></a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://cocoapods.org/legal">Legal / Conduct</a></li></ul></article></div></section></footer>
+    <script src="/assets/blog-c2911afb0e1e77d79b486c5c39fe0cc6.js"></script>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  </body>
+</html>
