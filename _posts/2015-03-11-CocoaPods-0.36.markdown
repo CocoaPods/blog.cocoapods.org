@@ -99,6 +99,14 @@ To make use of that, the view component must live in an own framework.
 If you want to learn more about Frameworks, take a look into the [Framework Programming Guide](https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPFrameworks/Frameworks.html#//apple_ref/doc/uid/10000183-SW1).
 Even though this was not written specifically for the new Cocoa Touch Frameworks, how Apple calls them in their Xcode target template, those are mostly the same to the classic OS X frameworks, so this document is still a helpful introduction.
 
+## Private Pods and `source`
+
+On a last note, another change in this version is regarding private spec repositories.
+
+In CocoaPods 0.36 and onwards, when using pods from private spec repositories, you will need to [explicity list all the spec repositories](http://guides.cocoapods.org/making/private-cocoapods.html#thats-it) that are used, using the `source` directive in your `Podfile`.  
+This is important for ensuring everybody in your team uses the same reference of specs whatever their local configuration is.
+
+_Note that if you don't use private pods (and only use pods from the official spec repo), you don't need to list any `source` as this will defaults to only using `CocoaPods/Specs`._
 
 ## Updating
 
