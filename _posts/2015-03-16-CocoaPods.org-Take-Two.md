@@ -69,7 +69,7 @@ Let’s take a random pod. [MiniFuture][4]. This is what happens after a Pod is 
 	}
 }
 ```
-* A preview image is generated for the library for Social Media, chat, or really anything that supports open graph previews.
+* A preview image is generated for the library for Social Media, chat, or really anything that supports open graph previews. [Here is](https://github.com/CocoaPods/cocoadocs.org/blob/master/classes/social_image_generator.rb#L20-L39) how we figure the wording.
   {% breaking_image http://cocoadocs.org/docsets/MiniFuture/0.1.0/preview.png %}
   
 * We then generate an estimated quality number for the library. This is based on a collection of [individual metrics][7] that are applied to the generated metrics data. They take a library and add or remove points based whether the rule applies for that library. These range from the popularity of the library, total test expectations / lines of code to the files, and average lines of code per file in the library.
