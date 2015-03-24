@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-      <title>CocoaPods Blog</title>
+      <title>CocoaDocs Co-located - CocoaPods Blog</title>
     
 
     <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
@@ -41,201 +41,75 @@
 
     <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="glyphicon glyphicon-plus"></span></button><a class="navbar-brand" href="http://cocoapods.org"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://cocoapods.org/about">About</a></li><li><a href="http://guides.cocoapods.org">Guides</a></li><li class="active"><a href="http://blog.cocoapods.org">Blog</a></li></ul></div></section></nav>
 
-    <section class="container">
+    <div id ="">
+<section class="container" >
   <article class="row">
-    <header class="col-md-12 headline index">
-      <h1>CocoaPods Blog</h1>
-      <div class="horizontal-divider"><div class="arrow-down"></div><div class="enclosed-arrow-down"></div></div>
-    </header>
+  <header class="col-md-8 col-md-offset-2 headline blog-post">
+    
+      <h1>CocoaDocs Co-located</h1>
+    
+    
+  </header>
   </article>
 </section>
+</div>
 
-<section id="content-wrapper" class="homepage">
+<section id="content-wrapper" class="post">
   <section class="container">
     <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-        
-<article class="post">
-  <header>
+      <article class="author metadata col-md-2 col-md-push-10">
+        <header>
+          
+            
+              <img class="gravatar large" src="http://gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb?s=144" height=72 width=72>
+            
+            
+              
+                <p><a href="http://twitter.com/orta">Orta Therox</a></p>
+              
+            
+             <p>23 March 2015</p>
+
+            
+              <a href="https://twitter.com/orta" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @orta
+              </a>
+            
+        </header>
+      </article>
     
-    <h2 class="post-title"><a href="/Claim-Your-Pods">Claim Your Pods</a></h2>
-  </header>
+      <article class="content col-md-8">
+        <p>TL;DR: <a href="http://cocoadocs.org">CocoaDocs.org</a> just got <a href="https://github.com/realm/jazzy">Jazzy</a> support, became more stable, and is now sending stats to our status page.</p>
 
-  
-      <p>Today we are introducing the ‘Trunk’ web-service. An awesome new way for podspec
-authors to submit their libraries to the master specs repository. For
-authors who have previously had push access the workflow should be very
-similar using the <code>pod push</code> subcommand. For more information on the ‘Trunk’
-web-service itself, see <a href="http://blog.cocoapods.org/CocoaPods-Trunk/">the previous blog post</a>.</p>
+<!-- more -->
 
-<p>Along with these changes we are adding a hierarchy of ownership to
-submitted podspecs. This way library maintainers will have complete
-control over submissions of their specs to the master repo.</p>
+<h2>History.</h2>
 
+<p>CocoaDocs is a server that generates CocoaPods documentation. It started out by generating Apple-compliant DocSets via <a href="https://github.com/tomaz/appledoc">appledoc</a> on a hosted Mac and then sends the results to Amazon&#39;s S3 where they are served statically.</p>
 
-      <p><a href="/Claim-Your-Pods">Read on →</a></p>
-  
+<h2>Maturation Process</h2>
 
-</article>
+<p>Appledoc is great, but it&#39;s not going to be supporting Swift anytime soon. It&#39;s a pre-ARC project that isn&#39;t compilable with modern Xcodes. CocoaPods has been supporting Swift Pods since New Year 2014, we wanted to be able to provide hosted documentation for these pods too. Sam Giddins took the initiative here and added <a href="https://github.com/CocoaPods/cocoadocs.org/pull/279">early support</a> for Swift Pods via <a href="http://realm.io">Realm</a>&#39;s <a href="https://github.com/realm/jazzy">Jazzy</a>. You can see a few Pods here: <a href="http://cocoadocs.org/docsets/Observable-Swift/0.4.2/">Observable</a> , <a href="http://cocoadocs.org/docsets/Moya/0.6.1/">Moya</a>, <a href="http://cocoadocs.org/docsets/JSONJoy-Swift/0.9.1/">JSONJoy</a> and <a href="http://cocoadocs.org/docsets/QRCodeReader.swift/3.1.7/">QRReader.swift</a>. There&#39;s no fancy design work yet, we will get to that in time.</p>
 
-<article class="post">
-  <header>
-    
-    <h2 class="post-title"><a href="/CocoaPods-Trunk">CocoaPods Trunk</a></h2>
-  </header>
+<p>Given Swift&#39;s immaturity, this is going to be an interesting problem, as the CocoaDocs server has no way of determining which version of Swift your library supports. For now this is solved by only supporting stable Xcode releases. In the future, it may make sense to add a range of supported Swift releases to your podspec per-release.</p>
 
-  
-      <p>After a year of architecture design and hard work, we are proud to introduce the ‘Trunk’ web-service, which will dramatically improve the user-experience of podspec publishers.</p>
+<p>Towards the end of the 2014, the CocoaDocs server was starting to have some real issues, the generator would be down for days, and trying to <code>ssh</code> in would fail. It was turning out that the shared VPS we were using was falling over after a certain amount of time, likely due to running out of RAM. In order to get the server back up and running I had to submit a support ticket and get someone else to reboot it.</p>
 
+<p>Around this time, <a href="http://www.usebutton.com">Button</a> reached out to me to ask if this was a problem they could help solve. Given that until this time I had been paying for CocoaDocs myself, I had done everything I could to optimise it for my wallet. ( CocoaDocs was costing me about $450 a year. ) So we jumped at the chance to do it right. CocoaDocs is now running on <a href="http://www.macminicolo.net">macminicolo.net</a>, and it&#39;s a dream to ssh or Screen Share.app in. Thanks a lot <a href="http://www.usebutton.com">Button</a>!</p>
 
-      <p><a href="/CocoaPods-Trunk">Read on →</a></p>
-  
-
-</article>
-
-<article class="post">
-  <header>
-    
-    <h2 class="post-title"><a href="/Cocoa-Kucha-4">Cocoa Kucha 4 - San Francisco - 28th May 2014</a></h2>
-  </header>
-
-  
-      <p><a href="https://twitter.com/orta">Orta</a> has been kind enough to organise yet another
-Cocoa Kucha. This time he&#39;s pulled together an awesome collection of talented
-people based in San Francisco, along with a couple of visitors down for WWDC.
-Cocoa Kucha 4 is generously hosted by <a href="http://www.hipbyte.com">HipByte</a> after
-their RubyMotion <a href="http://www.rubymotion.com/conference/2014/">#inspect conference</a>,
-which is just days before WWDC kicks-off.</p>
-
-
-      <p><a href="/Cocoa-Kucha-4">Read on →</a></p>
-  
-
-</article>
-
-<article class="post">
-  <header>
-    
-    <h2 class="post-title"><a href="/CocoaPods-WWDC-Party">CocoaPods 3rd WWDC Meetup: 2nd June 2014</a></h2>
-  </header>
-
-  
-      <p>Apple have their developers state of the union address. We have ours. We&#39;re working with the <a href="http://www.altconf.com">Alt Conference</a> to have a great opening event to the WWDC week: The CocoaPodsAlt State of the Union. You should come along.</p>
-
-
-      <p><a href="/CocoaPods-WWDC-Party">Read on →</a></p>
-  
-
-</article>
-
-<article class="post">
-  <header>
-    
-    <h2 class="post-title"><a href="/CocoaPods-0.32">CocoaPods 0.32</a></h2>
-  </header>
-
-  
-      <p>TL;DR: <em>CocoaPod 0.32 is here! It brings a vastly improved <code>update</code>
-command and a galore of improvements. Including the ability to deprecate pods.</em></p>
-
-
-      <p><a href="/CocoaPods-0.32">Read on →</a></p>
-  
-
-</article>
-
-<article class="post">
-  <header>
-    
-    <h2 class="post-title"><a href="/Big-News">AppIe Acquires CocoaPods</a></h2>
-  </header>
-
-  
-      <p><strong>Update:</strong> We hope you enjoyed our April Fools’ day prank! We are still an independent open-source project and fully committed to you, our users. In case it wasn’t completely clear to you, you <em>may</em> have thought that this post mentions a big well-known technology company, however, it in fact mentions ‘Appie’, which –with our sans-serif font– looks different when spelled with a capital ‘I’ ;) <a href="https://twitter.com/AppieDuran/status/450975104395390976/photo/1">Appie</a> is Eloy’s dog, we are not sure whether or not this prank was planned years ahead…</p>
-
-<hr>
-
-<p>Big news, everybody! AppIe* has finally acquired CocoaPods.</p>
-
-
-      <p><a href="/Big-News">Read on →</a></p>
-  
-
-</article>
-
-<article class="post">
-  <header>
-    
-    <h2 class="post-title"><a href="/CocoaPods-0.31">CocoaPods 0.31</a></h2>
-  </header>
-
-  
-      <p>TL;DR: <em>The bug bash has been a massive success: all the tickets have been triaged at least once, almost 80 were closed, with 16 Pull Requests sent to fix or enhance CocoaPods. The result? CocoaPods 0.31!</em></p>
-
-
-      <p><a href="/CocoaPods-0.31">Read on →</a></p>
-  
-
-</article>
-
-<article class="post">
-  <header>
-    
-    <h2 class="post-title"><a href="/CocoaPods-0.30">CocoaPods 0.30</a></h2>
-  </header>
-
-  
-      <p>TL;DR: <em>CocoaPods 0.30 dramatically reduces setup time &amp; download size, introduces compatibility adjustments for Xcode 5.1 and the Rainforest!</em></p>
-
-
-      <p><a href="/CocoaPods-0.30">Read on →</a></p>
-  
-
-</article>
-
-<article class="post">
-  <header>
-    
-    <h2 class="post-title"><a href="/CocoaPods-Bug-Bash">CocoaPods Bug Bash</a></h2>
-  </header>
-
-  
-      <p>With the announcement that Fabio will be <a href="/SoundCloud/">working full time on CocoaPods</a> (thanks <a href="https://soundcloud.com/">SoundCloud!</a>) for three months, we looked for ways to get the most bang for our buck on his time. In true Open Source style we looked at ways of getting people to help out cleaning out the GitHub issues. </p>
-
-<p>We then looked for interesting incentives, and we have some compelling icing on the proverbial cake.</p>
-
-
-      <p><a href="/CocoaPods-Bug-Bash">Read on →</a></p>
-  
-
-</article>
-
-<article class="post">
-  <header>
-    
-    <h2 class="post-title"><a href="/Guides-And-Blog-Travis-Deploy">Guides and Blog Deploys with Travis-CI</a></h2>
-  </header>
-
-  
-      <p>TL;DR Both the Guides and Blog now auto-deploy when we push to master.</p>
-
-<p>We are always looking for ways to make contributing to CocoaPods easier, and a quick win for us is auto-deploying the guides and blog. Now any member of the team can accept a PR, and Travis will deploy the changes within minutes.</p>
-
-
-      <p><a href="/Guides-And-Blog-Travis-Deploy">Read on →</a></p>
-  
-
-</article>
-
-
-<!-- Special homepage version of accessories -->
-</article></section>
-<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/" id="pull-request" title=""></a><a data-container="body" data-content="Check out our post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a></article></div></section></section>
+<p>In the <a href="https://github.com/CocoaPods/cocoadocs.org/issues/320">process</a> of moving I added one more feature, we now send data to the <a href="http://status.cocoapods.org">CocoaPods status</a> page saying how many pods have been documented in the last 24hrs.</p>
 
       </article>
     </article>
   </section>
 </section>
+
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2015-03-23-CocoaDocs-Colo.md" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/orta">Follow orta</a></div></article></div></section></section>
+
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaPods.org-Take-Two" title="CocoaPods.org Take Two"><header><h4>Previous Post</h4></header><h3>CocoaPods.org Take Two</h3><p>By Orta Therox</p><a class="chevron_placeholder back" href="/CocoaPods.org-Take-Two"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
 
 
     <footer class="page-footer"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><h4>CocoaPods is a project from</h4><p class="contributors"><a href="https://twitter.com/alloy">Eloy Durán</a>,&nbsp;<a href="https://twitter.com/fabiopelosin">Fabio Pelosin</a>,&nbsp;<a href="http://orta.github.io">Orta Therox</a>&nbsp;and&nbsp;<a href="http://cocoapods.org/about">The CocoaPods Dev Team</a>&nbsp;with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p><h4>Lovingly sponsored by</h4><p class="sponsors"><a href="http://artsy.net">Artsy</a>, <a href="http://discontinuity.eu">Discontinuity</a>, <a href="http://www.fngtps.com">Fingertips</a>, <a href="https://www.heroku.com">Heroku</a>, <a href="http://www.rubymotion.com">RubyMotion</a>, <a href="https://www.sauspiel.de">Sauspiel</a>, <a href="https://www.slack.com">Slack</a>, <a href="https://www.soundcloud.com">SoundCloud</a>, <a href="https://www.stripe.com">Stripe</a> and <a href="http://www.technologyastronauts.ch">Technology&nbsp;Astronauts</a>.</p></article></div></section></footer><footer class="footer-links"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><a class="cocoapods-small-logo" href="http://cocoapods.org"></a><ul><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://guides.cocoapods.org/using/troubleshooting.html">Support</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://github.com/CocoaPods/CocoaPods">Github Repo</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://github.com/CocoaPods/Specs">Podspecs Repo</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://twitter.com/CocoaPods">@CocoaPods</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://groups.google.com/group/cocoapods">Mailing List</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://cocoapods.org/about"><span class="visible-lg-span">CocoaPods</span> Dev Team</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://guides.cocoapods.org/syntax/podfile.html">Podfile Doc<span class="hidden-lg-span">s</span><span class="visible-lg-span">umentation</span></a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://cocoapods.org/legal">Legal / Conduct</a></li></ul></article></div></section></footer>
