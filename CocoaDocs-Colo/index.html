@@ -89,7 +89,7 @@
 
 <h2>Maturation Process</h2>
 
-<p>Appledoc is great, but it&#39;s not going to be supporting Swift anytime soon. It&#39;s a pre-ARC project that isn&#39;t compilable with modern Xcodes. CocoaPods has been supporting Swift Pods since New Year 2014, we wanted to be able to provide hosted documentation for these pods too. Sam Giddins took the initiative here and added <a href="https://github.com/CocoaPods/cocoadocs.org/pull/279">early support</a> for Swift Pods via <a href="http://realm.io">Realm</a>&#39;s <a href="https://github.com/realm/jazzy">Jazzy</a>. You can see a few Pods here: <a href="http://cocoadocs.org/docsets/Observable-Swift/0.4.2/">Observable</a> , <a href="http://cocoadocs.org/docsets/Moya/0.6.1/">Moya</a>, <a href="http://cocoadocs.org/docsets/JSONJoy-Swift/0.9.1/">JSONJoy</a> and <a href="http://cocoadocs.org/docsets/QRCodeReader.swift/3.1.7/">QRReader.swift</a>. There&#39;s no fancy design work yet, we will get to that in time.</p>
+<p>Appledoc is great, but it&#39;s not going to be supporting Swift anytime soon. CocoaPods has been supporting Swift Pods since New Year 2014, and we wanted to be able to provide hosted documentation for these pods too. Sam Giddins took the initiative here and added <a href="https://github.com/CocoaPods/cocoadocs.org/pull/279">early support</a> for Swift Pods via <a href="http://realm.io">Realm</a>&#39;s <a href="https://github.com/realm/jazzy">Jazzy</a>. You can see a few Pods here: <a href="http://cocoadocs.org/docsets/Observable-Swift/0.4.2/">Observable</a>, <a href="http://cocoadocs.org/docsets/Moya/0.6.1/">Moya</a>, <a href="http://cocoadocs.org/docsets/JSONJoy-Swift/0.9.1/">JSONJoy</a> and <a href="http://cocoadocs.org/docsets/QRCodeReader.swift/3.1.7/">QRReader.swift</a>. There&#39;s no fancy design work yet, we will get to that in time.</p>
 
 <p>Given Swift&#39;s immaturity, this is going to be an interesting problem, as the CocoaDocs server has no way of determining which version of Swift your library supports. For now this is solved by only supporting stable Xcode releases. In the future, it may make sense to add a range of supported Swift releases to your podspec per-release.</p>
 
@@ -97,7 +97,7 @@
 
 <p>Around this time, <a href="http://www.usebutton.com">Button</a> reached out to me to ask if this was a problem they could help solve. Given that until this time I had been paying for CocoaDocs myself, I had done everything I could to optimise it for my wallet. ( CocoaDocs was costing me about $450 a year. ) So we jumped at the chance to do it right. CocoaDocs is now running on <a href="http://www.macminicolo.net">macminicolo.net</a>, and it&#39;s a dream to ssh or Screen Share.app in. Thanks a lot <a href="http://www.usebutton.com">Button</a>!</p>
 
-<p>In the <a href="https://github.com/CocoaPods/cocoadocs.org/issues/320">process</a> of moving I added one more feature, we now send data to the <a href="http://status.cocoapods.org">CocoaPods status</a> page saying how many pods have been documented in the last 24hrs.</p>
+<p>In the <a href="https://github.com/CocoaPods/cocoadocs.org/issues/320">process</a> of moving I added one more feature. We now send data to the <a href="http://status.cocoapods.org">CocoaPods status</a> page saying how many pods have been documented in the last 24hrs. Hopefully this should result in some useful insight into &quot;is it working?&quot; and give a sense of how much work it is doing.</p>
 
       </article>
     </article>
