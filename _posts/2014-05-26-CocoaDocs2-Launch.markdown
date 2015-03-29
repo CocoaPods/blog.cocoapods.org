@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "On Launching<br />CocoaDocs Version 2"
+title:  "On Launching CocoaDocs Version 2"
+post_title:  "On Launching<br />CocoaDocs Version 2"
 author: orta
 categories: cocoadocs new cocoadocs2
 date: 2014-05-26
@@ -29,7 +30,7 @@ With the mostly solid foundations of CocoaDocs working, I was free to sit back a
 
 {% breaking_image /assets/blog_img/cocoadocs/readme.jpg, http://cocoadocs.org/readme, width="1024", no-bottom-margin %}
 
-I also felt that CocoaDocs was a black box for developers who didn't want to read the source code, which is basically everyone. So I've taken the liberty of creating a [CocoaDocs Developer Docs](http://cocoadocs.org/readme/). This is an area where you can preview your custom styling, and get the answers to a lot of the questions I've answer on twitter. 
+I also felt that CocoaDocs was a black box for developers who didn't want to read the source code, which is basically everyone. So I've taken the liberty of creating a [CocoaDocs Developer Docs](http://cocoadocs.org/readme/). This is an area where you can preview your custom styling, and get the answers to a lot of the questions I've answer on twitter.
 
 ## Coming up
 
