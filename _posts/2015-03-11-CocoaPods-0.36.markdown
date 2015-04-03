@@ -30,11 +30,11 @@ By default, Xcode uses `swift-stdlib-tool` to handle copying the Swift runtime d
 Your app executable and the frameworks you ship will all use the same set of dylibs, which are embedded into the `Frameworks` subdirectory of the application bundle. First, that's because you can't link against different versions of the standard libraries.
 Furthermore it is desirable to embed them only once and not multiple times, because of constraints to memory size and network speed, which are relevant for distribution.
 
-With this release, we initially allow to use both in combination with CocoaPods.
+With this release, we initially allow you to use both in combination with CocoaPods.
 You can make CocoaPods integrate to your project via frameworks instead of static libraries by specifying `use_frameworks!`.
 If that's not present, you won't be able to integrate dependencies, if you depend on a pod which includes Swift source code.
 This is an all or nothing approach per integrated targets, because we can't ensure to properly build frameworks, whose transitive dependencies are static libraries.
-So this release goes along with probably one of the most drastic change set on the whole project, which makes no stop on CocoaPods itself, but also required similar changes to Xcodeproj as well.
+This release goes along with probably one of the most drastic changes of the whole project, which includes CocoaPods itself, but also required similar changes to Xcodeproj as well.
 
 
 ## Dynamic Frameworks vs. Static Libraries
@@ -85,13 +85,13 @@ There are only very rare cases, where you want to reference the main bundle dire
 The advantage to the improved resource handling is that resources won't conflict when they have the same names.
 They are namespaced by the framework bundle.
 Furthermore we don't have to apply the build rules ourself to the resources as e.g. asset catalogs and storyboards need to be compiled.
-This should decrease build times for project using Pods that include many resources.
+This should decrease build times for projects using Pods that include many resources.
 
 
 ### `@IBDesignable` - Another Reason for Frameworks
 
-Xcode 6 allows you to preview your own custom view components in the interface builder.
-To make use of that, the view component must live in an own framework.
+Xcode 6 allows you to preview your own custom view components in Interface Builder.
+To make use of that, the view component must live in its own framework.
 
 
 ### More about Frameworks
