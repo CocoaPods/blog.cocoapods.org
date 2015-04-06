@@ -1,0 +1,22 @@
+---
+layout: post
+title:  Automating Everything
+author: samuel
+categories:
+---
+
+A few nights ago, I put out a release of CocoaPods that was unable to actually download new pods. Hoping to learn from that mistake, I turned to automation to ensure the team would never make the same mistake again.
+
+<!-- more -->
+
+In CocoaPods, we automate a lot of things. Every gem repository has a `Gemfile` and `Gemfile.lock` to ensure that all developers are using the exact same versions of RubyGems dependencies. Every repo has [RuboCop](https://github.com/bbatsov/rubocop) enabled, to ensure we keep coding style consistent. Every repo is set up to run on [Travis CI](https://travis-ci.org) and report test results back to [GitHub](https://github.com/), as well as sending code coverage and quality information over to [Code Climate](https://codeclimate.com). Every repo has a `Rakefile` (a super-powered `Makefile` for Ruby) to define common development tasks, such as running tests, generating data, and running RuboCop. That's a lot of automation, right? Yes, but there's more.
+
+To develop CocoaPods, not only do we have many repositories for different sites and different gems, but we also have a pair of meta-repositories, [Rainforest](https://github.com/CocoaPods/Rainforest) and [Strata](https://github.com/CocoaPods/Strata). They manage the gem and web repos, respectively, and provide a litany of commonly unused functionality, such as updating RuboCop configurations, seeding databases, and bootstrapping all of the repos they manage.
+
+Now, back to the story of the botched release ([CocoaPods 0.36.2](https://rubygems.org/gems/cocoapods/versions/0.36.2) if you were curious). Rainforest has a lovely `release` task that goes far beyond the Bundler default release task by validating the version change, that `bundle install` has been run, and that the `CHANGELOG` has the correct headers. It also ensures that there are no missing remote commits, and that all the specs pass. It's that last bit that went awry for me -- the CocoaPods `Gemfile` points to various commits of the `master` branches of its internal dependencies, even for that final specs run before a release. This is usally no problem, since we release depended-upon gems first, ending with the `cocoapods` gem. This time, however, I had forgotten to do a release of `cocoapods-downloader`, which is responsible for actually downloading Pods.
+
+In between CocoaPods 0.36.1 and 0.36.2, I had refactored an internal API to take an array instead of a string, and it just so happening this was an API that interacted with the downloader. Because the CocoaPods `Gemfile` pointed to a more recent commit of `cocoapods-downloader`, a normal run-through of the specs didn't reveal the incompatibility. So I released 0.36.2, and it 'broke' CocoaPods for a few hundred users before 0.36.3 was pushed. All in all, it wasn't too big of a crisis, but it left me with a burning desire to make sure that nothing similar happened again. I was determined to bolster the release task to guard against a repition of this sort of mistake.
+
+So I [hacked something together](https://github.com/CocoaPods/Rainforest/pull/37) the next day. On the CocoaPods team, I definitely fall on the hackier side of the scale, but we all share a belief that any sort of _process_ needs to be automated (and thus enforced by machine) to be accepted. Without automation, our distributed team that works random nights and weekends would begin to look more like a rag-tag group of wild coders than a team capable of building dependable software. There are a bunch of sayings that try and touch upon the cost-benefit analysis of automatic even simple tasks, but I don't believe that any of them apply when you're talking about a product that is used by multitudes of people: sure, I might spend five hours on a task, but if it can save each user thirty seconds, it's a net gain.
+
+Additionally, automation has the benefit of being operator-agnostic. As an open source project, there's a steady churn of contributors. We want to look towards the future and make sure that we're not leaving compartmentalized knowledge in any one member of the team, so that any future member can seamlessly step into any role. Basically, when I say 'automate everything', I really mean it -- when I've automated something, I can put it out of my mind, confident that it will work. (Sounds familiar to those of you who write unit tests?)
