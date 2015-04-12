@@ -13,4 +13,4 @@ script:
 - rake deploy
 env:
   global:
-    secure: T1RQed2lnT+z8acmo4YzIk1wC8twja0DSuV539wueqFsCU1baJpTejQLkuk/JI5bLulroroncSFc2nWxd7HK0+cqEAVumsiho8kEMCXkyYiXvCZlUsPmzpWvUmnVRCoXMYHcrTAAN7tQOumOAPrq3Yx0lkBYeeQOC1jWeadIYeU=
+  - secure: dk9Suz04lediKGuaJGMb3efp+JsLIj4jF0o/l7SzAx4R4iGxmmFFxCVe83ehy9LpnWAvBq+nzkat8z0MhFdFCXnYLArxAZROvv3YYFvmwpERaFE+WnVJgVQJT8chfziLPaK92xT+DhD//lIeXFu3YdKaGpfpQp8oDYahzxzZ0ww=
