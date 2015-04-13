@@ -13,9 +13,9 @@ The Testjam is this weekend. Let's give as much details as possible:
   | -------|--------------|----|
   | New York City | [CocoaPods NYC](http://www.meetup.com/CocoaPods-NYC/events/220783694/) | Orta Therox, Ash Furrow at [Artsy HQ](http://artsy.net) |
   | San Francisco | [CocoaPods SF](http://www.meetup.com/CocoaPods-SF/events/220783749/) | Samuel Giddins, Kyle Fuller at [Realm HQ](http://realm.io) |
-  | Minsk, Belarus | [CocoaHeadsBy](https://www.facebook.com/groups/iosby//)| Aliaksandr Andrashuk, Yana Poteeva at [9elements](http://9elements.com) |
+  | Minsk, Belarus | [CocoaHeadsBy](https://www.facebook.com/groups/iosby/)| Aliaksandr Andrashuk, Yana Poteeva at [9elements](http://9elements.com) |
   | London | [NSLondon](http://www.meetup.com/NSLondon/events/221458856/)| Daniel Haight, Raimon Lapuente at [Facebook](http://facebook.com) |
-  | Durham, NC | [NSCoder ](http://www.meetup.com/nscoderrtp/events/221366135//)| Josh Johnson at [American Underground](http://americanunderground.com) | -->
+  | Durham, NC | [NSCoder ](http://www.meetup.com/nscoderrtp/events/221366135/)| Josh Johnson at [American Underground](http://americanunderground.com) | -->
   
 
 ### Meetups
@@ -41,7 +41,7 @@ The Testjam is this weekend. Let's give as much details as possible:
 </tr>
 <tr>
 <td> Minsk, Belarus </td>
-<td> <a href="https://www.facebook.com/groups/iosby//">CocoaHeadsBy</a></td>
+<td> <a href="https://www.facebook.com/groups/iosby/">CocoaHeadsBy</a></td>
 <td> Aliaksandr Andrashuk, Yana Poteeva at <a href="http://9elements.com">9elements</a> </td>
 </tr>
 <tr>
