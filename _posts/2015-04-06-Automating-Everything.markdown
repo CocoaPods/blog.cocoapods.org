@@ -2,7 +2,7 @@
 layout: post
 title:  Automating Everything
 author: samuel
-categories:
+categories: engineering automation
 ---
 
 A few nights ago, I put out a release of CocoaPods that was unable to actually download new pods. Hoping to learn from that mistake, I turned to automation to ensure the team would never make the same mistake again.
