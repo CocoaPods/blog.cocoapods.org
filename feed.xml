@@ -8,6 +8,71 @@
     
     
     <item>
+      <title>Preparations for the Test Jam</title>
+
+      
+      <description>&lt;p&gt;The Testjam is this weekend. Let&amp;#39;s give as much details as possible:&lt;/p&gt;
+
+&lt;!-- | Location | Meetup Page | Hosts |
+  | -------|--------------|----|
+  | New York City | [CocoaPods NYC](http://www.meetup.com/CocoaPods-NYC/events/220783694/) | Orta Therox, Ash Furrow at [Artsy HQ](http://artsy.net) |
+  | San Francisco | [CocoaPods SF](http://www.meetup.com/CocoaPods-SF/events/220783749/) | Samuel Giddins, Kyle Fuller at [Realm HQ](http://realm.io) |
+  | Minsk, Belarus | [CocoaHeadsBy](https://www.facebook.com/groups/iosby//)| Aliaksandr Andrashuk, Yana Poteeva at [9elements](http://9elements.com) |
+  | London | [NSLondon](http://www.meetup.com/NSLondon/events/221458856/)| Daniel Haight, Raimon Lapuente at [Facebook](http://facebook.com) |
+  | Durham, NC | [NSCoder ](http://www.meetup.com/nscoderrtp/events/221366135//)| Josh Johnson at [American Underground](http://americanunderground.com) | --&gt;
+
+&lt;h3&gt;Meetups&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt; Location &lt;/th&gt;
+&lt;th&gt; Meetup Page &lt;/th&gt;
+&lt;th&gt; Hosts &lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt; New York City &lt;/td&gt;
+&lt;td&gt; &lt;a href=&quot;http://www.meetup.com/CocoaPods-NYC/events/220783694/&quot;&gt;CocoaPods NYC&lt;/a&gt; &lt;/td&gt;
+&lt;td&gt; Orta Therox, Ash Furrow at &lt;a href=&quot;http://artsy.net&quot;&gt;Artsy HQ&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt; San Francisco &lt;/td&gt;
+&lt;td&gt; &lt;a href=&quot;http://www.meetup.com/CocoaPods-SF/events/220783749/&quot;&gt;CocoaPods SF&lt;/a&gt; &lt;/td&gt;
+&lt;td&gt; Samuel Giddins, Kyle Fuller at &lt;a href=&quot;http://realm.io&quot;&gt;Realm HQ&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt; Minsk, Belarus &lt;/td&gt;
+&lt;td&gt; &lt;a href=&quot;https://www.facebook.com/groups/iosby//&quot;&gt;CocoaHeadsBy&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt; Aliaksandr Andrashuk, Yana Poteeva at &lt;a href=&quot;http://9elements.com&quot;&gt;9elements&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt; London &lt;/td&gt;
+&lt;td&gt; &lt;a href=&quot;http://www.meetup.com/NSLondon/events/221458856/&quot;&gt;NSLondon&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt; Daniel Haight, Raimon Lapuente at &lt;a href=&quot;http://facebook.com&quot;&gt;Facebook&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt; Durham, NC &lt;/td&gt;
+&lt;td&gt; &lt;a href=&quot;http://www.meetup.com/nscoderrtp/events/221366135/&quot;&gt;NSCoder &lt;/a&gt;&lt;/td&gt;
+&lt;td&gt; Josh Johnson at &lt;a href=&quot;http://americanunderground.com&quot;&gt;American Underground&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Don&amp;#39;t worry if you don&amp;#39;t live in a big city, we&amp;#39;ll all be online, follow through to find out the details.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Mon, 13 Apr 2015 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/Prepare-to-Jam</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/Prepare-to-Jam</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>Automating Everything</title>
 
       
