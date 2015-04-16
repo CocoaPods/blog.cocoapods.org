@@ -5,18 +5,7 @@ author: orta
 categories: meetup testjam nyc uk sf belarus nc
 ---
 
-
 The Testjam is this weekend. Let's give as much details as possible:
-
-
-<!-- | Location | Meetup Page | Hosts |
-  | -------|--------------|----|
-  | New York City | [CocoaPods NYC](http://www.meetup.com/CocoaPods-NYC/events/220783694/) | Orta Therox, Ash Furrow at [Artsy HQ](http://artsy.net) |
-  | San Francisco | [CocoaPods SF](http://www.meetup.com/CocoaPods-SF/events/220783749/) | Samuel Giddins, Kyle Fuller at [Realm HQ](http://realm.io) |
-  | Minsk, Belarus | [CocoaHeadsBy](https://www.facebook.com/groups/iosby//)| Aliaksandr Andrashuk, Yana Poteeva at [9elements](http://9elements.com) |
-  | London | [NSLondon](http://www.meetup.com/NSLondon/events/221458856/)| Daniel Haight, Raimon Lapuente at [Facebook](http://facebook.com) |
-  | Durham, NC | [NSCoder ](http://www.meetup.com/nscoderrtp/events/221366135//)| Josh Johnson at [American Underground](http://americanunderground.com) | -->
-  
 
 ### Meetups
 
@@ -54,6 +43,12 @@ The Testjam is this weekend. Let's give as much details as possible:
 <td> <a href="http://www.meetup.com/nscoderrtp/events/221366135/">NSCoder </a></td>
 <td> Josh Johnson at <a href="http://americanunderground.com">American Underground</a> </td>
 </tr>
+<tr>
+<td> Seattle, WA </td>
+<td> Working together</td>
+<td> Kai Curtis at <a href="http://www.substantial.com/">Substantial</a> </td>
+</tr>
+
 </tbody>
 </table>
 
