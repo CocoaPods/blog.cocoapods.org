@@ -30,7 +30,7 @@ The Testjam is this weekend. Let's give as much details as possible:
 </tr>
 <tr>
 <td> Minsk, Belarus </td>
-<td> <a href="https://www.facebook.com/groups/iosby//">CocoaHeadsBy</a></td>
+<td> <a href="https://www.facebook.com/groups/iosby/">CocoaHeadsBy</a></td>
 <td> Aliaksandr Andrashuk, Yana Poteeva at <a href="http://9elements.com">9elements</a> </td>
 </tr>
 <tr>
