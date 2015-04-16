@@ -13,14 +13,6 @@
       
       <description>&lt;p&gt;The Testjam is this weekend. Let&amp;#39;s give as much details as possible:&lt;/p&gt;
 
-&lt;!-- | Location | Meetup Page | Hosts |
-  | -------|--------------|----|
-  | New York City | [CocoaPods NYC](http://www.meetup.com/CocoaPods-NYC/events/220783694/) | Orta Therox, Ash Furrow at [Artsy HQ](http://artsy.net) |
-  | San Francisco | [CocoaPods SF](http://www.meetup.com/CocoaPods-SF/events/220783749/) | Samuel Giddins, Kyle Fuller at [Realm HQ](http://realm.io) |
-  | Minsk, Belarus | [CocoaHeadsBy](https://www.facebook.com/groups/iosby/)| Aliaksandr Andrashuk, Yana Poteeva at [9elements](http://9elements.com) |
-  | London | [NSLondon](http://www.meetup.com/NSLondon/events/221458856/)| Daniel Haight, Raimon Lapuente at [Facebook](http://facebook.com) |
-  | Durham, NC | [NSCoder ](http://www.meetup.com/nscoderrtp/events/221366135/)| Josh Johnson at [American Underground](http://americanunderground.com) | --&gt;
-
 &lt;h3&gt;Meetups&lt;/h3&gt;
 
 &lt;table&gt;
@@ -57,6 +49,12 @@
 &lt;td&gt; &lt;a href=&quot;http://www.meetup.com/nscoderrtp/events/221366135/&quot;&gt;NSCoder &lt;/a&gt;&lt;/td&gt;
 &lt;td&gt; Josh Johnson at &lt;a href=&quot;http://americanunderground.com&quot;&gt;American Underground&lt;/a&gt; &lt;/td&gt;
 &lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt; Seattle, WA &lt;/td&gt;
+&lt;td&gt; Working together&lt;/td&gt;
+&lt;td&gt; Kai Curtis at &lt;a href=&quot;http://www.substantial.com/&quot;&gt;Substantial&lt;/a&gt; &lt;/td&gt;
+&lt;/tr&gt;
+
 &lt;/tbody&gt;
 &lt;/table&gt;
 
