@@ -5,7 +5,7 @@ author: orta
 categories: meetup testjam nyc uk sf belarus nc
 ---
 
-The Testjam is this weekend. Let's give as much details as possible:
+The Testjam is this weekend (April 18-19). Let's give as much details as possible:
 
 ### Meetups
 
