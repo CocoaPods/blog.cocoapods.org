@@ -88,6 +88,7 @@ We changed the plan on the day to avoid needing a bot. In this case jammers woul
 [cezarywojcik/CWPopup#27](https://github.com/cezarywojcik/CWPopup/pull/27),
 [gpambrozi/BlockAlertsAnd-ActionSheets#76](https://github.com/gpambrozio/BlockAlertsAnd-ActionSheets/pull/76),
 [AFNetworking/AFAmazonS3Manager#88](https://github.com/AFNetworking/AFAmazonS3Manager/pull/8),
+[cwRichardKim/RKNotificationHub#10](https://github.com/cwRichardKim/RKNotificationHub/pull/10),
 [taiheng/BEMSimpleLineGraph#testjam](https://github.com/taiheng/BEMSimpleLineGraph/commits/testjam)
 
 {% breaking_image /assets/blog_img/testjam-2015/nyc.jpg %}
