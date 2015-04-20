@@ -6,7 +6,7 @@ categories: meetup testjam nyc uk sf belarus nc post-mortem
 ---
 
 Over the weekend over 150 people met up in meetups, and many joined online, to try and improve the foundational libraries that the Cocoa community rely on.  We made more than 30 pull requests and a lot of people got more exposure to testing in Xcode. Read on for stats.
-  
+
 <!-- more -->
 
 {% breaking_image /assets/blog_img/testjam-2015/sf1.jpg %}
@@ -24,7 +24,7 @@ The jam ran over a 14 hour timespan from 12pm GMT to 6pm PST. We had an active I
 
 <blockquote class="twitter-tweet" lang="en"><p>For the <a href="https://twitter.com/CocoaPods">@CocoaPods</a> Test Jam I added code coverage to Form! &#10;&#10;<a href="https://t.co/HJbqDp5uQD">https://t.co/HJbqDp5uQD</a></p>&mdash; Elvis Nuñez (@3lvis) <a href="https://twitter.com/3lvis/status/589540740956614656">April 18, 2015</a></blockquote>
 
-<blockquote class="twitter-tweet" lang="en"><p>Learned quite a bit about testing and werewolves <a href="https://twitter.com/CocoaPods">@CocoaPods</a> <a href="https://twitter.com/hashtag/testjam?src=hash">#testjam</a></p>&mdash; Eytan Biala (@eytanbiala) <a href="https://twitter.com/eytanbiala/status/589637914872717312">April 19, 2015</a></blockquote> 
+<blockquote class="twitter-tweet" lang="en"><p>Learned quite a bit about testing and werewolves <a href="https://twitter.com/CocoaPods">@CocoaPods</a> <a href="https://twitter.com/hashtag/testjam?src=hash">#testjam</a></p>&mdash; Eytan Biala (@eytanbiala) <a href="https://twitter.com/eytanbiala/status/589637914872717312">April 19, 2015</a></blockquote>
 
 </div>
 
@@ -34,11 +34,11 @@ The jam ran over a 14 hour timespan from 12pm GMT to 6pm PST. We had an active I
 
 <blockquote class="twitter-tweet" lang="en"><p>For the <a href="https://twitter.com/CocoaPods">@CocoaPods</a> Test Jam <a href="https://twitter.com/ams340">@ams340</a> and I added test coverage to facebook/KVOController--now adding missing tests! <a href="https://t.co/ft5aDbTZ79">https://t.co/ft5aDbTZ79</a></p>&mdash; Brian Gesiak（もどかしい） (@modocache) <a href="https://twitter.com/modocache/status/589466423963078657">April 18, 2015</a></blockquote>
 
-<blockquote class="twitter-tweet" lang="en"><p>We’ve wrapped up our first test jam pod: <a href="https://t.co/tBNlwUgP6z">https://t.co/tBNlwUgP6z</a></p>&mdash; Ørta (@orta) <a href="https://twitter.com/orta/status/589449038669418496">April 18, 2015</a></blockquote> 
+<blockquote class="twitter-tweet" lang="en"><p>We’ve wrapped up our first test jam pod: <a href="https://t.co/tBNlwUgP6z">https://t.co/tBNlwUgP6z</a></p>&mdash; Ørta (@orta) <a href="https://twitter.com/orta/status/589449038669418496">April 18, 2015</a></blockquote>
 
-<blockquote class="twitter-tweet" lang="en"><p>Having fun <a href="https://twitter.com/CocoaPods">@CocoaPods</a> <a href="https://twitter.com/hashtag/testjam?src=hash">#testjam</a>! Adding tests to MGBoxKit <a href="https://t.co/rOBgjxBl1h">https://t.co/rOBgjxBl1h</a></p>&mdash; Benjamin Encz (@benjaminencz) <a href="https://twitter.com/benjaminencz/status/589573207532810240">April 18, 2015</a></blockquote> 
+<blockquote class="twitter-tweet" lang="en"><p>Having fun <a href="https://twitter.com/CocoaPods">@CocoaPods</a> <a href="https://twitter.com/hashtag/testjam?src=hash">#testjam</a>! Adding tests to MGBoxKit <a href="https://t.co/rOBgjxBl1h">https://t.co/rOBgjxBl1h</a></p>&mdash; Benjamin Encz (@benjaminencz) <a href="https://twitter.com/benjaminencz/status/589573207532810240">April 18, 2015</a></blockquote>
 
-<blockquote class="twitter-tweet" lang="en"><p>Testing cocoa is exhausting. <a href="https://twitter.com/hashtag/testjam?src=hash">#testjam</a> @ Artsy <a href="https://t.co/rPu9hrzi8J">https://t.co/rPu9hrzi8J</a></p>&mdash; Rob Ruffler (@RobRuffler) <a href="https://twitter.com/RobRuffler/status/589481166786400257">April 18, 2015</a></blockquote> 
+<blockquote class="twitter-tweet" lang="en"><p>Testing cocoa is exhausting. <a href="https://twitter.com/hashtag/testjam?src=hash">#testjam</a> @ Artsy <a href="https://t.co/rPu9hrzi8J">https://t.co/rPu9hrzi8J</a></p>&mdash; Rob Ruffler (@RobRuffler) <a href="https://twitter.com/RobRuffler/status/589481166786400257">April 18, 2015</a></blockquote>
 
 <blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/robbiehanson_15">@robbiehanson_15</a> Gotcha, yeah, you maintain some seriously popular stuff! I set up some unit test for Cocoapods test jam, nothing critical.</p>&mdash; Stepan Hruda (@StepanHruda) <a href="https://twitter.com/StepanHruda/status/589544797431603200">April 18, 2015</a></blockquote>
 
@@ -49,45 +49,45 @@ The jam ran over a 14 hour timespan from 12pm GMT to 6pm PST. We had an active I
 
 ### Talks
 Every meetup had the freedom to run it however they like, ranging from [two people in a room](https://twitter.com/thepelkus/status/589886508695355392) to speakers known for their testing prowess. Interestingly enough, both talked about adding tests to untested code. *Hint:* you might be interested in their source material: [Working Effectively with Legacy Code](http://www.amazon.com/Working-Effectively-Legacy-Michael-Feathers/dp/0131177052)
-  
+
 {% breaking_image /assets/blog_img/testjam-2015/sf3.jpg %}
 {% breaking_image /assets/blog_img/testjam-2015/london.jpg %}  
 
 We changed the plan on the day to avoid needing a bot. In this case jammers would assign themselves a pod from a [big Spreadsheet](https://docs.google.com/spreadsheets/d/1JKfCpPMInru5i_vjHcfhPRQEtGT6p7YQx1kYJwKwx6s/edit) and this gave people a chance to find libraries that interested them. Here's a collection of the work done, with more probably happening over a longer time frame. Very cool.
 
-[facebook/KVOController#58](https://github.com/facebook/KVOController/pull/58)
-[facebook/KVOController#59](https://github.com/facebook/KVOController/pull/59)
-[facebook/KVOController#60](https://github.com/facebook/KVOController/pull/60)
-[facebook/KVOController#61](https://github.com/facebook/KVOController/pull/61)
-[andreamazz/AMTagListView#31](https://github.com/andreamazz/AMTagListView/pull/31)
-[chrismiles/CMPopTipView#97](https://github.com/chrismiles/CMPopTipView/pull/97)
-[stepanhruda/CocoaAsyncSocket#1](https://github.com/stepanhruda/CocoaAsyncSocket/pull/1)
-[robbiehanson/CocoaHTTPServer#136](https://github.com/robbiehanson/CocoaHTTPServer/pull/136)
-[AlexDenisov/FrameAccessor#16](https://github.com/AlexDenisov/FrameAccessor/pull/16)
-[kevon-hirsch/KVNProgress#37](https://github.com/kevin-hirsch/KVNProgress/pull/37)
-[mutualmobile/MMDrawerController#369](https://github.com/mutualmobile/MMDrawerController/pull/369)
-[tombenner/nui#293](https://github.com/tombenner/nui/pull/293)
-[pkluz/PKRevealController#224](https://github.com/pkluz/PKRevealController/pull/224)
-[ruslanskorb/RSKImageCropper#50](https://github.com/ruslanskorb/RSKImageCropper/pull/50)
-[hons82/THSegmentedPager#8](https://github.com/hons82/THSegmentedPager/pull/8)
-[slackhq/SlackTextViewController#168](https://github.com/slackhq/SlackTextViewController/pull/168)
-[slackhq/SlackTextViewController#167](https://github.com/slackhq/SlackTextViewController/pull/167)
-[hons82/THSegmentedPager#8](https://github.com/hons82/THSegmentedPager/pull/8)
-[andreamaz/UIView-draggable#8](https://github.com/andreamazz/UIView-draggable/pull/8)
-[marcuswestin/WebViewJavascriptBridge#128](https://github.com/marcuswestin/WebViewJavascriptBridge/pull/128)
-[robbiehanson/XMPPFramework#523](https://github.com/robbiehanson/XMPPFramework/pull/523)
-[intuit/LocationManager#37](https://github.com/intuit/LocationManager/pull/37)
-[facebook/componentkit#133](https://github.com/facebook/componentkit/pull/133)
-[Flipboard/FLAnimatedImage#74](https://github.com/Flipboard/FLAnimatedImage/pull/74)
-[CocoaLumberjack/CocoaLumberjack#498](https://github.com/CocoaLumberjack/CocoaLumberjack/pull/498)
-[CocoaLumberjack/CocoaLumberjack#499](https://github.com/CocoaLumberjack/CocoaLumberjack/pull/499)
-[CocoaLumberjack/CocoaLumberjack#500](https://github.com/CocoaLumberjack/CocoaLumberjack/pull/500)
-[TransitApp/SVProgressHUD#422](https://github.com/TransitApp/SVProgressHUD/pull/422)
-[Eldorado234/PAYFormBuilder#23](https://github.com/Eldorado234/PAYFormBuilder/pull/23)
-[danielebogo/DBPrivacyHelper#18](https://github.com/danielebogo/DBPrivacyHelper/pull/18)
-[cezarywojcik/CWPopup#27](https://github.com/cezarywojcik/CWPopup/pull/27)
-[gpambrozi/BlockAlertsAnd-ActionSheets#76](https://github.com/gpambrozio/BlockAlertsAnd-ActionSheets/pull/76)
-[AFNetworking/AFAmazonS3Manager#88](https://github.com/AFNetworking/AFAmazonS3Manager/pull/8)
+[facebook/KVOController#58](https://github.com/facebook/KVOController/pull/58),
+[facebook/KVOController#59](https://github.com/facebook/KVOController/pull/59),
+[facebook/KVOController#60](https://github.com/facebook/KVOController/pull/60),
+[facebook/KVOController#61](https://github.com/facebook/KVOController/pull/61),
+[andreamazz/AMTagListView#31](https://github.com/andreamazz/AMTagListView/pull/31),
+[chrismiles/CMPopTipView#97](https://github.com/chrismiles/CMPopTipView/pull/97),
+[stepanhruda/CocoaAsyncSocket#1](https://github.com/stepanhruda/CocoaAsyncSocket/pull/1),
+[robbiehanson/CocoaHTTPServer#136](https://github.com/robbiehanson/CocoaHTTPServer/pull/136),
+[AlexDenisov/FrameAccessor#16](https://github.com/AlexDenisov/FrameAccessor/pull/16),
+[kevon-hirsch/KVNProgress#37](https://github.com/kevin-hirsch/KVNProgress/pull/37),
+[mutualmobile/MMDrawerController#369](https://github.com/mutualmobile/MMDrawerController/pull/369),
+[tombenner/nui#293](https://github.com/tombenner/nui/pull/293),
+[pkluz/PKRevealController#224](https://github.com/pkluz/PKRevealController/pull/224),
+[ruslanskorb/RSKImageCropper#50](https://github.com/ruslanskorb/RSKImageCropper/pull/50),
+[hons82/THSegmentedPager#8](https://github.com/hons82/THSegmentedPager/pull/8),
+[slackhq/SlackTextViewController#168](https://github.com/slackhq/SlackTextViewController/pull/168),
+[slackhq/SlackTextViewController#167](https://github.com/slackhq/SlackTextViewController/pull/167),
+[hons82/THSegmentedPager#8](https://github.com/hons82/THSegmentedPager/pull/8),
+[andreamaz/UIView-draggable#8](https://github.com/andreamazz/UIView-draggable/pull/8),
+[marcuswestin/WebViewJavascriptBridge#128](https://github.com/marcuswestin/WebViewJavascriptBridge/pull/128),
+[robbiehanson/XMPPFramework#523](https://github.com/robbiehanson/XMPPFramework/pull/523),
+[intuit/LocationManager#37](https://github.com/intuit/LocationManager/pull/37),
+[facebook/componentkit#133](https://github.com/facebook/componentkit/pull/133),
+[Flipboard/FLAnimatedImage#74](https://github.com/Flipboard/FLAnimatedImage/pull/74),
+[CocoaLumberjack/CocoaLumberjack#498](https://github.com/CocoaLumberjack/CocoaLumberjack/pull/498),
+[CocoaLumberjack/CocoaLumberjack#499](https://github.com/CocoaLumberjack/CocoaLumberjack/pull/499),
+[CocoaLumberjack/CocoaLumberjack#500](https://github.com/CocoaLumberjack/CocoaLumberjack/pull/500),
+[TransitApp/SVProgressHUD#422](https://github.com/TransitApp/SVProgressHUD/pull/422),
+[Eldorado234/PAYFormBuilder#23](https://github.com/Eldorado234/PAYFormBuilder/pull/23),
+[danielebogo/DBPrivacyHelper#18](https://github.com/danielebogo/DBPrivacyHelper/pull/18),
+[cezarywojcik/CWPopup#27](https://github.com/cezarywojcik/CWPopup/pull/27),
+[gpambrozi/BlockAlertsAnd-ActionSheets#76](https://github.com/gpambrozio/BlockAlertsAnd-ActionSheets/pull/76),
+[AFNetworking/AFAmazonS3Manager#88](https://github.com/AFNetworking/AFAmazonS3Manager/pull/8),
 [taiheng/BEMSimpleLineGraph#testjam](https://github.com/taiheng/BEMSimpleLineGraph/commits/testjam)
 
 {% breaking_image /assets/blog_img/testjam-2015/nyc.jpg %}
