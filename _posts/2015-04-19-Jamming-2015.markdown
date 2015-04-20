@@ -55,6 +55,7 @@ Every meetup had the freedom to run it however they like, ranging from [two peop
 
 We changed the plan on the day to avoid needing a bot. In this case jammers would assign themselves a pod from a [big Spreadsheet](https://docs.google.com/spreadsheets/d/1JKfCpPMInru5i_vjHcfhPRQEtGT6p7YQx1kYJwKwx6s/edit) and this gave people a chance to find libraries that interested them. Here's a collection of the work done, with more probably happening over a longer time frame. Very cool.
 
+<<<<<<< HEAD
 [facebook/KVOController#58](https://github.com/facebook/KVOController/pull/58),
 [facebook/KVOController#59](https://github.com/facebook/KVOController/pull/59),
 [facebook/KVOController#60](https://github.com/facebook/KVOController/pull/60),
@@ -96,3 +97,4 @@ We changed the plan on the day to avoid needing a bot. In this case jammers woul
 As the organiser, I can't be happy enough with how it went. The NYC event helped a lot of people actually start testing. It helped me start to use code coverage as a metric for libraries. It's [super easy](https://github.com/orta/LocationManager/commit/6c240f4e62ca541c987f41cb956db5c5ed848cdf) to add. Hopefully events like this move the baseline of expectations forward a little bit. 👍
 
 If you're interested in doing community work with CocoaPods we're always interested in working with more people on ideas like this. You can get in touch with us via [info@cocoapods.org](mailto:info@cocoapods.org?subject=I have community ideas&body=Hello there! I have some cool ideas around community events) ( this goes to Kyle, Samuel, Eloy and myself.)
+
