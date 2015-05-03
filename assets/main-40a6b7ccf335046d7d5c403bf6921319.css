@@ -335,7 +335,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: "GT Walsheim", "gt_walsheim_regular", "Avant Garde Gothic ITCW01Dm", "Avant Garde", "Helvetica Neue", "Arial"; }
 
 h1, h2, h3 {
-  font-weight: bold; }
+  font-weight: normal; }
 
 h2 {
   margin-top: 40px; }
