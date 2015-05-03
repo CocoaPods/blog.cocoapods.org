@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CocoaPods 0.36 - Pod Caching and Custom Module Maps"
+title:  "CocoaPods 0.37 - Pod Caching and Custom Module Maps"
 author: samuel
 categories: cocoapods releases
 ---
