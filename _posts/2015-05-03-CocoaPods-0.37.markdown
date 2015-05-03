@@ -1,0 +1,33 @@
+---
+layout: post
+title:  "CocoaPods 0.36 - Pod Caching and Custom Module Maps"
+author: samuel
+categories: cocoapods releases
+---
+
+TL;DR: _CocoaPods 0.37_ has been released, with a new pod download cache and support for custom module maps.
+
+CocoaPods 0.37 has been released, it includes download caching for Pods.
+This brings a huge speed improvement to commands such as `pod spec lint`
+and improves the performance of running `pod install` when a Pod is in
+the download cache
+(which is stored at `~/Library/Caches/CocoaPods/Pods` by default).
+
+The update also allows you to define a custom
+[module map](https://guides.cocoapods.org/syntax/podspec.html#module_map)
+file in a Podspec.
+
+Along with these enhancements, 0.37 features dozens of bug fixes.
+
+## Updating
+
+To install the last release of CocoaPods you can run:
+
+```bash
+$ [sudo] gem install cocoapods
+```
+
+Until version 1.0 we strongly encourage you to keep CocoaPods up-to-date.
+
+For all the details, don’t miss the
+[Changelog](https://github.com/CocoaPods/CocoaPods/blob/0.37.0/CHANGELOG.md)!
