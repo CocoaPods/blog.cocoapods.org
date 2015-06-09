@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-      <title>CocoaPods 0.32 - CocoaPods Blog</title>
+      <title>CocoaPods.org v2.5 - CocoaPods Blog</title>
     
 
     <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
@@ -46,7 +46,7 @@
   <article class="row">
   <header class="col-md-8 col-md-offset-2 headline blog-post">
     
-      <h1>CocoaPods 0.32</h1>
+      <h1>CocoaPods.org v2.5</h1>
     
     
   </header>
@@ -61,191 +61,80 @@
         <header>
           
             
-              <img class="gravatar large" src="http://gravatar.com/avatar/b6dde1a78e6215a592768c1e78a54adc?s=144" height=72 width=72>
+              <img class="gravatar large" src="http://gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb?s=144" height=72 width=72>
             
             
               
-                <p><a href="http://twitter.com/fabiopelosin">Fabio Pelosin</a></p>
+                <p><a href="http://twitter.com/orta">Orta Therox</a></p>
               
             
-             <p>15 April 2014</p>
+             <p>9 June 2015</p>
 
             
-              <a href="https://twitter.com/fabiopelosin" class="twitter-follow-button" data-show-count="false" data-lang="en">
-                Follow @fabiopelosin
+              <a href="https://twitter.com/orta" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @orta
               </a>
             
         </header>
       </article>
     
       <article class="content col-md-8">
-        <p>TL;DR: <em>CocoaPod 0.32 is here! It brings a vastly improved <code>update</code>
-command and a galore of improvements. Including the ability to deprecate pods.</em></p>
+        <p>After our awesome State of the Union, I pushed the new version of the CocoaPods website to heroku. It comes with a bunch of new features, some new pages and a few interface tweaks, let&#39;s go through what&#39;s new.</p>
 
 <!-- more -->
 
-<h2>Update Command Improvements</h2>
-
-<p><a href="https://twitter.com/mrackwitz">Marius Rackwitz</a> just added one of the most
-requested CocoaPods features:</p>
-<div class="highlight">      </article>
-      </article>
-      </section>
-      
-      <div style="background-color:white;">
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="text language-text" data-lang="text">pod repo update NAME
-</code></pre>      </article>
-      </article>
-      </section>
-      </div>
-      
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-</div>
-<p>Exactly. Now you can scope your update to <em>only one</em> Pod.</p>
-
-<p>This is not the only improvement to the update command, as <a href="https://github.com/andreamazz">Andrea
-Mazzini</a> also took care of polishing the
-experience by adding to the installation output the version from which a Pod is
-being updated.</p>
-
-<h2>Development Pods</h2>
-
-<p>Now the file references in Xcode are absolute or relative depending on how they
-are specified in the Podfile. This feature was implemented by <a href="https://github.com/samuelwford">Samuel
-Ford</a></p>
-
-<h2>Deprecations</h2>
-
-<p>Another feature that we&#39;ve received a lot of requests for is Pod deprecation.
-Thanks to the work of <a href="https://github.com/paulyoung">Paul Young</a> this feature
-is already supported at the DSL level.</p>
-
-<p>You can either specify whether a Pod is just deprecated:</p>
-<div class="highlight">      </article>
-      </article>
-      </section>
-      
-      <div style="background-color:white;">
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="text language-text" data-lang="text">spec.deprecated = true
-</code></pre>      </article>
-      </article>
-      </section>
-      </div>
-      
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-</div>
-<p>Or whether it has been deprecated <em>in favor of another</em> Pod:</p>
-<div class="highlight">      </article>
-      </article>
-      </section>
-      
-      <div style="background-color:white;">
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="text language-text" data-lang="text">spec.deprecated_in_favor_of = &#39;NewMoreAwesomePod&#39;
-</code></pre>      </article>
-      </article>
-      </section>
-      </div>
-      
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-</div>
-<p>Unfortunately CocoaPods doesn’t display this information yet, but the super
-prolific <a href="https://github.com/segiddins">Samuel E. Giddins</a> is <a href="https://github.com/CocoaPods/CocoaPods/pull/2044">already on
-it</a>.</p>
-
-<h2>Linter</h2>
-
-<p>The linter has seen a lot of activity and now is more aggressive than ever.
-Expect some great linting on the new Pods. Now it even checks the validity of
-screenshots.</p>
-
-<h2>Updated CocoaPods Feed</h2>
-
-<p><a href="http://feeds.cocoapods.org">feeds.cocoapods.org</a> now shows the latest new
-CocoaPods libraries  released in the last few days. Consider it an alternative
-to the <a href="http://twitter.com/cocoapodsfeed">@CocoaPodsFeed</a> twitter feed.</p>
-
-<p><center><a href="http://feeds.cocoapods.org">
-</article>
+<p></article>
 </div>
 </section>
 <div style="background-color:white;">
-<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
-<a href='/assets/blog_img/CocoaPods-0.32/feeds_1.png '><img  src='/assets/blog_img/CocoaPods-0.32/feeds_1.png '></a></center></article>
+<section class="container"><div class="row" style="padding-bottom:0px;"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='https://cocoapods.org/pods/Cartography'><img  width="1024" src='/assets/blog_img/cocoapods-org-2-5/cocoapods25.jpg'></a></center></article>
 </div>
 </section>
 </div>
 <section class="container">
 <div class="row"><article class="content col-md-8 col-md-offset-2"></p>
 
-<p></a></center></p>
+<h2>Quality Index</h2>
 
-<p>And off course we display the beautiful screenshots of the Pods (including
-gifs):</p>
+<p>We built a series of quality approximations that sit on top of the deep metrics that exist within CocoaPods. These are a series of rules that we apply against a pod every time a new pod version is pushed. They range from GitHub popularty, to download size and a rough version of how well tested it is.</p>
 
-<p><center><a href="http://feeds.cocoapods.org">
-</article>
+<p>There are currently 17 metrics (<a href="https://github.com/CocoaPods/cocoadocs-api/blob/master/quality_modifiers.rb">see the code</a>) that we use to estimate the quality of every library. The algorithm starts with a number then adds and subtracts to it based on the metric. They are both positive and negative metrics, for example releasing a Pod under the GPL license will detract some points while having a lot of GitHub stars will add to the number. In order to make this process transparent <a href="https://twitter.com/K0nserv">Hugo Tunis</a> and <a href="https://twitter.com/esttorhe">Esteban Torres</a> created a new web page showing all of the rules that apply to your pod.</p>
+
+<p></article>
 </div>
 </section>
 <div style="background-color:white;">
 <section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
-<a href='/assets/blog_img/CocoaPods-0.32/feeds_2.gif '><img  src='/assets/blog_img/CocoaPods-0.32/feeds_2.gif '></a></center></article>
+<a href='/assets/blog_img/cocoapods-org-2-5/pods.png '><img  src='/assets/blog_img/cocoapods-org-2-5/pods.png '></a></center></article>
 </div>
 </section>
 </div>
 <section class="container">
 <div class="row"><article class="content col-md-8 col-md-offset-2"></p>
 
-<p></a></center></p>
+<h2>Pod Ordering</h2>
 
-<h2>Updating</h2>
+<p>We&#39;ve transitioned the default pod search ordering from GitHub stars to the overall Quality Index. In part this is because the CocoaPods ecosystem is bigger than GitHub, and  while popularity is pretty well correlated with GitHub stars it often can just be an indicator that people liked the idea. Using the Quality Index we can take that into account, but also that it is well documented, has tests and many other aspects.</p>
 
-<p>To install the last release of CocoaPods you can run:</p>
-<div class="highlight">      </article>
-      </article>
-      </section>
-      
-      <div style="background-color:white;">
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="text language-text" data-lang="text">$ [sudo] gem install cocoapods
-</code></pre>      </article>
-      </article>
-      </section>
-      </div>
-      
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-</div>
-<p>Until version 1.0 we strongly encourage you to keep CocoaPods up-to-date.</p>
+<h2>Pod Page improvements</h2>
 
-<p>For all the details, don’t miss the
-<a href="https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md">Changelog</a>.</p>
+<p>We streamlined the main section of the Pod page. We did this by moving a lot of the interesting metrics that we have to the sidebar, and to re-think the heirarchy of the data on the side. We&#39;re actively cleaning up READMEs when displaying in Pod pages for things like CI/Coverage badges and CocoaPods installation notes to keep it focused on just the pods documentation. Installation details are available in the sidebar.</p>
+
+<h2>Owner pages</h2>
+
+<p>Terminology is important here, an owner is someone who has access to push a Pod to trunk. The library author is someone who created the library. Nearly all of the time they are the same, but there are examples ( <a href="https://cocoapods.org/pods/ARAnalytics">ARAnalytics</a> ) where they differ. We have created owner pages for the people with access to push a pod, right now we don&#39;t have pretty URLs for your owners but you can jump to any Pods you own and you&#39;ll see a link to your page. We show all the Pods an owner has access to, and a little bit of information around the pod.</p>
+
+<p>I&#39;m super happy with the changes to the website, I think it makes it easier than ever to discover higher quality libraries that might not have hit the big-time yet. Everyone can let out a sigh of relief now, we can figure out the best <a href="http://localhost:3000/?q=lang%3Aswift%20json">Swift JSON ORM</a>.</p>
 
       </article>
     </article>
   </section>
 </section>
 
-<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2014-04-15-CocoaPods-0.32.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/b6dde1a78e6215a592768c1e78a54adc" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/fabiopelosin">Follow fabiopelosin</a></div></article></div></section></section>
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2015-06-09-CocoaPods.org-Two-point-Five.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/orta">Follow orta</a></div></article></div></section></section>
 
-<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/Big-News" title="AppIe Acquires CocoaPods"><header><h4>Previous Post</h4></header><h3>AppIe Acquires CocoaPods</h3><p>By Florian Hanke</p><a class="chevron_placeholder back" href="/Big-News"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"><a href="/CocoaPods-WWDC-Party" title="CocoaPods 3rd WWDC Meetup: 2nd June 2014"><header><h4>Next Post</h4></header><h3>CocoaPods 3rd WWDC Meetup: 2nd June 2014</h3><p>By Orta Therox</p><a class="chevron_placeholder next" href="/CocoaPods-WWDC-Party"></a></a></article></div></section>
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/State-of-the-Union-2015" title="State of the Union 2015"><header><h4>Previous Post</h4></header><h3>State of the Union 2015</h3><p>By Orta Therox</p><a class="chevron_placeholder back" href="/State-of-the-Union-2015"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
