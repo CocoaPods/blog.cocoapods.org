@@ -5,7 +5,7 @@ author: orta
 categories: cocoapods.org releases website 
 ---
 
-After our awesome State of the Union, I pushed the new version of the CocoaPods website to heroku. It comes with a bunch of new features, some new pages and a few interface tweaks, let's go through what's new.
+After our awesome State of the Union, I pushed the new version of the CocoaPods website to Heroku. It comes with a bunch of new features, some new pages and a few interface tweaks, let's go through what's new.
 
 <!-- more -->
 
@@ -25,7 +25,7 @@ We've transitioned the default pod search ordering from GitHub stars to the over
 
 ## Pod Page improvements
 
-We streamlined the main section of the Pod page. We did this by moving a lot of the interesting metrics that we have to the sidebar, and to re-think the heirarchy of the data on the side. We're actively cleaning up READMEs when displaying in Pod pages for things like CI/Coverage badges and CocoaPods installation notes to keep it focused on just the pods documentation. Installation details are available in the sidebar.
+We streamlined the main section of the Pod page. We did this by moving a lot of the interesting metrics that we have to the sidebar, and to re-think the hierarchy of the data on the side. We're actively cleaning up READMEs when displaying in Pod pages for things like CI/Coverage badges and CocoaPods installation notes to keep it focused on just the pods documentation. Installation details are available in the sidebar.
 
 ## Owner pages
 
