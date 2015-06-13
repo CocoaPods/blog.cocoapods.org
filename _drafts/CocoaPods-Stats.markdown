@@ -11,9 +11,11 @@ People have been asking for years about getting feedback on how many downloads t
 
 ### But wait, there's more...
 
-It wasn't just enough to offer just download counts. We spend a lot of time working around Xcode's project file intracaies, however in this context, it provides us with foundations for a really nice feature. CocoaPods Stats will be able to keep track of the unique number of installs within Apps / Watch Apps / Extensionss / Unit Tests.
+It wasn't just enough to offer just download counts. We spend a lot of time working around Xcode's project file intricacies, however in this context, it provides us with foundations for a really nice feature. CocoaPods Stats will be able to keep track of the unique number of installs within Apps / Watch Apps / Extensions / Unit Tests.
 
-What this means is that developers using continuous integration only increase the downloads of the Pod, but register as 1 install. Separating total installations vs
+What this means is that developers using continuous integration only increase the downloads of the Pod, but register as 1 install. Separating total installations vs actual downloads.
+
+{% breaking_image /assets/blog_img/stats/stack.png, https://cocoapods.org/pods/ORStackView,  width="1024", no-bottom-margin %}
 
 ### Alright, hold up
 
