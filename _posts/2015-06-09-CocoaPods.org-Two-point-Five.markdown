@@ -21,7 +21,7 @@ There are currently 17 metrics ([see the code](https://github.com/CocoaPods/coco
 
 ## Pod Ordering
 
-We've transitioned the default pod search ordering from GitHub stars to the overall Quality Index. In part this is because the CocoaPods ecosystem is bigger than GitHub, and  while popularity is pretty well correlated with GitHub stars it often can just be an indicator that people liked the idea. Using the Quality Index we can take that into account, but also that it is well documented, has tests and many other aspects.
+We've transitioned the default pod search ordering from GitHub stars to the overall Quality Index. In part this is because the CocoaPods ecosystem is bigger than just GitHub, and  while popularity is pretty well correlated with GitHub stars it often can just be an indicator that people liked the idea. Using the Quality Index we can take that into account, but also that it is well documented, has tests and many other aspects.
 
 ## Pod Page improvements
 
