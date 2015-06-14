@@ -13,40 +13,21 @@ People have been asking for years about getting feedback on how many downloads t
 
 It wasn't just enough to offer just download counts. We spend a lot of time working around Xcode's project file intricacies, however in this context, it provides us with foundations for a really nice feature. CocoaPods Stats will be able to keep track of the unique number of installs within Apps / Watch Apps / Extensions / Unit Tests.
 
-What this means is that developers using continuous integration only increase the downloads of the Pod, but register as 1 install. Separating total installations vs actual downloads.
+This means is that developers using continuous integration only register as 1 install, even if the server runs `pod install` each time, separating total installations vs actual downloads.
 
 {% breaking_image /assets/blog_img/stats/stack.png, https://cocoapods.org/pods/ORStackView,  width="1024", no-bottom-margin %}
 
 ### Alright, hold up
 
-Let's go over how we check which pods get sent up for analytics, and how we do the unique installs. [CocoaPods-Stats](https://github.com/cocoapods/cocoapods-stats) is a plugin that will be bundled with CocoaPods iwthin a version or two. It [registers](https://github.com/CocoaPods/cocoapods-stats/blob/0361f29ae37e82ccf385319bba9cf31464049144/lib/cocoapods_plugin.rb#L6) as a post-install plugin and is ran on every `pod install` or `pod update`.
+Let's go over how we check which pods get sent up for analytics, and how we do the unique installs. [CocoaPods-Stats](https://github.com/cocoapods/cocoapods-stats) is a plugin that will be bundled with CocoaPods within a version or two. It [registers](https://github.com/CocoaPods/cocoapods-stats/blob/0361f29ae37e82ccf385319bba9cf31464049144/lib/cocoapods_plugin.rb#L6) as a post-install plugin and is ran on every `pod install` or `pod update`.
 
 #### Detecting Public Pods
 
- We're very pessimistic about sending a pod up to our [stats server](https://github.com/cocoapods/stats.cocoapods.org) the current code will ensure that you have a CocoaPods/Specs repo set up as your master repo, then ensure that each pod is inside that repo before accepting it as a public domain pod. It looks like this:
-
- ```ruby
-  # Does the master specs repo exist?
-  master_specs_repo = File.expand_path "~/.cocoapods/repos/master"
-  return unless File.directory? master_specs_repo
-
-  # Is the master specs repo actually the CocoaPods OSS one?
-  Dir.chdir master_specs_repo do
-    git_remote_details = `git remote -v`
-    return unless git_remote_details.include? "CocoaPods/Specs"
-  end
-
- ...
-
-  # Verify that the pod exists in the master specs repo
-  pods = root_specs.select do |spec|
-    File.directory? File.join(master_specs_repo, "Specs", spec.name)
-  end
- ```
+ We're very pessimistic about sending a Pod up to our [stats server](https://github.com/cocoapods/stats.cocoapods.org). We ensure that you have a CocoaPods/Specs repo set up as your master repo, then ensure that each pod to be sent  is inside that repo before accepting it as a public domain pod.
 
 ####  Data being sent
 
-First up, we don't want to know anything about your app. So in order to know unique targets we use your project's target [UUID](https://github.com/artsy/eigen/blob/aea7af93daffb716ccee9aa50ce599dc7949c42b/Artsy.xcodeproj/project.pbxproj#L3888) as an identifier. These are a [hash](http://danwright.info/blog/2010/10/xcode-pbxproject-files-3/) of your MAC address, Xcode's process id and the time of target creation. These UUIDs never change in a project's lifetime. We double hash it just to be super safe.
+First up, we don't want to know anything about your app. So in order to know unique targets we use your project's target [UUID](https://github.com/artsy/eigen/blob/aea7af93daffb716ccee9aa50ce599dc7949c42b/Artsy.xcodeproj/project.pbxproj#L3888) as an identifier. These are a [hash](http://danwright.info/blog/2010/10/xcode-pbxproject-files-3/) of your MAC address, Xcode's process id and the time of target creation (but we only know the UUID/hash, so your MAC address is unknown to us). These UUIDs never change in a project's lifetime (contrary to, for example, the bundle identifier). We double hash it just to be super safe.
 
 ``` ruby
   # Grab the project and the type of target
@@ -68,7 +49,7 @@ We then also send along the CocoaPods version that was used to generate this ins
 
 #### Can I opt out as a CocoaPods user?
 
-Sure. You can set an [environment variable](http://apple.stackexchange.com/questions/106778/how-do-i-set-environment-variables-on-os-x) `DISABLE_COCOAPODS_STATS` to true in your shell, and stats will not be sent from your machine.
+Sure. You can set an [environment variable](http://apple.stackexchange.com/questions/106778/how-do-i-set-environment-variables-on-os-x) `COCOAPODS_DISABLE_STATS` to true in your shell, and stats will not be sent from your machine.
 
 #### Does this affect every pod?
 
@@ -82,7 +63,7 @@ No, they get generated once per day.
 
 We plan on making this initially a separate CocoaPods plugin that you can optionally install via `[sudo] gem install cocoapods-stats` which will send the data. In a release or two we will bundle this into CocoaPods, and it will be installed by default for everyone moving forwards.
 
-#### Can I use this to find out how many people are using an older build of my pods
+#### Can I use this to find out how many people are using an older build of my pods?
 
 Not automatically, we've not figured out a strategy for doing this yet, but you can email orta@cocoapods.org for one off requests once it's up and running. Ideally once this has settled I'd like to take a look at making a stats overview page per pod, but that has some tricky technicalities.
 
