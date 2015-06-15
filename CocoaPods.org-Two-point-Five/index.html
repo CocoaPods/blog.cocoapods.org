@@ -97,7 +97,7 @@
 
 <h2>Quality Index</h2>
 
-<p>We built a series of quality approximations that sit on top of the deep metrics that exist within CocoaPods. These are a series of rules that we apply against a pod every time a new pod version is pushed. They range from GitHub popularty, to download size and a rough version of how well tested it is.</p>
+<p>We built a series of quality approximations that sit on top of the deep metrics that exist within CocoaPods. These are a series of rules that we apply against a pod every time a new pod version is pushed. They range from GitHub popularity, to download size and a rough version of how well tested it is.</p>
 
 <p>There are currently 17 metrics (<a href="https://github.com/CocoaPods/cocoadocs-api/blob/master/quality_modifiers.rb">see the code</a>) that we use to estimate the quality of every library. The algorithm starts with a number then adds and subtracts to it based on the metric. They are both positive and negative metrics, for example releasing a Pod under the GPL license will detract some points while having a lot of GitHub stars will add to the number. In order to make this process transparent <a href="https://twitter.com/K0nserv">Hugo Tunis</a> and <a href="https://twitter.com/esttorhe">Esteban Torres</a> created a new web page showing all of the rules that apply to your pod.</p>
 
