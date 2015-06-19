@@ -45,6 +45,12 @@ First up, we don't want to know anything about your app. So in order to know uni
 
 We then also send along the CocoaPods version that was used to generate this installation. Ideally before release we'll also be able to give statistics on how many people are using `pod try [pod]` for your library too.
 
+#### How does it work?
+
+My first attempt at a stats architecture was based on how [npm does stats](https://github.com/npm/download-counts#data-source), roughly speaking they send all logs to S3 where they are map-reduced on a daily basis into individual package metrics. This is an elegant solution for a [company](https://www.crunchbase.com/organization/npm) with people working full time on up-time and stability. As someone who wants to be building iOS apps, and not maintaining [more](http://cocoadocs.org/readme/) infrastructure in my spare time, I wanted to avoid this.
+
+We use Segment in Artsy, and our analytics team had really good things to say about their [Redshift](https://segment.com/redshift) infrastructure. So I reached out about having them hosting the stats infrastructure for CocoaPods. They offered a lot of great advice around the data-modelling, we were up and running really quickly. So you already know about the CocoaPods plugin, but from there it sends your anonymous Pod stats up to [stats.cocoapods.org](https://github.com/cocoapods/stats.cocoapods.org). This acts as a [conduit](https://github.com/CocoaPods/stats.cocoapods.org/blob/b1889c9b35faef524685d99898be9ac8447ed7f8/spec/functional/api/v1/install_spec.rb) sending analytics events to Segment. A [daily task](https://github.com/CocoaPods/stats.cocoapods.org/blob/b1889c9b35faef524685d99898be9ac8447ed7f8/Rakefile#L49) is triggered on the web site, this makes [SQL requests](https://github.com/CocoaPods/stats.cocoapods.org/blob/b1889c9b35faef524685d99898be9ac8447ed7f8/runner/stats_coordinator.rb) against the Redshift instance which is then imported into [metrics.cocoapods.org](http://metrics.cocoapods.org/api/v1/pods/Expecta).
+
 ## FAQ
 
 #### Can I opt out as a CocoaPods user?
