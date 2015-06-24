@@ -58,6 +58,21 @@
 <article class="post">
   <header>
     
+    <h2 class="post-title"><a href="/CocoaPods-WWDC-Party">CocoaPods 3rd WWDC Meetup: 2nd June 2014</a></h2>
+  </header>
+
+  
+      <p>Apple have their developers state of the union address. We have ours. We&#39;re working with the <a href="http://www.altconf.com">Alt Conference</a> to have a great opening event to the WWDC week: The CocoaPodsAlt State of the Union. You should come along.</p>
+
+
+      <p><a href="/CocoaPods-WWDC-Party">Read on →</a></p>
+  
+
+</article>
+
+<article class="post">
+  <header>
+    
     <h2 class="post-title"><a href="/CocoaPods-0.32">CocoaPods 0.32</a></h2>
   </header>
 
@@ -199,49 +214,6 @@ command and a galore of improvements. Including the ability to deprecate pods.</
 
 
       <p><a href="/The-Kommittee-NYC">Read on →</a></p>
-  
-
-</article>
-
-<article class="post">
-  <header>
-    
-    <h2 class="post-title"><a href="/Repairing-Our-Broken-Specs-Repository">Repairing Our Broken Specs Repository</a></h2>
-  </header>
-
-  
-      <p>Unfortunately we&#39;ve encountered a bug in libgit2 and we are going to have to
-<strong>force push</strong> into <a href="https://github.com/CocoaPods/Specs">the Specs repository</a>. (Also known as the
-‘master’ spec repo.)</p>
-
-<h3>What does this mean for you?</h3>
-
-<p>Well, basically your CocoaPods setup <strong>is going to break</strong>. You are going to
-have to manually delete <em>any</em> local copies of the Specs repository and re-clone
-the new version of the Specs repository. You can do that with the following
-commands:</p>
-
-<pre class='highlight'><code>
-    $ sudo rm -fr ~/.cocoapods/repos/master
-    $ pod setup
-    
-</code></pre>
-
-<p><em><strong>NOTE 1:</strong> If you have any local commits or changes to the Specs repository
-which are not merged, you should ensure you have a copy of them. I would
-recommend that you manually copy these changes over and re-commit them. You can
-fix your repository without deleting, however, this is not a simple process, so
-we are instead recommending that you delete your copy of the Specs repository
-and any forks of it.</em></p>
-
-<p><em><strong>NOTE 2:</strong> In case you are storing private podspecs in your clone of the
-Specs repository or you have a private spec repo that was forked from the
-Specs repository, this is a great time to clean that up by using private spec
-repositories <a href="http://guides.cocoapods.org/making/private-cocoapods.html">The Proper Way</a>. This way your private spec
-repository should never be affected by issues in other spec repositories.</em></p>
-
-
-      <p><a href="/Repairing-Our-Broken-Specs-Repository">Read on →</a></p>
   
 
 </article>
