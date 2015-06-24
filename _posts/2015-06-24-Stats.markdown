@@ -1,0 +1,90 @@
+---
+layout: post
+title:  "CocoaPods Stats"
+author: orta
+categories: cocoapods.org stats website release
+---
+
+People have been asking for years about feedback on how many downloads their libraries have. We've been thinking about the problem for a about as long too, and finally ended up asking [Segment](http://segment.com) if they would provide a backend for the project.
+
+<!-- more -->
+
+### But wait, there's more...
+
+It wasn't just enough to offer just download counts. We spend a lot of time working around Xcode's project file intricacies, however in this context, it provides us with foundations for a really nice feature. CocoaPods Stats will be able to keep track of the unique number of installs within Apps / Watch Apps / Extensions / Unit Tests.
+
+This means is that developers using continuous integration only register as 1 install, even if the server runs `pod install` each time, separating total installations vs actual downloads.
+
+{% breaking_image /assets/blog_img/stats/stack.png, https://cocoapods.org/pods/ORStackView,  width="1024", no-bottom-margin %}
+
+### Alright, hold up
+
+Let's go over how we check which pods get sent up for analytics, and how we do the unique installs. [CocoaPods-Stats](https://github.com/cocoapods/cocoapods-stats) is a plugin that will be bundled with CocoaPods within a version or two. It [registers](https://github.com/CocoaPods/cocoapods-stats/blob/0361f29ae37e82ccf385319bba9cf31464049144/lib/cocoapods_plugin.rb#L6) as a post-install plugin and is ran on every `pod install` or `pod update`.
+
+#### Detecting Public Pods
+
+ We're very pessimistic about sending a Pod up to our [stats server](https://github.com/cocoapods/stats.cocoapods.org). We ensure that you have a CocoaPods/Specs repo set up as your master repo, then ensure that each pod to be sent  is inside that repo before accepting it as a public domain pod.
+
+####  Data being sent
+
+First up, we don't want to know anything about your app. So in order to know unique targets we use your project's target [UUID](https://github.com/artsy/eigen/blob/aea7af93daffb716ccee9aa50ce599dc7949c42b/Artsy.xcodeproj/project.pbxproj#L3888) as an identifier. These are a [hash](http://danwright.info/blog/2010/10/xcode-pbxproject-files-3/) of your MAC address, Xcode's process id and the time of target creation (but we only know the UUID/hash, so your MAC address is unknown to us). These UUIDs never change in a project's lifetime (contrary to, for example, the bundle identifier). We double hash it just to be super safe.
+
+``` ruby
+  # Grab the project and the type of target
+  uuid = target.user_target_uuids.first
+  project_target = project.objects_by_uuid[uuid]
+
+  # Send in a digested'd UUID anyway, a second layer
+  # of misdirection can't hurt
+  {
+    :uuid => Digest::SHA256.hexdigest(uuid),
+    :type => project_target.product_type,
+    :pods => pods
+  }
+```
+
+We then also send along the CocoaPods version that was used to generate this installation. Ideally before release we'll also be able to give statistics on how many people are using `pod try [pod]` for your library too.
+
+#### How does it work?
+
+My first attempt at a stats architecture was based on how [npm does stats](https://github.com/npm/download-counts#data-source), roughly speaking they send all logs to S3 where they are map-reduced on a daily basis into individual package metrics. This is an elegant solution for a [company](https://www.crunchbase.com/organization/npm) with people working full time on up-time and stability. As someone who wants to be building iOS apps, and not maintaining [more](http://cocoadocs.org/readme/) infrastructure in my spare time, I wanted to avoid this.
+
+We use Segment in Artsy, and our analytics team had really good things to say about their [Redshift](https://segment.com/redshift) infrastructure. So I reached out about having them hosting the stats infrastructure for CocoaPods. They offered a lot of great advice around the data-modelling, we were up and running really quickly. So you already know about the CocoaPods plugin, but from there it sends your anonymous Pod stats up to [stats.cocoapods.org](https://github.com/cocoapods/stats.cocoapods.org). This acts as a [conduit](https://github.com/CocoaPods/stats.cocoapods.org/blob/b1889c9b35faef524685d99898be9ac8447ed7f8/spec/functional/api/v1/install_spec.rb) sending analytics events to Segment. A [daily task](https://github.com/CocoaPods/stats.cocoapods.org/blob/b1889c9b35faef524685d99898be9ac8447ed7f8/Rakefile#L49) is triggered on the web site, this makes [SQL requests](https://github.com/CocoaPods/stats.cocoapods.org/blob/b1889c9b35faef524685d99898be9ac8447ed7f8/runner/stats_coordinator.rb) against the Redshift instance which is then imported into [metrics.cocoapods.org](http://metrics.cocoapods.org/api/v1/pods/Expecta).
+
+## FAQ
+
+#### Can I opt out as a CocoaPods user?
+
+Sure. You can set an [environment variable](http://apple.stackexchange.com/questions/106778/how-do-i-set-environment-variables-on-os-x) `COCOAPODS_DISABLE_STATS` to true in your shell, and stats will not be sent from your machine.
+
+#### Does this affect every pod?
+
+Yeah, every pod will get download stats.
+
+#### Will it be live stats?
+
+No, they get generated once per day.
+
+#### What is the rollout strategy?
+
+We plan on making this initially a separate CocoaPods plugin that you can optionally install via `[sudo] gem install cocoapods-stats` which will send the data. In a release or two we will bundle this into CocoaPods, and it will be installed by default for everyone moving forwards.
+
+#### Can I use it right now?
+
+Sure, run `gem install cocoapods-stats` and then add `plugin "cocoapods-stats"` to your Podfile. If you are using a [Gemfile](https://guides.cocoapods.org/using/a-gemfile.html) then add "gem 'cocoapods-stats'" to that. Once stats is a default in CocoaPods you can remove the references, as it will be bundled automatically.
+
+#### Can I use this to find out how many people are using an older build of my pods?
+
+Not automatically, we've not figured out a strategy for doing this yet, but you can email orta@cocoapods.org for one off requests once it's up and running. Ideally once this has settled I'd like to take a look at making a stats overview page per pod, but that has some tricky technicalities.
+
+#### How does this affect the quality indexes / sorting?
+
+Ideally we can reduce the amount of impact GitHub stars affects your quality index, and replace some of the values with new metrics based on downloads/installations. 
+
+#### What commands does this run on?
+
+It runs at the end of a `pod install` or a `pod update`.
+
+#### I check in my Pods, how does this affect stats?
+
+Checking in your Pods will mean that the download count for the pods used will rarely be affected, but the installations will be the exact same. They only register once per project, so multiple developers on the same project running pod install will not raise this number.
