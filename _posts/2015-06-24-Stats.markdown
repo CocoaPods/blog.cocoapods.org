@@ -71,7 +71,7 @@ We plan on making this initially a separate CocoaPods plugin that you can option
 
 #### Can I use it right now?
 
-Sure, run `gem install cocoapods-stats` and then add `plugin "cocoapods-stats"` to your Podfile. If you are using a [Gemfile](https://guides.cocoapods.org/using/a-gemfile.html) then add "gem 'cocoapods-stats'" to that. Once stats is a default in CocoaPods you can remove the references, as it will be bundled automatically.
+Sure, run `[sudo] gem install cocoapods-stats` and then add `plugin "cocoapods-stats"` to your Podfile. If you are using a [Gemfile](https://guides.cocoapods.org/using/a-gemfile.html) then add "gem 'cocoapods-stats'" to that. Once stats is a default in CocoaPods you can remove the references, as it will be bundled automatically.
 
 #### Can I use this to find out how many people are using an older build of my pods?
 
