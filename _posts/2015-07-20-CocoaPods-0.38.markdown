@@ -5,14 +5,14 @@ author: marius
 categories: cocoapods releases
 ---
 
-TL;DR: _CocoaPods 0.38_ has been released, with watchOS 2 support, target de-duplication and Stats for everyone.
+TL;DR: _CocoaPods 0.38_ has been released, with watchOS 2 support, target de-duplication, and Stats for everyone.
 
 <!-- more -->
 
 CocoaPods 0.38 has been released.
-This is the first update since WWDC and it brings support for Apple's latest releases including Xcode 7 and watchOS.
+This is our first update since WWDC and it brings support for Apple's latest releases, including Xcode 7 and watchOS.
 It also includes lots of improvements that make building Pods easier.
-Furthermore it rolls out [Stats](http://blog.cocoapods.org/Stats/) for everyone.
+Furthermore, it rolls out [Stats](http://blog.cocoapods.org/Stats/) for everyone.
 
 
 ### watchOS
@@ -66,7 +66,7 @@ To make optional behavior in your Pod available, you should use [subspecs](https
 
 ### Breaking Change to the Hooks-API
 
-Podfile allow you to define `pre_install` and `post_install` hooks. 
+The Podfile allows you to define `pre_install` and `post_install` hooks.
 Before this update, we maintained a proxy layer, so that we could alter the installation / integration process and the model and just change how the Hooks API representations access those artifacts.
 This worked for a while, but finally we became aware that we reached a point where both came completely out-of-sync.
 Because of that, we relinquished that approach and made the underlying installer directly available, which was exposed before anyway and allowed more advanced possibilities for this more advanced feature.
@@ -106,7 +106,7 @@ end
 
 ### Split of `xcconfig`
 
-One more advanced attribute in Podspecs is - _or better was_ - the attribute `xcconfig`.
+One of the more advanced attribute in Podspecs is - _or better was_ - the attribute `xcconfig`.
 
 This allow you to specify build settings for your Pod.
 Previously those were made available to libraries and the integrated target.
@@ -114,12 +114,12 @@ Previously those were made available to libraries and the integrated target.
 We broke this with the support for frameworks.
 This wasn't an issue for most Pods because the build setting is mostly used to configure build settings which are relevant only to the generated Pod target itself.
 When we mentioned that there were still some Pods which weren't working anymore as expected due to that change, we decided to split the attribute from now on.
-So Pods also can't accidentally overwrite or conflict with build settings of the user target.
+This way Pods also can't accidentally overwrite or conflict with build settings of the user target.
 
 The former attribute `xcconfig` is deprecated and will cause a linter error when pushing new versions to trunk.
 The new attributes are available as `pod_target_xcconfig` and `user_target_xcconfig`, which makes their effects more clear.
 The latter attribute (`user_target_xcconfig`) should be used with great care, because well designed Pods should be self-contained and make as few assumptions about their environment as possible.
-Furthermore this attribute can cause conflicts when different values are specified by two Pods for a build setting which doesn't allow multiple values and so cannot be merged.
+Furthermore, this attribute can cause conflicts when different values are specified by two Pods for a build setting which doesn't allow multiple values and so cannot be merged.
 
 ---
 
@@ -137,4 +137,4 @@ $ [sudo] gem install cocoapods
 Until version 1.0 we strongly encourage you to keep CocoaPods up-to-date.
 
 For all the details, don’t miss the
-[Changelog](https://github.com/CocoaPods/CocoaPods/blob/0.38.0/CHANGELOG.md)!
+[Changelog](https://github.com/CocoaPods/CocoaPods/releases/tag/0.38.0)!
