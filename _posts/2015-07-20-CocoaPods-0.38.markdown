@@ -93,11 +93,7 @@ If you need to keep compatibility to the older versions of CocoaPods, then you c
 post_install do |installer_or_rep|
   # @note: Remove after CocoaPods 0.38+ is completely rolled out
   # and rename block argument to `installer`.
-  installer = if Gem::Version.new(Pod::VERSION) >= Gem::Version.new('0.38.0')
-    installer_or_rep
-  else
-    installer_or_rep.installer
-  end
+  installer = installer_or_rep.respond_to?(:installer) ? installer_or_rep.installer : installer_or_rep
   
   # You can use the installer from now on.
 end
