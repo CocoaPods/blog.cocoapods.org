@@ -117,6 +117,15 @@ The new attributes are available as `pod_target_xcconfig` and `user_target_xccon
 The latter attribute (`user_target_xcconfig`) should be used with great care, because well designed Pods should be self-contained and make as few assumptions about their environment as possible.
 Furthermore, this attribute can cause conflicts when different values are specified by two Pods for a build setting which doesn't allow multiple values and so cannot be merged.
 
+
+### Deterministic UUIDs by Xcodeproj
+
+This update ships also the latest version of Xcodeproj, which encapsulates the API to Xcode projects.
+Beside support for new build settings, it now supports to generate deterministic UUIDs for file references.
+That means in practice mostly, that you have smaller diffs for the `Pods.xcodeproj` after running `pod install` or `pod update`, which reduce unnecessary merge conflicts.
+This behavior can be disabled via the new `COCOAPODS_DISABLE_DETERMINISTIC_UUIDS` environment variable.
+
+
 ---
 
 Along with these enhancements, 0.38 features dozens of bug fixes.
