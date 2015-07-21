@@ -120,8 +120,8 @@ Furthermore, this attribute can cause conflicts when different values are specif
 
 ### Deterministic UUIDs by Xcodeproj
 
-This update ships also the latest version of Xcodeproj, which encapsulates the API to Xcode projects.
-Beside support for new build settings, it now supports to generate deterministic UUIDs for file references.
+This update also includes the latest version of Xcodeproj, which encapsulates the API to Xcode projects.
+Beside support for new build settings, it now supports the generation of deterministic UUIDs for every object in the project file.
 That means in practice mostly, that you have smaller diffs for the `Pods.xcodeproj` after running `pod install` or `pod update`, which reduce unnecessary merge conflicts.
 This behavior can be disabled via the new `COCOAPODS_DISABLE_DETERMINISTIC_UUIDS` environment variable.
 
@@ -129,7 +129,7 @@ This behavior can be disabled via the new `COCOAPODS_DISABLE_DETERMINISTIC_UUIDS
 ### Resolver takes the Deployment Target into account
 
 The deployment target of a podspec is now taken into account in the dependency resolution process.
-This will prevent errors, which can appear, when maintaining podspecs for legacy versions of the toolchain.
+This will ensure that CocoaPods will always be able to resolve your Podfile, even if newer versions of pods are released that have higher minimum deployment targets.
 It makes the behavior of CocoaPods overall less surprising.
 
 
