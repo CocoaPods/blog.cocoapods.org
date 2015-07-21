@@ -85,9 +85,9 @@
 
 <!-- more -->
 
-<h2>API Description</h2>
+<h2 id="api-description">API Description</h2>
 
-<h3>Pods Endpoint</h3>
+<h3 id="pods-endpoint">Pods Endpoint</h3>
 <div class="highlight">      </article>
       </article>
       </section>
@@ -106,7 +106,7 @@
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h3>Query String Parameters</h3>
+<h3 id="query-string-parameters">Query String Parameters</h3>
 <div class="highlight">      </article>
       </article>
       </section>
@@ -127,7 +127,7 @@ start-at: The offset in the set of results [Default: 0].
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h4>Example</h4>
+<h4 id="example">Example</h4>
 <div class="highlight">      </article>
       </article>
       </section>
@@ -146,7 +146,7 @@ start-at: The offset in the set of results [Default: 0].
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h4>What query string do I use?</h4>
+<h4 id="what-query-string-do-i-use?">What query string do I use?</h4>
 
 <p>The <code>query</code> string you use is what you type into the search engine on <a href="http://cocoapods.org">CocoaPods.org</a>. In addition, you can filter on either or both platforms by prefixing the query string with <code>on:ios</code>, <code>on:osx</code>, or <code>on:ios on:osx</code> (we hide this behind the four radio buttons).</p>
 
@@ -169,7 +169,7 @@ start-at: The offset in the set of results [Default: 0].
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h3>Formats</h3>
+<h3 id="formats">Formats</h3>
 
 <p>We return 4 different formats, all in JSON:</p>
 
@@ -202,7 +202,7 @@ Accept: application/vnd.cocoapods.org+flat.ids.json; version=1
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h4>Defaults</h4>
+<h4 id="defaults">Defaults</h4>
 
 <p>You don&#39;t have to provide all the details. For example, providing no version will return the latest version. We recommend that you always provide the version nonetheless.</p>
 
@@ -210,9 +210,9 @@ Accept: application/vnd.cocoapods.org+flat.ids.json; version=1
 
 <p>The default format is Picky-style results with pod information as a hash.</p>
 
-<h3>Examples</h3>
+<h3 id="examples">Examples</h3>
 
-<h4>Formats</h4>
+<h4 id="formats">Formats</h4>
 <div class="highlight">      </article>
       </article>
       </section>
@@ -241,7 +241,7 @@ curl <span class="s1">&#39;http://search.cocoapods.org/api/pods?query=name:kiwi&
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h4>Query Params</h4>
+<h4 id="query-params">Query Params</h4>
 <div class="highlight">      </article>
       </article>
       </section>
@@ -267,7 +267,7 @@ curl <span class="s1">&#39;http://search.cocoapods.org/api/pods?query=s&amp;amou
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h3>Convenience Endpoints</h3>
+<h3 id="convenience-endpoints">Convenience Endpoints</h3>
 
 <p>It&#39;s not always convenient to use curl on the command line and type the Accept header. So we also offer 4 further endpoints, for quick result viewing in a browser.</p>
 <div class="highlight">      </article>
@@ -291,7 +291,7 @@ http://search.cocoapods.org/api/v1/pods.flat.ids.json?query=test
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h2>Caveats</h2>
+<h2 id="caveats">Caveats</h2>
 
 <p>As we improve the search engine, it might be down for half a minute at a time, sporadically. Please allow for this eventuality in any user interfaces.</p>
 

@@ -85,7 +85,7 @@ Pod authors will especially want to try this version to make sure their pods wil
 
 <!-- more -->
 
-<h2>What is special about Frameworks integrated by CocoaPods?</h2>
+<h2 id="what-is-special-about-frameworks-integrated-by-cocoapods?">What is special about Frameworks integrated by CocoaPods?</h2>
 
 <p>With CocoaPods, Frameworks are mostly set up in way similar to how it is done via Xcode.
 This is to make the entire integration inspectable, understandable and allows us to unleash the power of the whole existing toolchain.</p>
@@ -106,7 +106,7 @@ Therefore the module map is included in the built framework bundle.</p>
 <section class="container">
 <div class="row"><article class="content col-md-8 col-md-offset-2"></p>
 
-<h2>Dynamic Frameworks vs. Static Libraries</h2>
+<h2 id="dynamic-frameworks-vs.-static-libraries">Dynamic Frameworks vs. Static Libraries</h2>
 
 <p>So what&#39;s the difference between those two product types?</p>
 
@@ -166,7 +166,7 @@ But with frameworks, you have to make sure that you reference them more specific
 <p>The advantage to this improved resource handling is that resources won&#39;t conflict when they have the same names because they are namespaced by the framework bundle.
 Furthermore we don&#39;t have to apply the build rules to the resources ourselves as e.g. asset catalogs and storyboards need to be compiled. This should decrease build times for project using Pods that include many resources.</p>
 
-<h3>Module Names</h3>
+<h3 id="module-names">Module Names</h3>
 
 <p>Names of Clang Modules are limited to be C99ext-identifiers. This means that they can only contain alphanumeric characters and underscores, and cannot begin with a number. Looking through the official spec repo, we discovered some popular pods, which don&#39;t match these requirements.</p>
 
@@ -198,7 +198,7 @@ Furthermore we don&#39;t have to apply the build rules to the resources ourselve
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h3>Module Maps</h3>
+<h3 id="module-maps">Module Maps</h3>
 
 <p>A Module Map is a declaration of the headers, which form the public (or private) interface of a Clang Module.
 Luckily, those have been designed so that they can stay in the background and the developer can leverage known and existing structures, without having to learn the DSL.
@@ -231,7 +231,7 @@ The default modulemap looks basically always the same:</p>
 <p>You can export the public API for your framework inside a umbrella header and <em>all transitive imported</em> headers.
 Clang will take care of making module exports that can be imported by Objective-C and Swift.</p>
 
-<h3>What Does <em>Transitive Imported</em> Mean In This Context?</h3>
+<h3 id="what-does-transitive-imported-mean-in-this-context?">What Does <em>Transitive Imported</em> Mean In This Context?</h3>
 
 <p>Transitive relations are a <a href="http://en.wikipedia.org/wiki/Transitive_relation">mathematical concept</a>:</p>
 
@@ -244,7 +244,7 @@ The transitive closure means that all headers, which are imported by header file
 Surely, you know this property from your app target, whenever you import a header, which imports other headers, the classes and symbols, which are defined there, are also available in your app code.
 The same has to apply for import statements in Umbrella Headers and effect the module visibility with Clang modules.</p>
 
-<h3>What are Umbrella Headers?</h3>
+<h3 id="what-are-umbrella-headers?">What are Umbrella Headers?</h3>
 
 <p>For our example it could look like this:</p>
 <div class="highlight">      </article>
@@ -282,7 +282,7 @@ The same has to apply for import statements in Umbrella Headers and effect the m
 <li>With <strong>Swift</strong>: they are the bridging header for the framework module, which essentially means that all Objective-C code you&#39;re interfacing from Swift within your framework has to be part of its public API.</li>
 </ul>
 
-<h3>Current Situation with Existing Podspecs</h3>
+<h3 id="current-situation-with-existing-podspecs">Current Situation with Existing Podspecs</h3>
 
 <p>There has never been a declarable Umbrella Header in Xcode. So Pod authors have never had to specify one.</p>
 
@@ -294,7 +294,7 @@ The same has to apply for import statements in Umbrella Headers and effect the m
 
 <p>To use this subspec in Swift without a generated umbrella header, you would need to create a bridging header and use an import like <code>#import &lt;AFNetworking/AFNetworking+UIKit.h&gt;</code>. With the generated umbrella header, you just need to <code>import AFNetworking</code> if you have the subspec included in your Podfile. If your pod doesn&#39;t work out of the box, you can use <code>pod lib lint --use-frameworks &lt;YourPod.podspec&gt;</code>, to check what is wrong. We tried that with different popular pods and sometimes ran into issues caused by misconfigured public headers.</p>
 
-<h4>About Public Headers</h4>
+<h4 id="about-public-headers">About Public Headers</h4>
 
 <p>Public Headers in Podspecs are declared by <code>s.public_header_files = [&quot;Core/*.h&quot;, &quot;Tree/**.h&quot;]</code>.</p>
 
@@ -308,7 +308,7 @@ This isn&#39;t recommeded for most cases.</p>
 <li>It impedes misusage, because you would need to modify header access to use or manipulate classes or properties, which are not intended to be used externally.</li>
 </ul>
 
-<h4>Common Header Pitfalls</h4>
+<h4 id="common-header-pitfalls">Common Header Pitfalls</h4>
 
 <p>If you have an header like this:</p>
 <div class="highlight">      </article>
@@ -371,7 +371,7 @@ This isn&#39;t recommeded for most cases.</p>
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h4>Xcode Oddities</h4>
+<h4 id="xcode-oddities">Xcode Oddities</h4>
 
 <p>We have seen this error a few times during development.</p>
 <div class="highlight">      </article>
@@ -395,7 +395,7 @@ This isn&#39;t recommeded for most cases.</p>
 <p>An error like above can appear, if you develop a framework in Xcode, and you alter header visibility to fix build problems like described previously and try to ensure a clean build state by executing the Clean action (<strong>⌘+
 ⇧+K</strong> in Xcode). In this situation, it can be helpful to nuke the products build directory (alas <code>DerivedData</code>) manually from the file system.</p>
 
-<h2>Availability</h2>
+<h2 id="availability">Availability</h2>
 
 <p>CocoaPods only supports Swift on OS X 10.9 and newer, and iOS 8 and newer.</p>
 
@@ -416,7 +416,7 @@ This isn&#39;t recommeded for most cases.</p>
 
 <p>To use Swift libraries on apps that support iOS 7, you must manually copy the files into your application project.</p>
 
-<h2>Updating</h2>
+<h2 id="updating">Updating</h2>
 
 <p>To install the latest Beta of CocoaPods you can run:</p>
 <div class="highlight">      </article>

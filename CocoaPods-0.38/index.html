@@ -88,7 +88,7 @@ This is our first update since WWDC and it brings support for Apple&#39;s latest
 It also includes lots of improvements that make building Pods easier.
 Furthermore, it rolls out <a href="http://blog.cocoapods.org/Stats/">Stats</a> for everyone.</p>
 
-<h3>watchOS</h3>
+<h3 id="watchos">watchOS</h3>
 
 <p>The update allows you to use Pods with watchOS.
 As a Pod Author, you have to specify the <a href="https://guides.cocoapods.org/syntax/podspec.html#watchos">deployment target
@@ -118,7 +118,7 @@ for watchOS</a> in the Podspec, as seen below:</p>
 Any Pod that can support watchOS needs to explicitly add support by adding <code>s.watchos.deployment_target</code>.
 It is an entirely new platform.</p>
 
-<h3>Target Deduplication</h3>
+<h3 id="target-deduplication">Target Deduplication</h3>
 
 <p>CocoaPods now de-duplicates Pod targets, which means that it recognises when a dependency is used multiple times across different user targets but only needs to be built once.
 But sometimes this is not possible and they still need to be generated in different variants and thus build multiple times.
@@ -132,7 +132,7 @@ The targets in <code>Pods.xcodeproj</code> need to be duplicated when one of the
 
 <p>This fixes several issues with Archiving apps with extensions, but also reduces build times significantly.</p>
 
-<h3>Removal of the Enviroment Header</h3>
+<h3 id="removal-of-the-enviroment-header">Removal of the Enviroment Header</h3>
 
 <p>After updating and running <code>pod install</code> on your integration, you will see that some header files in the Pods directory won&#39;t be generated anymore matching the pattern <code>Pods-*-environment.h</code>.
 This was the environment header, which contained precompiler macro definitions with the version components of each dependency used in the integrated target.
@@ -163,7 +163,7 @@ If you relied on that, you can still use the Clang file checking macro <a href="
 </div>
 <p>To make optional behavior in your Pod available, you should use <a href="https://guides.cocoapods.org/syntax/podspec.html#group_subspecs">subspecs</a>, exclude the subspec from the <code>default_subspecs</code> and declare there an explicit dependency, which is versioned and will affect the dependency resolution only when the user explicitly includes the subspec.</p>
 
-<h3>Breaking Change to the Hooks-API</h3>
+<h3 id="breaking-change-to-the-hooks-api">Breaking Change to the Hooks-API</h3>
 
 <p>The Podfile allows you to define <code>pre_install</code> and <code>post_install</code> hooks.
 Before this update, we maintained a proxy layer, so that we could alter the installation / integration process and the model and just change how the Hooks API representations access those artifacts.
@@ -172,17 +172,49 @@ Because of that, we relinquished that approach and made the underlying installer
 
 <p>If you relied on that feature, this table may help you with the mapping and give you some help how to migrate:</p>
 
-<p>| InstallerRepresentation | Installer                                       |
-|:------------------------|:------------------------------------------------|
-| <code>sandbox_root</code>          | <code>sandbox.root</code>                                  |
-| <code>project</code>               | <code>pods_project</code>                                  |
-| <code>pods</code>                  | ~&gt; <code>pod_targets</code>                                |
-| <code>libraries</code>             | ~&gt; <code>aggregate_targets</code>                          |
-| <code>specs_by_lib</code>          | use <code>#find</code> or <code>#select</code> on <code>pod_targets</code>       |
-| <code>pods_by_lib</code>           | use <code>#find</code> or <code>#select</code> on <code>aggregate_targets</code> |
-| <code>sandbox</code>               | <code>sandbox</code>                                       |
-| <code>config</code>                | <code>config</code>                                        |
-| <code>installer</code>             | not needed                                      |</p>
+<table><thead>
+<tr>
+<th style="text-align: left">InstallerRepresentation</th>
+<th style="text-align: left">Installer</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left"><code>sandbox_root</code></td>
+<td style="text-align: left"><code>sandbox.root</code></td>
+</tr>
+<tr>
+<td style="text-align: left"><code>project</code></td>
+<td style="text-align: left"><code>pods_project</code></td>
+</tr>
+<tr>
+<td style="text-align: left"><code>pods</code></td>
+<td style="text-align: left">~&gt; <code>pod_targets</code></td>
+</tr>
+<tr>
+<td style="text-align: left"><code>libraries</code></td>
+<td style="text-align: left">~&gt; <code>aggregate_targets</code></td>
+</tr>
+<tr>
+<td style="text-align: left"><code>specs_by_lib</code></td>
+<td style="text-align: left">use <code>#find</code> or <code>#select</code> on <code>pod_targets</code></td>
+</tr>
+<tr>
+<td style="text-align: left"><code>pods_by_lib</code></td>
+<td style="text-align: left">use <code>#find</code> or <code>#select</code> on <code>aggregate_targets</code></td>
+</tr>
+<tr>
+<td style="text-align: left"><code>sandbox</code></td>
+<td style="text-align: left"><code>sandbox</code></td>
+</tr>
+<tr>
+<td style="text-align: left"><code>config</code></td>
+<td style="text-align: left"><code>config</code></td>
+</tr>
+<tr>
+<td style="text-align: left"><code>installer</code></td>
+<td style="text-align: left">not needed</td>
+</tr>
+</tbody></table>
 
 <p>See also the <a href="http://www.rubydoc.info/github/cocoapods/cocoapods/Pod/Installer">gem API documentation of the <code>Installer</code></a>.</p>
 
@@ -211,7 +243,7 @@ Because of that, we relinquished that approach and made the underlying installer
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h3>Split of <code>xcconfig</code></h3>
+<h3 id="split-of-xcconfig">Split of <code>xcconfig</code></h3>
 
 <p>One of the more advanced attribute in Podspecs is - <em>or better was</em> - the attribute <code>xcconfig</code>.</p>
 
@@ -228,14 +260,14 @@ The new attributes are available as <code>pod_target_xcconfig</code> and <code>u
 The latter attribute (<code>user_target_xcconfig</code>) should be used with great care, because well designed Pods should be self-contained and make as few assumptions about their environment as possible.
 Furthermore, this attribute can cause conflicts when different values are specified by two Pods for a build setting which doesn&#39;t allow multiple values and so cannot be merged.</p>
 
-<h3>Deterministic UUIDs by Xcodeproj</h3>
+<h3 id="deterministic-uuids-by-xcodeproj">Deterministic UUIDs by Xcodeproj</h3>
 
 <p>This update also includes the latest version of Xcodeproj, which encapsulates the API to Xcode projects.
 Beside support for new build settings, it now supports the generation of deterministic UUIDs for every object in the project file.
 That means in practice mostly, that you have smaller diffs for the <code>Pods.xcodeproj</code> after running <code>pod install</code> or <code>pod update</code>, which reduce unnecessary merge conflicts.
 This behavior can be disabled via the new <code>COCOAPODS_DISABLE_DETERMINISTIC_UUIDS</code> environment variable.</p>
 
-<h3>Resolver takes the Deployment Target into account</h3>
+<h3 id="resolver-takes-the-deployment-target-into-account">Resolver takes the Deployment Target into account</h3>
 
 <p>The deployment target of a podspec is now taken into account in the dependency resolution process.
 This will ensure that CocoaPods will always be able to resolve your Podfile, even if newer versions of pods are released that have higher minimum deployment targets.
@@ -246,7 +278,7 @@ It makes the behavior of CocoaPods overall less surprising.</p>
 <p>Along with these enhancements, 0.38 features dozens of bug fixes.
 Special thanks to all the new contributors we had for this release, especially for their help in squashing bugs.</p>
 
-<h2>Updating</h2>
+<h2 id="updating">Updating</h2>
 
 <p>To install the last release of CocoaPods you can run:</p>
 <div class="highlight">      </article>

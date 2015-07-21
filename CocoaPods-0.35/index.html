@@ -85,11 +85,11 @@
 
 <p>The CocoaPods 0.35 is much more limited in scope than <a href="http://blog.cocoapods.org/CocoaPods-0.34/">0.34 was</a>, but the improvements in this version center on the heart of what CocoaPods is: a dependency manager. While the list of new features may seem short, don&#39;t be disappointed: this is a major step forward for CocoaPods.</p>
 
-<h2>Dependency Resolution</h2>
+<h2 id="dependency-resolution">Dependency Resolution</h2>
 
 <p>At the heart of any dependency managers is its <code>Resolver</code>, whose job is to take a list of dependencies (defined in a <code>Podfile</code>) and transform those explicit  requirements into a complete set of Pods to install. With CocoaPods 0.35, the core dependency resolution code has been completely rewritten, giving birth to Molinillo, a generic dependency resolution module. This change should improve the experience of using CocoaPods by making things work in a more predictable manner and allowing you to focus more on your project instead of making things easier for CocoaPods.</p>
 
-<h3>Automatic Conflict Resolution</h3>
+<h3 id="automatic-conflict-resolution">Automatic Conflict Resolution</h3>
 
 <p>Consider the following <code>Podfile</code> and note that CocoaPods will by default, when no version requirements are specified, try to activate the latest available version of a pod. (The versions in this example are based on the latest available versions of the pods in question <em>at the time of writing</em>).</p>
 <div class="highlight">      </article>
@@ -139,11 +139,11 @@
 
 <p>The resolver is now able to backtrack when conflicts arise, thus allowing it to simultaneously satisfy all dependency constraints, or definitely state that the Podfile is unresolvable. The development of a <a href="https://github.com/CocoaPods/Resolver-Integration-Specs">language-agnostic resolver integration suite</a> made this possible, and will hopefully ensure that other dependency managers can provide a consistent resolution process.</p>
 
-<h3>Improved Locking</h3>
+<h3 id="improved-locking">Improved Locking</h3>
 
 <p>CocoaPods has always had a version locking feature (it&#39;s your <code>Podfile.lock</code>) that tries to ensure that, whenever someone clones a project and runs <code>pod install</code>, they will get the same dependency versions as you. Well, in CocoaPods 0.35, that version locking has been extended to <em>implicit</em> dependencies as well, so your <code>Podfile.lock</code> is now an absolute source of truth.</p>
 
-<h3>Pre-Release Dependencies</h3>
+<h3 id="pre-release-dependencies">Pre-Release Dependencies</h3>
 
 <p>At CocoaPods, we love it when people make pre-release versions of their libraries -- we do it ourselves! In order to more strictly conform with <a href="http://semver.org">Semantic Versioning</a>, pre-release versions of a Pod will now only be considered in the resolution process if there is any dependency on the pod with a pre-release version in its requirement.</p>
 
@@ -166,11 +166,11 @@
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h3>External Source Optimizations</h3>
+<h3 id="external-source-optimizations">External Source Optimizations</h3>
 
 <p>Handling of dependencies with external sources (e.g., <code>pod &#39;RestKit&#39;, git: &#39;https://github.com/RestKit/RestKit.git&#39;</code>) has been optimized and clarified in this release. CocoaPods now only downloads each Pod with an external source once, which has the nice side effect of making linting specifications that have a lot of subspec dependencies faster. CocoaPods also lets you know when there are conflicting dependencies, so you can remove unwanted duplication from your <code>Podfile</code>. Finally, CocoaPods lets you know if you specify the same Pod with different external sources, instead of a random source being chosen.</p>
 
-<h3>Locking Checkout Options</h3>
+<h3 id="locking-checkout-options">Locking Checkout Options</h3>
 
 <p>At the intersection of improved locking and external source optimizations is CocoaPods 0.35’s final feature: the lockfile now hold the information necessary to ensure that dependencies directed installed from a repository will be locked to the same revision until updated. That means this Podfile, along with its corresponding Podfile.lock, will ensure that every member of your team is always on the same revision of <em>all</em> of your dependencies:</p>
 <div class="highlight">      </article>
@@ -195,17 +195,17 @@
 </div>
 <p><code>AFNetworking</code> will continue to use the same commit that was downloaded when you first ran <code>pod install</code>, so you don’t have to worry about changes sneaking in when you run <code>pod install</code> on a new machine. As always, <code>pod update AFNetworking</code> will update you to the latest commit.</p>
 
-<h2>Performance Improvements</h2>
+<h2 id="performance-improvements">Performance Improvements</h2>
 
 <p>Molinillo makes resolving a normal application&#39;s Podfile roughly <a href="https://github.com/CocoaPods/CocoaPods/pull/2637#issuecomment-60422101">1.5x faster</a> than the old resolver, which is astonishing given the wider breadth of its feature-set. Additionally, the external source optimizations should make fetching multiple subspecs from an external source many times faster.</p>
 
 <p>The vast majority of this release&#39;s performance improvements come from <a href="https://github.com/alloy">Eloy&#39;s</a> work on optimizing expensive operations in <a href="https://github.com/CocoaPods/Xcodeproj">Xcodeproj</a>. This makes CocoaPods&#39; integration steps blaze by!</p>
 
-<h2>Bonus News</h2>
+<h2 id="bonus-news">Bonus News</h2>
 
 <p>I’ve been working on bringing <a href="https://github.com/CocoaPods/Molinillo">Molinillo</a> over to <a href="https://github.com/bundler/bundler">Bundler</a> so we can hopefully share a dependency resolution implementation in the future.</p>
 
-<h2>Updating</h2>
+<h2 id="updating">Updating</h2>
 
 <p>To install the last release of CocoaPods you can run:</p>
 <div class="highlight">      </article>

@@ -112,7 +112,7 @@ You should join us, and hear about what&amp;#39;s happened in CocoaPods in the p
       
       <description>&lt;p&gt;The Testjam is this weekend (April 18-19). Let&amp;#39;s give as much details as possible:&lt;/p&gt;
 
-&lt;h3&gt;Meetups&lt;/h3&gt;
+&lt;h3 id=&quot;meetups&quot;&gt;Meetups&lt;/h3&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -794,7 +794,7 @@ command and a galore of improvements. Including the ability to deprecate pods.&l
 &lt;strong&gt;force push&lt;/strong&gt; into &lt;a href=&quot;https://github.com/CocoaPods/Specs&quot;&gt;the Specs repository&lt;/a&gt;. (Also known as the
 ‘master’ spec repo.)&lt;/p&gt;
 
-&lt;h3&gt;What does this mean for you?&lt;/h3&gt;
+&lt;h3 id=&quot;what-does-this-mean-for-you?&quot;&gt;What does this mean for you?&lt;/h3&gt;
 
 &lt;p&gt;Well, basically your CocoaPods setup &lt;strong&gt;is going to break&lt;/strong&gt;. You are going to
 have to manually delete &lt;em&gt;any&lt;/em&gt; local copies of the Specs repository and re-clone

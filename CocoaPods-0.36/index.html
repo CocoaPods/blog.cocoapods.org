@@ -85,7 +85,7 @@
 
 <!-- more -->
 
-<h2>And there were Swift &amp; Dynamic Frameworks on iOS</h2>
+<h2 id="and-there-were-swift-&amp;-dynamic-frameworks-on-ios">And there were Swift &amp; Dynamic Frameworks on iOS</h2>
 
 <p>Dynamic frameworks have always been available on OS X. That&#39;s different for iOS.
 Apple&#39;s mobile platform introduced third-party dynamic framework support in iOS 8.
@@ -109,9 +109,9 @@ If that&#39;s not present, you won&#39;t be able to integrate dependencies, if y
 This is an all or nothing approach per integrated targets, because we can&#39;t ensure to properly build frameworks, whose transitive dependencies are static libraries.
 This release goes along with probably one of the most drastic changes of the whole project, which includes CocoaPods itself, but also required similar changes to Xcodeproj as well.</p>
 
-<h2>Dynamic Frameworks vs. Static Libraries</h2>
+<h2 id="dynamic-frameworks-vs.-static-libraries">Dynamic Frameworks vs. Static Libraries</h2>
 
-<h5>So what&#39;s the difference between those both product types?</h5>
+<h5 id="so-what&#39;s-the-difference-between-those-both-product-types?">So what&#39;s the difference between those both product types?</h5>
 
 <p>One difference is obvious in their names: Dynamic and Static are opposites.
 This explains how they are linked to your code when integrated.
@@ -147,7 +147,7 @@ But that&#39;s only part, which static libraries covered so far. Belong the furt
 <li><strong>An Info.plist</strong> - This specifies author, version and copyright information.</li>
 </ul>
 
-<h3>Caveats</h3>
+<h3 id="caveats">Caveats</h3>
 
 <p>One caveat about bundling resources is, that until now we had to embed all resources into the application bundle.
 The resources were referenced programmatically by <code>[NSBundle mainBundle]</code>.
@@ -196,17 +196,17 @@ They are namespaced by the framework bundle.
 Furthermore we don&#39;t have to apply the build rules ourself to the resources as e.g. asset catalogs and storyboards need to be compiled.
 This should decrease build times for projects using Pods that include many resources.</p>
 
-<h3><code>@IBDesignable</code> - Another Reason for Frameworks</h3>
+<h3 id="@ibdesignable---another-reason-for-frameworks"><code>@IBDesignable</code> - Another Reason for Frameworks</h3>
 
 <p>Xcode 6 allows you to preview your own custom view components in Interface Builder.
 To make use of that, the view component must live in its own framework.</p>
 
-<h3>More about Frameworks</h3>
+<h3 id="more-about-frameworks">More about Frameworks</h3>
 
 <p>If you want to learn more about Frameworks, take a look into the <a href="https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPFrameworks/Frameworks.html#//apple_ref/doc/uid/10000183-SW1">Framework Programming Guide</a>.
 Even though this was not written specifically for the new Cocoa Touch Frameworks, how Apple calls them in their Xcode target template, those are mostly the same to the classic OS X frameworks, so this document is still a helpful introduction.</p>
 
-<h2>Private Pods and <code>source</code></h2>
+<h2 id="private-pods-and-source">Private Pods and <code>source</code></h2>
 
 <p>On a last note, another change in this version is regarding private spec repositories.</p>
 
@@ -215,7 +215,7 @@ This is important for ensuring everybody in your team uses the same reference of
 
 <p><em>Note that if you don&#39;t use private pods (and only use pods from the official spec repo), you don&#39;t need to list any <code>source</code> as this will defaults to only using <code>CocoaPods/Specs</code>.</em></p>
 
-<h2>Updating</h2>
+<h2 id="updating">Updating</h2>
 
 <p>To install the last release of CocoaPods you can run:</p>
 <div class="highlight">      </article>

@@ -83,7 +83,7 @@
 <strong>force push</strong> into <a href="https://github.com/CocoaPods/Specs">the Specs repository</a>. (Also known as the
 ‘master’ spec repo.)</p>
 
-<h3>What does this mean for you?</h3>
+<h3 id="what-does-this-mean-for-you?">What does this mean for you?</h3>
 
 <p>Well, basically your CocoaPods setup <strong>is going to break</strong>. You are going to
 have to manually delete <em>any</em> local copies of the Specs repository and re-clone
@@ -114,7 +114,7 @@ repository should never be affected by issues in other spec repositories.</em></
 <p><em>If you really know what you’re doing and don’t want to re-download the
 complete repo, follow <a href="https://github.com/CocoaPods/Specs/issues/7029#issuecomment-33708256">these</a> instructions.</em></p>
 
-<h3>Why did this break?</h3>
+<h3 id="why-did-this-break?">Why did this break?</h3>
 
 <p>The Specs repository has unfortunately broken due to <a href="https://github.com/libgit2/libgit2/pull/2085">a bug in
 libgit2</a> which powers <a href="https://help.github.com/articles/creating-and-editing-files-in-your-repository">GitHub&#39;s web editor</a>. This
@@ -141,7 +141,7 @@ the rewritten tree. Rolling out this fix basically means that all copies of the
 repository have to be reset. This can be a delicate process, so deleting and
 re-cloning is the safest and simplest way to do so.</p>
 
-<h3>Will this happen again?</h3>
+<h3 id="will-this-happen-again?">Will this happen again?</h3>
 
 <p>There is a <a href="https://github.com/libgit2/libgit2/pull/2085">fix</a> in the works to fix the bug in libgit2. This
 fixes a bug which would prevent libgit2 from corrupting a repository in this
@@ -152,7 +152,7 @@ web-editor so that it wouldn&#39;t be possible to save a corrupt repository, and
 prevent any similar problems in the future. (As is already the case when using
 <a href="https://www.kernel.org/pub/software/scm/git/docs/git-push.html">git-push</a>, which runs <a href="https://www.kernel.org/pub/software/scm/git/docs/git-fsck.html">git-fsck</a> on GitHub’s end.)</p>
 
-<h3>Acknowledgements</h3>
+<h3 id="acknowledgements">Acknowledgements</h3>
 
 <p>We would like to thoroughly thank the following people for their help in both
 investigating and resolving this matter. It is very much appreciated by all of

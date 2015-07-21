@@ -96,7 +96,7 @@ CocoaPods are searched for at all times.</p>
 
 <p>How do our users search?</p>
 
-<h2>Searching on cocoapods.org</h2>
+<h2 id="searching-on-cocoapods.org">Searching on cocoapods.org</h2>
 
 <p>CocoaPods can be searched via the <a href="http://blog.cocoapods.org/Search-API-Version-1/">Search API</a>, so for example at <a href="http://search.cocoapods.org/api/v1/pods.flat.hash.json?query=author:tony%20author:arnold">http://search.cocoapods.org/api/v1/pods.flat.hash.json?query=author:tony%20author:arnold</a>, or via <a href="http://cocoapods.org/?q=author:tony%20author:arnold">cocoapods.org</a>.</p>
 
@@ -124,7 +124,7 @@ That neatly solves the issue of jumping results, and also ensures a very respons
 
 <p>But what is the second feature about?</p>
 
-<h2>Picky</h2>
+<h2 id="picky">Picky</h2>
 
 <p><a href="http://pickyrb.com/">Picky</a> is a <a href="http://pickyrb.com/details.html">semantic text search engine</a>, running on Ruby.
 It is fast (it uses C for the core bits), flexible (it uses Ruby for maximum flexibility), and versatile.
@@ -165,7 +165,7 @@ Or you can search for <a href="http://cocoapods.org/?q=network">&quot;network&qu
 
 <p>Personally, I feel very strongly about creating specialized search engines if you want to provide the best experience for your users.</p>
 
-<h2>Limitations</h2>
+<h2 id="limitations">Limitations</h2>
 
 <p>As the CocoaPods team cannot afford a server farm, but only a single server on Heroku, and a cheap shared CPU at that, we needed to be smart in designing the infrastructure.
 We started with a list of requirements:</p>
@@ -179,7 +179,7 @@ We started with a list of requirements:</p>
 
 <p>To satisfy these requirements, we started thinking about the design.</p>
 
-<h2>Design</h2>
+<h2 id="design">Design</h2>
 
 <p>From running the search engine for a few years, we knew:</p>
 
@@ -215,7 +215,7 @@ Before we fork any of these, we <a href="https://github.com/CocoaPods/search.coc
 Web workers are very thin – they <a href="https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L238">only send the queries to the search engine process</a>. 
 This means any web worker can be restarted without problem, as they are relatively light.</p>
 
-<h3>Handling queries</h3>
+<h3 id="handling-queries">Handling queries</h3>
 
 <p>If any query comes in, it is <a href="https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L236-L252">handed off to the search engine process</a>, and <a href="https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/app.rb#L165-L178">also sent to the analytics process</a>.
 The analytics process is only <a href="https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/analytics_worker.rb#L13-L21">concerned with sending analytics</a> data to Google Analytics.
@@ -240,14 +240,14 @@ I was and am impressed at Heroku going for that long.
 Now, for example, we send calls to the status page every 30 seconds, <a href="https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/stats_sender.rb#L27">remember the child process PID</a> and <a href="https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/stats_sender.rb#L9-L10">clean it up</a> again <a href="https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/stats_sender.rb#L15">before we send off</a> the next call.
 Now the search engine purrs along nicely.</p>
 
-<h3>Handling Trunk webhook calls</h3>
+<h3 id="handling-trunk-webhook-calls">Handling Trunk webhook calls</h3>
 
 <p>To be able to index on the fly, any of the three web workers <a href="https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/app.rb#L145-L163">handle Trunk webhook calls</a>.
 They then inform the search engine process, also <a href="">via channels</a>, which then will <a href="https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search_worker.rb#L162">reload the right pod</a> from the Trunk DB and <a href="https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search_worker.rb#L163">reindex it</a>.
 This has resulted in a less than 30 second delay between you pushing to Trunk and the search engine spewing out updated results.
 Note that there is some browser caching of results going on, so when you try it, please clean the cache and reload.</p>
 
-<h2>Summary and The Future</h2>
+<h2 id="summary-and-the-future">Summary and The Future</h2>
 
 <p>To make a truly CocoaPod-specific search engine that would enable us to experiment and at the same time fit on a single shared Heroku instance, we used <a href="http://pickyrb.com/">Picky</a>, <a href="http://heroku.com/">Heroku</a> and a multiprocessing-based structure (with a single process search event loop), while still being able to serve enough results at a time.</p>
 

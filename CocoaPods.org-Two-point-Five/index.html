@@ -95,7 +95,7 @@
 <section class="container">
 <div class="row"><article class="content col-md-8 col-md-offset-2"></p>
 
-<h2>Quality Index</h2>
+<h2 id="quality-index">Quality Index</h2>
 
 <p>We built a series of quality approximations that sit on top of the deep metrics that exist within CocoaPods. These are a series of rules that we apply against a pod every time a new pod version is pushed. They range from GitHub popularity, to download size and a rough version of how well tested it is.</p>
 
@@ -113,15 +113,15 @@
 <section class="container">
 <div class="row"><article class="content col-md-8 col-md-offset-2"></p>
 
-<h2>Pod Ordering</h2>
+<h2 id="pod-ordering">Pod Ordering</h2>
 
 <p>We&#39;ve transitioned the default pod search ordering from GitHub stars to the overall Quality Index. In part this is because the CocoaPods ecosystem is bigger than just GitHub, and  while popularity is pretty well correlated with GitHub stars it often can just be an indicator that people liked the idea. Using the Quality Index we can take that into account, but also that it is well documented, has tests and many other aspects.</p>
 
-<h2>Pod Page improvements</h2>
+<h2 id="pod-page-improvements">Pod Page improvements</h2>
 
 <p>We streamlined the main section of the Pod page. We did this by moving a lot of the interesting metrics that we have to the sidebar, and to re-think the hierarchy of the data on the side. We&#39;re actively cleaning up READMEs when displaying in Pod pages for things like CI/Coverage badges and CocoaPods installation notes to keep it focused on just the pods documentation. Installation details are available in the sidebar.</p>
 
-<h2>Owner pages</h2>
+<h2 id="owner-pages">Owner pages</h2>
 
 <p>Terminology is important here, an owner is someone who has access to push a Pod to trunk. The library author is someone who created the library. Nearly all of the time they are the same, but there are examples ( <a href="https://cocoapods.org/pods/ARAnalytics">ARAnalytics</a> ) where they differ. We have created owner pages for the people with access to push a pod, right now we don&#39;t have pretty URLs for your owners but you can jump to any Pods you own and you&#39;ll see a link to your page. We show all the Pods an owner has access to, and a little bit of information around the pod.</p>
 

@@ -83,7 +83,7 @@
 
 <!-- more -->
 
-<h3>But wait, there&#39;s more...</h3>
+<h3 id="but-wait,-there&#39;s-more...">But wait, there&#39;s more...</h3>
 
 <p>It wasn&#39;t just enough to offer just download counts. We spend a lot of time working around Xcode&#39;s project file intricacies, however in this context, it provides us with foundations for a really nice feature. CocoaPods Stats will be able to keep track of the unique number of installs within Apps / Watch Apps / Extensions / Unit Tests.</p>
 
@@ -101,15 +101,15 @@
 <section class="container">
 <div class="row"><article class="content col-md-8 col-md-offset-2"></p>
 
-<h3>Alright, hold up</h3>
+<h3 id="alright,-hold-up">Alright, hold up</h3>
 
 <p>Let&#39;s go over how we check which pods get sent up for analytics, and how we do the unique installs. <a href="https://github.com/cocoapods/cocoapods-stats">CocoaPods-Stats</a> is a plugin that will be bundled with CocoaPods within a version or two. It <a href="https://github.com/CocoaPods/cocoapods-stats/blob/0361f29ae37e82ccf385319bba9cf31464049144/lib/cocoapods_plugin.rb#L6">registers</a> as a post-install plugin and is ran on every <code>pod install</code> or <code>pod update</code>.</p>
 
-<h4>Detecting Public Pods</h4>
+<h4 id="detecting-public-pods">Detecting Public Pods</h4>
 
 <p>We&#39;re very pessimistic about sending a Pod up to our <a href="https://github.com/cocoapods/stats.cocoapods.org">stats server</a>. We ensure that you have a CocoaPods/Specs repo set up as your master repo, then ensure that each pod to be sent  is inside that repo before accepting it as a public domain pod.</p>
 
-<h4>Data being sent</h4>
+<h4 id="data-being-sent">Data being sent</h4>
 
 <p>First up, we don&#39;t want to know anything about your app. So in order to know unique targets we use your project&#39;s target <a href="https://github.com/artsy/eigen/blob/aea7af93daffb716ccee9aa50ce599dc7949c42b/Artsy.xcodeproj/project.pbxproj#L3888">UUID</a> as an identifier. These are a <a href="http://danwright.info/blog/2010/10/xcode-pbxproject-files-3/">hash</a> of your MAC address, Xcode&#39;s process id and the time of target creation (but we only know the UUID/hash, so your MAC address is unknown to us). These UUIDs never change in a project&#39;s lifetime (contrary to, for example, the bundle identifier). We double hash it just to be super safe.</p>
 <div class="highlight">      </article>
@@ -142,47 +142,47 @@
 </div>
 <p>We then also send along the CocoaPods version that was used to generate this installation. Ideally before release we&#39;ll also be able to give statistics on how many people are using <code>pod try [pod]</code> for your library too.</p>
 
-<h4>How does it work?</h4>
+<h4 id="how-does-it-work?">How does it work?</h4>
 
 <p>My first attempt at a stats architecture was based on how <a href="https://github.com/npm/download-counts#data-source">npm does stats</a>, roughly speaking they send all logs to S3 where they are map-reduced on a daily basis into individual package metrics. This is an elegant solution for a <a href="https://www.crunchbase.com/organization/npm">company</a> with people working full time on up-time and stability. As someone who wants to be building iOS apps, and not maintaining <a href="http://cocoadocs.org/readme/">more</a> infrastructure in my spare time, I wanted to avoid this.</p>
 
 <p>We use Segment in Artsy, and our analytics team had really good things to say about their <a href="https://segment.com/redshift">Redshift</a> infrastructure. So I reached out about having them hosting the stats infrastructure for CocoaPods. They offered a lot of great advice around the data-modelling, we were up and running really quickly. So you already know about the CocoaPods plugin, but from there it sends your anonymous Pod stats up to <a href="https://github.com/cocoapods/stats.cocoapods.org">stats.cocoapods.org</a>. This acts as a <a href="https://github.com/CocoaPods/stats.cocoapods.org/blob/b1889c9b35faef524685d99898be9ac8447ed7f8/spec/functional/api/v1/install_spec.rb">conduit</a> sending analytics events to Segment. A <a href="https://github.com/CocoaPods/stats.cocoapods.org/blob/b1889c9b35faef524685d99898be9ac8447ed7f8/Rakefile#L49">daily task</a> is triggered on the web site, this makes <a href="https://github.com/CocoaPods/stats.cocoapods.org/blob/b1889c9b35faef524685d99898be9ac8447ed7f8/runner/stats_coordinator.rb">SQL requests</a> against the Redshift instance which is then imported into <a href="http://metrics.cocoapods.org/api/v1/pods/Expecta">metrics.cocoapods.org</a>.</p>
 
-<h2>FAQ</h2>
+<h2 id="faq">FAQ</h2>
 
-<h4>Can I opt out as a CocoaPods user?</h4>
+<h4 id="can-i-opt-out-as-a-cocoapods-user?">Can I opt out as a CocoaPods user?</h4>
 
 <p>Sure. You can set an <a href="http://apple.stackexchange.com/questions/106778/how-do-i-set-environment-variables-on-os-x">environment variable</a> <code>COCOAPODS_DISABLE_STATS</code> to true in your shell, and stats will not be sent from your machine.</p>
 
-<h4>Does this affect every pod?</h4>
+<h4 id="does-this-affect-every-pod?">Does this affect every pod?</h4>
 
 <p>Yeah, every pod will get download stats.</p>
 
-<h4>Will it be live stats?</h4>
+<h4 id="will-it-be-live-stats?">Will it be live stats?</h4>
 
 <p>No, they get generated once per day.</p>
 
-<h4>What is the rollout strategy?</h4>
+<h4 id="what-is-the-rollout-strategy?">What is the rollout strategy?</h4>
 
 <p>We plan on making this initially a separate CocoaPods plugin that you can optionally install via <code>[sudo] gem install cocoapods-stats</code> which will send the data. In a release or two we will bundle this into CocoaPods, and it will be installed by default for everyone moving forwards.</p>
 
-<h4>Can I use it right now?</h4>
+<h4 id="can-i-use-it-right-now?">Can I use it right now?</h4>
 
 <p>Sure, run <code>[sudo] gem install cocoapods-stats</code> and then add <code>plugin &quot;cocoapods-stats&quot;</code> to your Podfile. If you are using a <a href="https://guides.cocoapods.org/using/a-gemfile.html">Gemfile</a> then add &quot;gem &#39;cocoapods-stats&#39;&quot; to that. Once stats is a default in CocoaPods you can remove the references, as it will be bundled automatically.</p>
 
-<h4>Can I use this to find out how many people are using an older build of my pods?</h4>
+<h4 id="can-i-use-this-to-find-out-how-many-people-are-using-an-older-build-of-my-pods?">Can I use this to find out how many people are using an older build of my pods?</h4>
 
-<p>Not automatically, we&#39;ve not figured out a strategy for doing this yet, but you can email orta@cocoapods.org for one off requests once it&#39;s up and running. Ideally once this has settled I&#39;d like to take a look at making a stats overview page per pod, but that has some tricky technicalities.</p>
+<p>Not automatically, we&#39;ve not figured out a strategy for doing this yet, but you can email <a href="mailto:orta@cocoapods.org">orta@cocoapods.org</a> for one off requests once it&#39;s up and running. Ideally once this has settled I&#39;d like to take a look at making a stats overview page per pod, but that has some tricky technicalities.</p>
 
-<h4>How does this affect the quality indexes / sorting?</h4>
+<h4 id="how-does-this-affect-the-quality-indexes-/-sorting?">How does this affect the quality indexes / sorting?</h4>
 
 <p>Ideally we can reduce the amount of impact GitHub stars affects your quality index, and replace some of the values with new metrics based on downloads/installations. </p>
 
-<h4>What commands does this run on?</h4>
+<h4 id="what-commands-does-this-run-on?">What commands does this run on?</h4>
 
 <p>It runs at the end of a <code>pod install</code> or a <code>pod update</code>.</p>
 
-<h4>I check in my Pods, how does this affect stats?</h4>
+<h4 id="i-check-in-my-pods,-how-does-this-affect-stats?">I check in my Pods, how does this affect stats?</h4>
 
 <p>Checking in your Pods will mean that the download count for the pods used will rarely be affected, but the installations will be the exact same. They only register once per project, so multiple developers on the same project running pod install will not raise this number.</p>
 

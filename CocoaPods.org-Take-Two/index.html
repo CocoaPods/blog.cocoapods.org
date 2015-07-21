@@ -90,7 +90,7 @@
 }
 </style>
 
-<h2>Backstory.</h2>
+<h2 id="backstory.">Backstory.</h2>
 
 <p>The CocoaPods web site is an interesting beast. In October 2013, we started <a href="http://blog.cocoapods.org/redesign/">rewriting</a> the CocoaPods web pages. We centralized the documentation, created a blog and redesigned everything. </p>
 
@@ -98,7 +98,7 @@
 
 <p>In an ideal world, you should be able to find a library that fits your constraints using just the front page of CocoaPods.org. Often there is more than one library, and that’s where things gets a bit more complex. In previous versions of the site, in order to choose between multiple libraries, you needed to open them up on GitHub in separate tabs and compare. Now, you don’t need to. 🎉</p>
 
-<h2>Here’s how it works</h2>
+<h2 id="here’s-how-it-works">Here’s how it works</h2>
 
 <p>Let’s take a random pod. <a href="http://cocoapods.org/pods/MiniFuture">MiniFuture</a>. This is what happens after a Pod is released:</p>
 
@@ -222,19 +222,19 @@
 </div>
 <p>This gives enough metadata to start creating a page that represents the library with the kind of context that is specific to our community. In a lot of ways it can be better than the front page of the GitHub repo.</p>
 
-<h2>How it comes together</h2>
+<h2 id="how-it-comes-together">How it comes together</h2>
 
 <p>We use the quality metrics in search to order the results. There are quite a few different <a href="https://github.com/CocoaPods/search.cocoapods.org/blob/238b497872857e7b44ac715170888ef7f5ba046b/lib/search.rb#L345">sorting options</a> now, so we may look into offering choices there.</p>
 
 <p>We&#39;ve started exposing a good chunk of the information in a pod&#39;s profile pages, and via inline results but not all of it. There&#39;s <a href="https://github.com/CocoaPods/cocoapods.org/issues/107">interesting</a> <a href="https://github.com/CocoaPods/cocoapods.org/issues/106">issues</a> around how we can expose more.</p>
 
-<h2>Going forward</h2>
+<h2 id="going-forward">Going forward</h2>
 
 <p>The APIs we use are all available for anyone to build things on top of. This data is pretty solid, the API routes won&#39;t be changing and work is on-going to make it more accurate. We&#39;ll only be expanding from here.</p>
 
 <p>It&#39;s not perfect, but a website isn&#39;t an iOS app and we can deploy daily. We re-wrote the homepage to run directly from the new databases and it&#39;s simplified the development process a lot. So it&#39;s easy for anyone to contribute and help out. We&#39;ll be iterating on it for a while before stablizing, so we&#39;d love feedback in <a href="https://github.com/CocoaPods/cocoapods.org/issues/new">an issue</a> or on twitter.</p>
 
-<h2>It took a bunch of people too</h2>
+<h2 id="it-took-a-bunch-of-people-too">It took a bunch of people too</h2>
 
 <p>Whilst I have been championing this feature for the last 8 months, I&#39;ve had a lot of help:</p>
 

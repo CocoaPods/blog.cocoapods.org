@@ -106,7 +106,7 @@ available plugins, you can just use this handy <a href="http://rubygems.org/sear
 <p>This release also includes a galore of bug fixes, mostly related to the
 handling of xcassets resources.</p>
 
-<h2>Creating plugins</h2>
+<h2 id="creating-plugins">Creating plugins</h2>
 
 <p>A CocoaPods plugin is a gem which includes a file named <code>cocoapods_plugin.rb</code>.
 CocoaPods will load this file for any installed gem that includes it. The file
@@ -153,7 +153,7 @@ has the following <code>cocoapods_plugin.rb</code>:</p>
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h3>Adding subcommands</h3>
+<h3 id="adding-subcommands">Adding subcommands</h3>
 
 <p>Adding new subcommands is very easy. You just need to create a subclass of the
 command that will be used as the namespace. Subsequently, it is necessary to
@@ -215,14 +215,14 @@ can find the <strong>complete</strong> implementation of the <code>pod spec doc<
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h3>APIs</h3>
+<h3 id="apis">APIs</h3>
 
 <p>As of yet, an explicit API to access CocoaPods logic has not be defined. So try
 to fail as gracefully as possible in case a future version of CocoaPods breaks
 your usage. Also please let us know about your needs, so we can take them into
 account to finalize APIs.</p>
 
-<h3>Checklist</h3>
+<h3 id="checklist">Checklist</h3>
 
 <ul>
 <li>Name the plugin after the <code>cocoapods-PLUGIN_NAME</code> convention.</li>
@@ -232,7 +232,7 @@ account to finalize APIs.</p>
 <li>Let us know if you make something cool!</li>
 </ul>
 
-<h2>Updating</h2>
+<h2 id="updating">Updating</h2>
 
 <p>To install the last release of CocoaPods you can run:</p>
 <div class="highlight">      </article>

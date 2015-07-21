@@ -94,7 +94,7 @@ headers location on OS X (Mountain Lion <em>and</em> Mavericks).</p>
 
 <p></center></p>
 
-<h2>History on the underlying problem</h2>
+<h2 id="history-on-the-underlying-problem">History on the underlying problem</h2>
 
 <p>While CocoaPods and most of its dependencies are implemented in pure Ruby there
 is one dependency that requires a bit of C code, or –in Ruby parlance– a
@@ -122,7 +122,7 @@ satisfaction. Finally, as a Xcode project is an undocumented format, we did not
 want to spend a lot of time on implementing and possibly having to replace it
 in the future if Apple would ever decide to change the format.</p>
 
-<h2>UX Perspective</h2>
+<h2 id="ux-perspective">UX Perspective</h2>
 
 <p><em>You can skip to ‘The solution’ if you’re not interested in a discussion on the
 ramifications of how to get things done with Ruby and the status quo.</em></p>
@@ -160,11 +160,11 @@ let alone if you are a pure user. We in the Ruby community need to fix this
 perspective and look at the mess we’ve gotten ourselves in <em>from the outside</em>
 and better frame our suggestions in context. But I digress, for now.</p>
 
-<h2>Solution</h2>
+<h2 id="solution">Solution</h2>
 
 <p>The solution is simple and, in our case, two-fold:</p>
 
-<h3><em>Recommend the use of the Ruby version that comes with OS X.</em></h3>
+<h3 id="recommend-the-use-of-the-ruby-version-that-comes-with-os-x."><em>Recommend the use of the Ruby version that comes with OS X.</em></h3>
 
 <p>The only remaining –but very valid– concern is that, by default, you will
   have to use <code>sudo</code> when installing gems. (This is only an issue for the
@@ -220,7 +220,7 @@ and better frame our suggestions in context. But I digress, for now.</p>
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h3><em>Provide prebuilt binaries for the Ruby versions that come with OS X.</em></h3>
+<h3 id="provide-prebuilt-binaries-for-the-ruby-versions-that-come-with-os-x."><em>Provide prebuilt binaries for the Ruby versions that come with OS X.</em></h3>
 
 <p>In our case this means a prebuilt version of the C extension for Ruby 1.8.7
   on OS X 10.8.x and for Ruby 2.0.0 on OS X 10.9.x. On these versions, the
@@ -256,12 +256,12 @@ and better frame our suggestions in context. But I digress, for now.</p>
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h2>Notes for RubyGems developers</h2>
+<h2 id="notes-for-rubygems-developers">Notes for RubyGems developers</h2>
 
 <p>Over the course of figuring out the best way to cater to our users, I came to
 the following insights:</p>
 
-<h3><em>RubyGems built-in prebuilt binaries support.</em></h3>
+<h3 id="rubygems-built-in-prebuilt-binaries-support."><em>RubyGems built-in prebuilt binaries support.</em></h3>
 
 <p>RubyGems automagically installs a CPU-architecture + OS-version specific
   version of your gem if one exists with the following filename:
@@ -274,7 +274,7 @@ the following insights:</p>
   fact a pre-installed OS X Ruby version. (In case there <em>is</em> a modifier to
   control the Ruby version, please let me know and I will update this section.)</p>
 
-<h3><em>RubyGems installation without the need for <code>make</code>.</em></h3>
+<h3 id="rubygems-installation-without-the-need-for-make."><em>RubyGems installation without the need for <code>make</code>.</em></h3>
 
 <p>Because we have to check if the Ruby version you are using is a version that
   comes pre-installed with OS X, we have to perform these checks at the time
@@ -324,7 +324,7 @@ the following insights:</p>
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h3><em>Prebuilt binary packaging helpers.</em></h3>
+<h3 id="prebuilt-binary-packaging-helpers."><em>Prebuilt binary packaging helpers.</em></h3>
 
 <p>The <a href="https://github.com/luislavena/rake-compiler">rake-compiler</a> library is
   very helpful in prebuilding extensions and understanding how RubyGems handles

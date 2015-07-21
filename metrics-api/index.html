@@ -86,7 +86,7 @@ We have a new <em>metrics</em> API that you can now use.</p>
 
 <p>For the past nine months, we&#39;ve had a metrics API where we gather data for each pod, currently only from GitHub.</p>
 
-<h2>API</h2>
+<h2 id="api">API</h2>
 
 <p>Currently the API provides GitHub metrics, per pod.
 The provided format is JSON, which is also the default.</p>
@@ -108,7 +108,7 @@ Here&#39;s a popular pod:
 
 <p>This will tell you the total amount of pods, and how many have been found on GitHub, and how many have not been found after three tries.</p>
 
-<h2>Design</h2>
+<h2 id="design">Design</h2>
 
 <p>The metrics app is very straightforward.
 It lives on Heroku and consists of two pieces:
@@ -132,7 +132,7 @@ If a new pod has been added, just a new versions, or a new commits – it pings 
 If the metrics app receives the Trunk app&#39;s bat signal, it resets the pod&#39;s not found count.
 From then on, metrics will try to find the pod&#39;s metrics again on GitHub.</p>
 
-<h2>Closing words</h2>
+<h2 id="closing-words">Closing words</h2>
 
 <p>Why use this instead of the GitHub API?
 You can access it via a pod&#39;s name and it&#39;s designed to be extensible, so more exciting metrics will be added.</p>
