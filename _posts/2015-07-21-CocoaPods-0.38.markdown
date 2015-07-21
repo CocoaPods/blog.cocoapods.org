@@ -133,7 +133,7 @@ This will ensure that CocoaPods will always be able to resolve your Podfile, eve
 It makes the behavior of CocoaPods overall less surprising.
 
 
----
+### Thanks to Contributors of Bug Fixes
 
 Along with these enhancements, 0.38 features dozens of bug fixes.
 Special thanks to all the new contributors we had for this release, especially for their help in squashing bugs.
