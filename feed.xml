@@ -8,6 +8,22 @@
     
     
     <item>
+      <title>CocoaPods 0.38 - watchOS and target de-duplication</title>
+
+      
+      <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 0.38&lt;/em&gt; has been released, with watchOS 2 support, target de-duplication, and Stats for everyone.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Tue, 21 Jul 2015 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/CocoaPods-0.38</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.38</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>CocoaPods Stats</title>
 
       
