@@ -172,17 +172,17 @@ Because of that, we relinquished that approach and made the underlying installer
 
 <p>If you relied on that feature, this table may help you with the mapping and give you some help how to migrate:</p>
 
-<p>| InstallerRepresentation   | Installer                                   |
-|---------------------------|---------------------------------------------|
-| <code>sandbox_root</code>            | <code>sandbox.root</code>                              |
-| <code>project</code>                 | <code>pods_project</code>                              |
-| <code>pods</code>                    | ~&gt; <code>pod_targets</code>                            |
-| <code>libraries</code>               | ~&gt; <code>aggregate_targets</code>                      |
-| <code>specs_by_lib</code>            | use #find or #select on <code>pod_targets</code>       |
-| <code>pods_by_lib</code>             | use #find or #select on <code>aggregate_targets</code> |
-| <code>sandbox</code>                 | <code>sandbox</code>                                   |
-| <code>config</code>                  | <code>config</code>                                    |
-| <code>installer</code>               | not needed                                  |</p>
+<p>| InstallerRepresentation | Installer                                       |
+|:------------------------|:------------------------------------------------|
+| <code>sandbox_root</code>          | <code>sandbox.root</code>                                  |
+| <code>project</code>               | <code>pods_project</code>                                  |
+| <code>pods</code>                  | ~&gt; <code>pod_targets</code>                                |
+| <code>libraries</code>             | ~&gt; <code>aggregate_targets</code>                          |
+| <code>specs_by_lib</code>          | use <code>#find</code> or <code>#select</code> on <code>pod_targets</code>       |
+| <code>pods_by_lib</code>           | use <code>#find</code> or <code>#select</code> on <code>aggregate_targets</code> |
+| <code>sandbox</code>               | <code>sandbox</code>                                       |
+| <code>config</code>                | <code>config</code>                                        |
+| <code>installer</code>             | not needed                                      |</p>
 
 <p>See also the <a href="http://www.rubydoc.info/github/cocoapods/cocoapods/Pod/Installer">gem API documentation of the <code>Installer</code></a>.</p>
 
