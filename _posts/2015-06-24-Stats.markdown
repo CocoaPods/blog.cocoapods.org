@@ -19,7 +19,7 @@ This means is that developers using continuous integration only register as 1 in
 
 ### Alright, hold up
 
-Let's go over how we check which pods get sent up for analytics, and how we do the unique installs. [CocoaPods-Stats](https://github.com/cocoapods/cocoapods-stats) is a plugin that will be bundled with CocoaPods within a version or two. It [registers](https://github.com/CocoaPods/cocoapods-stats/blob/0361f29ae37e82ccf385319bba9cf31464049144/lib/cocoapods_plugin.rb#L6) as a post-install plugin and is ran on every `pod install` or `pod update`.
+Let's go over how we check which pods get sent up for analytics, and how we do the unique installs. [CocoaPods-Stats](https://github.com/cocoapods/cocoapods-stats) is a plugin that is now bundled with CocoaPods from version 0.38 onwards. It [registers](https://github.com/CocoaPods/cocoapods-stats/blob/0361f29ae37e82ccf385319bba9cf31464049144/lib/cocoapods_plugin.rb#L6) as a post-install plugin and is ran on every `pod install` or `pod update`.
 
 #### Detecting Public Pods
 
@@ -71,7 +71,7 @@ We plan on making this initially a separate CocoaPods plugin that you can option
 
 #### Can I use it right now?
 
-Sure, run `[sudo] gem install cocoapods-stats` and then add `plugin "cocoapods-stats"` to your Podfile. If you are using a [Gemfile](https://guides.cocoapods.org/using/a-gemfile.html) then add "gem 'cocoapods-stats'" to that. Once stats is a default in CocoaPods you can remove the references, as it will be bundled automatically.
+Sure, update to the latest CocoaPods `[sudo] gem install cocoapods` or download the latest [CocoaPods.app](https://github.com/CocoaPods/CocoaPods-app).
 
 #### Can I use this to find out how many people are using an older build of my pods?
 
@@ -79,12 +79,12 @@ Not automatically, we've not figured out a strategy for doing this yet, but you 
 
 #### How does this affect the quality indexes / sorting?
 
-Ideally we can reduce the amount of impact GitHub stars affects your quality index, and replace some of the values with new metrics based on downloads/installations. 
+Ideally we can reduce the amount of impact GitHub stars affects a quality index, and replace some of the values with new metrics based on downloads/installations. 
 
 #### What commands does this run on?
 
 It runs at the end of a `pod install` or a `pod update`.
 
-#### I check in my Pods, how does this affect stats?
+#### I check in my Pods directory, how does this affect stats for the pods I use?
 
-Checking in your Pods will mean that the download count for the pods used will rarely be affected, but the installations will be the exact same. They only register once per project, so multiple developers on the same project running pod install will not raise this number.
+Checking in your Pods directory will mean that the download count for the pods used will rarely be affected, but the installations will be the exact same. They only register once per project, so multiple developers on the same project running `pod install` will not raise this number.
