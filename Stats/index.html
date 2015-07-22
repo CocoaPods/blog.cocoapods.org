@@ -103,7 +103,7 @@
 
 <h3 id="alright,-hold-up">Alright, hold up</h3>
 
-<p>Let&#39;s go over how we check which pods get sent up for analytics, and how we do the unique installs. <a href="https://github.com/cocoapods/cocoapods-stats">CocoaPods-Stats</a> is a plugin that will be bundled with CocoaPods within a version or two. It <a href="https://github.com/CocoaPods/cocoapods-stats/blob/0361f29ae37e82ccf385319bba9cf31464049144/lib/cocoapods_plugin.rb#L6">registers</a> as a post-install plugin and is ran on every <code>pod install</code> or <code>pod update</code>.</p>
+<p>Let&#39;s go over how we check which pods get sent up for analytics, and how we do the unique installs. <a href="https://github.com/cocoapods/cocoapods-stats">CocoaPods-Stats</a> is a plugin that is now bundled with CocoaPods from version 0.38 onwards. It <a href="https://github.com/CocoaPods/cocoapods-stats/blob/0361f29ae37e82ccf385319bba9cf31464049144/lib/cocoapods_plugin.rb#L6">registers</a> as a post-install plugin and is ran on every <code>pod install</code> or <code>pod update</code>.</p>
 
 <h4 id="detecting-public-pods">Detecting Public Pods</h4>
 
@@ -168,7 +168,7 @@
 
 <h4 id="can-i-use-it-right-now?">Can I use it right now?</h4>
 
-<p>Sure, run <code>[sudo] gem install cocoapods-stats</code> and then add <code>plugin &quot;cocoapods-stats&quot;</code> to your Podfile. If you are using a <a href="https://guides.cocoapods.org/using/a-gemfile.html">Gemfile</a> then add &quot;gem &#39;cocoapods-stats&#39;&quot; to that. Once stats is a default in CocoaPods you can remove the references, as it will be bundled automatically.</p>
+<p>Sure, update to the latest CocoaPods <code>[sudo] gem install cocoapods</code> or download the latest <a href="https://github.com/CocoaPods/CocoaPods-app">CocoaPods.app</a>.</p>
 
 <h4 id="can-i-use-this-to-find-out-how-many-people-are-using-an-older-build-of-my-pods?">Can I use this to find out how many people are using an older build of my pods?</h4>
 
@@ -176,15 +176,15 @@
 
 <h4 id="how-does-this-affect-the-quality-indexes-/-sorting?">How does this affect the quality indexes / sorting?</h4>
 
-<p>Ideally we can reduce the amount of impact GitHub stars affects your quality index, and replace some of the values with new metrics based on downloads/installations. </p>
+<p>Ideally we can reduce the amount of impact GitHub stars affects a quality index, and replace some of the values with new metrics based on downloads/installations. </p>
 
 <h4 id="what-commands-does-this-run-on?">What commands does this run on?</h4>
 
 <p>It runs at the end of a <code>pod install</code> or a <code>pod update</code>.</p>
 
-<h4 id="i-check-in-my-pods,-how-does-this-affect-stats?">I check in my Pods, how does this affect stats?</h4>
+<h4 id="i-check-in-my-pods-directory,-how-does-this-affect-stats-for-the-pods-i-use?">I check in my Pods directory, how does this affect stats for the pods I use?</h4>
 
-<p>Checking in your Pods will mean that the download count for the pods used will rarely be affected, but the installations will be the exact same. They only register once per project, so multiple developers on the same project running pod install will not raise this number.</p>
+<p>Checking in your Pods directory will mean that the download count for the pods used will rarely be affected, but the installations will be the exact same. They only register once per project, so multiple developers on the same project running <code>pod install</code> will not raise this number.</p>
 
       </article>
     </article>
