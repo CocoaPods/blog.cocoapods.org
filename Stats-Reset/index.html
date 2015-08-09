@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-      <title>CocoaPods 0.37 - Pod Caching and Custom Module Maps - CocoaPods Blog</title>
+      <title>CocoaPods Stats Reseting - CocoaPods Blog</title>
     
 
     <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
@@ -46,7 +46,7 @@
   <article class="row">
   <header class="col-md-8 col-md-offset-2 headline blog-post">
     
-      <h1>CocoaPods 0.37 - Pod Caching and Custom Module Maps</h1>
+      <h1>CocoaPods Stats Reseting</h1>
     
     
   </header>
@@ -61,74 +61,42 @@
         <header>
           
             
-              <img class="gravatar large" src="http://gravatar.com/avatar/4d6be90af74894fd132fb06dacec04d7?s=144" height=72 width=72>
+              <img class="gravatar large" src="http://gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb?s=144" height=72 width=72>
             
             
               
-                <p><a href="http://twitter.com/segiddins">Samuel E. Giddins</a></p>
+                <p><a href="http://twitter.com/orta">Orta Therox</a></p>
               
             
-             <p>3 May 2015</p>
+             <p>9 August 2015</p>
 
             
-              <a href="https://twitter.com/segiddins" class="twitter-follow-button" data-show-count="false" data-lang="en">
-                Follow @segiddins
+              <a href="https://twitter.com/orta" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @orta
               </a>
             
         </header>
       </article>
     
       <article class="content col-md-8">
-        <p>TL;DR: <em>CocoaPods 0.37</em> has been released, with a new pod download cache and support for custom module maps.</p>
+        <p>TL;DR: <em>CocoaPods Stats is ready to move from it&#39;s current staging environment</em>, and we will be resetting all stats next weekend.</p>
 
 <!-- more -->
 
-<p>CocoaPods 0.37 has been released, it includes download caching for Pods.
-This brings a huge speed improvement to commands such as <code>pod spec lint</code>
-and improves the performance of running <code>pod install</code> when a Pod is in
-the download cache
-(which is stored at <code>~/Library/Caches/CocoaPods/Pods</code> by default).</p>
+<p>When I set up CocoaPods Stats, the API + analytics database with the help from <a href="http://segment.com">Segment</a>. I created it within a staging environment in our analytics database. I gave it two months to gather enough data in order for us to be sure that the at-the-time evolving table data structure works. </p>
 
-<p>The update also allows you to define a custom
-<a href="https://guides.cocoapods.org/syntax/podspec.html#module_map">module map</a>
-file in a Podspec.</p>
+<p>Looks like it is working. In that time, people using only the latest releases of CocoaPods, have used CocoaPods to download <a href="https://cocoapods.org/pods/AFNetworking">AFNetworking</a> almost 100,000+ times, on 6500+ individual projects.</p>
 
-<p>Along with these enhancements, 0.37 features dozens of bug fixes.</p>
-
-<h2 id="updating">Updating</h2>
-
-<p>To install the last release of CocoaPods you can run:</p>
-<div class="highlight">      </article>
-      </article>
-      </section>
-      
-      <div style="background-color:white;">
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="bash language-bash" data-lang="bash"><span class="nv">$ </span><span class="o">[</span>sudo<span class="o">]</span> gem install cocoapods
-</code></pre>      </article>
-      </article>
-      </section>
-      </div>
-      
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-</div>
-<p>Until version 1.0 we strongly encourage you to keep CocoaPods up-to-date.</p>
-
-<p>For all the details, don’t miss the
-<a href="https://github.com/CocoaPods/CocoaPods/blob/0.37.0/CHANGELOG.md">Changelog</a>!</p>
+<p>So, next week I will migrate the stats server to production and everything will be back to zero downloads / installs again.</p>
 
       </article>
     </article>
   </section>
 </section>
 
-<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2015-05-03-CocoaPods-0.37.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/4d6be90af74894fd132fb06dacec04d7" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/segiddins">Follow segiddins</a></div></article></div></section></section>
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2015-08-09-Stats-Reset.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/orta">Follow orta</a></div></article></div></section></section>
 
-<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/Jamming-2015" title="Test Jam 2015"><header><h4>Previous Post</h4></header><h3>Test Jam 2015</h3><p>By Orta Therox</p><a class="chevron_placeholder back" href="/Jamming-2015"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"><a href="/2015-CocoaPods-State-of-the-Union" title="2015 CocoaPods State of the Union"><header><h4>Next Post</h4></header><h3>2015 CocoaPods State of the Union</h3><p>By Samuel E. Giddins</p><a class="chevron_placeholder next" href="/2015-CocoaPods-State-of-the-Union"></a></a></article></div></section>
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaPods-0.38" title="CocoaPods 0.38 - watchOS and target de-duplication"><header><h4>Previous Post</h4></header><h3>CocoaPods 0.38 - watchOS and target de-duplication</h3><p>By Marius Rackwitz</p><a class="chevron_placeholder back" href="/CocoaPods-0.38"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
