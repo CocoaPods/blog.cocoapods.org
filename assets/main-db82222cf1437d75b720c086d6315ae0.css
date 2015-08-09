@@ -31,7 +31,6 @@
     font-style: normal;
 }
 
-
 @font-face {
     font-family: 'gt_walsheim_regular_oblique';
     src: url('https://s3.amazonaws.com/cocoapods/fonts/gt-walsheim-regular-oblique-web.eot');
@@ -41,6 +40,40 @@
          url('https://s3.amazonaws.com/cocoapods/fonts/gt-walsheim-regular-oblique-web.svg#gt_walsheim_regular') format('svg');
     font-weight: normal;
     font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'lato';
+    src: url('https://s3.amazonaws.com/cocoapods/fonts/Lato-Regular-webfont.eot');
+    src: url('https://s3.amazonaws.com/cocoapods/fonts/Lato-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://s3.amazonaws.com/cocoapods/fonts/Lato-Regular-webfont.woff') format('woff'),
+         url('https://s3.amazonaws.com/cocoapods/fonts/Lato-Regular-webfont.ttf') format('truetype'),
+         url('https://s3.amazonaws.com/cocoapods/fonts/Lato-Regular-webfont.svg#gt_walsheim_regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lato';
+    src: url('https://s3.amazonaws.com/cocoapods/fonts/Lato-Italic-webfont.eot');
+    src: url('https://s3.amazonaws.com/cocoapods/fonts/Lato-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://s3.amazonaws.com/cocoapods/fonts/Lato-Italic-webfont.woff') format('woff'),
+         url('https://s3.amazonaws.com/cocoapods/fonts/Lato-Italic-webfont.ttf') format('truetype'),
+         url('https://s3.amazonaws.com/cocoapods/fonts/Lato-Italic-webfont.svg#gt_walsheim_regular') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'lato';
+    src: url('https://s3.amazonaws.com/cocoapods/fonts/Lato-Bold-webfont.eot');
+    src: url('https://s3.amazonaws.com/cocoapods/fonts/Lato-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://s3.amazonaws.com/cocoapods/fonts/Lato-Bold-webfont.woff') format('woff'),
+         url('https://s3.amazonaws.com/cocoapods/fonts/Lato-Bold-webfont.ttf') format('truetype'),
+         url('https://s3.amazonaws.com/cocoapods/fonts/Lato-Bold-webfont.svg#gt_walsheim_regular') format('svg');
+    font-weight: bold;
+    font-style: normal;
 }
 .highlight .hll {
   background-color: #ffffcc; }
@@ -329,19 +362,43 @@
 /* Literal.Number.Integer.Long */
 body {
   font-size: 18px;
-  font-family: "GT Walsheim", "gt_walsheim_regular", "Avant Garde Gothic ITCW01Dm", "Avant Garde", "Helvetica Neue", "Arial"; }
+  font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial"; }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: "GT Walsheim", "gt_walsheim_regular", "Avant Garde Gothic ITCW01Dm", "Avant Garde", "Helvetica Neue", "Arial"; }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  -webkit-font-smoothing: subpixel-antialiased;
+  margin-top: 1em;
+  margin-bottom: 0.4em;
   font-weight: normal; }
 
+h1 {
+  font-size: 48px;
+  line-height: 52px; }
+
 h2 {
-  margin-top: 40px; }
+  font-size: 40px;
+  line-height: 52px; }
+
+h3 {
+  color: #fb0006;
+  font-size: 32px;
+  line-height: 41px;
+  font-weight: normal; }
+
+h4 {
+  font-size: 24px;
+  line-height: 32px; }
 
 h5 {
-  font-size: 1.2em; }
+  font-size: 18px;
+  line-height: 24px; }
+
+h6 {
+  font-size: 14px;
+  line-height: 19px; }
 
 aside {
   margin-top: -20px; }
@@ -404,7 +461,8 @@ img.image-zoom {
   padding-left: 8px;
   padding-right: 8px;
   height: 48px;
-  letter-spacing: 1.2pt; }
+  letter-spacing: 1.2pt;
+  font-family: "GT Walsheim", "gt_walsheim_regular", "Avant Garde Gothic ITCW01Dm", "Avant Garde", "Helvetica Neue", "Arial"; }
   .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
     color: white;
     background-color: #380200;
