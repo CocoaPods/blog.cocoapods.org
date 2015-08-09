@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CocoaPods Stats Reseting"
+title:  "CocoaPods Stats Resetting"
 author: orta
 categories: cocoapods website
 ---
