@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-      <title>CocoaPods 0.32 - CocoaPods Blog</title>
+      <title>Running SSH Commands via Rakefiles - CocoaPods Blog</title>
     
 
     <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
@@ -46,7 +46,7 @@
   <article class="row">
   <header class="col-md-8 col-md-offset-2 headline blog-post">
     
-      <h1>CocoaPods 0.32</h1>
+      <h1>Running SSH Commands via Rakefiles</h1>
     
     
   </header>
@@ -61,33 +61,37 @@
         <header>
           
             
-              <img class="gravatar large" src="http://gravatar.com/avatar/b6dde1a78e6215a592768c1e78a54adc?s=144" height=72 width=72>
+              <img class="gravatar large" src="http://gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb?s=144" height=72 width=72>
             
             
               
-                <p><a href="http://twitter.com/fabiopelosin">Fabio Pelosin</a></p>
+                <p><a href="http://twitter.com/orta">Orta Therox</a></p>
               
             
-             <p>15 April 2014</p>
+             <p>26 August 2015</p>
 
             
-              <a href="https://twitter.com/fabiopelosin" class="twitter-follow-button" data-show-count="false" data-lang="en">
-                Follow @fabiopelosin
+              <a href="https://twitter.com/orta" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @orta
               </a>
             
         </header>
       </article>
     
       <article class="content col-md-8">
-        <p>TL;DR: <em>CocoaPod 0.32 is here! It brings a vastly improved <code>update</code>
-command and a galore of improvements. Including the ability to deprecate pods.</em></p>
+        <p>TL;DR: <em>CocoaDocs&#39; commands which used to be executed via logging in are now done via rake commands.</em></p>
+
+<p><a href="https://github.com/CocoaPods/cocoadocs.org/">CocoaDocs</a> runs a lot of CocoaPods&#39; infrastructure. It is the workhorse that allows us to provide rendered <a href="https://cocoapods.org/pods/ARAnalytics">READMEs/CHANGELOGs</a>, <a href="http://blog.cocoapods.org/CocoaPods.org-Two-point-Five/">QIs</a> and <a href="https://status.cocoapods.org">status updates</a>.</p>
+
+<p>I have been manually <code>ssh</code>ing in to the server to execute commands for a <a href="https://github.com/CocoaPods/cocoadocs.org/commit/93e9896b04f79eb09be28a9056671b1d23f3143d">few years</a>, and it&#39;s a bit of a chore. Over time though, I became used to this. As more people were starting to help out in maintaining CocoaDocs, it became obvious that it needed to change from being dark arcane knowledge to easy -discoverable- commands.</p>
 
 <!-- more -->
 
-<h2 id="update-command-improvements">Update Command Improvements</h2>
+<p>Show me the code: <a href="https://github.com/CocoaPods/cocoadocs.org/compare/c7be695...a00338d">c7be695...a00338d</a>.</p>
 
-<p><a href="https://twitter.com/mrackwitz">Marius Rackwitz</a> just added one of the most
-requested CocoaPods features:</p>
+<p>I initially explored the idea of using <a href="http://nadarei.co/mina/">Mina</a> to let us treat CocoaDocs like we do with heroku. I spent a few hours setting it up, but never managed to get a single <a href="http://rampantgames.com/blog/?p=7745">working prototype</a>. Eventually I started looking for alternatives.</p>
+
+<p>I found <a href="https://github.com/net-ssh/net-ssh">net-ssh</a>, which is a pleasant reminder of how old the ruby community is, given that docs are from <a href="http://net-ssh.github.io/ssh/v1/">2004</a>.  I used it to connect to the server in a tiny amount of code:</p>
 <div class="highlight">      </article>
       </article>
       </section>
@@ -96,7 +100,12 @@ requested CocoaPods features:</p>
       <section class="container">
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="text language-text" data-lang="text">pod repo update NAME
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">&#39;net/ssh&#39;</span>
+
+<span class="no">Net</span><span class="o">::</span><span class="no">SSH</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;api.cocoadocs.org&#39;</span><span class="p">,</span> <span class="s1">&#39;cocoadocs&#39;</span><span class="p">,</span> <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="s2">&quot;hahayeahright&quot;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">ssh</span><span class="o">|</span>
+  <span class="n">output</span> <span class="o">=</span> <span class="n">ssh</span><span class="o">.</span><span class="n">exec!</span><span class="p">(</span><span class="s2">&quot;hostname&quot;</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">output</span>
+<span class="k">end</span>
 </code></pre>      </article>
       </article>
       </section>
@@ -106,26 +115,9 @@ requested CocoaPods features:</p>
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<p>Exactly. Now you can scope your update to <em>only one</em> Pod.</p>
+<p>Which was enough to start. Once I started though, I hit a problem. Each command is executed stateless-ly. What this means, in principal, is that your session won&#39;t stay in the same folder, and you won&#39;t have your normal shell setup. I started out trying to do all the things a shell would do <code>source ~/.zshrc</code> etc. etc. Not practical.</p>
 
-<p>This is not the only improvement to the update command, as <a href="https://github.com/andreamazz">Andrea
-Mazzini</a> also took care of polishing the
-experience by adding to the installation output the version from which a Pod is
-being updated.</p>
-
-<h2 id="development-pods">Development Pods</h2>
-
-<p>Now the file references in Xcode are absolute or relative depending on how they
-are specified in the Podfile. This feature was implemented by <a href="https://github.com/samuelwford">Samuel
-Ford</a></p>
-
-<h2 id="deprecations">Deprecations</h2>
-
-<p>Another feature that we&#39;ve received a lot of requests for is Pod deprecation.
-Thanks to the work of <a href="https://github.com/paulyoung">Paul Young</a> this feature
-is already supported at the DSL level.</p>
-
-<p>You can either specify whether a Pod is just deprecated:</p>
+<p>After giving up on the <code>exec</code>  function, I did some duckduckgo-ing for alternatives and found <a href="http://net-ssh.github.io/ssh/v1/chapter-5.html#s3">a chapter on shell</a>  in the docs. However, the docs were out of date, and the code didn&#39;t exist. Luckily it had just been separated out into a  new gem: <a href="https://github.com/net-ssh/net-ssh-shell">net-ssh-shell</a>. This meant we could do:</p>
 <div class="highlight">      </article>
       </article>
       </section>
@@ -134,7 +126,14 @@ is already supported at the DSL level.</p>
       <section class="container">
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="text language-text" data-lang="text">spec.deprecated = true
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">&#39;net/ssh&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;net/ssh/shell&#39;</span>
+
+<span class="no">Net</span><span class="o">::</span><span class="no">SSH</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;api.cocoadocs.org&#39;</span><span class="p">,</span> <span class="s1">&#39;cocoadocs&#39;</span><span class="p">,</span> <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="s2">&quot;hahayeahright&quot;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">ssh</span><span class="o">|</span>
+  <span class="n">ssh</span><span class="o">.</span><span class="n">shell</span> <span class="k">do</span> <span class="o">|</span><span class="n">sh</span><span class="o">|</span>
+    <span class="n">sh</span><span class="o">.</span><span class="n">execute</span> <span class="s1">&#39;hostname&#39;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 </code></pre>      </article>
       </article>
       </section>
@@ -144,7 +143,7 @@ is already supported at the DSL level.</p>
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<p>Or whether it has been deprecated <em>in favor of another</em> Pod:</p>
+<p>Which executes the command, as expected, as though you had logged in. Perfect. With that, I did some minor refactoring to turn it all into a function that takes some commands as an array.</p>
 <div class="highlight">      </article>
       </article>
       </section>
@@ -153,7 +152,19 @@ is already supported at the DSL level.</p>
       <section class="container">
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="text language-text" data-lang="text">spec.deprecated_in_favor_of = &#39;NewMoreAwesomePod&#39;
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"> <span class="k">def</span> <span class="nf">run_ssh_commands</span> <span class="n">commands</span>
+   <span class="nb">puts</span> <span class="s2">&quot;Connecting to api.cocoadocs.org:&quot;</span>
+   <span class="no">Net</span><span class="o">::</span><span class="no">SSH</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s1">&#39;api.cocoadocs.org&#39;</span><span class="p">,</span> <span class="s1">&#39;cocoadocs&#39;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">ssh</span><span class="o">|</span>
+     <span class="n">ssh</span><span class="o">.</span><span class="n">shell</span> <span class="k">do</span> <span class="o">|</span><span class="n">sh</span><span class="o">|</span>
+       <span class="n">sh</span><span class="o">.</span><span class="n">execute</span> <span class="s1">&#39;cd cocoadocs.org&#39;</span>
+       <span class="n">commands</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">command</span><span class="o">|</span>
+         <span class="nb">puts</span> <span class="n">command</span><span class="o">.</span><span class="n">yellow</span>
+         <span class="n">sh</span><span class="o">.</span><span class="n">execute</span> <span class="n">command</span>
+       <span class="k">end</span>
+       <span class="n">sh</span><span class="o">.</span><span class="n">execute</span> <span class="s1">&#39;exit&#39;</span>
+     <span class="k">end</span>
+   <span class="k">end</span>
+  <span class="k">end</span>
 </code></pre>      </article>
       </article>
       </section>
@@ -163,89 +174,18 @@ is already supported at the DSL level.</p>
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<p>Unfortunately CocoaPods doesn’t display this information yet, but the super
-prolific <a href="https://github.com/segiddins">Samuel E. Giddins</a> is <a href="https://github.com/CocoaPods/CocoaPods/pull/2044">already on
-it</a>.</p>
+<p>I included an <code>exit</code> command to close the session at the end of the submitted commands, and that&#39;s it. Commands are now easily run from a maintainer&#39;s computer without the need for domain knowledge. They just need to know that <code>bundle exec rake -T</code> will give useful tasks. Given that we use Rakefile in all projects, this knowledge is implicit. Woo!</p>
 
-<h2 id="linter">Linter</h2>
-
-<p>The linter has seen a lot of activity and now is more aggressive than ever.
-Expect some great linting on the new Pods. Now it even checks the validity of
-screenshots.</p>
-
-<h2 id="updated-cocoapods-feed">Updated CocoaPods Feed</h2>
-
-<p><a href="http://feeds.cocoapods.org">feeds.cocoapods.org</a> now shows the latest new
-CocoaPods libraries  released in the last few days. Consider it an alternative
-to the <a href="http://twitter.com/cocoapodsfeed">@CocoaPodsFeed</a> twitter feed.</p>
-
-<p><center><a href="http://feeds.cocoapods.org">
-</article>
-</div>
-</section>
-<div style="background-color:white;">
-<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
-<a href='/assets/blog_img/CocoaPods-0.32/feeds_1.png '><img  src='/assets/blog_img/CocoaPods-0.32/feeds_1.png '></a></center></article>
-</div>
-</section>
-</div>
-<section class="container">
-<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
-
-<p></a></center></p>
-
-<p>And off course we display the beautiful screenshots of the Pods (including
-gifs):</p>
-
-<p><center><a href="http://feeds.cocoapods.org">
-</article>
-</div>
-</section>
-<div style="background-color:white;">
-<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
-<a href='/assets/blog_img/CocoaPods-0.32/feeds_2.gif '><img  src='/assets/blog_img/CocoaPods-0.32/feeds_2.gif '></a></center></article>
-</div>
-</section>
-</div>
-<section class="container">
-<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
-
-<p></a></center></p>
-
-<h2 id="updating">Updating</h2>
-
-<p>To install the last release of CocoaPods you can run:</p>
-<div class="highlight">      </article>
-      </article>
-      </section>
-      
-      <div style="background-color:white;">
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="text language-text" data-lang="text">$ [sudo] gem install cocoapods
-</code></pre>      </article>
-      </article>
-      </section>
-      </div>
-      
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-</div>
-<p>Until version 1.0 we strongly encourage you to keep CocoaPods up-to-date.</p>
-
-<p>For all the details, don’t miss the
-<a href="https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md">Changelog</a>.</p>
+<p>So, next time you hear people complaining about a chore you&#39;ve become used to, take heed and try to automate the problem away.</p>
 
       </article>
     </article>
   </section>
 </section>
 
-<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2014-04-15-CocoaPods-0.32.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/b6dde1a78e6215a592768c1e78a54adc" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/fabiopelosin">Follow fabiopelosin</a></div></article></div></section></section>
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2015-08-26-Running-SSH-Commands-via-Rakefiles.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/orta">Follow orta</a></div></article></div></section></section>
 
-<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/Big-News" title="AppIe Acquires CocoaPods"><header><h4>Previous Post</h4></header><h3>AppIe Acquires CocoaPods</h3><p>By Florian Hanke</p><a class="chevron_placeholder back" href="/Big-News"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"><a href="/CocoaPods-WWDC-Party" title="CocoaPods 3rd WWDC Meetup: 2nd June 2014"><header><h4>Next Post</h4></header><h3>CocoaPods 3rd WWDC Meetup: 2nd June 2014</h3><p>By Orta Therox</p><a class="chevron_placeholder next" href="/CocoaPods-WWDC-Party"></a></a></article></div></section>
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/Stats-Reset" title="CocoaPods Stats Resetting"><header><h4>Previous Post</h4></header><h3>CocoaPods Stats Resetting</h3><p>By Orta Therox</p><a class="chevron_placeholder back" href="/Stats-Reset"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 

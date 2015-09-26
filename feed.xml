@@ -8,7 +8,27 @@
     
     
     <item>
-      <title>CocoaPods Stats Reseting</title>
+      <title>Running SSH Commands via Rakefiles</title>
+
+      
+      <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaDocs&amp;#39; commands which used to be executed via logging in are now done via rake commands.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/CocoaPods/cocoadocs.org/&quot;&gt;CocoaDocs&lt;/a&gt; runs a lot of CocoaPods&amp;#39; infrastructure. It is the workhorse that allows us to provide rendered &lt;a href=&quot;https://cocoapods.org/pods/ARAnalytics&quot;&gt;READMEs/CHANGELOGs&lt;/a&gt;, &lt;a href=&quot;http://blog.cocoapods.org/CocoaPods.org-Two-point-Five/&quot;&gt;QIs&lt;/a&gt; and &lt;a href=&quot;https://status.cocoapods.org&quot;&gt;status updates&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I have been manually &lt;code&gt;ssh&lt;/code&gt;ing in to the server to execute commands for a &lt;a href=&quot;https://github.com/CocoaPods/cocoadocs.org/commit/93e9896b04f79eb09be28a9056671b1d23f3143d&quot;&gt;few years&lt;/a&gt;, and it&amp;#39;s a bit of a chore. Over time though, I became used to this. As more people were starting to help out in maintaining CocoaDocs, it became obvious that it needed to change from being dark arcane knowledge to easy -discoverable- commands.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Wed, 26 Aug 2015 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/Running-SSH-Commands-via-Rakefiles</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/Running-SSH-Commands-via-Rakefiles</guid>
+    </item>
+    
+    
+    
+    <item>
+      <title>CocoaPods Stats Resetting</title>
 
       
       <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods Stats is ready to move from it&amp;#39;s current staging environment&lt;/em&gt;, and we will be resetting all stats next weekend.&lt;/p&gt;
