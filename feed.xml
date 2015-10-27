@@ -8,6 +8,27 @@
     
     
     <item>
+      <title>Capital One</title>
+
+      
+      <description>&lt;p&gt;I&amp;#39;m incredibly excited to announce that as of today my work on CocoaPods will be
+sponsored by Capital One.&lt;/p&gt;
+
+&lt;p&gt;What does this mean? It means that Capital One is stepping up to support
+continued development on CocoaPods and I will be able to focus on CocoaPods work
+while finishing university.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Tue, 27 Oct 2015 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/Capital-One</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/Capital-One</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>CocoaPods 0.39 - tvOS and Dynamic Vendored Frameworks</title>
 
       
