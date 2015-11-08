@@ -8,6 +8,28 @@
     
     
     <item>
+      <title>Introducing: Creme de la Pods</title>
+
+      
+      <description>&lt;p&gt;TL;DR: &lt;em&gt;You could always find out what was new with &lt;a href=&quot;https://twitter.com/cocoapodsfeed&quot;&gt;@CocoaPodsFeed&lt;/a&gt; and &lt;a href=&quot;https://feeds.cocoapods.org&quot;&gt;feeds.cocoapods.org&lt;/a&gt;. Now you can see new CocoaPods that have a &lt;a href=&quot;https://guides.cocoapods.org/making/quality-indexes.html&quot;&gt;QI&lt;/a&gt; score of over 70 on &lt;a href=&quot;https://twitter.com/cremedelapods&quot;&gt;@CremeDeLaPods&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Keeping on top of the community&amp;#39;s work is a challenge, with ~13,500 CocoaPods available and roughly 20 new pods every day. We work on CocoaPods to encourage  &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods#project-goals&quot;&gt;contributions to OSS&lt;/a&gt;. A by-product of this is that if you follow the whole stream of new CocoaPods, it can get hard to distinguish between &amp;quot;my first library&amp;quot; and &amp;quot;an awesome paradigm &lt;em&gt;swift&lt;/em&gt;.&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;I have taken a stab at solving this problem, by trying to select the best pods by their &lt;a href=&quot;https://guides.cocoapods.org/making/quality-indexes.html&quot;&gt;Quality Index&lt;/a&gt;. The first time we run documentation parsing for a Pod, if that Pod&amp;#39;s QI is over 70 then &lt;a href=&quot;https://github.com/CocoaPods/cocoadocs-api/commit/3dd3ee32f253d485576fb49fa272945cd5d5462b&quot;&gt;CocoaDocs&lt;/a&gt; will send out a tweet on the &lt;a href=&quot;https://twitter.com/cremedelapods&quot;&gt;@CremeDeLaPods&lt;/a&gt; twitter feed, with the exact same formatting as &lt;a href=&quot;https://twitter.com/CocoaPodsFeed&quot;&gt;@CocoaPodsFeed&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a class=&quot;twitter-follow-button&quot; href=&quot;https://twitter.com/CremeDeLaPods&quot;&gt;Follow @CremeDeLaPods&lt;/a&gt;&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Sat, 07 Nov 2015 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/Creme-de-la-Pods</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/Creme-de-la-Pods</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>Capital One</title>
 
       
