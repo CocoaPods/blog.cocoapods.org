@@ -15,7 +15,7 @@ I have taken a stab at solving this problem, by trying to select the best pods b
 
 <!-- more -->
 
-So there should be no surprises here if you've seen tweets from [@CocoaPodsFeed](https://twitter.com/CocoaPodsFeed)
+If you've already seen tweets from [@CocoaPodsFeed](https://twitter.com/CocoaPodsFeed) before, there should be no surprises on the look of those tweets on CremeDeLaPods:
 
 <center>
   <blockquote class="twitter-tweet" lang="en" data-cards="hidden"><p lang="en" dir="ltr">[Venice] CSP for Swift 2 (Linux ready) <a href="https://t.co/DdPyqojBjI">https://t.co/DdPyqojBjI</a></p>&mdash; Creme De La Pods (@CremeDeLaPods) <a href="https://twitter.com/CremeDeLaPods/status/663133105809698821">November 7, 2015</a></blockquote>
@@ -23,7 +23,7 @@ So there should be no surprises here if you've seen tweets from [@CocoaPodsFeed]
   <blockquote class="twitter-tweet" lang="en" data-cards="hidden"><p lang="fr" dir="ltr">[ControllerContainer by <a href="https://twitter.com/3lvis">@3lvis</a>] View Controller Containment for humans <a href="https://t.co/3WgHkIrUUa">https://t.co/3WgHkIrUUa</a></p>&mdash; Creme De La Pods (@CremeDeLaPods) <a href="https://twitter.com/CremeDeLaPods/status/662624562778144770">November 6, 2015</a></blockquote>
   </center>
 
-Every Pod also comes with an overview images too, making it easy to see some of the salient properties, we've been doing this for a few years.
+Every Pod also comes with an overview image too, making it easy to see some of the salient properties.
 
   <center>
   <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">[Money by <a href="https://twitter.com/danthorpe">@danthorpe</a>] Swift types for working with Money. <a href="https://t.co/jCdJlrZV9Z">https://t.co/jCdJlrZV9Z</a></p>&mdash; Creme De La Pods (@CremeDeLaPods) <a href="https://twitter.com/CremeDeLaPods/status/662573883728490496">November 6, 2015</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
