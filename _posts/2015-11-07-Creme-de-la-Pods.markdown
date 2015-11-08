@@ -7,9 +7,9 @@ categories: twitter cocoapodsfeed cocoapods
 
 TL;DR: _You could always find out what was new with [@CocoaPodsFeed](https://twitter.com/cocoapodsfeed) and [feeds.cocoapods.org](https://feeds.cocoapods.org). Now you can see new CocoaPods that have a [QI](https://guides.cocoapods.org/making/quality-indexes.html) score of over 75 on [@CremeDeLaPods](https://twitter.com/cremedelapods)._
 
-Keeping on top of the community's work is a challenge, with ~13,500 CocoaPods available and roughly 20 new pods every day. We work on CocoaPods to encourage  [contributions to OSS](https://github.com/CocoaPods/CocoaPods#project-goals). A by-product of this is that if you follow the whole stream of new CocoaPods, it can get hard to distinguish between "my first library" and "paradigm changing."
+Keeping on top of the community's work is a challenge, with ~13,500 CocoaPods available and roughly 20 new pods every day. We work on CocoaPods to encourage  [contributions to OSS](https://github.com/CocoaPods/CocoaPods#project-goals). A by-product of this is that if you follow the whole stream of new CocoaPods, it can get hard to distinguish between "my first library" and "an awesome paradigm _swift_."
 
-I have taken a stab at solving this problem, the first time we run documentation parsing for a Pod [CocoaDocs] (https://github.com/CocoaPods/cocoadocs-api/commit/3dd3ee32f253d485576fb49fa272945cd5d5462b) will send out a tweet as [@CremeDeLaPods](https://twitter.com/cremedelapods) with the exact same formatting as [@CocoaPodsFeed](https://twitter.com/CocoaPodsFeed) does.
+I have taken a stab at solving this problem, the first time we run documentation parsing for a Pod parsing for a Pod, if that Pod's QI is over 75 then [CocoaDocs] (https://github.com/CocoaPods/cocoadocs-api/commit/3dd3ee32f253d485576fb49fa272945cd5d5462b)  will send out a tweet as [@CremeDeLaPods](https://twitter.com/cremedelapods) with the exact same formatting as [@CocoaPodsFeed](https://twitter.com/CocoaPodsFeed) does.
 
 <a class="twitter-follow-button" href="https://twitter.com/CremeDeLaPods">Follow @CremeDeLaPods</a>
 
