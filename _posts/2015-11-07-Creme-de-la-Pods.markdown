@@ -34,3 +34,5 @@ Every Pod also comes with an overview images too, making it easy to see some of 
 It's easy to forget that a lot of people are just getting started, and learning how to ship a Podspec is an important step towards community participation. We want people to feel welcome at all stages of their careers, so we'll always be showing and hosting the unfiltered feed.
 
 We've talked about, in the future, supporting tweeting when any pod's version moves to  getting to a score of 70+. This should be a bit more accommodating for improvements after seeing an initial score, rather than  set up at the start.
+
+<img src="https://camo.githubusercontent.com/cf5c440e71f6731b22d5d014d183709906bab61a/687474703a2f2f7777772e746865706c757370617065722e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031352f30342f332e676966">
