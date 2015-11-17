@@ -1,0 +1,75 @@
+---
+layout: post
+title:  "2015"
+author: orta
+categories: stats community 
+---
+
+> CocoaPods is a dependency manager only in the sense that Apple is a cell phone manufacturer – it’s just one of their many projects.
+
+--  Ash Furrow - [Building Online Communities](http://ashfurrow.com/blog/building-online-communities/)
+
+Last year, around this time, I started an [annual write-up](/Stats-2014/) for CocoaPods. A lot happens in a project with 10 relatively active developers, and a lot of drive-by contributors. 
+
+<!-- more -->
+
+## Contributions
+
+- Boris / Marius / Segiddins heading up
+- Segiddin's contrbutions from Capital One
+- Perhaps get number of contributors to main repo?
+
+## Web Properties
+
+- CocoaPods.org
+  - QI
+  - Pod Pages
+  - Owner Pages
+  - Search Traffic Doubled
+- Trunk Stats?
+- Overview of web properties?
+- CocoaDocs getting Button $$$
+- CocoaDocs Jazzy Support
+
+- More Windows users than iOS
+- Most accessed search queries are menu/calendar
+
+## Community
+
+- Google / Amazon / Facebook / Twitter
+- Winning at stats ( Facebook - GoogleAnalytics - GoogleMaps )
+- Creme De La Pods
+- Test Jam 2015
+
+## CocoaPods
+
+* First class support for Swift 
+* tvOS, watchOS
+* Deterministic UUIDs
+* CocoaPods Stats
+* Plugins
+* De-duplicate Pod Targets
+* Molinillo
+  - Deterministic Locks
+* Locks CocoaPods Files
+
+## Stats
+
+- 24 searches per minute
+- 45 pod installs per minute
+- 100,000 unique app targets
+- 100,000 uniques to the site
+- 500,000 monthly page views
+- 2.5 million downloads
+- 6.6 million targets integrated by `pod install` / `pod update`
+- 30 million pods have been integrated by CocoaPods
+
+## CocoaPods.app
+
+* Initial designs
+* Aims
+* Current release
+* Website Preview
+
+## 1.0
+
