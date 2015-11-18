@@ -9,37 +9,65 @@ categories: stats community
 
 --  Ash Furrow - [Building Online Communities](http://ashfurrow.com/blog/building-online-communities/)
 
-Last year, around this time, I started an [annual write-up](/Stats-2014/) for CocoaPods. A lot happens in a project with 10 relatively active developers, and a lot of drive-by contributors. 
+Last year, around this time, I started an [annual write-up](/Stats-2014/) for CocoaPods. A lot happens in a project with 10 relatively active developers, and a lot of very welcome drive-by contributors. 
 
 <!-- more -->
 
 ## Contributions
 
-- Boris / Marius / Segiddins heading up
-- Segiddin's contrbutions from Capital One
+We started the year with a change in ownership. [@alloy](https://twitter.com/alloy) had been heading up the project for five years, [announced](/The-captain-leaves-the-bridge) he was stepping back due to becoming a father.
+
+Right now we have four people making a lot of the major decisions around CocoaPods: <a href="http://buegling.com">Boris Bügling</a>, <a href="http://mariusrackwitz.de">Marius Rackwitz</a>, <a href="http://orta.io">Orta Therox</a>, <a href="http://segiddins.me">Samuel Giddins</a>. With the help from [other developers](/about) on a day to day basis.
+
+This year we've seen Samuel Giddin's being [sponsored by Capital One](/Capital-One) in order to help him focus on building CocoaPods while he studies at college.
+
+I want to dig in a little about Samuel's work in the last year. In the [last write-up](/Stats-2014/), I mentioned a project he was working on:
+
+> The second, Samuel Giddins, has been mostly working on a iterative dependency resolver for both CocoaPods and Bundler ( CocoaPods for Ruby. )
+
+This project turned into a gem called [Molinillo](https://github.com/CocoaPods/Molinillo/), see the [announcement](/CocoaPods-0.35/), which is the project at CocoaPods with the most impact. Molinillo is now used in both [Bundler](https://github.com/bundler/bundler/pull/3257) and [Rubygems](https://github.com/rubygems/rubygems/pull/1189)! This is awesome because it powers a _huge_ amount of web infrastructure, but that soon enough CocoaPods' code will be shipping in every copy of OS X. So cool.
+
 - Perhaps get number of contributors to main repo?
-
-## Web Properties
-
-- CocoaPods.org
-  - QI
-  - Pod Pages
-  - Owner Pages
-  - Search Traffic Doubled
-- Trunk Stats?
-- Overview of web properties?
-- CocoaDocs getting Button $$$
-- CocoaDocs Jazzy Support
-
-- More Windows users than iOS
-- Most accessed search queries are menu/calendar
 
 ## Community
 
-- Google / Amazon / Facebook / Twitter
-- Winning at stats ( Facebook - GoogleAnalytics - GoogleMaps )
-- Creme De La Pods
-- Test Jam 2015
+This year a lot of major companies migrated to using CocoaPods as their transport method for their SDKs. We got featured in a few annual keynotes:
+
+Twitter: https://youtu.be/6iVJSj-yqkQ?t=58m36s
+
+[]
+
+Google: https://youtu.be/7V-fIGMDsmE?t=1h32m34s
+
+[]
+
+Apple even [merged](https://github.com/ResearchKit/ResearchKit/pull/5) a Podspec into their first foray into open source libraries with [ResearchKit](https://cocoapods.org/pods/ResearchKit). 
+
+We ran our biggest online/offline event this year, with the [CocoaPods Test Jam](/Jamming-2015/). It ran in 7 cities and helped get a lot of people bootstrapped with both testing and contributing back to the open source community. It was awesome to organise, and fun to contribute to.
+
+We found that keeping on track of all pods is starting to become an issue, for example yesterday 18 new pods were added to trunk. We wanted to find an alternative way to keep on top of new pods, so [we created](/Creme-de-la-Pods) [@CremeDeLaPods](https://twitter.com/CremeDeLaPods) as a way of keeping track of the highest quality _new_ pods.
+
+## Web Properties
+
+A problem close to my heart is discoverability. We want to lower the barriers to entry for everyone to participate in OSS, and making people's projects easily discovered is an important part of this.
+
+The CocoaPods web presence has had a lot of work devoted to it in the last year, the most obvious is that we now have individual pages for a pod. These pod pages pull in nearly every interesting piece of metadata around the pod, making it significantly easier to browse and compare pods.
+
+We introduced a project we've had been working on for over a year, [CocoaPods Quality Indexes](https://guides.cocoapods.org/making/quality-indexes.html) (QIs) an evolving attempt at defining quality in software. These QIs are used throughout the web properties to provide feedback and to sort pods.
+
+The QIs provide a positive feedback loop, showing you ways in which you can game the system by improving your library. By focusing on showing you ways to improve rather than penalising discouraged behaviour I hope we can continue to foster a welcome community.
+
+To expand on that further and allow people to have a better sense of their the state of their libraries, we created Pod Author Pages. Here's a great example from [Andrea Mazzini](https://cocoapods.org/owners/734) making it really easy to understand his impact on the community.
+
+Another multi-year project that we shipped this year was [CocoaPods Stats](/Stats/). Stats offers a way of knowing how many downloads a pod has, and far more interestingly the number of targets it has been integrated with. This is something I haven't found in other dependency managers, as it's a really hard problem to solve. We couldn't have shipped this alone, so a big thanks to [Segment](https://segment.com) for sponsoring a lot of the infrastructure here.
+
+While the number of pods available via CocoaPods has increased in the last year, the amount of servers we need for search has not. [Florian Hanke](https://github.com/floere) who has been working with us for years on search continues to refuse to throw more money at our search server. His work has made it possible for us to deal with doubling our search traffic, support more metadata, add different sort types and allow scoping to all the new platforms Apple keep shipping.
+
+[CocoaDocs](http://cocoadocs.org), the CocoaPods documentation service started supporting Swift code this year via Jazzy, and the future is looking bright on that front as Jazzy now supports Objective-C projects and one of these days will support mixed language projects. We'll probably be migrating CocoaDocs to only use Jazzy next year. CocoaDocs had problems scaling with the number of new pod versions being shipped this year. We remedied this by working with [Button](https://www.usebutton.com) to get a high-end Mac Mini doing the work instead of a [shared VPS](/CocoaDocs-Colo/).
+
+Finally, we made it easier to get bootstrapped to work on the web infrastructure via a meta-repo called [Strata](https://github.com/CocoaPods/Strata).
+
+So, to wrap this up, I was looking at the Google Analytics for the CocoaPods web properties. My favourite odd statistic is this: We get more user sessions from Windows devices than we do iOS. Perhaps this mobile thing is just a fad?
 
 ## CocoaPods
 
