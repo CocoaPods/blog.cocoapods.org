@@ -15,9 +15,9 @@ Last year, around this time, I started an [annual write-up](/Stats-2014/) for Co
 
 ## Contributions
 
-We started the year with a change in ownership. [@alloy](https://twitter.com/alloy) had been heading up the project for five years, [announced](/The-captain-leaves-the-bridge) he was stepping back due to becoming a father.
+We started the year with a change in ownership. [Eloy Durán](https://twitter.com/alloy) who had been heading up the project for five years, [announced](/The-captain-leaves-the-bridge) he was stepping back due to becoming a father.
 
-Right now we have four people making a lot of the major decisions around CocoaPods: <a href="http://buegling.com">Boris Bügling</a>, <a href="http://mariusrackwitz.de">Marius Rackwitz</a>, <a href="http://orta.io">Orta Therox</a>, <a href="http://segiddins.me">Samuel Giddins</a>. With the help from [other developers](/about) on a day to day basis.
+Right now we have four people making a lot of the major decisions around CocoaPods: [Boris Bügling](http://buegling.com), [Marius Rackwitz](http://mariusrackwitz.de), [myself](http://orta.io) and [Samuel Giddins](http://segiddins.me). With the help from [other developers](/about) on a day to day basis.
 
 This year we've seen Samuel Giddin's being [sponsored by Capital One](/Capital-One) in order to help him focus on building CocoaPods while he studies at college.
 
@@ -25,7 +25,7 @@ I want to dig in a little about Samuel's work in the last year. In the [last wri
 
 > The second, Samuel Giddins, has been mostly working on a iterative dependency resolver for both CocoaPods and Bundler ( CocoaPods for Ruby. )
 
-This project turned into a gem called [Molinillo](https://github.com/CocoaPods/Molinillo/), see the [announcement](/CocoaPods-0.35/), which is the project at CocoaPods with the most impact. Molinillo is now used in both [Bundler](https://github.com/bundler/bundler/pull/3257) and [Rubygems](https://github.com/rubygems/rubygems/pull/1189)! This is awesome because it powers a _huge_ amount of web infrastructure, but that soon enough CocoaPods' code will be shipping in every copy of OS X. So cool.
+This project turned into a gem called [Molinillo](https://github.com/CocoaPods/Molinillo/), see the [announcement](/CocoaPods-0.35/), which is the project at CocoaPods with the most impact. Molinillo is now used in both [Bundler](https://github.com/bundler/bundler/pull/3257) and [RubyGems](https://github.com/rubygems/rubygems/pull/1189)! This is awesome because it powers a _huge_ amount of web infrastructure, but that soon enough CocoaPods' code will be shipping in every copy of OS X. So cool.
 
 - Perhaps get number of contributors to main repo?
 
@@ -43,9 +43,11 @@ Google: https://youtu.be/7V-fIGMDsmE?t=1h32m34s
 
 Apple even [merged](https://github.com/ResearchKit/ResearchKit/pull/5) a Podspec into their first foray into open source libraries with [ResearchKit](https://cocoapods.org/pods/ResearchKit). 
 
-We ran our biggest online/offline event this year, with the [CocoaPods Test Jam](/Jamming-2015/). It ran in 7 cities and helped get a lot of people bootstrapped with both testing and contributing back to the open source community. It was awesome to organise, and fun to contribute to.
+Our biggest online/offline event this year, was the the [CocoaPods Test Jam](/Jamming-2015/). It ran in 7 cities and helped get a lot of people bootstrapped with both testing and contributing back to the open source community. It was awesome to organise, and fun to contribute to.
 
 We found that keeping on track of all pods is starting to become an issue, for example yesterday 18 new pods were added to trunk. We wanted to find an alternative way to keep on top of new pods, so [we created](/Creme-de-la-Pods) [@CremeDeLaPods](https://twitter.com/CremeDeLaPods) as a way of keeping track of the highest quality _new_ pods.
+
+Wanting to expand out we worked with Rails Girls Summer of Code this year ...
 
 ## Web Properties
 
@@ -59,9 +61,11 @@ The QIs provide a positive feedback loop, showing you ways in which you can game
 
 To expand on that further and allow people to have a better sense of their the state of their libraries, we created Pod Author Pages. Here's a great example from [Andrea Mazzini](https://cocoapods.org/owners/734) making it really easy to understand his impact on the community.
 
+[pic]
+
 Another multi-year project that we shipped this year was [CocoaPods Stats](/Stats/). Stats offers a way of knowing how many downloads a pod has, and far more interestingly the number of targets it has been integrated with. This is something I haven't found in other dependency managers, as it's a really hard problem to solve. We couldn't have shipped this alone, so a big thanks to [Segment](https://segment.com) for sponsoring a lot of the infrastructure here.
 
-While the number of pods available via CocoaPods has increased in the last year, the amount of servers we need for search has not. [Florian Hanke](https://github.com/floere) who has been working with us for years on search continues to refuse to throw more money at our search server. His work has made it possible for us to deal with doubling our search traffic, support more metadata, add different sort types and allow scoping to all the new platforms Apple keep shipping.
+While the number of pods available via CocoaPods has increased in the last year, the amount of servers we need for search has not. [Florian Hanke](https://github.com/floere) who has been working with us since the start on search continues to refuse to throw more money at our search server. His work has made it possible for us to deal with doubling our search traffic, support more metadata, add different sort types and allow scoping to all the new platforms Apple keep shipping.
 
 [CocoaDocs](http://cocoadocs.org), the CocoaPods documentation service started supporting Swift code this year via Jazzy, and the future is looking bright on that front as Jazzy now supports Objective-C projects and one of these days will support mixed language projects. We'll probably be migrating CocoaDocs to only use Jazzy next year. CocoaDocs had problems scaling with the number of new pod versions being shipped this year. We remedied this by working with [Button](https://www.usebutton.com) to get a high-end Mac Mini doing the work instead of a [shared VPS](/CocoaDocs-Colo/).
 
@@ -71,33 +75,49 @@ So, to wrap this up, I was looking at the Google Analytics for the CocoaPods web
 
 ## CocoaPods
 
-* First class support for Swift 
-* tvOS, watchOS
-* Deterministic UUIDs
-* CocoaPods Stats
-* Plugins
-* De-duplicate Pod Targets
-* Molinillo
-  - Deterministic Locks
-* Locks CocoaPods Files
+So this year was a crazy year from the perspective of Apple releases. 
+
+We got to a point where in the last 3 months, Swift accounts for half of the new Pods. At this point last year we were just starting to ship betas supporting frameworks, enabling Swift for those brave enough to be early adopters. Now there's a Swift library is in the top ten downloaded Pods and there are tens of thousands of apps using CocoaPods with Swift frameworks.
+
+CocoaPods Rome?
+
+Apple also kept us all on our toes by introducing 2 new platforms. watchOS first came as an iOS extension, but then migrated to a real platform of its own with watchOS2. tvOS came towards the end of the year. This means CocoaPods now supports 4 independent platforms.
+
+We added determinate UUID generation, which is only important if you check in your `Pods` directory. This means running `pod install` would generate the same UUIDs for the files it generates, and you won't see diffs for `Pods.xcodeproj`.
+
+The CocoaPods plugin API got more powerful via `pre-install` and `post-install` hooks. Third party adoption of plugins has been great, and we've moved a bunch of non-core CocoaPods code into plugins. For example; trunk, stats, search and try are all plugins.
+
+We made it harder to accidentally edit your Pods files by having the files read-only by default.
+
+Finally, the introduction of Molinillo made CocoaPods' dependency resolving first class. This means that a `pod install` is now always going to be the exact same Pods as the one that generated the `Podfile.lock`. Also, seriously, it's in RubyGems + Bundler, that's so cool.
 
 ## Stats
 
-- 24 searches per minute
-- 45 pod installs per minute
-- 100,000 unique app targets
-- 100,000 uniques to the site
-- 500,000 monthly page views
-- 2.5 million downloads
-- 6.6 million targets integrated by `pod install` / `pod update`
-- 30 million pods have been integrated by CocoaPods
+Alright, so, let's check out on some interesting numbers:
+
+- 24 searches per minute.
+- 45 pod installs per minute.
+- 100,000 unique app targets.
+- 100,000 uniques to the site.
+- 500,000 monthly page views.
+- 2.5 million downloads.
+- 6.6 million targets integrated by `pod install` / `pod update`.
+- 30 million pods have been integrated by CocoaPods.
+
+The Cocoa community is definitely growing!
 
 ## CocoaPods.app
 
-* Initial designs
-* Aims
-* Current release
-* Website Preview
+The final major project that we've been working on, and have shipped a few releases sneakily is CocoaPods.app. In our constant work to lower the barrier to entry for building apps, we've started tackling the last mile. How do we improve, and simplify the installation and updating of CocoaPods?
+
+The best way to do that is to make CocoaPods act like other tools a Cocoa developer would work with every day. So we have been working on a CocoaPods.app that you can drag into `/Applications` and it will deal with handling CocoaPods for you.
+
+I'd like to say sorry if using the terminal just for this made you feel like a leet hacker,  but I'd be wrong. CocoaPods.app includes a fully hosted copy of the `pod` command ( as well as all the tools it relies on: svn, hg, bar, git etc ) that you can use from your terminal.
+
+The next CocoaPods release is going to be the first release that we will be offering this as the default way to install CocoaPods. I think it's the best experience we can offer for someone who is consuming Pods. For now, we're keeping it a little bit hidden away on [cocoapods.org/app](http://cocoapods.org/app).
+
+--- pic?
 
 ## 1.0
 
+I finished the last post talking about what 1.0 looks like, so it seems fitting to end this year about 1.0 too. Our 1.0 milestone is getting there, and there's progress on the last major breaking change to the Podfile syntax. With luck, this may finally be the year of  CocoaPods 1.0.
