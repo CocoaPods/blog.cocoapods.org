@@ -2,14 +2,14 @@
 layout: post
 title:  "2015"
 author: orta
-categories: stats community 
+categories: stats community
 ---
 
 > CocoaPods is a dependency manager only in the sense that Apple is a cell phone manufacturer – it’s just one of their many projects.
 
 --  Ash Furrow - [Building Online Communities](http://ashfurrow.com/blog/building-online-communities/)
 
-Last year, around this time, I started an [annual write-up](/Stats-2014/) for CocoaPods. A lot happens in a project with 10 relatively active developers, and a lot of very welcome drive-by contributors. 
+Last year, around this time, I started an [annual write-up](/Stats-2014/) for CocoaPods. A lot happens in a project with 10 relatively active developers, and a lot of very welcome drive-by contributors.
 
 <!-- more -->
 
@@ -19,9 +19,7 @@ We started the year with a change in ownership. [Eloy Durán](https://twitter.co
 
 Right now we have four people making a lot of the major decisions around CocoaPods: [Boris Bügling](http://buegling.com), [Marius Rackwitz](http://mariusrackwitz.de), [myself](http://orta.io) and [Samuel Giddins](http://segiddins.me). With the help from [other developers](/about) on a day to day basis.
 
-This year we've seen Samuel Giddin's being [sponsored by Capital One](/Capital-One) in order to help him focus on building CocoaPods while he studies at college.
-
-I want to dig in a little about Samuel's work in the last year. In the [last write-up](/Stats-2014/), I mentioned a project he was working on:
+This year we've seen Samuel Giddin's being [sponsored by Capital One](/Capital-One) in order to help him focus on building CocoaPods while he studies at college. I want to dig in a little about Samuel's work in the last year. In the [last write-up](/Stats-2014/), I mentioned a project he was working on:
 
 > The second, Samuel Giddins, has been mostly working on a iterative dependency resolver for both CocoaPods and Bundler ( CocoaPods for Ruby. )
 
@@ -33,15 +31,11 @@ This project turned into a gem called [Molinillo](https://github.com/CocoaPods/M
 
 This year a lot of major companies migrated to using CocoaPods as their transport method for their SDKs. We got featured in a few annual keynotes:
 
-Twitter: https://youtu.be/6iVJSj-yqkQ?t=58m36s
+{% breaking_image /assets/blog_img/2015/twitter.jpg, https://youtu.be/7V-fIGMDsmE?t=1h32m34s %}
 
-[]
+{% breaking_image /assets/blog_img/2015/google.jpg,  https://youtu.be/6iVJSj-yqkQ?t=58m36s %}
 
-Google: https://youtu.be/7V-fIGMDsmE?t=1h32m34s
-
-[]
-
-Apple even [merged](https://github.com/ResearchKit/ResearchKit/pull/5) a Podspec into their first foray into open source libraries with [ResearchKit](https://cocoapods.org/pods/ResearchKit). 
+Apple even [merged](https://github.com/ResearchKit/ResearchKit/pull/5) a Podspec into their first foray into open source libraries with [ResearchKit](https://cocoapods.org/pods/ResearchKit).
 
 Our biggest online/offline event this year, was the the [CocoaPods Test Jam](/Jamming-2015/). It ran in 7 cities and helped get a lot of people bootstrapped with both testing and contributing back to the open source community. It was awesome to organise, and fun to contribute to.
 
@@ -61,7 +55,7 @@ The QIs provide a positive feedback loop, showing you ways in which you can game
 
 To expand on that further and allow people to have a better sense of their the state of their libraries, we created Pod Author Pages. Here's a great example from [Andrea Mazzini](https://cocoapods.org/owners/734) making it really easy to understand his impact on the community.
 
-[pic]
+{% breaking_image /assets/blog_img/2015/owners.png, https://cocoapods.org/owners/734  %}
 
 Another multi-year project that we shipped this year was [CocoaPods Stats](/Stats/). Stats offers a way of knowing how many downloads a pod has, and far more interestingly the number of targets it has been integrated with. This is something I haven't found in other dependency managers, as it's a really hard problem to solve. We couldn't have shipped this alone, so a big thanks to [Segment](https://segment.com) for sponsoring a lot of the infrastructure here.
 
@@ -71,15 +65,13 @@ While the number of pods available via CocoaPods has increased in the last year,
 
 Finally, we made it easier to get bootstrapped to work on the web infrastructure via a meta-repo called [Strata](https://github.com/CocoaPods/Strata).
 
-So, to wrap this up, I was looking at the Google Analytics for the CocoaPods web properties. My favourite odd statistic is this: We get more user sessions from Windows devices than we do iOS. Perhaps this mobile thing is just a fad?
+So, to wrap this up, I was looking at the Google Analytics for the CocoaPods web properties. My favourite quirky statistic is this: We get more user sessions from Windows devices than we do iOS. Perhaps this mobile thing is just a fad?
 
 ## CocoaPods
 
-So this year was a crazy year from the perspective of Apple releases. 
+So this year was a crazy year from the perspective of Apple releases.
 
-We got to a point where in the last 3 months, Swift accounts for half of the new Pods. At this point last year we were just starting to ship betas supporting frameworks, enabling Swift for those brave enough to be early adopters. Now there's a Swift library is in the top ten downloaded Pods and there are tens of thousands of apps using CocoaPods with Swift frameworks.
-
-CocoaPods Rome?
+In the last 3 months,  Swift is the dominant language for half of the new Pods. At this point last year we were just starting to ship betas supporting frameworks, enabling Swift for those brave enough to be early adopters. Now there's a Swift library is in the top ten downloaded Pods and there are tens of thousands of apps using CocoaPods with Swift frameworks. We're starting to see real mainstream adoption of the language.
 
 Apple also kept us all on our toes by introducing 2 new platforms. watchOS first came as an iOS extension, but then migrated to a real platform of its own with watchOS2. tvOS came towards the end of the year. This means CocoaPods now supports 4 independent platforms.
 
@@ -114,9 +106,9 @@ The best way to do that is to make CocoaPods act like other tools a Cocoa develo
 
 I'd like to say sorry if using the terminal just for this made you feel like a leet hacker,  but I'd be wrong. CocoaPods.app includes a fully hosted copy of the `pod` command ( as well as all the tools it relies on: svn, hg, bar, git etc ) that you can use from your terminal.
 
-The next CocoaPods release is going to be the first release that we will be offering this as the default way to install CocoaPods. I think it's the best experience we can offer for someone who is consuming Pods. For now, we're keeping it a little bit hidden away on [cocoapods.org/app](http://cocoapods.org/app).
+The next CocoaPods release is going to be the first release that we will be offering this as the default way to install CocoaPods. I think it's the best experience we can offer for someone who is consuming Pods. For now, we're keeping it a little bit hidden away on [cocoapods.org/app](http://cocoapods.org/app). We're aiming for something on the lines of this:
 
---- pic?
+{% breaking_image /assets/blog_img/2015/mac-app.png, http://cocoapods.org/app  %}
 
 ## 1.0
 
