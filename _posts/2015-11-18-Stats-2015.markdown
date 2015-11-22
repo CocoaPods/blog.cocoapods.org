@@ -19,13 +19,11 @@ We started the year with a change in ownership. [Eloy Durán](https://twitter.co
 
 Right now we have four people making a lot of the major decisions around CocoaPods: [Boris Bügling](http://buegling.com), [Marius Rackwitz](http://mariusrackwitz.de), [myself](http://orta.io) and [Samuel Giddins](http://segiddins.me). With the help from [other developers](/about) on a day to day basis.
 
-This year we've seen Samuel Giddin's being [sponsored by Capital One](/Capital-One) in order to help him focus on building CocoaPods while he studies at college. I want to dig in a little about Samuel's work in the last year. In the [last write-up](/Stats-2014/), I mentioned a project he was working on:
+This year we've seen Samuel Giddins  [sponsored by Capital One](/Capital-One) in order to help him focus on building CocoaPods while he studies at college. I want to dig in a little about Samuel's work in the last year. In the [last write-up](/Stats-2014/), I mentioned a project he was working on:
 
 > The second, Samuel Giddins, has been mostly working on a iterative dependency resolver for both CocoaPods and Bundler ( CocoaPods for Ruby. )
 
-This project turned into a gem called [Molinillo](https://github.com/CocoaPods/Molinillo/), see the [announcement](/CocoaPods-0.35/), which is the project at CocoaPods with the most impact. Molinillo is now used in both [Bundler](https://github.com/bundler/bundler/pull/3257) and [RubyGems](https://github.com/rubygems/rubygems/pull/1189)! This is awesome because it powers a _huge_ amount of web infrastructure, but that soon enough CocoaPods' code will be shipping in every copy of OS X. So cool.
-
-- Perhaps get number of contributors to main repo?
+This project turned into a gem of a library called [Molinillo](https://github.com/CocoaPods/Molinillo/), see the [announcement](/CocoaPods-0.35/), which is the project at CocoaPods with the most impact. Molinillo is now used in both [Bundler](https://github.com/bundler/bundler/pull/3257) and [RubyGems](https://github.com/rubygems/rubygems/pull/1189)! This is awesome because it powers a _huge_ amount of web infrastructure, but that soon enough CocoaPods' code will be shipping in every copy of OS X. So cool.
 
 ## Community
 
@@ -41,7 +39,10 @@ Our biggest online/offline event this year, was the the [CocoaPods Test Jam](/Ja
 
 We found that keeping on track of all pods is starting to become an issue, for example yesterday 18 new pods were added to trunk. We wanted to find an alternative way to keep on top of new pods, so [we created](/Creme-de-la-Pods) [@CremeDeLaPods](https://twitter.com/CremeDeLaPods) as a way of keeping track of the highest quality _new_ pods.
 
-Wanting to expand out we worked with Rails Girls Summer of Code this year ...
+Wanting to experiment, and to encourage new voices in the CocoaPods team we worked with Rails Girls Summer of Code. We teamed up wth Karla Sandoval and Emma Koszinowski, who make up team [CocoaGems](http://cocoagems.github.io/about.html).  Together with the GitHub web team advising they:
+
+* Created a plugin to [annotate a Podfile](https://github.com/Karla-Isabel-Sandoval/cocoapods-label).
+* Converted the user interface section of CocoaPods into it's own gem called [Cork](https://github.com/CocoaPods/Cork).
 
 ## Web Properties
 
@@ -61,7 +62,7 @@ Another multi-year project that we shipped this year was [CocoaPods Stats](/Stat
 
 While the number of pods available via CocoaPods has increased in the last year, the amount of servers we need for search has not. [Florian Hanke](https://github.com/floere) who has been working with us since the start on search continues to refuse to throw more money at our search server. His work has made it possible for us to deal with doubling our search traffic, support more metadata, add different sort types and allow scoping to all the new platforms Apple keep shipping.
 
-[CocoaDocs](http://cocoadocs.org), the CocoaPods documentation service started supporting Swift code this year via Jazzy, and the future is looking bright on that front as Jazzy now supports Objective-C projects and one of these days will support mixed language projects. We'll probably be migrating CocoaDocs to only use Jazzy next year. CocoaDocs had problems scaling with the number of new pod versions being shipped this year. We remedied this by working with [Button](https://www.usebutton.com) to get a high-end Mac Mini doing the work instead of a [shared VPS](/CocoaDocs-Colo/).
+[CocoaDocs](http://cocoadocs.org), the CocoaPods documentation service started supporting Swift code this year via [Jazzy](https://github.com/realm/jazzy), and the future is looking bright on that front as Jazzy now supports Objective-C projects and one of these days will support mixed language projects. We'll probably be migrating CocoaDocs to only use Jazzy next year. CocoaDocs had problems scaling with the number of new pod versions being shipped this year. We remedied this by working with [Button](https://www.usebutton.com) to get a high-end Mac Mini doing the work instead of a [shared VPS](/CocoaDocs-Colo/).
 
 Finally, we made it easier to get bootstrapped to work on the web infrastructure via a meta-repo called [Strata](https://github.com/CocoaPods/Strata).
 
