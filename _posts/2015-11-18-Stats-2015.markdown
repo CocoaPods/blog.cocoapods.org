@@ -13,13 +13,26 @@ Last year, around this time, I started an [annual write-up](/Stats-2014/) for Co
 
 <!-- more -->
 
+## Stats
+
+Alright, so, let's start off with a bang! Here's the TLDR interesting numbers:
+
+- 24 searches per minute.
+- 45 pod installs per minute.
+- 100,000 unique app targets.
+- 100,000 uniques to the site.
+- 500,000 monthly page views.
+- 2.5 million gem downloads of CocoaPods.
+- 6.6 million targets integrated by `pod install` / `pod update`.
+- 30 million pods have been integrated by CocoaPods.
+
 ## Contributions
 
 We started the year with a change in ownership. [Eloy Durán](https://twitter.com/alloy) who had been heading up the project for five years, [announced](/The-captain-leaves-the-bridge) he was stepping back due to becoming a father.
 
-Right now we have four people making a lot of the major decisions around CocoaPods: [Boris Bügling](http://buegling.com), [Marius Rackwitz](http://mariusrackwitz.de), [myself](http://orta.io) and [Samuel Giddins](http://segiddins.me). With the help from [other developers](/about) on a day to day basis.
+Right now we have four people making a lot of the major decisions around CocoaPods: [Boris Bügling](http://buegling.com), [Marius Rackwitz](http://mariusrackwitz.de), [myself](http://orta.io) and [Samuel Giddins](http://segiddins.me). With the help from [other developers](https://cocoapods.org/about) on a day to day basis.
 
-This year we've seen Samuel Giddins  [sponsored by Capital One](/Capital-One) in order to help him focus on building CocoaPods while he studies at college. I want to dig in a little about Samuel's work in the last year. In the [last write-up](/Stats-2014/), I mentioned a project he was working on:
+This year we've seen Samuel Giddins [sponsored by Capital One](/Capital-One) in order to help him focus on building CocoaPods while he studies at college. I want to dig in a little about Samuel's work in the last year. In the [last write-up](/Stats-2014/), I mentioned a project he was working on:
 
 > The second, Samuel Giddins, has been mostly working on a iterative dependency resolver for both CocoaPods and Bundler ( CocoaPods for Ruby. )
 
@@ -33,7 +46,7 @@ This year a lot of major companies migrated to using CocoaPods as their transpor
 
 {% breaking_image /assets/blog_img/2015/google.jpg,  https://youtu.be/6iVJSj-yqkQ?t=58m36s %}
 
-Apple even [merged](https://github.com/ResearchKit/ResearchKit/pull/5) a Podspec into their first foray into open source libraries with [ResearchKit](https://cocoapods.org/pods/ResearchKit).
+Apple even [merged](https://github.com/ResearchKit/ResearchKit/pull/5) a Podspec into their first foray in open source libraries with [ResearchKit](https://cocoapods.org/pods/ResearchKit).
 
 Our biggest online/offline event this year, was the the [CocoaPods Test Jam](/Jamming-2015/). It ran in 7 cities and helped get a lot of people bootstrapped with both testing and contributing back to the open source community. It was awesome to organise, and fun to contribute to.
 
@@ -43,7 +56,7 @@ Wanting to experiment, and to encourage new voices in the CocoaPods team we work
 
 * Created a plugin to [annotate a Podfile](https://github.com/Karla-Isabel-Sandoval/cocoapods-label).
 * Converted the user interface section of CocoaPods into it's own gem called [Cork](https://github.com/CocoaPods/Cork).
-* Split out CocoaPods' command line search tools into a new gem, [cocoapods-search](https://github.com/CocoaPods/CocoaPods-Search).
+* Split out CocoaPods' command line search tools into a new gem, [CocoaPods-Search](https://github.com/CocoaPods/CocoaPods-Search).
 
 ## Web Properties
 
@@ -53,7 +66,9 @@ The CocoaPods web presence has had a lot of work devoted to it in the last year,
 
 We introduced a project we've had been working on for over a year, [CocoaPods Quality Indexes](https://guides.cocoapods.org/making/quality-indexes.html) (QIs) an evolving attempt at defining quality in software. These QIs are used throughout the web properties to provide feedback and to sort pods.
 
-The QIs provide a positive feedback loop, showing you ways in which you can game the system by improving your library. By focusing on showing you ways to improve rather than penalising discouraged behaviour I hope we can continue to foster a welcome community.
+{% breaking_image /assets/blog_img/2015/qi.png, https://cocoadocs-api-cocoapods-org.herokuapp.com/pods/RxSwift/stats  %}
+
+The QIs provide a positive feedback loop, showing you ways in which you can game the system by improving your library. By focusing on showing you ways to improve, rather than penalising discouraged behaviour, I hope we can continue to foster a welcoming and supportive community.
 
 To expand on that further and allow people to have a better sense of their the state of their libraries, we created Pod Author Pages. Here's a great example from [Andrea Mazzini](https://cocoapods.org/owners/734) making it really easy to understand his impact on the community.
 
@@ -84,21 +99,6 @@ The CocoaPods plugin API got more powerful via `pre-install` and `post-install` 
 We made it harder to accidentally edit your Pods files by having the files read-only by default.
 
 Finally, the introduction of Molinillo made CocoaPods' dependency resolving first class. This means that a `pod install` is now always going to be the exact same Pods as the one that generated the `Podfile.lock`. Also, seriously, it's in RubyGems + Bundler, that's so cool.
-
-## Stats
-
-Alright, so, let's check out on some interesting numbers:
-
-- 24 searches per minute.
-- 45 pod installs per minute.
-- 100,000 unique app targets.
-- 100,000 uniques to the site.
-- 500,000 monthly page views.
-- 2.5 million gem downloads of CocoaPods.
-- 6.6 million targets integrated by `pod install` / `pod update`.
-- 30 million pods have been integrated by CocoaPods.
-
-The Cocoa community is definitely growing!
 
 ## CocoaPods.app
 
