@@ -152,11 +152,11 @@
 
 <p>We found that keeping on track of all pods is starting to become an issue, for example yesterday 18 new pods were added to trunk. We wanted to find an alternative way to keep on top of new pods, so <a href="/Creme-de-la-Pods">we created</a> <a href="https://twitter.com/CremeDeLaPods">@CremeDeLaPods</a> as a way of keeping track of the highest quality <em>new</em> pods.</p>
 
-<p>Wanting to experiment, and to encourage new voices in the CocoaPods team we worked with Rails Girls Summer of Code. We teamed up wth Karla Sandoval and Emma Koszinowski, who make up team <a href="http://cocoagems.github.io/about.html">CocoaGems</a>.  Together with the GitHub web team advising they:</p>
+<p>Wanting to experiment, and to encourage new voices in the CocoaPods team we worked with Rails Girls Summer of Code. We teamed up with Karla Sandoval and Emma Koszinowski, who make up team <a href="http://cocoagems.github.io/about.html">CocoaGems</a>.  Together with the GitHub web team advising they:</p>
 
 <ul>
 <li>Created a plugin to <a href="https://github.com/Karla-Isabel-Sandoval/cocoapods-label">annotate a Podfile</a>.</li>
-<li>Converted the user interface section of CocoaPods into it&#39;s own gem called <a href="https://github.com/CocoaPods/Cork">Cork</a>.</li>
+<li>Converted the user interface section of CocoaPods into its own gem called <a href="https://github.com/CocoaPods/Cork">Cork</a>.</li>
 <li>Split out CocoaPods&#39; command line search tools into a new gem, <a href="https://github.com/CocoaPods/CocoaPods-Search">CocoaPods-Search</a>.</li>
 </ul>
 
@@ -198,7 +198,7 @@
 
 <p>Another multi-year project that we shipped this year was <a href="/Stats/">CocoaPods Stats</a>. Stats offers a way of knowing how many downloads a pod has, and far more interestingly the number of targets it has been integrated with. This is something I haven&#39;t found in other dependency managers, as it&#39;s a really hard problem to solve. We couldn&#39;t have shipped this alone, so a big thanks to <a href="https://segment.com">Segment</a> for sponsoring a lot of the infrastructure here.</p>
 
-<p>While the number of pods available via CocoaPods has increased in the last year, the amount of servers we need for search has not. <a href="https://github.com/floere">Florian Hanke</a> who has been working with us since the start on search continues to refuse to throw more money at our search server. His work has made it possible for us to deal with doubling our search traffic, support more metadata, add different sort types and allow scoping to all the new platforms Apple keep shipping.</p>
+<p>While the number of pods available via CocoaPods has increased in the last year, the amount of servers we need for search has not. <a href="https://github.com/floere">Florian Hanke</a> who has been working with us since the start continues to refuse to throw more money at our search server. His work has made it possible for us to deal with doubling our search traffic, support more metadata, add different sort types and allow scoping to all the new platforms Apple keep shipping.</p>
 
 <p><a href="http://cocoadocs.org">CocoaDocs</a>, the CocoaPods documentation service started supporting Swift code this year via <a href="https://github.com/realm/jazzy">Jazzy</a>, and the future is looking bright on that front as Jazzy now supports Objective-C projects and one of these days will support mixed language projects. We&#39;ll probably be migrating CocoaDocs to only use Jazzy next year. CocoaDocs had problems scaling with the number of new pod versions being shipped this year. We remedied this by working with <a href="https://www.usebutton.com">Button</a> to get a high-end Mac Mini doing the work instead of a <a href="/CocoaDocs-Colo/">shared VPS</a>.</p>
 
