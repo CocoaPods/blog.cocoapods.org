@@ -1,0 +1,30 @@
+---
+layout: post
+title:  "RGSoC"
+author: cocoagems
+categories: RGSoC cocoapods
+---
+
+During the summer 2015 we had the amazing opportunity to contribute to CocoaPods while being funded by Rails Girls Summer of Code (RGSoC), as well as being hosted and coached by GitHub. How did this work?
+
+<!-- more -->
+
+## What is Rails Girls Summer of Code?
+
+At the time of applying for the fellowship program we were considering a number of great but also costly bootcamps in San Francisco. This alternative to a bootcamps or internship, if you like, works a little different. It is much up to the fellows to design their own program by firstly find a fellow teammate, finding an open source project to work on as well as coaches, mentors and workspace. RGSoC have been around for three years aiming to bring more diversity into Open Source. During this Summer 16 teams were sponsored globally.
+
+## How we met the team
+
+## How we organized the work
+
+The student teacher ratio were pretty much reversed from what a learning environment usually looks like. Us two fellows had 11 dedicated mentors who were willing to spend time to help us throughout the project. Most collaboration with our mentors happened remotely and many of our team members were based in other countries and timezones than our self. Communication often started in one of the three Slack channels from the organizations involved in the project. Longer sessions and pairing were planned in advance.
+
+## What we worked on
+
+CocoaPods Label
+CocoaPods Cork
+CocoaPods search
+
+## Conclusion
+
+We encourage other open source projects to be a part of next years RGSoC.
