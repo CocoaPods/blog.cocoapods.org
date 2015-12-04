@@ -15,7 +15,7 @@ $ rake bootstrap
 To start a local server that shows all posts **including** drafts:
 
 ```
-$ rake run:drafts
+$ rake serve:drafts
 ```
 
 _This is also the default task, so just `rake` will do the same._
@@ -26,7 +26,7 @@ Or if you want to see the blog **without* any draft posts, as the blog would
 look if it were to be deployed right now:
 
 ```
-$ rake run:published
+$ rake serve:published
 ```
 
 ----
@@ -34,6 +34,26 @@ $ rake run:published
 The `shared` submodule is the cocoapods [shared
 resources](https://github.com/CocoaPods/shared_resources) repo that holds
 shared design notes and assets.
+
+## Add a new author
+
+Navigate to the _config.yml file.
+Add a nickname for you followed by your full name, twitter handle and gravatar hash.
+
+## Add a new post
+
+Create a new file in _post directory following the format year-month-day-blog-post-title.markdown
+
+Start the post using Jekylls [Front Matter](http://jekyllrb.com/docs/frontmatter/):
+
+```
+---
+layout: post
+title:  "Blog Post Title"
+author: nickname
+categories: tags that are relevant
+---
+```
 
 ## Deployment
 
@@ -46,7 +66,7 @@ and push to the server pulling in any changes.
 ## Drafts
 
 Drafts are stored in the `_drafts` folder to leverage the [drafts feature] of
-jekyll. The `rake run` task is configured to show the drafts.
+jekyll. The `rake serve` task is configured to show the drafts.
 
 [drafts feature]: http://jekyllrb.com/docs/drafts/
 
@@ -54,4 +74,3 @@ jekyll. The `rake run` task is configured to show the drafts.
 ## License
 
 This repository and CocoaPods are available under the MIT license.
-
