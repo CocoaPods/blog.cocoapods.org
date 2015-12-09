@@ -130,10 +130,13 @@ Please consult http://blog.cocoapods.org/Repairing-Our-Broken-Specs-Repository/ 
 ```
 
 You'll see this:
+
 ```
 Setting up CocoaPods master repo
 Setup completed
 ```
+
+You can find more information related to this issue [here](https://github.com/CocoaPods/CocoaPods/issues/3539) and [here](https://github.com/CocoaPods/CocoaPods/issues/2908)
 
 **<3**
 
