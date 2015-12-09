@@ -6,6 +6,8 @@ author: kyle
 categories: cocoapods
 ---
 
+_Note: If you got this problem after running `gem update`, [jump here](user-content-i-got-linked-here-after-updating-my-gems-what-to-do) to find a solution_
+
 Unfortunately we've encountered a bug in libgit2 and we are going to have to
 **force push** into [the Specs repository][master-repo]. (Also known as the
 ‘master’ spec repo.)
@@ -105,6 +107,33 @@ We are very sorry for _all_ time this issue takes away from our great early
 adopters and pod providers. We are very thankful for your patience and
 understanding while we work towards a smoothly functioning version 1 of
 CocoaPods and its architecture.
+
+### I got linked here after updating my gems, what to do?
+
+This issue is being tracked down to an issue located in Psych. To fix it please use the following command:
+
+```shell
+rm -rf "~/Library/Caches/CocoaPods ~/.cocoapods;" \
+gem update --system && \
+gem update && \
+gem cleanup && \
+pod setup
+```
+
+Now instead of seeing this:
+
+```
+Setting up CocoaPods master repo
+Already up-to-date.
+[!] There was an error reading '/Users/xxxxx/.cocoapods/repos/master/CocoaPods-version.yml'.
+Please consult http://blog.cocoapods.org/Repairing-Our-Broken-Specs-Repository/ for more information.
+```
+
+You'll see this:
+```
+Setting up CocoaPods master repo
+Setup completed
+```
 
 **<3**
 
