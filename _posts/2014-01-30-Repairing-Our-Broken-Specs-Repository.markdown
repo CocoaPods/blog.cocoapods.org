@@ -113,7 +113,7 @@ CocoaPods and its architecture.
 This issue is being tracked down to an issue located in Psych. To fix it please use the following command:
 
 ```shell
-rm -rf "~/Library/Caches/CocoaPods ~/.cocoapods;" \
+rm -fr ~/Library/Caches/CocoaPods && \
 gem update --system && \
 gem update && \
 gem cleanup && \
