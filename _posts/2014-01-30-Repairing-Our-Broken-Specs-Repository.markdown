@@ -6,7 +6,7 @@ author: kyle
 categories: cocoapods
 ---
 
-_Note: If you got this problem after running `gem update`, [jump here](user-content-i-got-linked-here-after-updating-my-gems-what-to-do) to find a solution_
+_Note: If you got this problem after running `gem update`, [jump here](#user-content-i-got-linked-here-after-updating-my-gems-what-to-do) to find a solution_
 
 Unfortunately we've encountered a bug in libgit2 and we are going to have to
 **force push** into [the Specs repository][master-repo]. (Also known as the
