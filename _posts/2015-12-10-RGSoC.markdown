@@ -21,6 +21,11 @@ We officially met the CocoaPods team the weekend right before Alt-Conf at Limon,
 
 The student teacher ratio were pretty much reversed from what a learning environment usually looks like. Us two fellows had 11 dedicated mentors who were willing to spend time to help us throughout the project. Most collaboration with our mentors happened remotely and many of our team members were based in other countries and timezones than our self. Communication often started in one of the three Slack channels from the organizations involved in the project. Longer sessions and pairing were planned in advance.
 
+To schedule sessions with mentors and coaches located in different time zones, we used a combination of Google Calendar, Slack, and texts. For screen sharing, we found ScreenHero, Google Hangouts, Blue Jeans, and Skype to be our go to’s. Having screen sharing alternatives was necessary since audio, and screen sharing delays are unavoidable.
+Being flexible with unpredictable events is really the key to success. Not getting enough sleep, double scheduling, conferences, and the cold all happened. Communicating with as much time in advance when something changes and you can’t make it is the best way to show respectful of each others schedule. Using the calendar religiously and setting alerts to avoid forgetting scheduled sessions and due dates was also very useful.
+
+
+
 
 ## What we worked on
 
