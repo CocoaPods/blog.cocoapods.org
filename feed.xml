@@ -26,7 +26,7 @@ We&amp;#39;ve prepared all systems for the switch and will flip it on December 3
 </description>
       
 
-      <pubDate>Thu, 03 Dec 2015 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 29 Dec 2015 00:00:00 +0000</pubDate>
       <link>http://blog.cocoapods.org/Release-Versions-Only</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/Release-Versions-Only</guid>
     </item>
@@ -933,7 +933,9 @@ command and a galore of improvements. Including the ability to deprecate pods.&l
       <title>Repairing Our Broken Specs Repository</title>
 
       
-      <description>&lt;p&gt;Unfortunately we&amp;#39;ve encountered a bug in libgit2 and we are going to have to
+      <description>&lt;p&gt;&lt;em&gt;Note: If you got this problem after running &lt;code&gt;gem update&lt;/code&gt;, &lt;a href=&quot;#user-content-i-got-linked-here-after-updating-my-gems-what-to-do&quot;&gt;jump here&lt;/a&gt; to find a solution.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Unfortunately we&amp;#39;ve encountered a bug in libgit2 and we are going to have to
 &lt;strong&gt;force push&lt;/strong&gt; into &lt;a href=&quot;https://github.com/CocoaPods/Specs&quot;&gt;the Specs repository&lt;/a&gt;. (Also known as the
 ‘master’ spec repo.)&lt;/p&gt;
 

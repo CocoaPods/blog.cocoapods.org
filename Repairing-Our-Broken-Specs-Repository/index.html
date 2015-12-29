@@ -79,7 +79,9 @@
       </article>
     
       <article class="content col-md-8">
-        <p>Unfortunately we&#39;ve encountered a bug in libgit2 and we are going to have to
+        <p><em>Note: If you got this problem after running <code>gem update</code>, <a href="#user-content-i-got-linked-here-after-updating-my-gems-what-to-do">jump here</a> to find a solution.</em></p>
+
+<p>Unfortunately we&#39;ve encountered a bug in libgit2 and we are going to have to
 <strong>force push</strong> into <a href="https://github.com/CocoaPods/Specs">the Specs repository</a>. (Also known as the
 ‘master’ spec repo.)</p>
 
@@ -169,6 +171,75 @@ together.</p>
 adopters and pod providers. We are very thankful for your patience and
 understanding while we work towards a smoothly functioning version 1 of
 CocoaPods and its architecture.</p>
+
+<h3 id="i-got-linked-here-after-updating-my-gems,-what-to-do?">I got linked here after updating my gems, what to do?</h3>
+
+<p>This issue is being tracked down to an issue located in Psych. To fix it please use the following command:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="bash language-bash" data-lang="bash">rm -fr ~/Library/Caches/CocoaPods <span class="o">&amp;&amp;</span> <span class="se">\</span>
+gem update --system <span class="o">&amp;&amp;</span> <span class="se">\</span>
+gem update <span class="o">&amp;&amp;</span> <span class="se">\</span>
+gem cleanup <span class="o">&amp;&amp;</span> <span class="se">\</span>
+pod setup
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Now instead of seeing this:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="text language-text" data-lang="text">Setting up CocoaPods master repo
+Already up-to-date.
+[!] There was an error reading &#39;/Users/xxxxx/.cocoapods/repos/master/CocoaPods-version.yml&#39;.
+Please consult http://blog.cocoapods.org/Repairing-Our-Broken-Specs-Repository/ for more information.
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>You&#39;ll see this:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="text language-text" data-lang="text">Setting up CocoaPods master repo
+Setup completed
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>You can find more information related to this issue <a href="https://github.com/CocoaPods/CocoaPods/issues/3539">here</a> and <a href="https://github.com/CocoaPods/CocoaPods/issues/2908">here</a></p>
 
 <p><strong>&lt;3</strong></p>
 
