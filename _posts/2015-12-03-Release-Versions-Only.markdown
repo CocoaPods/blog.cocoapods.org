@@ -14,6 +14,6 @@ The default there is to use the latest _released_ pod version.
 As a result of this – as we noticed via our stats system – usage of prerelease versions is minimal, and showing the latest prerelease version on [cocoapods.org](https://cocoapods.org) violates expectations as to what `pod install` will actually install.
 
 Therefore, we will be switching to the `pod` command default also on [cocoapods.org](https://cocoapods.org), meaning in the results, we will show only released versions.
-We've prepared all systems for the switch and will flip it on December 27th 2015 during the holiday lull.
+We've prepared all systems for the switch and will flip it on December 31st 2015 to start into the new year with the brand new search engine behavior.
 
-Happy Holidays, pod friends!
+Happy New Year, pod friends!
