@@ -4,12 +4,12 @@ title:  "Coins"
 post_title_id:  "coins"
 date:   2014-10-22
 author: orta
-categories: coins community contibutors
+categories: coins community contributors
 ---
 
 Physical objects for abstract ephemeral work.
 
-Working on tools is all about levels of abstraction. CocoaPods abstracts away the idea of dealing with the transmission, setup and installation of a Cocoa Library into just `pod "FDModel"`. The bits and pieces behind the internals are just as abstracted away from CocoaPods through ruby gems like `Xcodeproj`, `Molinillo` and `CLAide`. 
+Working on tools is all about levels of abstraction. CocoaPods abstracts away the idea of dealing with the transmission, setup and installation of a Cocoa Library into just `pod "FDModel"`. The bits and pieces behind the internals are just as abstracted away from CocoaPods through ruby gems like `Xcodeproj`, `Molinillo` and `CLAide`.
 
 Devoting time to CocoaPods is not a thank-less task, those who have become known for their work on CocoaPods have vastly improved their [Klout score](http://www.slate.com/articles/business/the_bet/2014/05/klout_is_basically_dead_but_it_finally_matters.html). Being a person who has submitted two or three pull requests probably hasn't though. We want to try and do something to say thanks in  a meaningful way. We opted for token of our gratitude in the form of a coin. We'll be getting these sent out to the top 80 contributors to CocoaPods the tool.
 
@@ -17,7 +17,7 @@ Devoting time to CocoaPods is not a thank-less task, those who have become known
 
 <style>
 #coins {
-  background: url(/assets/blog_img/coins/core_contributor.jpg) no-repeat center center ; 
+  background: url(/assets/blog_img/coins/core_contributor.jpg) no-repeat center center ;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -33,11 +33,11 @@ Most commits from people outside of the top 15 are people scratching their own i
 
 {% breaking_image /assets/blog_img/coins/coins.jpg, /assets/blog_img/coins/coins.jpg %}
 
-They're gold because you're awesome. 
+They're gold because you're awesome.
 
-They're hefty because we care. 
+They're hefty because we care.
 
-The core dev team aren't the only people making CocoaPods. 
+The core dev team aren't the only people making CocoaPods.
 
 ### Thank you all
 
