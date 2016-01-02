@@ -49,7 +49,7 @@ It's cleanly built using simple composition, and has been the source for quite a
 
 #### pod
 
-We doing plan  on replicating every feature of the command-line gem in the CocoaPods app. That's just not good usage of our time. Instead we offer a way to access the command-line interface with the version of CocoaPods that is inside CocoaPods.app. We do this in the same way Xcode does, by offering command line tools:
+We don't plan on replicating every feature of the command-line gem in the CocoaPods app. That's just not good usage of our time. Instead we offer a way to access the command-line interface with the version of CocoaPods that is inside CocoaPods.app. We do this in the same way Xcode does, by offering command line tools:
 
 {% breaking_image /assets/blog_img/app/command-line-tools.png, /assets/blog_img/command-line-tools.png %}
 
