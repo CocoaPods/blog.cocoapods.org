@@ -23,18 +23,50 @@ We officially met the CocoaPods team the weekend before Alt-Conf at Limon, a Per
 
 The student teacher ratio were pretty much reversed from what a learning environment usually looks like. Us two fellows had 11 dedicated mentors who were willing to spend time to help us throughout the project. Most collaboration with our mentors happened remotely and many of our team members were based in other countries and timezones than our self. Communication often started in one of the three Slack channels from the organizations involved in the project. Longer sessions and pairing were planned in advance.
 
-To schedule sessions with mentors and coaches in different time zones, we used a combination of Google Calendar, Slack, and texts. For screen sharing, we found ScreenHero, Google Hangouts, Blue Jeans, and Skype for communication. Having screen sharing alternatives was necessary since audio, and screen sharing delays are unavoidable. In the same way that tools are unpredictable, so are life events. Being flexible with unpredictable events is key. Not getting enough sleep, double scheduling, conferences, and the cold all happened. Communicating with as much time in advance when something changes and you can’t make it as well as using the calendar religiously and setting alerts to avoid forgetting scheduled sessions and due dates is the way to go as is the ability to quickly reschedule your issues, Trello or sessions.
+To schedule sessions with mentors and coaches in different time zones, we used a combination of Google Calendar, Slack, and texts. For screen sharing, we found ScreenHero, Google Hangouts, Blue Jeans, and Skype for communication. Having screen sharing alternatives was necessary since audio, and screen sharing delays are unavoidable. In the same way that tools are unpredictable, so are life events. Being flexible with unpredictable events is key. Not getting enough sleep, double scheduling, conferences, and the cold all happened. Communicating with as much time in advance when something changes and you can’t make it as well as using the calendar religiously and setting alerts to avoid forgetting scheduled sessions and due dates is the way to go as is the ability to quickly reschedule Trello or sessions.
 
 ## What we worked on
 
 During the project we worked on a couple of different things. Here are some of the main things we worked on for CocoaPods.
 
-Together with [Boris Bügling](https://twitter.com/neonacho) we paired on creating [cocoapods-label](https://rubygems.org/gems/cocoapods-label), a plugin for cocoapods that annotates the Podfile with the Pod description. This is great for everyone with short memory that wants to remember what the different pods does in an efficient way. We started working on this while Boris visited San Francisco during AltConf and then we continued working on it remotely, sharing screens. We found that the best time to work on it was during Boris evenings and our mornings since Boris lives in Berlin and it’s about 9 hour time difference. It was great to have Boris guide us through how to create a new plugin, a knowledge we would have use for in the project. 
+Together with [Boris Bügling](https://twitter.com/neonacho) we paired on creating [cocoapods-label](https://rubygems.org/gems/cocoapods-label), a plugin for cocoapods that annotates the Podfile with the Pod description. This is great for everyone with short memory that wants to remember what the different pods does in an efficient way. We started working on this while Boris visited San Francisco during AltConf and then we continued working on it remotely, sharing screens. We found that the best time to work on it was during Boris evenings and our mornings since Boris lives in Berlin and it’s about 9 hour time difference. It was great to have Boris guide us through how to create a new plugin, a knowledge we would have use for in the project.
 
 When we applied to work on cocapods we choose to work on making CocoaPods more modular by creating plugins. During a planning meeting we picked our issues interesting for us to work on.
 
 I (Emma) worked on moving the source code for [cocoapods-search](https://github.com/CocoaPods/cocoapods-search) to its own gem and depend on it from CocoaPods it self. The knowledge of how to create a new plugin came in handy. There is a scaffold for creating plugins for cocoapods that I used. It creates the main structure of files and folders and the rest was pretty much to figure out what code was responsible for search and copy that code to the newly created gem. I ran my local changes with Rake to make sure everything worked as it should. When that was done the tests needed to be moved to the new gem as well. Moving the tests was actually more complicated than moving the source code since the tests required a lot of files in the fixture folder to run the tests.
 
+After working on CocoaPods-label with Boris and Emma, I chose to work
+on CocoaPods issue #3398 'Extract UI module into its own gem', labeled d1:easy.
+#Add a link to Cork above.
+CocoaPods User Interface is known as CLAide. To extract the module into its own gem,
+we began by creating a new gem - Cork.
+
+Took Pod::UI Module and extracted needed parts into the new gem.
+
+
+Next, I had to go through
+CLAide/lib/command/banner.rb and got rid of all CocoaPods specific language and
+dependencies. This was a long process since I didn't know what was CP specific
+at first and did not feel comfortable just getting rid of code left and right, so having Samuel Giddin's and Kyle Fuller's help was so great.
+
+Writing tests for all of the left over User Interface code was the next step.
+For this we used Mocha on Bacon and or RSPEC ( I need to check on this. It's
+been a while).
+
+Debugging
+Debugging
+More Debugging
+
+Moving all necessary parts of the original CLAide into the new gem Cork was the next step.
+
+
+
+Take Pod::UI Module and extract needed parts into the new gem.
+
+Move banner.rb into Cork
+
+Add Cork as a dependency to CocoaPod and make Pod::UI be a reference to
+a subclass of Cork::Board.
 
 ## Conclusion
 
