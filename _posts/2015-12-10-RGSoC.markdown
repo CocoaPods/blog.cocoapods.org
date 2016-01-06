@@ -35,37 +35,31 @@ When we applied to work on cocapods we choose to work on making CocoaPods more m
 
 I (Emma) worked on moving the source code for [cocoapods-search](https://github.com/CocoaPods/cocoapods-search) to its own gem and depend on it from CocoaPods it self. The knowledge of how to create a new plugin came in handy. There is a scaffold for creating plugins for cocoapods that I used. It creates the main structure of files and folders and the rest was pretty much to figure out what code was responsible for search and copy that code to the newly created gem. I ran my local changes with Rake to make sure everything worked as it should. When that was done the tests needed to be moved to the new gem as well. Moving the tests was actually more complicated than moving the source code since the tests required a lot of files in the fixture folder to run the tests.
 
-After working on CocoaPods-label with Boris and Emma, I chose to work
-on CocoaPods issue #3398 'Extract UI module into its own gem', labeled d1:easy.
+After working on CocoaPods-label with Boris and Emma, CocoaPods issue #3398 'Extract UI module into its own gem', labeled d1:easy, seemed particularly appealing.
 #Add a link to Cork above.
-CocoaPods User Interface is known as CLAide. To extract the module into its own gem,
-we began by creating a new gem - Cork.
-
-Took Pod::UI Module and extracted needed parts into the new gem.
+Samuel outlined the first steps to work on this issue in smaller steps.
+CocoaPods User Interface module is known as CLAide. To extract the module into its own gem,the first step was to create Cork, a new gem.
 
 
 Next, I had to go through
-CLAide/lib/command/banner.rb and got rid of all CocoaPods specific language and
-dependencies. This was a long process since I didn't know what was CP specific
-at first and did not feel comfortable just getting rid of code left and right, so having Samuel Giddin's and Kyle Fuller's help was so great.
-
+CLAide/lib/command/banner.rb and discard all CocoaPods specific language and
+dependencies. This was a long process, because at first being able to distinguish
+ CP specific syntax was challenging.
+Having Samuel Giddin's and Kyle Fuller's help was so crucial at this point.
+After, I took Pod::UI Module and extracted needed parts into the new gem.
 Writing tests for all of the left over User Interface code was the next step.
 For this we used Mocha on Bacon and or RSPEC ( I need to check on this. It's
-been a while).
-
-Debugging
-Debugging
-More Debugging
-
-Moving all necessary parts of the original CLAide into the new gem Cork was the next step.
+been a while). After writing tests it was all a matter of debugging, debugging,
+and hearing Rubocop and Travis CI telling us to debug more. Getting rid of
+some CP dependencies changed the way the code worked together and required that
+we change other parts.
 
 
 
-Take Pod::UI Module and extract needed parts into the new gem.
+Moving all necessary parts of the original CLAide and banner.rb into the new gem Cork was the next step.
 
-Move banner.rb into Cork
 
-Add Cork as a dependency to CocoaPod and make Pod::UI be a reference to
+Add Cork as a dependency to CocoaPods and make Pod::UI be a reference to
 a subclass of Cork::Board.
 
 ## Conclusion
