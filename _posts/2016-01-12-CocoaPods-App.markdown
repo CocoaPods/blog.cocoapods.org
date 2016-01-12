@@ -3,7 +3,6 @@ layout: post
 title:  "App 1.0"
 author: orta
 categories: cocoapods app release
-post_title_id:  "app"
 ---
 
 TLDR: CocoaPods now has a Mac App that provides a hosted Ruby experience, go check out the web page for it: [cocoapods.org/app](https://cocoapods.org/app).
@@ -11,16 +10,6 @@ TLDR: CocoaPods now has a Mac App that provides a hosted Ruby experience, go che
 The rest of this post is about how all the pieces come together to make a CocoaPods app.
 
 <!-- more -->
-
-<style>
-#app {
-  background: url(/assets/blog_img/app/app.jpg) no-repeat center center ;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-</style>
 
 
 ### What's happening under the hood?
