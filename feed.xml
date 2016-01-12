@@ -8,6 +8,24 @@
     
     
     <item>
+      <title>App 1.0</title>
+
+      
+      <description>&lt;p&gt;TLDR: CocoaPods now has a Mac App that provides a hosted Ruby experience, go check out the web page for it: &lt;a href=&quot;https://cocoapods.org/app&quot;&gt;cocoapods.org/app&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The rest of this post is about how all the pieces come together to make a CocoaPods app.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Thu, 31 Dec 2015 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/CocoaPods-App</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-App</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>Release Versions Only</title>
 
       
@@ -526,7 +544,7 @@ We have a new &lt;em&gt;metrics&lt;/em&gt; API that you can now use.&lt;/p&gt;
       
       <description>&lt;p&gt;Physical objects for abstract ephemeral work.&lt;/p&gt;
 
-&lt;p&gt;Working on tools is all about levels of abstraction. CocoaPods abstracts away the idea of dealing with the transmission, setup and installation of a Cocoa Library into just &lt;code&gt;pod &amp;quot;FDModel&amp;quot;&lt;/code&gt;. The bits and pieces behind the internals are just as abstracted away from CocoaPods through ruby gems like &lt;code&gt;Xcodeproj&lt;/code&gt;, &lt;code&gt;Molinillo&lt;/code&gt; and &lt;code&gt;CLAide&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;Working on tools is all about levels of abstraction. CocoaPods abstracts away the idea of dealing with the transmission, setup and installation of a Cocoa Library into just &lt;code&gt;pod &amp;quot;FDModel&amp;quot;&lt;/code&gt;. The bits and pieces behind the internals are just as abstracted away from CocoaPods through ruby gems like &lt;code&gt;Xcodeproj&lt;/code&gt;, &lt;code&gt;Molinillo&lt;/code&gt; and &lt;code&gt;CLAide&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Devoting time to CocoaPods is not a thank-less task, those who have become known for their work on CocoaPods have vastly improved their &lt;a href=&quot;http://www.slate.com/articles/business/the_bet/2014/05/klout_is_basically_dead_but_it_finally_matters.html&quot;&gt;Klout score&lt;/a&gt;. Being a person who has submitted two or three pull requests probably hasn&amp;#39;t though. We want to try and do something to say thanks in  a meaningful way. We opted for token of our gratitude in the form of a coin. We&amp;#39;ll be getting these sent out to the top 80 contributors to CocoaPods the tool.&lt;/p&gt;
 
