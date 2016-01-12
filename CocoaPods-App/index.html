@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-      <title>Coins - CocoaPods Blog</title>
+      <title>App 1.0 - CocoaPods Blog</title>
     
 
     <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
@@ -41,12 +41,12 @@
 
     <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="glyphicon glyphicon-plus"></span></button><a class="navbar-brand" href="https://cocoapods.org"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="https://cocoapods.org/app">App</a></li><li><a href="https://cocoapods.org/about">About</a></li><li><a href="https://guides.cocoapods.org">Guides</a></li><li class="active"><a href="https://blog.cocoapods.org">Blog</a></li></ul></div></section></nav>
 
-    <div id ="coins">
+    <div id ="app">
 <section class="container" >
   <article class="row">
   <header class="col-md-8 col-md-offset-2 headline blog-post">
     
-      <h1>Coins</h1>
+      <h1>App 1.0</h1>
     
     
   </header>
@@ -68,7 +68,7 @@
                 <p><a href="http://twitter.com/orta">Orta Therox</a></p>
               
             
-             <p>22 October 2014</p>
+             <p>12 January 2016</p>
 
             
               <a href="https://twitter.com/orta" class="twitter-follow-button" data-show-count="false" data-lang="en">
@@ -79,17 +79,15 @@
       </article>
     
       <article class="content col-md-8">
-        <p>Physical objects for abstract ephemeral work.</p>
+        <p>TLDR: CocoaPods now has a Mac App that provides a hosted Ruby experience, go check out the web page for it: <a href="https://cocoapods.org/app">cocoapods.org/app</a>.</p>
 
-<p>Working on tools is all about levels of abstraction. CocoaPods abstracts away the idea of dealing with the transmission, setup and installation of a Cocoa Library into just <code>pod &quot;FDModel&quot;</code>. The bits and pieces behind the internals are just as abstracted away from CocoaPods through ruby gems like <code>Xcodeproj</code>, <code>Molinillo</code> and <code>CLAide</code>.</p>
-
-<p>Devoting time to CocoaPods is not a thank-less task, those who have become known for their work on CocoaPods have vastly improved their <a href="http://www.slate.com/articles/business/the_bet/2014/05/klout_is_basically_dead_but_it_finally_matters.html">Klout score</a>. Being a person who has submitted two or three pull requests probably hasn&#39;t though. We want to try and do something to say thanks in  a meaningful way. We opted for token of our gratitude in the form of a coin. We&#39;ll be getting these sent out to the top 80 contributors to CocoaPods the tool.</p>
+<p>The rest of this post is about how all the pieces come together to make a CocoaPods app.</p>
 
 <!-- more -->
 
 <style>
-#coins {
-  background: url(/assets/blog_img/coins/core_contributor.jpg) no-repeat center center ;
+#app {
+  background: url(/assets/blog_img/app/app.jpg) no-repeat center center ;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -97,54 +95,108 @@
 }
 </style>
 
-<p></article>
-</div>
-</section>
-<div style="background-color:white;">
-<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
-<a href='/assets/blog_img/coins/c.jpg '><img  src='/assets/blog_img/coins/c.jpg'></a></center></article>
-</div>
-</section>
-</div>
-<section class="container">
-<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
+<h3 id="what&#39;s-happening-under-the-hood?">What&#39;s happening under the hood?</h3>
 
-<p>Turns out a friend from my <a href="http://en.wikipedia.org/wiki/Huddersfield">old hometown</a> has started up a company selling <a href="https://www.madebycooper.co.uk">custom metalwork objects</a>. When I was over last they let me share their office and showed me some beautiful pieces they had been making. I knew this was the perfect answer to the question I had been thinking about for a while <em>&quot;How can we give something back?&quot;</em>.</p>
-
-<p>Most commits from people outside of the top 15 are people scratching their own itches. Annoyed at the tool they use isn&#39;t quite working how they&#39;d like. For a lot it&#39;s their first entry into writing ruby code. The dev team guides and helps out as much as possible but it still took someone to take the first step on their own. Our selection process for the top 80 isn&#39;t even that strict, if you submitted a lot of grammar and spelling fixes to the websites you&#39;ve also made a really useful contribution to the community. It helped.</p>
+<p>Let&#39;s take a look at the Xcode Project.</p>
 
 <p></article>
 </div>
 </section>
 <div style="background-color:white;">
 <section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
-<a href='/assets/blog_img/coins/coins.jpg '><img  src='/assets/blog_img/coins/coins.jpg'></a></center></article>
+<a href='/assets/blog_img/xcodeproj.png'><img class="image-zoom"  src='/assets/blog_img/app/xcodeproj.png'></a></center></article>
 </div>
 </section>
 </div>
 <section class="container">
 <div class="row"><article class="content col-md-8 col-md-offset-2"></p>
 
-<p>They&#39;re gold because you&#39;re awesome.</p>
+<p>The app is three separate tools that work in combination to provide a seamless experience. You can see the targets; <code>CocoaPods</code>, <code>pod</code> and <code>ReflectionService</code>.</p>
 
-<p>They&#39;re hefty because we care.</p>
+<h4 id="cocoapods">CocoaPods</h4>
 
-<p>The core dev team aren&#39;t the only people making CocoaPods.</p>
+<p>This is the CocoaPods app, it provides an OS X GUI to common tasks for people who use CocoaPods. It also is the host to an entire environment required to use the CocoaPods&#39; features it exposes. It turns out there are quite a lot of dependencies for CocoaPods once you try to replicate the common user&#39;s environment.</p>
 
-<h3 id="thank-you-all">Thank you all</h3>
+<p>In order to make it work seamlessly we bundle: <code>bzr</code>, <code>curl</code>, <code>git</code>, <code>mercurial</code>, <code>ncurses</code>, <code>openssl</code>, <code>pkg-config</code>, <code>ruby</code>, <code>scons</code>, <code>serf</code>, <code>subversion</code>, <code>yaml</code> and <code>zlib</code>. These are compiled dependencies sitting inside the application bundle. In the Xcode Project above, they are contained in the <code>bundle</code> reference group.</p>
 
-<p><a href="https://github.com/fabiopelosin">fabiopelosin</a>, <a href="https://github.com/alloy">alloy</a>, <a href="https://github.com/orta">orta</a>, <a href="https://github.com/floere">floere</a>, <a href="https://github.com/segiddins">segiddins</a>, <a href="https://github.com/kylef">kylef</a>, <a href="https://github.com/neonichu">neonichu</a>, <a href="https://github.com/lukeredpath">lukeredpath</a>, <a href="https://github.com/AliSoftware">AliSoftware</a>, <a href="https://github.com/Keithbsmiley">Keithbsmiley</a>, <a href="https://github.com/mtitolo">mtitolo</a>, <a href="https://github.com/Kapin">Kapin</a>, <a href="https://github.com/nolanw">nolanw</a>, <a href="https://github.com/goonzoid">goonzoid</a>, <a href="https://github.com/mrackwitz">mrackwitz</a>, <a href="https://github.com/siuying">siuying</a>, <a href="https://github.com/supermarin">supermarin</a>, <a href="https://github.com/jasl8r">jasl8r</a>, <a href="https://github.com/yas375">yas375</a>, <a href="https://github.com/dbgrandi">dbgrandi</a>, <a href="https://github.com/subdigital">subdigital</a>, <a href="https://github.com/kommen">kommen</a>, <a href="https://github.com/ianyh">ianyh</a>, <a href="https://github.com/xslim">xslim</a>, <a href="https://github.com/swizzlr">swizzlr</a>, <a href="https://github.com/pietbrauer">pietbrauer</a>, <a href="https://github.com/pbernery">pbernery</a>, <a href="https://github.com/0xced">0xced</a>, <a href="https://github.com/clarkda">clarkda</a>, <a href="https://github.com/mk">mk</a>, <a href="https://github.com/jweinberg">jweinberg</a>, <a href="https://github.com/carsonmcdonald">carsonmcdonald</a>, <a href="https://github.com/Manfred">Manfred</a>, <a href="https://github.com/nevyn">nevyn</a>, <a href="https://github.com/fmccann">fmccann</a>, <a href="https://github.com/k0nserv">k0nserv</a>, <a href="https://github.com/squarefrog">squarefrog</a>, <a href="https://github.com/luisdelarosa">luisdelarosa</a>, <a href="https://github.com/tayhalla">tayhalla</a>, <a href="https://github.com/dlackty">dlackty</a>, <a href="https://github.com/gfontenot">gfontenot</a>, <a href="https://github.com/blakewatters">blakewatters</a>, <a href="https://github.com/Thomvis">Thomvis</a>, <a href="https://github.com/joe-loco">joe-loco</a>, <a href="https://github.com/groue">groue</a>, <a href="https://github.com/AshFurrow">AshFurrow</a>, <a href="https://github.com/heyzooi">heyzooi</a>, <a href="https://github.com/dev4dev">dev4dev</a>, <a href="https://github.com/croach">croach</a>, <a href="https://github.com/farcaller">farcaller</a>, <a href="https://github.com/samstewart">samstewart</a>, <a href="https://github.com/dlvenable">dlvenable</a>, <a href="https://github.com/dcutting">dcutting</a>, <a href="https://github.com/nskboy">nskboy</a>, <a href="https://github.com/Ashton-W">Ashton-W</a>, <a href="https://github.com/rivera-ernesto">rivera-ernesto</a>, <a href="https://github.com/lazerwalker">lazerwalker</a>, <a href="https://github.com/phatblat">phatblat</a>, <a href="https://github.com/ulrikdamm">ulrikdamm</a>, <a href="https://github.com/chriseidhof">chriseidhof</a>, <a href="https://github.com/drodriguez">drodriguez</a>, <a href="https://github.com/olarivain">olarivain</a>, <a href="https://github.com/MaxGabriel">MaxGabriel</a>, <a href="https://github.com/schneiderandre">schneiderandre</a>, <a href="https://github.com/andreamazz">andreamazz</a>, <a href="https://github.com/nmccann">nmccann</a>, <a href="https://github.com/Lascorbe">Lascorbe</a>, <a href="https://github.com/dhoerl">dhoerl</a>, <a href="https://github.com/Noreaster76">Noreaster76</a>, <a href="https://github.com/l4u">l4u</a>, <a href="https://github.com/seivan">seivan</a>, <a href="https://github.com/netbe">netbe</a>, <a href="https://github.com/paulyoung">paulyoung</a>, <a href="https://github.com/kattrali">kattrali</a>, <a href="https://github.com/fluidsonic">fluidsonic</a>, <a href="https://github.com/alexrothenberg">alexrothenberg</a>, <a href="https://github.com/martincik">martincik</a>, <a href="https://github.com/btaylor">btaylor</a>, <a href="https://github.com/listrophy">listrophy</a>, <a href="https://github.com/modocache">modocache</a> and <a href="https://github.com/atomkirk">atomkirk</a>.</p>
+<p></article>
+</div>
+</section>
+<div style="background-color:white;">
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='/assets/blog_img/resources.png '><img  src='/assets/blog_img/app/resources.png'></a></center></article>
+</div>
+</section>
+</div>
+<section class="container">
+<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
 
-<p style="text-align:right"><em>I'm not looking forward to mailing these!</em></p>
+<p>It&#39;s quite the setup in there. It&#39;s very similar to how Xcode hosts all of it&#39;s SDKs, compilers and apps (Instruments.app, iOS Simulator.app for example.) These folders represent a hosted environment which is well-contained and well tested. We provide the latest stable builds of these dependencies inside the app.</p>
+
+<p>The GUI aspect of the app is built mainly in Swift and Objective-C when necessary. It uses all the fancy modern goodies available in the latest Cocoa APIs: NSViewControllers, Storyboards and <a href="https://www.objc.io/issues/14-mac/xpc/">XPC</a>.</p>
+
+<p></article>
+</div>
+</section>
+<div style="background-color:white;">
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='/assets/blog_img/storyboards.png'><img class="image-zoom"  src='/assets/blog_img/app/storyboards.png'></a></center></article>
+</div>
+</section>
+</div>
+<section class="container">
+<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
+
+<p>It&#39;s cleanly built using simple composition, and has been the source for quite a few people&#39;s first open source contribution. We keep a well stocked <a href="http://github.com/cocoapods/cocoapods-app/issues">issue cabinet</a> with well marked out issues for people wanting to help out. I aim to always put up designs early for features, making it easy for people to contribute with a specification in mind.</p>
+
+<h4 id="pod">pod</h4>
+
+<p>We don&#39;t plan on replicating every feature of the command-line gem in the CocoaPods app. That&#39;s just not good usage of our time. Instead we offer a way to access the command-line interface with the version of CocoaPods that is inside CocoaPods.app. We do this in the same way Xcode does, by offering command line tools:</p>
+
+<p><a href= "/assets/blog_img/app/command-line-tools.png"><img src ="/assets/blog_img/app/command-line-tools.png" class="image-zoom"></a></p>
+
+<p>The <code>pod</code> command is a C <a href="https://github.com/rbenv/rbenv/wiki/Understanding-binstubs">binstub</a> which uses the Core Services API in order to work independent of the CocoaPods.app which installed it. The binstub finds the embedded ruby <code>pod</code> command generated by RubyGems and passes along the same arguments. This means once you&#39;ve installed it, you can move your app freely, and we don&#39;t need to update the C binstub. Ace.</p>
+
+<p>As it has the same name, you don&#39;t need to change any scripts or your development flow in the terminal once installed. I&#39;ve been using it as my main <code>pod</code> command for the last few months.</p>
+
+<h4 id="reflectionservice">ReflectionService</h4>
+
+<p>The CocoaPods app needs to talk to the <code>pod</code> command provided by ruby. The simplest option is via <a href="http://www.raywenderlich.com/36537/nstask-tutorial">NSTask</a>, which will execute a command in a shell and output text to <code>STDIN</code> and <code>STERR</code>. This makes it easy to run commands, but it can be hard to deal with interactivity. It&#39;s effectively a one way communication pattern.</p>
+
+<p>There have been a few tools which bridge Ruby and Cocoa, the most notable being <a href="http://www.rubymotion.com">RubyMotion</a>. There is however a bridge that used to come shipped with Mac OS. That is <a href="http://rubycocoa.github.io">RubyCocoa</a>. We built support for bi-directional communication between Objective-C and Ruby using RubyCocoa.</p>
+
+<p>At one point we had a fork of RubyCocoa that <a href="https://github.com/alloy/RubyCocoa/tree/cocoapods-app-with-swift">supported objects created in Swift</a>, but that was probably going to turn into a long road for something with not too much gain on our end.</p>
+
+<p>We negated the need for this by moving to communicate with Ruby <a href="https://github.com/CocoaPods/CocoaPods-app/pull/120">over XPC</a>, we called this the <code>ReflectionService</code>. It&#39;s explained below.</p>
+
+<p>XPC means that we can have a persistently running Ruby environment from which we can send/recieve metadata about Podfiles. This protects the app from crashes, keeps memory usage low and doesn&#39;t require booting up Ruby every time we want to communicate. Triple win. If you&#39;ve not looked at XPC it gets a thumbs up from us.</p>
+
+<h2 id="what&#39;s-in-now?">What&#39;s in now?</h2>
+
+<p>The key features for 1.0 are being able to edit a Podfile, and to be able to run <code>pod install</code> and <code>pod update</code> on it.</p>
+
+<p>One of the things I&#39;m really happy about is our inline errors for your Podfile. The app gives direct feedback as you&#39;re editing the Podfile:</p>
+
+<p><a href= "/assets/blog_img/app/podfile-errors.jpg"><img src ="/assets/blog_img/app/podfile-errors.jpg" class="image-zoom"></a></p>
+
+<p>We have a lot of the normal developer key commands working as expected, if there&#39;s something you&#39;d want that we don&#39;t support, write us an issue or PR.</p>
+
+<h2 id="what&#39;s-next?">What&#39;s next?</h2>
+
+<p>We&#39;ve got some WIP <a href="https://github.com/CocoaPods/CocoaPods-app/pulls">Pull Requests</a> for some cool features like automatic CocoaPods plugin installation, and an integration summary. These are very likely to be in for the final 1.0 release. However we&#39;ve not tried to look <em>too</em> far into the future with this app.</p>
+
+<p>I think there&#39;s a lot of space for improvements, and we&#39;d love some community input on what you would like to see in a GUI for CocoaPods.</p>
+
+<p>For example, I know when most people try attack this problem they try to solve the pod discovery problem, but I&#39;m not sure if we can do better than the website in the native app. Would love some ideas on ways we could improve.</p>
 
       </article>
     </article>
   </section>
 </section>
 
-<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2014-10-22-Coins.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/orta">Follow orta</a></div></article></div></section></section>
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2016-01-12-CocoaPods-App.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/orta">Follow orta</a></div></article></div></section></section>
 
-<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaPods-0.34" title="CocoaPods 0.34"><header><h4>Previous Post</h4></header><h3>CocoaPods 0.34</h3><p>By Fabio Pelosin</p><a class="chevron_placeholder back" href="/CocoaPods-0.34"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"><a href="/starting-open-source" title="Starting Open Source"><header><h4>Next Post</h4></header><h3>Starting Open Source</h3><p>By Hugo Tunius</p><a class="chevron_placeholder next" href="/starting-open-source"></a></a></article></div></section>
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/Release-Versions-Only" title="Release Versions Only"><header><h4>Previous Post</h4></header><h3>Release Versions Only</h3><p>By Florian Hanke</p><a class="chevron_placeholder back" href="/Release-Versions-Only"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
