@@ -35,36 +35,14 @@ When we applied to work on CocaPods we choose to work on making CocoaPods more m
 
 I (Emma) worked on moving the source code for [cocoapods-search](https://github.com/CocoaPods/cocoapods-search) to its own gem and depend on it from CocoaPods it self. The knowledge of how to create a new plugin came in handy. There is a scaffold for creating plugins for cocoapods that I used. It creates the main structure of files and folders and the rest was pretty much to figure out what code was responsible for search and copy that code to the newly created gem. I ran my local changes with Rake to make sure everything worked as it should. When that was done the tests needed to be moved to the new gem as well. Moving the tests was actually more complicated than moving the source code since the tests required a lot of files in the fixture folder to run the tests.
 
-After working on CocoaPods-label with Boris and Emma, CocoaPods issue #3398 'Extract UI module into its own gem', labeled d1:easy, seemed particularly appealing.
-#Add a link to Cork above.
-Samuel Giddins, helped me outline the first steps to work on #3398 by breaking it down into smaller steps.
-
-To extract the User Interface module, CLAide into its own gem, so that it works in isolation of CocoaPods, we had to get rid of all CocoaPods specific language, dependencies and documentation.CocoaPods syntax was challenging to spot out initially.
-
-Pairing with Samuel Giddin's and Kyle Fuller at GitHub was so crucial at this point.
-
- We found it fitting to re name the the CocoaPod free User Interface, [Cork](https://github.com/CocoaPods/Cork), since Cork like CocoaPods  is also a commonly harvested part of the tree.
-
-(What was the gist of those steps)
-(What did I get to work on)
-(What part was hard/easy?)
+After working on CocoaPods-label with Boris and Emma, CocoaPods issue #3398 'Extract UI module into its own gem', labeled d1:easy, seemed particularly appealing. Samuel Giddins, setup the project scaffolding, and we outlined the first steps to work on #3398 by breaking it down into smaller steps.
+To extract the User Interface module, CLAide into its own gem, so that it works in isolation of CocoaPods, we had to get rid of all CocoaPods specific language, dependencies and documentation.CocoaPods syntax was challenging to spot out initially.So, pairing with Samuel and Kyle Fuller at GitHub was crucial.After cleaning up CLAide, and freeing it of CP dependencies,writing tests for all of the left over User Interface code was the next step.
+For testing we used Rubocop, CodeCov, Code Climate and Travis CI dilligently.
+After writing tests,and or changing tests,we had to debug a lot. Debugging felt like a never ending story, but it is an enjoyable one.We are still working on Cork, and I am looking forward to wrapping it up before Summer 2016 rolls around.Also, if you're curious about the name Cork, we  found it fitting to re name the the CocoaPod free User Interfac[Cork](https://github.com/CocoaPods/Cork), since Cork like CocoaPods  is also a commonly harvested part of the tree.
 
 
 
 
-After cleaning up CLAide, and freeing it of CP dependencies,writing tests for all of the left over User Interface code was the next step.
-For this we used Mocha, Mocha on Bacon, and Pretty Bacon.
-After writing tests it was all a matter of debugging, and more debugging with the help of Rubocop and Travis CI it was a never ending story.
-
-some CP dependencies changed the way the code worked together and required that
-we change other parts.
-
-Right now I need to
-Add Cork as a dependency to CocoaPods and make Pod::UI be a reference to
-a subclass of Cork::Board.
-What I learned is that some projects take longer than others to work on,
-especially when you are new and when the code was written a while ago. The
-learning curve for working on Cork was really high but I learned a lot.
 
 ## Conclusion
 
