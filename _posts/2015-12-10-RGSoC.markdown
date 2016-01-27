@@ -29,22 +29,27 @@ To schedule sessions with mentors and coaches in different time zones, we used a
 
 During the project we worked on a couple of different things. Here are some of the main things we worked on for CocoaPods.
 
-Together with [Boris Bügling](https://twitter.com/neonacho) we paired on creating [cocoapods-label](https://rubygems.org/gems/cocoapods-label), a plugin for cocoapods that annotates the Podfile with the Pod description. This is great for everyone with short memory that wants to remember what the different pods does in an efficient way. We started working on this while Boris visited San Francisco during AltConf and then we continued working on it remotely, sharing screens. We found that the best time to work on it was during Boris evenings and our mornings since Boris lives in Berlin and it’s about 9 hour time difference. It was great to have Boris guide us through how to create a new plugin, a knowledge we would have use for in the project.
+Together with [Boris Bügling](https://twitter.com/neonacho) we paired on creating [cocoapods-label](https://rubygems.org/gems/cocoapods-label), a plugin for CocoaPods that annotates the Podfile with the Pod description. This is great for everyone with short memory that wants to remember what the different pods does in an efficient way. We started working on this while Boris visited San Francisco during AltConf and then we continued working on it remotely, sharing screens. We found that the best time to work on it was during Boris evenings and our mornings since Boris lives in Berlin and it’s about 9 hour time difference. It was great to have Boris guide us through how to create a new plugin, a knowledge we would have use for in the project.
 
-When we applied to work on cocapods we choose to work on making CocoaPods more modular by creating plugins. During a planning meeting we picked our issues interesting for us to work on.
+When we applied to work on CocaPods we choose to work on making CocoaPods more modular by creating plugins. During a planning meeting we picked our issues interesting for us to work on.
 
 I (Emma) worked on moving the source code for [cocoapods-search](https://github.com/CocoaPods/cocoapods-search) to its own gem and depend on it from CocoaPods it self. The knowledge of how to create a new plugin came in handy. There is a scaffold for creating plugins for cocoapods that I used. It creates the main structure of files and folders and the rest was pretty much to figure out what code was responsible for search and copy that code to the newly created gem. I ran my local changes with Rake to make sure everything worked as it should. When that was done the tests needed to be moved to the new gem as well. Moving the tests was actually more complicated than moving the source code since the tests required a lot of files in the fixture folder to run the tests.
 
 After working on CocoaPods-label with Boris and Emma, CocoaPods issue #3398 'Extract UI module into its own gem', labeled d1:easy, seemed particularly appealing.
 #Add a link to Cork above.
-Samuel outlined the first steps to work on this issue in smaller steps.
+Samuel Giddins, helped me outline the first steps to work on this issue by breaking it down into smaller steps.
+
+(What was the gist of those steps)
+(What did I get to work on)
+(What part was hard/easy?)
+
 CocoaPods User Interface module is known as CLAide. To extract the module into its own gem,the first step was to create Cork, a new gem.
 
+Getting rid of all CocoaPods specific language and dependencies in
+CLAiade/lib/command/banner.rb was the next step.
 
-Next, I had to go through
-CLAide/lib/command/banner.rb and discard all CocoaPods specific language and
-dependencies. This was a long process, because at first being able to distinguish
- CP specific syntax was challenging.
+
+CP specific syntax was challenging to detect at first since I didn't know CocoaPods well.
 Having Samuel Giddin's and Kyle Fuller's help was so crucial at this point.
 After, I took Pod::UI Module and extracted needed parts into the new gem.
 Writing tests for all of the left over User Interface code was the next step.
