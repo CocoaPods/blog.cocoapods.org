@@ -14,7 +14,7 @@ During the summer 2015 we had the amazing opportunity to contribute to CocoaPods
 At the time of applying for the fellowship program we were considering a number of great but also costly bootcamps in San Francisco. This alternative to a bootcamps or internship, if you like, works a little different. It is much up to the fellows to design their own program by firstly find a fellow teammate, finding an open source project to work on as well as coaches, mentors and workspace. RGSoC have been around for three years aiming to bring more diversity into Open Source. During this Summer 16 teams were sponsored globally.
 
 ## How we met the team
-We officially met the CocoaPods team the weekend before Alt-Conf at Limon, a Peruvian restaurant. When Kyle Fuller, one of our CocoaPods coaches sent us an address and an invite for a dinner party, I totally thought we were dining at someone’s house pot luck style. Wow., CocoaPods members must really enjoy cooking if they are going to host an entire dinner party. The CocoaPods team took up nearly the entire second floor. Although, I'm  not really one to clam up when meeting people, the thought of meeting an entire group, and one that chose our team to work on their Open Source project made me a bit nervous. It was scary at first to go meet 14 different people that might already know each other.To ease the anxiety I remembered that we had already met Kyle Fuller and Samuel Giddins at a cafe in SOMA, and they were pretty friendly. At Limon, we introduced each other, one at a time, and listened to conversations around us. We learned a bit more about dependency managers through conversational CocoaPods. Hearing terms drop when we had only a faint idea what they meant was no deterrent, it was fuel to the curiosity fire. After dinner we walked around the Mission and ended up at an ice cream shop with more vanilla flavors than usually offered. The week we met the CocoaPods team was also the same week we met many other iOS developers here in San Francisco for AltConf, it was the beginning of one of my best
+We officially met the CocoaPods team the weekend before Alt-Conf at Limon, a Peruvian restaurant. When Kyle Fuller, one of our CocoaPods coaches sent us an address and an invite for a dinner party, I totally thought we were dining at someone’s house pot luck style. Wow., CocoaPods members must really enjoy cooking if they are going to host an entire dinner party. The CocoaPods team took up nearly the entire second floor. Although, I'm  not really one to clam up when meeting people, the thought of meeting an entire group, and one that chose our team to work on their Open Source project made me nervous. It was scary at first to go meet 14 different people that might already know each other.To ease the anxiety I remembered that we had already met Kyle Fuller and Samuel Giddins at a cafe in SOMA, and they were pretty friendly. At Limon, we introduced each other, one at a time, and listened to conversations around us. We learned a bit more about dependency managers through conversational CocoaPods. Hearing terms drop when we had only a faint idea what they meant was no deterrent, it was fuel to the curiosity fire. After dinner we walked around the Mission and ended up at an ice cream shop with more vanilla flavors than usually offered. The week we met the CocoaPods team was also the same week we met many other iOS developers  for AltConf,here in San Francisco.
 
 [Add Any Pictures we have of Limon, The Ice Cream Shop/AltConf]
 
@@ -37,11 +37,13 @@ I (Emma) worked on moving the source code for [cocoapods-search](https://github.
 
 After working on CocoaPods-label with Boris and Emma, CocoaPods issue #3398 'Extract UI module into its own gem', labeled d1:easy, seemed particularly appealing.
 #Add a link to Cork above.
-Samuel Giddins, helped me outline the first steps to work on this issue by breaking it down into smaller steps.
+Samuel Giddins, helped me outline the first steps to work on #3398 by breaking it down into smaller steps.
 
-To extract the User Interface module, CLAide into its own gem, so that it works in isolation of CocoaPods, we had to get rid of all CocoaPods specific language, dependencies and documentation.CocoaPods syntax was challenging to spot out at initially.Pairing with Samuel Giddin's and Kyle Fuller at GitHub was so crucial at this point.
+To extract the User Interface module, CLAide into its own gem, so that it works in isolation of CocoaPods, we had to get rid of all CocoaPods specific language, dependencies and documentation.CocoaPods syntax was challenging to spot out initially.
 
- We found it fitting to name it Cork, since Cork is also a usable part of the tree.
+Pairing with Samuel Giddin's and Kyle Fuller at GitHub was so crucial at this point.
+
+ We found it fitting to re name the the CocoaPod free User Interface, [Cork](https://github.com/CocoaPods/Cork), since Cork like CocoaPods  is also a commonly harvested part of the tree.
 
 (What was the gist of those steps)
 (What did I get to work on)
@@ -50,11 +52,10 @@ To extract the User Interface module, CLAide into its own gem, so that it works 
 
 
 
-After, I took Pod::UI Module and extracted needed parts into the new gem.
-Writing tests for all of the left over User Interface code was the next step.
-For this we used Mocha on Bacon and or RSPEC ( I need to check on this. It's
-been a while). After writing tests it was all a matter of debugging, debugging,
-and hearing Rubocop and Travis CI telling us to debug more. Getting rid of
+After cleaning up CLAide, and freeing it of CP dependencies,writing tests for all of the left over User Interface code was the next step.
+For this we used Mocha, Mocha on Bacon, and Pretty Bacon.
+After writing tests it was all a matter of debugging, and more debugging with the help of Rubocop and Travis CI it was a never ending story.
+
 some CP dependencies changed the way the code worked together and required that
 we change other parts.
 
