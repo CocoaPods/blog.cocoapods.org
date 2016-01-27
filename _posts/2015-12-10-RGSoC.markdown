@@ -39,18 +39,17 @@ After working on CocoaPods-label with Boris and Emma, CocoaPods issue #3398 'Ext
 #Add a link to Cork above.
 Samuel Giddins, helped me outline the first steps to work on this issue by breaking it down into smaller steps.
 
+To extract the User Interface module, CLAide into its own gem, so that it works in isolation of CocoaPods, we had to get rid of all CocoaPods specific language, dependencies and documentation.CocoaPods syntax was challenging to spot out at initially.Pairing with Samuel Giddin's and Kyle Fuller at GitHub was so crucial at this point.
+
+ We found it fitting to name it Cork, since Cork is also a usable part of the tree.
+
 (What was the gist of those steps)
 (What did I get to work on)
 (What part was hard/easy?)
 
-CocoaPods User Interface module is known as CLAide. To extract the module into its own gem,the first step was to create Cork, a new gem.
-
-Getting rid of all CocoaPods specific language and dependencies in
-CLAiade/lib/command/banner.rb was the next step.
 
 
-CP specific syntax was challenging to detect at first since I didn't know CocoaPods well.
-Having Samuel Giddin's and Kyle Fuller's help was so crucial at this point.
+
 After, I took Pod::UI Module and extracted needed parts into the new gem.
 Writing tests for all of the left over User Interface code was the next step.
 For this we used Mocha on Bacon and or RSPEC ( I need to check on this. It's
