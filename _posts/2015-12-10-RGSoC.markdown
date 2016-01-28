@@ -47,4 +47,19 @@ After writing tests,and or changing tests, we had to debug a lot. Debugging felt
 
 ## Conclusion
 
-We encourage other open source projects to be a part of [next years RGSoC](http://railsgirlssummerofcode.org/guide/projects/).Teaching and learning are great both opportunities to become better at taking in information, learning how to process and apply new concepts. Not to mention, when you teach something that you know, or think you know it really encourages you to examine your own beliefs about the concept you are teaching. As a participant of the program, learning how to stay humble when learning was a huge lesson, and asking for clarification were some of the largest gains.
+We encourage other open source projects to be a part of [next years RGSoC](http://railsgirlssummerofcode.org/guide/projects/). Teaching and learning are both great opportunities to become better at taking in information, learning how to process and apply new concepts. Not to mention, when you teach something that you know, or think you know it really encourages you to examine your own beliefs about the concept you are teaching. As a participant of the program, learning how to stay humble was a huge lesson, and asking for clarification was one of the greatest gains.
+
+Some of the other gains:
+
+- We could work on tasks that caught our interest.
+- We developed experience working on a project in production
+- Learning from professionals
+- Following the other RGSoC teams around the world working on other open source projects.
+- More cost effective than attending a boot camp which we considered when we applied to RGSoC.
+
+Some of the hurdles:
+
+- Volunteer based teaching means that our mentors prioritized there work and we could not always depend on getting help when we needed it.
+- Working with several organizations on the same project sometimes made it challenging to plan and get on the same page.
+
+It does take time to mentor but if you look at it as an investment to bring more contributors to open source it is time well spent. We also encourage other developers to take the opportunity to learn and contribute to open source.
