@@ -41,9 +41,9 @@ I (Emma) worked on moving the source code for [cocoapods-search](https://github.
 After working on CocoaPods-label with Boris and Emma, CocoaPods issue #3398 'Extract UI module into its own gem', labeled d1:easy, seemed particularly appealing. Samuel Giddins, setup the project scaffolding, and we outlined the first steps to work on #3398 by breaking it down into smaller steps.
 To extract the User Interface module, CLAide into its own gem, so that it works in isolation of CocoaPods, we had to get rid of all CocoaPods specific language, dependencies and documentation.CocoaPods syntax was challenging to spot out initially. So, pairing with Samuel and Kyle Fuller at GitHub was crucial. After cleaning up CLAide, and freeing it of CP dependencies, writing tests for all of the left over User Interface code was the next step.
 
-For testing we used Rubocop, CodeCov, Code Climate and Travis CI dilligently.
+For testing we used Rubocop, CodeCov, Code Climate and Travis CI diligently.
 After writing tests,and or changing tests, we had to debug a lot. Debugging felt like a never ending story, but it is an enjoyable one. We are still working on Cork, and I am looking forward to wrapping it up before Summer 2016 rolls around. Also, if you're curious about the name Cork, we  found it fitting to re name the the CocoaPod free User Interface [Cork](https://github.com/CocoaPods/Cork), since Cork like CocoaPods  is also a commonly harvested part of the tree.
 
 ## Conclusion
 
-We encourage other open source projects to be a part of [next years RGSoC](http://railsgirlssummerofcode.org/guide/projects/).
+We encourage other open source projects to be a part of [next years RGSoC](http://railsgirlssummerofcode.org/guide/projects/).Teaching and learning are great both opportunities to become better at taking in information, learning how to process and apply new concepts. Not to mention, when you teach something that you know, or think you know it really forces you to examine your own beliefs about the concept you are teaching. As a participant of the program, learning how to stay humble when learning was a huge lesson, as well as asking for clarification were some of the largest gains.
