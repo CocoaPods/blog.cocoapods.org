@@ -5,13 +5,13 @@ author: cocoagems
 categories: RGSoC cocoapods
 ---
 
-During the summer 2015 we had the amazing opportunity to contribute to CocoaPods while being funded by Rails Girls Summer of Code (RGSoC), as well as being hosted and coached by GitHub. How did this work?
+During the summer 2015 we (Karla and Emma) had the delightful opportunity to contribute to CocoaPods as a learning experience while being funded by Rails Girls Summer of Code (RGSoC), as well as being hosted and coached by GitHub. How did all of this come together?
 
 <!-- more -->
 
 ## What is Rails Girls Summer of Code?
 
-At the time of applying for the fellowship, we were considering a number of great but also costly bootcamps in San Francisco. This alternative to bootcamps or internships, works a little different. It is up to the participants to design their own program by finding a fellow teammate, finding an open source project to work on as well as coaches, mentors and workspace. RGSoC has been around for three years,aiming to bring more diversity into Open Source. During this Summer, 16 teams were sponsored globally.
+RGSoC is a global fellowship program that funds duo woman team to contribute to Open Source project during a three month period. Among the available projects to work on we found CocoaPods the most interesting, even though it was on the challenging side for our level at the time we decided it was worth try. For the application to be considered we also needed to find people that were willing to coach us with with our coding adventure and preferably also a place to work from. We reached out to GitHub who offered us workspace and five of there employees to spend one of there work hour each to coach us. With this configuration we were one of 16 teams accepted.
 
 ## How we met the team
 We met the CocoaPods team the weekend before Alt-Conf at Limon, a Peruvian restaurant. When Kyle Fuller, one of our CocoaPods coaches sent us an address and an invite for a dinner party, I thought we were meeting up for a pot luck. CocoaPods members must really enjoy cooking if they are going to host an entire dinner party was my first thought. The CocoaPods team took up nearly the entire second floor. Although, not one to clam up when meeting people, the thought of meeting an entire group, and one that chose our team to work on their Open Source project made me nervous. It was scary, at first, to meet 14 different people that might already know each other. To ease the anxiety I remembered that we had already met Kyle Fuller and Samuel Giddins at a cafe in SOMA, and they were friendly. At Limon, we introduced each other, and listened to conversations around us. We learned a bit more about dependency managers through conversational CocoaPods. Hearing terms drop when we had only a faint idea what they meant was no deterrent, it was fuel to the curiosity fire. After dinner we walked around the Mission and ended up at an ice cream shop. The week we met the CocoaPods core team kicked off many other great first time experiences at  AltConf, here in San Francisco.
