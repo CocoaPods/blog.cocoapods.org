@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+      <title>RGSoC - CocoaPods Blog</title>
+    
+
+    <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <link rel="alternate" type="application/rss+xml" title="CocoaPods Blog" href="/feed.xml">
+
+    <meta charset="utf-8" /><meta content="cocoapods objective-c objc swift package manager libraries documentation search pods podspec podfile cocoa apple ios library" name="keywords" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="The Dependency Manager for iOS &amp; Mac projects" name="description" /><meta content="CocoaPods Dev Team" name="author" /><meta content="summary" name="twitter:card" /><meta content="@CocoaPods" name="twitter:site" /><meta content="@CocoaPods" name="twitter:creator" /><meta content="CocoaPods.org" name="twitter:title" /><meta content="The Dependency Manager for iOS &amp; Mac projects." name="twitter:description" /><meta content="https://www.cocoapods.org/" name="twitter:url" />
+    <link rel="shortcut icon" href="https://cocoapods.org/favicons/favicon.ico" type="image/x-icon" /><link rel="apple-touch-icon" href="https://cocoapods.org/favicons/apple-touch-icon.png" /><link rel="apple-touch-icon" sizes="57x57" href="https://cocoapods.org/favicons/apple-touch-icon-57x57.png" /><link rel="apple-touch-icon" sizes="60x60" href="https://cocoapods.org/favicons/apple-touch-icon-60x60.png" /><link rel="apple-touch-icon" sizes="72x72" href="https://cocoapods.org/favicons/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon" sizes="76x76" href="https://cocoapods.org/favicons/apple-touch-icon-76x76.png" /><link rel="apple-touch-icon" sizes="114x114" href="https://cocoapods.org/favicons/apple-touch-icon-114x114.png" /><link rel="apple-touch-icon" sizes="120x120" href="https://cocoapods.org/favicons/apple-touch-icon-120x120.png" /><link rel="apple-touch-icon" sizes="144x144" href="https://cocoapods.org/favicons/apple-touch-icon-144x144.png" /><link rel="apple-touch-icon" sizes="152x152" href="https://cocoapods.org/favicons/apple-touch-icon-152x152.png" />
+
+    <link rel="stylesheet" href="/assets/bootstrap-3b61caa441fab92578453d6681fbf963.css">
+    <link rel="stylesheet" href="/assets/main-db82222cf1437d75b720c086d6315ae0.css">
+    <link rel="stylesheet" href="/assets/blog-a6cba0ad1ceb964c9a5a5387e033c3ff.css">
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-29866548-3', 'cocoapods.org');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="glyphicon glyphicon-plus"></span></button><a class="navbar-brand" href="https://cocoapods.org"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="https://cocoapods.org/app">App</a></li><li><a href="https://cocoapods.org/about">About</a></li><li><a href="https://guides.cocoapods.org">Guides</a></li><li class="active"><a href="https://blog.cocoapods.org">Blog</a></li></ul></div></section></nav>
+
+    <div id ="">
+<section class="container" >
+  <article class="row">
+  <header class="col-md-8 col-md-offset-2 headline blog-post">
+    
+      <h1>RGSoC</h1>
+    
+    
+  </header>
+  </article>
+</section>
+</div>
+
+<section id="content-wrapper" class="post">
+  <section class="container">
+    <article class="row">
+      <article class="author metadata col-md-2 col-md-push-10">
+        <header>
+          
+            
+              <img class="gravatar large" src="http://gravatar.com/avatar/9f77257a23e0702b3902830d0e97c969?s=144" height=72 width=72>
+            
+            
+              
+                <p><a href="http://twitter.com/cocoagems">Emma Koszinowski & Karla Sandoval</a></p>
+              
+            
+             <p>10 December 2015</p>
+
+            
+              <a href="https://twitter.com/cocoagems" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @cocoagems
+              </a>
+            
+        </header>
+      </article>
+    
+      <article class="content col-md-8">
+        <p>During Summer 2015, we had the delightful opportunity to contribute to CocoaPods as part of Rails Girls Summer of Code (RGSoC). We were generously hosted and coached by GitHub. How did two newbie developers begin to work on open source, you might ask?</p>
+
+<!-- more -->
+
+<h2 id="what-is-rails-girls-summer-of-code?">What is Rails Girls Summer of Code?</h2>
+
+<p>RGSoC is a global fellowship that funds two-woman teams to contribute to Open Source projects during a three month period. Among the available projects to work on we found CocoaPods the most interesting, even though it was on the challenging side for our skill level. For the application to be considered, we needed to find people that were willing to coach us with our coding adventure, and preferably, a place to work from. We reached out to GitHub, who offered us workspace. Five engineers signed up to coach us for an hour each week. With this configuration we were one of 16 teams accepted.</p>
+
+<h2 id="how-we-met-the-team">How we met the team</h2>
+
+<p>We met the CocoaPods team the weekend before Alt-Conf at Limon, a Peruvian restaurant. When <a href="https://twitter.com/kylefuller">Kyle Fuller</a>, one of our CocoaPods coaches sent us an address and an invite for a dinner party, I thought we were meeting up for a pot luck. CocoaPods members must really enjoy cooking if they are going to host an entire dinner party was my first thought. The CocoaPods team took up nearly the entire second floor. Although, not one to clam up when meeting people, the thought of meeting an entire group, and one that chose our team to work on their Open Source project made me nervous. It was scary, at first, to meet 14 different people that might already know each other. To ease the anxiety I remembered that we had already met Kyle Fuller and <a href="https://twitter.com/segiddins">Samuel Giddins</a>, at a cafe in SOMA, and they were friendly. At Limon, we introduced each other, and listened to conversations around us. We learned a bit more about dependency managers through conversational CocoaPods. Hearing terms drop when we had only a faint idea what they meant was no deterrent, it was fuel to the curiosity fire. After dinner, we walked around the Mission, and ended up at the ice cream shop Xanath. The week we met the CocoaPods core team kicked off many other great first time experiences at <a href="http://altconf.com/">AltConf</a>, here in San Francisco.</p>
+
+<p></article>
+</div>
+</section>
+<div style="background-color:white;">
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='/assets/blog_img/RGSoC/CocoaGemsMentors.jpg '><img  src='/assets/blog_img/RGSoC/CocoaGemsMentors.jpg'></a></center></article>
+</div>
+</section>
+</div>
+<section class="container">
+<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
+
+<h2 id="how-we-organized-the-work">How we organized the work</h2>
+
+<p>The student teacher ratio was opposite from what a learning environment usually looks like. We had 11 dedicated mentors who were willing to spend time to help us throughout the project. Most collaboration with our mentors happened remotely and many of our team members were based in other countries and timezones. Communication often started in one of the three Slack channels from organizations involved working with our project. Longer sessions and pairing were planned in advance.</p>
+
+<p>To schedule sessions with mentors and coaches in different time zones, we used a combination of Google Calendar, Slack, and texts. For screen sharing, we found ScreenHero, Google Hangouts, Blue Jeans, and Skype for communication. Having screen sharing alternatives was necessary since audio, and screen sharing delays are unavoidable. In the same way that tools are unpredictable, so are life events. Flexibility is key. Not enough sleep, double scheduling, conferences, and the cold all happened. Communicating with as much time in advance when something changes, using the calendar religiously and setting alerts to avoid forgetting sessions and due dates is the way to go.</p>
+
+<p></article>
+</div>
+</section>
+<div style="background-color:white;">
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='/assets/blog_img/RGSoC/CocoaGemsCoaches.jpg '><img  src='/assets/blog_img/RGSoC/CocoaGemsCoaches.jpg'></a></center></article>
+</div>
+</section>
+</div>
+<section class="container">
+<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
+
+<h2 id="what-we-worked-on-together">What we worked on together</h2>
+
+<p>During the project we worked on a couple of different things. Here are some of the main things we worked on for CocoaPods.</p>
+
+<p>Together with <a href="https://twitter.com/neonacho">Boris Bügling</a> we paired on creating <a href="https://rubygems.org/gems/cocoapods-label">cocoapods-label</a>, a plug-in for CocoaPods that annotates the Podfile with its Pod description. This is great for everyone with short memory that wants to remember what the different pods do in an efficient way. We started working on this while Boris visited San Francisco, during AltConf, and then, we continued working on it remotely, while screen sharing. We found that the best time to work on it was during Boris&#39;s evenings which were our mornings due to a 9 hour time difference. It was great to have Boris guide us and show us how to create a new plug-in, a knowledge we would have use for in the project.</p>
+
+<p>When we applied to work on CocaPods we choose to work on making CocoaPods more modular by creating plug-ins. During a planning meeting we picked issues that were interesting for us to work on.</p>
+
+<h3 id="these-are-the-things-emma-worked-on">These are the things Emma worked on</h3>
+
+<p>I chose to work on a couple of different things. Starting with what seemed like an easy task, to make so that <a href="https://github.com/CocoaPods/Xcodeproj/pull/294">Pods are listed case-insensitive in Xcode</a>. I learned a lot about sorting and also about just finding my way around the codebase. To get that PR merged filled me with pride and energy to take on the next task. Continuing with moving the source code for <a href="https://github.com/CocoaPods/cocoapods-search">cocoapods-search</a> to its own gem and depend on it from CocoaPods it self. There is a scaffold for <a href="https://github.com/CocoaPods/cocoapods-plugin-template">creating plugins</a> for CocoaPods that I used that sets up the main structure of files and folders. From there on it came down to figuring out what code was responsible for search and copy that code to the newly created gem. I ran my local changes with Rake to make sure everything worked as it should. The tests also needed to be moved to the new gem and that proved to be more complicated than moving the source code, mostly since they required a lot of files in the fixture folder to run. One of the goals of extracting search to its own gem was to make it easier and safer to modify without messing something else up in the larger project. After I finished the extraction other contributors have continued to improve the search code even more which shows that the extraction did have a positive effect in that its easier to find and understand.</p>
+
+<p>With search finished there were still a couple of weeks left of the project. I wanted to learn more about web development and collaborated with <a href="https://twitter.com/orta">Orta</a> on a new project called <a href="https://github.com/CocoaPods/stories.cocoapods.org">CocoaPods Stories</a>. The idea was to give Pod users the ability to write stories about what Pods they are using and how. We didn’t make it further than the planning and research stage and we are not sure whether it will still be useful. Please ping us if you want us to contribute to this idea.</p>
+
+<h3 id="these-are-the-things-karla-worked-on">These are the things Karla worked on</h3>
+
+<p>After working on CocoaPods-label with Boris and Emma, <a href="https://github.com/CocoaPods/CocoaPods/issues/3398">CocoaPods issue #3398</a> &#39;Extract UI module into its own gem&#39;, labeled d1:easy, seemed particularly appealing. Samuel Giddins set up the project scaffolding, and we outlined the first steps to work on #3398 by breaking it down into smaller steps. To extract the User Interface module, CLAide into its own gem, so that it works in isolation of CocoaPods, we had to get rid of all CocoaPods specific language, dependencies and documentation. CocoaPods syntax was challenging to spot out initially. So, pairing with Samuel and Kyle Fuller at GitHub was crucial. After cleaning up CLAide, and freeing it of CP dependencies, writing tests for all of the left over User Interface code was the next step.</p>
+
+<p>For testing we used Rubocop, CodeCov, Code Climate and Travis CI diligently.
+After writing tests, and or changing tests, we had to debug a lot. Debugging felt like a never ending story, but it is an enjoyable one. We are still working on Cork, and I am looking forward to wrapping it up before Summer 2016 rolls around. </p>
+
+<p>Also, if you&#39;re curious about the name, we found it fitting to name the CocoaPods-free User Interface library Cork](<a href="https://github.com/CocoaPods/Cork">https://github.com/CocoaPods/Cork</a>), since Cork like CocoaPods, is also a commonly harvested part of the tree.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>We encourage other open source projects to be a part of <a href="http://railsgirlssummerofcode.org/guide/projects/">next years RGSoC</a>. Teaching and learning are both great opportunities to become better at taking in information, learning how to process and apply new concepts. Not to mention, when you teach something that you know, or think you know it really encourages you to examine your own beliefs about the concept you are teaching. As a participant of the program, learning how to stay humble was a huge lesson, and asking for clarification was one of the greatest gains.</p>
+
+<p>Some of the other gains:</p>
+
+<ul>
+<li>We could work on tasks that caught our interest.</li>
+<li>We developed experience working on a project in production</li>
+<li>Learning from professionals</li>
+<li>Following the other RGSoC teams around the world working on other open source projects.</li>
+<li>More cost effective than attending a boot camp which we considered when we applied to RGSoC.</li>
+</ul>
+
+<p>Some of the hurdles:</p>
+
+<ul>
+<li>Volunteer based teaching means that our mentors prioritized there work and we could not always depend on getting help when we needed it.</li>
+<li>Working with several organizations on the same project sometimes made it challenging to plan and get on the same page.</li>
+</ul>
+
+<p>It does take time to mentor but if you look at it as an investment to bring more contributors to open source it is time well spent. We also encourage other developers to take the opportunity to learn and contribute to open source.</p>
+
+      </article>
+    </article>
+  </section>
+</section>
+
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2015-12-10-RGSoC.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/9f77257a23e0702b3902830d0e97c969" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/cocoagems">Follow cocoagems</a></div></article></div></section></section>
+
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/Stats-2015" title="2015"><header><h4>Previous Post</h4></header><h3>2015</h3><p>By Orta Therox</p><a class="chevron_placeholder back" href="/Stats-2015"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"><a href="/Release-Versions-Only" title="Release Versions Only"><header><h4>Next Post</h4></header><h3>Release Versions Only</h3><p>By Florian Hanke</p><a class="chevron_placeholder next" href="/Release-Versions-Only"></a></a></article></div></section>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+    <footer class="page-footer"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><h4>CocoaPods is a project from</h4><p class="contributors"> <a href="http://buegling.com">Boris Bügling</a>, <a href="http://mariusrackwitz.de">Marius Rackwitz</a>, <a href="http://orta.io">Orta Therox</a>, <a href="http://segiddins.me">Samuel Giddins</a>, and <a href="https://cocoapods.org/about#team">The CocoaPods Dev Team</a> with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p><h4>Lovingly sponsored by</h4><p class="sponsors"><a href="http://artsy.net">Artsy</a>, <a href="http://www.usebutton.com">Button</a>, <a href="http://www.capitalone.io">Capital One</a>, <a href="http://discontinuity.eu">Discontinuity</a>, <a href="http://www.fngtps.com">Fingertips</a>, <a href="https://www.heroku.com">Heroku</a>, <a href="http://www.rubymotion.com">RubyMotion</a>, <a href="https://www.sauspiel.de">Sauspiel</a>, <a href="https://www.slack.com">Slack</a>, <a href="https://www.soundcloud.com">SoundCloud</a>, <a href="https://www.stripe.com">Stripe</a> and <a href="http://www.technologyastronauts.ch">Technology&nbsp;Astronauts</a>.</p></article></div></section></footer><footer class="footer-links"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><a class="cocoapods-small-logo" href="https://cocoapods.org"></a><ul><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/using/troubleshooting.html">Support</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://github.com/CocoaPods/CocoaPods">GitHub Repo</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://status.cocoapods.org">Web Properties Status</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://twitter.com/CocoaPods">@CocoaPods</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://groups.google.com/group/cocoapods">Mailing List</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/about"><span class="visible-lg-span">CocoaPods</span> Dev Team</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/syntax/podfile.html">Podfile Doc<span class="hidden-lg-span">s</span><span class="visible-lg-span">umentation</span></a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/legal">Legal / Conduct</a></li></ul></article></div></section></footer>
+    <script src="/assets/blog-c2911afb0e1e77d79b486c5c39fe0cc6.js"></script>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  </body>
+</html>
