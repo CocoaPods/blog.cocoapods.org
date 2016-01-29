@@ -1,0 +1,70 @@
+---
+layout: post
+title:  "RGSoC"
+author: cocoagems
+categories: RGSoC cocoapods
+---
+During Summer 2015, we had the delightful opportunity to contribute to CocoaPods as part of Rails Girls Summer of Code (RGSoC). We were generously hosted and coached by GitHub. How did two newbie developers begin to work on open source, you might ask?
+
+<!-- more -->
+
+## What is Rails Girls Summer of Code?
+
+RGSoC is a global fellowship that funds two-woman teams to contribute to Open Source projects during a three month period. Among the available projects to work on we found CocoaPods the most interesting, even though it was on the challenging side for our skill level. For the application to be considered, we needed to find people that were willing to coach us with our coding adventure, and preferably, a place to work from. We reached out to GitHub, who offered us workspace. Five engineers signed up to coach us for an hour each week. With this configuration we were one of 16 teams accepted.
+
+## How we met the team
+We met the CocoaPods team the weekend before Alt-Conf at Limon, a Peruvian restaurant. When [Kyle Fuller](https://twitter.com/kylefuller), one of our CocoaPods coaches sent us an address and an invite for a dinner party, I thought we were meeting up for a pot luck. CocoaPods members must really enjoy cooking if they are going to host an entire dinner party was my first thought. The CocoaPods team took up nearly the entire second floor. Although, not one to clam up when meeting people, the thought of meeting an entire group, and one that chose our team to work on their Open Source project made me nervous. It was scary, at first, to meet 14 different people that might already know each other. To ease the anxiety I remembered that we had already met Kyle Fuller and [Samuel Giddins](https://twitter.com/segiddins), at a cafe in SOMA, and they were friendly. At Limon, we introduced each other, and listened to conversations around us. We learned a bit more about dependency managers through conversational CocoaPods. Hearing terms drop when we had only a faint idea what they meant was no deterrent, it was fuel to the curiosity fire. After dinner, we walked around the Mission, and ended up at the ice cream shop Xanath. The week we met the CocoaPods core team kicked off many other great first time experiences at [AltConf](http://altconf.com/), here in San Francisco.
+
+{% breaking_image /assets/blog_img/RGSoC/CocoaGemsMentors.jpg, /assets/blog_img/RGSoC/CocoaGemsMentors.jpg %}
+
+
+## How we organized the work
+
+The student teacher ratio was opposite from what a learning environment usually looks like. We had 11 dedicated mentors who were willing to spend time to help us throughout the project. Most collaboration with our mentors happened remotely and many of our team members were based in other countries and timezones. Communication often started in one of the three Slack channels from organizations involved working with our project. Longer sessions and pairing were planned in advance.
+
+To schedule sessions with mentors and coaches in different time zones, we used a combination of Google Calendar, Slack, and texts. For screen sharing, we found ScreenHero, Google Hangouts, Blue Jeans, and Skype for communication. Having screen sharing alternatives was necessary since audio, and screen sharing delays are unavoidable. In the same way that tools are unpredictable, so are life events. Flexibility is key. Not enough sleep, double scheduling, conferences, and the cold all happened. Communicating with as much time in advance when something changes, using the calendar religiously and setting alerts to avoid forgetting sessions and due dates is the way to go.
+
+{% breaking_image /assets/blog_img/RGSoC/CocoaGemsCoaches.jpg, /assets/blog_img/RGSoC/CocoaGemsCoaches.jpg %}
+
+
+## What we worked on together
+
+During the project we worked on a couple of different things. Here are some of the main things we worked on for CocoaPods.
+
+Together with [Boris Bügling](https://twitter.com/neonacho) we paired on creating [cocoapods-label](https://rubygems.org/gems/cocoapods-label), a plug-in for CocoaPods that annotates the Podfile with its Pod description. This is great for everyone with short memory that wants to remember what the different pods do in an efficient way. We started working on this while Boris visited San Francisco, during AltConf, and then, we continued working on it remotely, while screen sharing. We found that the best time to work on it was during Boris's evenings which were our mornings due to a 9 hour time difference. It was great to have Boris guide us and show us how to create a new plug-in, a knowledge we would have use for in the project.
+
+When we applied to work on CocaPods we choose to work on making CocoaPods more modular by creating plug-ins. During a planning meeting we picked issues that were interesting for us to work on.
+
+### These are the things Emma worked on
+
+I chose to work on a couple of different things. Starting with what seemed like an easy task, to make so that [Pods are listed case-insensitive in Xcode](https://github.com/CocoaPods/Xcodeproj/pull/294). I learned a lot about sorting and also about just finding my way around the codebase. To get that PR merged filled me with pride and energy to take on the next task. Continuing with moving the source code for [cocoapods-search](https://github.com/CocoaPods/cocoapods-search) to its own gem and depend on it from CocoaPods it self. There is a scaffold for [creating plugins](https://github.com/CocoaPods/cocoapods-plugin-template) for CocoaPods that I used that sets up the main structure of files and folders. From there on it came down to figuring out what code was responsible for search and copy that code to the newly created gem. I ran my local changes with Rake to make sure everything worked as it should. The tests also needed to be moved to the new gem and that proved to be more complicated than moving the source code, mostly since they required a lot of files in the fixture folder to run. One of the goals of extracting search to its own gem was to make it easier and safer to modify without messing something else up in the larger project. After I finished the extraction other contributors have continued to improve the search code even more which shows that the extraction did have a positive effect in that its easier to find and understand.
+
+With search finished there were still a couple of weeks left of the project. I wanted to learn more about web development and collaborated with [Orta](https://twitter.com/orta) on a new project called [CocoaPods Stories](https://github.com/CocoaPods/stories.cocoapods.org). The idea was to give Pod users the ability to write stories about what Pods they are using and how. We didn’t make it further than the planning and research stage and we are not sure whether it will still be useful. Please ping us if you want us to contribute to this idea.
+
+### These are the things Karla worked on
+
+After working on CocoaPods-label with Boris and Emma, [CocoaPods issue #3398](https://github.com/CocoaPods/CocoaPods/issues/3398) 'Extract UI module into its own gem', labeled d1:easy, seemed particularly appealing. Samuel Giddins set up the project scaffolding, and we outlined the first steps to work on #3398 by breaking it down into smaller steps. To extract the User Interface module, CLAide into its own gem, so that it works in isolation of CocoaPods, we had to get rid of all CocoaPods specific language, dependencies and documentation. CocoaPods syntax was challenging to spot out initially. So, pairing with Samuel and Kyle Fuller at GitHub was crucial. After cleaning up CLAide, and freeing it of CP dependencies, writing tests for all of the left over User Interface code was the next step.
+
+For testing we used Rubocop, CodeCov, Code Climate and Travis CI diligently.
+After writing tests, and or changing tests, we had to debug a lot. Debugging felt like a never ending story, but it is an enjoyable one. We are still working on Cork, and I am looking forward to wrapping it up before Summer 2016 rolls around. 
+
+Also, if you're curious about the name, we found it fitting to name the CocoaPods-free User Interface library Cork](https://github.com/CocoaPods/Cork), since Cork like CocoaPods, is also a commonly harvested part of the tree.
+
+## Conclusion
+
+We encourage other open source projects to be a part of [next years RGSoC](http://railsgirlssummerofcode.org/guide/projects/). Teaching and learning are both great opportunities to become better at taking in information, learning how to process and apply new concepts. Not to mention, when you teach something that you know, or think you know it really encourages you to examine your own beliefs about the concept you are teaching. As a participant of the program, learning how to stay humble was a huge lesson, and asking for clarification was one of the greatest gains.
+
+Some of the other gains:
+
+- We could work on tasks that caught our interest.
+- We developed experience working on a project in production
+- Learning from professionals
+- Following the other RGSoC teams around the world working on other open source projects.
+- More cost effective than attending a boot camp which we considered when we applied to RGSoC.
+
+Some of the hurdles:
+
+- Volunteer based teaching means that our mentors prioritized there work and we could not always depend on getting help when we needed it.
+- Working with several organizations on the same project sometimes made it challenging to plan and get on the same page.
+
+It does take time to mentor but if you look at it as an investment to bring more contributors to open source it is time well spent. We also encourage other developers to take the opportunity to learn and contribute to open source.

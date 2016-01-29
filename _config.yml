@@ -69,6 +69,11 @@ authors:
     twitter: K0nserv
     gravatar: 0301339c7b91dfc95a263eb27e6fe371
 
+  cocoagems:
+    name: Emma Koszinowski & Karla Sandoval
+    twitter: cocoagems
+    gravatar: 9f77257a23e0702b3902830d0e97c969
+
 assets:
   sources:
     - shared/img
