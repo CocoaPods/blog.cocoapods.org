@@ -8,14 +8,14 @@ categories: cocoapods release
 #### Major 1.0 changes TL:DR
 ​
 
-- You now have to define targets, previously there was an available implicit target. Basically all `pod`s have to be inside a `target`.
+- You now have to define targets, previously there was an available implicit target.
 - A `target` has to represent an Xcode target.
 - When you want to represent a collection of pods that go to multiple targets, use an `abstract_target` then add targets inside that. Pod dependencies are inherited by nested targets.
 - Targets that want to know about the pods for a target, but don't need linking (for example, Test targets) can define that they inherit pods via their search paths (`inherit! :search_paths`).
 - `:exclusive => true` and `link_with` have been removed in favour of the above.
 - `xcodeproj` is renamed `project` to make the DSL vocabulary consistent.
 - We've removed the ability to declare `:head` on a `pod` -- you can either use the `:podspec` option or point directly to the upstream repo (via `git`, `:svn`, etc.)
-- You can now declare installation options inside the `Podfile` - via `install!`. (i.e. `install! 'cocoapods', :deterministic_uuids => false`)
+- You can now declare installation options inside the `Podfile` - via `install!`. (i.e. `install! 'cocoapods', :deterministic_uuids => false, :integrate_targets => false`)
 - We've removed all DSL attributes that were classed as deprecated.
 - `pod trunk delete` and `pod trunk deprecate` have been introduced.
 - `pod search` improvements ( this is great because it searches all your private spec repos too. )
@@ -33,7 +33,7 @@ In the 0.x branches the name of a target could be anything, if it was the name o
 In 1.0+ a target has to correspond to a real Xcode target. In order to support use cases where Pods can be shared among multiple targets we added `abstract_target`. For example:
 
 ``` ruby
-# There are no targets called "Shows" in any Xcode projects
+# Note: There are no targets called "Shows" in any Xcode projects
 abstract_target 'Shows' do
   pod 'ShowsKit'
   pod 'Fabric'
@@ -49,14 +49,26 @@ abstract_target 'Shows' do
   end
 end
 ```
+> note: In this example, it would be simpler to just not use the `abstract_target` at all, but it's an example, so let me off.
 
-This change enforces a much stronger connection between the CocoaPods target, and make a `Podfile` like this:
+This change enforces a much stronger connection between the CocoaPods target, this makes it impossible to make a `Podfile` like this:
 
 ``` ruby
 pod 'ShowsKit'
 ```
 
-Not possible anymore, as it has ambiguous behavior depending on where the file is placed.  Let's take a look at a [really common](https://github.com/CocoaPods/pod-template/pull/144) example that is shipped as the 0.x `pod lib create`.
+Due to it having ambiguous behavior. However, this is possbile, as it declares what target to link to:
+
+``` ruby
+pod 'ShowsKit'
+target 'ShowsiOS'
+```
+
+This works because the root level is classed as an unnamed `abstract_target`.
+
+#### More Examples
+
+Let's take a look at a [really common](https://github.com/CocoaPods/pod-template/pull/144) example that is shipped as the 0.x `pod lib create`.
 
 ``` ruby
 source 'https://github.com/CocoaPods/Specs.git'
@@ -73,7 +85,7 @@ target 'ORStackView_Tests', :exclusive => true do
 end
 ```
 
-This sets up two completely independent CocoaPods targets that are exclusive to  each other, that has the library ORStackView in both. There is a lot going on in this `Podfile`, contrast that to the simpler 1.0 version.
+This sets up two completely independent CocoaPods targets that are exclusive to each other. Both have a copy of the library ORStackView. There is a lot going on in this `Podfile`, contrast that to the simpler 1.0 version""
 
 ``` ruby
 source 'https://github.com/CocoaPods/Specs.git'
@@ -98,7 +110,7 @@ Adding `:head` to a `pod` nearly always worked, except when it didn't. It is doc
 
 > Finally, instead of a version, you can specify the :head flag. This will use the pod’s latest version spec version, but force the download of the ‘bleeding edge’ version. Use this with caution, as the spec might not be compatible with the source material anymore.
 
-It was a tool that was really useful back when CocoaPods was small and it was hard to persuade people it was worth support any dependency manager for their projects. That time has long passed and now the flexibility that this attribute originally offered has fallen onto the side of "not worth keeping around."It would introduce extremely hard to debug issues for developers expecting it to be "use the latest version of their code repo." You can either use the `:podspec` option or point directly to the upstream repo (via `git`, `:svn`, etc.)
+It was a tool that was really useful back when CocoaPods was small and it was hard to persuade people it was worth support any dependency manager for their projects. That time has long passed and now the flexibility that this attribute originally offered has fallen onto the side of "not worth keeping around."It would introduce extremely hard to debug issues for developers expecting it to be "use the latest version of their code repo." You can either use the `:podspec` option or point directly to the upstream repo ( via `git`, `:svn`, etc. )
 
 
 ### Options to `install!`
@@ -109,9 +121,9 @@ This means that every developer on your team would have the same output on `pod 
 
 ### Building for stability
 
-A lot of the work for 1.0 has been around trying to simplify CocoaPods in  order to provide long-lasting infrastructure. This is especially true given that the foundations that CocoaPods builds upon often shifts [every June](https://en.wikipedia.org/wiki/Apple_Worldwide_Developers_Conference) and the project is ran by a handful of people in their spare time.
+A lot of the work for 1.0 has been around trying to simplify CocoaPods in order to provide long-lasting infrastructure. This is especially true given that the foundations that CocoaPods builds upon often shifts [every June](https://en.wikipedia.org/wiki/Apple_Worldwide_Developers_Conference) and the project is ran by a handful of people in their spare time.
 
-We also understand that running CocoaPods is about dealing with humans, our default CocoaPods Specs repo for example has had  a policy of being read-only since we introduced [CocoaPods Trunk](http://blog.cocoapods.org/CocoaPods-Trunk/). In reality though, we've had to support editing and deleting Pods by hand on a relatively regular basis with the CocoaPods dev team being the ones having to make those decisions. With 1.0.0 we've built the infrastructure to support deleting and deprecating a CocoaPod and a CocoaPod version. We don't recommend it. It's now there, and it's up to library owners to make the decisions around whether it's fine for their users to remove dependencies.
+We also understand that running CocoaPods is about dealing with humans. With our default CocoaPods Specs repo for example, we've had a policy of it being [read-only](https://github.com/CocoaPods/Specs/pull/12199) since it was introduced [CocoaPods Trunk](http://blog.cocoapods.org/CocoaPods-Trunk/). In reality though, we've had to support editing and deleting Pods by hand on a relatively regular basis with the CocoaPods dev team being the ones having to make those decisions. With 1.0.0 we've built the infrastructure to support deleting and deprecating a CocoaPod and a CocoaPod version. We don't recommend it. It's now there, and it's up to library owners to make the decisions around whether it's fine for their users to remove dependencies.
 
 ### 1.0
 
