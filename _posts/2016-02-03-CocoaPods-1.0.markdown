@@ -115,7 +115,7 @@ It was a tool that was really useful back when CocoaPods was small and it was ha
 
 ### Options to `install!`
 
-In the past when we have had to support configuration options for CocoaPods we have used environment variables. These act like NSUserDefaults in that someone who knows the key can make a change, but otherwise they remain [quite hidden](https://github.com/ChatSecure/ChatSecure-iOS/commit/d766400c2d8e935ab49daf5ef5f9bf28c760e484). Though, sometimes they could be command line APIs too like `--no-integrate`. These were a conscious choices that eventually added up to being inconsistent over time, and we've opted to move away from that to centralizing the information in the Podfile.
+In the past when we have had to support configuration options for CocoaPods we have used environment variables. These act like NSUserDefaults in that someone who knows the key can make a change, but otherwise they remain [quite hidden](https://github.com/ChatSecure/ChatSecure-iOS/commit/d766400c2d8e935ab49daf5ef5f9bf28c760e484). Though, sometimes they could be command line APIs too like `--no-integrate`. These were a conscious choices that eventually added up to being inconsistent over time, and we've opted to move away from that to centralizing the information in the Podfile. You can see all the available options [in the guides](https://guides.cocoapods.org/syntax/podfile.html#install_bang).
 
 This means that every developer on your team would have the same output on `pod install` regardless of their environment. Whether in [CocoaPods.app](https://cocoapods.org/app) or in the command line. We've left the DSL attribute `install!` quite open so that [future features](https://github.com/CocoaPods/CocoaPods/issues/2729) can be built with this attribute.
 
