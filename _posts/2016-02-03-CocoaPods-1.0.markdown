@@ -85,7 +85,7 @@ target 'ORStackView_Tests', :exclusive => true do
 end
 ```
 
-This sets up two completely independent CocoaPods targets that are exclusive to each other. Both have a copy of the library ORStackView. There is a lot going on in this `Podfile`, contrast that to the simpler 1.0 version""
+This sets up two completely independent CocoaPods targets that are exclusive to each other. Both have a copy of the library ORStackView. There is a lot going on in this `Podfile`, contrast that to the simpler 1.0 version.
 
 ``` ruby
 source 'https://github.com/CocoaPods/Specs.git'
