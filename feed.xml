@@ -8,22 +8,6 @@
     
     
     <item>
-      <title>RGSoC</title>
-
-      
-      <description>&lt;p&gt;During Summer 2015, we had the delightful opportunity to contribute to CocoaPods as part of Rails Girls Summer of Code (RGSoC). We were generously hosted and coached by GitHub. How did two newbie developers begin to work on open source, you might ask?&lt;/p&gt;
-
-</description>  
-      
-
-      <pubDate>Fri, 29 Jan 2016 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/RGSoC</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/RGSoC</guid>
-    </item>
-    
-    
-    
-    <item>
       <title>CocoaPods 1.0 Migration Guide</title>
 
       
@@ -49,9 +33,25 @@
 </description>  
       
 
-      <pubDate>Fri, 29 Jan 2016 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 03 Feb 2016 00:00:00 +0000</pubDate>
       <link>http://blog.cocoapods.org/CocoaPods-1.0</link>
       <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-1.0</guid>
+    </item>
+    
+    
+    
+    <item>
+      <title>RGSoC</title>
+
+      
+      <description>&lt;p&gt;During Summer 2015, we had the delightful opportunity to contribute to CocoaPods as part of Rails Girls Summer of Code (RGSoC). We were generously hosted and coached by GitHub. How did two newbie developers begin to work on open source, you might ask?&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Fri, 29 Jan 2016 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/RGSoC</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/RGSoC</guid>
     </item>
     
     
