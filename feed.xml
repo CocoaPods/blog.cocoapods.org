@@ -24,6 +24,39 @@
     
     
     <item>
+      <title>CocoaPods 1.0 Migration Guide</title>
+
+      
+      <description>&lt;h4 id=&quot;major-1.0-changes-tl:dr&quot;&gt;Major 1.0 changes TL:DR&lt;/h4&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You now have to define targets, previously there was an available implicit target.&lt;/li&gt;
+&lt;li&gt;A &lt;code&gt;target&lt;/code&gt; has to represent an Xcode target.&lt;/li&gt;
+&lt;li&gt;When you want to represent a collection of pods that go to multiple targets, use an &lt;code&gt;abstract_target&lt;/code&gt; then add targets inside that. Pod dependencies are inherited by nested targets.&lt;/li&gt;
+&lt;li&gt;Targets that want to know about the pods for a target, but don&amp;#39;t need linking (for example, Test targets) can define that they inherit pods via their search paths (&lt;code&gt;inherit! :search_paths&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:exclusive =&amp;gt; true&lt;/code&gt; and &lt;code&gt;link_with&lt;/code&gt; have been removed in favour of the above.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;xcodeproj&lt;/code&gt; is renamed &lt;code&gt;project&lt;/code&gt; to make the DSL vocabulary consistent.&lt;/li&gt;
+&lt;li&gt;We&amp;#39;ve removed the ability to declare &lt;code&gt;:head&lt;/code&gt; on a &lt;code&gt;pod&lt;/code&gt; -- you can either use the &lt;code&gt;:podspec&lt;/code&gt; option or point directly to the upstream repo (via &lt;code&gt;git&lt;/code&gt;, &lt;code&gt;:svn&lt;/code&gt;, etc.)&lt;/li&gt;
+&lt;li&gt;You can now declare installation options inside the &lt;code&gt;Podfile&lt;/code&gt; - via &lt;code&gt;install!&lt;/code&gt;. (i.e. &lt;code&gt;install! &amp;#39;cocoapods&amp;#39;, :deterministic_uuids =&amp;gt; false, :integrate_targets =&amp;gt; false&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;We&amp;#39;ve removed all DSL attributes that were classed as deprecated.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pod trunk delete&lt;/code&gt; and &lt;code&gt;pod trunk deprecate&lt;/code&gt; have been introduced.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pod search&lt;/code&gt; improvements ( this is great because it searches all your private spec repos too. )&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pod lib lint&lt;/code&gt; and &lt;code&gt;pod spec lint&lt;/code&gt; will verify that your pod can actually be imported.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>  
+      
+
+      <pubDate>Fri, 29 Jan 2016 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/CocoaPods-1.0</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-1.0</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>App 1.0</title>
 
       
