@@ -64,7 +64,7 @@ Some of the other gains:
 
 Some of the hurdles:
 
-- Volunteer based teaching means that our mentors prioritized there work and we could not always depend on getting help when we needed it.
+- Volunteer based teaching means that our mentors prioritized their work and we could not always depend on getting help when we needed it.
 - Working with several organizations on the same project sometimes made it challenging to plan and get on the same page.
 
 It does take time to mentor but if you look at it as an investment to bring more contributors to open source it is time well spent. We also encourage other developers to take the opportunity to learn and contribute to open source.
