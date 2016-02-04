@@ -48,7 +48,7 @@ After working on CocoaPods-label with Boris and Emma, [CocoaPods issue #3398](ht
 For testing we used Rubocop, CodeCov, Code Climate and Travis CI diligently.
 After writing tests, and or changing tests, we had to debug a lot. Debugging felt like a never ending story, but it is an enjoyable one. We are still working on Cork, and I am looking forward to wrapping it up before Summer 2016 rolls around. 
 
-Also, if you're curious about the name, we found it fitting to name the CocoaPods-free User Interface library Cork](https://github.com/CocoaPods/Cork), since Cork like CocoaPods, is also a commonly harvested part of the tree.
+Also, if you're curious about the name, we found it fitting to name the CocoaPods-free User Interface library [Cork](https://github.com/CocoaPods/Cork), since Cork like CocoaPods, is also a commonly harvested part of the tree.
 
 ## Conclusion
 
