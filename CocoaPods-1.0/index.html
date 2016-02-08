@@ -120,12 +120,12 @@
   <span class="n">pod</span> <span class="s1">&#39;ShowsKit&#39;</span>
   <span class="n">pod</span> <span class="s1">&#39;Fabric&#39;</span>
 
-  <span class="c1"># Has it&#39;s own copy of ShowsKit + ShowWebAuth</span>
+  <span class="c1"># Has its own copy of ShowsKit + ShowWebAuth</span>
   <span class="n">target</span> <span class="s1">&#39;ShowsiOS&#39;</span> <span class="k">do</span>
     <span class="n">pod</span> <span class="s1">&#39;ShowWebAuth&#39;</span>
   <span class="k">end</span>
 
-  <span class="c1"># Has it&#39;s own copy of ShowsKit + ShowTVAuth</span>
+  <span class="c1"># Has its own copy of ShowsKit + ShowTVAuth</span>
   <span class="n">target</span> <span class="s1">&#39;ShowsTV&#39;</span> <span class="k">do</span>
     <span class="n">pod</span> <span class="s1">&#39;ShowTVAuth&#39;</span>
   <span class="k">end</span>
@@ -256,7 +256,7 @@
 <p>Finally, instead of a version, you can specify the :head flag. This will use the pod’s latest version spec version, but force the download of the ‘bleeding edge’ version. Use this with caution, as the spec might not be compatible with the source material anymore.</p>
 </blockquote>
 
-<p>It was a tool that was really useful back when CocoaPods was small and it was hard to persuade people it was worth support any dependency manager for their projects. That time has long passed and now the flexibility that this attribute originally offered has fallen onto the side of &quot;not worth keeping around.&quot;It would introduce extremely hard to debug issues for developers expecting it to be &quot;use the latest version of their code repo.&quot; You can either use the <code>:podspec</code> option or point directly to the upstream repo ( via <code>git</code>, <code>:svn</code>, etc. )</p>
+<p>It was a tool that was really useful back when CocoaPods was small and it was hard to persuade people it was worth support any dependency manager for their projects. That time has long passed and now the flexibility that this attribute originally offered has fallen onto the side of &quot;not worth keeping around.&quot; It would introduce extremely hard to debug issues for developers expecting it to be &quot;use the latest version of their code repo.&quot; You can either use the <code>:podspec</code> option or point directly to the upstream repo ( via <code>git</code>, <code>:svn</code>, etc. )</p>
 
 <h3 id="options-to-install!">Options to <code>install!</code></h3>
 
