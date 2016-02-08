@@ -38,12 +38,12 @@ abstract_target 'Shows' do
   pod 'ShowsKit'
   pod 'Fabric'
 
-  # Has it's own copy of ShowsKit + ShowWebAuth
+  # Has its own copy of ShowsKit + ShowWebAuth
   target 'ShowsiOS' do
     pod 'ShowWebAuth'
   end
 
-  # Has it's own copy of ShowsKit + ShowTVAuth
+  # Has its own copy of ShowsKit + ShowTVAuth
   target 'ShowsTV' do
     pod 'ShowTVAuth'
   end
@@ -110,7 +110,7 @@ Adding `:head` to a `pod` nearly always worked, except when it didn't. It is doc
 
 > Finally, instead of a version, you can specify the :head flag. This will use the pod’s latest version spec version, but force the download of the ‘bleeding edge’ version. Use this with caution, as the spec might not be compatible with the source material anymore.
 
-It was a tool that was really useful back when CocoaPods was small and it was hard to persuade people it was worth support any dependency manager for their projects. That time has long passed and now the flexibility that this attribute originally offered has fallen onto the side of "not worth keeping around."It would introduce extremely hard to debug issues for developers expecting it to be "use the latest version of their code repo." You can either use the `:podspec` option or point directly to the upstream repo ( via `git`, `:svn`, etc. )
+It was a tool that was really useful back when CocoaPods was small and it was hard to persuade people it was worth support any dependency manager for their projects. That time has long passed and now the flexibility that this attribute originally offered has fallen onto the side of "not worth keeping around." It would introduce extremely hard to debug issues for developers expecting it to be "use the latest version of their code repo." You can either use the `:podspec` option or point directly to the upstream repo ( via `git`, `:svn`, etc. )
 
 
 ### Options to `install!`
