@@ -33,7 +33,7 @@ During the project we worked on a couple of different things. Here are some of t
 
 Together with [Boris Bügling](https://twitter.com/neonacho) we paired on creating [cocoapods-label](https://rubygems.org/gems/cocoapods-label), a plug-in for CocoaPods that annotates the Podfile with its Pod description. This is great for everyone with short memory that wants to remember what the different pods do in an efficient way. We started working on this while Boris visited San Francisco, during AltConf, and then, we continued working on it remotely, while screen sharing. We found that the best time to work on it was during Boris's evenings which were our mornings due to a 9 hour time difference. It was great to have Boris guide us and show us how to create a new plug-in, a knowledge we would have use for in the project.
 
-When we applied to work on CocaPods we chose to work on making CocoaPods more modular by creating plug-ins. During a planning meeting we picked issues that were interesting for us to work on.
+When we applied to work on CocoaPods we chose to work on making CocoaPods more modular by creating plug-ins. During a planning meeting we picked issues that were interesting for us to work on.
 
 ### These are the things Emma worked on
 
