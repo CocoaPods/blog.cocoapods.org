@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "CocoaPods Socks available for the next four weeks."
+author: orta
+categories: cocoapods socks merch
+---
+​
+_TL;DR: We’re doing crowd-funded socks for charity, using Knitout. With all profit going to charity: water._
+
+CocoaPods was started in 2011. We are a community run project, with no large-scale corporate backing. We're often asked if we'd do something like t-shirts or hoodies.
+
+We don't want to use CocoaPods' popularity to make money. So, we are putting all profits into a charity. Want to know more? Go see [cocoapods.org/socks](https://cocoapods.org/socks).
