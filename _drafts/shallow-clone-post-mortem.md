@@ -19,10 +19,10 @@ After some back and forth, we settled on the following list of causes and soluti
    to us changing the following:
 
    - We will no longer automatically update spec-repos on `pod install`. If a lockfile exists and podspecs are missing,
-     an error will be raised that suggests the user to update their spec repos with `pod repo update`.
+     an error will be raised that suggests the user to update their spec-repos with `pod repo update`.
 
-   - We will still automatically update the spec repos on `pod update`, because that’s implicitely what the user asks
-     for at that time, but it’s an action taken far less often than running `pod install`.
+   - We will still automatically update the spec-repos on `pod update`, because that’s implicitly what the user asks for
+     at that time, but it’s an action taken far less often than running `pod install`.
 
    - Before _any_ spec-repo fetching, we’ll be making use of a GitHub API that returns if a repo has any changes in a
      far more efficient manner. [This API](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api) is
@@ -30,14 +30,15 @@ After some back and forth, we settled on the following list of causes and soluti
 
 3. In the Git object model, each change to a directory results in a new ‘tree’ object and many Git operations need to
    traverse this tree, which internally has to be recreated through multiple steps of deltas, each of which has to be
-   found and decompressed. Currently, spec repos have a flat structure where all pod directories are in the same
+   found and decompressed. Currently, spec-repos have a flat structure where all pod directories are in the same
    `Specs` directory, which at the time of writing has ~16K entries and consists of ~100K commits. Suffice to say, these
    are a lot of very large tree objects and thus require a lot of computation.
 
    To fix this, we’ll shard the `Specs` directory of a spec-repo by hashing the pod names and create sub-directories
    based on the first few characters of that hash, so that there will be far less entries in any given sub-directory.
    This will make file-system level browing of a spec-repo less intuitive, but a solution like this was required to deal
-   with 1 character pod names _including_ single emoji characters.
+   with 1 character pod names _including_ single emoji characters. Note, though, that we have tooling that ease this,
+   such as the `pod spec which` command.
 
 Except for solution 3, these changes are already available since version 1.0.0.beta.6. While we already have the code in
 place for solution 3, activating it now would require updating the existing spec-repo and forcing < 1.0.0.beta.7 users
