@@ -68,7 +68,7 @@ with 1 character pod names _including_ single emoji characters. Note, though, th
 
 ## Roll-out
 
-Except for the solution to the third issue, these changes are already available since version 1.0.0.beta.6. While we
+Except for the solution to the third issue, these changes have been available since version 1.0.0.beta.6. While we
 already have the code in place to shard the spec-repo, activating it now would require updating the existing spec-repo
 and forcing < 1.0.0.beta.7 users to upgrade now, which might be a hard situation for people that need time to deal with
 breaking version 1.0.0 changes. We’ll be activating it not long after version 1.0.0 has been released, though, so don’t
