@@ -56,7 +56,15 @@ place for solution 3, activating it now would require updating the existing spec
 to upgrade now, which might be a hard situation for people that need time to deal with breaking version 1.0.0 changes.
 We’ll be activating it not long after version 1.0.0 has been released, though, so don’t wait too long with upgrading.
 
-### Thanks
+### Unable to upgrade just yet?
+
+If for whatever reason you cannot upgrade to version 1.0.0 just yet, you can perform the following steps to convert your
+clone of the Master spec-repo from a shallow to a full clone:
+
+    $ cd ~/.cocoapods/repos/master
+    $ git fetch --unshallow
+
+## Thanks
 
 We would like to thank [@mhagger](https://github.com/mhagger), [@vmg](https://github.com/vmg), and
 [@mikemcquaid](https://github.com/mikemcquaid) for helping diagnose the issues and our understanding thereof;
