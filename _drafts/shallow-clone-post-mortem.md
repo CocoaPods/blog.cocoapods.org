@@ -1,9 +1,18 @@
+---
+layout: post
+title:  "Master spec-repo rate limiting post&#x2011;mortem"
+author: eloy
+categories: cocoapods
+---
+
 [Recently](https://github.com/CocoaPods/CocoaPods/issues/4989) we were made aware of issues that our users had when
 cloning the [CocoaPods Master spec-repo](https://github.com/CocoaPods/Specs), which contains specifications for projects
 shared _by_ and _with_ the community.
 [The GitHub infrastructure team](https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomment-193772935) were quick
 to explain that this was because of us hitting CPU rate limits on their end, which turned out to be caused, besides the
 high volume of clones, by the default options we chose to clone this repo.
+
+<!-- more -->
 
 After
 [some](https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomment-193772935)
