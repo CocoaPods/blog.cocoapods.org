@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+      <title>Master spec-repo rate limiting post&#x2011;mortem - CocoaPods Blog</title>
+    
+
+    <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <link rel="alternate" type="application/rss+xml" title="CocoaPods Blog" href="/feed.xml">
+
+    <meta charset="utf-8" /><meta content="cocoapods objective-c objc swift package manager libraries documentation search pods podspec podfile cocoa apple ios library" name="keywords" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="The Dependency Manager for iOS &amp; Mac projects" name="description" /><meta content="CocoaPods Dev Team" name="author" /><meta content="summary" name="twitter:card" /><meta content="@CocoaPods" name="twitter:site" /><meta content="@CocoaPods" name="twitter:creator" /><meta content="CocoaPods.org" name="twitter:title" /><meta content="The Dependency Manager for iOS &amp; Mac projects." name="twitter:description" /><meta content="https://www.cocoapods.org/" name="twitter:url" />
+    <link rel="shortcut icon" href="https://cocoapods.org/favicons/favicon.ico" type="image/x-icon" /><link rel="apple-touch-icon" href="https://cocoapods.org/favicons/apple-touch-icon.png" /><link rel="apple-touch-icon" sizes="57x57" href="https://cocoapods.org/favicons/apple-touch-icon-57x57.png" /><link rel="apple-touch-icon" sizes="60x60" href="https://cocoapods.org/favicons/apple-touch-icon-60x60.png" /><link rel="apple-touch-icon" sizes="72x72" href="https://cocoapods.org/favicons/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon" sizes="76x76" href="https://cocoapods.org/favicons/apple-touch-icon-76x76.png" /><link rel="apple-touch-icon" sizes="114x114" href="https://cocoapods.org/favicons/apple-touch-icon-114x114.png" /><link rel="apple-touch-icon" sizes="120x120" href="https://cocoapods.org/favicons/apple-touch-icon-120x120.png" /><link rel="apple-touch-icon" sizes="144x144" href="https://cocoapods.org/favicons/apple-touch-icon-144x144.png" /><link rel="apple-touch-icon" sizes="152x152" href="https://cocoapods.org/favicons/apple-touch-icon-152x152.png" />
+
+    <link rel="stylesheet" href="/assets/bootstrap-3b61caa441fab92578453d6681fbf963.css">
+    <link rel="stylesheet" href="/assets/main-df7f28d697ab31d8aa461b8f8ff0c7e4.css">
+    <link rel="stylesheet" href="/assets/blog-a6cba0ad1ceb964c9a5a5387e033c3ff.css">
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-29866548-3', 'cocoapods.org');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="glyphicon glyphicon-plus"></span></button><a class="navbar-brand" href="https://cocoapods.org"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="https://cocoapods.org/app">App</a></li><li><a href="https://cocoapods.org/about">About</a></li><li><a href="https://guides.cocoapods.org">Guides</a></li><li class="active"><a href="https://blog.cocoapods.org">Blog</a></li></ul></div></section></nav>
+
+    <div id ="">
+<section class="container" >
+  <article class="row">
+  <header class="col-md-8 col-md-offset-2 headline blog-post">
+    
+      <h1>Master spec-repo rate limiting post&#x2011;mortem</h1>
+    
+    
+  </header>
+  </article>
+</section>
+</div>
+
+<section id="content-wrapper" class="post">
+  <section class="container">
+    <article class="row">
+      <article class="author metadata col-md-2 col-md-push-10">
+        <header>
+          
+            
+              <img class="gravatar large" src="http://gravatar.com/avatar/424a9ce662b059c35063b405e160461d?s=144" height=72 width=72>
+            
+            
+              
+                <p><a href="http://twitter.com/alloy">Eloy Durán</a></p>
+              
+            
+             <p>4 May 2016</p>
+
+            
+              <a href="https://twitter.com/alloy" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @alloy
+              </a>
+            
+        </header>
+      </article>
+    
+      <article class="content col-md-8">
+        <p><a href="https://github.com/CocoaPods/CocoaPods/issues/4989">Recently</a> we were made aware of issues that our users had when
+cloning the <a href="https://github.com/CocoaPods/Specs">CocoaPods Master spec-repo</a>, which contains specifications for projects
+shared <em>by</em> and <em>with</em> the community.
+<a href="https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomment-193772935">The GitHub infrastructure team</a> were quick
+to explain that this was because of us hitting CPU rate limits on their end, which turned out to be caused, besides the
+high volume of clones, by the default options we chose to clone this repo.</p>
+
+<!-- more -->
+
+<p>After
+<a href="https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomment-193772935">some</a>
+<a href="https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomment-193810378">back</a>
+<a href="https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomment-193835710">and</a>
+<a href="https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomment-193838934">forth</a>,
+<a href="https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomment-193869281">we</a>
+<a href="https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomment-193875012">settled</a>
+on the following list of causes and solutions.</p>
+
+<h3 id="shallow-clone">Shallow clone</h3>
+
+<p>To ease initial setup for CocoaPods users, we performed shallow clones of spec-repos, meaning they only had to fetch the
+latest state of the repo. However, this meant that the GitHub servers had to spend much more time figuring out which Git
+objects the user already has, needs, and compute the deltas for those objects.</p>
+
+<p>Therefore, we are no longer going to shallow clone spec-repos on initial setup and we’ll automatically convert existing
+shallow clones to full clones.</p>
+
+<h3 id="too-many-fetches">Too many fetches</h3>
+
+<p>To ensure the user always has access to all the available podspecs, we automatically performed a <code>git fetch</code> on each
+<code>pod install</code> and <code>pod update</code>. The amount of fetches this resulted in made the above shallow clone issue even worse.
+That, combined with the fact that on most <code>pod install</code> runs there was little need to actually update the repo, led to
+us changing the following:</p>
+
+<ul>
+<li><p><a href="https://github.com/CocoaPods/CocoaPods/pull/5017">We will no longer</a> automatically update spec-repos on
+<code>pod install</code>. If a lockfile exists and podspecs are missing, an error will be raised that suggests the user to update
+their spec-repos with <code>pod repo update</code>.</p></li>
+<li><p>We will still automatically update the spec-repos on <code>pod update</code>, because that’s implicitly what the user asks for at
+that time, but it’s an action taken far less often than running <code>pod install</code>.</p></li>
+<li><p>Before <em>any</em> Master spec-repo fetching, <a href="https://github.com/CocoaPods/Core/pull/313">we’ll be making use</a> of a GitHub
+API that returns if a repo has changes in a far more efficient manner.
+<a href="https://developer.github.com/changes/2016-02-24-commit-reference-sha-api">This API</a> is also used by Homebrew for this
+very same reason.</p></li>
+</ul>
+
+<h3 id="too-many-directory-entries">Too many directory entries</h3>
+
+<p>In the Git object model, each change to a directory results in a new ‘tree’ object and many Git operations need to
+traverse this tree, which internally has to be recreated through multiple steps of deltas, each of which has to be found
+and decompressed. Currently, spec-repos have a flat structure where all pod directories are in the same <code>Specs</code>
+directory, which at the time of writing has ~16K entries and consists of ~100K commits. Suffice to say, these are a lot
+of very large tree objects and thus require a lot of computation.</p>
+
+<p>To fix this, <a href="https://github.com/CocoaPods/cocoapods-repo-shard">we’ll shard</a> the <code>Specs</code> directory of a spec-repo by
+hashing the pod names and create sub-directories based on the first few characters of that hash, so that there will be
+far fewer entries in any given sub-directory.</p>
+
+<p>This will make file-system level browsing of a spec-repo less intuitive, but a solution like this was required to deal
+with 1 character pod names <em>including</em> single emoji characters. Note, though, that we have
+<a href="https://guides.cocoapods.org/terminal/commands.html#group_specifications">tooling</a> that eases this, such as the
+<code>pod spec which</code> command.</p>
+
+<h2 id="roll-out">Roll-out</h2>
+
+<p>Except for the solution to the third issue, these changes have been available since version 1.0.0.beta.6. While we
+already have the code in place to shard the spec-repo, activating it now would require updating the existing spec-repo
+and forcing &lt; 1.0.0.beta.7 users to upgrade now, which might be a hard situation for people that need time to deal with
+breaking version 1.0.0 changes. We’ll be activating it not long after version 1.0.0 has been released, though, so don’t
+wait too long with upgrading.</p>
+
+<h2 id="unable-to-upgrade-just-yet?">Unable to upgrade just yet?</h2>
+
+<p>If for whatever reason you cannot upgrade to version 1.0.0 just yet, you can perform the following steps to convert your
+clone of the Master spec-repo from a shallow to a full clone:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="text language-text" data-lang="text">$ cd ~/.cocoapods/repos/master
+$ git fetch --unshallow
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<h2 id="thanks">Thanks</h2>
+
+<p>We would like to thank <a href="https://github.com/mhagger">@mhagger</a>, <a href="https://github.com/vmg">@vmg</a>, and
+<a href="https://github.com/mikemcquaid">@mikemcquaid</a> for helping diagnose the issues and our understanding thereof;
+<a href="https://github.com/arthurnn">@arthurnn</a> for his help with optimizing the way sharding should work, as well as GitHub in
+general for their continued generous sponsorship of hosting resources.</p>
+
+<p>In addition we would like to thank <a href="https://github.com/segiddins">@segiddins</a>,
+<a href="https://github.com/DanielTomlinson">@DanielTomlinson</a>, and <a href="https://github.com/mrackwitz">@mrackwitz</a>, for their hard
+work on implementing these solutions as soon as they did.</p>
+
+      </article>
+    </article>
+  </section>
+</section>
+
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2016-05-04-Shallow-Clone-Post-Mortem.md" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/424a9ce662b059c35063b405e160461d" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/alloy">Follow alloy</a></div></article></div></section></section>
+
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/Socks" title="CocoaPods Socks available for the next four weeks."><header><h4>Previous Post</h4></header><h3>CocoaPods Socks available for the next four weeks.</h3><p>By Orta Therox</p><a class="chevron_placeholder back" href="/Socks"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+    <footer class="page-footer"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><h4>CocoaPods is a project from</h4><p class="contributors"> <a href="http://buegling.com">Boris Bügling</a>, <a href="http://mariusrackwitz.de">Marius Rackwitz</a>, <a href="http://orta.io">Orta Therox</a>, <a href="http://segiddins.me">Samuel Giddins</a>, and <a href="https://cocoapods.org/about#team">The CocoaPods Dev Team</a> with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p><h4>Lovingly sponsored by</h4><p class="sponsors"><a href="http://artsy.net">Artsy</a>, <a href="http://www.usebutton.com">Button</a>, <a href="http://www.capitalone.io">Capital One</a>, <a href="http://discontinuity.eu">Discontinuity</a>, <a href="http://www.fngtps.com">Fingertips</a>, <a href="https://www.heroku.com">Heroku</a>, <a href="http://www.rubymotion.com">RubyMotion</a>, <a href="https://www.sauspiel.de">Sauspiel</a>, <a href="https://www.slack.com">Slack</a>, <a href="https://www.soundcloud.com">SoundCloud</a>, <a href="https://www.stripe.com">Stripe</a> and <a href="http://www.technologyastronauts.ch">Technology&nbsp;Astronauts</a>.</p></article></div></section></footer><footer class="footer-links"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><a class="cocoapods-small-logo" href="https://cocoapods.org"></a><ul><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/using/troubleshooting.html">Support</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://github.com/CocoaPods/CocoaPods">GitHub Repo</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://status.cocoapods.org">Web Properties Status</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://twitter.com/CocoaPods">@CocoaPods</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://groups.google.com/group/cocoapods">Mailing List</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/about"><span class="visible-lg-span">CocoaPods</span> Dev Team</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/syntax/podfile.html">Podfile Doc<span class="hidden-lg-span">s</span><span class="visible-lg-span">umentation</span></a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/legal">Legal / Conduct</a></li></ul></article></div></section></footer>
+    <script src="/assets/blog-c2911afb0e1e77d79b486c5c39fe0cc6.js"></script>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  </body>
+</html>
