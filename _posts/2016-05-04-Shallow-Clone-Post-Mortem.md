@@ -94,4 +94,3 @@ general for their continued generous sponsorship of hosting resources.
 In addition we would like to thank [@segiddins](https://github.com/segiddins),
 [@DanielTomlinson](https://github.com/DanielTomlinson), and [@mrackwitz](https://github.com/mrackwitz), for their hard
 work on implementing these solutions as soon as they did.
-
