@@ -39,15 +39,17 @@ To ensure the user always has access to all the available podspecs, we automatic
 That, combined with the fact that on most `pod install` runs there was little need to actually update the repo, led to
 us changing the following:
 
-- We will no longer automatically update spec-repos on `pod install`. If a lockfile exists and podspecs are missing, an
-  error will be raised that suggests the user to update their spec-repos with `pod repo update`.
+- [We will no longer](https://github.com/CocoaPods/CocoaPods/pull/5017) automatically update spec-repos on
+  `pod install`. If a lockfile exists and podspecs are missing, an error will be raised that suggests the user to update
+  their spec-repos with `pod repo update`.
 
 - We will still automatically update the spec-repos on `pod update`, because that’s implicitly what the user asks for at
   that time, but it’s an action taken far less often than running `pod install`.
 
-- Before _any_ Master spec-repo fetching, we’ll be making use of a GitHub API that returns if a repo has changes in a
-  far more efficient manner. [This API](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api) is
-  also used by Homebrew for this very same reason.
+- Before _any_ Master spec-repo fetching, [we’ll be making use](https://github.com/CocoaPods/Core/pull/313) of a GitHub
+  API that returns if a repo has changes in a far more efficient manner.
+  [This API](https://developer.github.com/changes/2016-02-24-commit-reference-sha-api) is also used by Homebrew for this
+  very same reason.
 
 ### Too many directory entries
 
