@@ -59,7 +59,7 @@ of very large tree objects and thus require a lot of computation.
 
 To fix this, [we’ll shard](https://github.com/CocoaPods/cocoapods-repo-shard) the `Specs` directory of a spec-repo by
 hashing the pod names and create sub-directories based on the first few characters of that hash, so that there will be
-far less entries in any given sub-directory.
+far fewer entries in any given sub-directory.
 
 This will make file-system level browsing of a spec-repo less intuitive, but a solution like this was required to deal
 with 1 character pod names _including_ single emoji characters. Note, though, that we have
