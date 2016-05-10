@@ -58,6 +58,21 @@
 <article class="post">
   <header>
     
+    <h2 class="post-title"><a href="/CocoaPods-1.0">CocoaPods 1.0</a></h2>
+  </header>
+
+  
+      <p>I&#39;m incredibly happy to say that, after an incredible four and a half years of development, we just released CocoaPods 1.0. It&#39;s been a long road to get here, but the journey has told the story of the larger Cocoa open source community -- from new versions of Xcode to new languages and platforms, CocoaPods has grown over the years to support a staggering number of developers.</p>
+
+
+      <p><a href="/CocoaPods-1.0">Read on →</a></p>
+  
+
+</article>
+
+<article class="post">
+  <header>
+    
     <h2 class="post-title"><a href="/Master-Spec-Repo-Rate-Limiting-Post-Mortem">Master spec-repo rate limiting post&#x2011;mortem</a></h2>
   </header>
 
@@ -105,17 +120,17 @@ high volume of clones, by the default options we chose to clone this repo.</p>
 <p>​</p>
 
 <ul>
-<li>You now have to define targets, previously there was an available implicit target.</li>
+<li>You now have to define targets. Previously there was an available implicit target.</li>
 <li>A <code>target</code> has to represent an Xcode target.</li>
 <li>When you want to represent a collection of pods that go to multiple targets, use an <code>abstract_target</code> then add targets inside that. Pod dependencies are inherited by nested targets.</li>
-<li>Targets that want to know about the pods for a target, but don&#39;t need linking (for example, Test targets) can define that they inherit pods via their search paths (<code>inherit! :search_paths</code>).</li>
+<li>Targets that want to know about the pods for a target but don&#39;t need linking (for example, Test targets) can define that they inherit pods via their search paths (<code>inherit! :search_paths</code>).</li>
 <li><code>:exclusive =&gt; true</code> and <code>link_with</code> have been removed in favour of the above.</li>
 <li><code>xcodeproj</code> is renamed <code>project</code> to make the DSL vocabulary consistent.</li>
-<li>We&#39;ve removed the ability to declare <code>:head</code> on a <code>pod</code> -- you can either use the <code>:podspec</code> option or point directly to the upstream repo (via <code>git</code>, <code>:svn</code>, etc.)</li>
-<li>You can now declare installation options inside the <code>Podfile</code> - via <code>install!</code>. (i.e. <code>install! &#39;cocoapods&#39;, :deterministic_uuids =&gt; false, :integrate_targets =&gt; false</code>)</li>
+<li>We&#39;ve removed the ability to declare <code>:head</code> on a <code>pod</code>—you can either use the <code>:podspec</code> option or point directly to the upstream repo (via <code>git</code>, <code>:svn</code>, etc.).</li>
+<li>You can now declare installation options inside the <code>Podfile</code> via <code>install!</code> (e.g. <code>install! &#39;cocoapods&#39;, :deterministic_uuids =&gt; false, :integrate_targets =&gt; false</code>).</li>
 <li>We&#39;ve removed all DSL attributes that were classed as deprecated.</li>
 <li><code>pod trunk delete</code> and <code>pod trunk deprecate</code> have been introduced.</li>
-<li><code>pod search</code> improvements ( this is great because it searches all your private spec repos too. )</li>
+<li><code>pod search</code> improvements (this is great because it searches all your private spec repos too).</li>
 <li><code>pod lib lint</code> and <code>pod spec lint</code> will verify that your pod can actually be imported.</li>
 </ul>
 
@@ -239,21 +254,6 @@ while finishing university.</p>
 
 
       <p><a href="/Capital-One">Read on →</a></p>
-  
-
-</article>
-
-<article class="post">
-  <header>
-    
-    <h2 class="post-title"><a href="/CocoaPods-0.39">CocoaPods 0.39 - tvOS and Dynamic Vendored Frameworks</a></h2>
-  </header>
-
-  
-      <p>TL;DR: <em>CocoaPods 0.39</em> has been released, with support for tvOS pods and dynamic vendored frameworks.</p>
-
-
-      <p><a href="/CocoaPods-0.39">Read on →</a></p>
   
 
 </article>

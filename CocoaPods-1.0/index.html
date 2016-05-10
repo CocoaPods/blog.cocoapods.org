@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-      <title>CocoaPods 1.0 Migration Guide - CocoaPods Blog</title>
+      <title>CocoaPods 1.0 - CocoaPods Blog</title>
     
 
     <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
@@ -46,7 +46,7 @@
   <article class="row">
   <header class="col-md-8 col-md-offset-2 headline blog-post">
     
-      <h1>CocoaPods 1.0 Migration Guide</h1>
+      <h1>CocoaPods 1.0</h1>
     
     
   </header>
@@ -61,239 +61,131 @@
         <header>
           
             
-              <img class="gravatar large" src="http://gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb?s=144" height=72 width=72>
+              <img class="gravatar large" src="http://gravatar.com/avatar/4d6be90af74894fd132fb06dacec04d7?s=144" height=72 width=72>
             
             
               
-                <p><a href="http://twitter.com/orta">Orta Therox</a></p>
+                <p><a href="http://twitter.com/segiddins">Samuel E. Giddins</a></p>
               
             
-             <p>3 February 2016</p>
+             <p>10 May 2016</p>
 
             
-              <a href="https://twitter.com/orta" class="twitter-follow-button" data-show-count="false" data-lang="en">
-                Follow @orta
+              <a href="https://twitter.com/segiddins" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @segiddins
               </a>
             
         </header>
       </article>
     
       <article class="content col-md-8">
-        <h4 id="major-1.0-changes-tl:dr">Major 1.0 changes TL:DR</h4>
-
-<p>​</p>
-
-<ul>
-<li>You now have to define targets, previously there was an available implicit target.</li>
-<li>A <code>target</code> has to represent an Xcode target.</li>
-<li>When you want to represent a collection of pods that go to multiple targets, use an <code>abstract_target</code> then add targets inside that. Pod dependencies are inherited by nested targets.</li>
-<li>Targets that want to know about the pods for a target, but don&#39;t need linking (for example, Test targets) can define that they inherit pods via their search paths (<code>inherit! :search_paths</code>).</li>
-<li><code>:exclusive =&gt; true</code> and <code>link_with</code> have been removed in favour of the above.</li>
-<li><code>xcodeproj</code> is renamed <code>project</code> to make the DSL vocabulary consistent.</li>
-<li>We&#39;ve removed the ability to declare <code>:head</code> on a <code>pod</code> -- you can either use the <code>:podspec</code> option or point directly to the upstream repo (via <code>git</code>, <code>:svn</code>, etc.)</li>
-<li>You can now declare installation options inside the <code>Podfile</code> - via <code>install!</code>. (i.e. <code>install! &#39;cocoapods&#39;, :deterministic_uuids =&gt; false, :integrate_targets =&gt; false</code>)</li>
-<li>We&#39;ve removed all DSL attributes that were classed as deprecated.</li>
-<li><code>pod trunk delete</code> and <code>pod trunk deprecate</code> have been introduced.</li>
-<li><code>pod search</code> improvements ( this is great because it searches all your private spec repos too. )</li>
-<li><code>pod lib lint</code> and <code>pod spec lint</code> will verify that your pod can actually be imported.</li>
-</ul>
+        <p>I&#39;m incredibly happy to say that, after an incredible four and a half years of development, we just released CocoaPods 1.0. It&#39;s been a long road to get here, but the journey has told the story of the larger Cocoa open source community -- from new versions of Xcode to new languages and platforms, CocoaPods has grown over the years to support a staggering number of developers.</p>
 
 <!-- more -->
 
-<h3 id="re-targeting">Re-targeting</h3>
+<p>Across all of our various projects, we&#39;ve accumulated ~20,000 commits by ~400 developers, <a href="https://github.com/search?l=&amp;q=user%3Acocoapods&amp;ref=advsearch&amp;state=closed&amp;type=Issues&amp;utf8=%E2%9C%93">closing ~22,000 issues</a> -- it’s truly been a community effort to get here to <a href="https://feeds.cocoapods.org">~19,000 pods</a> and ~86,000 versions. With this release, we&#39;re committing to keep CocoaPods stable, and promising that it&#39;s ready to be used in production (see <a href="https://github.com/CocoaPods/guides.cocoapods.org/blob/ad3f451a69c9def22675aca77cc721853eebd82b/source/using/faq.html.md#cocoapods-is-not-ready-for-prime-time-yet">this entry</a> in our FAQ we&#39;ve been dying to delete for <em>years</em>).</p>
 
-<p>A large fraction of the bug reports we receive is due to the ambiguity in the <code>Podfile</code>. It gave a lot of freedom to create all kinds of CocoaPods setups that would work by luck of implementation details, or work but are significantly more complex than they needed to be.</p>
+<p>Since <a href="http://blog.cocoapods.org/Stats/">adding stats</a> a year ago, we got a real idea for the <a href="http://metrics.cocoapods.org/api/v1/status">scale of CocoaPods’ impact</a>. CocoaPods has been used to integrate ~285,000,000 pods into ~850,000 unique Xcode targets.</p>
 
-<p>In the 0.x branches the name of a target could be anything, if it was the name of a matching target then it would automatically link to the target, but if not it would create a <code>Pods-[Name]</code> target and you could use <code>link_to</code> to connect it to targets.</p>
+<h2 id="changes">Changes</h2>
 
-<p>In 1.0+ a target has to correspond to a real Xcode target. In order to support use cases where Pods can be shared among multiple targets we added <code>abstract_target</code>. For example:</p>
-<div class="highlight">      </article>
-      </article>
-      </section>
-      
-      <div style="background-color:white;">
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="c1"># Note: There are no targets called &quot;Shows&quot; in any Xcode projects</span>
-<span class="n">abstract_target</span> <span class="s1">&#39;Shows&#39;</span> <span class="k">do</span>
-  <span class="n">pod</span> <span class="s1">&#39;ShowsKit&#39;</span>
-  <span class="n">pod</span> <span class="s1">&#39;Fabric&#39;</span>
+<p>Let&#39;s get the changes in 1.0 out of the way first. The overarching principle we followed was to prepare CocoaPods, the tool, for the next five years - rather than introducing any individual feature. CocoaPods is a tool that many rely upon to get their work done, and we don&#39;t take that trust lightly -- we decided to make breaking changes in one fell swoop so we won&#39;t need to do so again for a <a href="http://semver.org">long time</a>.</p>
 
-  <span class="c1"># Has its own copy of ShowsKit + ShowWebAuth</span>
-  <span class="n">target</span> <span class="s1">&#39;ShowsiOS&#39;</span> <span class="k">do</span>
-    <span class="n">pod</span> <span class="s1">&#39;ShowWebAuth&#39;</span>
-  <span class="k">end</span>
+<p>The following are the highlights of the 1.0 release, but it’s been seven months since our last minor release, 0.39 (four and a half of those were the 1.0 beta period). As you might imagine, we’ve accrued quite a few changes, big and small, and you can find the summary of all 750 of those commits in the <a href="https://github.com/CocoaPods/CocoaPods/releases/tag/1.0.0">CHANGELOG</a>. (The CHANGELOGs for the other projects under the CocoaPods organization likewise detail all of the other changes we’ve made during this time.)</p>
 
-  <span class="c1"># Has its own copy of ShowsKit + ShowTVAuth</span>
-  <span class="n">target</span> <span class="s1">&#39;ShowsTV&#39;</span> <span class="k">do</span>
-    <span class="n">pod</span> <span class="s1">&#39;ShowTVAuth&#39;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre>      </article>
-      </article>
-      </section>
-      </div>
-      
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-</div>
-<blockquote>
-<p>note: In this example, it would be simpler to just not use the <code>abstract_target</code> at all, but it&#39;s an example, so let me off.</p>
-</blockquote>
+<h3 id="podfile-dsl">Podfile DSL</h3>
 
-<p>This change enforces a much stronger connection between the CocoaPods target, this makes it impossible to make a <code>Podfile</code> like this:</p>
-<div class="highlight">      </article>
-      </article>
-      </section>
-      
-      <div style="background-color:white;">
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">pod</span> <span class="s1">&#39;ShowsKit&#39;</span>
-</code></pre>      </article>
-      </article>
-      </section>
-      </div>
-      
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-</div>
-<p>Due to it having ambiguous behavior. However, this is possbile, as it declares what target to link to:</p>
-<div class="highlight">      </article>
-      </article>
-      </section>
-      
-      <div style="background-color:white;">
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">pod</span> <span class="s1">&#39;ShowsKit&#39;</span>
-<span class="n">target</span> <span class="s1">&#39;ShowsiOS&#39;</span>
-</code></pre>      </article>
-      </article>
-      </section>
-      </div>
-      
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-</div>
-<p>This works because the root level is classed as an unnamed <code>abstract_target</code>.</p>
+<p>By far the largest and most disruptive change, we&#39;ve altered the way Podfiles work to make them better align with how we develop Cocoa applications. We recently put out a <a href="https://blog.cocoapods.org/CocoaPods-1.0">migration guide</a> a few months ago detailing the majority of the changes -- we anticipate that most people will be able to migrate the most complicated of Podfiles in under ten minutes.</p>
 
-<h4 id="more-examples">More Examples</h4>
+<p>Here’s the tl;dr:</p>
 
-<p>Let&#39;s take a look at a <a href="https://github.com/CocoaPods/pod-template/pull/144">really common</a> example that is shipped as the 0.x <code>pod lib create</code>.</p>
-<div class="highlight">      </article>
-      </article>
-      </section>
-      
-      <div style="background-color:white;">
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">source</span> <span class="s1">&#39;https://github.com/CocoaPods/Specs.git&#39;</span>
-<span class="n">use_frameworks!</span>
+<ul>
+<li><p>All targets have to be explicitly defined in the Podfile, and their names have to match up with the target name in Xcode.</p></li>
+<li><p>Some command line options have been moved to <a href="https://guides.cocoapods.org/syntax/podfile.html#install_bang">Podfile installation options</a>.</p></li>
+<li><p>There’s a new <a href="https://guides.cocoapods.org/syntax/podfile.html#inherit_bang">target inheritance option</a> that’s made to allow test targets to only inherit the search paths of an app target.</p></li>
+<li><p><a href="https://guides.cocoapods.org/syntax/podfile.html#abstract_target">Abstract targets</a> are now a thing. This makes sharing dependencies across platforms a lot less repetitive.</p></li>
+</ul>
 
-<span class="n">target</span> <span class="s1">&#39;ORStackView_Example&#39;</span><span class="p">,</span> <span class="ss">:exclusive</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="k">do</span>
-  <span class="n">pod</span> <span class="s1">&#39;ORStackView&#39;</span><span class="p">,</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="s1">&#39;../&#39;</span>
-<span class="k">end</span>
+<h3 id="improved-linter">Improved Linter</h3>
 
-<span class="n">target</span> <span class="s1">&#39;ORStackView_Tests&#39;</span><span class="p">,</span> <span class="ss">:exclusive</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="k">do</span>
-  <span class="n">pod</span> <span class="s1">&#39;ORStackView&#39;</span><span class="p">,</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="s1">&#39;../&#39;</span>
+<p>One of the nice features CocoaPods provides is the ability to <code>lint</code> a pod, ensuring the Podspec is well-formed, and giving users confidence that the libraries they’re integrating can compile for the platforms declared in the Podspec. In 1.0, we go that final mile -- <a href="https://github.com/CocoaPods/CocoaPods/pull/4105">pods will be compiled and imported into an actual app</a> to guarantee that no strange build or import errors come up.</p>
 
-  <span class="n">pod</span> <span class="s1">&#39;Quick&#39;</span>
-<span class="k">end</span>
-</code></pre>      </article>
-      </article>
-      </section>
-      </div>
-      
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-</div>
-<p>This sets up two completely independent CocoaPods targets that are exclusive to each other. Both have a copy of the library ORStackView. There is a lot going on in this <code>Podfile</code>, contrast that to the simpler 1.0 version.</p>
-<div class="highlight">      </article>
-      </article>
-      </section>
-      
-      <div style="background-color:white;">
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">source</span> <span class="s1">&#39;https://github.com/CocoaPods/Specs.git&#39;</span>
-<span class="n">use_frameworks!</span>
+<h3 id="improved-sources-handling">Improved Sources Handling</h3>
 
-<span class="n">target</span> <span class="s1">&#39;ORStackView_Example&#39;</span> <span class="k">do</span>
-  <span class="n">pod</span> <span class="s2">&quot;ORStackView&quot;</span><span class="p">,</span> <span class="ss">:path</span> <span class="o">=&gt;</span> <span class="s2">&quot;../&quot;</span>
+<p>As we <a href="http://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem">posted about last week</a>, we&#39;ve made major improvements to how we handle updating sources to ensure that the Specs repo remains fast, usable and consistent. We’re happy this issue surfaced before 1.0 -- it gave us the push we needed to revisit some of the assumptions made before CocoaPods reached its current scale, and ought to provide a better user experience in the long run.</p>
 
-  <span class="n">target</span> <span class="s1">&#39;ORStackView_Tests&#39;</span> <span class="k">do</span>
-    <span class="n">inherit!</span> <span class="ss">:search_paths</span>
+<h3 id="automatic-deintegration">Automatic Deintegration</h3>
 
-    <span class="n">pod</span> <span class="s1">&#39;Quick&#39;</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre>      </article>
-      </article>
-      </section>
-      </div>
-      
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-</div>
-<p>It has an obvious hierarchy, so you can see that Pods included in <code>ORStackView_Example</code> will be included in the <code>ORStackView_Tests</code> target, the only new thing is <code>inherit! :search_paths</code> which means &quot;don&#39;t link Pods into here, but let this target know they exist.&quot; This <code>Podfile</code> is easier to read, simpler and has less redundant information.</p>
+<p>Changing the targets in your Podfile will no longer cause things to break when you go to build in Xcode. We’ve also made <code>cocoapods-deintegrate</code> a default plugin and <code>pod install</code> will now ensure that any target <em>not</em> being integrated with CocoaPods has all traces of CocoaPods removed.</p>
 
-<h3 id="off-with-pods-:head">Off with <code>pod</code>s <code>:head</code></h3>
+<h3 id="cocoapods-master-specs-repo-lockdown">CocoaPods Master Specs Repo Lockdown</h3>
 
-<p>Adding <code>:head</code> to a <code>pod</code> nearly always worked, except when it didn&#39;t. It is documented as this:</p>
+<p>When we <a href="http://blog.cocoapods.org/CocoaPods-Trunk">announced trunk</a> almost two years ago, we began the process of locking down the <a href="https://github.com/CocoaPods/Specs">CocoaPods master specs repository</a>. With CocoaPods 1.0 comes a policy change that completes that work -- we will no longer be accepting pull requests to the specs repo. In order to ensure pod owners still have full control, we’ve introduce the <code>pod trunk deprecate</code> and <code>pod trunk delete</code> commands. While we strongly advise against deleting podspecs from the specs repo, we’re putting that decision in the hands of pod owners.</p>
 
-<blockquote>
-<p>Finally, instead of a version, you can specify the :head flag. This will use the pod’s latest version spec version, but force the download of the ‘bleeding edge’ version. Use this with caution, as the spec might not be compatible with the source material anymore.</p>
-</blockquote>
+<h2 id="the-past-five-years">The Past Five Years</h2>
 
-<p>It was a tool that was really useful back when CocoaPods was small and it was hard to persuade people it was worth support any dependency manager for their projects. That time has long passed and now the flexibility that this attribute originally offered has fallen onto the side of &quot;not worth keeping around.&quot; It would introduce extremely hard to debug issues for developers expecting it to be &quot;use the latest version of their code repo.&quot; You can either use the <code>:podspec</code> option or point directly to the upstream repo ( via <code>git</code>, <code>:svn</code>, etc. )</p>
+<p>CocoaPods began its life <a href="https://github.com/CocoaPods/CocoaPods/commit/fd2bc0a7cc4c49ddc37edb2a16398f8cfb06132e">almost five years ago</a> as a project started by <a href="https://twitter.com/alloy">Eloy Durán</a>, taking inspiration from Bundler and RubyGems in lieu of any system provided by Apple.</p>
 
-<h3 id="options-to-install!">Options to <code>install!</code></h3>
+<p>The Cocoa ecosystem has been an interesting place to run a dependency manager, given the lack of control CocoaPods has on the underlying toolchain. It’s created some interesting problems, and the occasional nightmare. In the last year, Apple has <a href="http://www.economist.com/blogs/babbage/2012/07/operating-systems-0">moved</a> into the space with <a href="https://swift.org/package-manager/">Swift Package Manager</a>, and we’re really optimistic about what it means for the community on the whole.</p>
 
-<p>In the past when we have had to support configuration options for CocoaPods we have used environment variables. These act like NSUserDefaults in that someone who knows the key can make a change, but otherwise they remain <a href="https://github.com/ChatSecure/ChatSecure-iOS/commit/d766400c2d8e935ab49daf5ef5f9bf28c760e484">quite hidden</a>. Though, sometimes they could be command line APIs too like <code>--no-integrate</code>. These were a conscious choices that eventually added up to being inconsistent over time, and we&#39;ve opted to move away from that to centralizing the information in the Podfile. You can see all the available options <a href="https://guides.cocoapods.org/syntax/podfile.html#install_bang">in the guides</a>.</p>
+<p>CocoaPods isn’t going anywhere any time soon -- we’ve poured our hearts into this project, and are so grateful for all the time and love it’s gotten from people on the team as well as all our users. There’s something thrilling about working on a project that has such large ambitions, and that people choose to believe in for their day-to-day work. As long as you all are using CocoaPods, we will continue to work hard to improve it. 1.0 is just the first step on that path.</p>
 
-<p>This means that every developer on your team would have the same output on <code>pod install</code> regardless of their environment. Whether in <a href="https://cocoapods.org/app">CocoaPods.app</a> or in the command line. We&#39;ve left the DSL attribute <code>install!</code> quite open so that <a href="https://github.com/CocoaPods/CocoaPods/issues/2729">future features</a> can be built with this attribute.</p>
+<h2 id="thanks">Thanks</h2>
 
-<h3 id="building-for-stability">Building for stability</h3>
+<p>As I mentioned earlier, CocoaPods owes an enormous amount to our community as a whole as CocoaPods has always been a reflection of the community. None of this would&#39;ve been possible without <a href="https://cocoapods.org/about#team"><em>everyone</em> pitching in</a> to make it happen.</p>
 
-<p>A lot of the work for 1.0 has been around trying to simplify CocoaPods in order to provide long-lasting infrastructure. This is especially true given that the foundations that CocoaPods builds upon often shifts <a href="https://en.wikipedia.org/wiki/Apple_Worldwide_Developers_Conference">every June</a> and the project is ran by a handful of people in their spare time.</p>
+<p>However, there are a few people in particular I&#39;d like to thank, because without their time CocoaPods would never have reached 1.0.</p>
 
-<p>We also understand that running CocoaPods is about dealing with humans. With our default CocoaPods Specs repo for example, we&#39;ve had a policy of it being <a href="https://github.com/CocoaPods/Specs/pull/12199">read-only</a> since it was introduced <a href="http://blog.cocoapods.org/CocoaPods-Trunk/">CocoaPods Trunk</a>. In reality though, we&#39;ve had to support editing and deleting Pods by hand on a relatively regular basis with the CocoaPods dev team being the ones having to make those decisions. With 1.0.0 we&#39;ve built the infrastructure to support deleting and deprecating a CocoaPod and a CocoaPod version. We don&#39;t recommend it. It&#39;s now there, and it&#39;s up to library owners to make the decisions around whether it&#39;s fine for their users to remove dependencies.</p>
+<h3 id="eloy-durán"><a href="https://twitter.com/alloy">Eloy Durán</a></h3>
 
-<h3 id="1.0">1.0</h3>
+<p>Eloy started CocoaPods, and is famously our &#39;final boss&#39;. In addition to his vision for founding the project, Eloy has been brave enough to <a href="http://blog.cocoapods.org/The-captain-leaves-the-bridge">let others take the mantle</a> and step into leadership. He established the <a href="https://github.com/CocoaPods/CocoaPods/wiki/Communication-&amp;-Design-Rules">team culture</a> and is still often actively engaged, from helping with issues to building the foundations for the <a href="http://blog.cocoapods.org/CocoaPods-App">Mac app</a>.</p>
 
-<p>Finally, and probably the most important point. Once the betas are finished, I can get rid of this FAQ entry:</p>
+<h3 id="fabio-pelosin"><a href="https://twitter.com/fabiopelosin">Fabio Pelosin</a></h3>
 
-<blockquote>
-<h4 id="&quot;cocoapods-is-not-ready-for-prime-time-yet.”">&quot;CocoaPods is not ready for prime-time yet.”</h4>
+<p>Fabio was a whirlwind for CocoaPods -- he came with no Ruby experience and over the course of a few years built a lot of the infrastructure that’s still in place today. Fabio still has the largest number of commits to CocoaPods projects, a title that won’t be wrested from him for a long time to come. He provided so much positive energy when handling thousands of GitHub issues in the early days.</p>
 
-<p>Correct. Version 1.0.0 will be the milestone where we feel confident that all the basic requirements of a Cocoa dependency manager are fulfilled.</p>
+<h3 id="orta-therox"><a href="https://twitter.com/orta">Orta Therox</a></h3>
 
-<p>Once we reach the 1.0.0 milestone we will –for the first time ever– contact the community at large through mailing-lists such as cocoa-dev.</p>
-</blockquote>
+<p>Orta, our Design Dictator, first joined the CocoaPods team by maintaining the pull requests on the Specs Repo, before we introduced Trunk. His first major contribution to the community was via CocoaDocs, which powered generating documentation for all pods. His work since then has been around the public-facing web infrastructure, the Mac App, community management, and design.</p>
 
-<p>Which has been annoying me for as long as I&#39;ve been working on CocoaPods&#39; infrastructure / design.</p>
+<h3 id="florian-hanke"><a href="https://twitter.com/hanke">Florian Hanke</a></h3>
 
-<p>🎉</p>
+<p>Florian is the only developer in this list that has never made a Cocoa app. He joined the team five years ago after meeting Eloy in Japan and has been working on the search engine for CocoaPods ever since. He was fundamental in creating Trunk, and helped out a lot with all of the CocoaPods web infrastructure simply because he enjoyed being with the group.</p>
+
+<h3 id="kyle-fuller"><a href="https://twitter.com/kylefuller">Kyle Fuller</a></h3>
+
+<p>Kyle helped set up important processes within CocoaPods, in addition to serving as release manager for almost a year. By helping us split the core of CocoaPods into plugins, and working on tooling necessary to manage micro-projects via CI, RuboCop and Rakefiles, Kyle laid the foundation for CocoaPods’ internal project management.</p>
+
+<h3 id="marius-rackwitz"><a href="https://twitter.com/mrackwitz">Marius Rackwitz</a></h3>
+
+<p>Marius gave himself one of the hardest jobs as a starter project - building <a href="http://blog.cocoapods.org/CocoaPods-0.36">Frameworks support</a> for CocoaPods. This has been a multi-year project in reality, with edge-cases still popping up as the platforms evolve.</p>
+
+<h3 id="boris-bügling"><a href="https://twitter.com/NeoNacho">Boris Bügling</a></h3>
+
+<p>Boris has devoted considerable energy into ensuring CocoaPods supports the dizzying array of platforms, target types and Xcode project settings used in modern Cocoa apps. Additionally, he has been our consistent Triagemaster General in the fight to keep our issues under control.</p>
+
+<h3 id="samuel-giddins"><a href="https://twitter.com/segiddins">Samuel Giddins</a></h3>
+
+<p>That’s me! I’ll do my best not to brag, but given I’m pushing the button (or typing a bunch of esoteric commands into a terminal) that actually does the release, I figured I’d add myself to the list. Since joining the CocoaPods Core team about two years ago, I’ve spent more hours than I can count implementing crazy new features and investigating the weirdest bugs. It’s been an absolute blast, and CocoaPods is as big a part of my life as anything else at this point. I look forward to the next 3000 commits on this little project of ours.</p>
+
+<h3 id="sponsors">Sponsors</h3>
+
+<p>In addition to all of the people who have contributed their time and expertise to the project, we&#39;ve been graciously sponsored in various ways over the past couple of years. First and foremost I’d like to thank <a href="http://www.capitalone.io/">Capital One</a>, who have been sponsoring me since October, and thus supporting the majority of the 1.0-specific work that has been done since then. Additionally,  I’d be remiss if we didn’t thank <a href="https://artsy.net">Artsy</a>, <a href="http://www.usebutton.com/">Button</a>, <a href="http://discontinuity.eu/">Discontinuity</a>, <a href="http://www.fngtps.com/">Fingertips</a>, <a href="https://www.heroku.com/">Heroku</a>, <a href="https://realm.io/">Realm</a>, <a href="http://www.rubymotion.com/">RubyMotion</a>, <a href="https://www.sauspiel.de/">Sauspiel</a>, <a href="http://segment.com">Segment</a>, <a href="https://www.slack.com/">Slack</a>, <a href="https://www.soundcloud.com/">SoundCloud</a>, <a href="https://www.stripe.com/">Stripe</a>, and <a href="http://www.technologyastronauts.ch/">Technology Astronauts</a> for their loving sponsorship over the years. Without their support, the CocoaPods ecosystem simply could not exist in the form it does today.</p>
+
+<h2 id="let&#39;s-celebrate">Let&#39;s Celebrate</h2>
+
+<p>CocoaPods has been a huge part of my life over the past two years. I know that it&#39;s tempting to just say <strong>finally</strong> right now, but I think this is an opportunity for something more -- it’s a chance for us to celebrate, as a community. CocoaPods is more than just a tool -- it’s a community of wonderful  iOS, Mac, watchOS, and tvOS developers. It&#39;s a team of dedicated contributors who selflessly give back by answering issues and making pull requests. CocoaPods has been my home for the past two years, and on the occasion of our 1.0 release, I think it&#39;s time we celebrate. The future is bright, and we&#39;ve had a great journey getting here. Now let&#39;s grab some cake and enjoy the moment.</p>
+
+<p>🎉 <a href="https://twitter.com/segiddins">segiddins</a>, <a href="https://github.com/segiddins">Patch Master &amp; Bundler of Joy</a></p>
 
       </article>
     </article>
   </section>
 </section>
 
-<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2016-02-03-CocoaPods-1.0.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/orta">Follow orta</a></div></article></div></section></section>
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2016-05-10-CocoaPods-1.0.md" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/4d6be90af74894fd132fb06dacec04d7" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/segiddins">Follow segiddins</a></div></article></div></section></section>
 
-<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/RGSoC" title="RGSoC"><header><h4>Previous Post</h4></header><h3>RGSoC</h3><p>By Emma Koszinowski &amp; Karla Sandoval</p><a class="chevron_placeholder back" href="/RGSoC"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"><a href="/Socks" title="CocoaPods Socks available for the next four weeks."><header><h4>Next Post</h4></header><h3>CocoaPods Socks available for the next four weeks.</h3><p>By Orta Therox</p><a class="chevron_placeholder next" href="/Socks"></a></a></article></div></section>
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/Master-Spec-Repo-Rate-Limiting-Post-Mortem" title="Master spec-repo rate limiting post&amp;#x2011;mortem"><header><h4>Previous Post</h4></header><h3>Master spec-repo rate limiting post&amp;#x2011;mortem</h3><p>By Eloy Durán</p><a class="chevron_placeholder back" href="/Master-Spec-Repo-Rate-Limiting-Post-Mortem"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
