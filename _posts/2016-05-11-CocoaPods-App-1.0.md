@@ -7,7 +7,7 @@ categories: cocoapods app release
 
 After about a [year of work](https://github.com/CocoaPods/CocoaPods-app/graphs/contributors), with the release of [CocoaPods 1.0](http://blog.cocoapods.org/CocoaPods-1.0/), the corresponding Mac App is also ready for public usage. 
 
-This is no big reveal, we've been advertising it's existence on our websites for a while. I've already talked a little bit about the tech behind the [Mac App](https://blog.cocoapods.org/CocoaPods-App), so this post is the one that makes you say our "team we should use this instead of the gem".
+This is no big reveal, we've been advertising it's existence on our websites for a while. I've already talked a little bit about the tech behind the [Mac App](https://blog.cocoapods.org/CocoaPods-App), so this post is the one that makes you say your team _"we should use this instead of the gem"_.
 
 So let me put [my best hat on](/assets/blog_img/app-1.0/hat-on.jpg), and try to pursuade you that using the CocoaPods Mac App is a _great idea._
 
