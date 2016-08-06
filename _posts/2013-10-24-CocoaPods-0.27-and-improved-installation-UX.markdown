@@ -171,7 +171,7 @@ the following insights:
   that the gem is being installed. Typically, RubyGems authors ‘abuse’ their
   `extconf.rb` to generate a no-op `Makefile` in the case that no compilation
   is required. This, however, means that the user will still need to have
-  `make` installed, which is not the case on OS X 10.8.
+  `make` installed, which is not the case on OS X 10.9.
 
   Luckily [Eric Hodel](https://twitter.com/drbrain), one of the RubyGems
   maintainers, pointed me to an undocumented feature. Instead of specifying the
