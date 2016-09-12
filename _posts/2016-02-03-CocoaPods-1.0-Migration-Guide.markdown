@@ -57,7 +57,7 @@ This change enforces a much stronger connection between the CocoaPods target, an
 pod 'ShowsKit'
 ```
 
-due to it having ambiguous behavior. However, the following is possbile, as it declares what target to link to:
+due to it having ambiguous behavior. However, the following is possible, as it declares what target to link to:
 
 ``` ruby
 pod 'ShowsKit'
