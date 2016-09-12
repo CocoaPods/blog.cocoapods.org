@@ -1,0 +1,51 @@
+---
+layout: post
+title:  "CocoaPods 1.1.0 - Improved support for extensions and frameworks and Xcode 8 support"
+author: nickname
+categories: cocoapods releases
+---
+TL;DR: _CocoaPods 1.1.0_ has been released, and it comes with improved support for extensions and frameworks and Xcode 8 support.
+
+CocoaPods 1.1.0 has been released! This release features improvements for integrating extension targets into your projects, as well as support for the latest from Apple: Xcode 8, new extensions types, and the latest iOS. Specifically for those of you working with extension targets, this means [smoother App Store submissions](https://github.com/CocoaPods/CocoaPods/issues/4203). For Xcode 8 and iOS 10, this release has support for the new Swift version settings when building your project and distributing your pods, and it has support for new target types like messages extensions and messages applications.
+
+
+### Extensions
+
+This update improves support in CocoaPods for integrating extension and framework targets. Extensions targets are a bit different than application targets because they require a [host app](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionOverview.html#//apple_ref/doc/uid/TP40014214-CH2-SW5). For CocoaPods, this means that `pod install` has to locate any host targets, in which the extension belongs, to integrate those extension targets' dependencies there. This seems counterintuive at first because Xcode has no problem installing frameworks into extensions the same way that it installs them into application targets. But, when you go to submit your app with its extensions to the App Store, you will probably get some combination of these responses:
+
+> Invalid Bundle. The bundle at 'MyApp.app/PlugIns/MyExtension.appex' contains disallowed nested bundles.
+
+and/or
+
+> Invalid Bundle. The bundle at 'MyApp.app/PlugIns/MyExtension.appex' contains disallowed file Frameworks.
+
+It turns out that Apple expects extensions to have their framework dependencies installed in their host apps: at launch time, extensions look into their host apps' bundles to find the frameworks they need. CocoaPods 1.1.0 understands this, and it integrates your extension target's dependencies into the right place.
+
+
+### Frameworks
+
+Frameworks work about the same way. A framework's dependencies must also be installed alongside that framework into whichever targets that are going to consume that framework. There are a few new frameworks scenarios, of which CocoaPods 1.1.0 is now mindful. In each scenario below, the framework is listed in the Podfile and has some pods:
+
+* Framework(s) in your application-type project
+* Framework(s) in your application-type project, where the framework may live in a sub-project (i.e. an Xcode project within your Xcode project)
+* Framework(s)-only projects (for doing framework development)
+
+In every case, `pod install` looks through each of your project's non-framework target's "Target Dependencies" build phase to find where the framework is meant to be integrated (same for extensions as well). For framework-only projects, if CocoaPods can tell that your project only contains framework targets, then it assumes that the project must be a framework-only project (for doing framework development) and emits a warning about this assumption. In that case, CocoaPods doesn't have much to do except ensure your project's targets have the headers to build properly.
+
+
+### Xcode 8 and iOS 10
+
+Xcode 8 is here! It brings support for iOS 10, macOS Sierra, new versions of Swift, and new challenges for CocoaPods. The first is the ability to support Swift 2.3 and 3.0 projects and communicate this in a podspec. In CocoaPods 1.1.0, setting the version of Swift that your pod uses is supported in following ways:
+
+* It defaults to Swift 2.3, if your pod uses Swift.
+* It uses setting from your `.swift-version` file if present (inspired by [swiftenv](https://github.com/kylef/swiftenv).
+
+Finally, iOS 10 makes some new extension and application types available. In particular, messages extensions and applications require some special handling by CocoaPods. In iOS 10, there are 2 ways to support a messages extension:
+
+* It can be an extension of your application.
+* It can be a standalone application that you submit to the App Store.
+
+In both cases, there's a messages extension, but in the standalone case, the messages extension extends the messages application target. However, users cannot modify that "Target Dependencies" build phase of the messages application target. This means that if your messages extension is extending your app, `pod install` integrates your messages extension's dependencies into your app alongside your extension. If the messages extension extends a messages application, then `pod install` integrates the dependencies directly into the messages extension because there's nowhere else for them to go.
+
+
+CocoaPods 1.1.0 was a huge release, so congrats to everyone! Checkout the [Changelog](https://github.com/CocoaPods/CocoaPods/releases/tag/1.1.0) to get the full list of changes,
