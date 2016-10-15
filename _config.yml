@@ -74,6 +74,12 @@ authors:
     twitter: cocoagems
     gravatar: 9f77257a23e0702b3902830d0e97c969
 
+  benasher44:
+    name: Ben Asher
+    twitter: benasher44
+    gravatar: 0d834d5ab9e4fd43f59675ea7641bb24
+
+
 assets:
   sources:
     - shared/img

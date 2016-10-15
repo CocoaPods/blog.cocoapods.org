@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "CocoaPods 1.1.0 - Improved support for extensions and frameworks, Xcode 8 support, and error handling improvements"
-author: nickname
+title:  "CocoaPods 1.1.0 - Xcode 8 support, improved support for new Swift versions, extensions, frameworks, and more"
+author: benasher44
 categories: cocoapods releases
 ---
-TL;DR: _CocoaPods 1.1.0_ has been released, and it comes with improved support for extensions and frameworks, Xcode 8 support, and error handling improvements.
+TL;DR: _CocoaPods 1.1.0_ has been released, and it comes with improved support for extensions, frameworks, and new Swift versions, as well as Xcode 8 support and error handling improvements.
 
 <!-- more -->
 
-CocoaPods 1.1.0 has been released! This release features improvements for integrating extension targets into your projects, as well as support for the latest from Apple: Xcode 8, new extensions types, and the latest iOS. Specifically for those of you working with extension targets, this means [smoother App Store submissions](https://github.com/CocoaPods/CocoaPods/issues/4203). For Xcode 8 and iOS 10, this release has support for the new Swift version settings when building your project and distributing your pods, and it has support for new target types like messages extensions and messages applications.
+CocoaPods 1.1.0 has been released! This release features improvements for integrating extension targets into your projects, as well as support for the latest from Apple: Xcode 8, new extensions types, and the latest iOS. Specifically for those of you working with extension targets, this means [smoother App Store submissions](https://github.com/CocoaPods/CocoaPods/issues/4203). For Xcode 8 and iOS 10, this release has support for the new Swift version settings when building your project and distributing your pods, and it has support for new target types like messages extensions and messages applications. Finally, we've integrated some new error recovery tooling to help when you encounter an unexpected error using CocoaPods.
 
 
 ### Extensions
@@ -37,12 +37,27 @@ In every case, `pod install` looks through each of your project's non-framework 
 
 ### Xcode 8 and iOS 10
 
-Xcode 8 is here! It brings support for iOS 10, macOS Sierra, new versions of Swift, and new challenges for CocoaPods. The first is the ability to support Swift 2.3 and 3.0 projects and communicate this in a podspec. In CocoaPods 1.1.0, setting the version of Swift that your pod uses is supported in following ways:
+Xcode 8 is here! It brings support for iOS 10, macOS Sierra, new versions of Swift, and new challenges for CocoaPods. The first is the ability to support Swift 2.3 and 3.0 projects. In CocoaPods 1.1.0, setting the version of Swift when linting and pushing your pod is supported in following ways:
 
-* It defaults to Swift 2.3, if your pod uses Swift.
-* It uses setting from your `.swift-version` file if present (inspired by [swiftenv](https://github.com/kylef/swiftenv). This is a file that only contains the swift version as text: e.g. for Swift 3, you would have 3.0 in the file.
+* It [defaults to Swift 3.0](https://github.com/CocoaPods/CocoaPods/issues/6041), if your pod uses Swift.
+* It uses setting from your `.swift-version` file if present (inspired by [swiftenv](https://github.com/kylef/swiftenv).
+* The `--swift-version` flag can be used to specify a version of Swift to use. This overrides the version set in the `.swift-version` file.
 
 Next, iOS 10 makes some new extension and application types available. In particular, CocoaPods has been updated to recognize the messages extensions and application product types.
+
+
+### About Supporting Multiple Swift Versions in the Podspec
+
+Supporting the Swift language version used by a pod as part of the podspec is tricky. There are a few different options we considered, but we ultimately decided not to add any new podspec dsl for this release. Here are some examples of options we considered for this release:
+
+1. We could add a `swift_version` option to indicate which version of Swift the pod supports. This would force authors to push new versions of their pods to update this setting when new versions of Swift come out, even if the new version of Swift is backward compatible. This isn't ideal.
+
+2. This could be helped by instead supporting a `min_swift_version` option to indicate the minimum Swift version the pod supports. This wouldn't force authors to update their pods when new versions come out, but it would break if a new version of Swift comes out that is not backwards compatible with the one used to build the pod.
+
+3. We could add a `swift_version_range` option to indicate the range of Swift versions the pod supports, but this suffers from the same issues as option 2. There is no way to verify that a pod pushed today that claims to support up through Swift version 4 actually supports that version.
+
+In this release of CocoaPods, you lint your pod against the version of Swift you intend to support. When integrating pods, CocoaPods generates pod targets that use the Swift version set in your project. This allows pod authors the flexibility to support multiple incompatible swift versions if they wish by using `#if swift()` checks, while keeping the pod maintenance burden light across Swift 3 versions.
+
 
 ### Error Handling Improvements
 
@@ -50,4 +65,3 @@ Now when CocoaPods receives unexpected errors it will highlight existing issues 
 
 
 CocoaPods 1.1.0 was a huge release, so congrats to everyone! Checkout the [Changelog](https://github.com/CocoaPods/CocoaPods/releases/tag/1.1.0) to get the full list of changes.
-
