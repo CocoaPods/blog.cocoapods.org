@@ -48,7 +48,7 @@ Next, iOS 10 makes some new extension and application types available. In partic
 
 ### About Supporting Multiple Swift Versions in the Podspec
 
-Supporting the Swift language version used by a pod as part of the podspec is tricky. There are a few different options we considered, but we ultimately decided not to add any new podspec dsl for this release. Here are some examples of options we considered for this release:
+Because Swift doesn't use semantic versioning, supporting the Swift language version used by a pod as part of the podspec is tricky. There are a few different options we considered, but we ultimately decided not to add any new podspec dsl for this release. Here are some examples of options we considered for this release:
 
 1. We could add a `swift_version` option to indicate which version of Swift the pod supports. This would force authors to push new versions of their pods to update this setting when new versions of Swift come out, even if the new version of Swift is backward compatible. This isn't ideal.
 
