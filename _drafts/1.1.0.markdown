@@ -13,7 +13,7 @@ CocoaPods 1.1.0 has been released! This release features improvements for integr
 
 ### Extensions
 
-This update improves support in CocoaPods for integrating extension and framework targets. Extensions targets are a bit different than application targets because they require a [host app](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionOverview.html#//apple_ref/doc/uid/TP40014214-CH2-SW5). For CocoaPods, this means that `pod install` has to locate any host targets, in which the extension belongs, to integrate those extension targets' dependencies there. This seems counterintuive at first because Xcode has no problem installing frameworks into extensions the same way that it installs them into application targets. But, when you go to submit your app with its extensions to the App Store, you will probably get some combination of these responses:
+This update improves support for integrating extension and framework targets. Extensions targets are a bit different than application targets because they require a [host app](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionOverview.html#//apple_ref/doc/uid/TP40014214-CH2-SW5). For CocoaPods, this means that `pod install` has to locate any host targets, in which the extension belongs, to integrate those extension targets' dependencies there. This seems counterintuive at first because Xcode has no problem installing frameworks into extensions the same way that it installs them into application targets. But, when you go to submit your app with its extensions to the App Store, you will probably get some combination of these responses:
 
 > Invalid Bundle. The bundle at 'MyApp.app/PlugIns/MyExtension.appex' contains disallowed nested bundles.
 
@@ -26,7 +26,7 @@ It turns out that Apple expects extensions to have their framework dependencies 
 
 ### Frameworks
 
-Frameworks work about the same way. A framework's dependencies must also be installed alongside that framework into whichever targets that are going to consume that framework. There are a few new frameworks scenarios, of which CocoaPods 1.1.0 is now mindful. In each scenario below, the framework is listed in the Podfile and has some pods:
+Frameworks work about the same way. A framework's dependencies must also be installed alongside that framework, into whichever targets that are going to consume that framework. There are a few new frameworks scenarios, of which CocoaPods 1.1.0 is now mindful. In each scenario below, the framework is listed in the Podfile and has some pods:
 
 * Framework(s) in your application-type project
 * Framework(s) in your application-type project, where the framework may live in a sub-project (i.e. an Xcode project within your Xcode project)
@@ -40,17 +40,17 @@ In every case, `pod install` looks through each of your project's non-framework 
 Xcode 8 is here! It brings support for iOS 10, macOS Sierra, new versions of Swift, and new challenges for CocoaPods. The first is the ability to support Swift 2.3 and 3.0 projects. In CocoaPods 1.1.0, setting the version of Swift when linting and pushing your pod is supported in following ways:
 
 * It [defaults to Swift 3.0](https://github.com/CocoaPods/CocoaPods/issues/6041), if your pod uses Swift.
-* It uses setting from your `.swift-version` file if present (inspired by [swiftenv](https://github.com/kylef/swiftenv).
+* It uses the setting from your `.swift-version` file if present (inspired by [swiftenv](https://github.com/kylef/swiftenv)).
 * The `--swift-version` flag can be used to specify a version of Swift to use. This overrides the version set in the `.swift-version` file.
 
-Next, iOS 10 makes some new extension and application types available. In particular, CocoaPods has been updated to recognize the messages extensions and application product types.
+Finally, iOS 10 makes some new extension and application types available. In particular, CocoaPods has been updated to recognize the messages extensions and application product types.
 
 
 ### About Supporting Multiple Swift Versions in the Podspec
 
-Because Swift doesn't use semantic versioning, supporting the Swift language version used by a pod as part of the podspec is tricky. There are a few different options we considered, but we ultimately decided not to add any new podspec dsl for this release. Here are some examples of options we considered for this release:
+Because Swift doesn't use semantic versioning, supporting the Swift language version used by a pod as part of the podspec is tricky. There are a few different options we considered, but we ultimately decided not to add any new podspec dsl for this release. Here are some examples of options we considered:
 
-1. We could add a `swift_version` option to indicate which version of Swift the pod supports. This would force authors to push new versions of their pods to update this setting when new versions of Swift come out, even if the new version of Swift is backward compatible. This isn't ideal.
+1. We could add a `swift_version` option to indicate which version of Swift the pod supports. This would force authors to push new versions of their pods to update this setting when new versions of Swift come out, even if the new version of Swift is backwards compatible. This isn't ideal.
 
 2. This could be helped by instead supporting a `min_swift_version` option to indicate the minimum Swift version the pod supports. This wouldn't force authors to update their pods when new versions come out, but it would break if a new version of Swift comes out that is not backwards compatible with the one used to build the pod.
 
@@ -58,12 +58,12 @@ Because Swift doesn't use semantic versioning, supporting the Swift language ver
 
 In this release of CocoaPods, you lint your pod against the version of Swift you intend to support. When integrating pods, CocoaPods generates pod targets that use the Swift version set in your project. This allows pod authors the flexibility to support multiple incompatible swift versions if they wish by using `#if swift()` checks, while keeping the pod maintenance burden light across Swift 3 versions.
 
-Additionally, the version of Swift that was used to pass validation is baked into the JSON file for the podspec that is pushed to trunk. For tool authors, this makes it easy to use the database of pods on trunk to build reliable tooling that works with multiple versions of Swift.
+Additionally, the version of Swift that was used to pass validation is baked into the podspec JSON file that is pushed to trunk. For tool authors, this makes it easy to use the database of pods on trunk to build reliable tooling that works with multiple versions of Swift.
 
 
 ### Error Handling Improvements
 
-Now when CocoaPods receives unexpected errors it will highlight existing issues that might be related in the console. This makes it easier to find the answer to common issues. We do this by using [gh_inspector](https://github.com/orta/gh_inspector), which you may have seen [inside Fastlane](https://github.com/fastlane/fastlane/releases/tag/1.96.0) too.
+Now when CocoaPods receives unexpected errors, it will highlight existing issues that might be related in the console. This makes it easier to find the answer to common issues. We do this by using [gh_inspector](https://github.com/orta/gh_inspector), which you may have seen [inside Fastlane](https://github.com/fastlane/fastlane/releases/tag/1.96.0) too.
 
 
 CocoaPods 1.1.0 was a huge release, so congrats to everyone! Checkout the [Changelog](https://github.com/CocoaPods/CocoaPods/releases/tag/1.1.0) to get the full list of changes.
