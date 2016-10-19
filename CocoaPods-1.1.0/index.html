@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+      <title>CocoaPods 1.1.0 - Xcode 8 support, improved support for new Swift versions, extensions, frameworks, and more - CocoaPods Blog</title>
+    
+
+    <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <link rel="alternate" type="application/rss+xml" title="CocoaPods Blog" href="/feed.xml">
+
+    <meta charset="utf-8" /><meta content="cocoapods objective-c objc swift package manager libraries documentation search pods podspec podfile cocoa apple ios library" name="keywords" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="The Dependency Manager for iOS &amp; Mac projects" name="description" /><meta content="CocoaPods Dev Team" name="author" /><meta content="summary" name="twitter:card" /><meta content="@CocoaPods" name="twitter:site" /><meta content="@CocoaPods" name="twitter:creator" /><meta content="CocoaPods.org" name="twitter:title" /><meta content="The Dependency Manager for iOS &amp; Mac projects." name="twitter:description" /><meta content="https://www.cocoapods.org/" name="twitter:url" />
+    <link rel="shortcut icon" href="https://cocoapods.org/favicons/favicon.ico" type="image/x-icon" /><link rel="apple-touch-icon" href="https://cocoapods.org/favicons/apple-touch-icon.png" /><link rel="apple-touch-icon" sizes="57x57" href="https://cocoapods.org/favicons/apple-touch-icon-57x57.png" /><link rel="apple-touch-icon" sizes="60x60" href="https://cocoapods.org/favicons/apple-touch-icon-60x60.png" /><link rel="apple-touch-icon" sizes="72x72" href="https://cocoapods.org/favicons/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon" sizes="76x76" href="https://cocoapods.org/favicons/apple-touch-icon-76x76.png" /><link rel="apple-touch-icon" sizes="114x114" href="https://cocoapods.org/favicons/apple-touch-icon-114x114.png" /><link rel="apple-touch-icon" sizes="120x120" href="https://cocoapods.org/favicons/apple-touch-icon-120x120.png" /><link rel="apple-touch-icon" sizes="144x144" href="https://cocoapods.org/favicons/apple-touch-icon-144x144.png" /><link rel="apple-touch-icon" sizes="152x152" href="https://cocoapods.org/favicons/apple-touch-icon-152x152.png" />
+
+    <link rel="stylesheet" href="/assets/bootstrap-3b61caa441fab92578453d6681fbf963.css">
+    <link rel="stylesheet" href="/assets/main-df7f28d697ab31d8aa461b8f8ff0c7e4.css">
+    <link rel="stylesheet" href="/assets/blog-a6cba0ad1ceb964c9a5a5387e033c3ff.css">
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-29866548-3', 'cocoapods.org');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="glyphicon glyphicon-plus"></span></button><a class="navbar-brand" href="https://cocoapods.org"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="https://cocoapods.org/app">App</a></li><li><a href="https://cocoapods.org/about">About</a></li><li><a href="https://guides.cocoapods.org">Guides</a></li><li class="active"><a href="https://blog.cocoapods.org">Blog</a></li></ul></div></section></nav>
+
+    <div id ="">
+<section class="container" >
+  <article class="row">
+  <header class="col-md-8 col-md-offset-2 headline blog-post">
+    
+      <h1>CocoaPods 1.1.0 - Xcode 8 support, improved support for new Swift versions, extensions, frameworks, and more</h1>
+    
+    
+  </header>
+  </article>
+</section>
+</div>
+
+<section id="content-wrapper" class="post">
+  <section class="container">
+    <article class="row">
+      <article class="author metadata col-md-2 col-md-push-10">
+        <header>
+          
+            
+              <img class="gravatar large" src="http://gravatar.com/avatar/0d834d5ab9e4fd43f59675ea7641bb24?s=144" height=72 width=72>
+            
+            
+              
+                <p><a href="http://twitter.com/benasher44">Ben Asher</a></p>
+              
+            
+             <p>19 October 2016</p>
+
+            
+              <a href="https://twitter.com/benasher44" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @benasher44
+              </a>
+            
+        </header>
+      </article>
+    
+      <article class="content col-md-8">
+        <p>TL;DR: <em>CocoaPods 1.1.0</em> has been released, and it comes with improved support for extensions, frameworks, and new Swift versions, as well as Xcode 8 support and error handling improvements.</p>
+
+<!-- more -->
+
+<p>CocoaPods 1.1.0 has been released! This release features improvements for integrating extension targets into your projects, as well as support for the latest from Apple: Xcode 8, new extensions types, and the latest iOS. Specifically for those of you working with extension targets, this means <a href="https://github.com/CocoaPods/CocoaPods/issues/4203">smoother App Store submissions</a>. For Xcode 8 and iOS 10, this release has support for the new Swift version settings when building your project and distributing your pods, and it has support for new target types like messages extensions and messages applications. Finally, we&#39;ve integrated some new error recovery tooling to help when you encounter an unexpected error using CocoaPods, and we&#39;ve made <a href="https://github.com/CocoaPods/CocoaPods/pull/5934">some</a> <a href="https://github.com/CocoaPods/CocoaPods/pull/5837">performance</a> <a href="https://github.com/CocoaPods/CocoaPods/pull/5927">improvements</a> to <code>pod install</code> when running it for large projects.</p>
+
+<h3 id="extensions">Extensions</h3>
+
+<p>This update improves support for integrating extension and framework targets. Extensions targets are a bit different than application targets because they require a <a href="https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionOverview.html#//apple_ref/doc/uid/TP40014214-CH2-SW5">host app</a>. For CocoaPods, this means that <code>pod install</code> has to locate any host targets, in which the extension belongs, to integrate those extension targets&#39; dependencies there. This seems counterintuive at first because Xcode has no problem installing frameworks into extensions the same way that it installs them into application targets. But, when you go to submit your app with its extensions to the App Store, you will probably get some combination of these responses:</p>
+
+<blockquote>
+<p>Invalid Bundle. The bundle at &#39;MyApp.app/PlugIns/MyExtension.appex&#39; contains disallowed nested bundles.</p>
+</blockquote>
+
+<p>and/or</p>
+
+<blockquote>
+<p>Invalid Bundle. The bundle at &#39;MyApp.app/PlugIns/MyExtension.appex&#39; contains disallowed file Frameworks.</p>
+</blockquote>
+
+<p>It turns out that Apple expects extensions to have their framework dependencies installed in their host apps: at launch time, extensions look into their host apps&#39; bundles to find the frameworks they need. CocoaPods 1.1.0 understands this, and it integrates your extension target&#39;s dependencies into the right place.</p>
+
+<h3 id="frameworks">Frameworks</h3>
+
+<p>Frameworks work about the same way. A framework&#39;s dependencies must also be installed alongside that framework, into whichever targets that are going to consume that framework. There are a few new frameworks scenarios, of which CocoaPods 1.1.0 is now mindful. In each scenario below, the framework is listed in the Podfile and has some pods:</p>
+
+<ul>
+<li>Framework(s) in your application-type project</li>
+<li>Framework(s) in your application-type project, where the framework may live in a sub-project (i.e. an Xcode project within your Xcode project)</li>
+<li>Framework(s)-only projects (for doing framework development)</li>
+</ul>
+
+<p>In every case, <code>pod install</code> looks through each of your project&#39;s non-framework target&#39;s &quot;Target Dependencies&quot; build phase to find where the framework is meant to be integrated (same for extensions as well). For framework-only projects, if CocoaPods can tell that your project only contains framework targets, then it assumes that the project must be a framework-only project (for doing framework development) and emits a warning about this assumption. In that case, CocoaPods doesn&#39;t have much to do except ensure your project&#39;s targets have the headers to build properly.</p>
+
+<h3 id="xcode-8-and-ios-10">Xcode 8 and iOS 10</h3>
+
+<p>Xcode 8 is here! It brings support for iOS 10, macOS Sierra, new versions of Swift, and new challenges for CocoaPods. The first is the ability to support Swift 2.3 and 3.0 projects. In CocoaPods 1.1.0, setting the version of Swift when linting and pushing your pod is supported in following ways:</p>
+
+<ul>
+<li>It <a href="https://github.com/CocoaPods/CocoaPods/issues/6041">defaults to Swift 3.0</a>, if your pod uses Swift.</li>
+<li>It uses the setting from your <code>.swift-version</code> file if present (inspired by <a href="https://github.com/kylef/swiftenv">swiftenv</a>).</li>
+<li>The <code>--swift-version</code> flag can be used to specify a version of Swift to use. This overrides the version set in the <code>.swift-version</code> file.</li>
+</ul>
+
+<p>Finally, iOS 10 makes some new extension and application types available. In particular, CocoaPods has been updated to recognize the messages extensions and application product types.</p>
+
+<h3 id="about-supporting-multiple-swift-versions-in-the-podspec">About Supporting Multiple Swift Versions in the Podspec</h3>
+
+<p>Because Swift doesn&#39;t use semantic versioning, supporting the Swift language version used by a pod as part of the podspec is tricky. There are a few different options we considered, but we ultimately decided not to add any new podspec dsl for this release. Here are some examples of options we considered:</p>
+
+<ol>
+<li><p>We could add a <code>swift_version</code> option to indicate which version of Swift the pod supports. This would force authors to push new versions of their pods to update this setting when new versions of Swift come out, even if the new version of Swift is backwards compatible. This isn&#39;t ideal.</p></li>
+<li><p>This could be helped by instead supporting a <code>min_swift_version</code> option to indicate the minimum Swift version the pod supports. This wouldn&#39;t force authors to update their pods when new versions come out, but it would break if a new version of Swift comes out that is not backwards compatible with the one used to build the pod.</p></li>
+<li><p>We could add a <code>swift_version_range</code> option to indicate the range of Swift versions the pod supports, but this suffers from the same issues as option 2. There is no way to verify that a pod pushed today that claims to support up through Swift version 4 actually supports that version.</p></li>
+</ol>
+
+<p>In this release of CocoaPods, you lint your pod against the version of Swift you intend to support. When integrating pods, CocoaPods generates pod targets that use the Swift version set in your project. This allows pod authors the flexibility to support multiple incompatible swift versions if they wish by using <code>#if swift()</code> checks, while keeping the pod maintenance burden light across Swift 3 versions.</p>
+
+<p>Additionally, the version of Swift that was used to pass validation is baked into the podspec JSON file that is pushed to trunk. For tool authors, this makes it easy to use the database of pods on trunk to build reliable tooling that works with multiple versions of Swift.</p>
+
+<h3 id="error-handling-improvements">Error Handling Improvements</h3>
+
+<p>Now when CocoaPods receives unexpected errors, it will highlight existing issues that might be related in the console. This makes it easier to find the answer to common issues. We do this by using <a href="https://github.com/orta/gh_inspector">gh_inspector</a>, which you may have seen <a href="https://github.com/fastlane/fastlane/releases/tag/1.96.0">inside Fastlane</a> too.</p>
+
+<p>CocoaPods 1.1.0 was a huge release, so congrats to everyone! Checkout the <a href="https://github.com/CocoaPods/CocoaPods/releases/tag/1.1.0">Changelog</a> to get the full list of changes.</p>
+
+      </article>
+    </article>
+  </section>
+</section>
+
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2016-10-19-CocoaPods-1.1.0.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/0d834d5ab9e4fd43f59675ea7641bb24" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/benasher44">Follow benasher44</a></div></article></div></section></section>
+
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/2016-CocoaPods-State-of-the-Union" title="2016 CocoaPods State of the Union"><header><h4>Previous Post</h4></header><h3>2016 CocoaPods State of the Union</h3><p>By Samuel E. Giddins</p><a class="chevron_placeholder back" href="/2016-CocoaPods-State-of-the-Union"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+    <footer class="page-footer"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><h4>CocoaPods is a project from</h4><p class="contributors"> <a href="http://buegling.com">Boris Bügling</a>, <a href="http://mariusrackwitz.de">Marius Rackwitz</a>, <a href="http://orta.io">Orta Therox</a>, <a href="http://segiddins.me">Samuel Giddins</a>, and <a href="https://cocoapods.org/about#team">The CocoaPods Dev Team</a> with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p><h4>Lovingly sponsored by</h4><p class="sponsors"><a href="http://artsy.net">Artsy</a>, <a href="http://www.usebutton.com">Button</a>, <a href="http://www.capitalone.io">Capital One</a>, <a href="http://discontinuity.eu">Discontinuity</a>, <a href="http://www.fngtps.com">Fingertips</a>, <a href="https://www.heroku.com">Heroku</a>, <a href="http://www.rubymotion.com">RubyMotion</a>, <a href="https://www.sauspiel.de">Sauspiel</a>, <a href="https://www.slack.com">Slack</a>, <a href="https://www.soundcloud.com">SoundCloud</a>, <a href="https://www.stripe.com">Stripe</a> and <a href="http://www.technologyastronauts.ch">Technology&nbsp;Astronauts</a>.</p></article></div></section></footer><footer class="footer-links"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><a class="cocoapods-small-logo" href="https://cocoapods.org"></a><ul><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/using/troubleshooting.html">Support</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://github.com/CocoaPods/CocoaPods">GitHub Repo</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://status.cocoapods.org">Web Properties Status</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://twitter.com/CocoaPods">@CocoaPods</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://groups.google.com/group/cocoapods">Mailing List</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/about"><span class="visible-lg-span">CocoaPods</span> Dev Team</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/syntax/podfile.html">Podfile Doc<span class="hidden-lg-span">s</span><span class="visible-lg-span">umentation</span></a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/legal">Legal / Conduct</a></li></ul></article></div></section></footer>
+    <script src="/assets/blog-c2911afb0e1e77d79b486c5c39fe0cc6.js"></script>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  </body>
+</html>

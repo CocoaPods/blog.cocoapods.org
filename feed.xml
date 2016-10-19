@@ -8,6 +8,22 @@
     
     
     <item>
+      <title>CocoaPods 1.1.0 - Xcode 8 support, improved support for new Swift versions, extensions, frameworks, and more</title>
+
+      
+      <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 1.1.0&lt;/em&gt; has been released, and it comes with improved support for extensions, frameworks, and new Swift versions, as well as Xcode 8 support and error handling improvements.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Wed, 19 Oct 2016 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/CocoaPods-1.1.0</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-1.1.0</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>2016 CocoaPods State of the Union</title>
 
       
