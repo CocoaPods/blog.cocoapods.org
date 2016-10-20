@@ -58,7 +58,7 @@ Because Swift doesn't use semantic versioning, supporting the Swift language ver
 
 In this release of CocoaPods, you lint your pod against the version of Swift you intend to support. When integrating pods, CocoaPods generates pod targets that use the Swift version set in your project. This allows pod authors the flexibility to support multiple incompatible swift versions if they wish by using `#if swift()` checks, while keeping the pod maintenance burden light across Swift 3 versions.
 
-Additionally, the version of Swift that was used to pass validation is baked into the podspec JSON file that is pushed to trunk. For tool authors, this makes it easy to use the database of pods on trunk to build reliable tooling that works with multiple versions of Swift.
+Additionally, the version of Swift that was used to pass validation is [baked into the podspec JSON](https://github.com/CocoaPods/Specs/blob/master/Specs/SodiumCocoaSwift/1.0.0/SodiumCocoaSwift.podspec.json#L36) file that is pushed to trunk. For tool authors, this makes it easy to use the database of pods on trunk to build reliable tooling that works with multiple versions of Swift.
 
 
 ### Error Handling Improvements
