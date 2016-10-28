@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "CocoaPods Specs Repo Sharding"
+author: orta
+categories: cocoapods specs infrastructure
+---
+
+In March, CocoaPods hit an unfortunate problem with our [Specs Repo](http://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem/) being rate limited. 
+
+We announced that we were [planning on Sharding](http://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem/#too-many-directory-entries) the Specs Repo, but were hestitent to do it instantly. Now over six months later we are planning on running the scripts.
+
+- If you are using CocoaPods 1.x - you should not see any changes.
+- If you are using CocoaPods 0.39 and below, you will not see new pod versions from CocoaPods Trunk after we run the script until you upgrade to a 1.x version. 
+
+We are planning to do it on Friday November the 11th, so there will be scheduled downtime on pushing new Pods to Trunk during the process of updating and verifying that it was successful.
