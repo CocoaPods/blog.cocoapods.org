@@ -58,6 +58,30 @@
 <article class="post">
   <header>
     
+    <h2 class="post-title"><a href="/Release-Versions-Only">Release Versions Only</a></h2>
+  </header>
+
+  
+      <p>The main CocoaPods website, <a href="https://cocoapods.org">cocoapods.org</a>, lets you search for all versions of a pod.
+That includes prerelease versions.
+As a result, when searching for a pod with a prerelease version, the latest prerelease version is shown in the result list.</p>
+
+<p>This sounds good in principle, but the behaviour is at odds with how the <code>pod</code> command operates.
+The default there is to use the latest <em>released</em> pod version.
+As a result of this – as we noticed via our stats system – usage of prerelease versions is minimal, and showing the latest prerelease version on <a href="https://cocoapods.org">cocoapods.org</a> violates expectations as to what <code>pod install</code> will actually install.</p>
+
+<p>Therefore, we will be switching to the <code>pod</code> command default also on <a href="https://cocoapods.org">cocoapods.org</a>, meaning in the results, we will show only released versions.
+We&#39;ve prepared all systems for the switch and will flip it on December 31st 2015 to start into the new year with the brand new search engine behavior.</p>
+
+<p>Happy New Year, pod friends!</p>
+
+  
+
+</article>
+
+<article class="post">
+  <header>
+    
     <h2 class="post-title"><a href="/Stats-2015">2015</a></h2>
   </header>
 
@@ -207,24 +231,6 @@ while finishing university.</p>
 
 
       <p><a href="/CocoaPods.org-Two-point-Five">Read on →</a></p>
-  
-
-</article>
-
-<article class="post">
-  <header>
-    
-    <h2 class="post-title"><a href="/2015-CocoaPods-State-of-the-Union">2015 CocoaPods State of the Union</a></h2>
-  </header>
-
-  
-      <p>Apple have their annual WWDC keynote and Developer State of the Union.
-We have ours.
-We&#39;re planning a great opening event to WWDC week: The CocoaPods Alt State of the Union.
-You should join us, and hear about what&#39;s happened in CocoaPods in the past year, and what&#39;s to come in the next.</p>
-
-
-      <p><a href="/2015-CocoaPods-State-of-the-Union">Read on →</a></p>
   
 
 </article>

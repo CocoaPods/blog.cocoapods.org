@@ -8,6 +8,53 @@
     
     
     <item>
+      <title>CocoaPods Specs Repo Sharding</title>
+
+      
+      <description>&lt;p&gt;In March, CocoaPods hit an unfortunate problem with our &lt;a href=&quot;http://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem/&quot;&gt;Specs Repo&lt;/a&gt; being rate limited. &lt;/p&gt;
+
+&lt;p&gt;We announced that we were &lt;a href=&quot;http://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem/#too-many-directory-entries&quot;&gt;planning on Sharding&lt;/a&gt; the Specs Repo, but were hestitant to do it instantly. Now over six months later we are planning on running the scripts.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;If you are using CocoaPods &lt;code&gt;1.x&lt;/code&gt; - you should not see any changes.&lt;/li&gt;
+&lt;li&gt;If you are using CocoaPods &lt;code&gt;0.39&lt;/code&gt; and below, you will see an error saying that your version of CocoaPods is not supported. Previous to this, our minimum version was &lt;code&gt;0.32&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For people who want to continue using 0.x versions, we will be replicating the Specs repo from the commit before the repo was sharded. This means you can add:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;ruby language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;https://github.com/CocoaPods/Old-Specs&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;To the top of your Podfile, and CocoaPods will only use the archived repo, instead of using the new repo structure.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;We are planning to do it on Friday November the 11th, so there will be scheduled downtime on pushing new Pods to Trunk during the process of updating and verifying that it was successful.&lt;/p&gt;
+</description>
+      
+
+      <pubDate>Fri, 28 Oct 2016 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/Sharding</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/Sharding</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>CocoaPods 1.1.0 - Xcode 8 support, improved support for new Swift versions, extensions, frameworks, and more</title>
 
       
