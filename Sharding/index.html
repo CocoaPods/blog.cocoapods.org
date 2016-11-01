@@ -89,24 +89,13 @@
 </ul>
 
 <p>For people who want to continue using 0.x versions, we will be replicating the Specs repo from the commit before the repo was sharded. This means you can add:</p>
-<div class="highlight">      </article>
-      </article>
-      </section>
-      
-      <div style="background-color:white;">
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">source</span> <span class="s2">&quot;https://github.com/CocoaPods/Old-Specs&quot;</span>
-</code></pre>      </article>
-      </article>
-      </section>
-      </div>
-      
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-</div>
+
+<pre>
+<code>
+source "https://github.com/CocoaPods/Old-Specs"
+</code>
+</pre>
+
 <p>To the top of your Podfile, and CocoaPods will only use the archived repo, instead of using the new repo structure.</p>
 
 <hr>

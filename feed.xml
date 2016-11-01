@@ -21,24 +21,13 @@
 &lt;/ul&gt;
 
 &lt;p&gt;For people who want to continue using 0.x versions, we will be replicating the Specs repo from the commit before the repo was sharded. This means you can add:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
-      &lt;/article&gt;
-      &lt;/section&gt;
-      
-      &lt;div style=&quot;background-color:white;&quot;&gt;
-      &lt;section class=&quot;container&quot;&gt;
-      &lt;article class=&quot;row&quot;&gt;
-      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
-&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;ruby language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;https://github.com/CocoaPods/Old-Specs&amp;quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
-      &lt;/article&gt;
-      &lt;/section&gt;
-      &lt;/div&gt;
-      
-      &lt;section class=&quot;container&quot;&gt;
-      &lt;article class=&quot;row&quot;&gt;
-      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
-&lt;/div&gt;
+
+&lt;pre&gt;
+&lt;code&gt;
+source &quot;https://github.com/CocoaPods/Old-Specs&quot;
+&lt;/code&gt;
+&lt;/pre&gt;
+
 &lt;p&gt;To the top of your Podfile, and CocoaPods will only use the archived repo, instead of using the new repo structure.&lt;/p&gt;
 
 &lt;hr&gt;
