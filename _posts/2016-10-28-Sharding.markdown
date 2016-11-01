@@ -7,7 +7,7 @@ categories: cocoapods specs infrastructure
 
 In March, CocoaPods hit an unfortunate problem with our [Specs Repo](http://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem/) being rate limited. 
 
-We announced that we were [planning on Sharding](http://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem/#too-many-directory-entries) the Specs Repo, but were hestitant to do it instantly. Now over six months later we are planning on running the scripts.
+We announced that we were [planning on Sharding](http://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem/#too-many-directory-entries) the Specs Repo, but were hesitant to do it instantly. Now over six months later we are planning on running the scripts.
 
 - If you are using CocoaPods `1.x` - you should not see any changes.
 - If you are using CocoaPods `0.39` and below, you will see an error saying that your version of CocoaPods is not supported. Previous to this, our minimum version was `0.32`.
