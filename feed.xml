@@ -13,7 +13,7 @@
       
       <description>&lt;p&gt;In March, CocoaPods hit an unfortunate problem with our &lt;a href=&quot;http://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem/&quot;&gt;Specs Repo&lt;/a&gt; being rate limited. &lt;/p&gt;
 
-&lt;p&gt;We announced that we were &lt;a href=&quot;http://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem/#too-many-directory-entries&quot;&gt;planning on Sharding&lt;/a&gt; the Specs Repo, but were hestitant to do it instantly. Now over six months later we are planning on running the scripts.&lt;/p&gt;
+&lt;p&gt;We announced that we were &lt;a href=&quot;http://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem/#too-many-directory-entries&quot;&gt;planning on Sharding&lt;/a&gt; the Specs Repo, but were hesitant to do it instantly. Now over six months later we are planning on running the scripts.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;If you are using CocoaPods &lt;code&gt;1.x&lt;/code&gt; - you should not see any changes.&lt;/li&gt;
