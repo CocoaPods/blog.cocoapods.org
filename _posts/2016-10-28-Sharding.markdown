@@ -25,7 +25,6 @@ To the top of your Podfile, and CocoaPods will only use the archived repo, inste
 <pre>
 <code>
 cd ~/.cocoapods/repos/master/
-git pull origin master
 git checkout predates_sharding_branch
 </code>
 </pre>
