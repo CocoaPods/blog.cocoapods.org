@@ -28,7 +28,19 @@ source &quot;https://github.com/CocoaPods/Old-Specs&quot;
 &lt;/code&gt;
 &lt;/pre&gt;
 
-&lt;p&gt;To the top of your Podfile, and CocoaPods will only use the archived repo, instead of using the new repo structure.&lt;/p&gt;
+&lt;p&gt;To the top of your Podfile, and CocoaPods will only use the archived repo, instead of using the new repo structure. You will also need to set your local Specs repo to a version before the transition:&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code&gt;
+cd ~/.cocoapods/repos/master/
+git fetch origin master
+git checkout v0.32.1
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;To run &lt;code&gt;pod install&lt;/code&gt;, you will also  need to use &lt;code&gt;--no-repo-update&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;We do not have the resources to maintain multiple versions of CocoaPods in our spare time, and so we recommend that instead of doing the above, you migrate to the latest versions of CocoaPods in your projects.&lt;/p&gt;
 
 &lt;hr&gt;
 
