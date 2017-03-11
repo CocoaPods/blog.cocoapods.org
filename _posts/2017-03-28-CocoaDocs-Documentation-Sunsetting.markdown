@@ -13,7 +13,7 @@ I intend to remove the support for generating HTML pages and DocSets for new lib
 
 <!-- more -->
 
-I would like to reduce the complexity in CocoaDocs. It's rare for a week to go by without an issue or two in the [CocoaDocs repo][cd_repo] about a specific library, or tooling setup that requires human intervention on the server. These issues arise from either Xcode itself, or tools which rely on Xcode infrastructure to do their work. Making it hard to fix wholesale.
+I would like to reduce the complexity in CocoaDocs. It's rare for a week to go by without an issue or two in the [CocoaDocs repo][cd_repo] about a specific library, or tooling setup that requires human intervention on the server. These issues arise from either Xcode itself, or tools which rely on Xcode infrastructure to do their work. This makes it hard to fix wholesale.
 
 By removing these parts of the system, I can keep maintaining the aspects of CocoaDocs that are used the most: creating metrics (for search) and README/CHANGELOG summaries for CocoaPods.org.
 
