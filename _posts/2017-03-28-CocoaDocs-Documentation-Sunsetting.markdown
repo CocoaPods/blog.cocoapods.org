@@ -9,7 +9,7 @@ TL;DR: _CocoaDocs_ will stop generating DocSets for new libraries and versions u
 
 I started [CocoaDocs][cd] [back in][cd_tweet] February 2013, and have been running and maintaining it for the last 4 years. CocoaDocs started as a way to generate documentation for Objective-C projects via [Appledoc][appledoc]. When Swift came out, [Jazzy][jazzy] support was added to the app. Since then, CocoaDocs has grown organically over the years into a tool to [generate useful metadata][cd_post] for any CocoaPods library used in the CocoaPods.org website.
 
-I intend to remove the support for generating the HTML pages, and the DocSet generation for new libraries uploaded to trunk as by the end of May.
+I intend to remove the support for generating HTML pages and DocSets for new libraries uploaded to trunk by the end of May.
 
 <!-- more -->
 
@@ -23,7 +23,7 @@ So, I think this is a great time for someone else to consider re-thinking the or
 
 Due to the lengthy time required in a Cocoa project compilation, you probably would end up with a similar architecture as CocoaDocs. This means making a simple REST server, which provides a queue-like infrastructure to parse documentation which uploads the results to a static asset host. In this case CocoaDocs uses S3, and costs somewhere in the range of $20 a month.
 
-If you decide to give it a shot, let me know once you have a prototype and I'll happily provide as many resources as I can. We can set up web-hooks from CocoaPods trunk too.
+If you decide to give it a shot, let me know once you have a prototype and I'll happily provide as many resources as I can. We can set up web-hooks from CocoaPods Trunk too.
 
 [cd]: http://cocoadocs.org/
 [cd_tweet]: https://twitter.com/orta/status/318481722129907712
