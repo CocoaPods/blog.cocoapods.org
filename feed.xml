@@ -8,6 +8,26 @@
     
     
     <item>
+      <title>CocoaDocs documentation sun-setting</title>
+
+      
+      <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaDocs&lt;/em&gt; will stop generating DocSets for new libraries and versions using CocoaPods towards the end of May.&lt;/p&gt;
+
+&lt;p&gt;I started &lt;a href=&quot;http://cocoadocs.org/&quot;&gt;CocoaDocs&lt;/a&gt; &lt;a href=&quot;https://twitter.com/orta/status/318481722129907712&quot;&gt;back in&lt;/a&gt; February 2013, and have been running and maintaining it for the last 4 years. CocoaDocs started as a way to generate documentation for Objective-C projects via &lt;a href=&quot;https://github.com/tomaz/appledoc&quot;&gt;Appledoc&lt;/a&gt;. When Swift came out, &lt;a href=&quot;https://github.com/realm/jazzy&quot;&gt;Jazzy&lt;/a&gt; support was added to the app. Since then, CocoaDocs has grown organically over the years into a tool to &lt;a href=&quot;http://blog.cocoapods.org/CocoaPods.org-Take-Two/&quot;&gt;generate useful metadata&lt;/a&gt; for any CocoaPods library used in the CocoaPods.org website.&lt;/p&gt;
+
+&lt;p&gt;I intend to remove the support for generating HTML pages and DocSets for new libraries uploaded to trunk by the end of May.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Tue, 28 Mar 2017 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/CocoaDocs-Documentation-Sunsetting</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaDocs-Documentation-Sunsetting</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>CocoaPods Specs Repo Sharding</title>
 
       
