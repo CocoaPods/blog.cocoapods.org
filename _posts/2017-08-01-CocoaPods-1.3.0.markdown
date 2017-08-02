@@ -60,7 +60,7 @@ Test specifications are a powerful addition to CocoaPods and allows you to repre
 
 ### Performance Improvements
 
-With this release, we also tackled some of the largest pain points of CocoaPods development. In particular, there are two major updates that address the following:
+With this release, we also tackled some of the largest pain points of CocoaPods development. In particular, there are three major updates that address the following:
 
 1. All CocoaPods script phases (such as 'Embed Pods Frameworks' and 'Copy Pods Resources') now utilize Xcode's input and output paths. This means that those phases will *not* execute again unless any of their inputs or outputs have changed. This is automatically managed by CocoaPods as you add or remove pods in your `Podfile`. This should save a lot of time for developers who often iterate by making a single file change and want fast rebuilds. Internally, we've witnessed cases where without editing a single source file it would take 10-15 seconds to complete a rebuild, however, with CocoaPods 1.3.0 the same process now takes less than a second.
 
