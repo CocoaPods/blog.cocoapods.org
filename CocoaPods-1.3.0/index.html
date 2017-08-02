@@ -160,7 +160,7 @@
 
 <h3 id="performance-improvements">Performance Improvements</h3>
 
-<p>With this release, we also tackled some of the largest pain points of CocoaPods development. In particular, there are two major updates that address the following:</p>
+<p>With this release, we also tackled some of the largest pain points of CocoaPods development. In particular, there are three major updates that address the following:</p>
 
 <ol>
 <li><p>All CocoaPods script phases (such as &#39;Embed Pods Frameworks&#39; and &#39;Copy Pods Resources&#39;) now utilize Xcode&#39;s input and output paths. This means that those phases will <em>not</em> execute again unless any of their inputs or outputs have changed. This is automatically managed by CocoaPods as you add or remove pods in your <code>Podfile</code>. This should save a lot of time for developers who often iterate by making a single file change and want fast rebuilds. Internally, we&#39;ve witnessed cases where without editing a single source file it would take 10-15 seconds to complete a rebuild, however, with CocoaPods 1.3.0 the same process now takes less than a second.</p></li>
