@@ -1,0 +1,87 @@
+---
+layout: post
+title:  "CocoaPods 1.3.0 &#8212; Test specifications and performance improvements"
+author: dnkoutso
+categories: cocoapods releases
+---
+TL;DR: _CocoaPods 1.3.0_ has been released, which includes support for test specifications and performance improvements specifically around rebuilding your project and preparation for Xcode 9 support!
+
+<!-- more -->
+
+We are happy to announce that CocoaPods 1.3.0 has been released! The primary feature of this release is support for test specifications. Up until now, podspecs were not able to describe test sources which made it difficult to test your pods and required custom workarounds to represent your test sources via other means. With this release, you are now able to describe your test sources within your podspecs!
+
+Let's see an an example podspec:
+
+```ruby
+Pod::Spec.new do |s|
+  s.name         = 'CoconutLib'
+  s.version      = '1.0'
+  s.authors      = 'Coconut Corp', { 'Monkey Boy' => 'monkey@coconut-corp.local' }
+  s.homepage     = 'http://coconut-corp.local/coconut-lib.html'
+  s.summary      = 'Coconuts For the Win.'
+  s.description  = 'All the Coconuts'
+  s.source       = { :git => 'http://coconut-corp.local/coconut-lib.git', :tag => 'v1.0' }
+  s.license      = {
+    :type => 'MIT',
+    :file => 'LICENSE',
+    :text => 'Permission is hereby granted ...'
+  }
+
+  s.source_files = 'Sources/*.{h,m}'
+
+  s.test_spec 'Tests' do |test_spec|
+    test_spec.source_files = 'Tests/*.{h,m}'
+    test_spec.dependency 'OCMock' # This dependency will only be linked with your tests.
+  end  
+end
+```
+
+Test specifications work just like [subspecs](https://guides.cocoapods.org/syntax/podspec.html#subspec), but they are treated differently by CocoaPods when it comes to integration. Any sources and headers you specify will be automatically added to your test target and all dependencies specified under test specs will *only* be linked to your test target. By default, test specs have a dependency to their parent, include all of its transitive dependencies and can import all of its headers (including private headers) for testing.
+
+**Note**: As of right now, test specs will generate unit test bundles which require no app host to be executed. Support for test specs with app hosts will be added in the near future.
+
+We also updated the lint process to automatically build and run your test sources if any test specifications are present. This functionality is turned on by default and lint will fail if any of your test sources fail to compile or a test run fails. Finally, the flag `--skip-tests` has been added to skip tests during lint if for any reason you wish to skip running tests.
+
+If you wish to consume the tests of a pod, perhaps for local development, then you will have to specify the test specs in your Podfile. For example:
+
+```ruby
+ target 'MyApp' do
+   use_frameworks!
+   pod 'CoconutLib', '~> 1.0', :testspecs => ['Tests']
+ end
+ ```
+
+ When you execute `pod install` this will automatically create a test target for the `CoconutLib` called `CoconutLib-Unit-Tests`. 
+
+**Note**: Support for automatic execution of tests has been added to all generated pod `xcschemes`. This means you are now able to `CMD+U` on the generated pod target to run its tests without having to create or add the test scheme manually.
+
+Test specifications are a powerful addition to CocoaPods and allows you to represent your test sources within your podspec. It was one of the missing pieces of making podspecs the source of truth for describing your libraries. CocoaPods does a great job in leveraging the file system as the source of truth for library organization and now the same applies to your test sources. This also means you can now have your CI environment build, test and publish your pod using lint as the only command, saving you from managing Xcode projects manually.
+
+
+### Performance Improvements
+
+With this release, we also tackled some of the largest pain points of CocoaPods development. In particular, there are two major updates that address the following:
+
+1. All CocoaPods script phases (such as 'Embed Pods Frameworks' and 'Copy Pods Resources') now utilize Xcode's input and output paths. This means that those phases will *not* execute again unless any of their inputs or outputs have changed. This is automatically managed by CocoaPods as you add or remove pods in your `Podfile`. This should save a lot of time for developers who often iterate by making a single file change and want fast rebuilds. Internally, we've witnessed cases where without editing a single source file it would take 10-15 seconds to complete a rebuild, however, with CocoaPods 1.3.0 the same process now takes less than a second.
+
+2. CocoaPods generates a handful of files each time you execute `pod install`. Those files are necessary for CocoaPods to function and properly integrate your project. However, by regenerating those files even with the same content, Xcode would treat them as "dirty" and often rebuild your project from scratch. This is no longer the case with CocoaPods 1.3.0. The content of each file now is now compared and unless it has changed the file will not be re-written. Executing `pod install` again should not cause any of your pods that haven't changed to rebuild.
+
+3. We've applied a few performance improvements for speeding up `pod install` times. This is particularly beneficial for large complex projects with multiple targets and a large number of pods. Keeping `pod install` times low allows developers to execute faster by generating their workspace more quickly.
+
+
+### Notable Enhancements
+
+There are a few other things worth noting for this release:
+
+1. CocoaPods will automatically detect and copy the `.dSYM` files of vendored dynamic frameworks. Place the `.dSYM` next to your `.framework` for CocoaPods to detect it and copy it to the onto the folder specified by `${DWARF_DSYM_FOLDER_PATH}`.
+
+2. Each lint execution now runs in a unique temp folder. This allows for running multiple lint processes in parallel, for example within a CI environment.
+
+Checkout the [changelog](https://github.com/CocoaPods/CocoaPods/releases/tag/1.3.0) to get the full list of changes.
+
+
+### Xcode 9
+
+Apple is moving fast on releasing Xcode 9. We've taken notice and we are performing all necessary steps required to ensure a smooth transition. We've also seen some new major features, such as the ability to include Swift sources within static libraries and are looking to support them as fast as we can.
+
+CocoaPods 1.3.0 is an important milestone for CocoaPods as it is maturing as the standard library for iOS dependency management. We would like to thank all contributors for their support and time spent to improve this project!
