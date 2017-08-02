@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+      <title>CocoaPods 1.3.0 &#8212; Test specifications and performance improvements - CocoaPods Blog</title>
+    
+
+    <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <link rel="alternate" type="application/rss+xml" title="CocoaPods Blog" href="/feed.xml">
+
+    <meta charset="utf-8" /><meta content="cocoapods objective-c objc swift package manager libraries documentation search pods podspec podfile cocoa apple ios library" name="keywords" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="The Dependency Manager for iOS &amp; Mac projects" name="description" /><meta content="CocoaPods Dev Team" name="author" /><meta content="summary" name="twitter:card" /><meta content="@CocoaPods" name="twitter:site" /><meta content="@CocoaPods" name="twitter:creator" /><meta content="CocoaPods.org" name="twitter:title" /><meta content="The Dependency Manager for iOS &amp; Mac projects." name="twitter:description" /><meta content="https://www.cocoapods.org/" name="twitter:url" />
+    <link rel="shortcut icon" href="https://cocoapods.org/favicons/favicon.ico" type="image/x-icon" /><link rel="apple-touch-icon" href="https://cocoapods.org/favicons/apple-touch-icon.png" /><link rel="apple-touch-icon" sizes="57x57" href="https://cocoapods.org/favicons/apple-touch-icon-57x57.png" /><link rel="apple-touch-icon" sizes="60x60" href="https://cocoapods.org/favicons/apple-touch-icon-60x60.png" /><link rel="apple-touch-icon" sizes="72x72" href="https://cocoapods.org/favicons/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon" sizes="76x76" href="https://cocoapods.org/favicons/apple-touch-icon-76x76.png" /><link rel="apple-touch-icon" sizes="114x114" href="https://cocoapods.org/favicons/apple-touch-icon-114x114.png" /><link rel="apple-touch-icon" sizes="120x120" href="https://cocoapods.org/favicons/apple-touch-icon-120x120.png" /><link rel="apple-touch-icon" sizes="144x144" href="https://cocoapods.org/favicons/apple-touch-icon-144x144.png" /><link rel="apple-touch-icon" sizes="152x152" href="https://cocoapods.org/favicons/apple-touch-icon-152x152.png" />
+
+    <link rel="stylesheet" href="/assets/bootstrap-3b61caa441fab92578453d6681fbf963.css">
+    <link rel="stylesheet" href="/assets/main-df7f28d697ab31d8aa461b8f8ff0c7e4.css">
+    <link rel="stylesheet" href="/assets/blog-a6cba0ad1ceb964c9a5a5387e033c3ff.css">
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-29866548-3', 'cocoapods.org');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="glyphicon glyphicon-plus"></span></button><a class="navbar-brand" href="https://cocoapods.org"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="https://cocoapods.org/app">App</a></li><li><a href="https://cocoapods.org/about">About</a></li><li><a href="https://guides.cocoapods.org">Guides</a></li><li class="active"><a href="https://blog.cocoapods.org">Blog</a></li></ul></div></section></nav>
+
+    <div id ="">
+<section class="container" >
+  <article class="row">
+  <header class="col-md-8 col-md-offset-2 headline blog-post">
+    
+      <h1>CocoaPods 1.3.0 &#8212; Test specifications and performance improvements</h1>
+    
+    
+  </header>
+  </article>
+</section>
+</div>
+
+<section id="content-wrapper" class="post">
+  <section class="container">
+    <article class="row">
+      <article class="author metadata col-md-2 col-md-push-10">
+        <header>
+          
+            
+              <img class="gravatar large" src="http://gravatar.com/avatar/0da25866cffc79d7427beb50d984185a?s=144" height=72 width=72>
+            
+            
+              
+                <p><a href="http://twitter.com/dnkoutso">Dimitris Koutsogiorgas</a></p>
+              
+            
+             <p>1 August 2017</p>
+
+            
+              <a href="https://twitter.com/dnkoutso" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @dnkoutso
+              </a>
+            
+        </header>
+      </article>
+    
+      <article class="content col-md-8">
+        <p>TL;DR: <em>CocoaPods 1.3.0</em> has been released, which includes support for test specifications and performance improvements specifically around rebuilding your project and preparation for Xcode 9 support!</p>
+
+<!-- more -->
+
+<p>We are happy to announce that CocoaPods 1.3.0 has been released! The primary feature of this release is support for test specifications. Up until now, podspecs were not able to describe test sources which made it difficult to test your pods and required custom workarounds to represent your test sources via other means. With this release, you are now able to describe your test sources within your podspecs!</p>
+
+<p>Let&#39;s see an an example podspec:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="no">Pod</span><span class="o">::</span><span class="no">Spec</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">name</span>         <span class="o">=</span> <span class="s1">&#39;CoconutLib&#39;</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">version</span>      <span class="o">=</span> <span class="s1">&#39;1.0&#39;</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">authors</span>      <span class="o">=</span> <span class="s1">&#39;Coconut Corp&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="s1">&#39;Monkey Boy&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;monkey@coconut-corp.local&#39;</span> <span class="p">}</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">homepage</span>     <span class="o">=</span> <span class="s1">&#39;http://coconut-corp.local/coconut-lib.html&#39;</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">summary</span>      <span class="o">=</span> <span class="s1">&#39;Coconuts For the Win.&#39;</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">description</span>  <span class="o">=</span> <span class="s1">&#39;All the Coconuts&#39;</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">source</span>       <span class="o">=</span> <span class="p">{</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">&#39;http://coconut-corp.local/coconut-lib.git&#39;</span><span class="p">,</span> <span class="ss">:tag</span> <span class="o">=&gt;</span> <span class="s1">&#39;v1.0&#39;</span> <span class="p">}</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">license</span>      <span class="o">=</span> <span class="p">{</span>
+    <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="s1">&#39;MIT&#39;</span><span class="p">,</span>
+    <span class="ss">:file</span> <span class="o">=&gt;</span> <span class="s1">&#39;LICENSE&#39;</span><span class="p">,</span>
+    <span class="ss">:text</span> <span class="o">=&gt;</span> <span class="s1">&#39;Permission is hereby granted ...&#39;</span>
+  <span class="p">}</span>
+
+  <span class="n">s</span><span class="o">.</span><span class="n">source_files</span> <span class="o">=</span> <span class="s1">&#39;Sources/*.{h,m}&#39;</span>
+
+  <span class="n">s</span><span class="o">.</span><span class="n">test_spec</span> <span class="s1">&#39;Tests&#39;</span> <span class="k">do</span> <span class="o">|</span><span class="n">test_spec</span><span class="o">|</span>
+    <span class="n">test_spec</span><span class="o">.</span><span class="n">source_files</span> <span class="o">=</span> <span class="s1">&#39;Tests/*.{h,m}&#39;</span>
+    <span class="n">test_spec</span><span class="o">.</span><span class="n">dependency</span> <span class="s1">&#39;OCMock&#39;</span> <span class="c1"># This dependency will only be linked with your tests.</span>
+  <span class="k">end</span>  
+<span class="k">end</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Test specifications work just like <a href="https://guides.cocoapods.org/syntax/podspec.html#subspec">subspecs</a>, but they are treated differently by CocoaPods when it comes to integration. Any sources and headers you specify will be automatically added to your test target and all dependencies specified under test specs will <em>only</em> be linked to your test target. By default, test specs have a dependency to their parent, include all of its transitive dependencies and can import all of its headers (including private headers) for testing.</p>
+
+<p><strong>Note</strong>: As of right now, test specs will generate unit test bundles which require no app host to be executed. Support for test specs with app hosts will be added in the near future.</p>
+
+<p>We also updated the lint process to automatically build and run your test sources if any test specifications are present. This functionality is turned on by default and lint will fail if any of your test sources fail to compile or a test run fails. Finally, the flag <code>--skip-tests</code> has been added to skip tests during lint if for any reason you wish to skip running tests.</p>
+
+<p>If you wish to consume the tests of a pod, perhaps for local development, then you will have to specify the test specs in your Podfile. For example:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"> <span class="n">target</span> <span class="s1">&#39;MyApp&#39;</span> <span class="k">do</span>
+   <span class="n">use_frameworks!</span>
+   <span class="n">pod</span> <span class="s1">&#39;CoconutLib&#39;</span><span class="p">,</span> <span class="s1">&#39;~&gt; 1.0&#39;</span><span class="p">,</span> <span class="ss">:testspecs</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s1">&#39;Tests&#39;</span><span class="o">]</span>
+ <span class="k">end</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>When you execute <code>pod install</code> this will automatically create a test target for the <code>CoconutLib</code> called <code>CoconutLib-Unit-Tests</code>. </p>
+
+<p><strong>Note</strong>: Support for automatic execution of tests has been added to all generated pod <code>xcschemes</code>. This means you are now able to <code>CMD+U</code> on the generated pod target to run its tests without having to create or add the test scheme manually.</p>
+
+<p>Test specifications are a powerful addition to CocoaPods and allows you to represent your test sources within your podspec. It was one of the missing pieces of making podspecs the source of truth for describing your libraries. CocoaPods does a great job in leveraging the file system as the source of truth for library organization and now the same applies to your test sources. This also means you can now have your CI environment build, test and publish your pod using lint as the only command, saving you from managing Xcode projects manually.</p>
+
+<h3 id="performance-improvements">Performance Improvements</h3>
+
+<p>With this release, we also tackled some of the largest pain points of CocoaPods development. In particular, there are two major updates that address the following:</p>
+
+<ol>
+<li><p>All CocoaPods script phases (such as &#39;Embed Pods Frameworks&#39; and &#39;Copy Pods Resources&#39;) now utilize Xcode&#39;s input and output paths. This means that those phases will <em>not</em> execute again unless any of their inputs or outputs have changed. This is automatically managed by CocoaPods as you add or remove pods in your <code>Podfile</code>. This should save a lot of time for developers who often iterate by making a single file change and want fast rebuilds. Internally, we&#39;ve witnessed cases where without editing a single source file it would take 10-15 seconds to complete a rebuild, however, with CocoaPods 1.3.0 the same process now takes less than a second.</p></li>
+<li><p>CocoaPods generates a handful of files each time you execute <code>pod install</code>. Those files are necessary for CocoaPods to function and properly integrate your project. However, by regenerating those files even with the same content, Xcode would treat them as &quot;dirty&quot; and often rebuild your project from scratch. This is no longer the case with CocoaPods 1.3.0. The content of each file now is now compared and unless it has changed the file will not be re-written. Executing <code>pod install</code> again should not cause any of your pods that haven&#39;t changed to rebuild.</p></li>
+<li><p>We&#39;ve applied a few performance improvements for speeding up <code>pod install</code> times. This is particularly beneficial for large complex projects with multiple targets and a large number of pods. Keeping <code>pod install</code> times low allows developers to execute faster by generating their workspace more quickly.</p></li>
+</ol>
+
+<h3 id="notable-enhancements">Notable Enhancements</h3>
+
+<p>There are a few other things worth noting for this release:</p>
+
+<ol>
+<li><p>CocoaPods will automatically detect and copy the <code>.dSYM</code> files of vendored dynamic frameworks. Place the <code>.dSYM</code> next to your <code>.framework</code> for CocoaPods to detect it and copy it to the onto the folder specified by <code>${DWARF_DSYM_FOLDER_PATH}</code>.</p></li>
+<li><p>Each lint execution now runs in a unique temp folder. This allows for running multiple lint processes in parallel, for example within a CI environment.</p></li>
+</ol>
+
+<p>Checkout the <a href="https://github.com/CocoaPods/CocoaPods/releases/tag/1.3.0">changelog</a> to get the full list of changes.</p>
+
+<h3 id="xcode-9">Xcode 9</h3>
+
+<p>Apple is moving fast on releasing Xcode 9. We&#39;ve taken notice and we are performing all necessary steps required to ensure a smooth transition. We&#39;ve also seen some new major features, such as the ability to include Swift sources within static libraries and are looking to support them as fast as we can.</p>
+
+<p>CocoaPods 1.3.0 is an important milestone for CocoaPods as it is maturing as the standard library for iOS dependency management. We would like to thank all contributors for their support and time spent to improve this project!</p>
+
+      </article>
+    </article>
+  </section>
+</section>
+
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2017-08-01-CocoaPods-1.3.0.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/0da25866cffc79d7427beb50d984185a" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/dnkoutso">Follow dnkoutso</a></div></article></div></section></section>
+
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaDocs-Documentation-Sunsetting" title="CocoaDocs documentation sun-setting"><header><h4>Previous Post</h4></header><h3>CocoaDocs documentation sun-setting</h3><p>By Orta Therox</p><a class="chevron_placeholder back" href="/CocoaDocs-Documentation-Sunsetting"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+    <footer class="page-footer"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><h4>CocoaPods is a project from</h4><p class="contributors"> <a href="https://twitter.com/benasher44">Ben Asher</a>, <a href="https://twitter.com/dnkoutso">Dimitris Koutsogiorgas</a>, <a href="http://dantoml.com">Danielle Tomlinson</a>, <a href="http://orta.io">Orta Therox</a>, and <a href="https://cocoapods.org/about#team">The CocoaPods Dev Team</a> with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p><h4>Lovingly sponsored by</h4><p class="sponsors"><a href="http://artsy.net">Artsy</a>, <a href="http://www.usebutton.com">Button</a>, <a href="http://www.capitalone.io">Capital One</a>, <a href="https://circleci.com">CircleCI</a>, <a href="http://discontinuity.eu">Discontinuity</a>, <a href="http://www.fngtps.com">Fingertips</a>, <a href="https://www.heroku.com">Heroku</a>, <a href="https://realm.io">Realm</a>, <a href="http://www.rubymotion.com">RubyMotion</a>, <a href="https://www.sauspiel.de">Sauspiel</a>, <a href="https://www.slack.com">Slack</a>, <a href="https://www.soundcloud.com">SoundCloud</a>, <a href="https://www.stripe.com">Stripe</a>, <a href="https://www.squareup.com">Square</a>, and  <a href="http://www.technologyastronauts.ch">Technology&nbsp;Astronauts</a>.</p></article></div></section></footer><footer class="footer-links"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><a class="cocoapods-small-logo" href="https://cocoapods.org"></a><ul><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/using/troubleshooting.html">Support</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://github.com/CocoaPods/CocoaPods">GitHub Repo</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://status.cocoapods.org">Web Properties Status</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://twitter.com/CocoaPods">@CocoaPods</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://groups.google.com/group/cocoapods">Mailing List</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/about"><span class="visible-lg-span">CocoaPods</span> Dev Team</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/syntax/podfile.html">Podfile Doc<span class="hidden-lg-span">s</span><span class="visible-lg-span">umentation</span></a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/legal">Legal / Conduct</a></li></ul></article></div></section></footer>
+    <script src="/assets/blog-c2911afb0e1e77d79b486c5c39fe0cc6.js"></script>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  </body>
+</html>

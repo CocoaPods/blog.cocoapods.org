@@ -58,6 +58,51 @@
 <article class="post">
   <header>
     
+    <h2 class="post-title"><a href="/Repairing-Our-Broken-Specs-Repository">Repairing Our Broken Specs Repository</a></h2>
+  </header>
+
+  
+      <p><em>Note: If you got this problem after running <code>gem update</code>, <a href="#i-got-linked-here-after-updating-my-gems,-what-to-do?">jump here</a> to find a solution.</em></p>
+
+<p>Unfortunately we&#39;ve encountered a bug in libgit2 and we are going to have to
+<strong>force push</strong> into <a href="https://github.com/CocoaPods/Specs">the Specs repository</a>. (Also known as the
+‘master’ spec repo.)</p>
+
+<h3 id="what-does-this-mean-for-you?">What does this mean for you?</h3>
+
+<p>Well, basically your CocoaPods setup <strong>is going to break</strong>. You are going to
+have to manually delete <em>any</em> local copies of the Specs repository and re-clone
+the new version of the Specs repository. You can do that with the following
+commands:</p>
+
+<pre class='highlight'><code>
+    $ sudo rm -fr ~/.cocoapods/repos/master
+    $ pod setup
+    
+</code></pre>
+
+<p><em><strong>NOTE 1:</strong> If you have any local commits or changes to the Specs repository
+which are not merged, you should ensure you have a copy of them. I would
+recommend that you manually copy these changes over and re-commit them. You can
+fix your repository without deleting, however, this is not a simple process, so
+we are instead recommending that you delete your copy of the Specs repository
+and any forks of it.</em></p>
+
+<p><em><strong>NOTE 2:</strong> In case you are storing private podspecs in your clone of the
+Specs repository or you have a private spec repo that was forked from the
+Specs repository, this is a great time to clean that up by using private spec
+repositories <a href="http://guides.cocoapods.org/making/private-cocoapods.html">The Proper Way</a>. This way your private spec
+repository should never be affected by issues in other spec repositories.</em></p>
+
+
+      <p><a href="/Repairing-Our-Broken-Specs-Repository">Read on →</a></p>
+  
+
+</article>
+
+<article class="post">
+  <header>
+    
     <h2 class="post-title"><a href="/Cocoa-Kucha-3-Berlin">Cocoa Kucha 3 - Berlin - 22nd Jan 2014</a></h2>
   </header>
 
@@ -221,26 +266,6 @@ headers location on OS X (Mountain Lion <em>and</em> Mavericks).</p>
 
 
       <p><a href="/Cocoa-Kucha">Read on →</a></p>
-  
-
-</article>
-
-<article class="post">
-  <header>
-    
-    <h2 class="post-title"><a href="/CocoaPods-0.26">CocoaPods 0.26</a></h2>
-  </header>
-
-  
-      <p>Today we are releasing CocoaPods 0.26.</p>
-
-<p>The most visible change is that CocoaPods now hides the schemes of the Pod
-targets. If this doesn&#39;t ring a bell the following image should.</p>
-
-<p><img src="/assets/blog_img/CocoaPods-0.26/schemes-comparison.png" style="display:block;margin-left:auto;margin-right:auto;"></a></p>
-
-
-      <p><a href="/CocoaPods-0.26">Read on →</a></p>
   
 
 </article>

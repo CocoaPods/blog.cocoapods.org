@@ -8,6 +8,22 @@
     
     
     <item>
+      <title>CocoaPods 1.3.0 &#8212; Test specifications and performance improvements</title>
+
+      
+      <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 1.3.0&lt;/em&gt; has been released, which includes support for test specifications and performance improvements specifically around rebuilding your project and preparation for Xcode 9 support!&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/CocoaPods-1.3.0</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-1.3.0</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>CocoaDocs documentation sun-setting</title>
 
       
