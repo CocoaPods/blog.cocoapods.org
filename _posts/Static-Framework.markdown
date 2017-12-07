@@ -3,7 +3,7 @@
 Source static frameworks is powerful new feature of CocoaPods 1.4.0. For the first time, it is
 possible to distribute source CocoaPods and require that they be built into a static framework
 when `use_frameworks!` is specified in the Podfile. Because dynamic libraries cannot depend
-upon dynamic libraries, it now becomes possible to distribute CocoaPods that depend upon
+upon static libraries, it now becomes possible to distribute CocoaPods that depend upon
 other static library frameworks, including the many static frameworks that are
 released as vendored_frameworks.
 
@@ -16,7 +16,7 @@ and loaded at runtime.
 A dynamic library cannot depend on a static library because a static library may
 not have the necessary relocations to be loaded at runtime and because if multiple
 dynamic libraries depended upon the same static library, there would be multiple
-copies of the static library. The multiple copies only a code size issue for
+copies of the static library. The multiple copies is only a code size issue for
 the code itself, but it will lead to functionality issues for any data in the
 static library.
 
@@ -31,7 +31,7 @@ it was not possible to depend on many vendored_framework CocoaPods. Also, it was
 not possible for a vendor who delivered their CocoaPod as a binary CocoaPod to
 convert it to a source CocoaPod and keep it as a static framework.
 
-#### Background
+#### Usage
 
 Add the following to the podspec file:
 
