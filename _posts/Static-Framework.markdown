@@ -5,7 +5,7 @@ possible to distribute source CocoaPods and require that they be built into a st
 when `use_frameworks!` is specified in the Podfile. Because dynamic libraries cannot depend
 upon static libraries, it now becomes possible to distribute CocoaPods that depend upon
 other static library frameworks, including the many static frameworks that are
-released as vendored_frameworks.
+released as `vendored_frameworks`.
 
 #### Background
 
@@ -23,7 +23,7 @@ static library.
 When Apple and Xcode refer to *frameworks*, dynamic is typically implied. However, the lower
 level Apple build tools work correctly with both dynamic and static frameworks.
 
-Historically many binary CocoaPods have been distributed as a vendored_framework
+Historically many binary CocoaPods have been distributed as a `vendored_framework`
 that includes a static library.
 
 Before 1.4.0, source CocoaPods could only be built as dynamic frameworks. Therefore,
