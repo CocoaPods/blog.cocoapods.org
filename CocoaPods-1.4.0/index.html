@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+      <title>CocoaPods 1.4.0 &#8212; Feature packed! - CocoaPods Blog</title>
+    
+
+    <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <link rel="alternate" type="application/rss+xml" title="CocoaPods Blog" href="/feed.xml">
+
+    <meta charset="utf-8" /><meta content="cocoapods objective-c objc swift package manager libraries documentation search pods podspec podfile cocoa apple ios library" name="keywords" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="The Dependency Manager for iOS &amp; Mac projects" name="description" /><meta content="CocoaPods Dev Team" name="author" /><meta content="summary" name="twitter:card" /><meta content="@CocoaPods" name="twitter:site" /><meta content="@CocoaPods" name="twitter:creator" /><meta content="CocoaPods.org" name="twitter:title" /><meta content="The Dependency Manager for iOS &amp; Mac projects." name="twitter:description" /><meta content="https://www.cocoapods.org/" name="twitter:url" />
+    <link rel="shortcut icon" href="https://cocoapods.org/favicons/favicon.ico" type="image/x-icon" /><link rel="apple-touch-icon" href="https://cocoapods.org/favicons/apple-touch-icon.png" /><link rel="apple-touch-icon" sizes="57x57" href="https://cocoapods.org/favicons/apple-touch-icon-57x57.png" /><link rel="apple-touch-icon" sizes="60x60" href="https://cocoapods.org/favicons/apple-touch-icon-60x60.png" /><link rel="apple-touch-icon" sizes="72x72" href="https://cocoapods.org/favicons/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon" sizes="76x76" href="https://cocoapods.org/favicons/apple-touch-icon-76x76.png" /><link rel="apple-touch-icon" sizes="114x114" href="https://cocoapods.org/favicons/apple-touch-icon-114x114.png" /><link rel="apple-touch-icon" sizes="120x120" href="https://cocoapods.org/favicons/apple-touch-icon-120x120.png" /><link rel="apple-touch-icon" sizes="144x144" href="https://cocoapods.org/favicons/apple-touch-icon-144x144.png" /><link rel="apple-touch-icon" sizes="152x152" href="https://cocoapods.org/favicons/apple-touch-icon-152x152.png" />
+
+    <link rel="stylesheet" href="/assets/bootstrap-3b61caa441fab92578453d6681fbf963.css">
+    <link rel="stylesheet" href="/assets/main-df7f28d697ab31d8aa461b8f8ff0c7e4.css">
+    <link rel="stylesheet" href="/assets/blog-a6cba0ad1ceb964c9a5a5387e033c3ff.css">
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-29866548-3', 'cocoapods.org');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="glyphicon glyphicon-plus"></span></button><a class="navbar-brand" href="https://cocoapods.org"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="https://cocoapods.org/app">App</a></li><li><a href="https://cocoapods.org/about">About</a></li><li><a href="https://guides.cocoapods.org">Guides</a></li><li class="active"><a href="https://blog.cocoapods.org">Blog</a></li></ul></div></section></nav>
+
+    <div id ="">
+<section class="container" >
+  <article class="row">
+  <header class="col-md-8 col-md-offset-2 headline blog-post">
+    
+      <h1>CocoaPods 1.4.0 &#8212; Feature packed!</h1>
+    
+    
+  </header>
+  </article>
+</section>
+</div>
+
+<section id="content-wrapper" class="post">
+  <section class="container">
+    <article class="row">
+      <article class="author metadata col-md-2 col-md-push-10">
+        <header>
+          
+            
+              <img class="gravatar large" src="http://gravatar.com/avatar/0da25866cffc79d7427beb50d984185a?s=144" height=72 width=72>
+            
+            
+              
+                <p><a href="http://twitter.com/dnkoutso">Dimitris Koutsogiorgas</a></p>
+              
+            
+             <p>18 January 2018</p>
+
+            
+              <a href="https://twitter.com/dnkoutso" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @dnkoutso
+              </a>
+            
+        </header>
+      </article>
+    
+      <article class="content col-md-8">
+        <p><em>CocoaPods 1.4.0</em> comes packed with new features such as app host support for tests, script phases, static framework support and a new Swift version DSL!</p>
+
+<!-- more -->
+
+<p>Just after few months after the release of CocoaPods 1.3.0, we unveil a new version that adds a bunch of new powerful features. Let&#39;s get right into it!</p>
+
+<h3 id="app-host-support-for-test-specs">App host support for test specs</h3>
+
+<p>CocoaPods 1.3.0 introduced support for test specs, but initially, pod authors were unable to use test specs that required an app host. With 1.4.0, you can now specify that an app host is required in order for your tests to execute.</p>
+
+<p>You can accomplish this by using setting the <code>requires_app_host</code> attribute within your test spec:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">s</span><span class="o">.</span><span class="n">test_spec</span> <span class="s1">&#39;Tests&#39;</span> <span class="k">do</span> <span class="o">|</span><span class="n">test_spec</span><span class="o">|</span>
+  <span class="n">test_spec</span><span class="o">.</span><span class="n">requires_app_host</span> <span class="o">=</span> <span class="kp">true</span>
+  <span class="n">test_spec</span><span class="o">.</span><span class="n">source_files</span> <span class="o">=</span> <span class="s1">&#39;Tests/**/*.{h,m,swift}&#39;</span>
+<span class="k">end</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Once enabled, CocoaPods will automatically create a stub app host and link it with your test bundle targets. This enables you to describe test sources that use <code>UIKit</code> in order to function. CocoaPods will re-use the same app host across all test specs integrated in your project. For iOS, the app host generated by CocoaPods creates and adds an empty view controller.</p>
+
+<p><center>
+</article>
+</div>
+</section>
+<div style="background-color:white;">
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='/assets/blog_img/CocoaPods-1.4.0/app_host_1.png '><img  src='/assets/blog_img/CocoaPods-1.4.0/app_host_1.png '></a></center></article>
+</div>
+</section>
+</div>
+<section class="container">
+<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
+
+<p></center></p>
+
+<p><strong>Note</strong>: App host support is not currently available for the <code>watchOS</code> platform.</p>
+
+<p>We&#39;ve also made quite a few fixes since the initial launch of test specs in 1.3.0, so we highly recommend upgrading and start using test specs!</p>
+
+<h3 id="script-phases">Script Phases</h3>
+
+<p>Script phase integration has been a long-awaited and a powerful new feature of CocoaPods 1.4.0. Pod authors as well as app developers can now use CocoaPods to integrate script phases within their podfile or podspec.</p>
+
+<h4 id="podfile">Podfile</h4>
+
+<p>For app developers, each target now allows you to specify a <code>script_phase</code> attribute which will automatically integrate a script phase to your target. Here&#39;s an example:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">source</span> <span class="s1">&#39;https://github.com/CocoaPods/Specs&#39;</span>
+
+<span class="n">install!</span> <span class="s1">&#39;cocoapods&#39;</span>
+
+<span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">&#39;9.0&#39;</span>
+
+<span class="n">target</span> <span class="s1">&#39;SampleApp&#39;</span> <span class="k">do</span>
+  <span class="n">pod</span> <span class="s1">&#39;Alamofire&#39;</span>
+  <span class="n">script_phase</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Hello World&#39;</span><span class="p">,</span> <span class="ss">:script</span> <span class="o">=&gt;</span> <span class="s1">&#39;echo &quot;Hello World&quot;&#39;</span>
+<span class="k">end</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>This will yield the following result:</p>
+
+<p><center>
+</article>
+</div>
+</section>
+<div style="background-color:white;">
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='/assets/blog_img/CocoaPods-1.4.0/script_phases_podfile_1.png '><img  src='/assets/blog_img/CocoaPods-1.4.0/script_phases_podfile_1.png '></a></center></article>
+</div>
+</section>
+</div>
+<section class="container">
+<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
+
+<p></center></p>
+
+<p>This allows you to represent script phases for your app targets within your podfile without having to maintain them within your <code>.xcodeproj</code>. Each script phase is prefixed with <code>[CP-User]</code> so you can easily distinguish it as your own, and know that it has been automatically added by CocoaPods. You can have multiple script phases per single target and the order in which you specify them is the order that they will be added into your target.</p>
+
+<h4 id="podspec">Podspec</h4>
+
+<p>It is often the case that libraries may want to perform a few tasks during compilation. Up until now, pod authors were only able to perform a configuration task via the the <a href="https://guides.cocoapods.org/syntax/podspec.html#prepare_command">prepare_command</a> attribute, however, this only executes when your pod is first installed or updated. Additionally, during execution of the <a href="https://guides.cocoapods.org/syntax/podspec.html#prepare_command">prepare_command</a>, none of the Xcode environment variables are set as they are during build execution.</p>
+
+<p>With CocoaPods 1.4.0 you are now able to specify a <code>script_phase</code> attribute within your podspec that executes as part of the build process of your pod, giving you full access to the Xcode build environment. Let&#39;s take a look at an example using our favorite sample pod &#39;CannonPodder&#39;:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="no">Pod</span><span class="o">::</span><span class="no">Spec</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">name</span>         <span class="o">=</span> <span class="s1">&#39;CannonPodder&#39;</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">version</span>      <span class="o">=</span> <span class="s1">&#39;1.0.0&#39;</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">summary</span>      <span class="o">=</span> <span class="s1">&#39;CannonPodder for the win.&#39;</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">homepage</span>     <span class="o">=</span> <span class="s1">&#39;http://cannonpodder-corp.local/cannonpodder-lib.html&#39;</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">description</span>  <span class="o">=</span> <span class="s1">&#39;All the Cannons&#39;</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">source</span>       <span class="o">=</span> <span class="p">{</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">&#39;http://somewhere.com/cannonpodder.git&#39;</span><span class="p">,</span> <span class="ss">:tag</span> <span class="o">=&gt;</span> <span class="s1">&#39;1.0.0&#39;</span> <span class="p">}</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">license</span>      <span class="o">=</span> <span class="p">{</span> <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="s1">&#39;MIT&#39;</span><span class="p">,</span> <span class="ss">:text</span> <span class="o">=&gt;</span> <span class="s1">&#39;Permission is hereby granted ...&#39;</span> <span class="p">}</span>
+
+  <span class="n">s</span><span class="o">.</span><span class="n">ios</span><span class="o">.</span><span class="n">deployment_target</span> <span class="o">=</span> <span class="s1">&#39;9.0&#39;</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">osx</span><span class="o">.</span><span class="n">deployment_target</span> <span class="o">=</span> <span class="s1">&#39;10.10&#39;</span>
+
+  <span class="n">s</span><span class="o">.</span><span class="n">script_phase</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Hello World&#39;</span><span class="p">,</span> <span class="ss">:script</span> <span class="o">=&gt;</span> <span class="s1">&#39;echo &quot;Hello World&quot;&#39;</span> <span class="p">}</span>
+
+  <span class="n">s</span><span class="o">.</span><span class="n">source_files</span> <span class="o">=</span> <span class="s1">&#39;Sources/**/*.{h,m,swift}&#39;</span>
+
+  <span class="n">s</span><span class="o">.</span><span class="n">private_header_files</span> <span class="o">=</span> <span class="s1">&#39;Sources/Internal/**/*.h&#39;</span>
+<span class="k">end</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>The above will automatically add a script phase to the <code>CannonPodder-iOS</code> and <code>CannonPodder-macOS</code> targets generated by CocoaPods. It looks like this:</p>
+
+<p><center>
+</article>
+</div>
+</section>
+<div style="background-color:white;">
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='/assets/blog_img/CocoaPods-1.4.0/script_phases_podspec_1.png '><img  src='/assets/blog_img/CocoaPods-1.4.0/script_phases_podspec_1.png '></a></center></article>
+</div>
+</section>
+</div>
+<section class="container">
+<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
+
+<p></center></p>
+
+<p>If your pod supports multiple platforms, you can limit a script phase only to a specific platform, for example:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">s</span><span class="o">.</span><span class="n">ios</span><span class="o">.</span><span class="n">script_phase</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Hello iOS World&#39;</span><span class="p">,</span> <span class="ss">:script</span> <span class="o">=&gt;</span> <span class="s1">&#39;echo &quot;Hello iOS World&quot;&#39;</span> <span class="p">}</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>The above example will only add a script phase to the <code>CannonPodder-iOS</code> target.</p>
+
+<p>Additionally, there are times where you would like your script phases to be executed <em>before</em> compilation in order to perform a configuration step, such as generate some sources or perhaps perform a lint check. Support for this is included with CocoaPods 1.4.0 via the <code>:execution_position</code> attribute within each <code>script_phase</code> entry.</p>
+
+<p>For example:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">s</span><span class="o">.</span><span class="n">script_phase</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Hello World&#39;</span><span class="p">,</span>
+  <span class="ss">:script</span> <span class="o">=&gt;</span> <span class="s1">&#39;echo &quot;Hello World&quot;&#39;</span><span class="p">,</span>
+  <span class="ss">:execution_position</span> <span class="o">=&gt;</span> <span class="ss">:before_compile</span>
+<span class="p">}</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Generates the following:</p>
+
+<p><center>
+</article>
+</div>
+</section>
+<div style="background-color:white;">
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='/assets/blog_img/CocoaPods-1.4.0/script_phases_podspec_2.png '><img  src='/assets/blog_img/CocoaPods-1.4.0/script_phases_podspec_2.png '></a></center></article>
+</div>
+</section>
+</div>
+<section class="container">
+<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
+
+<p></center></p>
+
+<p>CocoaPods will automatically add the script phase before the <code>Compile Sources</code> phase. This effectively allows you to control at what stage you prefer a script phase to be executed and allows you to perform different type of tasks depending on the compilation phase.</p>
+
+<p>Here&#39;s a slightly more complicated example that demonstrates two script phases running at different stages:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">s</span><span class="o">.</span><span class="n">script_phases</span> <span class="o">=</span> <span class="o">[</span>
+  <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Precompile&#39;</span><span class="p">,</span>
+    <span class="ss">:script</span> <span class="o">=&gt;</span> <span class="s1">&#39;${PODS_TARGET_SRCROOT}/setup.sh&#39;</span><span class="p">,</span>
+    <span class="ss">:execution_position</span> <span class="o">=&gt;</span> <span class="ss">:before_compile</span>
+  <span class="p">},</span>
+  <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Postcompile&#39;</span><span class="p">,</span>
+    <span class="ss">:script</span> <span class="o">=&gt;</span> <span class="s1">&#39;echo &quot;yay!&quot;&#39;</span><span class="p">,</span>
+    <span class="ss">:execution_position</span> <span class="o">=&gt;</span> <span class="ss">:after_compile</span>
+  <span class="p">}</span>
+<span class="o">]</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Currently, the available execution positions are <code>:before_compile</code>, <code>:after_compile</code> and <code>:any</code> which is the default and is reserved internally by CocoaPods. When you use <code>:any</code>, its behavior currently matches that of <code>:after_compile</code> but that might change in the future. This is why it is always recommended to specify the <code>execution_position</code> attribute when defining a <code>script_phase</code> within your podspec.</p>
+
+<p>In the future, we are hoping to expand the <code>:execution_phase</code> attribute and provide more granular options for you specify at which point should your script phase execute.</p>
+
+<p><strong>Note</strong>: If you&#39;d like your script phase to access any of the sources of your pod during execution, then it is <em>highly</em> recommended to use the <code>${PODS_TARGET_SRCROOT}</code> environment variable which is set for each pod and is always relative to the path of your pod sources.</p>
+
+<h4 id="security-warning">Security Warning</h4>
+
+<p>While script phases are a powerful addition to CocoaPods, it is crucial to understand that consuming pods that include script phases may be a high security vulnerability for many. After all, this feature essentially allows pod authors to execute code on your machine if you decide to integrate their pod into your project.</p>
+
+<p>For this reason, CocoaPods will <strong>always</strong> display a warning when you install a pod or if you update a pod to a new version that adds script phases as part of it&#39;s build process.</p>
+
+<p>A warning would be displayed as such (click to enlarge):</p>
+
+<p><center>
+</article>
+</div>
+</section>
+<div style="background-color:white;">
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='/assets/blog_img/CocoaPods-1.4.0/script_phases_security_1.png '><img  src='/assets/blog_img/CocoaPods-1.4.0/script_phases_security_1.png '></a></center></article>
+</div>
+</section>
+</div>
+<section class="container">
+<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
+
+<p></center></p>
+
+<p><strong>Note</strong>: This warning cannot be disabled and it will appear the first time you install a pod or when an existing pod is updated and contains script phases. It is imperative that you inspect the contents of the script phase to ensure no harmful code is executed as part of your compilation process.</p>
+
+<p>In a future version, CocoaPods will prompt you before executing a <a href="https://guides.cocoapods.org/syntax/podspec.html#prepare_command">prepare_command</a> for a pod in order for you to inspect its contents.</p>
+
+<h3 id="static-frameworks">Static Frameworks</h3>
+
+<p>Source static frameworks is another powerful new feature of CocoaPods 1.4.0. For the first time, it is possible to distribute sources and build them into a static framework when <code>use_frameworks!</code> is specified in the <code>Podfile</code>. Because dynamic libraries cannot depend upon static libraries, it now becomes possible to distribute pods that depend upon other static library frameworks, including the many static frameworks that are released as <code>vendored_frameworks</code> today.</p>
+
+<h4 id="background">Background</h4>
+
+<p>A framework is a collection of a library, headers and resources. The library may be either dynamic or static. A static library is linked at build time while a dynamic library is linked and loaded at runtime.</p>
+
+<p>A dynamic library cannot depend on a static library because a static library may not have the necessary relocations to be loaded at runtime and because if multiple dynamic libraries depended upon the same static library, there would be multiple copies of the static library. The multiple copies is only a code size issue for the code itself, but it will lead to functionality issues for any data in the static library.</p>
+
+<p>When Apple and Xcode refer to frameworks, dynamic is typically implied. However, the lower level Apple build tools work correctly with both dynamic and static frameworks.</p>
+
+<p>Historically many binary CocoaPods have been distributed as a <code>vendored_framework</code> that includes a static library.</p>
+
+<p>Before 1.4.0, sources could only be built as dynamic frameworks. Therefore, it was not possible to depend on many <code>vendored_framework</code> CocoaPods. Also, it was not possible for a vendor who delivered their pod in a binary form to convert it to a source CocoaPod and keep it as a static framework.</p>
+
+<h4 id="usage">Usage</h4>
+
+<p>To enable static framework support add the following to your podspec:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">s</span><span class="o">.</span><span class="n">static_framework</span> <span class="o">=</span> <span class="kp">true</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Voilà!</p>
+
+<h3 id="swift-version-dsl">Swift Version DSL</h3>
+
+<p>With CocoaPods 1.4.0, you are now able to specify the Swift version your pod officially supports within your podspec via the <code>swift_version</code> attribute. Since the release of Xcode 9, multiple Swift versions are now allowed per target to be used. CocoaPods always defaulted to the Swift version your app target was using. As Swift evolves the current integration is no longer sustainable. For example, upgrading your project to Swift 4.0 does not necessarily mean that all Swift pods you consume also successfully compile with Swift 4.0 and therefore you had to wait for a new version of a pod to be published before upgrading to the latest version of Swift or resort into using a <code>post_install</code> hook to edit the configuration manually.</p>
+
+<p>As a pod author you can now add the following to your podspec:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">s</span><span class="o">.</span><span class="n">swift_version</span> <span class="o">=</span> <span class="s1">&#39;4.0&#39;</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>This will automatically configure Swift 4.0 for the pod when it&#39;s consumed and regardless of the Swift version the app target uses. As an author you should always test and provide the known version of Swift that successfully works with your pod and update your podspec accordingly.</p>
+
+<p><strong>Note</strong>: The usage of the <code>.swift-version</code> file as well as the <code>--swift-version</code> parameter during <code>lint</code> is now deprecated. You may continue to use it but you will receive a warning to use the <code>swift_version</code> attribute instead.</p>
+
+<p>We aim to improve support for this feature in the future by allowing pod authors to specify a range of Swift versions their pod supports instead of a single Swift version, but for the majority this will be sufficient. We would like to remain detached from Apple&#39;s Swift roadmap and not to have to perform releases of CocoaPods as new versions of Swift and Xcode are introduced.</p>
+
+<h3 id="transition-to-https">Transition to <code>https</code></h3>
+
+<p>With this release, publishing a pod using an unencrypted <code>http</code> source is now deprecated and it is <em>highly</em> recommended to begin the process of hosting your pod using an <code>https</code> source. A warning will appear if you attempt to publish a pod in the master repo that&#39;s not using an <code>https</code> source. In a future release this will become more strict and you will be unable to publish a pod without an <code>https</code> source.</p>
+
+<p>Additionally, during installation consumers of pods with unencrypted <code>http</code> source will also receive a warning notifying them that the source in which the pod is hosted may be unsafe.</p>
+
+<h3 id="development-pod-files">Development Pod Files</h3>
+
+<p>It is often very useful when you are developing locally on a pod (using the <code>:path</code> directive) to have all of its associated files (such as documentation files, its podspec and license files) to be easily available and visible so you can view and edit them. In 1.4.0, all of these files are now automatically added to the generated <code>.xcodeproj</code>! The following files will be automatically added to the workspace:</p>
+
+<ul>
+<li>Podspec</li>
+<li>Docs (in a folder which matches the glob pattern <code>doc{s}{*,.*}</code>)</li>
+<li>Custom module map (using the podspec&#39;s <code>module_map</code> attribute)</li>
+<li>Prefix header (using the Podspec&#39;s <code>prefix_header_file</code> attribute)</li>
+<li>License (using either the Podspec&#39;s license attribute, or automatically found with the glob pattern <code>licen{c,s}e{*,.*}</code>)</li>
+<li>README (matching the glob pattern <code>readme{*,.*}</code>)</li>
+</ul>
+
+<p>This should enhance your development experience when working with a pod locally.</p>
+
+<h3 id="summary">Summary</h3>
+
+<p>CocoaPods 1.4.0 is a huge release for propelling iOS development forward and introduces many powerful features. We are very excited for you to try it and highly recommend you upgrade!</p>
+
+<p>Special thanks to all the contributors for CocoaPods 1.4.0, we couldn&#39;t have done it without you.</p>
+
+<p>Checkout the <a href="https://github.com/CocoaPods/CocoaPods/releases/tag/1.4.0">changelog</a> to get the full list of changes.</p>
+
+<p>&lt;3</p>
+
+      </article>
+    </article>
+  </section>
+</section>
+
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2018-01-18-CocoaPods-1.4.0.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/0da25866cffc79d7427beb50d984185a" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/dnkoutso">Follow dnkoutso</a></div></article></div></section></section>
+
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaPods-1.3.0" title="CocoaPods 1.3.0 &amp;#8212; Test specifications and performance improvements"><header><h4>Previous Post</h4></header><h3>CocoaPods 1.3.0 &amp;#8212; Test specifications and performance improvements</h3><p>By Dimitris Koutsogiorgas</p><a class="chevron_placeholder back" href="/CocoaPods-1.3.0"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+    <footer class="page-footer"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><h4>CocoaPods is a project from</h4><p class="contributors"> <a href="https://twitter.com/benasher44">Ben Asher</a>, <a href="https://twitter.com/dnkoutso">Dimitris Koutsogiorgas</a>, <a href="http://dantoml.com">Danielle Tomlinson</a>, <a href="http://orta.io">Orta Therox</a>, and <a href="https://cocoapods.org/about#team">The CocoaPods Dev Team</a> with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p><h4>Lovingly sponsored by</h4><p class="sponsors"><a href="http://artsy.net">Artsy</a>, <a href="http://www.usebutton.com">Button</a>, <a href="http://www.capitalone.io">Capital One</a>, <a href="https://circleci.com">CircleCI</a>, <a href="http://discontinuity.eu">Discontinuity</a>, <a href="http://www.fngtps.com">Fingertips</a>, <a href="https://www.heroku.com">Heroku</a>, <a href="https://realm.io">Realm</a>, <a href="http://www.rubymotion.com">RubyMotion</a>, <a href="https://www.sauspiel.de">Sauspiel</a>, <a href="https://www.slack.com">Slack</a>, <a href="https://www.soundcloud.com">SoundCloud</a>, <a href="https://www.stripe.com">Stripe</a>, <a href="https://www.squareup.com">Square</a>, and  <a href="http://www.technologyastronauts.ch">Technology&nbsp;Astronauts</a>.</p></article></div></section></footer><footer class="footer-links"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><a class="cocoapods-small-logo" href="https://cocoapods.org"></a><ul><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/using/troubleshooting.html">Support</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://github.com/CocoaPods/CocoaPods">GitHub Repo</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://status.cocoapods.org">Web Properties Status</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://twitter.com/CocoaPods">@CocoaPods</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://groups.google.com/group/cocoapods">Mailing List</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/about"><span class="visible-lg-span">CocoaPods</span> Dev Team</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/syntax/podfile.html">Podfile Doc<span class="hidden-lg-span">s</span><span class="visible-lg-span">umentation</span></a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/legal">Legal / Conduct</a></li></ul></article></div></section></footer>
+    <script src="/assets/blog-c2911afb0e1e77d79b486c5c39fe0cc6.js"></script>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  </body>
+</html>

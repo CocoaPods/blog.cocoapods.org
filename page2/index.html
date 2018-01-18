@@ -58,6 +58,38 @@
 <article class="post">
   <header>
     
+    <h2 class="post-title"><a href="/CocoaPods-1.0-Migration-Guide">CocoaPods 1.0 Migration Guide</a></h2>
+  </header>
+
+  
+      <h4 id="major-1.0-changes-tl:dr">Major 1.0 changes TL:DR</h4>
+
+<p>​</p>
+
+<ul>
+<li>You now have to define targets. Previously there was an available implicit target.</li>
+<li>A <code>target</code> has to represent an Xcode target.</li>
+<li>When you want to represent a collection of pods that go to multiple targets, use an <code>abstract_target</code> then add targets inside that. Pod dependencies are inherited by nested targets.</li>
+<li>Targets that want to know about the pods for a target but don&#39;t need linking (for example, Test targets) can define that they inherit pods via their search paths (<code>inherit! :search_paths</code>).</li>
+<li><code>:exclusive =&gt; true</code> and <code>link_with</code> have been removed in favour of the above.</li>
+<li><code>xcodeproj</code> is renamed <code>project</code> to make the DSL vocabulary consistent.</li>
+<li>We&#39;ve removed the ability to declare <code>:head</code> on a <code>pod</code>—you can either use the <code>:podspec</code> option or point directly to the upstream repo (via <code>git</code>, <code>:svn</code>, etc.).</li>
+<li>You can now declare installation options inside the <code>Podfile</code> via <code>install!</code> (e.g. <code>install! &#39;cocoapods&#39;, :deterministic_uuids =&gt; false, :integrate_targets =&gt; false</code>).</li>
+<li>We&#39;ve removed all DSL attributes that were classed as deprecated.</li>
+<li><code>pod trunk delete</code> and <code>pod trunk deprecate</code> have been introduced.</li>
+<li><code>pod search</code> improvements (this is great because it searches all your private spec repos too).</li>
+<li><code>pod lib lint</code> and <code>pod spec lint</code> will verify that your pod can actually be imported.</li>
+</ul>
+
+
+      <p><a href="/CocoaPods-1.0-Migration-Guide">Read on →</a></p>
+  
+
+</article>
+
+<article class="post">
+  <header>
+    
     <h2 class="post-title"><a href="/RGSoC">RGSoC</a></h2>
   </header>
 
@@ -218,21 +250,6 @@ while finishing university.</p>
 
 
       <p><a href="/Stats-Reset">Read on →</a></p>
-  
-
-</article>
-
-<article class="post">
-  <header>
-    
-    <h2 class="post-title"><a href="/CocoaPods-0.38">CocoaPods 0.38 - watchOS and target de-duplication</a></h2>
-  </header>
-
-  
-      <p>TL;DR: <em>CocoaPods 0.38</em> has been released, with watchOS 2 support, target de-duplication, and Stats for everyone.</p>
-
-
-      <p><a href="/CocoaPods-0.38">Read on →</a></p>
   
 
 </article>
