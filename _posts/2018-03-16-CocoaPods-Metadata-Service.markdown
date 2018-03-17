@@ -6,7 +6,7 @@ categories: cocoadocs documentation cocoapods.org
 ---
 
 This week we shipped a new behind-the-scenes service for CocoaPods authors: [cocoapods-metadata-service][cms] it handles
-a subset of CocoaDocs responsibilities but does not have the requirement of running on a Mac. This makes it trivial for
+a subset of CocoaDocs responsibilities but does not have the requirement of running on a Mac. This makes it easier for
 us to maintain.
 
 It's been almost a year since [we announced that CocoaDocs][cd_down] was going to be shut down. CocoaDocs' sunsetting
@@ -20,9 +20,9 @@ on to find out what that looks like.
 
 ### Why build this?
 
-CocoaPods' web infrastructure needs to continue to be hardened. We have less contributors and a lot more people using
+CocoaPods' web infrastructure needs to continue to be hardened. We have fewer contributors and a lot more people using
 CocoaPods. Moving more of our web services into heroku means we have less diversity in how projects are hosted get run.
-Hosting a Mac Mini on the internet is a lot of work, and I woudln't wish it on anyone else.
+Hosting a Mac Mini on the internet is a lot of work, and I wouldn't wish it on anyone else.
 
 There's a tricky thing here though. CocoaDocs would run through the full `pod install` process and use the files to
 generate a set of useful metrics for each pod:
@@ -49,8 +49,8 @@ spm_support
 
 Not all of these attributes are feasible when running on heroku because it has an [ephemeral filesystem][eth]. For
 example a repo would include example projects and code which are removed by the `pod install` - CocoaDocs would then use
-the remaining files to generate details on. In order to work on a filesystem-less server, some of those metrics need to
-be optional.
+the remaining files to generate details on. In order to work on host without a local clone of the pod, some of those
+metrics need to be optional.
 
 I built this service to focus on the most pressing problem first: READMEs, CHANGELOGs and license information.
 Basically:
@@ -63,10 +63,10 @@ rendered_changelog_url
 ```
 
 Some of the other attributes can be added later, for example I see no blockers on adding `dominant_language`,
-`is_vendored_framework`, `initial_commit_date` and `readme_complexity` to the service, but some attribute are just not
-going to be feasible.
+`is_vendored_framework`, `initial_commit_date`, `spm_support` and `readme_complexity` to the service, but some
+attributes are just not going to be feasible.
 
-This service has also focused exclusively on Open Source GitHub projects, with plans to expand to Pods that use
+This service has so far focused exclusively on Open Source GitHub projects, with plans to expand to Pods that use
 [.tar.gz][tar] and [zip][zip] files coming soon.
 
 It's the first JavaScript project (TypeScript) in the CocoaPods org, because once I worked with TypeScript I couldn't go
@@ -80,8 +80,8 @@ example with [a YouTube playlist of over 5 hours][yt] where I have to explain al
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLYUbsZda9oHs-MoWKiZNXtvGK9ye8nZZe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </center>
 
-As we rely more on this service, we can continue to provide the rich web-experience with far less dependencies on hard 
-to  maintain infrastructure, which paves the way for CocoaPods to continue being a useful resource for a very long time.
+As we rely more on this service, we can continue to provide the rich web-experience with far less dependencies on hard
+to maintain infrastructure, which paves the way for CocoaPods to continue being a useful resource for a very long time.
 
 [cms]: https://github.com/CocoaPods/cocoapods-metadata-service
 [cd_down]: https://blog.cocoapods.org/CocoaDocs-Documentation-Sunsetting
