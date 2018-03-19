@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+      <title>New Service: CocoaPods Metadata generation - CocoaPods Blog</title>
+    
+
+    <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <link rel="alternate" type="application/rss+xml" title="CocoaPods Blog" href="/feed.xml">
+
+    <meta charset="utf-8" /><meta content="cocoapods objective-c objc swift package manager libraries documentation search pods podspec podfile cocoa apple ios library" name="keywords" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="The Dependency Manager for iOS &amp; Mac projects" name="description" /><meta content="CocoaPods Dev Team" name="author" /><meta content="summary" name="twitter:card" /><meta content="@CocoaPods" name="twitter:site" /><meta content="@CocoaPods" name="twitter:creator" /><meta content="CocoaPods.org" name="twitter:title" /><meta content="The Dependency Manager for iOS &amp; Mac projects." name="twitter:description" /><meta content="https://www.cocoapods.org/" name="twitter:url" />
+    <link rel="shortcut icon" href="https://cocoapods.org/favicons/favicon.ico" type="image/x-icon" /><link rel="apple-touch-icon" href="https://cocoapods.org/favicons/apple-touch-icon.png" /><link rel="apple-touch-icon" sizes="57x57" href="https://cocoapods.org/favicons/apple-touch-icon-57x57.png" /><link rel="apple-touch-icon" sizes="60x60" href="https://cocoapods.org/favicons/apple-touch-icon-60x60.png" /><link rel="apple-touch-icon" sizes="72x72" href="https://cocoapods.org/favicons/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon" sizes="76x76" href="https://cocoapods.org/favicons/apple-touch-icon-76x76.png" /><link rel="apple-touch-icon" sizes="114x114" href="https://cocoapods.org/favicons/apple-touch-icon-114x114.png" /><link rel="apple-touch-icon" sizes="120x120" href="https://cocoapods.org/favicons/apple-touch-icon-120x120.png" /><link rel="apple-touch-icon" sizes="144x144" href="https://cocoapods.org/favicons/apple-touch-icon-144x144.png" /><link rel="apple-touch-icon" sizes="152x152" href="https://cocoapods.org/favicons/apple-touch-icon-152x152.png" />
+
+    <link rel="stylesheet" href="/assets/bootstrap-3b61caa441fab92578453d6681fbf963.css">
+    <link rel="stylesheet" href="/assets/main-df7f28d697ab31d8aa461b8f8ff0c7e4.css">
+    <link rel="stylesheet" href="/assets/blog-a6cba0ad1ceb964c9a5a5387e033c3ff.css">
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-29866548-3', 'cocoapods.org');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="glyphicon glyphicon-plus"></span></button><a class="navbar-brand" href="https://cocoapods.org"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="https://cocoapods.org/app">App</a></li><li><a href="https://cocoapods.org/about">About</a></li><li><a href="https://guides.cocoapods.org">Guides</a></li><li class="active"><a href="https://blog.cocoapods.org">Blog</a></li></ul></div></section></nav>
+
+    <div id ="">
+<section class="container" >
+  <article class="row">
+  <header class="col-md-8 col-md-offset-2 headline blog-post">
+    
+      <h1>New Service: CocoaPods Metadata generation</h1>
+    
+    
+  </header>
+  </article>
+</section>
+</div>
+
+<section id="content-wrapper" class="post">
+  <section class="container">
+    <article class="row">
+      <article class="author metadata col-md-2 col-md-push-10">
+        <header>
+          
+            
+              <img class="gravatar large" src="http://gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb?s=144" height=72 width=72>
+            
+            
+              
+                <p><a href="http://twitter.com/orta">Orta Therox</a></p>
+              
+            
+             <p>16 March 2018</p>
+
+            
+              <a href="https://twitter.com/orta" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @orta
+              </a>
+            
+        </header>
+      </article>
+    
+      <article class="content col-md-8">
+        <p>This week we shipped a new behind-the-scenes service for CocoaPods authors: <a href="https://github.com/CocoaPods/cocoapods-metadata-service">cocoapods-metadata-service</a> it handles
+a subset of CocoaDocs responsibilities but does not have the requirement of running on a Mac. This makes it easier for
+us to maintain.</p>
+
+<p>It&#39;s been almost a year since <a href="https://blog.cocoapods.org/CocoaDocs-Documentation-Sunsetting">we announced that CocoaDocs</a> was going to be shut down. CocoaDocs&#39; sunsetting
+was intially slowed down by the team at <a href="http://buddybuild.com">BuddyBuild</a> offering to take over the project, but the migration wasn&#39;t
+finished before they were <a href="https://www.buddybuild.com/blog/buddybuild-is-now-part-of-apple">acquired by Apple</a>. This means they cannot take over community services.</p>
+
+<p>Instead I&#39;ve started building out a simpler replacement that handles just the needs of the cocoapods.org website. Read
+on to find out what that looks like.</p>
+
+<!-- more -->
+
+<h3 id="why-build-this?">Why build this?</h3>
+
+<p>CocoaPods&#39; web infrastructure needs to continue to be hardened. We have fewer contributors and a lot more people using
+CocoaPods. Moving more of our web services into heroku means we have less diversity in how projects are hosted get run.
+Hosting a Mac Mini on the internet is a lot of work, and I wouldn&#39;t wish it on anyone else.</p>
+
+<p>There&#39;s a tricky thing here though. CocoaDocs would run through the full <code>pod install</code> process and use the files to
+generate a set of useful metrics for each pod:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="sh language-sh" data-lang="sh">install_size
+total_files
+total_comments
+total_lines_of_code
+doc_percent
+readme_complexity
+initial_commit_date
+rendered_readme_url
+license_short_name
+license_canonical_url
+total_test_expectations
+dominant_language
+builds_independently
+is_vendored_framework
+rendered_changelog_url
+rendered_summary
+spm_support
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Not all of these attributes are feasible when running on heroku because it has an <a href="https://devcenter.heroku.com/articles/dynos#ephemeral-filesystem">ephemeral filesystem</a>. For
+example a repo would include example projects and code which are removed by the <code>pod install</code> - CocoaDocs would then use
+the remaining files to generate details on. In order to work on host without a local clone of the pod, some of those
+metrics need to be optional.</p>
+
+<p>I built this service to focus on the most pressing problem first: READMEs, CHANGELOGs and license information.
+Basically:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="sh language-sh" data-lang="sh">rendered_readme_url
+license_short_name
+license_canonical_url
+rendered_changelog_url
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Some of the other attributes can be added later, for example I see no blockers on adding <code>dominant_language</code>,
+<code>is_vendored_framework</code>, <code>initial_commit_date</code>, <code>spm_support</code> and <code>readme_complexity</code> to the service, but some
+attributes are just not going to be feasible.</p>
+
+<p>This service has so far focused exclusively on Open Source GitHub projects, with plans to expand to Pods that use
+<a href="https://github.com/CocoaPods/cocoapods-metadata-service/issues/2">.tar.gz</a> and <a href="https://github.com/CocoaPods/cocoapods-metadata-service/issues/1">zip</a> files coming soon.</p>
+
+<p>It&#39;s the first JavaScript project (TypeScript) in the CocoaPods org, because once I worked with TypeScript I couldn&#39;t go
+back to Ruby for a new project. This does introduce some complexity though. So I opted to livecode the entire process of
+building the v1 and getting the project into production.</p>
+
+<p>This means if you&#39;re interested in how to build a small NodeJS server in TypeScript, you&#39;ve got a small well-built
+example with <a href="https://www.youtube.com/watch?v=KpX0jRDEv14&amp;list=PLYUbsZda9oHs-MoWKiZNXtvGK9ye8nZZe">a YouTube playlist of over 5 hours</a> where I have to explain all of my choices.</p>
+
+<p><center>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLYUbsZda9oHs-MoWKiZNXtvGK9ye8nZZe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</center></p>
+
+<p>As we rely more on this service, we can continue to provide the rich web-experience with far less dependencies on hard
+to maintain infrastructure, which paves the way for CocoaPods to continue being a useful resource for a very long time.</p>
+
+      </article>
+    </article>
+  </section>
+</section>
+
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2018-03-16-CocoaPods-Metadata-Service.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/orta">Follow orta</a></div></article></div></section></section>
+
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaPods-1.4.0" title="CocoaPods 1.4.0 &amp;#8212; Feature packed!"><header><h4>Previous Post</h4></header><h3>CocoaPods 1.4.0 &amp;#8212; Feature packed!</h3><p>By Dimitris Koutsogiorgas</p><a class="chevron_placeholder back" href="/CocoaPods-1.4.0"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+    <footer class="page-footer"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><h4>CocoaPods is a project from</h4><p class="contributors"> <a href="https://twitter.com/benasher44">Ben Asher</a>, <a href="https://twitter.com/dnkoutso">Dimitris Koutsogiorgas</a>, <a href="http://dantoml.com">Danielle Tomlinson</a>, <a href="http://orta.io">Orta Therox</a>, and <a href="https://cocoapods.org/about#team">The CocoaPods Dev Team</a> with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p><h4>Lovingly sponsored by</h4><p class="sponsors"><a href="http://artsy.net">Artsy</a>, <a href="http://www.usebutton.com">Button</a>, <a href="http://www.capitalone.io">Capital One</a>, <a href="https://circleci.com">CircleCI</a>, <a href="http://discontinuity.eu">Discontinuity</a>, <a href="http://www.fngtps.com">Fingertips</a>, <a href="https://www.heroku.com">Heroku</a>, <a href="https://realm.io">Realm</a>, <a href="http://www.rubymotion.com">RubyMotion</a>, <a href="https://www.sauspiel.de">Sauspiel</a>, <a href="https://www.slack.com">Slack</a>, <a href="https://www.soundcloud.com">SoundCloud</a>, <a href="https://www.stripe.com">Stripe</a>, <a href="https://www.squareup.com">Square</a>, and  <a href="http://www.technologyastronauts.ch">Technology&nbsp;Astronauts</a>.</p></article></div></section></footer><footer class="footer-links"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><a class="cocoapods-small-logo" href="https://cocoapods.org"></a><ul><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/using/troubleshooting.html">Support</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://github.com/CocoaPods/CocoaPods">GitHub Repo</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://status.cocoapods.org">Web Properties Status</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://twitter.com/CocoaPods">@CocoaPods</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://groups.google.com/group/cocoapods">Mailing List</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/about"><span class="visible-lg-span">CocoaPods</span> Dev Team</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/syntax/podfile.html">Podfile Doc<span class="hidden-lg-span">s</span><span class="visible-lg-span">umentation</span></a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/legal">Legal / Conduct</a></li></ul></article></div></section></footer>
+    <script src="/assets/blog-c2911afb0e1e77d79b486c5c39fe0cc6.js"></script>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  </body>
+</html>
