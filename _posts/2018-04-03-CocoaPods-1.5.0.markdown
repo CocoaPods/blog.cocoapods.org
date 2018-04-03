@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "CocoaPods 1.5.0 &#8212; Swift Static Libraries"
+author: segiddins
+categories: cocoapods releases
+---
+
+_CocoaPods 1.5.0_ comes with native support for building Swift pods as static libraries.
+
+<!-- more -->
+
+Just a few months after the release of CocoaPods 1.4.0, we're releasing a new version that focuses on enabling _everyone_ to adopt Swift.
+
+### Swift Static Libraries
+
+Up until Xcode 9, support for building Swift into static libraries was not-existent and use of dynamic frameworks was required. This was a deal-breaker for some developers, particularly those worried about the launch performance implications of linked many dynamic binaries.
+
+With CocoaPods 1.5.0, developers are no longer restricted into specifying `use_frameworks!` in their `Podfile` in order to install pods that use Swift. Interop Objective-C should also just work. If your Swift pod depends on an Objective-C pod you will need to enable modular headers.
+
+### Modular Headers
+
+TODO
+
+### Tracking Installation Sources
+
+Even though this change is rather behind-the-scenes, it opens up some exciting possibilities. CocoaPods will now store the specs repo that a Pod has been sourced from:
+
+```yaml
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - Moya
+  https://github.com/Private/Internal.git:
+    - InteralPod
+```
+
+This will enable CocoaPods to be able to tell you when the source for a pod has changed, and will also force a noticeable `git diff` in the `Podfile.lock`, making sure you're aware when a Pod comes from a different source. This makes it possible to audit that your private forks are being used, instead of public specs, for example. We consider this a helpful security enhancement, especially for those teams with Security Engineers peering over their shoulders.
+
+### Further Improvements
+
+- CocoaPods will no longer add _all_ header search paths for each `xcconfig` generated and instead, it only adds the header search paths for the dependencies of the pod
+- Static frameworks allow mixing Objective-C and Swift
+- During pod validation, any output from `xcodebuild` is now streamed when using `--verbose`
+- `pod install` performance is improved both for pods with many subspecs, as well as pods which specify exact file paths rather than globs
+- Script phases used by CocoaPods will now assert that all expected build settings (and environment variables) are set
+- Integrating static library pods into static library targets will not cause copy script phases to be run
+
+### Summary
+
+CocoaPods 1.5.0 is an exciting release. We're very excited for you to try it out, and recommend you upgrade:
+
+```sh
+$ gem install cocoapods
+```
+
+After all of this excitement, here's a taste to wet your appetite for the next CocoaPods version. For 1.6.0, we're focusing on redesigning core parts of the library to improve CocoaPods performance for very large So, if you're feeling like `pod install` is taking a tad longer than you'd like, stay tuned 😉 
+
+As always, we would like to thank all of our contributors for making CocoaPods 1.5.0 a reality!
+
+Checkout the [changelog](https://github.com/CocoaPods/CocoaPods/releases/tag/1.5.0) to get the full list of changes.
