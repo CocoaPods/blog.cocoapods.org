@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "CocoaPods 1.5.0 &#8212; Swift Static Libraries"
-author: segiddins
+author: samuel
 categories: cocoapods releases
 ---
 
