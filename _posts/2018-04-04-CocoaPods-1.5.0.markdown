@@ -15,20 +15,22 @@ Just a few months after the release of CocoaPods 1.4.0, we're releasing a new ve
 
 Up until Xcode 9, support for building Swift into static libraries was non-existent and use of dynamic frameworks was required. This was a deal-breaker for some developers, particularly those worried about the launch performance implications of linked many dynamic binaries.
 
-With CocoaPods 1.5.0, developers are no longer restricted into specifying `use_frameworks!` in their `Podfile` in order to install pods that use Swift. 
-Interop with Objective-C should _just work_. 
+With CocoaPods 1.5.0, developers are no longer restricted into specifying `use_frameworks!` in their `Podfile` in order to install pods that use Swift.
+Interop with Objective-C should _just work_.
 However, if your Swift pod depends on an Objective-C, pod you will need to enable "modular headers" (see below) for that Objective-C pod.
 
 ### Modular Headers
 
 When CocoaPods first came out many years ago, it focused on enabling as many existing libraries as possible to be packaged as pods.
-That meant making a few tradeoffs, and one of those has to do with the way CocoaPods sets up header search paths. CocoaPods allowed any pod to import any other pod with un-namespaced quote imports. 
+That meant making a few tradeoffs, and one of those has to do with the way CocoaPods sets up header search paths. CocoaPods allowed any pod to import any other pod with un-namespaced quote imports.
+
 For example, pod B could have code that had a `#import "A.h"` statement, and CocoaPods will create build settings that will allow such an import to succeed. Imports such as these, however, will not work if you try to add module maps to these pods. We tried to automatically generate module maps for static libraries many years ago, and it broke some pods, so we had to revert.
+
 In this release, you will be able to opt into stricter header search paths (and module map generation for Objective-C pods). As a pod author, you can add `'DEFINES_MODULE' => 'YES'` to your `pod_target_xcconfig`. Alternatively, in your Podfile you can add `use_modular_headers!` to enable the stricter search paths and module map generation for all of your pods, or you can add `:modular_headers => true` to a single `pod` declaration to enable for only that pod.
 
 ### Tracking Installation Sources
 
-This change happens behind-the-scenes, and opens up some exciting possibilities. 
+This change happens behind-the-scenes, and opens up some exciting possibilities.
 CocoaPods will now store the specs repo that a Pod has been sourced from:
 
 ```yaml
@@ -60,7 +62,7 @@ $ gem install cocoapods
 ```
 
 After all of this excitement, here's a taste to wet your appetite for the next CocoaPods version. For 1.6.0, we're focusing on redesigning core parts of the library to improve CocoaPods performance for very large applications.
-So, if you're feeling like `pod install` is taking a tad longer than you'd like, stay tuned 😉 
+So, if you're feeling like `pod install` is taking a tad longer than you'd like, stay tuned 😉
 
 As always, we would like to thank all of our contributors for making CocoaPods 1.5.0 a reality!
 
