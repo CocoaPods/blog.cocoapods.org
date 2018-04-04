@@ -8,6 +8,22 @@
     
     
     <item>
+      <title>CocoaPods 1.5.0 &#8212; Swift Static Libraries</title>
+
+      
+      <description>&lt;p&gt;&lt;em&gt;CocoaPods 1.5.0&lt;/em&gt; comes with native support for building Swift pods as static libraries.&lt;/p&gt;
+
+</description>  
+      
+
+      <pubDate>Wed, 04 Apr 2018 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/CocoaPods-1.5.0</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-1.5.0</guid>
+    </item>
+    
+    
+    
+    <item>
       <title>New Service: CocoaPods Metadata generation</title>
 
       

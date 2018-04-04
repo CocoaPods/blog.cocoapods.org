@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-      <title>New Service: CocoaPods Metadata generation - CocoaPods Blog</title>
+      <title>CocoaPods 1.5.0 &#8212; Swift Static Libraries - CocoaPods Blog</title>
     
 
     <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
@@ -46,7 +46,7 @@
   <article class="row">
   <header class="col-md-8 col-md-offset-2 headline blog-post">
     
-      <h1>New Service: CocoaPods Metadata generation</h1>
+      <h1>CocoaPods 1.5.0 &#8212; Swift Static Libraries</h1>
     
     
   </header>
@@ -61,45 +61,51 @@
         <header>
           
             
-              <img class="gravatar large" src="http://gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb?s=144" height=72 width=72>
+              <img class="gravatar large" src="http://gravatar.com/avatar/4d6be90af74894fd132fb06dacec04d7?s=144" height=72 width=72>
             
             
               
-                <p><a href="http://twitter.com/orta">Orta Therox</a></p>
+                <p><a href="http://twitter.com/segiddins">Samuel E. Giddins</a></p>
               
             
-             <p>16 March 2018</p>
+             <p>4 April 2018</p>
 
             
-              <a href="https://twitter.com/orta" class="twitter-follow-button" data-show-count="false" data-lang="en">
-                Follow @orta
+              <a href="https://twitter.com/segiddins" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @segiddins
               </a>
             
         </header>
       </article>
     
       <article class="content col-md-8">
-        <p>This week we shipped a new behind-the-scenes service for CocoaPods authors: <a href="https://github.com/CocoaPods/cocoapods-metadata-service">cocoapods-metadata-service</a> it handles
-a subset of CocoaDocs responsibilities but does not have the requirement of running on a Mac. This makes it easier for
-us to maintain.</p>
-
-<p>It&#39;s been almost a year since <a href="https://blog.cocoapods.org/CocoaDocs-Documentation-Sunsetting">we announced that CocoaDocs</a> was going to be shut down. CocoaDocs&#39; sunsetting
-was intially slowed down by the team at <a href="http://buddybuild.com">BuddyBuild</a> offering to take over the project, but the migration wasn&#39;t
-finished before they were <a href="https://www.buddybuild.com/blog/buddybuild-is-now-part-of-apple">acquired by Apple</a>. This means they cannot take over community services.</p>
-
-<p>Instead I&#39;ve started building out a simpler replacement that handles just the needs of the cocoapods.org website. Read
-on to find out what that looks like.</p>
+        <p><em>CocoaPods 1.5.0</em> comes with native support for building Swift pods as static libraries.</p>
 
 <!-- more -->
 
-<h3 id="why-build-this?">Why build this?</h3>
+<p>Just a few months after the release of CocoaPods 1.4.0, we&#39;re releasing a new version that focuses on enabling <em>everyone</em> to adopt Swift.</p>
 
-<p>CocoaPods&#39; web infrastructure needs to continue to be hardened. We have fewer contributors and a lot more people using
-CocoaPods. Moving more of our web services into heroku means we have less diversity in how projects are hosted get run.
-Hosting a Mac Mini on the internet is a lot of work, and I wouldn&#39;t wish it on anyone else.</p>
+<h3 id="swift-static-libraries">Swift Static Libraries</h3>
 
-<p>There&#39;s a tricky thing here though. CocoaDocs would run through the full <code>pod install</code> process and use the files to
-generate a set of useful metrics for each pod:</p>
+<p>Up until Xcode 9, support for building Swift into static libraries was non-existent and use of dynamic frameworks was required. This was a deal-breaker for some developers, particularly those worried about the launch performance implications of linked many dynamic binaries.</p>
+
+<p>With CocoaPods 1.5.0, developers are no longer restricted into specifying <code>use_frameworks!</code> in their <code>Podfile</code> in order to install pods that use Swift.
+Interop with Objective-C should <em>just work</em>.
+However, if your Swift pod depends on an Objective-C, pod you will need to enable &quot;modular headers&quot; (see below) for that Objective-C pod.</p>
+
+<h3 id="modular-headers">Modular Headers</h3>
+
+<p>When CocoaPods first came out many years ago, it focused on enabling as many existing libraries as possible to be packaged as pods.
+That meant making a few tradeoffs, and one of those has to do with the way CocoaPods sets up header search paths. CocoaPods allowed any pod to import any other pod with un-namespaced quote imports.</p>
+
+<p>For example, pod B could have code that had a <code>#import &quot;A.h&quot;</code> statement, and CocoaPods will create build settings that will allow such an import to succeed. Imports such as these, however, will not work if you try to add module maps to these pods. We tried to automatically generate module maps for static libraries many years ago, and it broke some pods, so we had to revert.</p>
+
+<p>In this release, you will be able to opt into stricter header search paths (and module map generation for Objective-C pods). As a pod author, you can add <code>&#39;DEFINES_MODULE&#39; =&gt; &#39;YES&#39;</code> to your <code>pod_target_xcconfig</code>. Alternatively, in your Podfile you can add <code>use_modular_headers!</code> to enable the stricter search paths and module map generation for all of your pods, or you can add <code>:modular_headers =&gt; true</code> to a single <code>pod</code> declaration to enable for only that pod.</p>
+
+<h3 id="tracking-installation-sources">Tracking Installation Sources</h3>
+
+<p>This change happens behind-the-scenes, and opens up some exciting possibilities.
+CocoaPods will now store the specs repo that a Pod has been sourced from:</p>
 <div class="highlight">      </article>
       </article>
       </section>
@@ -108,23 +114,12 @@ generate a set of useful metrics for each pod:</p>
       <section class="container">
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="sh language-sh" data-lang="sh">install_size
-total_files
-total_comments
-total_lines_of_code
-doc_percent
-readme_complexity
-initial_commit_date
-rendered_readme_url
-license_short_name
-license_canonical_url
-total_test_expectations
-dominant_language
-builds_independently
-is_vendored_framework
-rendered_changelog_url
-rendered_summary
-spm_support
+<pre class='highlight'><code class="yaml language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">SPEC REPOS</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">https://github.com/CocoaPods/Specs.git</span><span class="p-Indicator">:</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Alamofire</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">Moya</span>
+  <span class="l-Scalar-Plain">https://github.com/Private/Internal.git</span><span class="p-Indicator">:</span>
+    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">InteralPod</span>
 </code></pre>      </article>
       </article>
       </section>
@@ -134,13 +129,22 @@ spm_support
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<p>Not all of these attributes are feasible when running on heroku because it has an <a href="https://devcenter.heroku.com/articles/dynos#ephemeral-filesystem">ephemeral filesystem</a>. For
-example a repo would include example projects and code which are removed by the <code>pod install</code> - CocoaDocs would then use
-the remaining files to generate details on. In order to work on host without a local clone of the pod, some of those
-metrics need to be optional.</p>
+<p>This will enable CocoaPods to be able to tell you when the source for a pod has changed, and will also force a noticeable <code>git diff</code> in the <code>Podfile.lock</code>, making sure you&#39;re aware when a Pod comes from a different source. This makes it possible to audit that your private forks are being used, instead of public specs, for example. We consider this a helpful security enhancement, especially for those teams with Security Engineers peering over their shoulders.</p>
 
-<p>I built this service to focus on the most pressing problem first: READMEs, CHANGELOGs and license information.
-Basically:</p>
+<h3 id="further-improvements">Further Improvements</h3>
+
+<ul>
+<li>CocoaPods will no longer add <em>all</em> header search paths for each <code>xcconfig</code> generated and instead, it only adds the header search paths for the dependencies of the pod</li>
+<li>Static frameworks allow mixing Objective-C and Swift</li>
+<li>During pod validation, any output from <code>xcodebuild</code> is now streamed when using <code>--verbose</code></li>
+<li><code>pod install</code> performance is improved both for pods with many subspecs, as well as pods which specify exact file paths rather than globs</li>
+<li>Script phases used by CocoaPods will now assert that all expected build settings (and environment variables) are set</li>
+<li>Integrating static library pods into static library targets will not cause copy script phases to be run</li>
+</ul>
+
+<h3 id="summary">Summary</h3>
+
+<p>CocoaPods 1.5.0 is an exciting release. We&#39;re very excited for you to try it out, and recommend you upgrade:</p>
 <div class="highlight">      </article>
       </article>
       </section>
@@ -149,10 +153,7 @@ Basically:</p>
       <section class="container">
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="sh language-sh" data-lang="sh">rendered_readme_url
-license_short_name
-license_canonical_url
-rendered_changelog_url
+<pre class='highlight'><code class="sh language-sh" data-lang="sh"><span class="nv">$ </span>gem install cocoapods
 </code></pre>      </article>
       </article>
       </section>
@@ -162,35 +163,21 @@ rendered_changelog_url
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<p>Some of the other attributes can be added later, for example I see no blockers on adding <code>dominant_language</code>,
-<code>is_vendored_framework</code>, <code>initial_commit_date</code>, <code>spm_support</code> and <code>readme_complexity</code> to the service, but some
-attributes are just not going to be feasible.</p>
+<p>After all of this excitement, here&#39;s a taste to wet your appetite for the next CocoaPods version. For 1.6.0, we&#39;re focusing on redesigning core parts of the library to improve CocoaPods performance for very large applications.
+So, if you&#39;re feeling like <code>pod install</code> is taking a tad longer than you&#39;d like, stay tuned 😉</p>
 
-<p>This service has so far focused exclusively on Open Source GitHub projects, with plans to expand to Pods that use
-<a href="https://github.com/CocoaPods/cocoapods-metadata-service/issues/2">.tar.gz</a> and <a href="https://github.com/CocoaPods/cocoapods-metadata-service/issues/1">zip</a> files coming soon.</p>
+<p>As always, we would like to thank all of our contributors for making CocoaPods 1.5.0 a reality!</p>
 
-<p>It&#39;s the first JavaScript project (TypeScript) in the CocoaPods org, because once I worked with TypeScript I couldn&#39;t go
-back to Ruby for a new project. This does introduce some complexity though. So I opted to livecode the entire process of
-building the v1 and getting the project into production.</p>
-
-<p>This means if you&#39;re interested in how to build a small NodeJS server in TypeScript, you&#39;ve got a small well-built
-example with <a href="https://www.youtube.com/watch?v=KpX0jRDEv14&amp;list=PLYUbsZda9oHs-MoWKiZNXtvGK9ye8nZZe">a YouTube playlist of over 5 hours</a> where I have to explain all of my choices.</p>
-
-<p><center>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLYUbsZda9oHs-MoWKiZNXtvGK9ye8nZZe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</center></p>
-
-<p>As we rely more on this service, we can continue to provide the rich web-experience with far less dependencies on hard
-to maintain infrastructure, which paves the way for CocoaPods to continue being a useful resource for a very long time.</p>
+<p>Checkout the <a href="https://github.com/CocoaPods/CocoaPods/releases/tag/1.5.0">changelog</a> to get the full list of changes.</p>
 
       </article>
     </article>
   </section>
 </section>
 
-<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2018-03-16-CocoaPods-Metadata-Service.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/orta">Follow orta</a></div></article></div></section></section>
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2018-04-04-CocoaPods-1.5.0.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/4d6be90af74894fd132fb06dacec04d7" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/segiddins">Follow segiddins</a></div></article></div></section></section>
 
-<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaPods-1.4.0" title="CocoaPods 1.4.0 &amp;#8212; Feature packed!"><header><h4>Previous Post</h4></header><h3>CocoaPods 1.4.0 &amp;#8212; Feature packed!</h3><p>By Dimitris Koutsogiorgas</p><a class="chevron_placeholder back" href="/CocoaPods-1.4.0"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"><a href="/CocoaPods-1.5.0" title="CocoaPods 1.5.0 &amp;#8212; Swift Static Libraries"><header><h4>Next Post</h4></header><h3>CocoaPods 1.5.0 &amp;#8212; Swift Static Libraries</h3><p>By Samuel E. Giddins</p><a class="chevron_placeholder next" href="/CocoaPods-1.5.0"></a></a></article></div></section>
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaPods-Metadata-Service" title="New Service: CocoaPods Metadata generation"><header><h4>Previous Post</h4></header><h3>New Service: CocoaPods Metadata generation</h3><p>By Orta Therox</p><a class="chevron_placeholder back" href="/CocoaPods-Metadata-Service"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
