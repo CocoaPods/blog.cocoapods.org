@@ -73,10 +73,6 @@ We plan on making this initially a separate CocoaPods plugin that you can option
 
 Sure, update to the latest CocoaPods `[sudo] gem install cocoapods` or download the latest [CocoaPods.app](https://github.com/CocoaPods/CocoaPods-app).
 
-#### Can I use this to find out how many people are using an older build of my pods?
-
-Not automatically, we've not figured out a strategy for doing this yet, but you can email orta@cocoapods.org for one off requests once it's up and running. Ideally once this has settled I'd like to take a look at making a stats overview page per pod, but that has some tricky technicalities.
-
 #### How does this affect the quality indexes / sorting?
 
 Ideally we can reduce the amount of impact GitHub stars affects a quality index, and replace some of the values with new metrics based on downloads/installations. 
