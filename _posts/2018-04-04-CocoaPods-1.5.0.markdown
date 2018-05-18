@@ -61,7 +61,7 @@ CocoaPods 1.5.0 is an exciting release. We're very excited for you to try it out
 $ gem install cocoapods
 ```
 
-After all of this excitement, here's a taste to wet your appetite for the next CocoaPods version. For 1.6.0, we're focusing on redesigning core parts of the library to improve CocoaPods performance for very large applications.
+After all of this excitement, here's a taste to whet your appetite for the next CocoaPods version. For 1.6.0, we're focusing on redesigning core parts of the library to improve CocoaPods performance for very large applications.
 So, if you're feeling like `pod install` is taking a tad longer than you'd like, stay tuned 😉
 
 As always, we would like to thank all of our contributors for making CocoaPods 1.5.0 a reality!
