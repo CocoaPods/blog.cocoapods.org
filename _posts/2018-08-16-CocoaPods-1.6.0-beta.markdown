@@ -1,0 +1,92 @@
+---
+layout: post
+title:  "CocoaPods 1.6.0 Beta Begins!"
+author: dnkoutso
+categories: cocoapods releases
+---
+
+_CocoaPods 1.6.0_ release continues our focus on stability, performance and scalability for large projects.
+
+<!-- more -->
+
+We are happy to announce that the first beta of 1.6.0 is now available! In this release, we revamped the build settings generation process to be faster and easier to maintain going forward. We've also enhanced the integration of multiple test specs in the same pod.
+
+### Revamped Build Settings
+
+The generation of build settings (which reside within the `.xcconfig` files CocoaPods generates) has been completely rewritten. The primary goal for this rewrite was to clean up the code and make it scale much better on large projects. 
+
+When contributors to CocoaPods make build setting changes it would often cause a cascading amount of performance regressions and trigger an unusual combination of edge cases. This made it very hard to test these changes and verify that each fix works correctly for everyone.
+
+From a user point of view, this rewrite should have zero effects when you compile your code. If there is anything that does not look right please file an [issue](https://github.com/CocoaPods/CocoaPods/issues/new) providing steps and include a sample app that demonstrates the problem.
+
+To demonstrate the results of this rewrite we worked closely with our friends at LinkedIn, who use CocoaPods on a large project. The rewrite, along with some other performance improvements, have decreased `pod install` time down to approximately 40 seconds from the original time of 3 minutes or **77% faster**.
+
+This change, while mostly invisible, helps guarantee that CocoaPods will scale with your app as it grows. We really want to thank the folks at LinkedIn for their contributions to CocoaPods as well as their time spent to improve this.
+
+### Enhanced Test Spec Integration
+
+Test specs are becoming a fundamental piece of CocoaPods for pod authors. The ability to specify your test sources and have them execute through `lint` make this feature an invaluable tool and allow to make the `podspec` file be the source of truth for your library. Starting with 1.6.0, multiple `test_spec` entries will no longer generate a single test bundle target but instead generate a unit test bundle for each one.
+
+Let's use the following as an example:
+
+```ruby
+Pod::Spec.new do |s|
+  # ... rest of root spec entries go here
+  
+  # Unit Test Sources - Those do not require an app host to run. 
+  # They also require 'OCMock' dependency.
+  s.test_spec 'Tests' do |test_spec|
+    test_spec.source_files = 'Tests/**/*.{h,m}'
+    test_spec.dependency 'OCMock'
+  end
+
+  # SnapShot Tests Sources - Those *do* require an app host to run.
+  s.test_spec 'SnapshotTests' do |test_spec|
+    test_spec.requires_app_host = true
+    test_spec.source_files = 'SnapshotTests/**/*.{h,m}'
+  end
+```
+
+Both the 'Tests' and 'SnapshotTests' test specs would _merge_ into a single unit test bundle target. This also had the unwanted effect of using an app host for the 'Tests' test spec without explicitly having been declared by the pod author.
+
+It looked like this:
+
+<center>
+{% breaking_image /assets/blog_img/CocoaPods-1.6.0-beta/test_specs_before.png %}
+</center>
+
+This means it's impossible for pod authors to split their test sources and categorize them in different ways, for example using a different set of dependencies, resources, or compiler options.
+
+With 1.6.0, this will now generate the following:
+
+<center>
+{% breaking_image /assets/blog_img/CocoaPods-1.6.0-beta/test_specs_after.png %}
+</center>
+
+Much better!
+
+We _strongly_ support the idea of having tests for your code and we aim to build the right tools for supporting this with CocoaPods. Having your `podspec` be the source of truth and coupled with recently released [cocoapods-generate](https://github.com/square/cocoapods-generate) plugin your developer experience can be much improved and streamlined.
+
+### Longer Beta Cycle
+
+We intentionally do not commit on specific release dates for CocoaPods. This is primarily due to the fact that CocoaPods is maintained and improved by the free time of multiple people across the world. Making such commitments would be tough to meet and most likely disappoint everyone.
+
+The 1.6.0 release will run through a longer beta cycle and will carry the 'beta' name for some time before it's stable. We encourage you to use the 1.6.0 beta and help us by submitting any issues you find.
+
+To install it use:
+
+```sh
+$ gem install cocoapods --pre
+```
+
+### What's Next?
+
+We always like to use this last bit of the blog post as an opportunity to express what we have in mind for the next release (currently aimed to be 1.7.0). More particularly, we would like to extend the `swift_version` DSL to support a range of Swift versions instead of just a single version similarly to [Swift Package Manager](https://swift.org/package-manager/).
+
+Finally, we've been heavily improving the internals of the library and investigating on how to make the `pod install` process incremental and change it in ways that make Xcode cope better with very large projects to be more responsive.
+
+Thank you for making CocoaPods 1.6.0 a reality! We've come a long way.
+
+Checkout the [changelog](https://github.com/CocoaPods/CocoaPods/releases/tag/1.6.0) to get the full list of changes.
+
+<3
