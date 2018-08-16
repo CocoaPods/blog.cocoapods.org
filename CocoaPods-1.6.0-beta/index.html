@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+      <title>CocoaPods 1.6.0 Beta Begins! - CocoaPods Blog</title>
+    
+
+    <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <link rel="alternate" type="application/rss+xml" title="CocoaPods Blog" href="/feed.xml">
+
+    <meta charset="utf-8" /><meta content="cocoapods objective-c objc swift package manager libraries documentation search pods podspec podfile cocoa apple ios library" name="keywords" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="The Dependency Manager for iOS &amp; Mac projects" name="description" /><meta content="CocoaPods Dev Team" name="author" /><meta content="summary" name="twitter:card" /><meta content="@CocoaPods" name="twitter:site" /><meta content="@CocoaPods" name="twitter:creator" /><meta content="CocoaPods.org" name="twitter:title" /><meta content="The Dependency Manager for iOS &amp; Mac projects." name="twitter:description" /><meta content="https://www.cocoapods.org/" name="twitter:url" />
+    <link rel="shortcut icon" href="https://cocoapods.org/favicons/favicon.ico" type="image/x-icon" /><link rel="apple-touch-icon" href="https://cocoapods.org/favicons/apple-touch-icon.png" /><link rel="apple-touch-icon" sizes="57x57" href="https://cocoapods.org/favicons/apple-touch-icon-57x57.png" /><link rel="apple-touch-icon" sizes="60x60" href="https://cocoapods.org/favicons/apple-touch-icon-60x60.png" /><link rel="apple-touch-icon" sizes="72x72" href="https://cocoapods.org/favicons/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon" sizes="76x76" href="https://cocoapods.org/favicons/apple-touch-icon-76x76.png" /><link rel="apple-touch-icon" sizes="114x114" href="https://cocoapods.org/favicons/apple-touch-icon-114x114.png" /><link rel="apple-touch-icon" sizes="120x120" href="https://cocoapods.org/favicons/apple-touch-icon-120x120.png" /><link rel="apple-touch-icon" sizes="144x144" href="https://cocoapods.org/favicons/apple-touch-icon-144x144.png" /><link rel="apple-touch-icon" sizes="152x152" href="https://cocoapods.org/favicons/apple-touch-icon-152x152.png" />
+
+    <link rel="stylesheet" href="/assets/bootstrap-3b61caa441fab92578453d6681fbf963.css">
+    <link rel="stylesheet" href="/assets/main-df7f28d697ab31d8aa461b8f8ff0c7e4.css">
+    <link rel="stylesheet" href="/assets/blog-a6cba0ad1ceb964c9a5a5387e033c3ff.css">
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-29866548-3', 'cocoapods.org');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="glyphicon glyphicon-plus"></span></button><a class="navbar-brand" href="https://cocoapods.org"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="https://cocoapods.org/app">App</a></li><li><a href="https://cocoapods.org/about">About</a></li><li><a href="https://guides.cocoapods.org">Guides</a></li><li class="active"><a href="https://blog.cocoapods.org">Blog</a></li></ul></div></section></nav>
+
+    <div id ="">
+<section class="container" >
+  <article class="row">
+  <header class="col-md-8 col-md-offset-2 headline blog-post">
+    
+      <h1>CocoaPods 1.6.0 Beta Begins!</h1>
+    
+    
+  </header>
+  </article>
+</section>
+</div>
+
+<section id="content-wrapper" class="post">
+  <section class="container">
+    <article class="row">
+      <article class="author metadata col-md-2 col-md-push-10">
+        <header>
+          
+            
+              <img class="gravatar large" src="http://gravatar.com/avatar/0da25866cffc79d7427beb50d984185a?s=144" height=72 width=72>
+            
+            
+              
+                <p><a href="http://twitter.com/dnkoutso">Dimitris Koutsogiorgas</a></p>
+              
+            
+             <p>16 August 2018</p>
+
+            
+              <a href="https://twitter.com/dnkoutso" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @dnkoutso
+              </a>
+            
+        </header>
+      </article>
+    
+      <article class="content col-md-8">
+        <p><em>CocoaPods 1.6.0</em> release continues our focus on stability, performance and scalability for large projects.</p>
+
+<!-- more -->
+
+<p>We are happy to announce that the first beta of 1.6.0 is now available! In this release, we revamped the build settings generation process to be faster and easier to maintain going forward. We&#39;ve also enhanced the integration of multiple test specs in the same pod.</p>
+
+<h3 id="revamped-build-settings">Revamped Build Settings</h3>
+
+<p>The generation of build settings (which reside within the <code>.xcconfig</code> files CocoaPods generates) has been completely rewritten. The primary goal for this rewrite was to clean up the code and make it scale much better on large projects. </p>
+
+<p>When contributors to CocoaPods make build setting changes it would often cause a cascading amount of performance regressions and trigger an unusual combination of edge cases. This made it very hard to test these changes and verify that each fix works correctly for everyone.</p>
+
+<p>From a user point of view, this rewrite should have zero effects when you compile your code. If there is anything that does not look right please file an <a href="https://github.com/CocoaPods/CocoaPods/issues/new">issue</a> providing steps and include a sample app that demonstrates the problem.</p>
+
+<p>To demonstrate the results of this rewrite we worked closely with our friends at LinkedIn, who use CocoaPods on a large project. The rewrite, along with some other performance improvements, have decreased <code>pod install</code> time down to approximately 40 seconds from the original time of 3 minutes or <strong>77% faster</strong>.</p>
+
+<p>This change, while mostly invisible, helps guarantee that CocoaPods will scale with your app as it grows. We really want to thank the folks at LinkedIn for their contributions to CocoaPods as well as their time spent to improve this.</p>
+
+<h3 id="enhanced-test-spec-integration">Enhanced Test Spec Integration</h3>
+
+<p>Test specs are becoming a fundamental piece of CocoaPods for pod authors. The ability to specify your test sources and have them execute through <code>lint</code> make this feature an invaluable tool and allow to make the <code>podspec</code> file be the source of truth for your library. Starting with 1.6.0, multiple <code>test_spec</code> entries will no longer generate a single test bundle target but instead generate a unit test bundle for each one.</p>
+
+<p>Let&#39;s use the following as an example:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="no">Pod</span><span class="o">::</span><span class="no">Spec</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+  <span class="c1"># ... rest of root spec entries go here</span>
+
+  <span class="c1"># Unit Test Sources - Those do not require an app host to run. </span>
+  <span class="c1"># They also require &#39;OCMock&#39; dependency.</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">test_spec</span> <span class="s1">&#39;Tests&#39;</span> <span class="k">do</span> <span class="o">|</span><span class="n">test_spec</span><span class="o">|</span>
+    <span class="n">test_spec</span><span class="o">.</span><span class="n">source_files</span> <span class="o">=</span> <span class="s1">&#39;Tests/**/*.{h,m}&#39;</span>
+    <span class="n">test_spec</span><span class="o">.</span><span class="n">dependency</span> <span class="s1">&#39;OCMock&#39;</span>
+  <span class="k">end</span>
+
+  <span class="c1"># SnapShot Tests Sources - Those *do* require an app host to run.</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">test_spec</span> <span class="s1">&#39;SnapshotTests&#39;</span> <span class="k">do</span> <span class="o">|</span><span class="n">test_spec</span><span class="o">|</span>
+    <span class="n">test_spec</span><span class="o">.</span><span class="n">requires_app_host</span> <span class="o">=</span> <span class="kp">true</span>
+    <span class="n">test_spec</span><span class="o">.</span><span class="n">source_files</span> <span class="o">=</span> <span class="s1">&#39;SnapshotTests/**/*.{h,m}&#39;</span>
+  <span class="k">end</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Both the &#39;Tests&#39; and &#39;SnapshotTests&#39; test specs would <em>merge</em> into a single unit test bundle target. This also had the unwanted effect of using an app host for the &#39;Tests&#39; test spec without explicitly having been declared by the pod author.</p>
+
+<p>It looked like this:</p>
+
+<p><center>
+</article>
+</div>
+</section>
+<div style="background-color:white;">
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='/assets/blog_img/CocoaPods-1.6.0-beta/test_specs_before.png '><img  src='/assets/blog_img/CocoaPods-1.6.0-beta/test_specs_before.png '></a></center></article>
+</div>
+</section>
+</div>
+<section class="container">
+<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
+
+<p></center></p>
+
+<p>This means it&#39;s impossible for pod authors to split their test sources and categorize them in different ways, for example using a different set of dependencies, resources, or compiler options.</p>
+
+<p>With 1.6.0, this will now generate the following:</p>
+
+<p><center>
+</article>
+</div>
+</section>
+<div style="background-color:white;">
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='/assets/blog_img/CocoaPods-1.6.0-beta/test_specs_after.png '><img  src='/assets/blog_img/CocoaPods-1.6.0-beta/test_specs_after.png '></a></center></article>
+</div>
+</section>
+</div>
+<section class="container">
+<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
+
+<p></center></p>
+
+<p>Much better!</p>
+
+<p>We <em>strongly</em> support the idea of having tests for your code and we aim to build the right tools for supporting this with CocoaPods. Having your <code>podspec</code> be the source of truth and coupled with recently released <a href="https://github.com/square/cocoapods-generate">cocoapods-generate</a> plugin your developer experience can be much improved and streamlined.</p>
+
+<h3 id="longer-beta-cycle">Longer Beta Cycle</h3>
+
+<p>We intentionally do not commit on specific release dates for CocoaPods. This is primarily due to the fact that CocoaPods is maintained and improved by the free time of multiple people across the world. Making such commitments would be tough to meet and most likely disappoint everyone.</p>
+
+<p>The 1.6.0 release will run through a longer beta cycle and will carry the &#39;beta&#39; name for some time before it&#39;s stable. We encourage you to use the 1.6.0 beta and help us by submitting any issues you find.</p>
+
+<p>To install it use:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="sh language-sh" data-lang="sh"><span class="nv">$ </span>gem install cocoapods --pre
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<h3 id="what&#39;s-next?">What&#39;s Next?</h3>
+
+<p>We always like to use this last bit of the blog post as an opportunity to express what we have in mind for the next release (currently aimed to be 1.7.0). More particularly, we would like to extend the <code>swift_version</code> DSL to support a range of Swift versions instead of just a single version similarly to <a href="https://swift.org/package-manager/">Swift Package Manager</a>.</p>
+
+<p>Finally, we&#39;ve been heavily improving the internals of the library and investigating on how to make the <code>pod install</code> process incremental and change it in ways that make Xcode cope better with very large projects to be more responsive.</p>
+
+<p>Thank you for making CocoaPods 1.6.0 a reality! We&#39;ve come a long way.</p>
+
+<p>Checkout the <a href="https://github.com/CocoaPods/CocoaPods/releases/tag/1.6.0">changelog</a> to get the full list of changes.</p>
+
+<p>&lt;3</p>
+
+      </article>
+    </article>
+  </section>
+</section>
+
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2018-08-16-CocoaPods-1.6.0-beta.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/0da25866cffc79d7427beb50d984185a" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/dnkoutso">Follow dnkoutso</a></div></article></div></section></section>
+
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaPods-1.5.0" title="CocoaPods 1.5.0 &amp;#8212; Swift Static Libraries"><header><h4>Previous Post</h4></header><h3>CocoaPods 1.5.0 &amp;#8212; Swift Static Libraries</h3><p>By Samuel E. Giddins</p><a class="chevron_placeholder back" href="/CocoaPods-1.5.0"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+    <footer class="page-footer"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><h4>CocoaPods is a project from</h4><p class="contributors"> <a href="https://twitter.com/dnkoutso">Dimitris Koutsogiorgas</a>, <a href="http://dantoml.com">Danielle Tomlinson</a>, <a href="http://orta.io">Orta Therox</a>, <a href="https://github.com/paulb777">Paul Beusterien</a>, <a href="http://segiddins.me">Samuel Giddins</a>, and <a href="https://cocoapods.org/about#team">The CocoaPods Dev Team</a> with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p><h4>Lovingly sponsored by</h4><p class="sponsors"><a href="http://artsy.net">Artsy</a>, <a href="http://www.usebutton.com">Button</a>, <a href="http://www.capitalone.io">Capital One</a>, <a href="https://circleci.com">CircleCI</a>, <a href="http://discontinuity.eu">Discontinuity</a>, <a href="http://www.fngtps.com">Fingertips</a>, <a href="https://developers.google.com">Google</a>, <a href="https://www.heroku.com">Heroku</a>, <a href="https://realm.io">Realm</a>, <a href="http://www.rubymotion.com">RubyMotion</a>, <a href="https://www.sauspiel.de">Sauspiel</a>, <a href="https://www.slack.com">Slack</a>, <a href="https://www.soundcloud.com">SoundCloud</a>, <a href="https://www.stripe.com">Stripe</a>, <a href="https://www.squareup.com">Square</a>, and  <a href="http://www.technologyastronauts.ch">Technology&nbsp;Astronauts</a>.</p></article></div></section></footer><footer class="footer-links"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><a class="cocoapods-small-logo" href="https://cocoapods.org"></a><ul><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/using/troubleshooting.html">Support</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://github.com/CocoaPods/CocoaPods">GitHub Repo</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://status.cocoapods.org">Web Properties Status</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://twitter.com/CocoaPods">@CocoaPods</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://groups.google.com/group/cocoapods">Mailing List</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/about"><span class="visible-lg-span">CocoaPods</span> Dev Team</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/syntax/podfile.html">Podfile Doc<span class="hidden-lg-span">s</span><span class="visible-lg-span">umentation</span></a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/legal">Legal / Conduct</a></li></ul></article></div></section></footer>
+    <script src="/assets/blog-c2911afb0e1e77d79b486c5c39fe0cc6.js"></script>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  </body>
+</html>
