@@ -1,0 +1,242 @@
+---
+layout: post
+title:  "CocoaPods 1.7.0 Beta!"
+author: dnkoutso
+categories: cocoapods releases
+---
+
+_CocoaPods 1.7.0_ expands heavily on the improved underlying infrastructure of prior releases with support for multiple Swift versions, app specs and more!
+
+<!-- more -->
+
+This is a huge release which contains a variety of new features to help propel CocoaPods forward.
+
+Let's jump right in!
+
+### Support For Multiple Swift Versions
+
+The `swift_version` DSL that was first introduced in [CocoaPods 1.4.0](https://github.com/CocoaPods/CocoaPods/releases/tag/1.4.0) has now been expanded to support multiple Swift versions. This helps pod authors and gives consumers more flexibility when it comes to choosing which version of Swift to use when consuming a pod.
+
+Pod authors can now transcribe that information into their `podspec` by simply specifying the additional Swift versions within the `swift_versions` DSL.
+
+Here's an example `podspec` that specifies additional Swift versions it supports:
+
+```ruby
+Pod::Spec.new do |spec|
+  spec.name = 'CoconutLib'
+  spec.version = '1.0'
+  # ... rest of root spec entries go here
+  spec.swift_versions = ['3.2', '4.0', '4.2']
+end
+```
+
+Unless or otherwise specified by the consumer of the `CoconutLib` pod, CocoaPods will automatically select the _latest_ version of Swift during installation which in this example will be `4.2`.
+
+However, there are many cases in which consumers of a pod might be unable to use the latest Swift version, perhaps because their toolchain does not support it yet. For example, a project that is using an older version of Xcode that does not support Swift 4 will be unable to integrate the `CoconutLib` pod and would end up with a compilation error. To solve this, CocoaPods 1.7.0 provides the ability to specify Swift version requirements through the new `supports_swift_versions` DSL for each target that is integrated within the `Podfile`.
+
+For example:
+
+```ruby
+target 'MyApp' do
+  supports_swift_versions '>= 3.0', '< 4.0'
+  pod 'CoconutLib', '~> 1.0'
+end
+```
+
+The above configuration will successfully integrate `CoconutLib` pod and use Swift `3.2` as the version to compile it with. This is because it is the only version satisfied by the requirements specified in the `MyApp` target definition and by the list of supported versions of Swift declared within the `CoconutLib` `podspec`.
+
+**Note**: The `supports_swift_versions` DSL can also be declared at the root level of a `Podfile` in which case it will apply to all targets within the `Podfile`. Furthermore, nested targets (such as test targets) will inherit their Swift requirements from their parent unless they explicitly specify their own Swift version requirements.
+
+There are many other edge cases that can occur when choosing which Swift version to use. We encourage you to read through the [proposal](https://github.com/CocoaPods/CocoaPods/issues/8191) for this change to find out more!
+
+#### Linting And Validation
+
+It is generally difficult for pod authors to maintain infrastructure to support multiple (primarily older) versions of Swift, therefore, during `lint` CocoaPods will choose the _latest_ version of Swift during validation.
+
+For pod authors who _do_ have the infrastructure (such as a CI system) that ensures their pod works with older versions of Swift, the `--swift-version` parameter should be used during `lint` to override the default behavior.
+
+#### Deprecating `.swift-version` File
+
+Up until now, most pod authors have been relying on specifying a `.swift-version` file at the root of their repo in order to successfully publish their pod with the Swift version they officially support. However, this information is _never_ transcribed within the published `podspec` and therefore during integration none of it is taken into consideration when choosing which Swift version to use.
+
+This can cause numerous issues especially when a new version of Swift is released. This is because a consumer will automatically pick the latest version of Swift to use without the pod author officially claiming that it is supported.
+
+**We strongly recommend pod authors to migrate over to use the officially supported `swift_version` DSL within their `podspec` instead.**
+
+We also recommend deleting the `.swift-version` file in your repo unless you use it for other tools such as `swiftenv`. The `swift_version` DSL will always take precedence over the `.swift-version` file.
+
+Finally, a warning will be displayed during `lint` that encourages pod authors to migrate away from using the `.swift-version` file and in a future major release of CocoaPods we plan to completely remove support for it.
+
+### App Specs
+
+With the recently introduced [test specs](http://blog.cocoapods.org/CocoaPods-1.3.0) we were able to build a platform for us to expand on and introduce different types of specifications that can be provided by a pod author. With 1.7.0, we are introducing _app specs_ which allow pod authors to describe an application from within their `podspec`.
+
+App specs can help pod authors in various ways, for example, they can be used to ship a sample app alongside their pod as a tutorial on how consumers can integrate it to their own respective app.
+
+App specs progress forward the concept of 'Isolated Development' in which a `podspec` can be used as the single piece of information needed to generate an entire (throwable) workspace to develop on.
+
+Here's an example of an app spec declaration:
+
+```ruby
+Pod::Spec.new do |s|
+  s.name         = 'CoconutLib'
+  s.version      = '1.0'
+  s.authors      = 'Coconut Corp', { 'Monkey Boy' => 'monkey@coconut-corp.local' }
+  s.homepage     = 'http://coconut-corp.local/coconut-lib.html'
+  s.summary      = 'Coconuts For the Win.'
+  s.description  = 'All the Coconuts'
+  s.source       = { :git => 'http://coconut-corp.local/coconut-lib.git', :tag => 'v1.0' }
+  s.license      = {
+    :type => 'MIT',
+    :file => 'LICENSE',
+    :text => 'Permission is hereby granted ...'
+  }
+
+  s.source_files = 'Sources/*.swift'
+
+  s.app_spec 'SampleApp' do |app_spec|
+    app_spec.source_files = 'Sample/*.swift'
+  end  
+end
+```
+
+App specs can leverage the majority of the CocoaPods spec DSL to declare dependencies, build configuration settings, etc. 
+
+By default, app specs are not automatically integrated to a project that is consuming the pod. If you wish to do so you can specify this in your `Podfile`, similar to test specs:
+
+```ruby
+ target 'MyApp' do
+   use_frameworks!
+   pod 'CoconutLib', '~> 1.0', :appspecs => ['SampleApp']
+ end
+```
+
+We hope in the future to promote app specs to a top-level concept in which consumer applications are described as an app spec completely eliminating the need of maintaining an `.xcodeproj` in order to integrate with CocoaPods.
+
+### Multiple Xcodeproj Generation
+
+Historically, CocoaPods has always generated a single `Pods.xcodeproj` that contains all the required targets and build settings for your project to compile. Using just one project that incorporates your entire `Podfile` works just fine for smaller projects; however, as your project grows, so will the size of your `Pods.xcodeproj` file.
+
+The larger the `Pods.xcodeproj` file, the longer Xcode has to spend parsing its contents, which we have discovered leads to a degraded Xcode experience. Instead of putting all of your targets into one monolithic Xcode project, we’ve noticed some considerable performance improvements for larger CocoaPods projects by integrating each pod as its own _separate_ Xcode project and nested under the top-level `Pods.xcodeproj`.
+
+Additionally, in large codebases this feature can prove particularly useful as developers may opt-in to open only the specific `.xcodeproj` they need to work on (found under the `Pods/` directory) instead of opening the full workspace which can slow down their development process.
+
+Whether performance is a problem, or you just prefer setting up your workspace using multiple Xcode projects, CocoaPods now supports this setting using the `generate_multiple_pod_projects` installation option.
+
+You can enable this in your `Podfile` like so:
+
+```ruby
+install! 'cocoapods', :generate_multiple_pod_projects => true
+```
+
+By default, this option is turned off, but we encourage you to try it out and report any issues you find to us. We expect that going forward in a future major version update to CocoaPods this becomes the default option when it comes to workspace generation.
+
+Here's how it looks:
+
+_Without multi-xcodeproj (default)_:
+<center>
+{% breaking_image /assets/blog_img/CocoaPods-1.7.0/no-multi-xcodeproj.png %}
+</center>
+
+_With multi-xcodeproj_:
+<center>
+{% breaking_image /assets/blog_img/CocoaPods-1.7.0/multi-xcodeproj.png %}
+</center>
+
+__Warning__: Switching your project to use multiple `.xcodeproj` may result in some compiler errors if your pods have relied on importing headers using the quote syntax for its dependencies. For example `#import "PDDebugger.h"` will no longer work in a pod that depends on `PonyDebugger`. Instead, we highly suggest you update your headers to correctly import the framework and its associated header: `#import <PonyDebugger/PDDebugger.h>`. This is intentional since this feature is currently opt-in.
+
+### Incremental Installation
+
+Instead of regenerating your entire workspace every time you run `pod install`, CocoaPods now supports only regenerating the pod targets that have changed since your previous installation. Depending on the size of your project, this can save anywhere from a couple seconds to _minutes_ off every `pod install` invocation.
+
+You can enable this in your `Podfile` with the installation option `incremental_installation` like so:
+
+```ruby
+install! 'cocoapods',
+         :generate_multiple_pod_projects => true,
+         :incremental_installation => true
+```
+
+**Note**: The `incremental_installation` option currently requires the `generate_multiple_pod_projects` installation option to also be enabled in order for it to function.
+
+### `scheme` DSL
+
+Pod authors are now able to customize the generated scheme for their specs, test specs and the newly released app specs. For now, support for specifying environment variables as well as launch arguments is included and it can be easily expanded in the future.
+
+Here's an example:
+
+```ruby
+Pod::Spec.new do |spec|
+  spec.name = 'CoconutLib'
+  spec.version = '1.0'
+  # ... rest of root spec entries go here
+  spec.test_spec 'Tests' do |test_spec|
+    test_spec.source_files = 'Tests/**/*.swift'
+    test_spec.scheme = { 
+      :launch_arguments => ['Arg1', 'Arg2'], 
+      :environment_variables => { 'Key1' => 'Val1'}
+    }
+  end
+end   
+```
+
+The above will example with produce the following scheme for the test spec `Tests`:
+
+<center>
+{% breaking_image /assets/blog_img/CocoaPods-1.7.0/scheme_config.png %}
+</center>
+
+**Note**: You may opt to configure a scheme for a specific platform. For example, `test_spec.ios.scheme` will only configure the scheme for iOS targets.
+
+### `.xcfilelist` Support
+
+In CocoaPods 1.7.0 script phases now support usage of `.xcfilelist` in order to specify script input and output paths. CocoaPods will automatically detect whether the Xcode project being integrated supports `.xcfilelist` and prefer that over separate input/output path entries.
+
+This reduces the amount of footprint CocoaPods has into the user project but also leverages the ability to use different input/output paths per configuration (e.g. 'Debug' vs 'Release').
+
+### Experimental Features
+
+Along with 1.7.0 we are shipping a couple of exciting and important experimental features!
+
+#### CDN Support For The [Master Specs Repo](https://github.com/CocoaPods/Specs)
+
+The [master specs repo](https://github.com/CocoaPods/Specs) is crucial to the functionality of CocoaPods, however, over the years its size has grown dramatically making it the number one difficulty to onboard with CocoaPods.
+
+This is especially true for folks with a slow internet connection since cloning the repo and its entire history becomes almost impossible. Additionally, CI systems are also slowed down dramatically for first time setup since again cloning can take a long time.
+
+In 1.7.0 we are launching CDN support to avoid cloning the [master specs repo](https://github.com/CocoaPods/Specs) on your local machine (or CI) in order to use CocoaPods. This can be enabled by doing replacing the `source` of the [master specs repo](https://github.com/CocoaPods/Specs) declaration in your `Podfile` with:
+
+```ruby
+# source 'https://github.com/CocoaPods/Specs' comment or remove this line.
+source 'https://cdn.jsdelivr.net/cocoa/'
+```
+
+Optionally, you may delete the existing `git` based repo by running `pod repo remove master`.
+
+We would like to thank [jsDelivr](https://www.jsdelivr.com) for their support and help to make this work! For now, we currently plan to maintain both ways of consuming the [master specs repo](https://github.com/CocoaPods/Specs) but we strongly encourage you to switch as it is much faster to get started with CocoaPods.
+
+Depending on the results and stability, we hope that starting with 1.7.0, CocoaPods will no longer require users to clone the [master specs repo](https://github.com/CocoaPods/Specs) in order to get started.
+
+#### Windows Support
+
+Starting with 1.7.0, we've added support for Windows! We encourage Windows users to use CocoaPods and [report any issues](https://github.com/cocoapods/cocoapods/issues) to us going forward.
+
+### What's Next?
+
+CocoaPods 1.7.0 is a very exciting release, and we're very happy for you to try it out, and recommend you upgrade:
+
+```sh
+$ gem install cocoapods --pre
+```
+
+For future versions, we hope to substantially improve the integration story of CocoaPods.
+
+Currently, consumers of pods are limited to an all-or-nothing approach to integrate their project by forcing them to make a choice on whether to use dynamic frameworks everywhere or static libraries everywhere via the `use_frameworks!` option.
+
+On the other hand, pod authors are _also_ very limited for the options in which they can specify how their pod should be packaged and linked to the consumer target and have to ensure their pod can compile across different permutations of package and link styles. We are in the early stages of planning on how we can improve this further and give both pod authors and consumers better choices.
+
+As always, we would like to thank all of our contributors for making this release a reality!
+
+Checkout the [changelog](https://github.com/CocoaPods/CocoaPods/releases/tag/1.7.0.beta.1) to get the full list of changes.
+
+🚀
