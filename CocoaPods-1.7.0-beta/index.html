@@ -402,7 +402,7 @@
 
 <p>This is especially true for folks with a slow internet connection since cloning the repo and its entire history becomes almost impossible. Additionally, CI systems are also slowed down dramatically for first time setup since again cloning can take a long time.</p>
 
-<p>In 1.7.0 we are launching CDN support to avoid cloning the <a href="https://github.com/CocoaPods/Specs">master specs repo</a> on your local machine (or CI) in order to use CocoaPods. This can be enabled by doing replacing the <code>source</code> of the <a href="https://github.com/CocoaPods/Specs">master specs repo</a> declaration in your <code>Podfile</code> with:</p>
+<p>In 1.7.0 we are experimenting with CDN support to avoid cloning the <a href="https://github.com/CocoaPods/Specs">master specs repo</a> on your local machine (or CI) in order to use CocoaPods. This can be enabled by doing replacing the <code>source</code> of the <a href="https://github.com/CocoaPods/Specs">master specs repo</a> declaration in your <code>Podfile</code> with:</p>
 <div class="highlight">      </article>
       </article>
       </section>
@@ -423,6 +423,8 @@
       <article class="content col-md-8 col-md-offset-2">
 </div>
 <p>Optionally, you may delete the existing <code>git</code> based repo by running <code>pod repo remove master</code>.</p>
+
+<p>We are expecting either the syntax or the server structure to change again with 1.8.0, and so in adopting this feature in 1.7.0 you should be expecting to have to make changes in the future to keep this working. We don&#39;t intend to support the 1.7.0 version outside of 1.7.x releases.</p>
 
 <p>We would like to thank <a href="https://www.jsdelivr.com">jsDelivr</a> for their support and help to make this work! For now, we currently plan to maintain both ways of consuming the <a href="https://github.com/CocoaPods/Specs">master specs repo</a> but we strongly encourage you to switch as it is much faster to get started with CocoaPods.</p>
 
