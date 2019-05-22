@@ -204,7 +204,7 @@ The [master specs repo](https://github.com/CocoaPods/Specs) is crucial to the fu
 
 This is especially true for folks with a slow internet connection since cloning the repo and its entire history becomes almost impossible. Additionally, CI systems are also slowed down dramatically for first time setup since again cloning can take a long time.
 
-In 1.7.0 we are launching CDN support to avoid cloning the [master specs repo](https://github.com/CocoaPods/Specs) on your local machine (or CI) in order to use CocoaPods. This can be enabled by doing replacing the `source` of the [master specs repo](https://github.com/CocoaPods/Specs) declaration in your `Podfile` with:
+In 1.7.0 we are experimenting with CDN support to avoid cloning the [master specs repo](https://github.com/CocoaPods/Specs) on your local machine (or CI) in order to use CocoaPods. This can be enabled by doing replacing the `source` of the [master specs repo](https://github.com/CocoaPods/Specs) declaration in your `Podfile` with:
 
 ```ruby
 # source 'https://github.com/CocoaPods/Specs' comment or remove this line.
@@ -212,6 +212,8 @@ source 'https://cdn.jsdelivr.net/cocoa/'
 ```
 
 Optionally, you may delete the existing `git` based repo by running `pod repo remove master`.
+
+We are expecting either the syntax or the server strcture to change again with 1.8.0, and so in adopting this feature in 1.7.0 you should be expecting to have to make changes in the future to keep this working. We don't intend to support the 1.7.0 version outside of 1.7.x releases.
 
 We would like to thank [jsDelivr](https://www.jsdelivr.com) for their support and help to make this work! For now, we currently plan to maintain both ways of consuming the [master specs repo](https://github.com/CocoaPods/Specs) but we strongly encourage you to switch as it is much faster to get started with CocoaPods.
 
