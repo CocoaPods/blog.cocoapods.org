@@ -213,7 +213,7 @@ source 'https://cdn.jsdelivr.net/cocoa/'
 
 Optionally, you may delete the existing `git` based repo by running `pod repo remove master`.
 
-We are expecting either the syntax or the server strcture to change again with 1.8.0, and so in adopting this feature in 1.7.0 you should be expecting to have to make changes in the future to keep this working. We don't intend to support the 1.7.0 version outside of 1.7.x releases.
+We are expecting either the syntax or the server structure to change again with 1.8.0, and so in adopting this feature in 1.7.0 you should be expecting to have to make changes in the future to keep this working. We don't intend to support the 1.7.0 version outside of 1.7.x releases.
 
 We would like to thank [jsDelivr](https://www.jsdelivr.com) for their support and help to make this work! For now, we currently plan to maintain both ways of consuming the [master specs repo](https://github.com/CocoaPods/Specs) but we strongly encourage you to switch as it is much faster to get started with CocoaPods.
 
