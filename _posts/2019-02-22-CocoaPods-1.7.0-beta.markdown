@@ -198,7 +198,7 @@ This reduces the amount of footprint CocoaPods has into the user project but als
 
 Along with 1.7.0 we are shipping a couple of exciting and important experimental features!
 
-#### CDN Support For The [Master Specs Repo](https://github.com/CocoaPods/Specs)
+#### <a name="cdn-support"></a>CDN Support For The [Master Specs Repo](https://github.com/CocoaPods/Specs)
 
 The [master specs repo](https://github.com/CocoaPods/Specs) is crucial to the functionality of CocoaPods, however, over the years its size has grown dramatically making it the number one difficulty to onboard with CocoaPods.
 
