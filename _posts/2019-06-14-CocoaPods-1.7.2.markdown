@@ -5,17 +5,17 @@ author: igormaka
 categories: cocoapods releases
 ---
 
-_CocoaPods 1.7.2_ brings with it the final version of CDN support for the [master spec repo](https://github.com/CocoaPods/Specs). 
+_CocoaPods 1.7.2_ brings with it the final version of CDN support for the [trunk specs repo](https://github.com/CocoaPods/Specs). 
 
 <!-- more -->
 
-It's been a tale of ridiculous scale, unintended consequences and free open-source plans.  
-The CDN is located at https://cdn.cocoapods.org/ and is still considered experimental.   
-A future release will make it the default spec source.
+It's been a tale of ridiculous scale, unintended consequences and free open-source plans. CocoaPods is moving to use a CDN which is located at https://cdn.cocoapods.org/ and is still considered experimental. A future release will make it the default spec source.
+
+A CDN is a Content Delivery Network - what this means for CocoaPods is that using CocoaPods won't require you to have a local copy of all the public Podspecs on your computer. Saving you about a GB of file storage, and shaving a lot of time from `pod install`s.
 
 ### Scaling when free and open source
 
-CocoaPods is a free, open-source project. As such, it depends on the good graces and sponsorships of multiple tech companies. The initial decision was to store the specs in a git repo, a common practice for a free, open-source project for storing such metadata. 
+CocoaPods is a free, open-source project run by maintainers in their spare time. As such, it depends on the good graces and sponsorships of multiple tech companies. The initial decision was to store the specs in a git repo, a common practice for a free, open-source project for storing such metadata. 
 
 The first hurdles of scale were encountered in 2016, when traffic to the master spec repo has caused GitHub to [rate-limit all operations]({% post_url 2016-05-04-Master-Spec-Repo-Rate-Limiting-Post-Mortem %}).  
 A [comment from GitHub](https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomment-193772935) at the time stated that this repo alone was using 5 whole server CPUs and consuming terabytes upon terabytes of bandwidth.
@@ -46,33 +46,41 @@ It was obvious to many that the spec repo should be put behind a CDN, but there 
 2. It had to allow some way of obtaining directory listings, for retrieving versions of pods.
 3. It had to auto-update from GitHub as the source of truth.
 
-The first implementation was a shell script, polling GitHub and piping `find` into `ls` into index files. This ran on a machine that was not open or free and therefore could not be the true soultion.  
-Nevertheless, this auto-updated repo was put behind a [jsDelivr CDN](https://www.jsdelivr.com) and the client interfacing with it was released in [1.7.0]({% post_url 2019-02-22-CocoaPods-1.7.0-beta %}#cdn-support) labeled "highly experimental".
+The [first implementation](https://github.com/CocoaPods/Core/pull/469) was a shell script, polling GitHub and piping `find` into `ls` into index files. This ran on a machine that was not open or free and therefore could not be the true solution. Nevertheless, this auto-updated repo was put behind a [jsDelivr CDN](https://www.jsdelivr.com) and the client interfacing with it was released in [1.7.0]({% post_url 2019-02-22-CocoaPods-1.7.0-beta %}#cdn-support) labeled "highly experimental".
 
 ### Final Lap with Netlify
 
-The final version of the CDN for CocoaPods/Specs was implemented on [Netlify](https://www.netlify.com), a static site hosting service supporting flexible site generation.   
-This solution ticked all the boxes: a generous open-source plan, fast CDN and continuous deployment from GitHub.
+The [final version](https://github.com/CocoaPods/Core/pull/541) of the CDN for CocoaPods/Specs was implemented on [Netlify](https://www.netlify.com), a static site hosting service supporting flexible site generation. This solution ticked all the boxes: a generous open-source plan, fast CDN and continuous deployment from GitHub.
 
-Upon each commit, Netlify runs a specialized script that generates a per-shard index for all the pods and versions in the repo. An example of a shard index can be found at https://cdn.cocoapods.org/all_pods_versions_2_2_2.txt. Additionally, an `all_pods.txt` contains a list of all pods. 
+Upon each commit, Netlify runs a [specialized script](https://github.com/CocoaPods/Specs/tree/master/Scripts) which generates a per-shard index for all the pods and versions in the repo. If you've ever noticed that the directory structure for our Podspecs repo was strange, this is what we call sharding. An example of a shard index can be found at https://cdn.cocoapods.org/all_pods_versions_2_2_2.txt. This would correspond to `~/.cocoapods/repos/master/Specs/2/2/2/` locally. 
 
-The rest of the requests get redirected to GitHub's CDN.
+Additionally, we create an `all_pods.txt` contains a list of all pods, finally any other request made is redirected to GitHub's CDN.
 
 ### Usage
 
-Using the CDN for retrieving specs, while "finalized", should still be considered experimental.
+Using the CDN for retrieving specs, while "finalized" and we're happy, it should still be considered experimental until we switch it to be default.
 
-To use the CDN source in your `Podfile`, simply add it like so:
+To use the CDN source in your `Podfile`:
+
+If you don't have private specs:
 
 ```ruby
 source 'https://cdn.cocoapods.org/'
 ```
 
-If you have a source-controlled `Podfile.lock` in your repo, it currently requires a manual update. Otherwise, just delete it.
+If you have private specs:
 
-If you have a CI setup, it is recommended to cache the new repo dir as it is very small and would save even more time.
+```diff
+source 'https://github.com/artsy/Specs.git'
+- source 'https://github.com/CocoaPods/Specs.git'
++ source 'https://cdn.cocoapods.org/'
+```
 
-In the next releases, we are planning to make the CDN source the default master source.
+Doing this will break your `Podfile.lock`, so you are likely to need to run `pod update` to see the changes (be careful, this may update your Pods also).
+
+If you have a CI setup, it is recommended to cache the new repo dir as it is very small and would save even more time. With 1.7.2 it should be located at `~/.cocoapods/repos/cocoapods-` but we're looking to improve the name in an upcoming release.
+
+In an upcoming release, we are planning to make the CDN source the default source!
 
 
 🚀
