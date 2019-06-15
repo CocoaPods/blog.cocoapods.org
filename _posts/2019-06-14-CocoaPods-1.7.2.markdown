@@ -84,5 +84,7 @@ If you have a CI setup, it is recommended to cache the new repo dir as it is ver
 
 In an upcoming release, we are planning to make the CDN source the default source!
 
+P.S. Thanks to [@dnkoutso](https://twitter.com/dnkoutso) for all the release work!
+
 
 🚀
