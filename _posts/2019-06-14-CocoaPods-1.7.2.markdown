@@ -80,7 +80,7 @@ source 'https://github.com/artsy/Specs.git'
 
 Doing this will break your `Podfile.lock`, so you are likely to need to run `pod update` to see the changes (be careful, this may update your Pods also).
 
-If you have a CI setup, it is recommended to cache the new repo dir as it is very small and would save even more time. With 1.7.2 it should be located at `~/.cocoapods/repos/cocoapods-`, but we're looking to improve the name in an upcoming release.
+If you have a CI setup, it is recommended to cache the new repo dir as it is very small and would save even more time. With 1.7.2 it should be located at `~/.cocoapods/repos/cocoapods-` (yes, with a `-`), but we're looking to improve the naming in an upcoming release.
 
 In an upcoming release, we are planning to make the CDN source the default source!
 
