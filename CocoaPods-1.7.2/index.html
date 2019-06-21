@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-      <title>Repairing Our Broken Specs Repository - CocoaPods Blog</title>
+      <title>CocoaPods 1.7.2 - Master Repo CDN is Finalized! - CocoaPods Blog</title>
     
 
     <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
@@ -46,7 +46,7 @@
   <article class="row">
   <header class="col-md-8 col-md-offset-2 headline blog-post">
     
-      <h1>Repairing Our Broken Specs Repository</h1>
+      <h1>CocoaPods 1.7.2 - Master Repo CDN is Finalized!</h1>
     
     
   </header>
@@ -61,120 +61,88 @@
         <header>
           
             
-              <img class="gravatar large" src="http://gravatar.com/avatar/d200a17dd269fd4001bacb11662dab4b?s=144" height=72 width=72>
+              <img class="gravatar large" src="http://gravatar.com/avatar/ecfc4cf87073033b9ac1547872b5cf78?s=144" height=72 width=72>
             
             
               
-                <p><a href="http://twitter.com/kylefuller">Kyle Fuller</a></p>
+                <p><a href="http://twitter.com/igormaka">Igor Makarov</a></p>
               
             
-             <p>30 January 2014</p>
+             <p>14 June 2019</p>
 
             
-              <a href="https://twitter.com/kylefuller" class="twitter-follow-button" data-show-count="false" data-lang="en">
-                Follow @kylefuller
+              <a href="https://twitter.com/igormaka" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @igormaka
               </a>
             
         </header>
       </article>
     
       <article class="content col-md-8">
-        <p><em>Note: If you got this problem after running <code>gem update</code>, <a href="#i-got-linked-here-after-updating-my-gems,-what-to-do?">jump here</a> to find a solution.</em></p>
-
-<p>Unfortunately we&#39;ve encountered a bug in libgit2 and we are going to have to
-<strong>force push</strong> into <a href="https://github.com/CocoaPods/Specs">the Specs repository</a>. (Also known as the
-‘master’ spec repo.)</p>
-
-<h3 id="what-does-this-mean-for-you?">What does this mean for you?</h3>
-
-<p>Well, basically your CocoaPods setup <strong>is going to break</strong>. You are going to
-have to manually delete <em>any</em> local copies of the Specs repository and re-clone
-the new version of the Specs repository. You can do that with the following
-commands:</p>
-
-<pre class='highlight'><code>
-    $ sudo rm -fr ~/.cocoapods/repos/master
-    $ pod setup
-    
-</code></pre>
-
-<p><em><strong>NOTE 1:</strong> If you have any local commits or changes to the Specs repository
-which are not merged, you should ensure you have a copy of them. I would
-recommend that you manually copy these changes over and re-commit them. You can
-fix your repository without deleting, however, this is not a simple process, so
-we are instead recommending that you delete your copy of the Specs repository
-and any forks of it.</em></p>
-
-<p><em><strong>NOTE 2:</strong> In case you are storing private podspecs in your clone of the
-Specs repository or you have a private spec repo that was forked from the
-Specs repository, this is a great time to clean that up by using private spec
-repositories <a href="http://guides.cocoapods.org/making/private-cocoapods.html">The Proper Way</a>. This way your private spec
-repository should never be affected by issues in other spec repositories.</em></p>
+        <p><em>CocoaPods 1.7.2</em> brings with it the final version of CDN support for the <a href="https://github.com/CocoaPods/Specs">trunk specs repo</a>. </p>
 
 <!-- more -->
 
-<p><em>If you really know what you’re doing and don’t want to re-download the
-complete repo, follow <a href="https://github.com/CocoaPods/Specs/issues/7029#issuecomment-33708256">these</a> instructions.</em></p>
+<p>It&#39;s been a tale of ridiculous scale, unintended consequences and free open-source plans. CocoaPods is moving to use a CDN which is located at <a href="https://cdn.cocoapods.org/">https://cdn.cocoapods.org/</a> and is still considered experimental. A future release will make it the default spec source.</p>
 
-<h3 id="why-did-this-break?">Why did this break?</h3>
+<p>A CDN is a Content Delivery Network - what this means for CocoaPods is that using CocoaPods won&#39;t require you to have a local copy of all the public Podspecs on your computer. Saving you about a GB of file storage, and shaving a lot of time off <code>pod install</code>s.</p>
 
-<p>The Specs repository has unfortunately broken due to <a href="https://github.com/libgit2/libgit2/pull/2085">a bug in
-libgit2</a> which powers <a href="https://help.github.com/articles/creating-and-editing-files-in-your-repository">GitHub&#39;s web editor</a>. This
-has <a href="https://github.com/CocoaPods/Specs/issues/7029#issuecomment-33429321">caused our git repository to become corrupt</a>:</p>
+<h3 id="scaling-when-free-and-open-source">Scaling when free and open source</h3>
 
-<blockquote>
-<p>As fsck noted, it has duplicate entries, which is a violation of Git&#39;s object
-format. GitHub check objects as they are pushed into each fork; anyone who
-has built on top of the broken tree will have their push rejected, as they
-are trying to bring the broken object into their fork (as a result of it
-being reachable from their new commits).</p>
+<p>CocoaPods is a free, open-source project run by maintainers in their spare time. As such, it depends on the good graces and sponsorships of multiple tech companies. The initial decision was to store the specs in a GitHub repo, a common practice for a free, open-source project for storing such metadata. </p>
 
-<p>We are looking into how this broken object got into the repository in the
-first place. At this point it looks like a web-edit […], that was then merged
-on the site via a pull request ([…] it looks like a bug in GitHub rather than
-any kind of user error). We&#39;re looking both into fixing the bug, but also
-into giving better protection to broken objects entering the repository (i.e.
-this is the exact sort of problem that the fsck-on-push checks are there to
-prevent, but they do not currently extend to web edits).</p>
-</blockquote>
+<p>The first hurdles of scale were encountered in 2016, when traffic to the master spec repo has caused GitHub to <a href="/Master-Spec-Repo-Rate-Limiting-Post-Mortem">rate-limit all operations</a>.<br>
+A <a href="https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomment-193772935">comment from GitHub</a> at the time stated that this repo alone was using 5 whole server CPUs and consuming terabytes upon terabytes of bandwidth.</p>
 
-<p>The only solution is to rewrite the history of the repository and force push
-the rewritten tree. Rolling out this fix basically means that all copies of the
-repository have to be reset. This can be a delicate process, so deleting and
-re-cloning is the safest and simplest way to do so.</p>
+<p>The crisis was averted by <a href="/Sharding">sharding the repo</a> to improve algorithmic performance and by limiting all first-time clones to being shallow. </p>
 
-<h3 id="will-this-happen-again?">Will this happen again?</h3>
+<p>This has solved GitHub&#39;s problem, but CocoaPods&#39; users still had to deal with unsatisfactory performance.</p>
 
-<p>There is a <a href="https://github.com/libgit2/libgit2/pull/2085">fix</a> in the works to fix the bug in libgit2. This
-fixes a bug which would prevent libgit2 from corrupting a repository in this
-particular case.</p>
+<h3 id="git-as-a-database">Git as a database</h3>
 
-<p>GitHub are also working on putting checking measures in-place on the
-web-editor so that it wouldn&#39;t be possible to save a corrupt repository, and to
-prevent any similar problems in the future. (As is already the case when using
-<a href="https://www.kernel.org/pub/software/scm/git/docs/git-push.html">git-push</a>, which runs <a href="https://www.kernel.org/pub/software/scm/git/docs/git-fsck.html">git-fsck</a> on GitHub’s end.)</p>
+<p>Git was invented at a time when &quot;slow network&quot; and &quot;no backups&quot; were legitimate design concerns. Running endless builds as part of continuous integration wasn&#39;t commonplace. CDN wasn&#39;t so commonly available.</p>
 
-<h3 id="acknowledgements">Acknowledgements</h3>
+<p>There are many stories of git repos hitting the hard envelope of git&#39;s design constraints. <a href="https://devblogs.microsoft.com/bharry/the-largest-git-repo-on-the-planet/">Microsoft&#39;s Windows repo</a> is one example. CocoaPods is another.</p>
 
-<p>We would like to thoroughly thank the following people for their help in both
-investigating and resolving this matter. It is very much appreciated by all of
-us at CocoaPods HQ and shows the power of a (larger) community of people coming
-together.</p>
+<p>At the time of writing, the spec repo had:</p>
 
 <ul>
-<li>Jeff King (<a href="https://github.com/peff">@peff</a>)</li>
-<li>Roberto Tyley (<a href="https://github.com/rtyley">@rtyley</a>)</li>
-<li>Abizer Nasir (<a href="https://github.com/Abizern">@Abizern</a>)</li>
+<li>almost 400k commits - half of the Linux Kernel repo!</li>
+<li>over 400k directories</li>
+<li>over 300k spec files</li>
 </ul>
 
-<p>We are very sorry for <em>all</em> time this issue takes away from our great early
-adopters and pod providers. We are very thankful for your patience and
-understanding while we work towards a smoothly functioning version 1 of
-CocoaPods and its architecture.</p>
+<p>These numbers have caused the repo to take minutes to clone, long times to update and have wasted uncountable CI time. It has also proven to be resistant to tarballing, as this sort of directory structure hits a bottleneck in <code>tar</code> as well. </p>
 
-<h3 id="i-got-linked-here-after-updating-my-gems,-what-to-do?">I got linked here after updating my gems, what to do?</h3>
+<h3 id="directory-listing-denied">Directory Listing Denied</h3>
 
-<p>This issue is being tracked down to an issue located in Psych. To fix it please use the following command:</p>
+<p>It was obvious to many that the spec repo should be put behind a CDN, but there were several constraints:</p>
+
+<ol>
+<li>It had to be a free CDN, as the project is free and open-source.</li>
+<li>It had to allow some way of obtaining directory listings, for retrieving versions of pods.</li>
+<li>It had to auto-update from GitHub as the source of truth.</li>
+</ol>
+
+<p>The <a href="https://github.com/CocoaPods/Core/pull/469">first implementation</a> was a shell script, polling GitHub and piping <code>find</code> into <code>ls</code> into index files. This ran on a machine that was not open or free and therefore could not be the true solution. Nevertheless, this auto-updated repo was put behind a <a href="https://www.jsdelivr.com">jsDelivr CDN</a> and the client interfacing with it was released in <a href="/CocoaPods-1.7.0-beta#cdn-support">1.7.0</a> labeled &quot;highly experimental&quot;.</p>
+
+<h3 id="final-lap-with-netlify">Final Lap with Netlify</h3>
+
+<p>The <a href="https://github.com/CocoaPods/Core/pull/541">final version</a> of the CDN for CocoaPods/Specs was implemented on <a href="https://www.netlify.com">Netlify</a>, a static site hosting service supporting flexible site generation. This solution ticked all the boxes: a generous open-source plan, fast CDN and continuous deployment from GitHub.</p>
+
+<p>Upon each commit, Netlify runs a <a href="https://github.com/CocoaPods/Specs/tree/master/Scripts">specialized script</a> which generates a per-shard index for all the pods and versions in the repo. If you&#39;ve ever noticed that the directory structure for our Podspecs repo was strange, this is what we call sharding. An example of a shard index can be found at <a href="https://cdn.cocoapods.org/all_pods_versions_2_2_2.txt">https://cdn.cocoapods.org/all_pods_versions_2_2_2.txt</a>. This would correspond to <code>~/.cocoapods/repos/master/Specs/2/2/2/</code> locally. </p>
+
+<p>Additionally, we create an <code>all_pods.txt</code> file which contains a list of all pods.  </p>
+
+<p>Finally, any other request made is redirected to GitHub&#39;s CDN.</p>
+
+<h3 id="usage">Usage</h3>
+
+<p>Using the CDN for retrieving specs, while &quot;finalized&quot;, should still be considered experimental until we switch it to be default.</p>
+
+<p>To use the CDN source in your <code>Podfile</code>:</p>
+
+<p>If you don&#39;t have private specs:</p>
 <div class="highlight">      </article>
       </article>
       </section>
@@ -183,11 +151,7 @@ CocoaPods and its architecture.</p>
       <section class="container">
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="bash language-bash" data-lang="bash">rm -fr ~/Library/Caches/CocoaPods <span class="o">&amp;&amp;</span> <span class="se">\</span>
-gem update --system <span class="o">&amp;&amp;</span> <span class="se">\</span>
-gem update <span class="o">&amp;&amp;</span> <span class="se">\</span>
-gem cleanup <span class="o">&amp;&amp;</span> <span class="se">\</span>
-pod setup
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">source</span> <span class="s1">&#39;https://cdn.cocoapods.org/&#39;</span>
 </code></pre>      </article>
       </article>
       </section>
@@ -197,7 +161,7 @@ pod setup
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<p>Now instead of seeing this:</p>
+<p>If you have private specs:</p>
 <div class="highlight">      </article>
       </article>
       </section>
@@ -206,10 +170,9 @@ pod setup
       <section class="container">
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="text language-text" data-lang="text">Setting up CocoaPods master repo
-Already up-to-date.
-[!] There was an error reading &#39;/Users/xxxxx/.cocoapods/repos/master/CocoaPods-version.yml&#39;.
-Please consult http://blog.cocoapods.org/Repairing-Our-Broken-Specs-Repository/ for more information.
+<pre class='highlight'><code class="diff language-diff" data-lang="diff">source &#39;https://github.com/artsy/Specs.git&#39;
+<span class="gd">- source &#39;https://github.com/CocoaPods/Specs.git&#39;</span>
+<span class="gi">+ source &#39;https://cdn.cocoapods.org/&#39;</span>
 </code></pre>      </article>
       </article>
       </section>
@@ -219,42 +182,24 @@ Please consult http://blog.cocoapods.org/Repairing-Our-Broken-Specs-Repository/ 
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<p>You&#39;ll see this:</p>
-<div class="highlight">      </article>
-      </article>
-      </section>
-      
-      <div style="background-color:white;">
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-<pre class='highlight'><code class="text language-text" data-lang="text">Setting up CocoaPods master repo
-Setup completed
-</code></pre>      </article>
-      </article>
-      </section>
-      </div>
-      
-      <section class="container">
-      <article class="row">
-      <article class="content col-md-8 col-md-offset-2">
-</div>
-<p>You can find more information related to this issue <a href="https://github.com/CocoaPods/CocoaPods/issues/3539">here</a> and <a href="https://github.com/CocoaPods/CocoaPods/issues/2908">here</a></p>
+<p>Doing this will break your <code>Podfile.lock</code>, so you are likely to need to run <code>pod update</code> to see the changes (be careful, this may update your Pods also).</p>
 
-<p><strong>&lt;3</strong></p>
+<p>If you have a CI setup, it is recommended to cache the new repo dir as it is very small and would save even more time. With 1.7.2 it should be located at <code>~/.cocoapods/repos/cocoapods-</code> (yes, with a <code>-</code>), but we&#39;re looking to improve the naming in an upcoming release.</p>
 
-<p>– <a href="https://twitter.com/kylefuller">@kylefuller</a>,
-<a href="https://twitter.com/SmileyKeith">@SmileyKeith</a>, and
-<a href="https://twitter.com/alloy">@alloy</a></p>
+<p>In an upcoming release, we are planning to make the CDN source the default source!</p>
+
+<p>P.S. Thanks to <a href="https://twitter.com/dnkoutso">@dnkoutso</a> for all the release work!</p>
+
+<p>🚀</p>
 
       </article>
     </article>
   </section>
 </section>
 
-<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2014-01-30-Repairing-Our-Broken-Specs-Repository.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/d200a17dd269fd4001bacb11662dab4b" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/kylefuller">Follow kylefuller</a></div></article></div></section></section>
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2019-06-14-CocoaPods-1.7.2.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/ecfc4cf87073033b9ac1547872b5cf78" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/igormaka">Follow igormaka</a></div></article></div></section></section>
 
-<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/Cocoa-Kucha-3-Berlin" title="Cocoa Kucha 3 - Berlin - 22nd Jan 2014"><header><h4>Previous Post</h4></header><h3>Cocoa Kucha 3 - Berlin - 22nd Jan 2014</h3><p>By Orta Therox</p><a class="chevron_placeholder back" href="/Cocoa-Kucha-3-Berlin"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"><a href="/The-Kommittee-NYC" title="Cocoa Komittee - NYC"><header><h4>Next Post</h4></header><h3>Cocoa Komittee - NYC</h3><p>By Orta Therox</p><a class="chevron_placeholder next" href="/The-Kommittee-NYC"></a></a></article></div></section>
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaPods-1.7.0-beta" title="CocoaPods 1.7.0 Beta!"><header><h4>Previous Post</h4></header><h3>CocoaPods 1.7.0 Beta!</h3><p>By Dimitris Koutsogiorgas</p><a class="chevron_placeholder back" href="/CocoaPods-1.7.0-beta"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
