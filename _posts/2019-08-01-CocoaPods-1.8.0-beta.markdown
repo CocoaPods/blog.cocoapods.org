@@ -13,7 +13,7 @@ This is an exciting release as the [master specs repo](https://github.com/CocoaP
 
 ### CDN as Default
 
-CDN support was first introduced in the [1.7 release](http://blog.cocoapods.org/CocoaPods-1.7.0-beta/) and aims to speed up initial setup and dependency analysis dramatically. With 1.8, CocoaPods no longer requires cloning the now huge [master specs repo](https://github.com/CocoaPods/Specs) in order to function.
+CDN support was first introduced in the [1.7 release](https://blog.cocoapods.org/CocoaPods-1.7.0-beta/) and aims to speed up initial setup and dependency analysis dramatically. With 1.8, CocoaPods no longer requires cloning the now huge [master specs repo](https://github.com/CocoaPods/Specs) in order to function.
 
 You may safely delete the [master specs repo](https://github.com/CocoaPods/Specs) with the following steps:
 
@@ -36,11 +36,53 @@ Upon installing CocoaPods for the first time, the `git` based [master specs repo
 
 *VIDEO*
 
-For more information regarding CDN, please read our previous blog post [here](http://blog.cocoapods.org/CocoaPods-1.7.2/)!
+For more information regarding CDN, please read our previous blog post [here](https://blog.cocoapods.org/CocoaPods-1.7.2/)!
 
 ### `info_plist` Podspec DSL
 
-TODO
+CocoaPods automatically generates `Info.plist` files for Pods and Test Specs when appropriate, such as when a Podfile requires dynamic frameworks by including `use_frameworks!`.
+
+Podspecs now support modifying the contents of their generated `Info.plist` files. While we anticipate this will be most often used to modify the bundle identifier of a framework, any key-value pair can be included. The values specified will overwrite any default values that are included by CocoaPods.
+
+To use it, assign a Hash value to the `info_plist` attribute on a Podspec:
+
+```ruby
+Pod::Spec.new do |s|
+  s.name         = 'NetworkingLib'
+  s.version      = '1.0.0'
+  
+  # ...rest of attributes here
+
+  s.info_plist = {
+    'CFBundleIdentifier' => 'com.awesomecompany.networking',
+    'SERVER_URL' => 'https://example.com/api'
+  }
+end
+```
+
+With App Specs introduced in [1.7.0](https://blog.cocoapods.org/CocoaPods-1.7.0-beta/), Podspecs can be used to describe an Application. This new `info_plist` DSL enhances the functionality of App Specs even further by allowing Podspecs to customize the App's `Info.plist`, which contains important settings such as the bundle identifier, iOS security and privacy settings, device orientation support, and more.
+
+```ruby
+Pod::Spec.new do |s|
+  s.app_spec 'ToastCatalog' do |app_spec|
+    app_spec.info_plist = {
+      'CFBundleIdentifier' => 'com.bakery.ToastCatalog',
+      'UISupportedInterfaceOrientations' => [
+        'UIInterfaceOrientationPortrait',
+        'UIInterfaceOrientationLandscapeLeft',
+        'UIInterfaceOrientationLandscapeRight',
+      ],
+      'UILaunchStoryboardName' => 'LaunchScreen',
+      'UIMainStoryboardFile' => 'AppStoryboard',
+      'NSLocationWhenInUseUsageDescription' => 'ToastCatalog uses your location to find nearby Toast!'
+    }
+  end
+end
+```
+
+It's important to note that the `info_plist` attribute will have no effect in situations where an `Info.plist` file will not be generated, such as when Pods are integrated as static libraries. If your library requires data that's included in the `Info.plist` to always be present, we recommend including a `.plist` as a resource instead.
+
+For more details on how this works and the rational behind it, check out the RFC [here](https://github.com/CocoaPods/CocoaPods/issues/8753).
 
 ### `project_name` Podfile DSL
 
