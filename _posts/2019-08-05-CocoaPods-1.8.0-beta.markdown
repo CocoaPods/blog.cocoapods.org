@@ -11,7 +11,7 @@ _CocoaPods 1.8_ switches the CDN as the default spec repo source and comes with 
 
 ### CDN as Default
 
-CDN support was first introduced in the [1.7.2 release](http://127.0.0.1:4000/CocoaPods-1.7.2/), and aims to speed up initial setup and dependency analysis dramatically. With 1.8, CocoaPods _no longer_ requires cloning the now huge [master specs repo](https://github.com/CocoaPods/Specs) in order to function and users may integrate their projects with CocoaPods almost instantly.
+CDN support was first introduced in the [1.7 release](http://blog.cocoapods.org/CocoaPods-1.7.0-beta/) and was finalized in [1.7.2](http://blog.cocoapods.org/CocoaPods-1.7.2/). It aims to speed up initial setup and dependency analysis dramatically. With 1.8, CocoaPods _no longer_ requires cloning the now huge [master specs repo](https://github.com/CocoaPods/Specs) in order to function and users may integrate their projects with CocoaPods almost instantly.
 
 Here's video demonstration of integrating and building an iOS project with a fresh install of CocoaPods 1.8 in _less than a minute_:
 
