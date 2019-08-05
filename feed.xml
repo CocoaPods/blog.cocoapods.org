@@ -15,7 +15,7 @@
 
 &lt;h3 id=&quot;cdn-as-default&quot;&gt;CDN as Default&lt;/h3&gt;
 
-&lt;p&gt;CDN support was first introduced in the &lt;a href=&quot;http://127.0.0.1:4000/CocoaPods-1.7.2/&quot;&gt;1.7.2 release&lt;/a&gt;, and aims to speed up initial setup and dependency analysis dramatically. With 1.8, CocoaPods &lt;em&gt;no longer&lt;/em&gt; requires cloning the now huge &lt;a href=&quot;https://github.com/CocoaPods/Specs&quot;&gt;master specs repo&lt;/a&gt; in order to function and users may integrate their projects with CocoaPods almost instantly.&lt;/p&gt;
+&lt;p&gt;CDN support was first introduced in the &lt;a href=&quot;http://blog.cocoapods.org/CocoaPods-1.7.0-beta/&quot;&gt;1.7 release&lt;/a&gt; and was finalized in &lt;a href=&quot;http://blog.cocoapods.org/CocoaPods-1.7.2/&quot;&gt;1.7.2&lt;/a&gt;. It aims to speed up initial setup and dependency analysis dramatically. With 1.8, CocoaPods &lt;em&gt;no longer&lt;/em&gt; requires cloning the now huge &lt;a href=&quot;https://github.com/CocoaPods/Specs&quot;&gt;master specs repo&lt;/a&gt; in order to function and users may integrate their projects with CocoaPods almost instantly.&lt;/p&gt;
 
 &lt;p&gt;Here&amp;#39;s video demonstration of integrating and building an iOS project with a fresh install of CocoaPods 1.8 in &lt;em&gt;less than a minute&lt;/em&gt;:&lt;/p&gt;
 
