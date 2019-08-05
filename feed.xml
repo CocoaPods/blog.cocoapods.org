@@ -8,7 +8,346 @@
     
     
     <item>
-      <title>CocoaPods 1.7.2 - Master Repo CDN is Finalized!</title>
+      <title>CocoaPods 1.8 Beta is Here!</title>
+      <description>&lt;p&gt;&lt;em&gt;CocoaPods 1.8&lt;/em&gt; switches the CDN as the default spec repo source and comes with a few enhancements!&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h3 id=&quot;cdn-as-default&quot;&gt;CDN as Default&lt;/h3&gt;
+
+&lt;p&gt;CDN support was first introduced in the &lt;a href=&quot;http://127.0.0.1:4000/CocoaPods-1.7.2/&quot;&gt;1.7.2 release&lt;/a&gt;, and aims to speed up initial setup and dependency analysis dramatically. With 1.8, CocoaPods &lt;em&gt;no longer&lt;/em&gt; requires cloning the now huge &lt;a href=&quot;https://github.com/CocoaPods/Specs&quot;&gt;master specs repo&lt;/a&gt; in order to function and users may integrate their projects with CocoaPods almost instantly.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;#39;s video demonstration of integrating and building an iOS project with a fresh install of CocoaPods 1.8 in &lt;em&gt;less than a minute&lt;/em&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+  &lt;video width=&quot;640&quot; height=&quot;400&quot; controls&gt;
+    &lt;source src=&quot;/assets/blog_img/CocoaPods-1.8.0/cocoapods-cdn-video.mp4&quot; type=&quot;video/mp4&quot;&gt;
+  &lt;/video&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;You may safely delete the &lt;a href=&quot;https://github.com/CocoaPods/Specs&quot;&gt;master specs repo&lt;/a&gt; with the following steps:&lt;/p&gt;
+
+&lt;p&gt;First, edit your &lt;code&gt;Podfile&lt;/code&gt; to set the CDN as the primary source:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;diff language-diff&quot; data-lang=&quot;diff&quot;&gt;&lt;span class=&quot;gd&quot;&gt;- source &amp;#39;https://github.com/CocoaPods/Specs.git&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;gi&quot;&gt;+ source &amp;#39;https://cdn.cocoapods.org/&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;Afterwards, run the following command to remove it from your managed repo list:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;pod repo remove master
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: If you wish to continue using the &lt;code&gt;git&lt;/code&gt; based source then you must ensure it is &lt;em&gt;explicitly&lt;/em&gt; specified in your &lt;code&gt;Podfile&lt;/code&gt; via the &lt;code&gt;source&lt;/code&gt; DSL, otherwise CocoaPods will automatically use CDN for dependency resolution.&lt;/p&gt;
+
+&lt;p&gt;And that&amp;#39;s it! For more information regarding CDN, please read our previous blog post &lt;a href=&quot;https://blog.cocoapods.org/CocoaPods-1.7.2/&quot;&gt;here&lt;/a&gt;!&lt;/p&gt;
+
+&lt;h3 id=&quot;info_plist-podspec-dsl&quot;&gt;&lt;code&gt;info_plist&lt;/code&gt; Podspec DSL&lt;/h3&gt;
+
+&lt;p&gt;CocoaPods automatically generates &lt;code&gt;Info.plist&lt;/code&gt; files for pods, app specs and test specs when appropriate, such as when a &lt;code&gt;Podfile&lt;/code&gt; requires dynamic frameworks by specifying the &lt;code&gt;use_frameworks!&lt;/code&gt; option.&lt;/p&gt;
+
+&lt;p&gt;Podspecs now support modifying the contents of their generated &lt;code&gt;Info.plist&lt;/code&gt; files via the &lt;code&gt;info_plist&lt;/code&gt; DSL. While we anticipate this will be most often used to modify the bundle identifier of a framework, any key-value pair can be included. The values specified will overwrite any default values that are included by CocoaPods.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;#39;s an example:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;ruby language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;no&quot;&gt;Pod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;NetworkingLib&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;version&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;1.0.0&amp;#39;&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# ...rest of attributes here&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info_plist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&amp;#39;CFBundleIdentifier&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;com.awesomecompany.networking&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&amp;#39;SERVER_URL&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;https://example.com/api&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;With app specs introduced in &lt;a href=&quot;https://blog.cocoapods.org/CocoaPods-1.7.0-beta/&quot;&gt;1.7&lt;/a&gt;, pod authors were able to describe an application, such as a demo app, for their pods. The new &lt;code&gt;info_plist&lt;/code&gt; DSL enhances the functionality of app specs even further by allowing podspecs to customize the generated &lt;code&gt;Info.plist&lt;/code&gt;, which contains important settings such as the bundle identifier, iOS security and privacy settings, device orientation support, and more.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;ruby language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;no&quot;&gt;Pod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;ToastLib&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;version&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;1.0.0&amp;#39;&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# ...rest of attributes here&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app_spec&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;ToastCatalog&amp;#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info_plist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&amp;#39;CFBundleIdentifier&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;com.bakery.ToastCatalog&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&amp;#39;UISupportedInterfaceOrientations&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;&amp;#39;UIInterfaceOrientationPortrait&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;&amp;#39;UIInterfaceOrientationLandscapeLeft&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;&amp;#39;UIInterfaceOrientationLandscapeRight&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&amp;#39;UILaunchStoryboardName&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;LaunchScreen&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&amp;#39;UIMainStoryboardFile&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;AppStoryboard&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&amp;#39;NSLocationWhenInUseUsageDescription&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;ToastCatalog uses your location to find nearby Toast!&amp;#39;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;It&amp;#39;s important to note that the &lt;code&gt;info_plist&lt;/code&gt; attribute will have &lt;em&gt;no&lt;/em&gt; effect in situations where an &lt;code&gt;Info.plist&lt;/code&gt; file is not generated, such as when pods are integrated as static libraries. If your library requires data that&amp;#39;s included in the &lt;code&gt;Info.plist&lt;/code&gt; to always be present, we recommend including it as a resource instead.&lt;/p&gt;
+
+&lt;p&gt;For more details on how this works and the rational behind it, check out the RFC &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/8753&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;project_name-podfile-dsl&quot;&gt;&lt;code&gt;project_name&lt;/code&gt; Podfile DSL&lt;/h3&gt;
+
+&lt;p&gt;CocoaPods &lt;a href=&quot;https://blog.cocoapods.org/CocoaPods-1.7.0-beta/&quot;&gt;1.7&lt;/a&gt; introduced the &lt;a href=&quot;https://guides.cocoapods.org/syntax/podfile.html#install_bang&quot;&gt;&lt;code&gt;generate_multiple_pod_projects&lt;/code&gt;&lt;/a&gt; option that installs each pod into its own Xcode project. CocoaPods 1.8 expands further by introducing the &lt;code&gt;project_name&lt;/code&gt; DSL that allows pod consumers to specify the project name to integrate a given pod.&lt;/p&gt;
+
+&lt;p&gt;This opens up plenty of new possibilities for consumers to &lt;em&gt;group&lt;/em&gt; certain pods together that make sense logically. Consider the following example:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;ruby language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;install!&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cocoapods&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:generate_multiple_pod_projects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;MyApp&amp;#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;use_frameworks!&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;pod&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Moya&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:project_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Networking&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;pod&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Alamofire&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:project_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Networking&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;pod&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Result&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:project_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Networking&amp;#39;&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;MyAppTests&amp;#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;inherit!&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:search_paths&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;pod&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;OCMock&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:project_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Testing&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;Will produce the following result:&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;/article&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;div style=&quot;background-color:white;&quot;&gt;
+&lt;section class=&quot;container&quot;&gt;&lt;div class=&quot;row&quot;&gt;&lt;article class=&quot;content col-md-10 col-md-offset-1&quot;&gt;&lt;center&gt;
+&lt;a href=&#39;/assets/blog_img/CocoaPods-1.8.0/project_name.png &#39;&gt;&lt;img  src=&#39;/assets/blog_img/CocoaPods-1.8.0/project_name.png &#39;&gt;&lt;/a&gt;&lt;/center&gt;&lt;/article&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;/div&gt;
+&lt;section class=&quot;container&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;&lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;It is up to the consumers to choose their own grouping and provide helper methods in their &lt;code&gt;Podfile&lt;/code&gt; that automatically apply the project name to use. For example, another grouping idea is to group pods by their platform such as &lt;code&gt;iOS&lt;/code&gt; or &lt;code&gt;macOS&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: The &lt;code&gt;project_name&lt;/code&gt; option currently requires the &lt;code&gt;generate_multiple_pod_projects&lt;/code&gt; installation option to &lt;em&gt;also&lt;/em&gt; be enabled in order for it to function. Incremental installation has also been updated to take into consideration the project name used for each pod and will continue to work as expected.&lt;/p&gt;
+
+&lt;h3 id=&quot;test-spec-enhancements&quot;&gt;Test Spec Enhancements&lt;/h3&gt;
+
+&lt;p&gt;Test specs have become an integral part of CocoaPods and a couple new features have been added.&lt;/p&gt;
+
+&lt;h4 id=&quot;ui-test-bundle-support&quot;&gt;UI Test Bundle Support&lt;/h4&gt;
+
+&lt;p&gt;Support for &amp;quot;UI Test Bundles&amp;quot; is now possible and you may now specify the &lt;code&gt;test_type&lt;/code&gt; to use for a given &lt;code&gt;test_spec&lt;/code&gt;. The default will be &lt;code&gt;:unit&lt;/code&gt; which would create a unit test bundle. Consider the following example of our favorite pod &lt;code&gt;CannonPodder&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;ruby language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;no&quot;&gt;Pod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;CannonPodder&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;version&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;1.0.0&amp;#39;&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# ...rest of attributes here&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;UITests&amp;#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requires_app_host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:ui&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;source_files&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;UITests/**/*.swift&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;This will successfully integrate a &lt;code&gt;CannonPodder-UI-UITests&lt;/code&gt; UI test bundle upon installation and will automatically create an app host to be used for it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: UI test bundles &lt;em&gt;require&lt;/em&gt; an app host in order to function, therefore you must always specify &lt;code&gt;requires_app_host&lt;/code&gt; should you choose to integrate a test spec as a UI test bundle.&lt;/p&gt;
+
+&lt;h4 id=&quot;customizable-app-host&quot;&gt;Customizable App Host&lt;/h4&gt;
+
+&lt;p&gt;For most cases, a generated app host for your test spec should be sufficient to execute your tests within it. However, there are cases in which pod authors may want to further customize the app host used for a &lt;code&gt;test_spec&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;For example, pod authors may want to specify additional dependencies for their app host or resource bundles to use during testing. App specs are an excellent candidate for this since they provide most of the scaffolding and with 1.8 it is now possible to set an &lt;code&gt;app_spec&lt;/code&gt; as the app host for a &lt;code&gt;test_spec&lt;/code&gt; via the &lt;code&gt;app_host_name&lt;/code&gt; DSL.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;#39;s an example:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;ruby language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;no&quot;&gt;Pod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;CannonPodder&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;version&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;1.0.0&amp;#39;&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# ...rest of attributes here&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app_spec&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;DemoApp&amp;#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;source_files&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;DemoApp/**/*.swift&amp;#39;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Dependency used only by this app spec.&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dependency&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Alamofire&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Tests&amp;#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requires_app_host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Use &amp;#39;DemoApp&amp;#39; as the app host.&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app_host_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;CannonPodder/DemoApp&amp;#39;&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# ...rest of attributes here&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# This is required since &amp;#39;DemoApp&amp;#39; is specified as the app host.&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dependency&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;CannonPodder/DemoApp&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;Will produce the following result:&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;/article&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;div style=&quot;background-color:white;&quot;&gt;
+&lt;section class=&quot;container&quot;&gt;&lt;div class=&quot;row&quot;&gt;&lt;article class=&quot;content col-md-10 col-md-offset-1&quot;&gt;&lt;center&gt;
+&lt;a href=&#39;/assets/blog_img/CocoaPods-1.8.0/app_host_name.png &#39;&gt;&lt;img  src=&#39;/assets/blog_img/CocoaPods-1.8.0/app_host_name.png &#39;&gt;&lt;/a&gt;&lt;/center&gt;&lt;/article&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;/div&gt;
+&lt;section class=&quot;container&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;&lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;This powerful new feature opens up new possibilities for pod authors who want much more granular control for the app host used for their test specs.&lt;/p&gt;
+
+&lt;h3 id=&quot;what&amp;#39;s-next?&quot;&gt;What&amp;#39;s Next?&lt;/h3&gt;
+
+&lt;p&gt;CocoaPods 1.8 is a &lt;em&gt;very&lt;/em&gt; exciting release, and we&amp;#39;re very happy for you to try it out, and recommend you upgrade:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;sh language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem install cocoapods --pre
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;For future versions, we continue to explore new ways to allow pod authors and pod consumers to configure integrating pods into their project, for example by specifying individual package or linkage settings. We have published a &lt;a href=&quot;https://docs.google.com/document/d/1lr2mHkwhNha5_0Wfa_pYL51MAxoro0LBxx_DUzuSu0Y/edit&quot;&gt;proposal&lt;/a&gt; that we are currently exploring and we welcome your comments!&lt;/p&gt;
+
+&lt;p&gt;As always, we would like to thank all of our contributors for making this release a reality!&lt;/p&gt;
+
+&lt;p&gt;Checkout the &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/releases/tag/1.8.0.beta.1&quot;&gt;changelog&lt;/a&gt; to get the full list of changes.&lt;/p&gt;
+
+&lt;p&gt;🚀&lt;/p&gt;
+</description>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      <link>http://blog.cocoapods.org/CocoaPods-1.8.0-beta</link>
+      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-1.8.0-beta</guid>
+    </item>
+    
+    
+    
+    <item>
+      <title>CocoaPods 1.7.2 &#8212; Master Repo CDN is Finalized!</title>
       <description>&lt;p&gt;&lt;em&gt;CocoaPods 1.7.2&lt;/em&gt; brings with it the final version of CDN support for the &lt;a href=&quot;https://github.com/CocoaPods/Specs&quot;&gt;trunk specs repo&lt;/a&gt;. &lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -28,7 +367,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 
 &lt;p&gt;This has solved GitHub&amp;#39;s problem, but CocoaPods&amp;#39; users still had to deal with unsatisfactory performance.&lt;/p&gt;
 
-&lt;h3 id=&quot;git-as-a-database&quot;&gt;Git as a database&lt;/h3&gt;
+&lt;h3 id=&quot;git-as-a-database&quot;&gt;Git as a Database&lt;/h3&gt;
 
 &lt;p&gt;Git was invented at a time when &amp;quot;slow network&amp;quot; and &amp;quot;no backups&amp;quot; were legitimate design concerns. Running endless builds as part of continuous integration wasn&amp;#39;t commonplace. CDN wasn&amp;#39;t so commonly available.&lt;/p&gt;
 

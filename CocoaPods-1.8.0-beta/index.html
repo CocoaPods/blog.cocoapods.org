@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+      <title>CocoaPods 1.8 Beta is Here! - CocoaPods Blog</title>
+    
+
+    <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <link rel="alternate" type="application/rss+xml" title="CocoaPods Blog" href="/feed.xml">
+
+    <meta charset="utf-8" /><meta content="cocoapods objective-c objc swift package manager libraries documentation search pods podspec podfile cocoa apple ios library" name="keywords" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="The Dependency Manager for iOS &amp; Mac projects" name="description" /><meta content="CocoaPods Dev Team" name="author" /><meta content="summary" name="twitter:card" /><meta content="@CocoaPods" name="twitter:site" /><meta content="@CocoaPods" name="twitter:creator" /><meta content="CocoaPods.org" name="twitter:title" /><meta content="The Dependency Manager for iOS &amp; Mac projects." name="twitter:description" /><meta content="https://www.cocoapods.org/" name="twitter:url" />
+    <link rel="shortcut icon" href="https://cocoapods.org/favicons/favicon.ico" type="image/x-icon" /><link rel="apple-touch-icon" href="https://cocoapods.org/favicons/apple-touch-icon.png" /><link rel="apple-touch-icon" sizes="57x57" href="https://cocoapods.org/favicons/apple-touch-icon-57x57.png" /><link rel="apple-touch-icon" sizes="60x60" href="https://cocoapods.org/favicons/apple-touch-icon-60x60.png" /><link rel="apple-touch-icon" sizes="72x72" href="https://cocoapods.org/favicons/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon" sizes="76x76" href="https://cocoapods.org/favicons/apple-touch-icon-76x76.png" /><link rel="apple-touch-icon" sizes="114x114" href="https://cocoapods.org/favicons/apple-touch-icon-114x114.png" /><link rel="apple-touch-icon" sizes="120x120" href="https://cocoapods.org/favicons/apple-touch-icon-120x120.png" /><link rel="apple-touch-icon" sizes="144x144" href="https://cocoapods.org/favicons/apple-touch-icon-144x144.png" /><link rel="apple-touch-icon" sizes="152x152" href="https://cocoapods.org/favicons/apple-touch-icon-152x152.png" />
+
+    <link rel="stylesheet" href="/assets/bootstrap-3b61caa441fab92578453d6681fbf963.css">
+    <link rel="stylesheet" href="/assets/main-df7f28d697ab31d8aa461b8f8ff0c7e4.css">
+    <link rel="stylesheet" href="/assets/blog-a6cba0ad1ceb964c9a5a5387e033c3ff.css">
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-29866548-3', 'cocoapods.org');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="glyphicon glyphicon-plus"></span></button><a class="navbar-brand" href="https://cocoapods.org"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="https://cocoapods.org/app">App</a></li><li><a href="https://cocoapods.org/about">About</a></li><li><a href="https://guides.cocoapods.org">Guides</a></li><li class="active"><a href="https://blog.cocoapods.org">Blog</a></li></ul></div></section></nav>
+
+    <div id ="">
+<section class="container" >
+  <article class="row">
+  <header class="col-md-8 col-md-offset-2 headline blog-post">
+    
+      <h1>CocoaPods 1.8 Beta is Here!</h1>
+    
+    
+  </header>
+  </article>
+</section>
+</div>
+
+<section id="content-wrapper" class="post">
+  <section class="container">
+    <article class="row">
+      <article class="author metadata col-md-2 col-md-push-10">
+        <header>
+          
+            
+              <img class="gravatar large" src="http://gravatar.com/avatar/0da25866cffc79d7427beb50d984185a?s=144" height=72 width=72>
+            
+            
+              
+                <p><a href="http://twitter.com/dnkoutso">Dimitris Koutsogiorgas</a></p>
+              
+            
+             <p>5 August 2019</p>
+
+            
+              <a href="https://twitter.com/dnkoutso" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @dnkoutso
+              </a>
+            
+        </header>
+      </article>
+    
+      <article class="content col-md-8">
+        <p><em>CocoaPods 1.8</em> switches the CDN as the default spec repo source and comes with a few enhancements!</p>
+
+<!-- more -->
+
+<h3 id="cdn-as-default">CDN as Default</h3>
+
+<p>CDN support was first introduced in the <a href="http://127.0.0.1:4000/CocoaPods-1.7.2/">1.7.2 release</a>, and aims to speed up initial setup and dependency analysis dramatically. With 1.8, CocoaPods <em>no longer</em> requires cloning the now huge <a href="https://github.com/CocoaPods/Specs">master specs repo</a> in order to function and users may integrate their projects with CocoaPods almost instantly.</p>
+
+<p>Here&#39;s video demonstration of integrating and building an iOS project with a fresh install of CocoaPods 1.8 in <em>less than a minute</em>:</p>
+
+<p><center>
+  <video width="640" height="400" controls>
+    <source src="/assets/blog_img/CocoaPods-1.8.0/cocoapods-cdn-video.mp4" type="video/mp4">
+  </video>
+</center></p>
+
+<p>You may safely delete the <a href="https://github.com/CocoaPods/Specs">master specs repo</a> with the following steps:</p>
+
+<p>First, edit your <code>Podfile</code> to set the CDN as the primary source:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="diff language-diff" data-lang="diff"><span class="gd">- source &#39;https://github.com/CocoaPods/Specs.git&#39;</span>
+<span class="gi">+ source &#39;https://cdn.cocoapods.org/&#39;</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Afterwards, run the following command to remove it from your managed repo list:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="text language-text" data-lang="text">pod repo remove master
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p><strong>Note</strong>: If you wish to continue using the <code>git</code> based source then you must ensure it is <em>explicitly</em> specified in your <code>Podfile</code> via the <code>source</code> DSL, otherwise CocoaPods will automatically use CDN for dependency resolution.</p>
+
+<p>And that&#39;s it! For more information regarding CDN, please read our previous blog post <a href="https://blog.cocoapods.org/CocoaPods-1.7.2/">here</a>!</p>
+
+<h3 id="info_plist-podspec-dsl"><code>info_plist</code> Podspec DSL</h3>
+
+<p>CocoaPods automatically generates <code>Info.plist</code> files for pods, app specs and test specs when appropriate, such as when a <code>Podfile</code> requires dynamic frameworks by specifying the <code>use_frameworks!</code> option.</p>
+
+<p>Podspecs now support modifying the contents of their generated <code>Info.plist</code> files via the <code>info_plist</code> DSL. While we anticipate this will be most often used to modify the bundle identifier of a framework, any key-value pair can be included. The values specified will overwrite any default values that are included by CocoaPods.</p>
+
+<p>Here&#39;s an example:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="no">Pod</span><span class="o">::</span><span class="no">Spec</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">name</span>         <span class="o">=</span> <span class="s1">&#39;NetworkingLib&#39;</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">version</span>      <span class="o">=</span> <span class="s1">&#39;1.0.0&#39;</span>
+
+  <span class="c1"># ...rest of attributes here</span>
+
+  <span class="n">s</span><span class="o">.</span><span class="n">info_plist</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;CFBundleIdentifier&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;com.awesomecompany.networking&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;SERVER_URL&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;https://example.com/api&#39;</span>
+  <span class="p">}</span>
+<span class="k">end</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>With app specs introduced in <a href="https://blog.cocoapods.org/CocoaPods-1.7.0-beta/">1.7</a>, pod authors were able to describe an application, such as a demo app, for their pods. The new <code>info_plist</code> DSL enhances the functionality of app specs even further by allowing podspecs to customize the generated <code>Info.plist</code>, which contains important settings such as the bundle identifier, iOS security and privacy settings, device orientation support, and more.</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="no">Pod</span><span class="o">::</span><span class="no">Spec</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">name</span>         <span class="o">=</span> <span class="s1">&#39;ToastLib&#39;</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">version</span>      <span class="o">=</span> <span class="s1">&#39;1.0.0&#39;</span>
+
+  <span class="c1"># ...rest of attributes here</span>
+
+  <span class="n">s</span><span class="o">.</span><span class="n">app_spec</span> <span class="s1">&#39;ToastCatalog&#39;</span> <span class="k">do</span> <span class="o">|</span><span class="n">app_spec</span><span class="o">|</span>
+    <span class="n">app_spec</span><span class="o">.</span><span class="n">info_plist</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s1">&#39;CFBundleIdentifier&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;com.bakery.ToastCatalog&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;UISupportedInterfaceOrientations&#39;</span> <span class="o">=&gt;</span> <span class="o">[</span>
+        <span class="s1">&#39;UIInterfaceOrientationPortrait&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;UIInterfaceOrientationLandscapeLeft&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;UIInterfaceOrientationLandscapeRight&#39;</span><span class="p">,</span>
+      <span class="o">]</span><span class="p">,</span>
+      <span class="s1">&#39;UILaunchStoryboardName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;LaunchScreen&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;UIMainStoryboardFile&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;AppStoryboard&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;NSLocationWhenInUseUsageDescription&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;ToastCatalog uses your location to find nearby Toast!&#39;</span>
+    <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>It&#39;s important to note that the <code>info_plist</code> attribute will have <em>no</em> effect in situations where an <code>Info.plist</code> file is not generated, such as when pods are integrated as static libraries. If your library requires data that&#39;s included in the <code>Info.plist</code> to always be present, we recommend including it as a resource instead.</p>
+
+<p>For more details on how this works and the rational behind it, check out the RFC <a href="https://github.com/CocoaPods/CocoaPods/issues/8753">here</a>.</p>
+
+<h3 id="project_name-podfile-dsl"><code>project_name</code> Podfile DSL</h3>
+
+<p>CocoaPods <a href="https://blog.cocoapods.org/CocoaPods-1.7.0-beta/">1.7</a> introduced the <a href="https://guides.cocoapods.org/syntax/podfile.html#install_bang"><code>generate_multiple_pod_projects</code></a> option that installs each pod into its own Xcode project. CocoaPods 1.8 expands further by introducing the <code>project_name</code> DSL that allows pod consumers to specify the project name to integrate a given pod.</p>
+
+<p>This opens up plenty of new possibilities for consumers to <em>group</em> certain pods together that make sense logically. Consider the following example:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">install!</span> <span class="s1">&#39;cocoapods&#39;</span><span class="p">,</span> <span class="ss">:generate_multiple_pod_projects</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+
+<span class="n">target</span> <span class="s1">&#39;MyApp&#39;</span> <span class="k">do</span>
+  <span class="n">use_frameworks!</span>
+
+  <span class="n">pod</span> <span class="s1">&#39;Moya&#39;</span><span class="p">,</span> <span class="ss">:project_name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Networking&#39;</span>
+  <span class="n">pod</span> <span class="s1">&#39;Alamofire&#39;</span><span class="p">,</span> <span class="ss">:project_name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Networking&#39;</span>
+  <span class="n">pod</span> <span class="s1">&#39;Result&#39;</span><span class="p">,</span> <span class="ss">:project_name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Networking&#39;</span>
+
+  <span class="n">target</span> <span class="s1">&#39;MyAppTests&#39;</span> <span class="k">do</span>
+    <span class="n">inherit!</span> <span class="ss">:search_paths</span>
+    <span class="n">pod</span> <span class="s1">&#39;OCMock&#39;</span><span class="p">,</span> <span class="ss">:project_name</span> <span class="o">=&gt;</span> <span class="s1">&#39;Testing&#39;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Will produce the following result:</p>
+
+<p><center>
+</article>
+</div>
+</section>
+<div style="background-color:white;">
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='/assets/blog_img/CocoaPods-1.8.0/project_name.png '><img  src='/assets/blog_img/CocoaPods-1.8.0/project_name.png '></a></center></article>
+</div>
+</section>
+</div>
+<section class="container">
+<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
+
+<p></center></p>
+
+<p>It is up to the consumers to choose their own grouping and provide helper methods in their <code>Podfile</code> that automatically apply the project name to use. For example, another grouping idea is to group pods by their platform such as <code>iOS</code> or <code>macOS</code>.</p>
+
+<p><strong>Note</strong>: The <code>project_name</code> option currently requires the <code>generate_multiple_pod_projects</code> installation option to <em>also</em> be enabled in order for it to function. Incremental installation has also been updated to take into consideration the project name used for each pod and will continue to work as expected.</p>
+
+<h3 id="test-spec-enhancements">Test Spec Enhancements</h3>
+
+<p>Test specs have become an integral part of CocoaPods and a couple new features have been added.</p>
+
+<h4 id="ui-test-bundle-support">UI Test Bundle Support</h4>
+
+<p>Support for &quot;UI Test Bundles&quot; is now possible and you may now specify the <code>test_type</code> to use for a given <code>test_spec</code>. The default will be <code>:unit</code> which would create a unit test bundle. Consider the following example of our favorite pod <code>CannonPodder</code>:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="no">Pod</span><span class="o">::</span><span class="no">Spec</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">name</span>         <span class="o">=</span> <span class="s1">&#39;CannonPodder&#39;</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">version</span>      <span class="o">=</span> <span class="s1">&#39;1.0.0&#39;</span>
+
+  <span class="c1"># ...rest of attributes here</span>
+
+  <span class="n">s</span><span class="o">.</span><span class="n">test_spec</span> <span class="s1">&#39;UITests&#39;</span> <span class="k">do</span> <span class="o">|</span><span class="n">test_spec</span><span class="o">|</span>
+    <span class="n">test_spec</span><span class="o">.</span><span class="n">requires_app_host</span> <span class="o">=</span> <span class="kp">true</span>
+    <span class="n">test_spec</span><span class="o">.</span><span class="n">test_type</span> <span class="o">=</span> <span class="ss">:ui</span>
+    <span class="n">test_spec</span><span class="o">.</span><span class="n">source_files</span> <span class="o">=</span> <span class="s1">&#39;UITests/**/*.swift&#39;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>This will successfully integrate a <code>CannonPodder-UI-UITests</code> UI test bundle upon installation and will automatically create an app host to be used for it.</p>
+
+<p><strong>Note</strong>: UI test bundles <em>require</em> an app host in order to function, therefore you must always specify <code>requires_app_host</code> should you choose to integrate a test spec as a UI test bundle.</p>
+
+<h4 id="customizable-app-host">Customizable App Host</h4>
+
+<p>For most cases, a generated app host for your test spec should be sufficient to execute your tests within it. However, there are cases in which pod authors may want to further customize the app host used for a <code>test_spec</code>.</p>
+
+<p>For example, pod authors may want to specify additional dependencies for their app host or resource bundles to use during testing. App specs are an excellent candidate for this since they provide most of the scaffolding and with 1.8 it is now possible to set an <code>app_spec</code> as the app host for a <code>test_spec</code> via the <code>app_host_name</code> DSL.</p>
+
+<p>Here&#39;s an example:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="no">Pod</span><span class="o">::</span><span class="no">Spec</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">name</span>         <span class="o">=</span> <span class="s1">&#39;CannonPodder&#39;</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">version</span>      <span class="o">=</span> <span class="s1">&#39;1.0.0&#39;</span>
+
+  <span class="c1"># ...rest of attributes here</span>
+
+  <span class="n">s</span><span class="o">.</span><span class="n">app_spec</span> <span class="s1">&#39;DemoApp&#39;</span> <span class="k">do</span> <span class="o">|</span><span class="n">app_spec</span><span class="o">|</span>
+    <span class="n">app_spec</span><span class="o">.</span><span class="n">source_files</span> <span class="o">=</span> <span class="s1">&#39;DemoApp/**/*.swift&#39;</span>
+    <span class="c1"># Dependency used only by this app spec.</span>
+    <span class="n">app_spec</span><span class="o">.</span><span class="n">dependency</span> <span class="s1">&#39;Alamofire&#39;</span>
+  <span class="k">end</span>
+
+  <span class="n">s</span><span class="o">.</span><span class="n">test_spec</span> <span class="s1">&#39;Tests&#39;</span> <span class="k">do</span> <span class="o">|</span><span class="n">test_spec</span><span class="o">|</span>
+    <span class="n">test_spec</span><span class="o">.</span><span class="n">requires_app_host</span> <span class="o">=</span> <span class="kp">true</span>
+    <span class="c1"># Use &#39;DemoApp&#39; as the app host.</span>
+    <span class="n">test_spec</span><span class="o">.</span><span class="n">app_host_name</span> <span class="o">=</span> <span class="s1">&#39;CannonPodder/DemoApp&#39;</span>
+
+    <span class="c1"># ...rest of attributes here</span>
+
+    <span class="c1"># This is required since &#39;DemoApp&#39; is specified as the app host.</span>
+    <span class="n">test_spec</span><span class="o">.</span><span class="n">dependency</span> <span class="s1">&#39;CannonPodder/DemoApp&#39;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Will produce the following result:</p>
+
+<p><center>
+</article>
+</div>
+</section>
+<div style="background-color:white;">
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='/assets/blog_img/CocoaPods-1.8.0/app_host_name.png '><img  src='/assets/blog_img/CocoaPods-1.8.0/app_host_name.png '></a></center></article>
+</div>
+</section>
+</div>
+<section class="container">
+<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
+
+<p></center></p>
+
+<p>This powerful new feature opens up new possibilities for pod authors who want much more granular control for the app host used for their test specs.</p>
+
+<h3 id="what&#39;s-next?">What&#39;s Next?</h3>
+
+<p>CocoaPods 1.8 is a <em>very</em> exciting release, and we&#39;re very happy for you to try it out, and recommend you upgrade:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="sh language-sh" data-lang="sh"><span class="nv">$ </span>gem install cocoapods --pre
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>For future versions, we continue to explore new ways to allow pod authors and pod consumers to configure integrating pods into their project, for example by specifying individual package or linkage settings. We have published a <a href="https://docs.google.com/document/d/1lr2mHkwhNha5_0Wfa_pYL51MAxoro0LBxx_DUzuSu0Y/edit">proposal</a> that we are currently exploring and we welcome your comments!</p>
+
+<p>As always, we would like to thank all of our contributors for making this release a reality!</p>
+
+<p>Checkout the <a href="https://github.com/CocoaPods/CocoaPods/releases/tag/1.8.0.beta.1">changelog</a> to get the full list of changes.</p>
+
+<p>🚀</p>
+
+      </article>
+    </article>
+  </section>
+</section>
+
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2019-08-05-CocoaPods-1.8.0-beta.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/0da25866cffc79d7427beb50d984185a" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/dnkoutso">Follow dnkoutso</a></div></article></div></section></section>
+
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaPods-1.7.2" title="CocoaPods 1.7.2 &amp;#8212; Master Repo CDN is Finalized!"><header><h4>Previous Post</h4></header><h3>CocoaPods 1.7.2 &amp;#8212; Master Repo CDN is Finalized!</h3><p>By Igor Makarov</p><a class="chevron_placeholder back" href="/CocoaPods-1.7.2"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+    <footer class="page-footer"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><h4>CocoaPods is a project from</h4><p class="contributors"> <a href="https://twitter.com/dnkoutso">Dimitris Koutsogiorgas</a>, <a href="https://dantoml.com">Danielle Tomlinson</a>, <a href="https://github.com/amorde">Eric Amorde</a>, <a href="https://orta.io">Orta Therox</a>, <a href="https://github.com/paulb777">Paul Beusterien</a>, <a href="https://segiddins.me">Samuel Giddins</a>, and <a href="https://cocoapods.org/about#team">The CocoaPods Dev Team</a> with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p><h4>Lovingly sponsored by</h4><p class="sponsors"><a href="http://artsy.net">Artsy</a>, <a href="http://www.usebutton.com">Button</a>, <a href="http://www.capitalone.io">Capital One</a>, <a href="https://circleci.com">CircleCI</a>, <a href="http://discontinuity.eu">Discontinuity</a>, <a href="http://www.fngtps.com">Fingertips</a>, <a href="https://developers.google.com">Google</a>, <a href="https://www.heroku.com">Heroku</a>, <a href="https://netlify.com">Netlify</a>, <a href="https://realm.io">Realm</a>, <a href="http://www.rubymotion.com">RubyMotion</a>, <a href="https://www.sauspiel.de">Sauspiel</a>, <a href="https://www.slack.com">Slack</a>, <a href="https://www.soundcloud.com">SoundCloud</a>, <a href="https://www.stripe.com">Stripe</a>, <a href="https://www.squareup.com">Square</a>, and  <a href="http://www.technologyastronauts.ch">Technology&nbsp;Astronauts</a>.</p></article></div></section></footer><footer class="footer-links"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><a class="cocoapods-small-logo" href="https://cocoapods.org"></a><ul><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/using/troubleshooting.html">Support</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://github.com/CocoaPods/CocoaPods">GitHub Repo</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://status.cocoapods.org">Web Properties Status</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://twitter.com/CocoaPods">@CocoaPods</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://groups.google.com/group/cocoapods">Mailing List</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/about"><span class="visible-lg-span">CocoaPods</span> Dev Team</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/syntax/podfile.html">Podfile Doc<span class="hidden-lg-span">s</span><span class="visible-lg-span">umentation</span></a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/legal">Legal / Conduct</a></li></ul></article></div></section></footer>
+    <script src="/assets/blog-c2911afb0e1e77d79b486c5c39fe0cc6.js"></script>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  </body>
+</html>
