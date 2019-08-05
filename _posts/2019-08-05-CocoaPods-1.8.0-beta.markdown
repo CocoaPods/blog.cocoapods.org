@@ -1,0 +1,210 @@
+---
+layout: post
+title:  "CocoaPods 1.8 Beta is Here!"
+author: dnkoutso
+categories: cocoapods releases
+---
+
+_CocoaPods 1.8_ switches the CDN as the default spec repo source and comes with a few enhancements!
+
+<!-- more -->
+
+### CDN as Default
+
+CDN support was first introduced in the [1.7.2 release](http://127.0.0.1:4000/CocoaPods-1.7.2/), and aims to speed up initial setup and dependency analysis dramatically. With 1.8, CocoaPods _no longer_ requires cloning the now huge [master specs repo](https://github.com/CocoaPods/Specs) in order to function and users may integrate their projects with CocoaPods almost instantly.
+
+Here's video demonstration of integrating and building an iOS project with a fresh install of CocoaPods 1.8 in _less than a minute_:
+
+<center>
+  <video width="640" height="400" controls>
+    <source src="/assets/blog_img/CocoaPods-1.8.0/cocoapods-cdn-video.mp4" type="video/mp4">
+  </video>
+</center>
+
+You may safely delete the [master specs repo](https://github.com/CocoaPods/Specs) with the following steps:
+
+First, edit your `Podfile` to set the CDN as the primary source:
+
+```diff
+- source 'https://github.com/CocoaPods/Specs.git'
++ source 'https://cdn.cocoapods.org/'
+```
+
+Afterwards, run the following command to remove it from your managed repo list:
+
+```
+pod repo remove master
+```
+
+**Note**: If you wish to continue using the `git` based source then you must ensure it is _explicitly_ specified in your `Podfile` via the `source` DSL, otherwise CocoaPods will automatically use CDN for dependency resolution.
+
+And that's it! For more information regarding CDN, please read our previous blog post [here](https://blog.cocoapods.org/CocoaPods-1.7.2/)!
+
+### `info_plist` Podspec DSL
+
+CocoaPods automatically generates `Info.plist` files for pods, app specs and test specs when appropriate, such as when a `Podfile` requires dynamic frameworks by specifying the `use_frameworks!` option.
+
+Podspecs now support modifying the contents of their generated `Info.plist` files via the `info_plist` DSL. While we anticipate this will be most often used to modify the bundle identifier of a framework, any key-value pair can be included. The values specified will overwrite any default values that are included by CocoaPods.
+
+Here's an example:
+
+```ruby
+Pod::Spec.new do |s|
+  s.name         = 'NetworkingLib'
+  s.version      = '1.0.0'
+
+  # ...rest of attributes here
+
+  s.info_plist = {
+    'CFBundleIdentifier' => 'com.awesomecompany.networking',
+    'SERVER_URL' => 'https://example.com/api'
+  }
+end
+```
+
+With app specs introduced in [1.7](https://blog.cocoapods.org/CocoaPods-1.7.0-beta/), pod authors were able to describe an application, such as a demo app, for their pods. The new `info_plist` DSL enhances the functionality of app specs even further by allowing podspecs to customize the generated `Info.plist`, which contains important settings such as the bundle identifier, iOS security and privacy settings, device orientation support, and more.
+
+```ruby
+Pod::Spec.new do |s|
+  s.name         = 'ToastLib'
+  s.version      = '1.0.0'
+
+  # ...rest of attributes here
+
+  s.app_spec 'ToastCatalog' do |app_spec|
+    app_spec.info_plist = {
+      'CFBundleIdentifier' => 'com.bakery.ToastCatalog',
+      'UISupportedInterfaceOrientations' => [
+        'UIInterfaceOrientationPortrait',
+        'UIInterfaceOrientationLandscapeLeft',
+        'UIInterfaceOrientationLandscapeRight',
+      ],
+      'UILaunchStoryboardName' => 'LaunchScreen',
+      'UIMainStoryboardFile' => 'AppStoryboard',
+      'NSLocationWhenInUseUsageDescription' => 'ToastCatalog uses your location to find nearby Toast!'
+    }
+  end
+end
+```
+
+It's important to note that the `info_plist` attribute will have _no_ effect in situations where an `Info.plist` file is not generated, such as when pods are integrated as static libraries. If your library requires data that's included in the `Info.plist` to always be present, we recommend including it as a resource instead.
+
+For more details on how this works and the rational behind it, check out the RFC [here](https://github.com/CocoaPods/CocoaPods/issues/8753).
+
+### `project_name` Podfile DSL
+
+CocoaPods [1.7](https://blog.cocoapods.org/CocoaPods-1.7.0-beta/) introduced the [`generate_multiple_pod_projects`](https://guides.cocoapods.org/syntax/podfile.html#install_bang) option that installs each pod into its own Xcode project. CocoaPods 1.8 expands further by introducing the `project_name` DSL that allows pod consumers to specify the project name to integrate a given pod.
+
+This opens up plenty of new possibilities for consumers to _group_ certain pods together that make sense logically. Consider the following example:
+
+```ruby
+install! 'cocoapods', :generate_multiple_pod_projects => true
+
+target 'MyApp' do
+  use_frameworks!
+
+  pod 'Moya', :project_name => 'Networking'
+  pod 'Alamofire', :project_name => 'Networking'
+  pod 'Result', :project_name => 'Networking'
+
+  target 'MyAppTests' do
+    inherit! :search_paths
+    pod 'OCMock', :project_name => 'Testing'
+  end
+end
+```
+
+Will produce the following result:
+
+<center>
+{% breaking_image /assets/blog_img/CocoaPods-1.8.0/project_name.png %}
+</center>
+
+It is up to the consumers to choose their own grouping and provide helper methods in their `Podfile` that automatically apply the project name to use. For example, another grouping idea is to group pods by their platform such as `iOS` or `macOS`.
+
+**Note**: The `project_name` option currently requires the `generate_multiple_pod_projects` installation option to _also_ be enabled in order for it to function. Incremental installation has also been updated to take into consideration the project name used for each pod and will continue to work as expected.
+
+### Test Spec Enhancements
+
+Test specs have become an integral part of CocoaPods and a couple new features have been added.
+
+#### UI Test Bundle Support
+
+Support for "UI Test Bundles" is now possible and you may now specify the `test_type` to use for a given `test_spec`. The default will be `:unit` which would create a unit test bundle. Consider the following example of our favorite pod `CannonPodder`:
+
+```ruby
+Pod::Spec.new do |s|
+  s.name         = 'CannonPodder'
+  s.version      = '1.0.0'
+
+  # ...rest of attributes here
+
+  s.test_spec 'UITests' do |test_spec|
+    test_spec.requires_app_host = true
+    test_spec.test_type = :ui
+    test_spec.source_files = 'UITests/**/*.swift'
+  end
+end
+```
+
+This will successfully integrate a `CannonPodder-UI-UITests` UI test bundle upon installation and will automatically create an app host to be used for it.
+
+**Note**: UI test bundles _require_ an app host in order to function, therefore you must always specify `requires_app_host` should you choose to integrate a test spec as a UI test bundle.
+
+#### Customizable App Host
+
+For most cases, a generated app host for your test spec should be sufficient to execute your tests within it. However, there are cases in which pod authors may want to further customize the app host used for a `test_spec`.
+
+For example, pod authors may want to specify additional dependencies for their app host or resource bundles to use during testing. App specs are an excellent candidate for this since they provide most of the scaffolding and with 1.8 it is now possible to set an `app_spec` as the app host for a `test_spec` via the `app_host_name` DSL.
+
+Here's an example:
+
+```ruby
+Pod::Spec.new do |s|
+  s.name         = 'CannonPodder'
+  s.version      = '1.0.0'
+
+  # ...rest of attributes here
+
+  s.app_spec 'DemoApp' do |app_spec|
+    app_spec.source_files = 'DemoApp/**/*.swift'
+    # Dependency used only by this app spec.
+    app_spec.dependency 'Alamofire'
+  end
+
+  s.test_spec 'Tests' do |test_spec|
+    test_spec.requires_app_host = true
+    # Use 'DemoApp' as the app host.
+    test_spec.app_host_name = 'CannonPodder/DemoApp'
+
+    # ...rest of attributes here
+
+    # This is required since 'DemoApp' is specified as the app host.
+    test_spec.dependency 'CannonPodder/DemoApp'
+  end
+end
+```
+
+Will produce the following result:
+
+<center>
+{% breaking_image /assets/blog_img/CocoaPods-1.8.0/app_host_name.png %}
+</center>
+
+This powerful new feature opens up new possibilities for pod authors who want much more granular control for the app host used for their test specs.
+
+### What's Next?
+
+CocoaPods 1.8 is a _very_ exciting release, and we're very happy for you to try it out, and recommend you upgrade:
+
+```sh
+$ gem install cocoapods --pre
+```
+
+For future versions, we continue to explore new ways to allow pod authors and pod consumers to configure integrating pods into their project, for example by specifying individual package or linkage settings. We have published a [proposal](https://docs.google.com/document/d/1lr2mHkwhNha5_0Wfa_pYL51MAxoro0LBxx_DUzuSu0Y/edit) that we are currently exploring and we welcome your comments!
+ 
+As always, we would like to thank all of our contributors for making this release a reality!
+
+Checkout the [changelog](https://github.com/CocoaPods/CocoaPods/releases/tag/1.8.0.beta.1) to get the full list of changes.
+
+🚀

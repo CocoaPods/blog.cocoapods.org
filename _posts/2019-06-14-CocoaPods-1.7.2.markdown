@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CocoaPods 1.7.2 - Master Repo CDN is Finalized!"
+title:  "CocoaPods 1.7.2 &#8212; Master Repo CDN is Finalized!"
 author: igormaka
 categories: cocoapods releases
 ---
@@ -24,7 +24,7 @@ The crisis was averted by [sharding the repo]({% post_url 2016-10-28-Sharding %}
 
 This has solved GitHub's problem, but CocoaPods' users still had to deal with unsatisfactory performance.
 
-### Git as a database
+### Git as a Database
 
 Git was invented at a time when "slow network" and "no backups" were legitimate design concerns. Running endless builds as part of continuous integration wasn't commonplace. CDN wasn't so commonly available.
 
