@@ -3,8 +3,8 @@
   <channel>
     <title>CocoaPods Blog</title>
     <description>Updates for the fascinating developments happening in the CocoaPods world.</description>
-    <link>http://blog.cocoapods.org</link>
-    <atom:link href="http://blog.cocoapods.org/feed.articles.xml" rel="self" type="application/rss+xml" />
+    <link>https://blog.cocoapods.org</link>
+    <atom:link href="https://blog.cocoapods.org/feed.articles.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -340,8 +340,8 @@
 &lt;p&gt;🚀&lt;/p&gt;
 </description>
       <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-1.8.0-beta</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-1.8.0-beta</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-1.8.0-beta</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.8.0-beta</guid>
     </item>
     
     
@@ -462,8 +462,8 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 &lt;p&gt;🚀&lt;/p&gt;
 </description>
       <pubDate>Fri, 14 Jun 2019 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-1.7.2</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-1.7.2</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-1.7.2</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.7.2</guid>
     </item>
     
     
@@ -859,8 +859,8 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 &lt;p&gt;🚀&lt;/p&gt;
 </description>
       <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-1.7.0-beta</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-1.7.0-beta</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-1.7.0-beta</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.7.0-beta</guid>
     </item>
     
     
@@ -1002,8 +1002,8 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 &lt;p&gt;&amp;lt;3&lt;/p&gt;
 </description>
       <pubDate>Thu, 16 Aug 2018 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-1.6.0-beta</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-1.6.0-beta</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-1.6.0-beta</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.6.0-beta</guid>
     </item>
     
     
@@ -1102,8 +1102,8 @@ So, if you&amp;#39;re feeling like &lt;code&gt;pod install&lt;/code&gt; is takin
 &lt;p&gt;Checkout the &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/releases/tag/1.5.0&quot;&gt;changelog&lt;/a&gt; to get the full list of changes.&lt;/p&gt;
 </description>
       <pubDate>Wed, 04 Apr 2018 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-1.5.0</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-1.5.0</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-1.5.0</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.5.0</guid>
     </item>
     
     
@@ -1215,8 +1215,8 @@ example with &lt;a href=&quot;https://www.youtube.com/watch?v=KpX0jRDEv14&amp;am
 to maintain infrastructure, which paves the way for CocoaPods to continue being a useful resource for a very long time.&lt;/p&gt;
 </description>
       <pubDate>Fri, 16 Mar 2018 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-Metadata-Service</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-Metadata-Service</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-Metadata-Service</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-Metadata-Service</guid>
     </item>
     
     
@@ -1612,8 +1612,8 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
 &lt;p&gt;&amp;lt;3&lt;/p&gt;
 </description>
       <pubDate>Thu, 18 Jan 2018 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-1.4.0</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-1.4.0</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-1.4.0</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.4.0</guid>
     </item>
     
     
@@ -1727,8 +1727,8 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
 &lt;p&gt;CocoaPods 1.3.0 is an important milestone for CocoaPods as it is maturing as the standard library for iOS dependency management. We would like to thank all contributors for their support and time spent to improve this project!&lt;/p&gt;
 </description>
       <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-1.3.0</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-1.3.0</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-1.3.0</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.3.0</guid>
     </item>
     
     
@@ -1756,8 +1756,8 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
 &lt;p&gt;If you decide to give it a shot, let me know once you have a prototype and I&amp;#39;ll happily provide as many resources as I can. We can set up web-hooks from CocoaPods Trunk too.&lt;/p&gt;
 </description>
       <pubDate>Tue, 28 Mar 2017 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaDocs-Documentation-Sunsetting</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaDocs-Documentation-Sunsetting</guid>
+      <link>https://blog.cocoapods.org/CocoaDocs-Documentation-Sunsetting</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaDocs-Documentation-Sunsetting</guid>
     </item>
     
     
@@ -1800,8 +1800,8 @@ git checkout v0.32.1
 &lt;p&gt;We are planning to do it on Friday November the 11th, so there will be scheduled downtime on pushing new Pods to Trunk during the process of updating and verifying that it was successful.&lt;/p&gt;
 </description>
       <pubDate>Fri, 28 Oct 2016 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Sharding</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Sharding</guid>
+      <link>https://blog.cocoapods.org/Sharding</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Sharding</guid>
     </item>
     
     
@@ -1875,8 +1875,8 @@ git checkout v0.32.1
 &lt;p&gt;CocoaPods 1.1.0 was a huge release, so congrats to everyone! Checkout the &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/releases/tag/1.1.0&quot;&gt;Changelog&lt;/a&gt; to get the full list of changes.&lt;/p&gt;
 </description>
       <pubDate>Wed, 19 Oct 2016 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-1.1.0</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-1.1.0</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-1.1.0</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.1.0</guid>
     </item>
     
     
@@ -1899,8 +1899,8 @@ Last year, we tried out a new &lt;a href=&quot;https://github.com/CocoaPods/sotu
 &lt;p&gt;All of the details, as well as the lottery registration link, are available at &lt;a href=&quot;https://sotu.cocoapods.org/&quot;&gt;https://sotu.cocoapods.org/&lt;/a&gt;. We&amp;#39;ll be closing the lottery and announcing the lucky entrants in one week (on June 5th), so hurry up and register!&lt;/p&gt;
 </description>
       <pubDate>Sun, 29 May 2016 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/2016-CocoaPods-State-of-the-Union</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/2016-CocoaPods-State-of-the-Union</guid>
+      <link>https://blog.cocoapods.org/2016-CocoaPods-State-of-the-Union</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/2016-CocoaPods-State-of-the-Union</guid>
     </item>
     
     
@@ -2012,8 +2012,8 @@ Last year, we tried out a new &lt;a href=&quot;https://github.com/CocoaPods/sotu
 &lt;p&gt;We have &lt;a href=&quot;https://github.com/cocoapods/cocoapods-app/issues&quot;&gt;a lot of ideas&lt;/a&gt; for where the app can go, and some &lt;a href=&quot;https://github.com/cocoapods/cocoapods-app/issues?q=is%3Aissue+is%3Aopen+label%3A%22easy+first+step%22&quot;&gt;low-hanging fruit&lt;/a&gt; for contributors. &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods-app#building-for-development&quot;&gt;Why not help us with take it somewhere new?&lt;/a&gt;&lt;/p&gt;
 </description>
       <pubDate>Wed, 11 May 2016 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-App-1.0</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-App-1.0</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-App-1.0</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-App-1.0</guid>
     </item>
     
     
@@ -2120,8 +2120,8 @@ Last year, we tried out a new &lt;a href=&quot;https://github.com/CocoaPods/sotu
 &lt;p&gt;🎉 &lt;a href=&quot;https://twitter.com/segiddins&quot;&gt;segiddins&lt;/a&gt;, &lt;a href=&quot;https://github.com/segiddins&quot;&gt;Patch Master &amp;amp; Bundler of Joy&lt;/a&gt;&lt;/p&gt;
 </description>
       <pubDate>Tue, 10 May 2016 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-1.0</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-1.0</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-1.0</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.0</guid>
     </item>
     
     
@@ -2234,8 +2234,8 @@ general for their continued generous sponsorship of hosting resources.&lt;/p&gt;
 work on implementing these solutions as soon as they did.&lt;/p&gt;
 </description>
       <pubDate>Wed, 04 May 2016 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem</guid>
+      <link>https://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem</guid>
     </item>
     
     
@@ -2250,8 +2250,8 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 &lt;p&gt;We don&amp;#39;t want to use CocoaPods&amp;#39; popularity to make money. So, we are putting all profits into a charity. Want to know more? Go see &lt;a href=&quot;https://cocoapods.org/socks&quot;&gt;cocoapods.org/socks&lt;/a&gt;.&lt;/p&gt;
 </description>
       <pubDate>Mon, 22 Feb 2016 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Socks</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Socks</guid>
+      <link>https://blog.cocoapods.org/Socks</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Socks</guid>
     </item>
     
     
@@ -2466,8 +2466,8 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 &lt;p&gt;🎉&lt;/p&gt;
 </description>
       <pubDate>Wed, 03 Feb 2016 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-1.0-Migration-Guide</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-1.0-Migration-Guide</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-1.0-Migration-Guide</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.0-Migration-Guide</guid>
     </item>
     
     
@@ -2562,8 +2562,8 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 &lt;p&gt;It does take time to mentor but if you look at it as an investment to bring more contributors to open source it is time well spent. We also encourage other developers to take the opportunity to learn and contribute to open source.&lt;/p&gt;
 </description>
       <pubDate>Fri, 29 Jan 2016 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/RGSoC</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/RGSoC</guid>
+      <link>https://blog.cocoapods.org/RGSoC</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/RGSoC</guid>
     </item>
     
     
@@ -2671,8 +2671,8 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 &lt;p&gt;For example, I know when most people try attack this problem they try to solve the pod discovery problem, but I&amp;#39;m not sure if we can do better than the website in the native app. Would love some ideas on ways we could improve.&lt;/p&gt;
 </description>
       <pubDate>Tue, 12 Jan 2016 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-App</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-App</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-App</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-App</guid>
     </item>
     
     
@@ -2693,8 +2693,8 @@ We&amp;#39;ve prepared all systems for the switch and will flip it on December 3
 &lt;p&gt;Happy New Year, pod friends!&lt;/p&gt;
 </description>
       <pubDate>Tue, 29 Dec 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Release-Versions-Only</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Release-Versions-Only</guid>
+      <link>https://blog.cocoapods.org/Release-Versions-Only</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Release-Versions-Only</guid>
     </item>
     
     
@@ -2901,8 +2901,8 @@ We&amp;#39;ve prepared all systems for the switch and will flip it on December 3
 &lt;/div&gt;
 </description>
       <pubDate>Wed, 18 Nov 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Stats-2015</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Stats-2015</guid>
+      <link>https://blog.cocoapods.org/Stats-2015</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Stats-2015</guid>
     </item>
     
     
@@ -2942,8 +2942,8 @@ We&amp;#39;ve prepared all systems for the switch and will flip it on December 3
 &lt;p&gt;&lt;img src=&quot;https://camo.githubusercontent.com/cf5c440e71f6731b22d5d014d183709906bab61a/687474703a2f2f7777772e746865706c757370617065722e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031352f30342f332e676966&quot;&gt;&lt;/p&gt;
 </description>
       <pubDate>Sat, 07 Nov 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Creme-de-la-Pods</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Creme-de-la-Pods</guid>
+      <link>https://blog.cocoapods.org/Creme-de-la-Pods</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Creme-de-la-Pods</guid>
     </item>
     
     
@@ -2981,8 +2981,8 @@ again to the generous folks at Capital One for making it possible for me to do
 so!&lt;/p&gt;
 </description>
       <pubDate>Tue, 27 Oct 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Capital-One</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Capital-One</guid>
+      <link>https://blog.cocoapods.org/Capital-One</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Capital-One</guid>
     </item>
     
     
@@ -3069,8 +3069,8 @@ such as URL reachability.&lt;/p&gt;
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/releases/tag/0.39.0&quot;&gt;Changelog&lt;/a&gt;!&lt;/p&gt;
 </description>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-0.39</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.39</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-0.39</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.39</guid>
     </item>
     
     
@@ -3177,8 +3177,8 @@ such as URL reachability.&lt;/p&gt;
 &lt;p&gt;So, next time you hear people complaining about a chore you&amp;#39;ve become used to, take heed and try to automate the problem away.&lt;/p&gt;
 </description>
       <pubDate>Wed, 26 Aug 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Running-SSH-Commands-via-Rakefiles</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Running-SSH-Commands-via-Rakefiles</guid>
+      <link>https://blog.cocoapods.org/Running-SSH-Commands-via-Rakefiles</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Running-SSH-Commands-via-Rakefiles</guid>
     </item>
     
     
@@ -3196,8 +3196,8 @@ such as URL reachability.&lt;/p&gt;
 &lt;p&gt;So, next week I will migrate the stats server to production and everything will be back to zero downloads / installs again.&lt;/p&gt;
 </description>
       <pubDate>Sun, 09 Aug 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Stats-Reset</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Stats-Reset</guid>
+      <link>https://blog.cocoapods.org/Stats-Reset</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Stats-Reset</guid>
     </item>
     
     
@@ -3430,8 +3430,8 @@ Special thanks to all the new contributors we had for this release, especially f
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/releases/tag/0.38.0&quot;&gt;Changelog&lt;/a&gt;!&lt;/p&gt;
 </description>
       <pubDate>Tue, 21 Jul 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-0.38</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.38</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-0.38</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.38</guid>
     </item>
     
     
@@ -3542,8 +3542,8 @@ Special thanks to all the new contributors we had for this release, especially f
 &lt;p&gt;Checking in your Pods directory will mean that the download count for the pods used will rarely be affected, but the installations will be the exact same. They only register once per project, so multiple developers on the same project running &lt;code&gt;pod install&lt;/code&gt; will not raise this number.&lt;/p&gt;
 </description>
       <pubDate>Wed, 24 Jun 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Stats</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Stats</guid>
+      <link>https://blog.cocoapods.org/Stats</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Stats</guid>
     </item>
     
     
@@ -3599,8 +3599,8 @@ Special thanks to all the new contributors we had for this release, especially f
 &lt;p&gt;I&amp;#39;m super happy with the changes to the website, I think it makes it easier than ever to discover higher quality libraries that might not have hit the big-time yet. Everyone can let out a sigh of relief now, we can figure out the best &lt;a href=&quot;https://cocoapods.org/?q=lang%3Aswift%20json&quot;&gt;Swift JSON ORM&lt;/a&gt;.&lt;/p&gt;
 </description>
       <pubDate>Tue, 09 Jun 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods.org-Two-point-Five</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods.org-Two-point-Five</guid>
+      <link>https://blog.cocoapods.org/CocoaPods.org-Two-point-Five</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods.org-Two-point-Five</guid>
     </item>
     
     
@@ -3623,8 +3623,8 @@ Last year we ended up with a waiting list almost double the amount we could get 
 &lt;p&gt;All of the details, as well as the lottery registration link, are available at &lt;a href=&quot;https://sotu.cocoapods.org/&quot;&gt;https://sotu.cocoapods.org/&lt;/a&gt;. We&amp;#39;ll be closing the lottery and announcing the lucky entrants on Thursday, so hurry up and register!&lt;/p&gt;
 </description>
       <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/2015-CocoaPods-State-of-the-Union</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/2015-CocoaPods-State-of-the-Union</guid>
+      <link>https://blog.cocoapods.org/2015-CocoaPods-State-of-the-Union</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/2015-CocoaPods-State-of-the-Union</guid>
     </item>
     
     
@@ -3674,8 +3674,8 @@ file in a Podspec.&lt;/p&gt;
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/0.37.0/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;!&lt;/p&gt;
 </description>
       <pubDate>Sun, 03 May 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-0.37</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.37</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-0.37</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.37</guid>
     </item>
     
     
@@ -3817,8 +3817,8 @@ file in a Podspec.&lt;/p&gt;
 &lt;p&gt;If you&amp;#39;re interested in doing community work with CocoaPods we&amp;#39;re always interested in working with more people on ideas like this. You can get in touch with us via &lt;a href=&quot;mailto:info@cocoapods.org?subject=I%20have%20community%20ideas&amp;amp;body=Hello%20there!%20I%20have%20some%20cool%20ideas%20around%20community%20events&quot;&gt;info@cocoapods.org&lt;/a&gt; ( this goes to Kyle, Samuel, Eloy and myself.)&lt;/p&gt;
 </description>
       <pubDate>Sun, 19 Apr 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Jamming-2015</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Jamming-2015</guid>
+      <link>https://blog.cocoapods.org/Jamming-2015</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Jamming-2015</guid>
     </item>
     
     
@@ -3915,8 +3915,8 @@ file in a Podspec.&lt;/p&gt;
 &lt;/ul&gt;
 </description>
       <pubDate>Mon, 13 Apr 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Prepare-to-Jam</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Prepare-to-Jam</guid>
+      <link>https://blog.cocoapods.org/Prepare-to-Jam</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Prepare-to-Jam</guid>
     </item>
     
     
@@ -3940,8 +3940,8 @@ file in a Podspec.&lt;/p&gt;
 &lt;p&gt;Additionally, automation has the benefit of being operator-agnostic. As an open source project, there&amp;#39;s a steady churn of contributors. We want to look towards the future and make sure that we&amp;#39;re not leaving compartmentalized knowledge in any one member of the team, so that any future member can seamlessly step into any role. Basically, when I say &amp;#39;automate everything&amp;#39;, I really mean it -- when I&amp;#39;ve automated something, I can put it out of my mind, confident that it will work. (Sounds familiar to those of you who write unit tests?)&lt;/p&gt;
 </description>
       <pubDate>Mon, 06 Apr 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Automating-Everything</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Automating-Everything</guid>
+      <link>https://blog.cocoapods.org/Automating-Everything</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Automating-Everything</guid>
     </item>
     
     
@@ -3969,8 +3969,8 @@ file in a Podspec.&lt;/p&gt;
 &lt;p&gt;In the &lt;a href=&quot;https://github.com/CocoaPods/cocoadocs.org/issues/320&quot;&gt;process&lt;/a&gt; of moving I added one more feature. We now send data to the &lt;a href=&quot;http://status.cocoapods.org&quot;&gt;CocoaPods status&lt;/a&gt; page saying how many pods have been documented in the last 24hrs. Hopefully this should result in some useful insight into &amp;quot;is it working?&amp;quot; and give a sense of how much work it is doing.&lt;/p&gt;
 </description>
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaDocs-Colo</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaDocs-Colo</guid>
+      <link>https://blog.cocoapods.org/CocoaDocs-Colo</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaDocs-Colo</guid>
     </item>
     
     
@@ -4143,8 +4143,8 @@ file in a Podspec.&lt;/p&gt;
 &lt;/ul&gt;
 </description>
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods.org-Take-Two</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods.org-Take-Two</guid>
+      <link>https://blog.cocoapods.org/CocoaPods.org-Take-Two</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods.org-Take-Two</guid>
     </item>
     
     
@@ -4314,8 +4314,8 @@ This is important for ensuring everybody in your team uses the same reference of
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/0.36.0/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;!&lt;/p&gt;
 </description>
       <pubDate>Wed, 11 Mar 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-0.36</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.36</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-0.36</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.36</guid>
     </item>
     
     
@@ -4355,8 +4355,8 @@ Locations: NYC / SF / + More&lt;/p&gt;
 &lt;p&gt;🎉&lt;/p&gt;
 </description>
       <pubDate>Sat, 21 Feb 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Test-Jammin</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Test-Jammin</guid>
+      <link>https://blog.cocoapods.org/Test-Jammin</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Test-Jammin</guid>
     </item>
     
     
@@ -4444,8 +4444,8 @@ Locations: NYC / SF / + More&lt;/p&gt;
 &lt;p&gt;For now, keep being awesome. With &amp;lt;3 from Amsterdam.&lt;/p&gt;
 </description>
       <pubDate>Mon, 02 Feb 2015 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/The-captain-leaves-the-bridge</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/The-captain-leaves-the-bridge</guid>
+      <link>https://blog.cocoapods.org/The-captain-leaves-the-bridge</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/The-captain-leaves-the-bridge</guid>
     </item>
     
     
@@ -4816,8 +4816,8 @@ This isn&amp;#39;t recommeded for most cases.&lt;/p&gt;
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/pull/2835&quot;&gt;PR&lt;/a&gt;!&lt;/p&gt;
 </description>
       <pubDate>Thu, 25 Dec 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks</guid>
+      <link>https://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks</guid>
     </item>
     
     
@@ -5002,8 +5002,8 @@ It will be the culmination of &lt;em&gt;months&lt;/em&gt; (seriously!) of volunt
 &lt;p&gt;Please leave your ideas if you have an idea to add.&lt;/p&gt;
 </description>
       <pubDate>Mon, 15 Dec 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/search-engine</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/search-engine</guid>
+      <link>https://blog.cocoapods.org/search-engine</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/search-engine</guid>
     </item>
     
     
@@ -5076,8 +5076,8 @@ If you do, let us know.&lt;/p&gt;
 &lt;p&gt;Go forth and measure!&lt;/p&gt;
 </description>
       <pubDate>Thu, 11 Dec 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/metrics-api</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/metrics-api</guid>
+      <link>https://blog.cocoapods.org/metrics-api</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/metrics-api</guid>
     </item>
     
     
@@ -5237,8 +5237,8 @@ If you do, let us know.&lt;/p&gt;
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;!&lt;/p&gt;
 </description>
       <pubDate>Wed, 19 Nov 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-0.35</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.35</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-0.35</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.35</guid>
     </item>
     
     
@@ -5309,8 +5309,8 @@ If you do, let us know.&lt;/p&gt;
 &lt;p&gt;On a personal note. It&amp;#39;s been super gratifying to work on such a high profile tool used by so many people. I think that CocoaPods considerably lowers the barrier to entry for new programmers, and makes it easy for the experienced to improve their codebases by covering the entire ground from library discovery to Xcode integration. This is the fourth year since the first CocoaPods commit and it has been the best so far.&lt;/p&gt;
 </description>
       <pubDate>Tue, 18 Nov 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Stats-2014</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Stats-2014</guid>
+      <link>https://blog.cocoapods.org/Stats-2014</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Stats-2014</guid>
     </item>
     
     
@@ -5384,8 +5384,8 @@ If you do, let us know.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://media.giphy.com/media/q9fohf0Erd50A/giphy.gif&quot; alt=&quot;You&amp;#39;re awesome&quot;&gt;&lt;/p&gt;
 </description>
       <pubDate>Sat, 25 Oct 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/starting-open-source</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/starting-open-source</guid>
+      <link>https://blog.cocoapods.org/starting-open-source</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/starting-open-source</guid>
     </item>
     
     
@@ -5451,8 +5451,8 @@ If you do, let us know.&lt;/p&gt;
 &lt;p style=&quot;text-align:right&quot;&gt;&lt;em&gt;I&#39;m not looking forward to mailing these!&lt;/em&gt;&lt;/p&gt;
 </description>
       <pubDate>Wed, 22 Oct 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Coins</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Coins</guid>
+      <link>https://blog.cocoapods.org/Coins</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Coins</guid>
     </item>
     
     
@@ -5662,8 +5662,8 @@ and private Podspecs I would recommend to check them to avoid any issue.&lt;/p&g
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;.&lt;/p&gt;
 </description>
       <pubDate>Fri, 26 Sep 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-0.34</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.34</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-0.34</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.34</guid>
     </item>
     
     
@@ -5693,8 +5693,8 @@ and private Podspecs I would recommend to check them to avoid any issue.&lt;/p&g
 &lt;p&gt;This update is available today because of how Fabio built templates to allow for custom repos, and it definitely accepts &lt;a href=&quot;https://github.com/CocoaPods/pod-template&quot;&gt;pull requests and issues&lt;/a&gt;.&lt;/p&gt;
 </description>
       <pubDate>Thu, 26 Jun 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Pod-Lib-Create</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Pod-Lib-Create</guid>
+      <link>https://blog.cocoapods.org/Pod-Lib-Create</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Pod-Lib-Create</guid>
     </item>
     
     
@@ -5743,8 +5743,8 @@ and private Podspecs I would recommend to check them to avoid any issue.&lt;/p&g
 &lt;a shref=&quot;/assets/blog_img/Hackathon-Summary/office.jpg&quot;&gt;&lt;img src=&quot;/assets/blog_img/Hackathon-Summary/office.jpg&quot; width=&quot;50%&quot; style=&quot;float:right;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
       <pubDate>Thu, 12 Jun 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Hackathon-Summary</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Hackathon-Summary</guid>
+      <link>https://blog.cocoapods.org/Hackathon-Summary</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Hackathon-Summary</guid>
     </item>
     
     
@@ -5771,8 +5771,8 @@ With this rewrite, we will be a giant leap closer to CocoaPods 1.0.&lt;/p&gt;
 &lt;p&gt;The entire CocoaPods team and I are incredibly grateful to &lt;a href=&quot;https://stripe.com/&quot;&gt;Stripe&lt;/a&gt; for supporting our work and sharing our visions for the future of open-source.&lt;/p&gt;
 </description>
       <pubDate>Mon, 09 Jun 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Stripe-Open-Source-Retreat</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Stripe-Open-Source-Retreat</guid>
+      <link>https://blog.cocoapods.org/Stripe-Open-Source-Retreat</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Stripe-Open-Source-Retreat</guid>
     </item>
     
     
@@ -5802,8 +5802,8 @@ With this rewrite, we will be a giant leap closer to CocoaPods 1.0.&lt;/p&gt;
 &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src=&quot;https://secure.meetup.com/script/21021123101537681383/api/mu.btns.js?id=a74a4o9ar6ca0btqqmtk1k5uv2&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;mu-bootjs&quot;);&lt;/script&gt;
 </description>
       <pubDate>Sat, 31 May 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Pod-Roulette-Hackathon</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Pod-Roulette-Hackathon</guid>
+      <link>https://blog.cocoapods.org/Pod-Roulette-Hackathon</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Pod-Roulette-Hackathon</guid>
     </item>
     
     
@@ -5864,8 +5864,8 @@ With this rewrite, we will be a giant leap closer to CocoaPods 1.0.&lt;/p&gt;
 &lt;p&gt;CocoaDocs could not have existed without help from &lt;a href=&quot;http://gentlebytes.com/appledoc/&quot;&gt;appledoc&lt;/a&gt;, &lt;a href=&quot;/assets/blog_img/cocoadocs/danger.jpg&quot;&gt;Danger&lt;/a&gt;, the &lt;a href=&quot;http://cocoapods.org/about&quot;&gt;CocoaPods Dev Team&lt;/a&gt; and everyone who has contributed a library.&lt;/p&gt;
 </description>
       <pubDate>Mon, 26 May 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaDocs2-Launch</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaDocs2-Launch</guid>
+      <link>https://blog.cocoapods.org/CocoaDocs2-Launch</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaDocs2-Launch</guid>
     </item>
     
     
@@ -5906,8 +5906,8 @@ over if you are in San Francisco for either events.&lt;/p&gt;
 &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src=&quot;https://secure.meetup.com/script/21021123101537681383/api/mu.btns.js?id=a74a4o9ar6ca0btqqmtk1k5uv2&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;mu-bootjs&quot;);&lt;/script&gt;
 </description>
       <pubDate>Fri, 23 May 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-AltLabs</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-AltLabs</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-AltLabs</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-AltLabs</guid>
     </item>
     
     
@@ -6069,8 +6069,8 @@ so getting started has never been easier.&lt;/p&gt;
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;.&lt;/p&gt;
 </description>
       <pubDate>Wed, 21 May 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-0.33</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.33</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-0.33</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.33</guid>
     </item>
     
     
@@ -6142,8 +6142,8 @@ and by using it in your real applications and/or demo applications to make sure
 everything works as expected. This is &lt;em&gt;your&lt;/em&gt; responsibility from hereon out.&lt;/p&gt;
 </description>
       <pubDate>Tue, 20 May 2014 14:38:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Claim-Your-Pods</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Claim-Your-Pods</guid>
+      <link>https://blog.cocoapods.org/Claim-Your-Pods</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Claim-Your-Pods</guid>
     </item>
     
     
@@ -6314,8 +6314,8 @@ Just keep in mind that if two files are available CocoaPods will prefer the JSON
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
 &lt;/div&gt;</description>
       <pubDate>Tue, 20 May 2014 14:37:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-Trunk</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-Trunk</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-Trunk</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-Trunk</guid>
     </item>
     
     
@@ -6370,8 +6370,8 @@ after the first day of the #inspect conference. Join our &lt;a href=&quot;http:/
 &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src=&quot;https://secure.meetup.com/script/21021123101537681383/api/mu.btns.js?id=a74a4o9ar6ca0btqqmtk1k5uv2&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;mu-bootjs&quot;);&lt;/script&gt;
 </description>
       <pubDate>Fri, 02 May 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Cocoa-Kucha-4</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Cocoa-Kucha-4</guid>
+      <link>https://blog.cocoapods.org/Cocoa-Kucha-4</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Cocoa-Kucha-4</guid>
     </item>
     
     
@@ -6407,8 +6407,8 @@ The meetup will be hosted at the &lt;a href=&quot;https://www.twilio.com/&quot;&
 &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src=&quot;https://secure.meetup.com/script/21021123101537681383/api/mu.btns.js?id=a74a4o9ar6ca0btqqmtk1k5uv2&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;mu-bootjs&quot;);&lt;/script&gt;
 </description>
       <pubDate>Mon, 21 Apr 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-WWDC-Party</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-WWDC-Party</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-WWDC-Party</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-WWDC-Party</guid>
     </item>
     
     
@@ -6575,8 +6575,8 @@ gifs):&lt;/p&gt;
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;.&lt;/p&gt;
 </description>
       <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-0.32</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.32</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-0.32</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.32</guid>
     </item>
     
     
@@ -6636,8 +6636,8 @@ See you on soon on an Xcode near you!&lt;/p&gt;
 &lt;p&gt;*Here&amp;#39;s &lt;a href=&quot;https://twitter.com/AppieDuran/status/450975104395390976/photo/1&quot;&gt;a company portrait of AppIe&lt;/a&gt;.&lt;/p&gt;
 </description>
       <pubDate>Tue, 01 Apr 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Big-News</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Big-News</guid>
+      <link>https://blog.cocoapods.org/Big-News</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Big-News</guid>
     </item>
     
     
@@ -6720,8 +6720,8 @@ See you on soon on an Xcode near you!&lt;/p&gt;
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;.&lt;/p&gt;
 </description>
       <pubDate>Mon, 31 Mar 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-0.31</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.31</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-0.31</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.31</guid>
     </item>
     
     
@@ -6828,8 +6828,8 @@ $ CocoaPods/bin/pod --version
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;.&lt;/p&gt;
 </description>
       <pubDate>Sat, 29 Mar 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-0.30</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.30</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-0.30</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.30</guid>
     </item>
     
     
@@ -6866,8 +6866,8 @@ $ CocoaPods/bin/pod --version
 &lt;/ul&gt;
 </description>
       <pubDate>Fri, 14 Mar 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-Bug-Bash</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-Bug-Bash</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-Bug-Bash</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-Bug-Bash</guid>
     </item>
     
     
@@ -7012,8 +7012,8 @@ env:
 &lt;p&gt;So that&amp;#39;s how we have our Travis deploys setup now. CocoaPods is a community effort, so lowering the barrier for contributions has been one of our goals. This new setup does just that. Edit away!&lt;/p&gt;
 </description>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Guides-And-Blog-Travis-Deploy</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Guides-And-Blog-Travis-Deploy</guid>
+      <link>https://blog.cocoapods.org/Guides-And-Blog-Travis-Deploy</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Guides-And-Blog-Travis-Deploy</guid>
     </item>
     
     
@@ -7051,8 +7051,8 @@ env:
 &lt;p&gt;Eloy and I are very thankful to SoundCloud, Travis, and the great people there that share our passion and for helping us to help you.&lt;/p&gt;
 </description>
       <pubDate>Sat, 08 Mar 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/SoundCloud</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/SoundCloud</guid>
+      <link>https://blog.cocoapods.org/SoundCloud</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/SoundCloud</guid>
     </item>
     
     
@@ -7278,8 +7278,8 @@ http://search.cocoapods.org/api/v1/pods.flat.ids.json?query=test
 &lt;p&gt;Have fun with it - we are curious what you all are coming up with! Personally, I&amp;#39;d love a CocoaPod that parsed &lt;a href=&quot;https://github.com/floere/picky/wiki/results-format-and-structure&quot;&gt;Picky-style results&lt;/a&gt; and provided it to other applications &amp;lt;3&lt;/p&gt;
 </description>
       <pubDate>Sun, 02 Feb 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Search-API-Version-1</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Search-API-Version-1</guid>
+      <link>https://blog.cocoapods.org/Search-API-Version-1</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Search-API-Version-1</guid>
     </item>
     
     
@@ -7312,26 +7312,33 @@ http://search.cocoapods.org/api/v1/pods.flat.ids.json?query=test
 
 &lt;ul class=&#39;people&#39;&gt;
 &lt;li&gt;
-    &lt;a href=&quot;https://github.com/dblock&quot;&gt;&lt;img src=&quot;/assets/blog_img/github_octokitty.png&quot;&gt;&lt;/a&gt; db - &lt;a href= &quot;http://twitter.com/dblockdotorg&quot;&gt;@dblockdotorg&lt;/a&gt;
+    &lt;a href=&quot;https://github.com/dblock&quot;&gt;&lt;img src=&quot;/assets/blog_img/github_octokitty.png&quot;&gt;&lt;/a&gt; db - &lt;a href= &quot;https://twitter.com/dblockdotorg&quot;&gt;@dblockdotorg&lt;/a&gt;
 &lt;/li&gt;
+
 &lt;li&gt;
-    &lt;a href=&quot;https://github.com/benjaminjackson&quot;&gt;&lt;img src=&quot;/assets/blog_img/github_octokitty.png&quot;&gt;&lt;/a&gt; Benjamin Jackson - &lt;a href= &quot;http://twitter.com/benjaminjackson&quot;&gt;@benjaminjackson&lt;/a&gt;
+    &lt;a href=&quot;https://github.com/benjaminjackson&quot;&gt;&lt;img src=&quot;/assets/blog_img/github_octokitty.png&quot;&gt;&lt;/a&gt; Benjamin Jackson - &lt;a href= &quot;https://twitter.com/benjaminjackson&quot;&gt;@benjaminjackson&lt;/a&gt;
 &lt;/li&gt;
+
 &lt;li&gt;
-    &lt;a href=&quot;https://github.com/lazerwalker&quot;&gt;&lt;img src=&quot;/assets/blog_img/github_octokitty.png&quot;&gt;&lt;/a&gt; Mike Lazer-Walker - &lt;a href= &quot;http://twitter.com/lazerwalker&quot;&gt;@lazerwalker&lt;/a&gt;
+    &lt;a href=&quot;https://github.com/lazerwalker&quot;&gt;&lt;img src=&quot;/assets/blog_img/github_octokitty.png&quot;&gt;&lt;/a&gt; Mike Lazer-Walker - &lt;a href= &quot;https://twitter.com/lazerwalker&quot;&gt;@lazerwalker&lt;/a&gt;
 &lt;/li&gt;
+
 &lt;li&gt;
-    &lt;a href=&quot;https://github.com/klaaspieter&quot;&gt;&lt;img src=&quot;/assets/blog_img/github_octokitty.png&quot;&gt;&lt;/a&gt; Klaas Pieter - &lt;a href= &quot;http://twitter.com/klaaspieter&quot;&gt;@klaaspieter&lt;/a&gt;
+    &lt;a href=&quot;https://github.com/klaaspieter&quot;&gt;&lt;img src=&quot;/assets/blog_img/github_octokitty.png&quot;&gt;&lt;/a&gt; Klaas Pieter - &lt;a href= &quot;https://twitter.com/klaaspieter&quot;&gt;@klaaspieter&lt;/a&gt;
 &lt;/li&gt;
+
 &lt;li&gt;
-    &lt;a href=&quot;https://github.com/paulyoung&quot;&gt;&lt;img src=&quot;/assets/blog_img/github_octokitty.png&quot;&gt;&lt;/a&gt; Paul Young - &lt;a href= &quot;http://twitter.com/py&quot;&gt;@py&lt;/a&gt;
+    &lt;a href=&quot;https://github.com/paulyoung&quot;&gt;&lt;img src=&quot;/assets/blog_img/github_octokitty.png&quot;&gt;&lt;/a&gt; Paul Young - &lt;a href= &quot;https://twitter.com/py&quot;&gt;@py&lt;/a&gt;
 &lt;/li&gt;
+
 &lt;li&gt;
-    &lt;a href=&quot;https://github.com/btgerst&quot;&gt;&lt;img src=&quot;/assets/blog_img/github_octokitty.png&quot;&gt;&lt;/a&gt; Brian Gerstle - &lt;a href= &quot;http://twitter.com/b_gerstle&quot;&gt;@b_gerstle&lt;/a&gt;
+    &lt;a href=&quot;https://github.com/btgerst&quot;&gt;&lt;img src=&quot;/assets/blog_img/github_octokitty.png&quot;&gt;&lt;/a&gt; Brian Gerstle - &lt;a href= &quot;https://twitter.com/b_gerstle&quot;&gt;@b_gerstle&lt;/a&gt;
 &lt;/li&gt;
+
 &lt;li&gt;
-    &lt;a href=&quot;https://github.com/landonf&quot;&gt;&lt;img src=&quot;/assets/blog_img/github_octokitty.png&quot;&gt;&lt;/a&gt; Landon J Fuller - &lt;a href= &quot;http://twitter.com/landonfuller&quot;&gt;@landonfuller&lt;/a&gt;
+    &lt;a href=&quot;https://github.com/landonf&quot;&gt;&lt;img src=&quot;/assets/blog_img/github_octokitty.png&quot;&gt;&lt;/a&gt; Landon J Fuller - &lt;a href= &quot;https://twitter.com/landonfuller&quot;&gt;@landonfuller&lt;/a&gt;
 &lt;/li&gt;
+
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;meetup-page&quot;&gt;Meetup Page&lt;/h2&gt;
@@ -7394,8 +7401,8 @@ http://search.cocoapods.org/api/v1/pods.flat.ids.json?query=test
 &lt;/div&gt;
 </description>
       <pubDate>Sat, 01 Feb 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/The-Kommittee-NYC</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/The-Kommittee-NYC</guid>
+      <link>https://blog.cocoapods.org/The-Kommittee-NYC</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/The-Kommittee-NYC</guid>
     </item>
     
     
@@ -7571,8 +7578,8 @@ Setup completed
 &lt;a href=&quot;https://twitter.com/alloy&quot;&gt;@alloy&lt;/a&gt;&lt;/p&gt;
 </description>
       <pubDate>Thu, 30 Jan 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Repairing-Our-Broken-Specs-Repository</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Repairing-Our-Broken-Specs-Repository</guid>
+      <link>https://blog.cocoapods.org/Repairing-Our-Broken-Specs-Repository</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Repairing-Our-Broken-Specs-Repository</guid>
     </item>
     
     
@@ -7610,8 +7617,8 @@ it a lot easier for people to get started.&lt;/p&gt;
 &lt;p&gt;You can keep up to date by either watching my &lt;a href=&quot;https://github.com/orta/life/issues/17&quot;&gt;organization issue&lt;/a&gt;, or by keeping track on the &lt;a href=&quot;https://groups.google.com/forum/?hl=de#!topic/berlin-cocoaheads/VPxPyrCohX0&quot;&gt;CocoaHeads google&lt;/a&gt; group.&lt;/p&gt;
 </description>
       <pubDate>Tue, 07 Jan 2014 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Cocoa-Kucha-3-Berlin</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Cocoa-Kucha-3-Berlin</guid>
+      <link>https://blog.cocoapods.org/Cocoa-Kucha-3-Berlin</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Cocoa-Kucha-3-Berlin</guid>
     </item>
     
     
@@ -7761,8 +7768,8 @@ deserves a quick mention.&lt;/p&gt;
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;.&lt;/p&gt;
 </description>
       <pubDate>Tue, 24 Dec 2013 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-0.29</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.29</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-0.29</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.29</guid>
     </item>
     
     
@@ -7806,8 +7813,8 @@ keep up to date, and the &lt;a href=&quot;http://www.meetup.com/NSLondon/events/
 will allow RSVPs 2 weeks before on the 2nd of January.&lt;/p&gt;
 </description>
       <pubDate>Tue, 17 Dec 2013 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Cocoa-Kucha-2</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Cocoa-Kucha-2</guid>
+      <link>https://blog.cocoapods.org/Cocoa-Kucha-2</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Cocoa-Kucha-2</guid>
     </item>
     
     
@@ -7892,8 +7899,8 @@ will allow RSVPs 2 weeks before on the 2nd of January.&lt;/p&gt;
 &lt;p&gt;The repo can be found here &lt;a href=&quot;https://github.com/orta/CocoaPods-Docs-Redirector/&quot;&gt;github.com/orta/CocoaPods-Docs-Redirector/&lt;/a&gt;&lt;/p&gt;
 </description>
       <pubDate>Mon, 02 Dec 2013 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Cool-URIs-Don't-Change</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Cool-URIs-Don't-Change</guid>
+      <link>https://blog.cocoapods.org/Cool-URIs-Don't-Change</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Cool-URIs-Don't-Change</guid>
     </item>
     
     
@@ -7957,8 +7964,8 @@ will allow RSVPs 2 weeks before on the 2nd of January.&lt;/p&gt;
 &lt;p&gt;Let us know what you think either on twitter (&lt;a href=&quot;http://twitter.com/CocoaPods&quot;&gt;@CocoaPods&lt;/a&gt;) or if your idea is too big for 140 characters, &lt;a href=&quot;https://github.com/cocoapods/cocoapods.org/issues&quot;&gt;write us an issue&lt;/a&gt;. This was a team effort, and I&amp;#39;m super proud to have been a part of it. !m!&lt;/p&gt;
 </description>
       <pubDate>Sun, 24 Nov 2013 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Beta</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Beta</guid>
+      <link>https://blog.cocoapods.org/Beta</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Beta</guid>
     </item>
     
     
@@ -8145,8 +8152,8 @@ account to finalize APIs.&lt;/p&gt;
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;.&lt;/p&gt;
 </description>
       <pubDate>Thu, 14 Nov 2013 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-0.28</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.28</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-0.28</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.28</guid>
     </item>
     
     
@@ -8166,8 +8173,8 @@ account to finalize APIs.&lt;/p&gt;
 &lt;p&gt;To deal with this effectively we&amp;#39;ve moved out notifications on to a separate twitter account allowing the CocoaPods twitter feed to become a relatively low-chaff high information yield source for those interested in keeping up on Objective-C Open Source.&lt;/p&gt;
 </description>
       <pubDate>Thu, 07 Nov 2013 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPodsFeed</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPodsFeed</guid>
+      <link>https://blog.cocoapods.org/CocoaPodsFeed</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPodsFeed</guid>
     </item>
     
     
@@ -8430,8 +8437,8 @@ the following insights:&lt;/p&gt;
   Here’s &lt;a href=&quot;http://bit.ly/1a9tp25&quot;&gt;our final solution&lt;/a&gt;.&lt;/p&gt;
 </description>
       <pubDate>Thu, 24 Oct 2013 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-0.27-and-improved-installation-UX</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.27-and-improved-installation-UX</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-0.27-and-improved-installation-UX</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.27-and-improved-installation-UX</guid>
     </item>
     
     
@@ -8462,8 +8469,8 @@ the following insights:&lt;/p&gt;
 &lt;/ul&gt;
 </description>
       <pubDate>Sun, 13 Oct 2013 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Cocoa-Kucha</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Cocoa-Kucha</guid>
+      <link>https://blog.cocoapods.org/Cocoa-Kucha</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Cocoa-Kucha</guid>
     </item>
     
     
@@ -8517,8 +8524,8 @@ team: &lt;a href=&quot;https://twitter.com/kylefuller&quot;&gt;Kyle Fuller&lt;/a
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;.&lt;/p&gt;
 </description>
       <pubDate>Tue, 08 Oct 2013 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/CocoaPods-0.26</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/CocoaPods-0.26</guid>
+      <link>https://blog.cocoapods.org/CocoaPods-0.26</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.26</guid>
     </item>
     
     
@@ -8564,8 +8571,8 @@ team: &lt;a href=&quot;https://twitter.com/kylefuller&quot;&gt;Kyle Fuller&lt;/a
 &lt;p&gt;The work on the CocoaPods design is on-going and has just started; there&amp;#39;s a lot of focus now on the blog so that we can be sure of the foundations before moving on to the new user documentation. But that is a blog post for another time.&lt;/p&gt;
 </description>
       <pubDate>Thu, 03 Oct 2013 01:20:16 +0000</pubDate>
-      <link>http://blog.cocoapods.org/redesign</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/redesign</guid>
+      <link>https://blog.cocoapods.org/redesign</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/redesign</guid>
     </item>
     
     
@@ -8610,8 +8617,8 @@ team: &lt;a href=&quot;https://twitter.com/kylefuller&quot;&gt;Kyle Fuller&lt;/a
 &lt;/ol&gt;
 </description>
       <pubDate>Mon, 23 Sep 2013 01:20:16 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Why-we-dont-accept-donations</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Why-we-dont-accept-donations</guid>
+      <link>https://blog.cocoapods.org/Why-we-dont-accept-donations</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Why-we-dont-accept-donations</guid>
     </item>
     
     
@@ -8744,8 +8751,8 @@ that generate the text in your &lt;code&gt;Podfile&lt;/code&gt; like this:&lt;/p
 &lt;p&gt;Further details can be found in &lt;a href=&quot;http://martinhicks.net/2012/04/how-to-create-license-section-in-ios-settings-app&quot;&gt;Martin Hicks&amp;#39;s blog&lt;/a&gt;&lt;/p&gt;
 </description>
       <pubDate>Sat, 10 Aug 2013 00:00:00 +0000</pubDate>
-      <link>http://blog.cocoapods.org/Acknowledgements</link>
-      <guid isPermaLink="true">http://blog.cocoapods.org/Acknowledgements</guid>
+      <link>https://blog.cocoapods.org/Acknowledgements</link>
+      <guid isPermaLink="true">https://blog.cocoapods.org/Acknowledgements</guid>
     </item>
     
     

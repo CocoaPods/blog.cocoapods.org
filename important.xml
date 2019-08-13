@@ -3,8 +3,8 @@
   <channel>
     <title>CocoaPods Blog - Important</title>
     <description>Posts categorized as 'important'</description>
-    <link>http://blog.cocoapods.org</link>
-    <atom:link href="http://blog.cocoapods.org/feed.category.xml" rel="self" type="application/rss+xml" />
+    <link>https://blog.cocoapods.org</link>
+    <atom:link href="https://blog.cocoapods.org/feed.category.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>
