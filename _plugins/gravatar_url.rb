@@ -1,7 +1,7 @@
 module Jekyll
   module GravatarFilter
     def gravatar_url(input)
-      "http://gravatar.com/avatar/#{ input }?s=144"
+      "https://gravatar.com/avatar/#{ input }?s=144"
     end
   end
 end
