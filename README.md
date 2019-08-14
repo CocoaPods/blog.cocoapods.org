@@ -55,8 +55,15 @@ categories: tags that are relevant
 ---
 ```
 
-Use Jekyll's `post_url` function to link to other posts, as this provides build-time validation of links.  
-If a link repeats several times throughout the post, use [reference-style links](https://www.markdownguide.org/basic-syntax/#reference-style-links).
+Use Jekyll's `post_url` function to link to other posts, as this provides build-time validation of links.
+If a link repeats several times throughout the post, use [reference-style links](https://www.markdownguide.org/basic-syntax/#reference-style-links).  
+Example of using both:
+```markdown
+CDN support was first introduced in the [1.7 release][1.7] and was finalized in [1.7.2].
+
+[1.7]: {% post_url 2019-02-22-CocoaPods-1.7.0-beta %}
+[1.7.2]: {% post_url 2019-06-14-CocoaPods-1.7.2 %}
+```
 
 ## Deployment
 
