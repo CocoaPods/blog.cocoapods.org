@@ -44,7 +44,7 @@ Add a nickname for you followed by your full name, twitter handle and gravatar h
 
 Create a new file in _post directory following the format year-month-day-blog-post-title.markdown
 
-Start the post using Jekylls [Front Matter](http://jekyllrb.com/docs/frontmatter/):
+Start the post using Jekyll's [Front Matter](http://jekyllrb.com/docs/frontmatter/):
 
 ```
 ---
