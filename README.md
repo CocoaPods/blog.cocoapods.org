@@ -55,6 +55,9 @@ categories: tags that are relevant
 ---
 ```
 
+Use Jekyll's `post_url` function to link to other posts, as this provides build-time validation of links.  
+If a link repeats several times throughout the post, use [reference-style links](https://www.markdownguide.org/basic-syntax/#reference-style-links).
+
 ## Deployment
 
 Run `rake deploy` to push to site the gh-pages branch.
