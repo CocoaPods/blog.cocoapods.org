@@ -11,7 +11,7 @@ _CocoaPods 1.8_ switches the CDN as the default spec repo source and comes with 
 
 ### CDN as Default
 
-CDN support was first introduced in the [1.7 release](http://blog.cocoapods.org/CocoaPods-1.7.0-beta/) and was finalized in [1.7.2](http://blog.cocoapods.org/CocoaPods-1.7.2/). It aims to speed up initial setup and dependency analysis dramatically. With 1.8, CocoaPods _no longer_ requires cloning the now huge [master specs repo](https://github.com/CocoaPods/Specs) in order to function and users may integrate their projects with CocoaPods almost instantly.
+CDN support was first introduced in the [1.7 release][1.7] and was finalized in [1.7.2]. It aims to speed up initial setup and dependency analysis dramatically. With 1.8, CocoaPods _no longer_ requires cloning the now huge [master specs repo](https://github.com/CocoaPods/Specs) in order to function and users may integrate their projects with CocoaPods almost instantly.
 
 Here's video demonstration of integrating and building an iOS project with a fresh install of CocoaPods 1.8 in _less than a minute_:
 
@@ -38,7 +38,7 @@ pod repo remove master
 
 **Note**: If you wish to continue using the `git` based source then you must ensure it is _explicitly_ specified in your `Podfile` via the `source` DSL, otherwise CocoaPods will automatically use CDN for dependency resolution.
 
-And that's it! For more information regarding CDN, please read our previous blog post [here](https://blog.cocoapods.org/CocoaPods-1.7.2/)!
+And that's it! For more information regarding CDN, please read our previous blog post [here][1.7.2]!
 
 ### `info_plist` Podspec DSL
 
@@ -62,7 +62,7 @@ Pod::Spec.new do |s|
 end
 ```
 
-With app specs introduced in [1.7](https://blog.cocoapods.org/CocoaPods-1.7.0-beta/), pod authors were able to describe an application, such as a demo app, for their pods. The new `info_plist` DSL enhances the functionality of app specs even further by allowing podspecs to customize the generated `Info.plist`, which contains important settings such as the bundle identifier, iOS security and privacy settings, device orientation support, and more.
+With app specs introduced in [1.7], pod authors were able to describe an application, such as a demo app, for their pods. The new `info_plist` DSL enhances the functionality of app specs even further by allowing podspecs to customize the generated `Info.plist`, which contains important settings such as the bundle identifier, iOS security and privacy settings, device orientation support, and more.
 
 ```ruby
 Pod::Spec.new do |s|
@@ -93,7 +93,7 @@ For more details on how this works and the rational behind it, check out the RFC
 
 ### `project_name` Podfile DSL
 
-CocoaPods [1.7](https://blog.cocoapods.org/CocoaPods-1.7.0-beta/) introduced the [`generate_multiple_pod_projects`](https://guides.cocoapods.org/syntax/podfile.html#install_bang) option that installs each pod into its own Xcode project. CocoaPods 1.8 expands further by introducing the `project_name` DSL that allows pod consumers to specify the project name to integrate a given pod.
+CocoaPods [1.7] introduced the [`generate_multiple_pod_projects`](https://guides.cocoapods.org/syntax/podfile.html#install_bang) option that installs each pod into its own Xcode project. CocoaPods 1.8 expands further by introducing the `project_name` DSL that allows pod consumers to specify the project name to integrate a given pod.
 
 This opens up plenty of new possibilities for consumers to _group_ certain pods together that make sense logically. Consider the following example:
 
@@ -208,3 +208,6 @@ As always, we would like to thank all of our contributors for making this releas
 Checkout the [changelog](https://github.com/CocoaPods/CocoaPods/releases/tag/1.8.0.beta.1) to get the full list of changes.
 
 🚀
+
+[1.7]: {% post_url 2019-02-22-CocoaPods-1.7.0-beta %}
+[1.7.2]: {% post_url 2019-06-14-CocoaPods-1.7.2 %}

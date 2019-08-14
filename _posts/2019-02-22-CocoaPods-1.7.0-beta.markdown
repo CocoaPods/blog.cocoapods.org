@@ -69,7 +69,7 @@ Finally, a warning will be displayed during `lint` that encourages pod authors t
 
 ### App Specs
 
-With the recently introduced [test specs](http://blog.cocoapods.org/CocoaPods-1.3.0) we were able to build a platform for us to expand on and introduce different types of specifications that can be provided by a pod author. With 1.7.0, we are introducing _app specs_ which allow pod authors to describe an application from within their `podspec`.
+With the recently introduced [test specs]({% post_url 2017-08-01-CocoaPods-1.3.0 %}) we were able to build a platform for us to expand on and introduce different types of specifications that can be provided by a pod author. With 1.7.0, we are introducing _app specs_ which allow pod authors to describe an application from within their `podspec`.
 
 App specs can help pod authors in various ways, for example, they can be used to ship a sample app alongside their pod as a tutorial on how consumers can integrate it to their own respective app.
 
