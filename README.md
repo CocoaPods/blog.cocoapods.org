@@ -55,9 +55,9 @@ categories: tags that are relevant
 ---
 ```
 
-Use Jekyll's `post_url` function to link to other posts, as this provides build-time validation of links.
+Use Jekyll's `post_url` function to link to other posts, as this provides build-time validation of links. The function takes the full post filename minus the extension.  
 If a link repeats several times throughout the post, use [reference-style links](https://www.markdownguide.org/basic-syntax/#reference-style-links).  
-Example of using both:
+Example of using both:  
 ```markdown
 CDN support was first introduced in the [1.7 release][1.7] and was finalized in [1.7.2].
 
