@@ -84,7 +84,7 @@ As we rely more on this service, we can continue to provide the rich web-experie
 to maintain infrastructure, which paves the way for CocoaPods to continue being a useful resource for a very long time.
 
 [cms]: https://github.com/CocoaPods/cocoapods-metadata-service
-[cd_down]: https://blog.cocoapods.org/CocoaDocs-Documentation-Sunsetting
+[cd_down]: {% post_url 2017-03-28-CocoaDocs-Documentation-Sunsetting %}
 [bb]: http://buddybuild.com
 [appl]: https://www.buddybuild.com/blog/buddybuild-is-now-part-of-apple
 [eth]: https://devcenter.heroku.com/articles/dynos#ephemeral-filesystem
