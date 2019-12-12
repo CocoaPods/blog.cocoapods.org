@@ -1,0 +1,140 @@
+---
+layout: post
+title:  "CocoaPods 1.9 Beta has arrived!"
+author: amorde
+categories: cocoapods releases
+---
+
+_CocoaPods 1.9_ adds support for XCFrameworks, configuration-based dependencies for pod authors, code coverage in generated schemes, and other enhancements and bug fixes!
+
+<!-- more -->
+
+This release includes several quality-of-life enhancements in addition to important bug fixes.
+
+## XCFramework Support
+
+With the release of Xcode 11, Apple introduced a new bundle format using the `.xcframework` file extension. This format allows multiple copies of a framework compiled for different architectures and platforms to be combined into a single structure. XCFrameworks are also required for binary dependencies to support the new _Catalyst_ platform introduced in macOS _Catalina_.
+
+This release introduces support for Pod authors to ship vendored XCFrameworks using the existing [vendored_framework](https://guides.cocoapods.org/syntax/podspec.html#vendored_frameworks) DSL. Example:
+
+```ruby
+Pod::Spec.new do |s|
+  s.name         = 'ToastLib'
+  s.version      = '1.0.0'
+  # ...rest of attributes here
+
+  s.vendored_frameworks = 'ButterLib.xcframework'
+end
+```
+
+For apps that include Pods which vendor dynamic frameworks, a new script phase with the name `[CP] Prepare Artifacts` will be added to the project to facilitate including the `.xcframework` into the app bundle.
+
+For additional details on how to create an XCFramework, check out Apple's WWDC talk [Binary Frameworks in Swift](https://developer.apple.com/videos/play/wwdc2019/416/) which introduced the format.
+
+## Configuration-based dependencies for Podspecs
+
+CocoaPods has long supported excluding dependencies from configurations in which they are not needed. For example, debug-only dependencies used during development can be included using the `:configurations` option on the `pod` Podfile DSL:
+
+```ruby
+target 'BananaApp' do
+  pod 'Toast', :configurations => ['Debug']
+end
+```
+
+This release extends this functionality to Pod authors. The same `:configurations` option may now be used with the `dependency` Podspec DSL:
+
+```ruby
+Pod::Spec.new do |s|
+  s.name         = 'ToastLib'
+  s.version      = '1.0.0'
+
+  # ...rest of attributes here
+
+  s.dependency 'ButterDebugging', :configurations => ['Debug']
+  s.dependency 'ErrorReportingTool', :configurations => ['Release']
+end
+```
+
+## Code Coverage in Test Specs
+
+CocoaPods first introduced the ability to configure the generated Xcode schemes for Podspecs in version [1.7]. This release adds support for enabling code coverage for tests by specifying the `code_coverage` option within the `scheme` DSL:
+
+```ruby
+Pod::Spec.new do |s|
+  s.name         = 'Networking'
+  s.version      = '1.0.0'
+
+  # ...rest of attributes here
+
+  s.test_spec 'Tests' do |test_spec|
+    test_spec.scheme = {
+        :code_coverage => true, :environment_variables => {'FOO' => 'BAR' }
+    }
+  end
+end
+```
+
+## Swift Version Variants
+
+As new Swift versions are released, Pod authors have added support for compiling their source with multiple Swift versions by using the `swift_versions` Podspec DSL.
+
+To better support this, the Podfile DSL was updated in [1.7] to allow users to specify what versions of Swift their apps support, using the `supports_swift_version` DSL.
+
+If two different targets include the same dependency but require _different_ Swift versions, CocoaPods will now create multiple different targets for the same Pod to accommodate the different Swift versions used.
+
+Given the following Pod:
+
+```ruby
+Pod::Spec.new do |s|
+  s.name         = 'CannonPodder'
+  s.version      = '1.0.0'
+  # ...
+  s.swift_versions = ['4.0', '5.0']
+end
+```
+
+and the following Podfile:
+
+```ruby
+target 'SampleApp' do
+  supports_swift_version '< 5.0'
+  pod 'CannonPodder'
+end
+
+target 'OtherApp' do
+  supports_swift_version '>= 5.0'
+  pod 'CannonPodder'
+end
+```
+
+Two different versions of the `CannonPodder` target will be created.
+
+<center>
+{% breaking_image /assets/blog_img/CocoaPods-1.9.0/swift_variants.png %}
+</center>
+
+This ensures the correct Swift version is used for each target that depends on the Pod.
+
+## `use_frameworks!` Linkage Customization
+
+iOS 8.0 introduced the ability for apps to ship dynamically linked frameworks. To support this, CocoaPods introduced the `use_frameworks!` DSL which made all Pods be compiled as dynamically-linked frameworks. Frameworks do not have any inherent _linkage_, but Swift initially required dynamic linking to be used in iOS apps. It is possible to wrap a statically-linked library in a `.framework ` bundle.
+
+Now that Swift supports static linking, CocoaPods has expanded this DSL to allow specifying the type of linkage preferred.
+
+```ruby
+use_frameworks! :linkage => :static
+```
+
+This is the first step in providing more control to CocoaPods users over how Pods are packaged and linked into their dependent binaries. For more details, check out the [RFC][use-frameworks-linkage-rfc].
+
+## What's Next
+
+In future versions, we will continue to expand the customization points for how pods are integrated into projects.
+
+Thanks to all of our contributors who helped make this release happen!
+
+Checkout the [changelog] to see the full list of changes.
+
+[1.7]: {% post_url 2019-02-22-CocoaPods-1.7.0-beta %}
+[use-frameworks-linkage-rfc]: https://github.com/CocoaPods/CocoaPods/issues/9099
+[changelog]: https://github.com/CocoaPods/CocoaPods/releases/tag/1.9.0.beta.1
