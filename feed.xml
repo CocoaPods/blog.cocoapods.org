@@ -15,7 +15,7 @@
 
 &lt;p&gt;This release includes several quality-of-life enhancements in addition to important bug fixes.&lt;/p&gt;
 
-&lt;h2 id=&quot;xcframework-support&quot;&gt;XCFramework Support&lt;/h2&gt;
+&lt;h3 id=&quot;xcframework-support&quot;&gt;XCFramework Support&lt;/h3&gt;
 
 &lt;p&gt;With the release of Xcode 11, Apple introduced a new bundle format using the &lt;code&gt;.xcframework&lt;/code&gt; file extension. This format allows multiple copies of a framework compiled for different architectures and platforms to be combined into a single structure. XCFrameworks are also required for binary dependencies to support the new &lt;em&gt;Catalyst&lt;/em&gt; platform introduced in macOS &lt;em&gt;Catalina&lt;/em&gt;.&lt;/p&gt;
 
@@ -49,7 +49,7 @@
 
 &lt;p&gt;For additional details on how to create an XCFramework, check out Apple&amp;#39;s WWDC talk &lt;a href=&quot;https://developer.apple.com/videos/play/wwdc2019/416/&quot;&gt;Binary Frameworks in Swift&lt;/a&gt; which introduced the format.&lt;/p&gt;
 
-&lt;h2 id=&quot;configuration-based-dependencies-for-podspecs&quot;&gt;Configuration-based dependencies for Podspecs&lt;/h2&gt;
+&lt;h3 id=&quot;configuration-based-dependencies-for-podspecs&quot;&gt;Configuration-based dependencies for Podspecs&lt;/h3&gt;
 
 &lt;p&gt;CocoaPods has long supported excluding dependencies from configurations in which they are not needed. For example, debug-only dependencies used during development can be included using the &lt;code&gt;:configurations&lt;/code&gt; option on the &lt;code&gt;pod&lt;/code&gt; Podfile DSL:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
@@ -99,7 +99,9 @@
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
 &lt;/div&gt;
-&lt;h2 id=&quot;code-coverage-in-test-specs&quot;&gt;Code Coverage in Test Specs&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Only &lt;code&gt;Debug&lt;/code&gt; and &lt;code&gt;Release&lt;/code&gt; configurations are currently supported. Support for specifying a custom configuration name might be added in the future. &lt;/p&gt;
+
+&lt;h3 id=&quot;code-coverage-in-test-specs&quot;&gt;Code Coverage in Test Specs&lt;/h3&gt;
 
 &lt;p&gt;CocoaPods first introduced the ability to configure the generated Xcode schemes for Podspecs in version &lt;a href=&quot;/CocoaPods-1.7.0-beta&quot;&gt;1.7&lt;/a&gt;. This release adds support for enabling code coverage for tests by specifying the &lt;code&gt;code_coverage&lt;/code&gt; option within the &lt;code&gt;scheme&lt;/code&gt; DSL:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
@@ -131,7 +133,7 @@
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
 &lt;/div&gt;
-&lt;h2 id=&quot;swift-version-variants&quot;&gt;Swift Version Variants&lt;/h2&gt;
+&lt;h3 id=&quot;swift-version-variants&quot;&gt;Swift Version Variants&lt;/h3&gt;
 
 &lt;p&gt;As new Swift versions are released, Pod authors have added support for compiling their source with multiple Swift versions by using the &lt;code&gt;swift_versions&lt;/code&gt; Podspec DSL.&lt;/p&gt;
 
@@ -211,7 +213,7 @@
 
 &lt;p&gt;This ensures the correct Swift version is used for each target that depends on the Pod.&lt;/p&gt;
 
-&lt;h2 id=&quot;use_frameworks!-linkage-customization&quot;&gt;&lt;code&gt;use_frameworks!&lt;/code&gt; Linkage Customization&lt;/h2&gt;
+&lt;h3 id=&quot;use_frameworks!-linkage-customization&quot;&gt;&lt;code&gt;use_frameworks!&lt;/code&gt; Linkage Customization&lt;/h3&gt;
 
 &lt;p&gt;iOS 8.0 introduced the ability for apps to ship dynamically linked frameworks. To support this, CocoaPods introduced the &lt;code&gt;use_frameworks!&lt;/code&gt; DSL which made all Pods be compiled as dynamically-linked frameworks. Frameworks do not have any inherent &lt;em&gt;linkage&lt;/em&gt;, but Swift initially required dynamic linking to be used in iOS apps. It is possible to wrap a statically-linked library in a &lt;code&gt;.framework&lt;/code&gt; bundle.&lt;/p&gt;
 
@@ -236,7 +238,7 @@
 &lt;/div&gt;
 &lt;p&gt;This is the first step in providing more control to CocoaPods users over how Pods are packaged and linked into their dependent binaries. For more details, check out the &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/9099&quot;&gt;RFC&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;what&amp;#39;s-next&quot;&gt;What&amp;#39;s Next&lt;/h2&gt;
+&lt;h3 id=&quot;what&amp;#39;s-next&quot;&gt;What&amp;#39;s Next&lt;/h3&gt;
 
 &lt;p&gt;In future versions, we will continue to expand the customization points for how pods are integrated into projects.&lt;/p&gt;
 
