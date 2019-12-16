@@ -21,6 +21,7 @@ This release introduces support for Pod authors to ship vendored XCFrameworks us
 Pod::Spec.new do |s|
   s.name         = 'ToastLib'
   s.version      = '1.0.0'
+
   # ...rest of attributes here
 
   s.vendored_frameworks = 'ButterLib.xcframework'
@@ -88,7 +89,9 @@ Given the following Pod:
 Pod::Spec.new do |s|
   s.name         = 'CannonPodder'
   s.version      = '1.0.0'
-  # ...
+
+  # ...rest of attributes here
+  
   s.swift_versions = ['4.0', '5.0']
 end
 ```
