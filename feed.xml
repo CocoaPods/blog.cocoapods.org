@@ -8,6 +8,247 @@
   
   
   <item>
+    <title>CocoaPods 1.9 Beta has arrived!</title>
+    <description>&lt;p&gt;&lt;em&gt;CocoaPods 1.9&lt;/em&gt; adds support for XCFrameworks, configuration-based dependencies for pod authors, code coverage in generated schemes, and other enhancements and bug fixes!&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;This release includes several quality-of-life enhancements in addition to important bug fixes.&lt;/p&gt;
+
+&lt;h2 id=&quot;xcframework-support&quot;&gt;XCFramework Support&lt;/h2&gt;
+
+&lt;p&gt;With the release of Xcode 11, Apple introduced a new bundle format using the &lt;code&gt;.xcframework&lt;/code&gt; file extension. This format allows multiple copies of a framework compiled for different architectures and platforms to be combined into a single structure. XCFrameworks are also required for binary dependencies to support the new &lt;em&gt;Catalyst&lt;/em&gt; platform introduced in macOS &lt;em&gt;Catalina&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;This release introduces support for Pod authors to ship vendored XCFrameworks using the existing &lt;a href=&quot;https://guides.cocoapods.org/syntax/podspec.html#vendored_frameworks&quot;&gt;vendored_framework&lt;/a&gt; DSL. Example:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;ruby language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;no&quot;&gt;Pod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;ToastLib&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;version&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;1.0.0&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# ...rest of attributes here&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vendored_frameworks&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;ButterLib.xcframework&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;For apps that include Pods which vendor dynamic frameworks, a new script phase with the name &lt;code&gt;[CP] Prepare Artifacts&lt;/code&gt; will be added to the project to facilitate including the &lt;code&gt;.xcframework&lt;/code&gt; into the app bundle.&lt;/p&gt;
+
+&lt;p&gt;For additional details on how to create an XCFramework, check out Apple&amp;#39;s WWDC talk &lt;a href=&quot;https://developer.apple.com/videos/play/wwdc2019/416/&quot;&gt;Binary Frameworks in Swift&lt;/a&gt; which introduced the format.&lt;/p&gt;
+
+&lt;h2 id=&quot;configuration-based-dependencies-for-podspecs&quot;&gt;Configuration-based dependencies for Podspecs&lt;/h2&gt;
+
+&lt;p&gt;CocoaPods has long supported excluding dependencies from configurations in which they are not needed. For example, debug-only dependencies used during development can be included using the &lt;code&gt;:configurations&lt;/code&gt; option on the &lt;code&gt;pod&lt;/code&gt; Podfile DSL:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;ruby language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;BananaApp&amp;#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;pod&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Toast&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:configurations&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Debug&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;This release extends this functionality to Pod authors. The same &lt;code&gt;:configurations&lt;/code&gt; option may now be used with the &lt;code&gt;dependency&lt;/code&gt; Podspec DSL:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;ruby language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;no&quot;&gt;Pod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;ToastLib&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;version&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;1.0.0&amp;#39;&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# ...rest of attributes here&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dependency&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;ButterDebugging&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:configurations&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Debug&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dependency&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;ErrorReportingTool&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:configurations&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Release&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;code-coverage-in-test-specs&quot;&gt;Code Coverage in Test Specs&lt;/h2&gt;
+
+&lt;p&gt;CocoaPods first introduced the ability to configure the generated Xcode schemes for Podspecs in version &lt;a href=&quot;/CocoaPods-1.7.0-beta&quot;&gt;1.7&lt;/a&gt;. This release adds support for enabling code coverage for tests by specifying the &lt;code&gt;code_coverage&lt;/code&gt; option within the &lt;code&gt;scheme&lt;/code&gt; DSL:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;ruby language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;no&quot;&gt;Pod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Networking&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;version&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;1.0.0&amp;#39;&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;# ...rest of attributes here&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Tests&amp;#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scheme&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;ss&quot;&gt;:code_coverage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:environment_variables&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;FOO&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;BAR&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;swift-version-variants&quot;&gt;Swift Version Variants&lt;/h2&gt;
+
+&lt;p&gt;As new Swift versions are released, Pod authors have added support for compiling their source with multiple Swift versions by using the &lt;code&gt;swift_versions&lt;/code&gt; Podspec DSL.&lt;/p&gt;
+
+&lt;p&gt;To better support this, the Podfile DSL was updated in &lt;a href=&quot;/CocoaPods-1.7.0-beta&quot;&gt;1.7&lt;/a&gt; to allow users to specify what versions of Swift their apps support, using the &lt;code&gt;supports_swift_version&lt;/code&gt; DSL.&lt;/p&gt;
+
+&lt;p&gt;If two different targets include the same dependency but require &lt;em&gt;different&lt;/em&gt; Swift versions, CocoaPods will now create multiple different targets for the same Pod to accommodate the different Swift versions used.&lt;/p&gt;
+
+&lt;p&gt;Given the following Pod:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;ruby language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;no&quot;&gt;Pod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;CannonPodder&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;version&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;1.0.0&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# ...&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;swift_versions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;4.0&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;5.0&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;and the following Podfile:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;ruby language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;SampleApp&amp;#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;supports_swift_version&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt; 5.0&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;pod&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;CannonPodder&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;OtherApp&amp;#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;supports_swift_version&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;gt;= 5.0&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;pod&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;CannonPodder&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;Two different versions of the &lt;code&gt;CannonPodder&lt;/code&gt; target will be created.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;/article&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;div style=&quot;background-color:white;&quot;&gt;
+&lt;section class=&quot;container&quot;&gt;&lt;div class=&quot;row&quot;&gt;&lt;article class=&quot;content col-md-10 col-md-offset-1&quot;&gt;&lt;center&gt;
+&lt;a href=&#39;/assets/blog_img/CocoaPods-1.9.0/swift_variants.png &#39;&gt;&lt;img  src=&#39;/assets/blog_img/CocoaPods-1.9.0/swift_variants.png &#39;&gt;&lt;/a&gt;&lt;/center&gt;&lt;/article&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;/div&gt;
+&lt;section class=&quot;container&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;&lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;This ensures the correct Swift version is used for each target that depends on the Pod.&lt;/p&gt;
+
+&lt;h2 id=&quot;use_frameworks!-linkage-customization&quot;&gt;&lt;code&gt;use_frameworks!&lt;/code&gt; Linkage Customization&lt;/h2&gt;
+
+&lt;p&gt;iOS 8.0 introduced the ability for apps to ship dynamically linked frameworks. To support this, CocoaPods introduced the &lt;code&gt;use_frameworks!&lt;/code&gt; DSL which made all Pods be compiled as dynamically-linked frameworks. Frameworks do not have any inherent &lt;em&gt;linkage&lt;/em&gt;, but Swift initially required dynamic linking to be used in iOS apps. It is possible to wrap a statically-linked library in a &lt;code&gt;.framework&lt;/code&gt; bundle.&lt;/p&gt;
+
+&lt;p&gt;Now that Swift supports static linking, CocoaPods has expanded this DSL to allow specifying the type of linkage preferred.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;ruby language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;use_frameworks!&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:linkage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:static&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;This is the first step in providing more control to CocoaPods users over how Pods are packaged and linked into their dependent binaries. For more details, check out the &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/9099&quot;&gt;RFC&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;what&amp;#39;s-next&quot;&gt;What&amp;#39;s Next&lt;/h2&gt;
+
+&lt;p&gt;In future versions, we will continue to expand the customization points for how pods are integrated into projects.&lt;/p&gt;
+
+&lt;p&gt;Thanks to all of our contributors who helped make this release happen!&lt;/p&gt;
+
+&lt;p&gt;Checkout the &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/releases/tag/1.9.0.beta.1&quot;&gt;changelog&lt;/a&gt; to see the full list of changes.&lt;/p&gt;
+</description>
+    <pubDate>Fri, 13 Dec 2019 00:00:00 +0000</pubDate>
+    <link>https://blog.cocoapods.org/CocoaPods-1.9.0-beta</link>
+    <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.9.0-beta</guid>
+  </item>
+  
+  
+  
+  <item>
     <title>CocoaPods 1.8 Beta is Here!</title>
     <description>&lt;p&gt;&lt;em&gt;CocoaPods 1.8&lt;/em&gt; switches the CDN as the default spec repo source and comes with a few enhancements!&lt;/p&gt;
 

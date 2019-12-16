@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+      <title>CocoaPods 1.9 Beta has arrived! - CocoaPods Blog</title>
+    
+
+    <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <link rel="alternate" type="application/rss+xml" title="CocoaPods Blog" href="/feed.xml">
+
+    <meta charset="utf-8" /><meta content="cocoapods objective-c objc swift package manager libraries documentation search pods podspec podfile cocoa apple ios library" name="keywords" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="The Dependency Manager for iOS &amp; Mac projects" name="description" /><meta content="CocoaPods Dev Team" name="author" /><meta content="summary" name="twitter:card" /><meta content="@CocoaPods" name="twitter:site" /><meta content="@CocoaPods" name="twitter:creator" /><meta content="CocoaPods.org" name="twitter:title" /><meta content="The Dependency Manager for iOS &amp; Mac projects." name="twitter:description" /><meta content="https://www.cocoapods.org/" name="twitter:url" />
+    <link rel="shortcut icon" href="https://cocoapods.org/favicons/favicon.ico" type="image/x-icon" /><link rel="apple-touch-icon" href="https://cocoapods.org/favicons/apple-touch-icon.png" /><link rel="apple-touch-icon" sizes="57x57" href="https://cocoapods.org/favicons/apple-touch-icon-57x57.png" /><link rel="apple-touch-icon" sizes="60x60" href="https://cocoapods.org/favicons/apple-touch-icon-60x60.png" /><link rel="apple-touch-icon" sizes="72x72" href="https://cocoapods.org/favicons/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon" sizes="76x76" href="https://cocoapods.org/favicons/apple-touch-icon-76x76.png" /><link rel="apple-touch-icon" sizes="114x114" href="https://cocoapods.org/favicons/apple-touch-icon-114x114.png" /><link rel="apple-touch-icon" sizes="120x120" href="https://cocoapods.org/favicons/apple-touch-icon-120x120.png" /><link rel="apple-touch-icon" sizes="144x144" href="https://cocoapods.org/favicons/apple-touch-icon-144x144.png" /><link rel="apple-touch-icon" sizes="152x152" href="https://cocoapods.org/favicons/apple-touch-icon-152x152.png" />
+
+    <link rel="stylesheet" href="/assets/bootstrap-3b61caa441fab92578453d6681fbf963.css">
+    <link rel="stylesheet" href="/assets/main-df7f28d697ab31d8aa461b8f8ff0c7e4.css">
+    <link rel="stylesheet" href="/assets/blog-a6cba0ad1ceb964c9a5a5387e033c3ff.css">
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-29866548-3', 'cocoapods.org');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="glyphicon glyphicon-plus"></span></button><a class="navbar-brand" href="https://cocoapods.org"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="https://cocoapods.org/app">App</a></li><li><a href="https://cocoapods.org/about">About</a></li><li><a href="https://guides.cocoapods.org">Guides</a></li><li class="active"><a href="https://blog.cocoapods.org">Blog</a></li></ul></div></section></nav>
+
+    <div id ="">
+<section class="container" >
+  <article class="row">
+  <header class="col-md-8 col-md-offset-2 headline blog-post">
+    
+      <h1>CocoaPods 1.9 Beta has arrived!</h1>
+    
+    
+  </header>
+  </article>
+</section>
+</div>
+
+<section id="content-wrapper" class="post">
+  <section class="container">
+    <article class="row">
+      <article class="author metadata col-md-2 col-md-push-10">
+        <header>
+          
+            
+              <img class="gravatar large" src="https://gravatar.com/avatar/9c45154bad4d993c88fb63bd89aae901?s=144" height=72 width=72>
+            
+            
+              
+                <p><a href="https://twitter.com/_amorde">Eric Amorde</a></p>
+              
+            
+             <p>13 December 2019</p>
+
+            
+              <a href="https://twitter.com/_amorde" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @_amorde
+              </a>
+            
+        </header>
+      </article>
+    
+      <article class="content col-md-8">
+        <p><em>CocoaPods 1.9</em> adds support for XCFrameworks, configuration-based dependencies for pod authors, code coverage in generated schemes, and other enhancements and bug fixes!</p>
+
+<!-- more -->
+
+<p>This release includes several quality-of-life enhancements in addition to important bug fixes.</p>
+
+<h2 id="xcframework-support">XCFramework Support</h2>
+
+<p>With the release of Xcode 11, Apple introduced a new bundle format using the <code>.xcframework</code> file extension. This format allows multiple copies of a framework compiled for different architectures and platforms to be combined into a single structure. XCFrameworks are also required for binary dependencies to support the new <em>Catalyst</em> platform introduced in macOS <em>Catalina</em>.</p>
+
+<p>This release introduces support for Pod authors to ship vendored XCFrameworks using the existing <a href="https://guides.cocoapods.org/syntax/podspec.html#vendored_frameworks">vendored_framework</a> DSL. Example:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="no">Pod</span><span class="o">::</span><span class="no">Spec</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">name</span>         <span class="o">=</span> <span class="s1">&#39;ToastLib&#39;</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">version</span>      <span class="o">=</span> <span class="s1">&#39;1.0.0&#39;</span>
+  <span class="c1"># ...rest of attributes here</span>
+
+  <span class="n">s</span><span class="o">.</span><span class="n">vendored_frameworks</span> <span class="o">=</span> <span class="s1">&#39;ButterLib.xcframework&#39;</span>
+<span class="k">end</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>For apps that include Pods which vendor dynamic frameworks, a new script phase with the name <code>[CP] Prepare Artifacts</code> will be added to the project to facilitate including the <code>.xcframework</code> into the app bundle.</p>
+
+<p>For additional details on how to create an XCFramework, check out Apple&#39;s WWDC talk <a href="https://developer.apple.com/videos/play/wwdc2019/416/">Binary Frameworks in Swift</a> which introduced the format.</p>
+
+<h2 id="configuration-based-dependencies-for-podspecs">Configuration-based dependencies for Podspecs</h2>
+
+<p>CocoaPods has long supported excluding dependencies from configurations in which they are not needed. For example, debug-only dependencies used during development can be included using the <code>:configurations</code> option on the <code>pod</code> Podfile DSL:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">target</span> <span class="s1">&#39;BananaApp&#39;</span> <span class="k">do</span>
+  <span class="n">pod</span> <span class="s1">&#39;Toast&#39;</span><span class="p">,</span> <span class="ss">:configurations</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s1">&#39;Debug&#39;</span><span class="o">]</span>
+<span class="k">end</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>This release extends this functionality to Pod authors. The same <code>:configurations</code> option may now be used with the <code>dependency</code> Podspec DSL:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="no">Pod</span><span class="o">::</span><span class="no">Spec</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">name</span>         <span class="o">=</span> <span class="s1">&#39;ToastLib&#39;</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">version</span>      <span class="o">=</span> <span class="s1">&#39;1.0.0&#39;</span>
+
+  <span class="c1"># ...rest of attributes here</span>
+
+  <span class="n">s</span><span class="o">.</span><span class="n">dependency</span> <span class="s1">&#39;ButterDebugging&#39;</span><span class="p">,</span> <span class="ss">:configurations</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s1">&#39;Debug&#39;</span><span class="o">]</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">dependency</span> <span class="s1">&#39;ErrorReportingTool&#39;</span><span class="p">,</span> <span class="ss">:configurations</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="s1">&#39;Release&#39;</span><span class="o">]</span>
+<span class="k">end</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<h2 id="code-coverage-in-test-specs">Code Coverage in Test Specs</h2>
+
+<p>CocoaPods first introduced the ability to configure the generated Xcode schemes for Podspecs in version <a href="/CocoaPods-1.7.0-beta">1.7</a>. This release adds support for enabling code coverage for tests by specifying the <code>code_coverage</code> option within the <code>scheme</code> DSL:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="no">Pod</span><span class="o">::</span><span class="no">Spec</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">name</span>         <span class="o">=</span> <span class="s1">&#39;Networking&#39;</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">version</span>      <span class="o">=</span> <span class="s1">&#39;1.0.0&#39;</span>
+
+  <span class="c1"># ...rest of attributes here</span>
+
+  <span class="n">s</span><span class="o">.</span><span class="n">test_spec</span> <span class="s1">&#39;Tests&#39;</span> <span class="k">do</span> <span class="o">|</span><span class="n">test_spec</span><span class="o">|</span>
+    <span class="n">test_spec</span><span class="o">.</span><span class="n">scheme</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="ss">:code_coverage</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span> <span class="ss">:environment_variables</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="s1">&#39;FOO&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;BAR&#39;</span> <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<h2 id="swift-version-variants">Swift Version Variants</h2>
+
+<p>As new Swift versions are released, Pod authors have added support for compiling their source with multiple Swift versions by using the <code>swift_versions</code> Podspec DSL.</p>
+
+<p>To better support this, the Podfile DSL was updated in <a href="/CocoaPods-1.7.0-beta">1.7</a> to allow users to specify what versions of Swift their apps support, using the <code>supports_swift_version</code> DSL.</p>
+
+<p>If two different targets include the same dependency but require <em>different</em> Swift versions, CocoaPods will now create multiple different targets for the same Pod to accommodate the different Swift versions used.</p>
+
+<p>Given the following Pod:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="no">Pod</span><span class="o">::</span><span class="no">Spec</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">name</span>         <span class="o">=</span> <span class="s1">&#39;CannonPodder&#39;</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">version</span>      <span class="o">=</span> <span class="s1">&#39;1.0.0&#39;</span>
+  <span class="c1"># ...</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">swift_versions</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;4.0&#39;</span><span class="p">,</span> <span class="s1">&#39;5.0&#39;</span><span class="o">]</span>
+<span class="k">end</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>and the following Podfile:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">target</span> <span class="s1">&#39;SampleApp&#39;</span> <span class="k">do</span>
+  <span class="n">supports_swift_version</span> <span class="s1">&#39;&lt; 5.0&#39;</span>
+  <span class="n">pod</span> <span class="s1">&#39;CannonPodder&#39;</span>
+<span class="k">end</span>
+
+<span class="n">target</span> <span class="s1">&#39;OtherApp&#39;</span> <span class="k">do</span>
+  <span class="n">supports_swift_version</span> <span class="s1">&#39;&gt;= 5.0&#39;</span>
+  <span class="n">pod</span> <span class="s1">&#39;CannonPodder&#39;</span>
+<span class="k">end</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Two different versions of the <code>CannonPodder</code> target will be created.</p>
+
+<p><center>
+</article>
+</div>
+</section>
+<div style="background-color:white;">
+<section class="container"><div class="row"><article class="content col-md-10 col-md-offset-1"><center>
+<a href='/assets/blog_img/CocoaPods-1.9.0/swift_variants.png '><img  src='/assets/blog_img/CocoaPods-1.9.0/swift_variants.png '></a></center></article>
+</div>
+</section>
+</div>
+<section class="container">
+<div class="row"><article class="content col-md-8 col-md-offset-2"></p>
+
+<p></center></p>
+
+<p>This ensures the correct Swift version is used for each target that depends on the Pod.</p>
+
+<h2 id="use_frameworks!-linkage-customization"><code>use_frameworks!</code> Linkage Customization</h2>
+
+<p>iOS 8.0 introduced the ability for apps to ship dynamically linked frameworks. To support this, CocoaPods introduced the <code>use_frameworks!</code> DSL which made all Pods be compiled as dynamically-linked frameworks. Frameworks do not have any inherent <em>linkage</em>, but Swift initially required dynamic linking to be used in iOS apps. It is possible to wrap a statically-linked library in a <code>.framework</code> bundle.</p>
+
+<p>Now that Swift supports static linking, CocoaPods has expanded this DSL to allow specifying the type of linkage preferred.</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">use_frameworks!</span> <span class="ss">:linkage</span> <span class="o">=&gt;</span> <span class="ss">:static</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>This is the first step in providing more control to CocoaPods users over how Pods are packaged and linked into their dependent binaries. For more details, check out the <a href="https://github.com/CocoaPods/CocoaPods/issues/9099">RFC</a>.</p>
+
+<h2 id="what&#39;s-next">What&#39;s Next</h2>
+
+<p>In future versions, we will continue to expand the customization points for how pods are integrated into projects.</p>
+
+<p>Thanks to all of our contributors who helped make this release happen!</p>
+
+<p>Checkout the <a href="https://github.com/CocoaPods/CocoaPods/releases/tag/1.9.0.beta.1">changelog</a> to see the full list of changes.</p>
+
+      </article>
+    </article>
+  </section>
+</section>
+
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2019-12-13-CocoaPods-1.9.0-beta.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/9c45154bad4d993c88fb63bd89aae901" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/_amorde">Follow _amorde</a></div></article></div></section></section>
+
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaPods-1.8.0-beta" title="CocoaPods 1.8 Beta is Here!"><header><h4>Previous Post</h4></header><h3>CocoaPods 1.8 Beta is Here!</h3><p>By Dimitris Koutsogiorgas</p><a class="chevron_placeholder back" href="/CocoaPods-1.8.0-beta"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+    <footer class="page-footer"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><h4>CocoaPods is a project from</h4><p class="contributors"> <a href="https://twitter.com/dnkoutso">Dimitris Koutsogiorgas</a>, <a href="https://dantoml.com">Danielle Tomlinson</a>, <a href="https://github.com/amorde">Eric Amorde</a>, <a href="https://orta.io">Orta Therox</a>, <a href="https://github.com/paulb777">Paul Beusterien</a>, <a href="https://segiddins.me">Samuel Giddins</a>, and <a href="https://cocoapods.org/about#team">The CocoaPods Dev Team</a> with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p><h4>Lovingly sponsored by</h4><p class="sponsors"><a href="http://artsy.net">Artsy</a>, <a href="http://www.usebutton.com">Button</a>, <a href="http://www.capitalone.io">Capital One</a>, <a href="https://circleci.com">CircleCI</a>, <a href="http://discontinuity.eu">Discontinuity</a>, <a href="http://www.fngtps.com">Fingertips</a>, <a href="https://developers.google.com">Google</a>, <a href="https://www.heroku.com">Heroku</a>, <a href="https://netlify.com">Netlify</a>, <a href="https://realm.io">Realm</a>, <a href="http://www.rubymotion.com">RubyMotion</a>, <a href="https://www.sauspiel.de">Sauspiel</a>, <a href="https://www.slack.com">Slack</a>, <a href="https://www.soundcloud.com">SoundCloud</a>, <a href="https://www.stripe.com">Stripe</a>, <a href="https://www.squareup.com">Square</a>, and  <a href="http://www.technologyastronauts.ch">Technology&nbsp;Astronauts</a>.</p></article></div></section></footer><footer class="footer-links"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><a class="cocoapods-small-logo" href="https://cocoapods.org"></a><ul><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/using/troubleshooting.html">Support</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://github.com/CocoaPods/CocoaPods">GitHub Repo</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://status.cocoapods.org">Web Properties Status</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://twitter.com/CocoaPods">@CocoaPods</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://groups.google.com/group/cocoapods">Mailing List</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/about"><span class="visible-lg-span">CocoaPods</span> Dev Team</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/syntax/podfile.html">Podfile Doc<span class="hidden-lg-span">s</span><span class="visible-lg-span">umentation</span></a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/legal">Legal / Conduct</a></li></ul></article></div></section></footer>
+    <script src="/assets/blog-c2911afb0e1e77d79b486c5c39fe0cc6.js"></script>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  </body>
+</html>

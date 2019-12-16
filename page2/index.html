@@ -58,6 +58,52 @@
 <article class="post">
   <header>
     
+    <h2 class="post-title"><a href="/Sharding">CocoaPods Specs Repo Sharding</a></h2>
+  </header>
+
+  
+      <p>In March, CocoaPods hit an unfortunate problem with our <a href="http://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem/">Specs Repo</a> being rate limited. </p>
+
+<p>We announced that we were <a href="http://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem/#too-many-directory-entries">planning on Sharding</a> the Specs Repo, but were hesitant to do it instantly. Now over six months later we are planning on running the scripts.</p>
+
+<ul>
+<li>If you are using CocoaPods <code>1.x</code> - you should not see any changes.</li>
+<li>If you are using CocoaPods <code>0.39</code> and below, you will see an error saying that your version of CocoaPods is not supported. Previous to this, our minimum version was <code>0.32</code>.</li>
+</ul>
+
+<p>For people who want to continue using 0.x versions, we will be replicating the Specs repo from the commit before the repo was sharded. This means you can add:</p>
+
+<pre>
+<code>
+source "https://github.com/CocoaPods/Old-Specs"
+</code>
+</pre>
+
+<p>To the top of your Podfile, and CocoaPods will only use the archived repo, instead of using the new repo structure. You will also need to set your local Specs repo to a version before the transition:</p>
+
+<pre>
+<code>
+cd ~/.cocoapods/repos/master/
+git fetch origin master
+git checkout v0.32.1
+</code>
+</pre>
+
+<p>To run <code>pod install</code>, you will also  need to use <code>--no-repo-update</code>.</p>
+
+<p>We do not have the resources to maintain multiple versions of CocoaPods in our spare time, and so we recommend that instead of doing the above, you migrate to the latest versions of CocoaPods in your projects.</p>
+
+<hr>
+
+<p>We are planning to do it on Friday November the 11th, so there will be scheduled downtime on pushing new Pods to Trunk during the process of updating and verifying that it was successful.</p>
+
+  
+
+</article>
+
+<article class="post">
+  <header>
+    
     <h2 class="post-title"><a href="/CocoaPods-1.1.0">CocoaPods 1.1.0 - Xcode 8 support, improved support for new Swift versions, extensions, frameworks, and more</a></h2>
   </header>
 
@@ -220,30 +266,6 @@ high volume of clones, by the default options we chose to clone this repo.</p>
 
 
       <p><a href="/CocoaPods-App">Read on →</a></p>
-  
-
-</article>
-
-<article class="post">
-  <header>
-    
-    <h2 class="post-title"><a href="/Release-Versions-Only">Release Versions Only</a></h2>
-  </header>
-
-  
-      <p>The main CocoaPods website, <a href="https://cocoapods.org">cocoapods.org</a>, lets you search for all versions of a pod.
-That includes prerelease versions.
-As a result, when searching for a pod with a prerelease version, the latest prerelease version is shown in the result list.</p>
-
-<p>This sounds good in principle, but the behaviour is at odds with how the <code>pod</code> command operates.
-The default there is to use the latest <em>released</em> pod version.
-As a result of this – as we noticed via our stats system – usage of prerelease versions is minimal, and showing the latest prerelease version on <a href="https://cocoapods.org">cocoapods.org</a> violates expectations as to what <code>pod install</code> will actually install.</p>
-
-<p>Therefore, we will be switching to the <code>pod</code> command default also on <a href="https://cocoapods.org">cocoapods.org</a>, meaning in the results, we will show only released versions.
-We&#39;ve prepared all systems for the switch and will flip it on December 31st 2015 to start into the new year with the brand new search engine behavior.</p>
-
-<p>Happy New Year, pod friends!</p>
-
   
 
 </article>
