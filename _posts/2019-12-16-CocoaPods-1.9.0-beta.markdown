@@ -11,7 +11,7 @@ _CocoaPods 1.9_ adds support for XCFrameworks, configuration-based dependencies 
 
 This release includes several quality-of-life enhancements in addition to important bug fixes.
 
-## XCFramework Support
+### XCFramework Support
 
 With the release of Xcode 11, Apple introduced a new bundle format using the `.xcframework` file extension. This format allows multiple copies of a framework compiled for different architectures and platforms to be combined into a single structure. XCFrameworks are also required for binary dependencies to support the new _Catalyst_ platform introduced in macOS _Catalina_.
 
@@ -32,7 +32,7 @@ For apps that include Pods which vendor dynamic frameworks, a new script phase w
 
 For additional details on how to create an XCFramework, check out Apple's WWDC talk [Binary Frameworks in Swift](https://developer.apple.com/videos/play/wwdc2019/416/) which introduced the format.
 
-## Configuration-based dependencies for Podspecs
+### Configuration-based dependencies for Podspecs
 
 CocoaPods has long supported excluding dependencies from configurations in which they are not needed. For example, debug-only dependencies used during development can be included using the `:configurations` option on the `pod` Podfile DSL:
 
@@ -56,7 +56,9 @@ Pod::Spec.new do |s|
 end
 ```
 
-## Code Coverage in Test Specs
+**Note**: Only `Debug` and `Release` configurations are currently supported. Support for specifying a custom configuration name might be added in the future. 
+
+### Code Coverage in Test Specs
 
 CocoaPods first introduced the ability to configure the generated Xcode schemes for Podspecs in version [1.7]. This release adds support for enabling code coverage for tests by specifying the `code_coverage` option within the `scheme` DSL:
 
@@ -75,7 +77,7 @@ Pod::Spec.new do |s|
 end
 ```
 
-## Swift Version Variants
+### Swift Version Variants
 
 As new Swift versions are released, Pod authors have added support for compiling their source with multiple Swift versions by using the `swift_versions` Podspec DSL.
 
@@ -118,7 +120,7 @@ Two different versions of the `CannonPodder` target will be created.
 
 This ensures the correct Swift version is used for each target that depends on the Pod.
 
-## `use_frameworks!` Linkage Customization
+### `use_frameworks!` Linkage Customization
 
 iOS 8.0 introduced the ability for apps to ship dynamically linked frameworks. To support this, CocoaPods introduced the `use_frameworks!` DSL which made all Pods be compiled as dynamically-linked frameworks. Frameworks do not have any inherent _linkage_, but Swift initially required dynamic linking to be used in iOS apps. It is possible to wrap a statically-linked library in a `.framework ` bundle.
 
@@ -130,7 +132,7 @@ use_frameworks! :linkage => :static
 
 This is the first step in providing more control to CocoaPods users over how Pods are packaged and linked into their dependent binaries. For more details, check out the [RFC][use-frameworks-linkage-rfc].
 
-## What's Next
+### What's Next
 
 In future versions, we will continue to expand the customization points for how pods are integrated into projects.
 
