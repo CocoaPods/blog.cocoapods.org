@@ -106,7 +106,7 @@ target 'SampleApp' do
   pod 'CannonPodder'
 end
 
-target 'OtherApp' do
+target 'SecondApp' do
   supports_swift_version '>= 5.0'
   pod 'CannonPodder'
 end
