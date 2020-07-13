@@ -1,0 +1,70 @@
+---
+layout: post
+title:  "1.10 Beta Begins!"
+author: dnkoutso
+categories: cocoapods releases
+---
+
+_CocoaPods 1.10_ drops support for Ruby 2.0, adds support for Ruby 2.7 and adds initial support for Xcode 12 as well as a revamped XCFramework integration process!
+
+<!-- more -->
+
+### Ruby 2.0 is out, 2.7 is in!
+
+In the 1.10 release, CocoaPods no longer supports Ruby 2.0 and bumps the minimum version to Ruby 2.3.3! Support for Ruby 2.0 has been dropped for years and macOS with High Sierra has been shipping with Ruby 2.3.3 as the default version.
+
+We hope that this update will unblock other gems that in the past were blocked by CocoaPods as well as address several vulnerabilities that have been fixed since then.
+
+Finally, all CocoaPods related gems have been updated to work with Ruby 2.7 and all known warnings have been fixed during installation.
+
+### Revamped XCFramework Integration
+
+With this release, the biggest change is the removal of the `Prepare Artifacts` script. Similar to the [reworked dSYM support](https://github.com/CocoaPods/CocoaPods/pull/9547) in this release, the logic to embed a `.framework` slice has now moved from the app to each pod target with a new script phase, `Copy XCFrameworks`. Handling of dSYMs and bitcode symbol maps have also moved.
+
+This rework assisted in fixing several bugs and enabled the support of additional features such as static library support and framework user targets!
+
+### Xcode 12 Support
+
+With CocoaPods 1.10 initial support for Xcode 12 has been added. Xcode 12 is still in beta, so it is expected that a few more updates will be required to fully support it. Please file any [issues](https://github.com/CocoaPods/CocoaPods/issues/new) for us to diagnose and fix prior to 1.10 launching!
+
+### `post_integrate` Hook DSL
+
+CocoaPods has always offered various hooks into its installation lifecycle. This allows users to customize several aspects of the installation process and perform changes to their project. With this release, we are adding a new `post_integrate` hook that is executed after the CocoaPods integration step is completed.
+
+In your `Podfile`:
+
+```ruby
+post_integrate do |installer|
+    puts 'Perform post integration steps here!'
+end
+```
+
+Integration is the last step of the installation process and is responsible for integrating the generated `Pods.xcodeproj` with the user's project. This hook will be executed right after this is completed.
+
+**Note**: This hook is executed _after_ all `.xcodeproj` have been saved (written to disk). Performing changes to the `Pods.xcodeproj` will require an additional `save` but that can be slow. It is recommended to use a `post_install` hook instead if you anticipate making changes to the `Pods.xcodeproj` before it gets saved to disk.
+
+### `ensure_bundler!` DSL
+
+Many projects use [Bundler](https://bundler.io/) under the hood and when working with CocoaPods. That is because Bundler ensures a consistent environment which can be useful for teams that work on the same project.
+
+In 1.10, a new `ensure_bundler!` DSL can be added to your `Podfile` to specify a version requirement of the Bundler version.
+
+Here's an example:
+
+```ruby
+ensure_bundler! '> 2.0'
+```
+
+That's it!
+
+### What's Next
+
+CocoaPods has come a long way since its inception, and we hope to revisit some of the older implementations regarding resource support (not resource bundles) that have been the source of issues for larger repositories that ship multiple apps.
+
+Additionally, we are still considering adding support for local sources that would be helpful for monorepos and allow CocoaPods to discover local pods automatically.
+
+Thanks to all of our contributors who helped make this release happen!
+
+Checkout the [changelog] to see the full list of changes.
+
+[changelog]: https://github.com/CocoaPods/CocoaPods/releases/tag/1.10.0.beta.1
