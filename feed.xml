@@ -8,6 +8,103 @@
   
   
   <item>
+    <title>1.10 Beta Begins!</title>
+    <description>&lt;p&gt;&lt;em&gt;CocoaPods 1.10&lt;/em&gt; drops support for Ruby 2.0, adds support for Ruby 2.7 and adds initial support for Xcode 12 as well as a revamped XCFramework integration process!&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h3 id=&quot;ruby-2.0-is-out,-2.7-is-in!&quot;&gt;Ruby 2.0 is out, 2.7 is in!&lt;/h3&gt;
+
+&lt;p&gt;In the 1.10 release, CocoaPods no longer supports Ruby 2.0 and bumps the minimum version to Ruby 2.3.3! Support for Ruby 2.0 has been dropped for years and macOS with High Sierra has been shipping with Ruby 2.3.3 as the default version.&lt;/p&gt;
+
+&lt;p&gt;We hope that this update will unblock other gems that in the past were blocked by CocoaPods as well as address several vulnerabilities that have been fixed since then.&lt;/p&gt;
+
+&lt;p&gt;Finally, all CocoaPods related gems have been updated to work with Ruby 2.7 and all known warnings have been fixed during installation.&lt;/p&gt;
+
+&lt;h3 id=&quot;revamped-xcframework-integration&quot;&gt;Revamped XCFramework Integration&lt;/h3&gt;
+
+&lt;p&gt;With this release, the biggest change is the removal of the &lt;code&gt;Prepare Artifacts&lt;/code&gt; script. Similar to the &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/pull/9547&quot;&gt;reworked dSYM support&lt;/a&gt; in this release, the logic to embed a &lt;code&gt;.framework&lt;/code&gt; slice has now moved from the app to each pod target with a new script phase, &lt;code&gt;Copy XCFrameworks&lt;/code&gt;. Handling of dSYMs and bitcode symbol maps have also moved.&lt;/p&gt;
+
+&lt;p&gt;This rework assisted in fixing several bugs and enabled the support of additional features such as static library support and framework user targets!&lt;/p&gt;
+
+&lt;h3 id=&quot;xcode-12-support&quot;&gt;Xcode 12 Support&lt;/h3&gt;
+
+&lt;p&gt;With CocoaPods 1.10 initial support for Xcode 12 has been added. Xcode 12 is still in beta, so it is expected that a few more updates will be required to fully support it. Please file any &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/new&quot;&gt;issues&lt;/a&gt; for us to diagnose and fix prior to 1.10 launching!&lt;/p&gt;
+
+&lt;h3 id=&quot;post_integrate-hook-dsl&quot;&gt;&lt;code&gt;post_integrate&lt;/code&gt; Hook DSL&lt;/h3&gt;
+
+&lt;p&gt;CocoaPods has always offered various hooks into its installation lifecycle. This allows users to customize several aspects of the installation process and perform changes to their project. With this release, we are adding a new &lt;code&gt;post_integrate&lt;/code&gt; hook that is executed after the CocoaPods integration step is completed.&lt;/p&gt;
+
+&lt;p&gt;In your &lt;code&gt;Podfile&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;ruby language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;post_integrate&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;installer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Perform post integration steps here!&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;Integration is the last step of the installation process and is responsible for integrating the generated &lt;code&gt;Pods.xcodeproj&lt;/code&gt; with the user&amp;#39;s project. This hook will be executed right after this is completed.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This hook is executed &lt;em&gt;after&lt;/em&gt; all &lt;code&gt;.xcodeproj&lt;/code&gt; have been saved (written to disk). Performing changes to the &lt;code&gt;Pods.xcodeproj&lt;/code&gt; will require an additional &lt;code&gt;save&lt;/code&gt; but that can be slow. It is recommended to use a &lt;code&gt;post_install&lt;/code&gt; hook instead if you anticipate making changes to the &lt;code&gt;Pods.xcodeproj&lt;/code&gt; before it gets saved to disk.&lt;/p&gt;
+
+&lt;h3 id=&quot;ensure_bundler!-dsl&quot;&gt;&lt;code&gt;ensure_bundler!&lt;/code&gt; DSL&lt;/h3&gt;
+
+&lt;p&gt;Many projects use &lt;a href=&quot;https://bundler.io/&quot;&gt;Bundler&lt;/a&gt; under the hood and when working with CocoaPods. That is because Bundler ensures a consistent environment which can be useful for teams that work on the same project.&lt;/p&gt;
+
+&lt;p&gt;In 1.10, a new &lt;code&gt;ensure_bundler!&lt;/code&gt; DSL can be added to your &lt;code&gt;Podfile&lt;/code&gt; to specify a version requirement of the Bundler version.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;#39;s an example:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      
+      &lt;div style=&quot;background-color:white;&quot;&gt;
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;ruby language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;ensure_bundler!&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;gt; 2.0&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
+      &lt;/article&gt;
+      &lt;/section&gt;
+      &lt;/div&gt;
+      
+      &lt;section class=&quot;container&quot;&gt;
+      &lt;article class=&quot;row&quot;&gt;
+      &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;That&amp;#39;s it!&lt;/p&gt;
+
+&lt;h3 id=&quot;what&amp;#39;s-next&quot;&gt;What&amp;#39;s Next&lt;/h3&gt;
+
+&lt;p&gt;CocoaPods has come a long way since its inception, and we hope to revisit some of the older implementations regarding resource support (not resource bundles) that have been the source of issues for larger repositories that ship multiple apps.&lt;/p&gt;
+
+&lt;p&gt;Additionally, we are still considering adding support for local sources that would be helpful for monorepos and allow CocoaPods to discover local pods automatically.&lt;/p&gt;
+
+&lt;p&gt;Thanks to all of our contributors who helped make this release happen!&lt;/p&gt;
+
+&lt;p&gt;Checkout the &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/releases/tag/1.10.0.beta.1&quot;&gt;changelog&lt;/a&gt; to see the full list of changes.&lt;/p&gt;
+</description>
+    <pubDate>Fri, 17 Jul 2020 00:00:00 +0000</pubDate>
+    <link>https://blog.cocoapods.org/CocoaPods-1.10.0-beta</link>
+    <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.10.0-beta</guid>
+  </item>
+  
+  
+  
+  <item>
     <title>CocoaPods 1.9 Beta has arrived!</title>
     <description>&lt;p&gt;&lt;em&gt;CocoaPods 1.9&lt;/em&gt; adds support for XCFrameworks, configuration-based dependencies for pod authors, code coverage in generated schemes, and other enhancements and bug fixes!&lt;/p&gt;
 

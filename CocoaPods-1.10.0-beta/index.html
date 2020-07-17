@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+      <title>1.10 Beta Begins! - CocoaPods Blog</title>
+    
+
+    <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <link rel="alternate" type="application/rss+xml" title="CocoaPods Blog" href="/feed.xml">
+
+    <meta charset="utf-8" /><meta content="cocoapods objective-c objc swift package manager libraries documentation search pods podspec podfile cocoa apple ios library" name="keywords" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="The Dependency Manager for iOS &amp; Mac projects" name="description" /><meta content="CocoaPods Dev Team" name="author" /><meta content="summary" name="twitter:card" /><meta content="@CocoaPods" name="twitter:site" /><meta content="@CocoaPods" name="twitter:creator" /><meta content="CocoaPods.org" name="twitter:title" /><meta content="The Dependency Manager for iOS &amp; Mac projects." name="twitter:description" /><meta content="https://www.cocoapods.org/" name="twitter:url" />
+    <link rel="shortcut icon" href="https://cocoapods.org/favicons/favicon.ico" type="image/x-icon" /><link rel="apple-touch-icon" href="https://cocoapods.org/favicons/apple-touch-icon.png" /><link rel="apple-touch-icon" sizes="57x57" href="https://cocoapods.org/favicons/apple-touch-icon-57x57.png" /><link rel="apple-touch-icon" sizes="60x60" href="https://cocoapods.org/favicons/apple-touch-icon-60x60.png" /><link rel="apple-touch-icon" sizes="72x72" href="https://cocoapods.org/favicons/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon" sizes="76x76" href="https://cocoapods.org/favicons/apple-touch-icon-76x76.png" /><link rel="apple-touch-icon" sizes="114x114" href="https://cocoapods.org/favicons/apple-touch-icon-114x114.png" /><link rel="apple-touch-icon" sizes="120x120" href="https://cocoapods.org/favicons/apple-touch-icon-120x120.png" /><link rel="apple-touch-icon" sizes="144x144" href="https://cocoapods.org/favicons/apple-touch-icon-144x144.png" /><link rel="apple-touch-icon" sizes="152x152" href="https://cocoapods.org/favicons/apple-touch-icon-152x152.png" />
+
+    <link rel="stylesheet" href="/assets/bootstrap-e8a120c5f14a09c9f135f7471f636047.css">
+    <link rel="stylesheet" href="/assets/main-7e4d93042b6c78f36d714787ac981321.css">
+    <link rel="stylesheet" href="/assets/blog-5da592a0cf4f7bac79216d6b8bb89a1c.css">
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-29866548-3', 'cocoapods.org');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <nav class="navbar navbar-static-top" role="navigation"><section class="container"><div class="navbar-header"><button class="navbar-toggle" data-target=".navbar-header-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="glyphicon glyphicon-plus"></span></button><a class="navbar-brand" href="https://cocoapods.org"></a></div><div class="collapse navbar-collapse navbar-header-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="https://cocoapods.org/app">App</a></li><li><a href="https://cocoapods.org/about">About</a></li><li><a href="https://guides.cocoapods.org">Guides</a></li><li class="active"><a href="https://blog.cocoapods.org">Blog</a></li></ul></div></section></nav>
+
+    <div id ="">
+<section class="container" >
+  <article class="row">
+  <header class="col-md-8 col-md-offset-2 headline blog-post">
+    
+      <h1>1.10 Beta Begins!</h1>
+    
+    
+  </header>
+  </article>
+</section>
+</div>
+
+<section id="content-wrapper" class="post">
+  <section class="container">
+    <article class="row">
+      <article class="author metadata col-md-2 col-md-push-10">
+        <header>
+          
+            
+              <img class="gravatar large" src="https://gravatar.com/avatar/0da25866cffc79d7427beb50d984185a?s=144" height=72 width=72>
+            
+            
+              
+                <p><a href="https://twitter.com/dnkoutso">Dimitris Koutsogiorgas</a></p>
+              
+            
+             <p>17 July 2020</p>
+
+            
+              <a href="https://twitter.com/dnkoutso" class="twitter-follow-button" data-show-count="false" data-lang="en">
+                Follow @dnkoutso
+              </a>
+            
+        </header>
+      </article>
+    
+      <article class="content col-md-8">
+        <p><em>CocoaPods 1.10</em> drops support for Ruby 2.0, adds support for Ruby 2.7 and adds initial support for Xcode 12 as well as a revamped XCFramework integration process!</p>
+
+<!-- more -->
+
+<h3 id="ruby-2.0-is-out,-2.7-is-in!">Ruby 2.0 is out, 2.7 is in!</h3>
+
+<p>In the 1.10 release, CocoaPods no longer supports Ruby 2.0 and bumps the minimum version to Ruby 2.3.3! Support for Ruby 2.0 has been dropped for years and macOS with High Sierra has been shipping with Ruby 2.3.3 as the default version.</p>
+
+<p>We hope that this update will unblock other gems that in the past were blocked by CocoaPods as well as address several vulnerabilities that have been fixed since then.</p>
+
+<p>Finally, all CocoaPods related gems have been updated to work with Ruby 2.7 and all known warnings have been fixed during installation.</p>
+
+<h3 id="revamped-xcframework-integration">Revamped XCFramework Integration</h3>
+
+<p>With this release, the biggest change is the removal of the <code>Prepare Artifacts</code> script. Similar to the <a href="https://github.com/CocoaPods/CocoaPods/pull/9547">reworked dSYM support</a> in this release, the logic to embed a <code>.framework</code> slice has now moved from the app to each pod target with a new script phase, <code>Copy XCFrameworks</code>. Handling of dSYMs and bitcode symbol maps have also moved.</p>
+
+<p>This rework assisted in fixing several bugs and enabled the support of additional features such as static library support and framework user targets!</p>
+
+<h3 id="xcode-12-support">Xcode 12 Support</h3>
+
+<p>With CocoaPods 1.10 initial support for Xcode 12 has been added. Xcode 12 is still in beta, so it is expected that a few more updates will be required to fully support it. Please file any <a href="https://github.com/CocoaPods/CocoaPods/issues/new">issues</a> for us to diagnose and fix prior to 1.10 launching!</p>
+
+<h3 id="post_integrate-hook-dsl"><code>post_integrate</code> Hook DSL</h3>
+
+<p>CocoaPods has always offered various hooks into its installation lifecycle. This allows users to customize several aspects of the installation process and perform changes to their project. With this release, we are adding a new <code>post_integrate</code> hook that is executed after the CocoaPods integration step is completed.</p>
+
+<p>In your <code>Podfile</code>:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">post_integrate</span> <span class="k">do</span> <span class="o">|</span><span class="n">installer</span><span class="o">|</span>
+    <span class="nb">puts</span> <span class="s1">&#39;Perform post integration steps here!&#39;</span>
+<span class="k">end</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>Integration is the last step of the installation process and is responsible for integrating the generated <code>Pods.xcodeproj</code> with the user&#39;s project. This hook will be executed right after this is completed.</p>
+
+<p><strong>Note</strong>: This hook is executed <em>after</em> all <code>.xcodeproj</code> have been saved (written to disk). Performing changes to the <code>Pods.xcodeproj</code> will require an additional <code>save</code> but that can be slow. It is recommended to use a <code>post_install</code> hook instead if you anticipate making changes to the <code>Pods.xcodeproj</code> before it gets saved to disk.</p>
+
+<h3 id="ensure_bundler!-dsl"><code>ensure_bundler!</code> DSL</h3>
+
+<p>Many projects use <a href="https://bundler.io/">Bundler</a> under the hood and when working with CocoaPods. That is because Bundler ensures a consistent environment which can be useful for teams that work on the same project.</p>
+
+<p>In 1.10, a new <code>ensure_bundler!</code> DSL can be added to your <code>Podfile</code> to specify a version requirement of the Bundler version.</p>
+
+<p>Here&#39;s an example:</p>
+<div class="highlight">      </article>
+      </article>
+      </section>
+      
+      <div style="background-color:white;">
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+<pre class='highlight'><code class="ruby language-ruby" data-lang="ruby"><span class="n">ensure_bundler!</span> <span class="s1">&#39;&gt; 2.0&#39;</span>
+</code></pre>      </article>
+      </article>
+      </section>
+      </div>
+      
+      <section class="container">
+      <article class="row">
+      <article class="content col-md-8 col-md-offset-2">
+</div>
+<p>That&#39;s it!</p>
+
+<h3 id="what&#39;s-next">What&#39;s Next</h3>
+
+<p>CocoaPods has come a long way since its inception, and we hope to revisit some of the older implementations regarding resource support (not resource bundles) that have been the source of issues for larger repositories that ship multiple apps.</p>
+
+<p>Additionally, we are still considering adding support for local sources that would be helpful for monorepos and allow CocoaPods to discover local pods automatically.</p>
+
+<p>Thanks to all of our contributors who helped make this release happen!</p>
+
+<p>Checkout the <a href="https://github.com/CocoaPods/CocoaPods/releases/tag/1.10.0.beta.1">changelog</a> to see the full list of changes.</p>
+
+      </article>
+    </article>
+  </section>
+</section>
+
+<section id="post-accessories"><section class="container"><div class="row"><article class="content col-md-8 col-md-offset-2"><a data-container="body" data-content="CocoaPods is an open source project. Help us improve these blog posts by sending a pull request. ❤" data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="https://github.com/CocoaPods/blog.cocoapods.org/tree/master/_posts/2020-07-17-CocoaPods-1.10.0-beta.markdown" id="pull-request" title=""></a><a data-container="body" data-content="Check our out post archives." data-original-title="" data-placement="top" data-toggle="popover" data-trigger="hover" href="/archives" id="archives" title=""></a><div class="author-info"><img class="gravatar large" src="//gravatar.com/avatar/0da25866cffc79d7427beb50d984185a" /><a class="twitter-follow-button" data-dnt="true" data-show-count="false" href="https://twitter.com/dnkoutso">Follow dnkoutso</a></div></article></div></section></section>
+
+<section class="container" id="post-info"><div class="row"><article class="content .col-6 col-sm-6 col-md-4 col-md-offset-2 next "><a href="/CocoaPods-1.9.0-beta" title="CocoaPods 1.9 Beta has arrived!"><header><h4>Previous Post</h4></header><h3>CocoaPods 1.9 Beta has arrived!</h3><p>By Eric Amorde</p><a class="chevron_placeholder back" href="/CocoaPods-1.9.0-beta"></a></a></article><article class="content col-6 col-sm-6 col-md-4 previous"></article></div></section>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+    <footer class="page-footer"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><h4>CocoaPods is a project from</h4><p class="contributors"> <a href="https://twitter.com/dnkoutso">Dimitris Koutsogiorgas</a>, <a href="https://dantoml.com">Danielle Tomlinson</a>, <a href="https://github.com/amorde">Eric Amorde</a>, <a href="https://orta.io">Orta Therox</a>, <a href="https://github.com/paulb777">Paul Beusterien</a>, <a href="https://segiddins.me">Samuel Giddins</a>, and <a href="https://cocoapods.org/about#team">The CocoaPods Dev Team</a> with contributions from <a href="https://github.com/CocoaPods/Specs/graphs/contributors">many, many others</a>.</p><h4>Lovingly sponsored by</h4><p class="sponsors"><a href="http://artsy.net">Artsy</a>, <a href="http://www.usebutton.com">Button</a>, <a href="http://www.capitalone.io">Capital One</a>, <a href="https://circleci.com">CircleCI</a>, <a href="http://discontinuity.eu">Discontinuity</a>, <a href="http://www.fngtps.com">Fingertips</a>, <a href="https://developers.google.com">Google</a>, <a href="https://www.heroku.com">Heroku</a>, <a href="https://netlify.com">Netlify</a>, <a href="https://realm.io">Realm</a>, <a href="http://www.rubymotion.com">RubyMotion</a>, <a href="https://www.sauspiel.de">Sauspiel</a>, <a href="https://www.slack.com">Slack</a>, <a href="https://www.soundcloud.com">SoundCloud</a>, <a href="https://www.stripe.com">Stripe</a>, <a href="https://www.squareup.com">Square</a>, and  <a href="http://www.technologyastronauts.ch">Technology&nbsp;Astronauts</a>.</p></article></div></section></footer><footer class="footer-links"><section class="container"><div class="row"><article class="col-md-8 col-lg-8 col-sm-12 col-md-offset-2 col-lg-offset-2 col-xs-12"><a class="cocoapods-small-logo" href="https://cocoapods.org"></a><ul><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/using/troubleshooting.html">Support</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://github.com/CocoaPods/CocoaPods">GitHub Repo</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://status.cocoapods.org">Web Properties Status</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://twitter.com/CocoaPods">@CocoaPods</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="http://groups.google.com/group/cocoapods">Mailing List</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/about"><span class="visible-lg-span">CocoaPods</span> Dev Team</a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://guides.cocoapods.org/syntax/podfile.html">Podfile Doc<span class="hidden-lg-span">s</span><span class="visible-lg-span">umentation</span></a></li><li class="col-md-3 col-sm-3 col-xs-6"><a href="https://cocoapods.org/legal">Legal / Conduct</a></li></ul></article></div></section></footer>
+    <script src="/assets/blog-06bd4c8b4c77cdfbf7d0ddb37525e257.js"></script>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+  </body>
+</html>
