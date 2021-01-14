@@ -155,11 +155,11 @@
 
 <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 
-<h3 id="i’m-getting-a-&quot;[!]-push-access-is-currently-disabled.&quot;-message,-what’s-wrong?">I’m getting a &quot;[!] Push access is currently disabled.&quot; message, what’s wrong?</h3>
+<h3 id="i-m-getting-a-push-access-is-currently-disabled-message-what-s-wrong">I’m getting a &quot;[!] Push access is currently disabled.&quot; message, what’s wrong?</h3>
 
 <p>During the claims period, <code>pod trunk push</code> will be disabled. Please see the ‘<a href="#transition">Transition</a>’ section.</p>
 
-<h3 id="will-i-still-be-able-to-make-modifications-to-a-published-podspec?">Will I still be able to make modifications to a published podspec?</h3>
+<h3 id="will-i-still-be-able-to-make-modifications-to-a-published-podspec">Will I still be able to make modifications to a published podspec?</h3>
 
 <p>Once a podspec for a specific version of a pod is published, you won&#39;t be able to modify it. At least not in an automated fashion.
 The majority of update requests are a results of contributors not sufficiently testing their podspec beforehand.
@@ -167,21 +167,21 @@ Generally what you want to do is to publish a <strong>new version</strong> for a
 
 <p>However, if you really fall into some exceptional case and really have to modify an already published podspec for a given version, you may still create a pull-request against the ‘master’ spec-repo; but we will not necessarily accept it and we do not offer any guarantees on turn-around time.</p>
 
-<h3 id="how-can-i-distinguish-the-format-of-a-podspec.">How can I distinguish the format of a podspec.</h3>
+<h3 id="how-can-i-distinguish-the-format-of-a-podspec">How can I distinguish the format of a podspec.</h3>
 
 <p>Podspecs using the Ruby DSL will use the <code>.podspec</code> extension, JSON based
 podspecs will use <code>.podspec.json</code>.</p>
 
-<h3 id="will-the-specs-in-the-ruby-format-be-deprecated?">Will the specs in the Ruby format be deprecated?</h3>
+<h3 id="will-the-specs-in-the-ruby-format-be-deprecated">Will the specs in the Ruby format be deprecated?</h3>
 
 <p>No, they are here to stay and are the preferred method if you need to be able to perform automatic generation, such as collecting a list of all the source files from disk. The <code>pod trunk push</code> command will take care of converting the podspec to JSON. This means that you do <em>not</em> have to change any existing podspecs.</p>
 
-<h3 id="will-private-repositories-need-to-adopt-the-json-format?">Will private repositories need to adopt the JSON format?</h3>
+<h3 id="will-private-repositories-need-to-adopt-the-json-format">Will private repositories need to adopt the JSON format?</h3>
 
 <p>No. Moreover, the <code>pod push</code> command will keep the old behaviour, except that we are moving this into <code>pod repo push</code> to emphasise the distinction.
 Just keep in mind that if two files are available CocoaPods will prefer the JSON format.</p>
 
-<h3 id="can-i-access-the-specs-via-http?">Can I access the specs via HTTP?</h3>
+<h3 id="can-i-access-the-specs-via-http">Can I access the specs via HTTP?</h3>
 
 <p>Yes, you can use the following endpoints of the GitHub API. At a later point we will introduce a public API on ‘Trunk’ that you can use to standardise this, although it should be noted that if you do not need more than what the GitHub API already offers, it’s best to just use that, as GitHub will be able to offer better uptimes than we can.</p>
 

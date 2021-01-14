@@ -95,11 +95,11 @@
 
 <p>Setting up these two repositories to push to Github pages was pretty trivial, once I figured out the correct steps.</p>
 
-<h3 id="1.-travis-needs-to-be-a-user">1. Travis needs to be a user</h3>
+<h3 id="1-travis-needs-to-be-a-user">1. Travis needs to be a user</h3>
 
 <p>Since Travis needs to push to Github, it needs a user. Pick or create a user, and get a Personal Access Token. This token is generated in Account Settings on Github. We chose to use the <a href="https://github.com/CocoaPodsBot">CocoaPods Bot</a> account. </p>
 
-<h3 id="2.-authenticate-with-that-user">2. Authenticate with that user</h3>
+<h3 id="2-authenticate-with-that-user">2. Authenticate with that user</h3>
 
 <p>In order to identify as this user, Travis needs credentials. I chose to encrypt the user information using the  <code>travis</code> gem. I ran the command below from within the project directory with the <code>add</code> flag so it automatically adds the encrypted output to the <code>.travis.yml</code></p>
 <div class="highlight">      </article>
@@ -120,13 +120,13 @@
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h3 id="3.-setup-and-deploy">3. Setup and Deploy</h3>
+<h3 id="3-setup-and-deploy">3. Setup and Deploy</h3>
 
 <p>Travis build on a completely fresh checkout, so setting up the environment is key. Thankfully both sites had the <code>rake bootstrap</code> command, so I was able to reuse that.</p>
 
 <p>The deploy script turned out to be the tricky part. The important step here is to make sure the deploy script relies upon the <code>git remote</code> that&#39;s setup. All of our static sites have a <code>rake deploy</code> command, which I modified to remove the hardcoding of the remote.</p>
 
-<h3 id="4.-travis.yml">4. travis.yml</h3>
+<h3 id="4-travis-yml">4. travis.yml</h3>
 
 <p>Configure git settings in <code>.travis.yml</code>. By default, Travis doesn&#39;t have a user, so you should set the <code>user.email</code> and <code>user.name</code> to push with. These should match the credentials you encrypted with the token.</p>
 <div class="highlight">      </article>
@@ -149,7 +149,7 @@
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h3 id="5.-updating-the-remote">5. Updating the remote</h3>
+<h3 id="5-updating-the-remote">5. Updating the remote</h3>
 
 <p>In this setup, Travis doesn&#39;t have ssh access to the repository. Change the <code>git remote</code> to point to <code>https</code> with your token attached. The token is used to authenticate the push. Here&#39;s what the Blog setup looks like:</p>
 <div class="highlight">      </article>
@@ -170,15 +170,15 @@
       <article class="row">
       <article class="content col-md-8 col-md-offset-2">
 </div>
-<h3 id="6.-turn-on-travis-builds">6. Turn on Travis builds</h3>
+<h3 id="6-turn-on-travis-builds">6. Turn on Travis builds</h3>
 
 <p>This is done from Settings. Also, since this is a deploying build, make sure that you <em>do not</em> build when pull requests are made.</p>
 
-<h3 id="7.-commit-and-push-your-changes.">7. Commit and push your changes.</h3>
+<h3 id="7-commit-and-push-your-changes">7. Commit and push your changes.</h3>
 
 <p>Hopefully everything will work. If not, you can make more changes, push, and wait for Travis to build.</p>
 
-<h5 id="the-.travis.yml">The .travis.yml</h5>
+<h5 id="the-travis-yml">The .travis.yml</h5>
 <div class="highlight">      </article>
       </article>
       </section>

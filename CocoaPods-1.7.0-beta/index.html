@@ -155,7 +155,7 @@
 
 <p>For pod authors who <em>do</em> have the infrastructure (such as a CI system) that ensures their pod works with older versions of Swift, the <code>--swift-version</code> parameter should be used during <code>lint</code> to override the default behavior.</p>
 
-<h4 id="deprecating-.swift-version-file">Deprecating <code>.swift-version</code> File</h4>
+<h4 id="deprecating-swift-version-file">Deprecating <code>.swift-version</code> File</h4>
 
 <p>Up until now, most pod authors have been relying on specifying a <code>.swift-version</code> file at the root of their repo in order to successfully publish their pod with the Swift version they officially support. However, this information is <em>never</em> transcribed within the published <code>podspec</code> and therefore during integration none of it is taken into consideration when choosing which Swift version to use.</p>
 
@@ -386,7 +386,7 @@
 
 <p><strong>Note</strong>: You may opt to configure a scheme for a specific platform. For example, <code>test_spec.ios.scheme</code> will only configure the scheme for iOS targets.</p>
 
-<h3 id=".xcfilelist-support"><code>.xcfilelist</code> Support</h3>
+<h3 id="xcfilelist-support"><code>.xcfilelist</code> Support</h3>
 
 <p>In CocoaPods 1.7.0 script phases now support usage of <code>.xcfilelist</code> in order to specify script input and output paths. CocoaPods will automatically detect whether the Xcode project being integrated supports <code>.xcfilelist</code> and prefer that over separate input/output path entries.</p>
 
@@ -434,7 +434,7 @@
 
 <p>Starting with 1.7.0, we&#39;ve added support for Windows! We encourage Windows users to use CocoaPods and <a href="https://github.com/cocoapods/cocoapods/issues">report any issues</a> to us going forward.</p>
 
-<h3 id="what&#39;s-next?">What&#39;s Next?</h3>
+<h3 id="whats-next">What&#39;s Next?</h3>
 
 <p>CocoaPods 1.7.0 is a very exciting release, and we&#39;re very happy for you to try it out, and recommend you upgrade:</p>
 <div class="highlight">      </article>

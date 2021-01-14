@@ -283,7 +283,7 @@
 
 <p>This ensures the correct Swift version is used for each target that depends on the Pod.</p>
 
-<h3 id="use_frameworks!-linkage-customization"><code>use_frameworks!</code> Linkage Customization</h3>
+<h3 id="use_frameworks-linkage-customization"><code>use_frameworks!</code> Linkage Customization</h3>
 
 <p>iOS 8.0 introduced the ability for apps to ship dynamically linked frameworks. To support this, CocoaPods introduced the <code>use_frameworks!</code> DSL which made all Pods be compiled as dynamically-linked frameworks. Frameworks do not have any inherent <em>linkage</em>, but Swift initially required dynamic linking to be used in iOS apps. It is possible to wrap a statically-linked library in a <code>.framework</code> bundle.</p>
 
@@ -308,7 +308,7 @@
 </div>
 <p>This is the first step in providing more control to CocoaPods users over how Pods are packaged and linked into their dependent binaries. For more details, check out the <a href="https://github.com/CocoaPods/CocoaPods/issues/9099">RFC</a>.</p>
 
-<h3 id="what&#39;s-next">What&#39;s Next</h3>
+<h3 id="whats-next">What&#39;s Next</h3>
 
 <p>In future versions, we will continue to expand the customization points for how pods are integrated into projects.</p>
 

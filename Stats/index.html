@@ -83,7 +83,7 @@
 
 <!-- more -->
 
-<h3 id="but-wait,-there&#39;s-more...">But wait, there&#39;s more...</h3>
+<h3 id="but-wait-theres-more">But wait, there&#39;s more...</h3>
 
 <p>It wasn&#39;t just enough to offer just download counts. We spend a lot of time working around Xcode&#39;s project file intricacies, however in this context, it provides us with foundations for a really nice feature. CocoaPods Stats will be able to keep track of the unique number of installs within Apps / Watch Apps / Extensions / Unit Tests.</p>
 
@@ -101,7 +101,7 @@
 <section class="container">
 <div class="row"><article class="content col-md-8 col-md-offset-2"></p>
 
-<h3 id="alright,-hold-up">Alright, hold up</h3>
+<h3 id="alright-hold-up">Alright, hold up</h3>
 
 <p>Let&#39;s go over how we check which pods get sent up for analytics, and how we do the unique installs. <a href="https://github.com/cocoapods/cocoapods-stats">CocoaPods-Stats</a> is a plugin that is now bundled with CocoaPods from version 0.38 onwards. It <a href="https://github.com/CocoaPods/cocoapods-stats/blob/0361f29ae37e82ccf385319bba9cf31464049144/lib/cocoapods_plugin.rb#L6">registers</a> as a post-install plugin and is ran on every <code>pod install</code> or <code>pod update</code>.</p>
 
@@ -142,7 +142,7 @@
 </div>
 <p>We then also send along the CocoaPods version that was used to generate this installation. Ideally before release we&#39;ll also be able to give statistics on how many people are using <code>pod try [pod]</code> for your library too.</p>
 
-<h4 id="how-does-it-work?">How does it work?</h4>
+<h4 id="how-does-it-work">How does it work?</h4>
 
 <p>My first attempt at a stats architecture was based on how <a href="https://github.com/npm/download-counts#data-source">npm does stats</a>, roughly speaking they send all logs to S3 where they are map-reduced on a daily basis into individual package metrics. This is an elegant solution for a <a href="https://www.crunchbase.com/organization/npm">company</a> with people working full time on up-time and stability. As someone who wants to be building iOS apps, and not maintaining <a href="http://cocoadocs.org/readme/">more</a> infrastructure in my spare time, I wanted to avoid this.</p>
 
@@ -150,35 +150,35 @@
 
 <h2 id="faq">FAQ</h2>
 
-<h4 id="can-i-opt-out-as-a-cocoapods-user?">Can I opt out as a CocoaPods user?</h4>
+<h4 id="can-i-opt-out-as-a-cocoapods-user">Can I opt out as a CocoaPods user?</h4>
 
 <p>Sure. You can set an <a href="http://apple.stackexchange.com/questions/106778/how-do-i-set-environment-variables-on-os-x">environment variable</a> <code>COCOAPODS_DISABLE_STATS</code> to true in your shell, and stats will not be sent from your machine.</p>
 
-<h4 id="does-this-affect-every-pod?">Does this affect every pod?</h4>
+<h4 id="does-this-affect-every-pod">Does this affect every pod?</h4>
 
 <p>Yeah, every pod will get download stats.</p>
 
-<h4 id="will-it-be-live-stats?">Will it be live stats?</h4>
+<h4 id="will-it-be-live-stats">Will it be live stats?</h4>
 
 <p>No, they get generated once per day.</p>
 
-<h4 id="what-is-the-rollout-strategy?">What is the rollout strategy?</h4>
+<h4 id="what-is-the-rollout-strategy">What is the rollout strategy?</h4>
 
 <p>We plan on making this initially a separate CocoaPods plugin that you can optionally install via <code>[sudo] gem install cocoapods-stats</code> which will send the data. In a release or two we will bundle this into CocoaPods, and it will be installed by default for everyone moving forwards.</p>
 
-<h4 id="can-i-use-it-right-now?">Can I use it right now?</h4>
+<h4 id="can-i-use-it-right-now">Can I use it right now?</h4>
 
 <p>Sure, update to the latest CocoaPods <code>[sudo] gem install cocoapods</code> or download the latest <a href="https://github.com/CocoaPods/CocoaPods-app">CocoaPods.app</a>.</p>
 
-<h4 id="how-does-this-affect-the-quality-indexes-/-sorting?">How does this affect the quality indexes / sorting?</h4>
+<h4 id="how-does-this-affect-the-quality-indexes-sorting">How does this affect the quality indexes / sorting?</h4>
 
 <p>Ideally we can reduce the amount of impact GitHub stars affects a quality index, and replace some of the values with new metrics based on downloads/installations. </p>
 
-<h4 id="what-commands-does-this-run-on?">What commands does this run on?</h4>
+<h4 id="what-commands-does-this-run-on">What commands does this run on?</h4>
 
 <p>It runs at the end of a <code>pod install</code> or a <code>pod update</code>.</p>
 
-<h4 id="i-check-in-my-pods-directory,-how-does-this-affect-stats-for-the-pods-i-use?">I check in my Pods directory, how does this affect stats for the pods I use?</h4>
+<h4 id="i-check-in-my-pods-directory-how-does-this-affect-stats-for-the-pods-i-use">I check in my Pods directory, how does this affect stats for the pods I use?</h4>
 
 <p>Checking in your Pods directory will mean that the download count for the pods used will rarely be affected, but the installations will be the exact same. They only register once per project, so multiple developers on the same project running <code>pod install</code> will not raise this number.</p>
 

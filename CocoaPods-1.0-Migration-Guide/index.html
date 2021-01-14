@@ -79,7 +79,7 @@
       </article>
     
       <article class="content col-md-8">
-        <h4 id="major-1.0-changes-tl:dr">Major 1.0 changes TL:DR</h4>
+        <h4 id="major-1-0-changes-tl-dr">Major 1.0 changes TL:DR</h4>
 
 <p>​</p>
 
@@ -248,7 +248,7 @@
 </div>
 <p>It has an obvious hierarchy, so you can see that Pods included in <code>ORStackView_Example</code> will be included in the <code>ORStackView_Tests</code> target. The only new thing is <code>inherit! :search_paths</code> which means &quot;don&#39;t link Pods into here, but let this target know they exist.&quot; This <code>Podfile</code> is easier to read, simpler and has less redundant information.</p>
 
-<h3 id="off-with-pods-:head">Off with <code>pod</code>s <code>:head</code></h3>
+<h3 id="off-with-pods-head">Off with <code>pod</code>s <code>:head</code></h3>
 
 <p>Adding <code>:head</code> to a <code>pod</code> nearly always worked, except when it didn&#39;t. It is documented as this:</p>
 
@@ -258,7 +258,7 @@
 
 <p>It was a tool that was really useful back when CocoaPods was small and it was hard to persuade people it was worth supporting any dependency manager for their projects. That time has long passed and now the flexibility that this attribute originally offered has fallen onto the side of &quot;not worth keeping around.&quot; It would introduce extremely hard-to-debug issues for developers expecting it to mean &quot;use the latest version of their code repo.&quot; You can either use the <code>:podspec</code> option or point directly to the upstream repo (via <code>git</code>, <code>:svn</code>, etc.).</p>
 
-<h3 id="options-to-install!">Options to <code>install!</code></h3>
+<h3 id="options-to-install">Options to <code>install!</code></h3>
 
 <p>In the past when we have had to support configuration options for CocoaPods we have used environment variables. These act like NSUserDefaults in that someone who knows the key can make a change, but otherwise they remain <a href="https://github.com/ChatSecure/ChatSecure-iOS/commit/d766400c2d8e935ab49daf5ef5f9bf28c760e484">quite hidden</a>. Though, sometimes they could be command line APIs too like <code>--no-integrate</code>. While these were conscious choices they eventually added up to being inconsistent over time, and we&#39;ve opted to move in favour of centralizing the information in the Podfile. You can see all the available options <a href="https://guides.cocoapods.org/syntax/podfile.html#install_bang">in the guides</a>.</p>
 
@@ -270,12 +270,12 @@
 
 <p>We also understand that running CocoaPods is about dealing with humans. With our default CocoaPods Specs repo, for example, we&#39;ve had a policy of it being <a href="https://github.com/CocoaPods/Specs/pull/12199">read-only</a> since it was introduced <a href="http://blog.cocoapods.org/CocoaPods-Trunk/">CocoaPods Trunk</a>. In reality though we&#39;ve had to support editing and deleting Pods by hand on a relatively regular basis with the CocoaPods dev team being the ones having to make those decisions. With 1.0.0 we&#39;ve built the infrastructure to support deleting and deprecating a CocoaPod and a CocoaPod version. We don&#39;t recommend it, but it&#39;s now there, and it&#39;s up to library owners to make the decisions around whether it&#39;s fine for their users to remove dependencies.</p>
 
-<h3 id="1.0">1.0</h3>
+<h3 id="1-0">1.0</h3>
 
 <p>Finally, and probably the most important point. Once the betas are finished, I can get rid of this FAQ entry:</p>
 
 <blockquote>
-<h4 id="&quot;cocoapods-is-not-ready-for-prime-time-yet.”">&quot;CocoaPods is not ready for prime-time yet.”</h4>
+<h4 id="cocoapods-is-not-ready-for-prime-time-yet">&quot;CocoaPods is not ready for prime-time yet.”</h4>
 
 <p>Correct. Version 1.0.0 will be the milestone where we feel confident that all the basic requirements of a Cocoa dependency manager are fulfilled.</p>
 

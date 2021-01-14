@@ -85,7 +85,7 @@ Pod authors will especially want to try this version to make sure their pods wil
 
 <!-- more -->
 
-<h2 id="what-is-special-about-frameworks-integrated-by-cocoapods?">What is special about Frameworks integrated by CocoaPods?</h2>
+<h2 id="what-is-special-about-frameworks-integrated-by-cocoapods">What is special about Frameworks integrated by CocoaPods?</h2>
 
 <p>With CocoaPods, Frameworks are mostly set up in way similar to how it is done via Xcode.
 This is to make the entire integration inspectable, understandable and allows us to unleash the power of the whole existing toolchain.</p>
@@ -106,7 +106,7 @@ Therefore the module map is included in the built framework bundle.</p>
 <section class="container">
 <div class="row"><article class="content col-md-8 col-md-offset-2"></p>
 
-<h2 id="dynamic-frameworks-vs.-static-libraries">Dynamic Frameworks vs. Static Libraries</h2>
+<h2 id="dynamic-frameworks-vs-static-libraries">Dynamic Frameworks vs. Static Libraries</h2>
 
 <p>So what&#39;s the difference between those two product types?</p>
 
@@ -231,7 +231,7 @@ The default modulemap looks basically always the same:</p>
 <p>You can export the public API for your framework inside a umbrella header and <em>all transitive imported</em> headers.
 Clang will take care of making module exports that can be imported by Objective-C and Swift.</p>
 
-<h3 id="what-does-transitive-imported-mean-in-this-context?">What Does <em>Transitive Imported</em> Mean In This Context?</h3>
+<h3 id="what-does-transitive-imported-mean-in-this-context">What Does <em>Transitive Imported</em> Mean In This Context?</h3>
 
 <p>Transitive relations are a <a href="http://en.wikipedia.org/wiki/Transitive_relation">mathematical concept</a>:</p>
 
@@ -244,7 +244,7 @@ The transitive closure means that all headers, which are imported by header file
 Surely, you know this property from your app target, whenever you import a header, which imports other headers, the classes and symbols, which are defined there, are also available in your app code.
 The same has to apply for import statements in Umbrella Headers and effect the module visibility with Clang modules.</p>
 
-<h3 id="what-are-umbrella-headers?">What are Umbrella Headers?</h3>
+<h3 id="what-are-umbrella-headers">What are Umbrella Headers?</h3>
 
 <p>For our example it could look like this:</p>
 <div class="highlight">      </article>

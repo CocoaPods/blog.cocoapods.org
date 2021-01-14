@@ -85,7 +85,7 @@
 
 <!-- more -->
 
-<h2 id="and-there-were-swift-&amp;-dynamic-frameworks-on-ios">And there were Swift &amp; Dynamic Frameworks on iOS</h2>
+<h2 id="and-there-were-swift-dynamic-frameworks-on-ios">And there were Swift &amp; Dynamic Frameworks on iOS</h2>
 
 <p>Dynamic frameworks have always been available on OS X. That&#39;s different for iOS.
 Apple&#39;s mobile platform introduced third-party dynamic framework support in iOS 8.
@@ -109,9 +109,9 @@ If that&#39;s not present, you won&#39;t be able to integrate dependencies, if y
 This is an all or nothing approach per integrated targets, because we can&#39;t ensure to properly build frameworks, whose transitive dependencies are static libraries.
 This release goes along with probably one of the most drastic changes of the whole project, which includes CocoaPods itself, but also required similar changes to Xcodeproj as well.</p>
 
-<h2 id="dynamic-frameworks-vs.-static-libraries">Dynamic Frameworks vs. Static Libraries</h2>
+<h2 id="dynamic-frameworks-vs-static-libraries">Dynamic Frameworks vs. Static Libraries</h2>
 
-<h5 id="so-what&#39;s-the-difference-between-those-both-product-types?">So what&#39;s the difference between those both product types?</h5>
+<h5 id="so-whats-the-difference-between-those-both-product-types">So what&#39;s the difference between those both product types?</h5>
 
 <p>One difference is obvious in their names: Dynamic and Static are opposites.
 This explains how they are linked to your code when integrated.
@@ -196,7 +196,7 @@ They are namespaced by the framework bundle.
 Furthermore we don&#39;t have to apply the build rules ourself to the resources as e.g. asset catalogs and storyboards need to be compiled.
 This should decrease build times for projects using Pods that include many resources.</p>
 
-<h3 id="@ibdesignable---another-reason-for-frameworks"><code>@IBDesignable</code> - Another Reason for Frameworks</h3>
+<h3 id="ibdesignable-another-reason-for-frameworks"><code>@IBDesignable</code> - Another Reason for Frameworks</h3>
 
 <p>Xcode 6 allows you to preview your own custom view components in Interface Builder.
 To make use of that, the view component must live in its own framework.</p>

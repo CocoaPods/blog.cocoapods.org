@@ -13,7 +13,7 @@
 
 &lt;!-- more --&gt;
 
-&lt;h3 id=&quot;ruby-2.0-is-out,-2.7-is-in!&quot;&gt;Ruby 2.0 is out, 2.7 is in!&lt;/h3&gt;
+&lt;h3 id=&quot;ruby-2-0-is-out-2-7-is-in&quot;&gt;Ruby 2.0 is out, 2.7 is in!&lt;/h3&gt;
 
 &lt;p&gt;In the 1.10 release, CocoaPods no longer supports Ruby 2.0 and bumps the minimum version to Ruby 2.3.3! Support for Ruby 2.0 has been dropped for years and macOS with High Sierra has been shipping with Ruby 2.3.3 as the default version.&lt;/p&gt;
 
@@ -60,7 +60,7 @@
 
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This hook is executed &lt;em&gt;after&lt;/em&gt; all &lt;code&gt;.xcodeproj&lt;/code&gt; have been saved (written to disk). Performing changes to the &lt;code&gt;Pods.xcodeproj&lt;/code&gt; will require an additional &lt;code&gt;save&lt;/code&gt; but that can be slow. It is recommended to use a &lt;code&gt;post_install&lt;/code&gt; hook instead if you anticipate making changes to the &lt;code&gt;Pods.xcodeproj&lt;/code&gt; before it gets saved to disk.&lt;/p&gt;
 
-&lt;h3 id=&quot;ensure_bundler!-dsl&quot;&gt;&lt;code&gt;ensure_bundler!&lt;/code&gt; DSL&lt;/h3&gt;
+&lt;h3 id=&quot;ensure_bundler-dsl&quot;&gt;&lt;code&gt;ensure_bundler!&lt;/code&gt; DSL&lt;/h3&gt;
 
 &lt;p&gt;Many projects use &lt;a href=&quot;https://bundler.io/&quot;&gt;Bundler&lt;/a&gt; under the hood and when working with CocoaPods. That is because Bundler ensures a consistent environment which can be useful for teams that work on the same project.&lt;/p&gt;
 
@@ -87,7 +87,7 @@
 &lt;/div&gt;
 &lt;p&gt;That&amp;#39;s it!&lt;/p&gt;
 
-&lt;h3 id=&quot;what&amp;#39;s-next&quot;&gt;What&amp;#39;s Next&lt;/h3&gt;
+&lt;h3 id=&quot;whats-next&quot;&gt;What&amp;#39;s Next&lt;/h3&gt;
 
 &lt;p&gt;CocoaPods has come a long way since its inception, and we hope to revisit some of the older implementations regarding resource support (not resource bundles) that have been the source of issues for larger repositories that ship multiple apps.&lt;/p&gt;
 
@@ -310,7 +310,7 @@
 
 &lt;p&gt;This ensures the correct Swift version is used for each target that depends on the Pod.&lt;/p&gt;
 
-&lt;h3 id=&quot;use_frameworks!-linkage-customization&quot;&gt;&lt;code&gt;use_frameworks!&lt;/code&gt; Linkage Customization&lt;/h3&gt;
+&lt;h3 id=&quot;use_frameworks-linkage-customization&quot;&gt;&lt;code&gt;use_frameworks!&lt;/code&gt; Linkage Customization&lt;/h3&gt;
 
 &lt;p&gt;iOS 8.0 introduced the ability for apps to ship dynamically linked frameworks. To support this, CocoaPods introduced the &lt;code&gt;use_frameworks!&lt;/code&gt; DSL which made all Pods be compiled as dynamically-linked frameworks. Frameworks do not have any inherent &lt;em&gt;linkage&lt;/em&gt;, but Swift initially required dynamic linking to be used in iOS apps. It is possible to wrap a statically-linked library in a &lt;code&gt;.framework&lt;/code&gt; bundle.&lt;/p&gt;
 
@@ -335,7 +335,7 @@
 &lt;/div&gt;
 &lt;p&gt;This is the first step in providing more control to CocoaPods users over how Pods are packaged and linked into their dependent binaries. For more details, check out the &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/9099&quot;&gt;RFC&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&quot;what&amp;#39;s-next&quot;&gt;What&amp;#39;s Next&lt;/h3&gt;
+&lt;h3 id=&quot;whats-next&quot;&gt;What&amp;#39;s Next&lt;/h3&gt;
 
 &lt;p&gt;In future versions, we will continue to expand the customization points for how pods are integrated into projects.&lt;/p&gt;
 
@@ -653,7 +653,7 @@
 
 &lt;p&gt;This powerful new feature opens up new possibilities for pod authors who want much more granular control for the app host used for their test specs.&lt;/p&gt;
 
-&lt;h3 id=&quot;what&amp;#39;s-next?&quot;&gt;What&amp;#39;s Next?&lt;/h3&gt;
+&lt;h3 id=&quot;whats-next&quot;&gt;What&amp;#39;s Next?&lt;/h3&gt;
 
 &lt;p&gt;CocoaPods 1.8 is a &lt;em&gt;very&lt;/em&gt; exciting release, and we&amp;#39;re very happy for you to try it out, and recommend you upgrade:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
@@ -889,7 +889,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 
 &lt;p&gt;For pod authors who &lt;em&gt;do&lt;/em&gt; have the infrastructure (such as a CI system) that ensures their pod works with older versions of Swift, the &lt;code&gt;--swift-version&lt;/code&gt; parameter should be used during &lt;code&gt;lint&lt;/code&gt; to override the default behavior.&lt;/p&gt;
 
-&lt;h4 id=&quot;deprecating-.swift-version-file&quot;&gt;Deprecating &lt;code&gt;.swift-version&lt;/code&gt; File&lt;/h4&gt;
+&lt;h4 id=&quot;deprecating-swift-version-file&quot;&gt;Deprecating &lt;code&gt;.swift-version&lt;/code&gt; File&lt;/h4&gt;
 
 &lt;p&gt;Up until now, most pod authors have been relying on specifying a &lt;code&gt;.swift-version&lt;/code&gt; file at the root of their repo in order to successfully publish their pod with the Swift version they officially support. However, this information is &lt;em&gt;never&lt;/em&gt; transcribed within the published &lt;code&gt;podspec&lt;/code&gt; and therefore during integration none of it is taken into consideration when choosing which Swift version to use.&lt;/p&gt;
 
@@ -1120,7 +1120,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: You may opt to configure a scheme for a specific platform. For example, &lt;code&gt;test_spec.ios.scheme&lt;/code&gt; will only configure the scheme for iOS targets.&lt;/p&gt;
 
-&lt;h3 id=&quot;.xcfilelist-support&quot;&gt;&lt;code&gt;.xcfilelist&lt;/code&gt; Support&lt;/h3&gt;
+&lt;h3 id=&quot;xcfilelist-support&quot;&gt;&lt;code&gt;.xcfilelist&lt;/code&gt; Support&lt;/h3&gt;
 
 &lt;p&gt;In CocoaPods 1.7.0 script phases now support usage of &lt;code&gt;.xcfilelist&lt;/code&gt; in order to specify script input and output paths. CocoaPods will automatically detect whether the Xcode project being integrated supports &lt;code&gt;.xcfilelist&lt;/code&gt; and prefer that over separate input/output path entries.&lt;/p&gt;
 
@@ -1168,7 +1168,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 
 &lt;p&gt;Starting with 1.7.0, we&amp;#39;ve added support for Windows! We encourage Windows users to use CocoaPods and &lt;a href=&quot;https://github.com/cocoapods/cocoapods/issues&quot;&gt;report any issues&lt;/a&gt; to us going forward.&lt;/p&gt;
 
-&lt;h3 id=&quot;what&amp;#39;s-next?&quot;&gt;What&amp;#39;s Next?&lt;/h3&gt;
+&lt;h3 id=&quot;whats-next&quot;&gt;What&amp;#39;s Next?&lt;/h3&gt;
 
 &lt;p&gt;CocoaPods 1.7.0 is a very exciting release, and we&amp;#39;re very happy for you to try it out, and recommend you upgrade:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
@@ -1332,7 +1332,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
 &lt;/div&gt;
-&lt;h3 id=&quot;what&amp;#39;s-next?&quot;&gt;What&amp;#39;s Next?&lt;/h3&gt;
+&lt;h3 id=&quot;whats-next&quot;&gt;What&amp;#39;s Next?&lt;/h3&gt;
 
 &lt;p&gt;We always like to use this last bit of the blog post as an opportunity to express what we have in mind for the next release (currently aimed to be 1.7.0). More particularly, we would like to extend the &lt;code&gt;swift_version&lt;/code&gt; DSL to support a range of Swift versions instead of just a single version similarly to &lt;a href=&quot;https://swift.org/package-manager/&quot;&gt;Swift Package Manager&lt;/a&gt;.&lt;/p&gt;
 
@@ -1466,7 +1466,7 @@ on to find out what that looks like.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
-&lt;h3 id=&quot;why-build-this?&quot;&gt;Why build this?&lt;/h3&gt;
+&lt;h3 id=&quot;why-build-this&quot;&gt;Why build this?&lt;/h3&gt;
 
 &lt;p&gt;CocoaPods&amp;#39; web infrastructure needs to continue to be hardened. We have fewer contributors and a lot more people using
 CocoaPods. Moving more of our web services into heroku means we have less diversity in how projects are hosted get run.
@@ -1548,7 +1548,7 @@ back to Ruby for a new project. This does introduce some complexity though. So I
 building the v1 and getting the project into production.&lt;/p&gt;
 
 &lt;p&gt;This means if you&amp;#39;re interested in how to build a small NodeJS server in TypeScript, you&amp;#39;ve got a small well-built
-example with &lt;a href=&quot;https://www.youtube.com/watch?v=KpX0jRDEv14&amp;amp;list=PLYUbsZda9oHs-MoWKiZNXtvGK9ye8nZZe&quot;&gt;a YouTube playlist of over 5 hours&lt;/a&gt; where I have to explain all of my choices.&lt;/p&gt;
+example with &lt;a href=&quot;https://www.youtube.com/watch?v=KpX0jRDEv14&amp;list=PLYUbsZda9oHs-MoWKiZNXtvGK9ye8nZZe&quot;&gt;a YouTube playlist of over 5 hours&lt;/a&gt; where I have to explain all of my choices.&lt;/p&gt;
 
 &lt;p&gt;&lt;center&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube-nocookie.com/embed/videoseries?list=PLYUbsZda9oHs-MoWKiZNXtvGK9ye8nZZe&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen&gt;&lt;/iframe&gt;
@@ -2258,7 +2258,7 @@ Last year, we tried out a new &lt;a href=&quot;https://github.com/CocoaPods/sotu
 
 &lt;!-- more --&gt;
 
-&lt;h2 id=&quot;what-problem-does-this-solve?&quot;&gt;What problem does this solve?&lt;/h2&gt;
+&lt;h2 id=&quot;what-problem-does-this-solve&quot;&gt;What problem does this solve?&lt;/h2&gt;
 
 &lt;p&gt;CocoaPods exists within the ruby ecosystem. The majority of Cocoa developers don&amp;#39;t have much overlap with writing ruby programs. Installing and maintaining multiple versions of command-line tools like CocoaPods is something that people have to learn in order to use CocoaPods effectively. &lt;/p&gt;
 
@@ -2268,7 +2268,7 @@ Last year, we tried out a new &lt;a href=&quot;https://github.com/CocoaPods/sotu
 
 &lt;p&gt;This concept is not new for Cocoa developers, as Xcode has been embedding its own dependencies inside it&amp;#39;s &lt;code&gt;.app&lt;/code&gt; since it moved to the Mac App Store. The advantage from a user&amp;#39;s perspective is that it works, and you can install your own crazy version of &lt;code&gt;git&lt;/code&gt;, or &lt;code&gt;curl&lt;/code&gt; or &lt;code&gt;ruby&lt;/code&gt;, and it just works.&lt;/p&gt;
 
-&lt;h2 id=&quot;what-does-it-do-well?&quot;&gt;What does it do well?&lt;/h2&gt;
+&lt;h2 id=&quot;what-does-it-do-well&quot;&gt;What does it do well?&lt;/h2&gt;
 
 &lt;p&gt;Glad you asked, &amp;#39;cause it does two things really well:&lt;/p&gt;
 
@@ -2367,7 +2367,7 @@ Last year, we tried out a new &lt;a href=&quot;https://github.com/CocoaPods/sotu
 
 &lt;!-- more --&gt;
 
-&lt;p&gt;Across all of our various projects, we&amp;#39;ve accumulated ~20,000 commits by ~400 developers, &lt;a href=&quot;https://github.com/search?l=&amp;amp;q=user%3Acocoapods&amp;amp;ref=advsearch&amp;amp;state=closed&amp;amp;type=Issues&amp;amp;utf8=%E2%9C%93&quot;&gt;closing ~22,000 issues&lt;/a&gt; -- it’s truly been a community effort to get here to &lt;a href=&quot;https://feeds.cocoapods.org&quot;&gt;~19,000 pods&lt;/a&gt; and ~86,000 versions. With this release, we&amp;#39;re committing to keep CocoaPods stable, and promising that it&amp;#39;s ready to be used in production (see &lt;a href=&quot;https://github.com/CocoaPods/guides.cocoapods.org/blob/ad3f451a69c9def22675aca77cc721853eebd82b/source/using/faq.html.md#cocoapods-is-not-ready-for-prime-time-yet&quot;&gt;this entry&lt;/a&gt; in our FAQ we&amp;#39;ve been dying to delete for &lt;em&gt;years&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;Across all of our various projects, we&amp;#39;ve accumulated ~20,000 commits by ~400 developers, &lt;a href=&quot;https://github.com/search?l=&amp;q=user%3Acocoapods&amp;ref=advsearch&amp;state=closed&amp;type=Issues&amp;utf8=%E2%9C%93&quot;&gt;closing ~22,000 issues&lt;/a&gt; -- it’s truly been a community effort to get here to &lt;a href=&quot;https://feeds.cocoapods.org&quot;&gt;~19,000 pods&lt;/a&gt; and ~86,000 versions. With this release, we&amp;#39;re committing to keep CocoaPods stable, and promising that it&amp;#39;s ready to be used in production (see &lt;a href=&quot;https://github.com/CocoaPods/guides.cocoapods.org/blob/ad3f451a69c9def22675aca77cc721853eebd82b/source/using/faq.html.md#cocoapods-is-not-ready-for-prime-time-yet&quot;&gt;this entry&lt;/a&gt; in our FAQ we&amp;#39;ve been dying to delete for &lt;em&gt;years&lt;/em&gt;).&lt;/p&gt;
 
 &lt;p&gt;Since &lt;a href=&quot;http://blog.cocoapods.org/Stats/&quot;&gt;adding stats&lt;/a&gt; a year ago, we got a real idea for the &lt;a href=&quot;http://metrics.cocoapods.org/api/v1/status&quot;&gt;scale of CocoaPods’ impact&lt;/a&gt;. CocoaPods has been used to integrate ~285,000,000 pods into ~850,000 unique Xcode targets.&lt;/p&gt;
 
@@ -2420,9 +2420,9 @@ Last year, we tried out a new &lt;a href=&quot;https://github.com/CocoaPods/sotu
 
 &lt;p&gt;However, there are a few people in particular I&amp;#39;d like to thank, because without their time CocoaPods would never have reached 1.0.&lt;/p&gt;
 
-&lt;h3 id=&quot;eloy-durán&quot;&gt;&lt;a href=&quot;https://twitter.com/alloy&quot;&gt;Eloy Durán&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;eloy-dur-n&quot;&gt;&lt;a href=&quot;https://twitter.com/alloy&quot;&gt;Eloy Durán&lt;/a&gt;&lt;/h3&gt;
 
-&lt;p&gt;Eloy started CocoaPods, and is famously our &amp;#39;final boss&amp;#39;. In addition to his vision for founding the project, Eloy has been brave enough to &lt;a href=&quot;http://blog.cocoapods.org/The-captain-leaves-the-bridge&quot;&gt;let others take the mantle&lt;/a&gt; and step into leadership. He established the &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/wiki/Communication-&amp;amp;-Design-Rules&quot;&gt;team culture&lt;/a&gt; and is still often actively engaged, from helping with issues to building the foundations for the &lt;a href=&quot;http://blog.cocoapods.org/CocoaPods-App&quot;&gt;Mac app&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Eloy started CocoaPods, and is famously our &amp;#39;final boss&amp;#39;. In addition to his vision for founding the project, Eloy has been brave enough to &lt;a href=&quot;http://blog.cocoapods.org/The-captain-leaves-the-bridge&quot;&gt;let others take the mantle&lt;/a&gt; and step into leadership. He established the &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/wiki/Communication-&amp;-Design-Rules&quot;&gt;team culture&lt;/a&gt; and is still often actively engaged, from helping with issues to building the foundations for the &lt;a href=&quot;http://blog.cocoapods.org/CocoaPods-App&quot;&gt;Mac app&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;fabio-pelosin&quot;&gt;&lt;a href=&quot;https://twitter.com/fabiopelosin&quot;&gt;Fabio Pelosin&lt;/a&gt;&lt;/h3&gt;
 
@@ -2444,7 +2444,7 @@ Last year, we tried out a new &lt;a href=&quot;https://github.com/CocoaPods/sotu
 
 &lt;p&gt;Marius gave himself one of the hardest jobs as a starter project - building &lt;a href=&quot;http://blog.cocoapods.org/CocoaPods-0.36&quot;&gt;Frameworks support&lt;/a&gt; for CocoaPods. This has been a multi-year project in reality, with edge-cases still popping up as the platforms evolve.&lt;/p&gt;
 
-&lt;h3 id=&quot;boris-bügling&quot;&gt;&lt;a href=&quot;https://twitter.com/NeoNacho&quot;&gt;Boris Bügling&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;boris-b-gling&quot;&gt;&lt;a href=&quot;https://twitter.com/NeoNacho&quot;&gt;Boris Bügling&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;Boris has devoted considerable energy into ensuring CocoaPods supports the dizzying array of platforms, target types and Xcode project settings used in modern Cocoa apps. Additionally, he has been our consistent Triagemaster General in the fight to keep our issues under control.&lt;/p&gt;
 
@@ -2456,7 +2456,7 @@ Last year, we tried out a new &lt;a href=&quot;https://github.com/CocoaPods/sotu
 
 &lt;p&gt;In addition to all of the people who have contributed their time and expertise to the project, we&amp;#39;ve been graciously sponsored in various ways over the past couple of years. First and foremost I’d like to thank &lt;a href=&quot;http://www.capitalone.io/&quot;&gt;Capital One&lt;/a&gt;, who have been sponsoring me since October, and thus supporting the majority of the 1.0-specific work that has been done since then. Additionally,  I’d be remiss if we didn’t thank &lt;a href=&quot;https://artsy.net&quot;&gt;Artsy&lt;/a&gt;, &lt;a href=&quot;http://www.usebutton.com/&quot;&gt;Button&lt;/a&gt;, &lt;a href=&quot;http://discontinuity.eu/&quot;&gt;Discontinuity&lt;/a&gt;, &lt;a href=&quot;http://www.fngtps.com/&quot;&gt;Fingertips&lt;/a&gt;, &lt;a href=&quot;https://www.heroku.com/&quot;&gt;Heroku&lt;/a&gt;, &lt;a href=&quot;https://realm.io/&quot;&gt;Realm&lt;/a&gt;, &lt;a href=&quot;http://www.rubymotion.com/&quot;&gt;RubyMotion&lt;/a&gt;, &lt;a href=&quot;https://www.sauspiel.de/&quot;&gt;Sauspiel&lt;/a&gt;, &lt;a href=&quot;http://segment.com&quot;&gt;Segment&lt;/a&gt;, &lt;a href=&quot;https://www.slack.com/&quot;&gt;Slack&lt;/a&gt;, &lt;a href=&quot;https://www.soundcloud.com/&quot;&gt;SoundCloud&lt;/a&gt;, &lt;a href=&quot;https://www.stripe.com/&quot;&gt;Stripe&lt;/a&gt;, and &lt;a href=&quot;http://www.technologyastronauts.ch/&quot;&gt;Technology Astronauts&lt;/a&gt; for their loving sponsorship over the years. Without their support, the CocoaPods ecosystem simply could not exist in the form it does today.&lt;/p&gt;
 
-&lt;h2 id=&quot;let&amp;#39;s-celebrate&quot;&gt;Let&amp;#39;s Celebrate&lt;/h2&gt;
+&lt;h2 id=&quot;lets-celebrate&quot;&gt;Let&amp;#39;s Celebrate&lt;/h2&gt;
 
 &lt;p&gt;CocoaPods has been a huge part of my life over the past two years. I know that it&amp;#39;s tempting to just say &lt;strong&gt;finally&lt;/strong&gt; right now, but I think this is an opportunity for something more -- it’s a chance for us to celebrate, as a community. CocoaPods is more than just a tool -- it’s a community of wonderful  iOS, Mac, watchOS, and tvOS developers. It&amp;#39;s a team of dedicated contributors who selflessly give back by answering issues and making pull requests. CocoaPods has been my home for the past two years, and on the occasion of our 1.0 release, I think it&amp;#39;s time we celebrate. The future is bright, and we&amp;#39;ve had a great journey getting here. Now let&amp;#39;s grab some cake and enjoy the moment.&lt;/p&gt;
 
@@ -2542,7 +2542,7 @@ and forcing &amp;lt; 1.0.0.beta.7 users to upgrade now, which might be a hard si
 breaking version 1.0.0 changes. We’ll be activating it not long after version 1.0.0 has been released, though, so don’t
 wait too long with upgrading.&lt;/p&gt;
 
-&lt;h2 id=&quot;unable-to-upgrade-just-yet?&quot;&gt;Unable to upgrade just yet?&lt;/h2&gt;
+&lt;h2 id=&quot;unable-to-upgrade-just-yet&quot;&gt;Unable to upgrade just yet?&lt;/h2&gt;
 
 &lt;p&gt;If for whatever reason you cannot upgrade to version 1.0.0 just yet, you can perform the following steps to convert your
 clone of the Master spec-repo from a shallow to a full clone:&lt;/p&gt;
@@ -2601,7 +2601,7 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
   
   <item>
     <title>CocoaPods 1.0 Migration Guide</title>
-    <description>&lt;h4 id=&quot;major-1.0-changes-tl:dr&quot;&gt;Major 1.0 changes TL:DR&lt;/h4&gt;
+    <description>&lt;h4 id=&quot;major-1-0-changes-tl-dr&quot;&gt;Major 1.0 changes TL:DR&lt;/h4&gt;
 
 &lt;p&gt;​&lt;/p&gt;
 
@@ -2770,7 +2770,7 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;It has an obvious hierarchy, so you can see that Pods included in &lt;code&gt;ORStackView_Example&lt;/code&gt; will be included in the &lt;code&gt;ORStackView_Tests&lt;/code&gt; target. The only new thing is &lt;code&gt;inherit! :search_paths&lt;/code&gt; which means &amp;quot;don&amp;#39;t link Pods into here, but let this target know they exist.&amp;quot; This &lt;code&gt;Podfile&lt;/code&gt; is easier to read, simpler and has less redundant information.&lt;/p&gt;
 
-&lt;h3 id=&quot;off-with-pods-:head&quot;&gt;Off with &lt;code&gt;pod&lt;/code&gt;s &lt;code&gt;:head&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;off-with-pods-head&quot;&gt;Off with &lt;code&gt;pod&lt;/code&gt;s &lt;code&gt;:head&lt;/code&gt;&lt;/h3&gt;
 
 &lt;p&gt;Adding &lt;code&gt;:head&lt;/code&gt; to a &lt;code&gt;pod&lt;/code&gt; nearly always worked, except when it didn&amp;#39;t. It is documented as this:&lt;/p&gt;
 
@@ -2780,7 +2780,7 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 
 &lt;p&gt;It was a tool that was really useful back when CocoaPods was small and it was hard to persuade people it was worth supporting any dependency manager for their projects. That time has long passed and now the flexibility that this attribute originally offered has fallen onto the side of &amp;quot;not worth keeping around.&amp;quot; It would introduce extremely hard-to-debug issues for developers expecting it to mean &amp;quot;use the latest version of their code repo.&amp;quot; You can either use the &lt;code&gt;:podspec&lt;/code&gt; option or point directly to the upstream repo (via &lt;code&gt;git&lt;/code&gt;, &lt;code&gt;:svn&lt;/code&gt;, etc.).&lt;/p&gt;
 
-&lt;h3 id=&quot;options-to-install!&quot;&gt;Options to &lt;code&gt;install!&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;options-to-install&quot;&gt;Options to &lt;code&gt;install!&lt;/code&gt;&lt;/h3&gt;
 
 &lt;p&gt;In the past when we have had to support configuration options for CocoaPods we have used environment variables. These act like NSUserDefaults in that someone who knows the key can make a change, but otherwise they remain &lt;a href=&quot;https://github.com/ChatSecure/ChatSecure-iOS/commit/d766400c2d8e935ab49daf5ef5f9bf28c760e484&quot;&gt;quite hidden&lt;/a&gt;. Though, sometimes they could be command line APIs too like &lt;code&gt;--no-integrate&lt;/code&gt;. While these were conscious choices they eventually added up to being inconsistent over time, and we&amp;#39;ve opted to move in favour of centralizing the information in the Podfile. You can see all the available options &lt;a href=&quot;https://guides.cocoapods.org/syntax/podfile.html#install_bang&quot;&gt;in the guides&lt;/a&gt;.&lt;/p&gt;
 
@@ -2792,12 +2792,12 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 
 &lt;p&gt;We also understand that running CocoaPods is about dealing with humans. With our default CocoaPods Specs repo, for example, we&amp;#39;ve had a policy of it being &lt;a href=&quot;https://github.com/CocoaPods/Specs/pull/12199&quot;&gt;read-only&lt;/a&gt; since it was introduced &lt;a href=&quot;http://blog.cocoapods.org/CocoaPods-Trunk/&quot;&gt;CocoaPods Trunk&lt;/a&gt;. In reality though we&amp;#39;ve had to support editing and deleting Pods by hand on a relatively regular basis with the CocoaPods dev team being the ones having to make those decisions. With 1.0.0 we&amp;#39;ve built the infrastructure to support deleting and deprecating a CocoaPod and a CocoaPod version. We don&amp;#39;t recommend it, but it&amp;#39;s now there, and it&amp;#39;s up to library owners to make the decisions around whether it&amp;#39;s fine for their users to remove dependencies.&lt;/p&gt;
 
-&lt;h3 id=&quot;1.0&quot;&gt;1.0&lt;/h3&gt;
+&lt;h3 id=&quot;1-0&quot;&gt;1.0&lt;/h3&gt;
 
 &lt;p&gt;Finally, and probably the most important point. Once the betas are finished, I can get rid of this FAQ entry:&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;h4 id=&quot;&amp;quot;cocoapods-is-not-ready-for-prime-time-yet.”&quot;&gt;&amp;quot;CocoaPods is not ready for prime-time yet.”&lt;/h4&gt;
+&lt;h4 id=&quot;cocoapods-is-not-ready-for-prime-time-yet&quot;&gt;&amp;quot;CocoaPods is not ready for prime-time yet.”&lt;/h4&gt;
 
 &lt;p&gt;Correct. Version 1.0.0 will be the milestone where we feel confident that all the basic requirements of a Cocoa dependency manager are fulfilled.&lt;/p&gt;
 
@@ -2821,7 +2821,7 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
-&lt;h2 id=&quot;what-is-rails-girls-summer-of-code?&quot;&gt;What is Rails Girls Summer of Code?&lt;/h2&gt;
+&lt;h2 id=&quot;what-is-rails-girls-summer-of-code&quot;&gt;What is Rails Girls Summer of Code?&lt;/h2&gt;
 
 &lt;p&gt;RGSoC is a global fellowship that funds two-woman teams to contribute to Open Source projects during a three month period. Among the available projects to work on we found CocoaPods the most interesting, even though it was on the challenging side for our skill level. For the application to be considered, we needed to find people that were willing to coach us with our coding adventure, and preferably, a place to work from. We reached out to GitHub, who offered us workspace. Five engineers signed up to coach us for an hour each week. With this configuration we were one of 16 teams accepted.&lt;/p&gt;
 
@@ -2919,7 +2919,7 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
-&lt;h3 id=&quot;what&amp;#39;s-happening-under-the-hood?&quot;&gt;What&amp;#39;s happening under the hood?&lt;/h3&gt;
+&lt;h3 id=&quot;whats-happening-under-the-hood&quot;&gt;What&amp;#39;s happening under the hood?&lt;/h3&gt;
 
 &lt;p&gt;Let&amp;#39;s take a look at the Xcode Project.&lt;/p&gt;
 
@@ -2995,7 +2995,7 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 
 &lt;p&gt;XPC means that we can have a persistently running Ruby environment from which we can send/recieve metadata about Podfiles. This protects the app from crashes, keeps memory usage low and doesn&amp;#39;t require booting up Ruby every time we want to communicate. Triple win. If you&amp;#39;ve not looked at XPC it gets a thumbs up from us.&lt;/p&gt;
 
-&lt;h2 id=&quot;what&amp;#39;s-in-now?&quot;&gt;What&amp;#39;s in now?&lt;/h2&gt;
+&lt;h2 id=&quot;whats-in-now&quot;&gt;What&amp;#39;s in now?&lt;/h2&gt;
 
 &lt;p&gt;The key features for 1.0 are being able to edit a Podfile, and to be able to run &lt;code&gt;pod install&lt;/code&gt; and &lt;code&gt;pod update&lt;/code&gt; on it.&lt;/p&gt;
 
@@ -3005,7 +3005,7 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 
 &lt;p&gt;We have a lot of the normal developer key commands working as expected, if there&amp;#39;s something you&amp;#39;d want that we don&amp;#39;t support, write us an issue or PR.&lt;/p&gt;
 
-&lt;h2 id=&quot;what&amp;#39;s-next?&quot;&gt;What&amp;#39;s next?&lt;/h2&gt;
+&lt;h2 id=&quot;whats-next&quot;&gt;What&amp;#39;s next?&lt;/h2&gt;
 
 &lt;p&gt;We&amp;#39;ve got some WIP &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods-app/pulls&quot;&gt;Pull Requests&lt;/a&gt; for some cool features like automatic CocoaPods plugin installation, and an integration summary. These are very likely to be in for the final 1.0 release. However we&amp;#39;ve not tried to look &lt;em&gt;too&lt;/em&gt; far into the future with this app.&lt;/p&gt;
 
@@ -3187,7 +3187,7 @@ We&amp;#39;ve prepared all systems for the switch and will flip it on December 3
 
 &lt;p&gt;Finally, the introduction of Molinillo made CocoaPods&amp;#39; dependency resolving first class. This means that a &lt;code&gt;pod install&lt;/code&gt; is now always going to be the exact same Pods as the one that generated the &lt;code&gt;Podfile.lock&lt;/code&gt;. Also, seriously, it&amp;#39;s in RubyGems + Bundler, that&amp;#39;s so cool.&lt;/p&gt;
 
-&lt;h2 id=&quot;cocoapods.app&quot;&gt;CocoaPods.app&lt;/h2&gt;
+&lt;h2 id=&quot;cocoapods-app&quot;&gt;CocoaPods.app&lt;/h2&gt;
 
 &lt;p&gt;The final major project that we&amp;#39;ve been working on, and have shipped a few releases sneakily is CocoaPods.app. In our constant work to lower the barrier to entry for building apps, we&amp;#39;ve started tackling the last mile. How do we improve, and simplify the installation and updating of CocoaPods?&lt;/p&gt;
 
@@ -3209,7 +3209,7 @@ We&amp;#39;ve prepared all systems for the switch and will flip it on December 3
 &lt;section class=&quot;container&quot;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;1.0&quot;&gt;1.0&lt;/h2&gt;
+&lt;h2 id=&quot;1-0&quot;&gt;1.0&lt;/h2&gt;
 
 &lt;p&gt;I finished the last post talking about what 1.0 looks like, so it seems fitting to end this year about 1.0 too. Our 1.0 milestone is getting there, and there&amp;#39;s progress on the last major breaking change to the Podfile syntax. With luck, this may finally be the year of CocoaPods 1.0.&lt;/p&gt;
 
@@ -3785,7 +3785,7 @@ Special thanks to all the new contributors we had for this release, especially f
 
 &lt;!-- more --&gt;
 
-&lt;h3 id=&quot;but-wait,-there&amp;#39;s-more...&quot;&gt;But wait, there&amp;#39;s more...&lt;/h3&gt;
+&lt;h3 id=&quot;but-wait-theres-more&quot;&gt;But wait, there&amp;#39;s more...&lt;/h3&gt;
 
 &lt;p&gt;It wasn&amp;#39;t just enough to offer just download counts. We spend a lot of time working around Xcode&amp;#39;s project file intricacies, however in this context, it provides us with foundations for a really nice feature. CocoaPods Stats will be able to keep track of the unique number of installs within Apps / Watch Apps / Extensions / Unit Tests.&lt;/p&gt;
 
@@ -3803,7 +3803,7 @@ Special thanks to all the new contributors we had for this release, especially f
 &lt;section class=&quot;container&quot;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;alright,-hold-up&quot;&gt;Alright, hold up&lt;/h3&gt;
+&lt;h3 id=&quot;alright-hold-up&quot;&gt;Alright, hold up&lt;/h3&gt;
 
 &lt;p&gt;Let&amp;#39;s go over how we check which pods get sent up for analytics, and how we do the unique installs. &lt;a href=&quot;https://github.com/cocoapods/cocoapods-stats&quot;&gt;CocoaPods-Stats&lt;/a&gt; is a plugin that is now bundled with CocoaPods from version 0.38 onwards. It &lt;a href=&quot;https://github.com/CocoaPods/cocoapods-stats/blob/0361f29ae37e82ccf385319bba9cf31464049144/lib/cocoapods_plugin.rb#L6&quot;&gt;registers&lt;/a&gt; as a post-install plugin and is ran on every &lt;code&gt;pod install&lt;/code&gt; or &lt;code&gt;pod update&lt;/code&gt;.&lt;/p&gt;
 
@@ -3844,7 +3844,7 @@ Special thanks to all the new contributors we had for this release, especially f
 &lt;/div&gt;
 &lt;p&gt;We then also send along the CocoaPods version that was used to generate this installation. Ideally before release we&amp;#39;ll also be able to give statistics on how many people are using &lt;code&gt;pod try [pod]&lt;/code&gt; for your library too.&lt;/p&gt;
 
-&lt;h4 id=&quot;how-does-it-work?&quot;&gt;How does it work?&lt;/h4&gt;
+&lt;h4 id=&quot;how-does-it-work&quot;&gt;How does it work?&lt;/h4&gt;
 
 &lt;p&gt;My first attempt at a stats architecture was based on how &lt;a href=&quot;https://github.com/npm/download-counts#data-source&quot;&gt;npm does stats&lt;/a&gt;, roughly speaking they send all logs to S3 where they are map-reduced on a daily basis into individual package metrics. This is an elegant solution for a &lt;a href=&quot;https://www.crunchbase.com/organization/npm&quot;&gt;company&lt;/a&gt; with people working full time on up-time and stability. As someone who wants to be building iOS apps, and not maintaining &lt;a href=&quot;http://cocoadocs.org/readme/&quot;&gt;more&lt;/a&gt; infrastructure in my spare time, I wanted to avoid this.&lt;/p&gt;
 
@@ -3852,35 +3852,35 @@ Special thanks to all the new contributors we had for this release, especially f
 
 &lt;h2 id=&quot;faq&quot;&gt;FAQ&lt;/h2&gt;
 
-&lt;h4 id=&quot;can-i-opt-out-as-a-cocoapods-user?&quot;&gt;Can I opt out as a CocoaPods user?&lt;/h4&gt;
+&lt;h4 id=&quot;can-i-opt-out-as-a-cocoapods-user&quot;&gt;Can I opt out as a CocoaPods user?&lt;/h4&gt;
 
 &lt;p&gt;Sure. You can set an &lt;a href=&quot;http://apple.stackexchange.com/questions/106778/how-do-i-set-environment-variables-on-os-x&quot;&gt;environment variable&lt;/a&gt; &lt;code&gt;COCOAPODS_DISABLE_STATS&lt;/code&gt; to true in your shell, and stats will not be sent from your machine.&lt;/p&gt;
 
-&lt;h4 id=&quot;does-this-affect-every-pod?&quot;&gt;Does this affect every pod?&lt;/h4&gt;
+&lt;h4 id=&quot;does-this-affect-every-pod&quot;&gt;Does this affect every pod?&lt;/h4&gt;
 
 &lt;p&gt;Yeah, every pod will get download stats.&lt;/p&gt;
 
-&lt;h4 id=&quot;will-it-be-live-stats?&quot;&gt;Will it be live stats?&lt;/h4&gt;
+&lt;h4 id=&quot;will-it-be-live-stats&quot;&gt;Will it be live stats?&lt;/h4&gt;
 
 &lt;p&gt;No, they get generated once per day.&lt;/p&gt;
 
-&lt;h4 id=&quot;what-is-the-rollout-strategy?&quot;&gt;What is the rollout strategy?&lt;/h4&gt;
+&lt;h4 id=&quot;what-is-the-rollout-strategy&quot;&gt;What is the rollout strategy?&lt;/h4&gt;
 
 &lt;p&gt;We plan on making this initially a separate CocoaPods plugin that you can optionally install via &lt;code&gt;[sudo] gem install cocoapods-stats&lt;/code&gt; which will send the data. In a release or two we will bundle this into CocoaPods, and it will be installed by default for everyone moving forwards.&lt;/p&gt;
 
-&lt;h4 id=&quot;can-i-use-it-right-now?&quot;&gt;Can I use it right now?&lt;/h4&gt;
+&lt;h4 id=&quot;can-i-use-it-right-now&quot;&gt;Can I use it right now?&lt;/h4&gt;
 
 &lt;p&gt;Sure, update to the latest CocoaPods &lt;code&gt;[sudo] gem install cocoapods&lt;/code&gt; or download the latest &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods-app&quot;&gt;CocoaPods.app&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h4 id=&quot;how-does-this-affect-the-quality-indexes-/-sorting?&quot;&gt;How does this affect the quality indexes / sorting?&lt;/h4&gt;
+&lt;h4 id=&quot;how-does-this-affect-the-quality-indexes-sorting&quot;&gt;How does this affect the quality indexes / sorting?&lt;/h4&gt;
 
 &lt;p&gt;Ideally we can reduce the amount of impact GitHub stars affects a quality index, and replace some of the values with new metrics based on downloads/installations. &lt;/p&gt;
 
-&lt;h4 id=&quot;what-commands-does-this-run-on?&quot;&gt;What commands does this run on?&lt;/h4&gt;
+&lt;h4 id=&quot;what-commands-does-this-run-on&quot;&gt;What commands does this run on?&lt;/h4&gt;
 
 &lt;p&gt;It runs at the end of a &lt;code&gt;pod install&lt;/code&gt; or a &lt;code&gt;pod update&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h4 id=&quot;i-check-in-my-pods-directory,-how-does-this-affect-stats-for-the-pods-i-use?&quot;&gt;I check in my Pods directory, how does this affect stats for the pods I use?&lt;/h4&gt;
+&lt;h4 id=&quot;i-check-in-my-pods-directory-how-does-this-affect-stats-for-the-pods-i-use&quot;&gt;I check in my Pods directory, how does this affect stats for the pods I use?&lt;/h4&gt;
 
 &lt;p&gt;Checking in your Pods directory will mean that the download count for the pods used will rarely be affected, but the installations will be the exact same. They only register once per project, so multiple developers on the same project running &lt;code&gt;pod install&lt;/code&gt; will not raise this number.&lt;/p&gt;
 </description>
@@ -4157,7 +4157,7 @@ file in a Podspec.&lt;/p&gt;
 
 &lt;p&gt;As the organiser, I can&amp;#39;t be happy enough with how it went. The NYC event helped a lot of people actually start testing. It helped me start to use code coverage as a metric for libraries. It&amp;#39;s &lt;a href=&quot;https://github.com/orta/LocationManager/commit/6c240f4e62ca541c987f41cb956db5c5ed848cdf&quot;&gt;super easy&lt;/a&gt; to add. Hopefully events like this move the baseline of expectations forward a little bit. 👍&lt;/p&gt;
 
-&lt;p&gt;If you&amp;#39;re interested in doing community work with CocoaPods we&amp;#39;re always interested in working with more people on ideas like this. You can get in touch with us via &lt;a href=&quot;mailto:info@cocoapods.org?subject=I%20have%20community%20ideas&amp;amp;body=Hello%20there!%20I%20have%20some%20cool%20ideas%20around%20community%20events&quot;&gt;info@cocoapods.org&lt;/a&gt; ( this goes to Kyle, Samuel, Eloy and myself.)&lt;/p&gt;
+&lt;p&gt;If you&amp;#39;re interested in doing community work with CocoaPods we&amp;#39;re always interested in working with more people on ideas like this. You can get in touch with us via &lt;a href=&quot;mailto:info@cocoapods.org?subject=I%20have%20community%20ideas&amp;body=Hello%20there!%20I%20have%20some%20cool%20ideas%20around%20community%20events&quot;&gt;info@cocoapods.org&lt;/a&gt; ( this goes to Kyle, Samuel, Eloy and myself.)&lt;/p&gt;
 </description>
     <pubDate>Sun, 19 Apr 2015 00:00:00 +0000</pubDate>
     <link>https://blog.cocoapods.org/Jamming-2015</link>
@@ -4219,7 +4219,7 @@ file in a Podspec.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
-&lt;h3 id=&quot;to-recap:&quot;&gt;&lt;a href=&quot;/Test-Jammin&quot;&gt;To recap&lt;/a&gt;:&lt;/h3&gt;
+&lt;h3 id=&quot;to-recap&quot;&gt;&lt;a href=&quot;/Test-Jammin&quot;&gt;To recap&lt;/a&gt;:&lt;/h3&gt;
 
 &lt;p&gt;&lt;em&gt;TLDR/Elevator Pitch&lt;/em&gt;: If the community is going to move towards Swift, then let’s make sure that our Objective-C is in order by adding tests to established libraries.&lt;/p&gt;
 
@@ -4295,7 +4295,7 @@ file in a Podspec.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
-&lt;h2 id=&quot;history.&quot;&gt;History.&lt;/h2&gt;
+&lt;h2 id=&quot;history&quot;&gt;History.&lt;/h2&gt;
 
 &lt;p&gt;CocoaDocs is a server that generates CocoaPods documentation. It started out by generating Apple-compliant DocSets via &lt;a href=&quot;https://github.com/tomaz/appledoc&quot;&gt;appledoc&lt;/a&gt; on a hosted Mac and then sends the results to Amazon&amp;#39;s S3 where they are served statically.&lt;/p&gt;
 
@@ -4331,7 +4331,7 @@ file in a Podspec.&lt;/p&gt;
 }
 &lt;/style&gt;
 
-&lt;h2 id=&quot;backstory.&quot;&gt;Backstory.&lt;/h2&gt;
+&lt;h2 id=&quot;backstory&quot;&gt;Backstory.&lt;/h2&gt;
 
 &lt;p&gt;The CocoaPods web site is an interesting beast. In October 2013, we started &lt;a href=&quot;http://blog.cocoapods.org/redesign/&quot;&gt;rewriting&lt;/a&gt; the CocoaPods web pages. We centralized the documentation, created a blog and redesigned everything. &lt;/p&gt;
 
@@ -4339,7 +4339,7 @@ file in a Podspec.&lt;/p&gt;
 
 &lt;p&gt;In an ideal world, you should be able to find a library that fits your constraints using just the front page of CocoaPods.org. Often there is more than one library, and that’s where things gets a bit more complex. In previous versions of the site, in order to choose between multiple libraries, you needed to open them up on GitHub in separate tabs and compare. Now, you don’t need to. 🎉&lt;/p&gt;
 
-&lt;h2 id=&quot;here’s-how-it-works&quot;&gt;Here’s how it works&lt;/h2&gt;
+&lt;h2 id=&quot;here-s-how-it-works&quot;&gt;Here’s how it works&lt;/h2&gt;
 
 &lt;p&gt;Let’s take a random pod. &lt;a href=&quot;http://cocoapods.org/pods/MiniFuture&quot;&gt;MiniFuture&lt;/a&gt;. This is what happens after a Pod is released:&lt;/p&gt;
 
@@ -4500,7 +4500,7 @@ file in a Podspec.&lt;/p&gt;
 
 &lt;!-- more --&gt;
 
-&lt;h2 id=&quot;and-there-were-swift-&amp;amp;-dynamic-frameworks-on-ios&quot;&gt;And there were Swift &amp;amp; Dynamic Frameworks on iOS&lt;/h2&gt;
+&lt;h2 id=&quot;and-there-were-swift-dynamic-frameworks-on-ios&quot;&gt;And there were Swift &amp;amp; Dynamic Frameworks on iOS&lt;/h2&gt;
 
 &lt;p&gt;Dynamic frameworks have always been available on OS X. That&amp;#39;s different for iOS.
 Apple&amp;#39;s mobile platform introduced third-party dynamic framework support in iOS 8.
@@ -4524,9 +4524,9 @@ If that&amp;#39;s not present, you won&amp;#39;t be able to integrate dependenci
 This is an all or nothing approach per integrated targets, because we can&amp;#39;t ensure to properly build frameworks, whose transitive dependencies are static libraries.
 This release goes along with probably one of the most drastic changes of the whole project, which includes CocoaPods itself, but also required similar changes to Xcodeproj as well.&lt;/p&gt;
 
-&lt;h2 id=&quot;dynamic-frameworks-vs.-static-libraries&quot;&gt;Dynamic Frameworks vs. Static Libraries&lt;/h2&gt;
+&lt;h2 id=&quot;dynamic-frameworks-vs-static-libraries&quot;&gt;Dynamic Frameworks vs. Static Libraries&lt;/h2&gt;
 
-&lt;h5 id=&quot;so-what&amp;#39;s-the-difference-between-those-both-product-types?&quot;&gt;So what&amp;#39;s the difference between those both product types?&lt;/h5&gt;
+&lt;h5 id=&quot;so-whats-the-difference-between-those-both-product-types&quot;&gt;So what&amp;#39;s the difference between those both product types?&lt;/h5&gt;
 
 &lt;p&gt;One difference is obvious in their names: Dynamic and Static are opposites.
 This explains how they are linked to your code when integrated.
@@ -4611,7 +4611,7 @@ They are namespaced by the framework bundle.
 Furthermore we don&amp;#39;t have to apply the build rules ourself to the resources as e.g. asset catalogs and storyboards need to be compiled.
 This should decrease build times for projects using Pods that include many resources.&lt;/p&gt;
 
-&lt;h3 id=&quot;@ibdesignable---another-reason-for-frameworks&quot;&gt;&lt;code&gt;@IBDesignable&lt;/code&gt; - Another Reason for Frameworks&lt;/h3&gt;
+&lt;h3 id=&quot;ibdesignable-another-reason-for-frameworks&quot;&gt;&lt;code&gt;@IBDesignable&lt;/code&gt; - Another Reason for Frameworks&lt;/h3&gt;
 
 &lt;p&gt;Xcode 6 allows you to preview your own custom view components in Interface Builder.
 To make use of that, the view component must live in its own framework.&lt;/p&gt;
@@ -4772,7 +4772,7 @@ Locations: NYC / SF / + More&lt;/p&gt;
 
 &lt;p&gt;Therefore, I am now announcing, with slight pain in my heart, that the time has come for me to step down.&lt;/p&gt;
 
-&lt;h2 id=&quot;what-does-this-all-mean-for-the-future?&quot;&gt;What does this all mean for the future?&lt;/h2&gt;
+&lt;h2 id=&quot;what-does-this-all-mean-for-the-future&quot;&gt;What does this all mean for the future?&lt;/h2&gt;
 
 &lt;p&gt;I am not going away, I am simply moving more to the background. The most important parts being that I will relinquish day-to-day lead and maintainer work. These jobs will be taken over by the excellent &lt;a href=&quot;http://twitter.com/kylefuller&quot;&gt;Kyle&lt;/a&gt; and &lt;a href=&quot;http://twitter.com/orta&quot;&gt;Orta&lt;/a&gt;.&lt;/p&gt;
 
@@ -4801,7 +4801,7 @@ Pod authors will especially want to try this version to make sure their pods wil
 
 &lt;!-- more --&gt;
 
-&lt;h2 id=&quot;what-is-special-about-frameworks-integrated-by-cocoapods?&quot;&gt;What is special about Frameworks integrated by CocoaPods?&lt;/h2&gt;
+&lt;h2 id=&quot;what-is-special-about-frameworks-integrated-by-cocoapods&quot;&gt;What is special about Frameworks integrated by CocoaPods?&lt;/h2&gt;
 
 &lt;p&gt;With CocoaPods, Frameworks are mostly set up in way similar to how it is done via Xcode.
 This is to make the entire integration inspectable, understandable and allows us to unleash the power of the whole existing toolchain.&lt;/p&gt;
@@ -4822,7 +4822,7 @@ Therefore the module map is included in the built framework bundle.&lt;/p&gt;
 &lt;section class=&quot;container&quot;&gt;
 &lt;div class=&quot;row&quot;&gt;&lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;dynamic-frameworks-vs.-static-libraries&quot;&gt;Dynamic Frameworks vs. Static Libraries&lt;/h2&gt;
+&lt;h2 id=&quot;dynamic-frameworks-vs-static-libraries&quot;&gt;Dynamic Frameworks vs. Static Libraries&lt;/h2&gt;
 
 &lt;p&gt;So what&amp;#39;s the difference between those two product types?&lt;/p&gt;
 
@@ -4947,7 +4947,7 @@ The default modulemap looks basically always the same:&lt;/p&gt;
 &lt;p&gt;You can export the public API for your framework inside a umbrella header and &lt;em&gt;all transitive imported&lt;/em&gt; headers.
 Clang will take care of making module exports that can be imported by Objective-C and Swift.&lt;/p&gt;
 
-&lt;h3 id=&quot;what-does-transitive-imported-mean-in-this-context?&quot;&gt;What Does &lt;em&gt;Transitive Imported&lt;/em&gt; Mean In This Context?&lt;/h3&gt;
+&lt;h3 id=&quot;what-does-transitive-imported-mean-in-this-context&quot;&gt;What Does &lt;em&gt;Transitive Imported&lt;/em&gt; Mean In This Context?&lt;/h3&gt;
 
 &lt;p&gt;Transitive relations are a &lt;a href=&quot;http://en.wikipedia.org/wiki/Transitive_relation&quot;&gt;mathematical concept&lt;/a&gt;:&lt;/p&gt;
 
@@ -4960,7 +4960,7 @@ The transitive closure means that all headers, which are imported by header file
 Surely, you know this property from your app target, whenever you import a header, which imports other headers, the classes and symbols, which are defined there, are also available in your app code.
 The same has to apply for import statements in Umbrella Headers and effect the module visibility with Clang modules.&lt;/p&gt;
 
-&lt;h3 id=&quot;what-are-umbrella-headers?&quot;&gt;What are Umbrella Headers?&lt;/h3&gt;
+&lt;h3 id=&quot;what-are-umbrella-headers&quot;&gt;What are Umbrella Headers?&lt;/h3&gt;
 
 &lt;p&gt;For our example it could look like this:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
@@ -5184,7 +5184,7 @@ CocoaPods are searched for at all times.&lt;/p&gt;
 
 &lt;p&gt;How do our users search?&lt;/p&gt;
 
-&lt;h2 id=&quot;searching-on-cocoapods.org&quot;&gt;Searching on cocoapods.org&lt;/h2&gt;
+&lt;h2 id=&quot;searching-on-cocoapods-org&quot;&gt;Searching on cocoapods.org&lt;/h2&gt;
 
 &lt;p&gt;CocoaPods can be searched via the &lt;a href=&quot;http://blog.cocoapods.org/Search-API-Version-1/&quot;&gt;Search API&lt;/a&gt;, so for example at &lt;a href=&quot;http://search.cocoapods.org/api/v1/pods.flat.hash.json?query=author:tony%20author:arnold&quot;&gt;http://search.cocoapods.org/api/v1/pods.flat.hash.json?query=author:tony%20author:arnold&lt;/a&gt;, or via &lt;a href=&quot;http://cocoapods.org/?q=author:tony%20author:arnold&quot;&gt;cocoapods.org&lt;/a&gt;.&lt;/p&gt;
 
@@ -5641,7 +5641,7 @@ If you do, let us know.&lt;/p&gt;
 &lt;li&gt;Release Candidates for CocoaPods&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;1.0&quot;&gt;1.0&lt;/h2&gt;
+&lt;h2 id=&quot;1-0&quot;&gt;1.0&lt;/h2&gt;
 
 &lt;p&gt;The future is very bright with the imminent next release bringing in the work on the resolver. &lt;/p&gt;
 
@@ -5670,7 +5670,7 @@ If you do, let us know.&lt;/p&gt;
 
 &lt;p&gt;I can relate to this, I have made my fair share of &lt;strong&gt;+1&lt;/strong&gt; and &lt;strong&gt;I need this&lt;/strong&gt; comments. From my very personal, but probably non-unique experience, it&amp;#39;s really a mentality issue more than anything. Ultimately it&amp;#39;s related to my confidence as a programmer and a slight touch of &lt;a href=&quot;https://en.wikipedia.org/wiki/Impostor_syndrome&quot;&gt;Impostor Syndrome&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&quot;i-can&amp;#39;t-provide-value&quot;&gt;I can&amp;#39;t provide value&lt;/h3&gt;
+&lt;h3 id=&quot;i-cant-provide-value&quot;&gt;I can&amp;#39;t provide value&lt;/h3&gt;
 
 &lt;p&gt;A statement that I often used to justify my passivity was &lt;strong&gt;I can&amp;#39;t provide value here, the other contributors are just too skilled&lt;/strong&gt;. It&amp;#39;s true that many open source projects are huge behemoths with a lot of code and things to understand, but every single contribution still matters and provides value to the project. A project without contributions, big or small, will stagnate.&lt;/p&gt;
 
@@ -5680,7 +5680,7 @@ If you do, let us know.&lt;/p&gt;
 
 &lt;p&gt;For finding issues CocoaPods uses a labelling systems to illustrate how difficult an issue is as seen &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/labels&quot;&gt;here&lt;/a&gt;. The label &lt;code&gt;easy&lt;/code&gt; is perfect for finding tasks for new contributors. In fact I have started working on quite a few of them, but many times I ran into problems which were too difficult or things I simply didn&amp;#39;t understand well enough. I abandoned quite a few issues because of getting stuck, which is both good and bad. It&amp;#39;s good because it&amp;#39;s important that you are able to try your hand at solving issues and failing without being assigned the issue or feeling pressure to finish it. The bad part leads me to the next issue I had, asking questions.&lt;/p&gt;
 
-&lt;h3 id=&quot;i-shouldn&amp;#39;t-waste-the-core-contributors-time-by-asking-trivial-questions&quot;&gt;I shouldn&amp;#39;t waste the core contributors time by asking trivial questions&lt;/h3&gt;
+&lt;h3 id=&quot;i-shouldnt-waste-the-core-contributors-time-by-asking-trivial-questions&quot;&gt;I shouldn&amp;#39;t waste the core contributors time by asking trivial questions&lt;/h3&gt;
 
 &lt;p&gt;Even after getting passed the initial feeling of not being able to provide any value, landing my first PR helped with this, I was still reluctant to ask the core contributors questions because I felt like I was wasting their time. To quote myself from a discussion we had.&lt;/p&gt;
 
@@ -6569,11 +6569,11 @@ everything works as expected. This is &lt;em&gt;your&lt;/em&gt; responsibility f
 
 &lt;h2 id=&quot;frequently-asked-questions&quot;&gt;Frequently Asked Questions&lt;/h2&gt;
 
-&lt;h3 id=&quot;i’m-getting-a-&amp;quot;[!]-push-access-is-currently-disabled.&amp;quot;-message,-what’s-wrong?&quot;&gt;I’m getting a &amp;quot;[!] Push access is currently disabled.&amp;quot; message, what’s wrong?&lt;/h3&gt;
+&lt;h3 id=&quot;i-m-getting-a-push-access-is-currently-disabled-message-what-s-wrong&quot;&gt;I’m getting a &amp;quot;[!] Push access is currently disabled.&amp;quot; message, what’s wrong?&lt;/h3&gt;
 
 &lt;p&gt;During the claims period, &lt;code&gt;pod trunk push&lt;/code&gt; will be disabled. Please see the ‘&lt;a href=&quot;#transition&quot;&gt;Transition&lt;/a&gt;’ section.&lt;/p&gt;
 
-&lt;h3 id=&quot;will-i-still-be-able-to-make-modifications-to-a-published-podspec?&quot;&gt;Will I still be able to make modifications to a published podspec?&lt;/h3&gt;
+&lt;h3 id=&quot;will-i-still-be-able-to-make-modifications-to-a-published-podspec&quot;&gt;Will I still be able to make modifications to a published podspec?&lt;/h3&gt;
 
 &lt;p&gt;Once a podspec for a specific version of a pod is published, you won&amp;#39;t be able to modify it. At least not in an automated fashion.
 The majority of update requests are a results of contributors not sufficiently testing their podspec beforehand.
@@ -6581,21 +6581,21 @@ Generally what you want to do is to publish a &lt;strong&gt;new version&lt;/stro
 
 &lt;p&gt;However, if you really fall into some exceptional case and really have to modify an already published podspec for a given version, you may still create a pull-request against the ‘master’ spec-repo; but we will not necessarily accept it and we do not offer any guarantees on turn-around time.&lt;/p&gt;
 
-&lt;h3 id=&quot;how-can-i-distinguish-the-format-of-a-podspec.&quot;&gt;How can I distinguish the format of a podspec.&lt;/h3&gt;
+&lt;h3 id=&quot;how-can-i-distinguish-the-format-of-a-podspec&quot;&gt;How can I distinguish the format of a podspec.&lt;/h3&gt;
 
 &lt;p&gt;Podspecs using the Ruby DSL will use the &lt;code&gt;.podspec&lt;/code&gt; extension, JSON based
 podspecs will use &lt;code&gt;.podspec.json&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h3 id=&quot;will-the-specs-in-the-ruby-format-be-deprecated?&quot;&gt;Will the specs in the Ruby format be deprecated?&lt;/h3&gt;
+&lt;h3 id=&quot;will-the-specs-in-the-ruby-format-be-deprecated&quot;&gt;Will the specs in the Ruby format be deprecated?&lt;/h3&gt;
 
 &lt;p&gt;No, they are here to stay and are the preferred method if you need to be able to perform automatic generation, such as collecting a list of all the source files from disk. The &lt;code&gt;pod trunk push&lt;/code&gt; command will take care of converting the podspec to JSON. This means that you do &lt;em&gt;not&lt;/em&gt; have to change any existing podspecs.&lt;/p&gt;
 
-&lt;h3 id=&quot;will-private-repositories-need-to-adopt-the-json-format?&quot;&gt;Will private repositories need to adopt the JSON format?&lt;/h3&gt;
+&lt;h3 id=&quot;will-private-repositories-need-to-adopt-the-json-format&quot;&gt;Will private repositories need to adopt the JSON format?&lt;/h3&gt;
 
 &lt;p&gt;No. Moreover, the &lt;code&gt;pod push&lt;/code&gt; command will keep the old behaviour, except that we are moving this into &lt;code&gt;pod repo push&lt;/code&gt; to emphasise the distinction.
 Just keep in mind that if two files are available CocoaPods will prefer the JSON format.&lt;/p&gt;
 
-&lt;h3 id=&quot;can-i-access-the-specs-via-http?&quot;&gt;Can I access the specs via HTTP?&lt;/h3&gt;
+&lt;h3 id=&quot;can-i-access-the-specs-via-http&quot;&gt;Can I access the specs via HTTP?&lt;/h3&gt;
 
 &lt;p&gt;Yes, you can use the following endpoints of the GitHub API. At a later point we will introduce a public API on ‘Trunk’ that you can use to standardise this, although it should be noted that if you do not need more than what the GitHub API already offers, it’s best to just use that, as GitHub will be able to offer better uptimes than we can.&lt;/p&gt;
 
@@ -6937,7 +6937,7 @@ gifs):&lt;/p&gt;
 &lt;p&gt;After several months of discussions and meetings we are proud to finally be able to announce big news:
 CocoaPods has been acquired by AppIe for US$ 20 Million on the 1st of April, today.&lt;/p&gt;
 
-&lt;h2 id=&quot;cocoapods-@-appie&quot;&gt;CocoaPods @ AppIe&lt;/h2&gt;
+&lt;h2 id=&quot;cocoapods-appie&quot;&gt;CocoaPods @ AppIe&lt;/h2&gt;
 
 &lt;p&gt;With one exception (see below), the existing CocoaPods Core Team will move to the AppIe Campus.
 We can&amp;#39;t describe how excited we are to continue to improve giving you the best in pod-based dependency handling under AppIe&amp;#39;s fold.&lt;/p&gt;
@@ -6961,7 +6961,7 @@ It will also be possible to remotely remove a faulty pod from a client.
 We feel that this will enhance security and usability for our clients.
 Initially, we will charge a price for each uploaded version, but we are aiming to remove this by the middle of 2014.&lt;/p&gt;
 
-&lt;h3 id=&quot;eloy-durán&quot;&gt;Eloy Durán&lt;/h3&gt;
+&lt;h3 id=&quot;eloy-dur-n&quot;&gt;Eloy Durán&lt;/h3&gt;
 
 &lt;p&gt;Sadly, we have to add a bitter drop to this otherwise sweet nectar.
 While the CocoaPods core team stood as one behind this decision, founder Eloy Durán could not be persuaded to stay on board and was convinced to leave the OSS group he had founded, even after we offered him a generous severance package (in his own words): &amp;quot;Please accept this free license for life for CocoaPods.&amp;quot;&lt;/p&gt;
@@ -7079,7 +7079,7 @@ See you on soon on an Xcode near you!&lt;/p&gt;
 
 &lt;p&gt;Sometimes the small changes have the biggest impact. Folks with slow interwebs, rejoice! Because this &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/pull/1803/files#diff-5b25375a43a40f866bc3d26e7227d581L37&quot;&gt;patch&lt;/a&gt; contributed by &lt;a href=&quot;https://github.com/jverkoey&quot;&gt;Jeff Verkoeyen&lt;/a&gt; will prevent the download of the history of the master repo during setup and consequently will dramatically reduce the download size (from &lt;code&gt;&amp;gt;200MB&lt;/code&gt; to roughly &lt;code&gt;3.5MB&lt;/code&gt;). Nippy.&lt;/p&gt;
 
-&lt;h2 id=&quot;xcode-5.1&quot;&gt;Xcode 5.1&lt;/h2&gt;
+&lt;h2 id=&quot;xcode-5-1&quot;&gt;Xcode 5.1&lt;/h2&gt;
 
 &lt;p&gt;Finally we can say bye bye (at least until the next update of Xcode) to that pesky warning about updating the build settings of the Pods thanks to &lt;a href=&quot;https://github.com/coverback&quot;&gt;Romans Karpelcevs&lt;/a&gt;. Additionally, the file references of frameworks have been fixed to work on Xcode 5.1.&lt;/p&gt;
 
@@ -7191,11 +7191,11 @@ $ CocoaPods/bin/pod --version
 
 &lt;p&gt;Fixing issues themselves would be lovely, but it&amp;#39;s not the focus. This means you don&amp;#39;t have to know a lot of ruby, but more apply general debugging skills to the problem.&lt;/p&gt;
 
-&lt;h3 id=&quot;how-will-it-work?&quot;&gt;How will it work?&lt;/h3&gt;
+&lt;h3 id=&quot;how-will-it-work&quot;&gt;How will it work?&lt;/h3&gt;
 
 &lt;p&gt;On the last weekend of March, the 29th / 30th &lt;a href=&quot;http://cocoapods.org/about&quot;&gt;we&lt;/a&gt; will be in the CocoaPods IRC channel ( &lt;a href=&quot;irc://chat.freenode.net#cocoapods&quot;&gt;chat.freenode.net#cocoapods&lt;/a&gt; ) offering help to people. There will be an IRC bot that will assign people random CocoaPods GitHub issues when they request them, they then can triage it. We will then generate a leaderboard from the number of issues dealt with and give out some prizes at the end. This is a great opportunity to give back to the CocoaPods project and to say hi to the authors and other Objective-C developers in the chat room.&lt;/p&gt;
 
-&lt;h3 id=&quot;you-mentioned-prizes?&quot;&gt;You mentioned prizes?&lt;/h3&gt;
+&lt;h3 id=&quot;you-mentioned-prizes&quot;&gt;You mentioned prizes?&lt;/h3&gt;
 
 &lt;p&gt;Well, we reached out to some of the great indie dev tool makers - tools I use everyday - asking if they would be kind enough to donate a license or two. We&amp;#39;ll be able to give out licenses for the top contributors for the following apps: &lt;/p&gt;
 
@@ -7233,11 +7233,11 @@ $ CocoaPods/bin/pod --version
 
 &lt;p&gt;Setting up these two repositories to push to Github pages was pretty trivial, once I figured out the correct steps.&lt;/p&gt;
 
-&lt;h3 id=&quot;1.-travis-needs-to-be-a-user&quot;&gt;1. Travis needs to be a user&lt;/h3&gt;
+&lt;h3 id=&quot;1-travis-needs-to-be-a-user&quot;&gt;1. Travis needs to be a user&lt;/h3&gt;
 
 &lt;p&gt;Since Travis needs to push to Github, it needs a user. Pick or create a user, and get a Personal Access Token. This token is generated in Account Settings on Github. We chose to use the &lt;a href=&quot;https://github.com/CocoaPodsBot&quot;&gt;CocoaPods Bot&lt;/a&gt; account. &lt;/p&gt;
 
-&lt;h3 id=&quot;2.-authenticate-with-that-user&quot;&gt;2. Authenticate with that user&lt;/h3&gt;
+&lt;h3 id=&quot;2-authenticate-with-that-user&quot;&gt;2. Authenticate with that user&lt;/h3&gt;
 
 &lt;p&gt;In order to identify as this user, Travis needs credentials. I chose to encrypt the user information using the  &lt;code&gt;travis&lt;/code&gt; gem. I ran the command below from within the project directory with the &lt;code&gt;add&lt;/code&gt; flag so it automatically adds the encrypted output to the &lt;code&gt;.travis.yml&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
@@ -7258,13 +7258,13 @@ $ CocoaPods/bin/pod --version
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
 &lt;/div&gt;
-&lt;h3 id=&quot;3.-setup-and-deploy&quot;&gt;3. Setup and Deploy&lt;/h3&gt;
+&lt;h3 id=&quot;3-setup-and-deploy&quot;&gt;3. Setup and Deploy&lt;/h3&gt;
 
 &lt;p&gt;Travis build on a completely fresh checkout, so setting up the environment is key. Thankfully both sites had the &lt;code&gt;rake bootstrap&lt;/code&gt; command, so I was able to reuse that.&lt;/p&gt;
 
 &lt;p&gt;The deploy script turned out to be the tricky part. The important step here is to make sure the deploy script relies upon the &lt;code&gt;git remote&lt;/code&gt; that&amp;#39;s setup. All of our static sites have a &lt;code&gt;rake deploy&lt;/code&gt; command, which I modified to remove the hardcoding of the remote.&lt;/p&gt;
 
-&lt;h3 id=&quot;4.-travis.yml&quot;&gt;4. travis.yml&lt;/h3&gt;
+&lt;h3 id=&quot;4-travis-yml&quot;&gt;4. travis.yml&lt;/h3&gt;
 
 &lt;p&gt;Configure git settings in &lt;code&gt;.travis.yml&lt;/code&gt;. By default, Travis doesn&amp;#39;t have a user, so you should set the &lt;code&gt;user.email&lt;/code&gt; and &lt;code&gt;user.name&lt;/code&gt; to push with. These should match the credentials you encrypted with the token.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
@@ -7287,7 +7287,7 @@ $ CocoaPods/bin/pod --version
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
 &lt;/div&gt;
-&lt;h3 id=&quot;5.-updating-the-remote&quot;&gt;5. Updating the remote&lt;/h3&gt;
+&lt;h3 id=&quot;5-updating-the-remote&quot;&gt;5. Updating the remote&lt;/h3&gt;
 
 &lt;p&gt;In this setup, Travis doesn&amp;#39;t have ssh access to the repository. Change the &lt;code&gt;git remote&lt;/code&gt; to point to &lt;code&gt;https&lt;/code&gt; with your token attached. The token is used to authenticate the push. Here&amp;#39;s what the Blog setup looks like:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
@@ -7308,15 +7308,15 @@ $ CocoaPods/bin/pod --version
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
 &lt;/div&gt;
-&lt;h3 id=&quot;6.-turn-on-travis-builds&quot;&gt;6. Turn on Travis builds&lt;/h3&gt;
+&lt;h3 id=&quot;6-turn-on-travis-builds&quot;&gt;6. Turn on Travis builds&lt;/h3&gt;
 
 &lt;p&gt;This is done from Settings. Also, since this is a deploying build, make sure that you &lt;em&gt;do not&lt;/em&gt; build when pull requests are made.&lt;/p&gt;
 
-&lt;h3 id=&quot;7.-commit-and-push-your-changes.&quot;&gt;7. Commit and push your changes.&lt;/h3&gt;
+&lt;h3 id=&quot;7-commit-and-push-your-changes&quot;&gt;7. Commit and push your changes.&lt;/h3&gt;
 
 &lt;p&gt;Hopefully everything will work. If not, you can make more changes, push, and wait for Travis to build.&lt;/p&gt;
 
-&lt;h5 id=&quot;the-.travis.yml&quot;&gt;The .travis.yml&lt;/h5&gt;
+&lt;h5 id=&quot;the-travis-yml&quot;&gt;The .travis.yml&lt;/h5&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
@@ -7469,7 +7469,7 @@ start-at: The offset in the set of results [Default: 0].
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
 &lt;/div&gt;
-&lt;h4 id=&quot;what-query-string-do-i-use?&quot;&gt;What query string do I use?&lt;/h4&gt;
+&lt;h4 id=&quot;what-query-string-do-i-use&quot;&gt;What query string do I use?&lt;/h4&gt;
 
 &lt;p&gt;The &lt;code&gt;query&lt;/code&gt; string you use is what you type into the search engine on &lt;a href=&quot;http://cocoapods.org&quot;&gt;CocoaPods.org&lt;/a&gt;. In addition, you can filter on either or both platforms by prefixing the query string with &lt;code&gt;on:ios&lt;/code&gt;, &lt;code&gt;on:osx&lt;/code&gt;, or &lt;code&gt;on:ios on:osx&lt;/code&gt; (we hide this behind the four radio buttons).&lt;/p&gt;
 
@@ -7758,7 +7758,7 @@ http://search.cocoapods.org/api/v1/pods.flat.ids.json?query=test
 &lt;strong&gt;force push&lt;/strong&gt; into &lt;a href=&quot;https://github.com/CocoaPods/Specs&quot;&gt;the Specs repository&lt;/a&gt;. (Also known as the
 ‘master’ spec repo.)&lt;/p&gt;
 
-&lt;h3 id=&quot;what-does-this-mean-for-you?&quot;&gt;What does this mean for you?&lt;/h3&gt;
+&lt;h3 id=&quot;what-does-this-mean-for-you&quot;&gt;What does this mean for you?&lt;/h3&gt;
 
 &lt;p&gt;Well, basically your CocoaPods setup &lt;strong&gt;is going to break&lt;/strong&gt;. You are going to
 have to manually delete &lt;em&gt;any&lt;/em&gt; local copies of the Specs repository and re-clone
@@ -7789,7 +7789,7 @@ repository should never be affected by issues in other spec repositories.&lt;/em
 &lt;p&gt;&lt;em&gt;If you really know what you’re doing and don’t want to re-download the
 complete repo, follow &lt;a href=&quot;https://github.com/CocoaPods/Specs/issues/7029#issuecomment-33708256&quot;&gt;these&lt;/a&gt; instructions.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;why-did-this-break?&quot;&gt;Why did this break?&lt;/h3&gt;
+&lt;h3 id=&quot;why-did-this-break&quot;&gt;Why did this break?&lt;/h3&gt;
 
 &lt;p&gt;The Specs repository has unfortunately broken due to &lt;a href=&quot;https://github.com/libgit2/libgit2/pull/2085&quot;&gt;a bug in
 libgit2&lt;/a&gt; which powers &lt;a href=&quot;https://help.github.com/articles/creating-and-editing-files-in-your-repository&quot;&gt;GitHub&amp;#39;s web editor&lt;/a&gt;. This
@@ -7816,7 +7816,7 @@ the rewritten tree. Rolling out this fix basically means that all copies of the
 repository have to be reset. This can be a delicate process, so deleting and
 re-cloning is the safest and simplest way to do so.&lt;/p&gt;
 
-&lt;h3 id=&quot;will-this-happen-again?&quot;&gt;Will this happen again?&lt;/h3&gt;
+&lt;h3 id=&quot;will-this-happen-again&quot;&gt;Will this happen again?&lt;/h3&gt;
 
 &lt;p&gt;There is a &lt;a href=&quot;https://github.com/libgit2/libgit2/pull/2085&quot;&gt;fix&lt;/a&gt; in the works to fix the bug in libgit2. This
 fixes a bug which would prevent libgit2 from corrupting a repository in this
@@ -7845,7 +7845,7 @@ adopters and pod providers. We are very thankful for your patience and
 understanding while we work towards a smoothly functioning version 1 of
 CocoaPods and its architecture.&lt;/p&gt;
 
-&lt;h3 id=&quot;i-got-linked-here-after-updating-my-gems,-what-to-do?&quot;&gt;I got linked here after updating my gems, what to do?&lt;/h3&gt;
+&lt;h3 id=&quot;i-got-linked-here-after-updating-my-gems-what-to-do&quot;&gt;I got linked here after updating my gems, what to do?&lt;/h3&gt;
 
 &lt;p&gt;This issue is being tracked down to an issue located in Psych. To fix it please use the following command:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
@@ -8337,7 +8337,7 @@ from the start:&lt;/p&gt;
 &lt;p&gt;The discoverability of plugins is another important topic that we considered.
 Our solution is to adopt a non-enforced convention: plugins should be named
 after the &lt;code&gt;cocoapods-PLUGIN_NAME&lt;/code&gt; format. In this way, to check for the
-available plugins, you can just use this handy &lt;a href=&quot;http://rubygems.org/search?utf8=%E2%9C%93&amp;amp;query=cocoapods-&quot;&gt;RubyGems search&lt;/a&gt;.&lt;/p&gt;
+available plugins, you can just use this handy &lt;a href=&quot;http://rubygems.org/search?utf8=%E2%9C%93&amp;query=cocoapods-&quot;&gt;RubyGems search&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;This release also includes a galore of bug fixes, mostly related to the
 handling of xcassets resources.&lt;/p&gt;
@@ -8609,7 +8609,7 @@ and better frame our suggestions in context. But I digress, for now.&lt;/p&gt;
 
 &lt;p&gt;The solution is simple and, in our case, two-fold:&lt;/p&gt;
 
-&lt;h3 id=&quot;recommend-the-use-of-the-ruby-version-that-comes-with-os-x.&quot;&gt;&lt;em&gt;Recommend the use of the Ruby version that comes with OS X.&lt;/em&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;recommend-the-use-of-the-ruby-version-that-comes-with-os-x&quot;&gt;&lt;em&gt;Recommend the use of the Ruby version that comes with OS X.&lt;/em&gt;&lt;/h3&gt;
 
 &lt;p&gt;The only remaining –but very valid– concern is that, by default, you will
   have to use &lt;code&gt;sudo&lt;/code&gt; when installing gems. (This is only an issue for the
@@ -8665,7 +8665,7 @@ and better frame our suggestions in context. But I digress, for now.&lt;/p&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
 &lt;/div&gt;
-&lt;h3 id=&quot;provide-prebuilt-binaries-for-the-ruby-versions-that-come-with-os-x.&quot;&gt;&lt;em&gt;Provide prebuilt binaries for the Ruby versions that come with OS X.&lt;/em&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;provide-prebuilt-binaries-for-the-ruby-versions-that-come-with-os-x&quot;&gt;&lt;em&gt;Provide prebuilt binaries for the Ruby versions that come with OS X.&lt;/em&gt;&lt;/h3&gt;
 
 &lt;p&gt;In our case this means a prebuilt version of the C extension for Ruby 1.8.7
   on OS X 10.8.x and for Ruby 2.0.0 on OS X 10.9.x. On these versions, the
@@ -8706,7 +8706,7 @@ and better frame our suggestions in context. But I digress, for now.&lt;/p&gt;
 &lt;p&gt;Over the course of figuring out the best way to cater to our users, I came to
 the following insights:&lt;/p&gt;
 
-&lt;h3 id=&quot;rubygems-built-in-prebuilt-binaries-support.&quot;&gt;&lt;em&gt;RubyGems built-in prebuilt binaries support.&lt;/em&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;rubygems-built-in-prebuilt-binaries-support&quot;&gt;&lt;em&gt;RubyGems built-in prebuilt binaries support.&lt;/em&gt;&lt;/h3&gt;
 
 &lt;p&gt;RubyGems automagically installs a CPU-architecture + OS-version specific
   version of your gem if one exists with the following filename:
@@ -8719,7 +8719,7 @@ the following insights:&lt;/p&gt;
   fact a pre-installed OS X Ruby version. (In case there &lt;em&gt;is&lt;/em&gt; a modifier to
   control the Ruby version, please let me know and I will update this section.)&lt;/p&gt;
 
-&lt;h3 id=&quot;rubygems-installation-without-the-need-for-make.&quot;&gt;&lt;em&gt;RubyGems installation without the need for &lt;code&gt;make&lt;/code&gt;.&lt;/em&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;rubygems-installation-without-the-need-for-make&quot;&gt;&lt;em&gt;RubyGems installation without the need for &lt;code&gt;make&lt;/code&gt;.&lt;/em&gt;&lt;/h3&gt;
 
 &lt;p&gt;Because we have to check if the Ruby version you are using is a version that
   comes pre-installed with OS X, we have to perform these checks at the time
@@ -8769,7 +8769,7 @@ the following insights:&lt;/p&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
 &lt;/div&gt;
-&lt;h3 id=&quot;prebuilt-binary-packaging-helpers.&quot;&gt;&lt;em&gt;Prebuilt binary packaging helpers.&lt;/em&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;prebuilt-binary-packaging-helpers&quot;&gt;&lt;em&gt;Prebuilt binary packaging helpers.&lt;/em&gt;&lt;/h3&gt;
 
 &lt;p&gt;The &lt;a href=&quot;https://github.com/luislavena/rake-compiler&quot;&gt;rake-compiler&lt;/a&gt; library is
   very helpful in prebuilding extensions and understanding how RubyGems handles
@@ -8938,7 +8938,7 @@ team: &lt;a href=&quot;https://twitter.com/kylefuller&quot;&gt;Kyle Fuller&lt;/a
 &lt;li&gt;&lt;p&gt;Financial donations &lt;em&gt;do&lt;/em&gt; add a feeling of responsibility, for some, &lt;em&gt;without&lt;/em&gt; the financial compensation we would normally offset that with. I.e. our hourly rates for contracting work would be much higher than a typical donation. The reason we do not want to add such feelings of responsibility is that it’s important for us, in the globally connected, fast-paced world we live in, to be able to say “not now, I feel like doing something completely different”. Burnout is something that can hit prolific open-source people pretty fast and we need to actively counteract that.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&quot;so-what-can-you-do?&quot;&gt;So what &lt;em&gt;can&lt;/em&gt; you do?&lt;/h3&gt;
+&lt;h3 id=&quot;so-what-can-you-do&quot;&gt;So what &lt;em&gt;can&lt;/em&gt; you do?&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Helping out with CocoaPods comes in many forms. For those that are not able to help out with (Ruby) code issues, there are still ways to do so. Writing documentation and triaging tickets before they get to us are probably the most helpful in the sense of relieving us from financial ‘losses’, as they save us a whole lot of time.&lt;/li&gt;
