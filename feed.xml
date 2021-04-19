@@ -8,6 +8,56 @@
   
   
   <item>
+    <title>CocoaPods Trunk: Remote Code Execution found</title>
+    <description>&lt;p&gt;Part of the server-side validation for uploading a new CocoaPod to the central repository of Podspecs &lt;a href=&quot;https://blog.cocoapods.org/CocoaPods-Trunk/&quot;&gt;(trunk)&lt;/a&gt; could be exploited to execute arbitrary shell commands on the trunk server. &lt;/p&gt;
+
+&lt;p&gt;We were contacted via &lt;a href=&quot;https://mastodon.mit.edu/@maxj&quot;&gt;Max Justicz&lt;/a&gt; this morning who provided us with a great technical write-up and showed how to trigger it for ourselves. The exploit is a combination of un-sanitized user input getting through to a git call param which can be used to send remote payloads. &lt;/p&gt;
+
+&lt;p&gt;Being able to execute arbitrary shell commands on the server gave a possible attacker the ability to read the environment variables, which could be used to write to the CocoaPods/Specs repo and read the trunk database.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;This means you will need to log in again to trunk again to deploy any new Podspecs&lt;/strong&gt;. If you have automated deployment to CocoaPods working right now, &lt;strong&gt;this will break&lt;/strong&gt;, and you will need to &lt;code&gt;pod trunk register&lt;/code&gt; again and replace your &lt;code&gt;COCOAPODS_TRUNK_TOKEN&lt;/code&gt;. We&amp;#39;re sorry, I know that sucks, but it also &lt;em&gt;guarantees&lt;/em&gt; that you are the only person with write access to your pods.&lt;/p&gt;
+
+&lt;p&gt;If you are not a pod author, you do not need to do anything.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h3 id=&quot;patched&quot;&gt;Patched&lt;/h3&gt;
+
+&lt;p&gt;This vulnerability was introduced on &lt;a href=&quot;https://github.com/CocoaPods/trunk.cocoapods.org/pull/137&quot;&gt;Jun 4th, 2015&lt;/a&gt; and has been fixed as of &lt;a href=&quot;https://github.com/CocoaPods/trunk.cocoapods.org/pull/303&quot;&gt;11am GMT April 19th 2021&lt;/a&gt;. The issue has been patched server-side and does not affect your CocoaPods installation.&lt;/p&gt;
+
+&lt;p&gt;As most of the commits in the Specs repo are automated through trunk, we have &lt;a href=&quot;https://github.com/orta/specs-repo-git-scanner&quot;&gt;built some introspection tools&lt;/a&gt; to validate the Specs repo commits are ones which have been created by publishing/deprecating/deleting through trunk. The majority of other commits in the repo are around setting up infra for the CDN support, and CocoaPods release pushes. We don&amp;#39;t think the CocoaPods Specs repo has been tampered with.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-the-exploit-worked&quot;&gt;How the exploit worked&lt;/h3&gt;
+
+&lt;p&gt;During the deploy of a podspec to trunk, the server validates that the repo is accessible to git. This is done to help fix potentially broken podspecs with typoes, local auth which won&amp;#39;t work for others or external repos don&amp;#39;t have tags already set up. This validation used to rely on using the git CLI on trunk using &lt;code&gt;git ls-remote&lt;/code&gt; to replicate the same check as a user&amp;#39;s git would, but &lt;code&gt;ls-remote&lt;/code&gt; has a parameter &lt;a href=&quot;https://git-scm.com/docs/git-ls-remote&quot;&gt;&lt;code&gt;--upload-pack&lt;/code&gt;&lt;/a&gt; which can be used to execute a new shell.&lt;/p&gt;
+
+&lt;p&gt;This meant an attacker could create a specially crafted podspec via &lt;a href=&quot;https://guides.cocoapods.org/syntax/podspec.html#source&quot;&gt;&lt;code&gt;source&lt;/code&gt;&lt;/a&gt;, which would trigger the &lt;code&gt;--upload-pack&lt;/code&gt; param and execute an arbitrary command on trunk.&lt;/p&gt;
+
+&lt;h3 id=&quot;worst-case-scenario&quot;&gt;Worst case scenario&lt;/h3&gt;
+
+&lt;p&gt;We&amp;#39;ve not been able to prove that anyone has used this method before Max&amp;#39;s report today. However, just because it hasn&amp;#39;t been proved, doesn&amp;#39;t mean it hasn&amp;#39;t happened. 6 years is a long time. &lt;/p&gt;
+
+&lt;p&gt;The worst case scenario is that an attacker could have used this technique to get access to our trunk database. The trunk database contains the same emails which are public in the git history of the Specs repo. The table of information in the database which should not be seen are session keys. These keys act like unique passwords to accounts, and session keys are used to keep authenticate users to pods. We are wiping all session keys.&lt;/p&gt;
+
+&lt;p&gt;From the side of our investigation, &lt;em&gt;we cannot automatically detect if someone has deployed a poisoned copy of a Pod&lt;/em&gt;. If want to verify that your Pods have not had an un-expected release, you can use this app to shows the &lt;code&gt;sources&lt;/code&gt; for every version of a Pod: &lt;a href=&quot;https://3km05.csb.app&quot;&gt;https://3km05.csb.app&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;for-more-information&quot;&gt;For more information&lt;/h3&gt;
+
+&lt;p&gt;CocoaPods is ran by a set of volunteers in their spare time. If you have any questions or comments about this advisory:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Open an issue in &lt;a href=&quot;https://github.com/CocoaPods/trunk.cocoapods.org&quot;&gt;the trunk repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Email us at our private security email: &lt;a href=&quot;mailto:info@cocoapods.org&quot;&gt;info@cocoapods.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+    <link>https://blog.cocoapods.org/CocoaPods-Trunk-RCE</link>
+    <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-Trunk-RCE</guid>
+  </item>
+  
+  
+  
+  <item>
     <title>1.10 Beta Begins!</title>
     <description>&lt;p&gt;&lt;em&gt;CocoaPods 1.10&lt;/em&gt; drops support for Ruby 2.0, adds support for Ruby 2.7 and adds initial support for Xcode 12 as well as a revamped XCFramework integration process!&lt;/p&gt;
 

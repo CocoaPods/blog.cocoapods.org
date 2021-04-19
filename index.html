@@ -58,6 +58,29 @@
 <article class="post">
   <header>
     
+    <h2 class="post-title"><a href="/CocoaPods-Trunk-RCE">CocoaPods Trunk: Remote Code Execution found</a></h2>
+  </header>
+
+  
+      <p>Part of the server-side validation for uploading a new CocoaPod to the central repository of Podspecs <a href="https://blog.cocoapods.org/CocoaPods-Trunk/">(trunk)</a> could be exploited to execute arbitrary shell commands on the trunk server. </p>
+
+<p>We were contacted via <a href="https://mastodon.mit.edu/@maxj">Max Justicz</a> this morning who provided us with a great technical write-up and showed how to trigger it for ourselves. The exploit is a combination of un-sanitized user input getting through to a git call param which can be used to send remote payloads. </p>
+
+<p>Being able to execute arbitrary shell commands on the server gave a possible attacker the ability to read the environment variables, which could be used to write to the CocoaPods/Specs repo and read the trunk database.</p>
+
+<p><strong>This means you will need to log in again to trunk again to deploy any new Podspecs</strong>. If you have automated deployment to CocoaPods working right now, <strong>this will break</strong>, and you will need to <code>pod trunk register</code> again and replace your <code>COCOAPODS_TRUNK_TOKEN</code>. We&#39;re sorry, I know that sucks, but it also <em>guarantees</em> that you are the only person with write access to your pods.</p>
+
+<p>If you are not a pod author, you do not need to do anything.</p>
+
+
+      <p><a href="/CocoaPods-Trunk-RCE">Read on →</a></p>
+  
+
+</article>
+
+<article class="post">
+  <header>
+    
     <h2 class="post-title"><a href="/CocoaPods-1.10.0-beta">1.10 Beta Begins!</a></h2>
   </header>
 
@@ -195,21 +218,6 @@ on to find out what that looks like.</p>
 
 
       <p><a href="/CocoaPods-1.4.0">Read on →</a></p>
-  
-
-</article>
-
-<article class="post">
-  <header>
-    
-    <h2 class="post-title"><a href="/CocoaPods-1.3.0">CocoaPods 1.3.0 &#8212; Test specifications and performance improvements</a></h2>
-  </header>
-
-  
-      <p>TL;DR: <em>CocoaPods 1.3.0</em> has been released, which includes support for test specifications and performance improvements specifically around rebuilding your project and preparation for Xcode 9 support!</p>
-
-
-      <p><a href="/CocoaPods-1.3.0">Read on →</a></p>
   
 
 </article>
