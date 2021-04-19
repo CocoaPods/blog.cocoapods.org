@@ -44,3 +44,5 @@ CocoaPods is ran by a set of volunteers in their spare time. If you have any que
 * Open an issue in [the trunk repo](https://github.com/CocoaPods/trunk.cocoapods.org)
 * Email us at our private security email: [info@cocoapods.org](mailto:info@cocoapods.org)
 * The security advisory on GitHub: [GHSA-gx9h-rv35-v9hh](https://github.com/CocoaPods/trunk.cocoapods.org/security/advisories/GHSA-gx9h-rv35-v9hh)
+
+If you're not sure of the email address you used to use, use `pod trunk info [pod_name]` to see the connected email accounts.
