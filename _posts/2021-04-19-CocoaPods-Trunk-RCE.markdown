@@ -25,9 +25,9 @@ As most of the commits in the Specs repo are automated through trunk, we have [b
 
 ### How the exploit worked
 
-During the deploy of a podspec to trunk, the server validates that the repo is accessible to git. This is done to help fix potentially broken podspecs with typoes, local auth which won't work for others or external repos don't have tags already set up. This validation used to rely on using the git CLI on trunk using `git ls-remote` to replicate the same check as a user's git would, but `ls-remote` has a parameter `--upload-pack` which can be used to execute a new shell.
+During the deploy of a podspec to trunk, the server validates that the repo is accessible to git. This is done to help fix potentially broken podspecs with typoes, local auth which won't work for others or external repos don't have tags already set up. This validation used to rely on using the git CLI on trunk using `git ls-remote` to replicate the same check as a user's git would, but `ls-remote` has a parameter [`--upload-pack`](https://git-scm.com/docs/git-ls-remote) which can be used to execute a new shell.
 
-This meant an attacker could create a specially crafted Podspec, which would trigger the `--upload-pack` param and execute an arbitrary command on trunk.
+This meant an attacker could create a specially crafted podspec via [`source`](https://guides.cocoapods.org/syntax/podspec.html#source), which would trigger the `--upload-pack` param and execute an arbitrary command on trunk.
 
 ### Worst case scenario
 
