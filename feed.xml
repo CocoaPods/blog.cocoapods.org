@@ -48,6 +48,7 @@
 &lt;ul&gt;
 &lt;li&gt;Open an issue in &lt;a href=&quot;https://github.com/CocoaPods/trunk.cocoapods.org&quot;&gt;the trunk repo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Email us at our private security email: &lt;a href=&quot;mailto:info@cocoapods.org&quot;&gt;info@cocoapods.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The security advisory on GitHub: &lt;a href=&quot;https://github.com/CocoaPods/trunk.cocoapods.org/security/advisories/GHSA-gx9h-rv35-v9hh&quot;&gt;GHSA-gx9h-rv35-v9hh&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
