@@ -39,7 +39,7 @@ From the side of our investigation, _we cannot automatically detect if someone h
 
 ### For more information
 
-If you have any questions or comments about this advisory:
+CocoaPods is ran by a set of volunteers in their spare time. If you have any questions or comments about this advisory:
 
 * Open an issue in [the trunk repo](https://github.com/CocoaPods/trunk.cocoapods.org)
 * Email us at our private security email: [info@cocoapods.org](mailto:info@cocoapods.org)
