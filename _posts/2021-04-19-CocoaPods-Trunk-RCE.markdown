@@ -35,7 +35,7 @@ We've not been able to prove that anyone has used this method before Max's repor
 
 The worst case scenario is that an attacker could have used this technique to get access to our trunk database. The trunk database contains the same emails which are public in the git history of the Specs repo. The table of information in the database which should not be seen are session keys. These keys act like unique passwords to accounts, and session keys are used to connect authenticated users to pods. We are wiping all session keys.
 
-From the side of our investigation, _we cannot automatically detect if someone has deployed a poisoned copy of a Pod_. If want to verify that your Pods have not had an un-expected release, you can use this app to shows the `sources` for every version of a Pod: https://3km05.csb.app
+From the side of our investigation, _we cannot automatically detect if someone has deployed a poisoned copy of a Pod_. If want to verify that your Pods have not had an un-expected release, you can use this app to shows the `sources` for every version of a Pod: https://pod-sources.cocoapods.org
 
 ### For more information
 
