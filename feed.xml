@@ -37,7 +37,7 @@
 
 &lt;p&gt;We&amp;#39;ve not been able to prove that anyone has used this method before Max&amp;#39;s report today. However, just because it hasn&amp;#39;t been proved, doesn&amp;#39;t mean it hasn&amp;#39;t happened. 6 years is a long time. &lt;/p&gt;
 
-&lt;p&gt;The worst case scenario is that an attacker could have used this technique to get access to our trunk database. The trunk database contains the same emails which are public in the git history of the Specs repo. The table of information in the database which should not be seen are session keys. These keys act like unique passwords to accounts, and session keys are used to keep authenticate users to pods. We are wiping all session keys.&lt;/p&gt;
+&lt;p&gt;The worst case scenario is that an attacker could have used this technique to get access to our trunk database. The trunk database contains the same emails which are public in the git history of the Specs repo. The table of information in the database which should not be seen are session keys. These keys act like unique passwords to accounts, and session keys are used to connect authenticated users to pods. We are wiping all session keys.&lt;/p&gt;
 
 &lt;p&gt;From the side of our investigation, &lt;em&gt;we cannot automatically detect if someone has deployed a poisoned copy of a Pod&lt;/em&gt;. If want to verify that your Pods have not had an un-expected release, you can use this app to shows the &lt;code&gt;sources&lt;/code&gt; for every version of a Pod: &lt;a href=&quot;https://3km05.csb.app&quot;&gt;https://3km05.csb.app&lt;/a&gt;&lt;/p&gt;
 
