@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "1.11 Arrives!"
+author: dnkoutso
+categories: cocoapods releases
+---
+
+_CocoaPods 1.11_ raises the minimum Ruby version to 2.6 while adding support for Ruby 3.0. It also adds support for 'On Demand Resources' and contains numerous bug fixes and improvements!
+
+<!-- more -->
+
+### Ruby 2.6 and Ruby 3.0
+
+With the release of 1.11, the minimum version of Ruby required to run CocoaPods is now 2.6. By doing so, we were also able to bump a few other dependencies (such as ActiveSupport and Addressable) that were often colliding with other setups. We hope this unblocks developers and makes CocoaPods a bit more flexible.
+
+Ruby 3.0 is also now supported and is part of CocoaPods CI going forward! This will ensure new changes and fixes are always tested and verified against Ruby 3.0 before they are merged.
+
+### On Demand Resources
+
+In a nutshell, [On Demand Resources](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/On_Demand_Resources_Guide/index.html) allow developers to ship smaller app bundles by downloading assets on-demand instead of pre-shipping them.
+
+With CocoaPods 1.11, pod authors may now specify a set of resources to be integrated as on demand resources for a given application.
+
+Here's an example `podspec` that uses the new `on_demand_resources` DSL:
+
+```ruby
+Pod::Spec.new do |spec|
+  spec.name = 'MyGameAssets'
+  spec.version = '1.0'
+  # ... rest of root spec entries go here
+  
+  spec.on_demand_resources = {
+    'level1_assets' => ['level1/**/*.png'],
+    'level2_assets' => ['level2/**/*.png']
+  }
+end
+```
+
+Each key specifies a tag and each value is a glob for the paths to include. 
+
+> Note: On demand resource paths specified within `on_demand_resources` are *not* required to be also specified within `resources` DSL or `resource_bundle` DSL.
+
+_All_ on demand resources specified will be automatically integrated to the user's targets project and CocoaPods 1.11 will take care of updating all known asset tags of the user's project.
+
+For example, give the following `Podfile`:
+
+```ruby
+target 'MyGameApp' do
+  pod 'MyGameAssets'
+end
+```
+
+The `on_demand_resources` specified within the `MyGameAssets.podspec` will be integrated and added to the `MyGameApp` target!
+
+### Other Notable Enhancements
+
+The following DSL options have been added or expanded to serve different use-cases:
+
+* `project_header_files` DSL: Pod authors may now specific a set of `project_header_files` that are part of their pod. This helps designate specific headers that are meant to be used only by the pod itself. When the library is built, these headers will _not_ appear in the build directory.
+
+* New `script_phase` execution positions: The `script_phase` DSL has been extended to accept `before_headers` and `after_headers` option for the `execution_position`. This is useful when a script phase must be executed before or after the "Copy Headers" phase.
+
+* `pre_integrate_hook` DSL: Similar to the `post_integrate_hook` DSL added in version [1.10](https://blog.cocoapods.org/CocoaPods-1.10.0-beta/), this new hook will be executed before the user's project is integrated with the generated Pods project. 
+
+### Xcode 13 Support
+
+A new version of the `Xcodeproj` gem has shipped that adds initial support for Xcode 13 projects. To update, run `gem update xcodeproj` or if you are using [Bundler](https://bundler.io/) then run `bundle update xcodeproj` instead.
+
+CocoaPods 1.11 by default includes the latest version of the `Xcodeproj` gem allowing it to work with Xcode 13 right out of the box.
+
+That's it!
+
+### What's Next
+
+Like any other open source project, CocoaPods is maintained and improved by a handful of folks on their spare time. There is no official roadmap and new features will depend upon the community's appetite to build them! We welcome new contributors and assistance from anyone who wants to improve CocoaPods!
+
+We believe that CocoaPods continues to play a significant role for iOS development. It has particularly found strong footing in alternative mobile frameworks such as [ReactNative](https://reactnative.dev/), [Flutter](https://flutter.dev/) and [Kotlin Multiplatform](https://kotlinlang.org/lp/mobile/) and we hope this release provides pod authors and iOS developers with more powerful tools and features.
+
+As always, we would like to thank all of our contributors who helped make this release happen!
+
+Checkout the [changelog] to see the full list of changes.
+
+[changelog]: https://github.com/CocoaPods/CocoaPods/releases/tag/1.11.0.beta.1
