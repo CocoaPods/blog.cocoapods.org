@@ -6,9 +6,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
+
       <title>CocoaPods Blog</title>
-    
+
 
     <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
     <meta name="HandheldFriendly" content="True">
@@ -54,14 +54,29 @@
   <section class="container">
     <article class="row">
       <article class="content col-md-8 col-md-offset-2">
-        
+
 <article class="post">
   <header>
-    
+
+    <h2 class="post-title"><a href="/CocoaPods-1.11.0-beta">1.11 Arrives!</a></h2>
+  </header>
+
+
+      <p><em>CocoaPods 1.11</em> raises the minimum Ruby version to 2.6 while adding support for Ruby 3.0. It also adds support for &#39;On Demand Resources&#39; and contains numerous bug fixes and improvements!</p>
+
+
+      <p><a href="/CocoaPods-1.11.0-beta">Read on →</a></p>
+
+
+</article>
+
+<article class="post">
+  <header>
+
     <h2 class="post-title"><a href="/CocoaPods-Trunk-RCE">CocoaPods Trunk: Remote Code Execution found</a></h2>
   </header>
 
-  
+
       <p>Part of the server-side validation for uploading a new CocoaPod to the central repository of Podspecs <a href="https://blog.cocoapods.org/CocoaPods-Trunk/">(trunk)</a> could be exploited to execute arbitrary shell commands on the trunk server. </p>
 
 <p>We were contacted via <a href="https://mastodon.mit.edu/@maxj">Max Justicz</a> this morning who provided us with a great technical write-up and showed how to trigger it for ourselves. The exploit is a combination of un-sanitized user input getting through to a git call param which can be used to send remote payloads. </p>
@@ -74,122 +89,122 @@
 
 
       <p><a href="/CocoaPods-Trunk-RCE">Read on →</a></p>
-  
+
 
 </article>
 
 <article class="post">
   <header>
-    
+
     <h2 class="post-title"><a href="/CocoaPods-1.10.0-beta">1.10 Beta Begins!</a></h2>
   </header>
 
-  
+
       <p><em>CocoaPods 1.10</em> drops support for Ruby 2.0, adds support for Ruby 2.7 and adds initial support for Xcode 12 as well as a revamped XCFramework integration process!</p>
 
 
       <p><a href="/CocoaPods-1.10.0-beta">Read on →</a></p>
-  
+
 
 </article>
 
 <article class="post">
   <header>
-    
+
     <h2 class="post-title"><a href="/CocoaPods-1.9.0-beta">CocoaPods 1.9 Beta has arrived!</a></h2>
   </header>
 
-  
+
       <p><em>CocoaPods 1.9</em> adds support for XCFrameworks, configuration-based dependencies for pod authors, code coverage in generated schemes, and other enhancements and bug fixes!</p>
 
 
       <p><a href="/CocoaPods-1.9.0-beta">Read on →</a></p>
-  
+
 
 </article>
 
 <article class="post">
   <header>
-    
+
     <h2 class="post-title"><a href="/CocoaPods-1.8.0-beta">CocoaPods 1.8 Beta is Here!</a></h2>
   </header>
 
-  
+
       <p><em>CocoaPods 1.8</em> switches the CDN as the default spec repo source and comes with a few enhancements!</p>
 
 
       <p><a href="/CocoaPods-1.8.0-beta">Read on →</a></p>
-  
+
 
 </article>
 
 <article class="post">
   <header>
-    
+
     <h2 class="post-title"><a href="/CocoaPods-1.7.2">CocoaPods 1.7.2 &#8212; Master Repo CDN is Finalized!</a></h2>
   </header>
 
-  
+
       <p><em>CocoaPods 1.7.2</em> brings with it the final version of CDN support for the <a href="https://github.com/CocoaPods/Specs">trunk specs repo</a>. </p>
 
 
       <p><a href="/CocoaPods-1.7.2">Read on →</a></p>
-  
+
 
 </article>
 
 <article class="post">
   <header>
-    
+
     <h2 class="post-title"><a href="/CocoaPods-1.7.0-beta">CocoaPods 1.7.0 Beta!</a></h2>
   </header>
 
-  
+
       <p><em>CocoaPods 1.7.0</em> expands heavily on the improved underlying infrastructure of prior releases with support for multiple Swift versions, app specs and more!</p>
 
 
       <p><a href="/CocoaPods-1.7.0-beta">Read on →</a></p>
-  
+
 
 </article>
 
 <article class="post">
   <header>
-    
+
     <h2 class="post-title"><a href="/CocoaPods-1.6.0-beta">CocoaPods 1.6.0 Beta Begins!</a></h2>
   </header>
 
-  
+
       <p><em>CocoaPods 1.6.0</em> release continues our focus on stability, performance and scalability for large projects.</p>
 
 
       <p><a href="/CocoaPods-1.6.0-beta">Read on →</a></p>
-  
+
 
 </article>
 
 <article class="post">
   <header>
-    
+
     <h2 class="post-title"><a href="/CocoaPods-1.5.0">CocoaPods 1.5.0 &#8212; Swift Static Libraries</a></h2>
   </header>
 
-  
+
       <p><em>CocoaPods 1.5.0</em> comes with native support for building Swift pods as static libraries.</p>
 
 
       <p><a href="/CocoaPods-1.5.0">Read on →</a></p>
-  
+
 
 </article>
 
 <article class="post">
   <header>
-    
+
     <h2 class="post-title"><a href="/CocoaPods-Metadata-Service">New Service: CocoaPods Metadata generation</a></h2>
   </header>
 
-  
+
       <p>This week we shipped a new behind-the-scenes service for CocoaPods authors: <a href="https://github.com/CocoaPods/cocoapods-metadata-service">cocoapods-metadata-service</a> it handles
 a subset of CocoaDocs responsibilities but does not have the requirement of running on a Mac. This makes it easier for
 us to maintain.</p>
@@ -203,22 +218,7 @@ on to find out what that looks like.</p>
 
 
       <p><a href="/CocoaPods-Metadata-Service">Read on →</a></p>
-  
 
-</article>
-
-<article class="post">
-  <header>
-    
-    <h2 class="post-title"><a href="/CocoaPods-1.4.0">CocoaPods 1.4.0 &#8212; Feature packed!</a></h2>
-  </header>
-
-  
-      <p><em>CocoaPods 1.4.0</em> comes packed with new features such as app host support for tests, script phases, static framework support and a new Swift version DSL!</p>
-
-
-      <p><a href="/CocoaPods-1.4.0">Read on →</a></p>
-  
 
 </article>
 

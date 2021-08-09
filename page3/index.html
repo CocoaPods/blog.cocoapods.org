@@ -6,9 +6,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
+
       <title>CocoaPods Blog</title>
-    
+
 
     <meta name="description" content="The blog for CocoaPods.org the Cocoa Dependency Manager">
     <meta name="HandheldFriendly" content="True">
@@ -54,46 +54,78 @@
   <section class="container">
     <article class="row">
       <article class="content col-md-8 col-md-offset-2">
-        
+
 <article class="post">
   <header>
-    
-    <h2 class="post-title"><a href="/RGSoC">RGSoC</a></h2>
+
+    <h2 class="post-title"><a href="/CocoaPods-1.0-Migration-Guide">CocoaPods 1.0 Migration Guide</a></h2>
   </header>
 
-  
-      <p>During Summer 2015, we had the delightful opportunity to contribute to CocoaPods as part of Rails Girls Summer of Code (RGSoC). We were generously hosted and coached by GitHub. How did two newbie developers begin to work on open source, you might ask?</p>
+
+      <h4 id="major-1-0-changes-tl-dr">Major 1.0 changes TL:DR</h4>
+
+<p>​</p>
+
+<ul>
+<li>You now have to define targets. Previously there was an available implicit target.</li>
+<li>A <code>target</code> has to represent an Xcode target.</li>
+<li>When you want to represent a collection of pods that go to multiple targets, use an <code>abstract_target</code> then add targets inside that. Pod dependencies are inherited by nested targets.</li>
+<li>Targets that want to know about the pods for a target but don&#39;t need linking (for example, Test targets) can define that they inherit pods via their search paths (<code>inherit! :search_paths</code>).</li>
+<li><code>:exclusive =&gt; true</code> and <code>link_with</code> have been removed in favour of the above.</li>
+<li><code>xcodeproj</code> is renamed <code>project</code> to make the DSL vocabulary consistent.</li>
+<li>We&#39;ve removed the ability to declare <code>:head</code> on a <code>pod</code>—you can either use the <code>:podspec</code> option or point directly to the upstream repo (via <code>git</code>, <code>:svn</code>, etc.).</li>
+<li>You can now declare installation options inside the <code>Podfile</code> via <code>install!</code> (e.g. <code>install! &#39;cocoapods&#39;, :deterministic_uuids =&gt; false, :integrate_targets =&gt; false</code>).</li>
+<li>We&#39;ve removed all DSL attributes that were classed as deprecated.</li>
+<li><code>pod trunk delete</code> and <code>pod trunk deprecate</code> have been introduced.</li>
+<li><code>pod search</code> improvements (this is great because it searches all your private spec repos too).</li>
+<li><code>pod lib lint</code> and <code>pod spec lint</code> will verify that your pod can actually be imported.</li>
+</ul>
 
 
-      <p><a href="/RGSoC">Read on →</a></p>
-  
+      <p><a href="/CocoaPods-1.0-Migration-Guide">Read on →</a></p>
+
 
 </article>
 
 <article class="post">
   <header>
-    
+
+    <h2 class="post-title"><a href="/RGSoC">RGSoC</a></h2>
+  </header>
+
+
+      <p>During Summer 2015, we had the delightful opportunity to contribute to CocoaPods as part of Rails Girls Summer of Code (RGSoC). We were generously hosted and coached by GitHub. How did two newbie developers begin to work on open source, you might ask?</p>
+
+
+      <p><a href="/RGSoC">Read on →</a></p>
+
+
+</article>
+
+<article class="post">
+  <header>
+
     <h2 class="post-title"><a href="/CocoaPods-App">App 1.0</a></h2>
   </header>
 
-  
+
       <p>TLDR: CocoaPods now has a Mac App that provides a hosted Ruby experience, go check out the web page for it: <a href="https://cocoapods.org/app">cocoapods.org/app</a>.</p>
 
 <p>The rest of this post is about how all the pieces come together to make a CocoaPods app.</p>
 
 
       <p><a href="/CocoaPods-App">Read on →</a></p>
-  
+
 
 </article>
 
 <article class="post">
   <header>
-    
+
     <h2 class="post-title"><a href="/Release-Versions-Only">Release Versions Only</a></h2>
   </header>
 
-  
+
       <p>The main CocoaPods website, <a href="https://cocoapods.org">cocoapods.org</a>, lets you search for all versions of a pod.
 That includes prerelease versions.
 As a result, when searching for a pod with a prerelease version, the latest prerelease version is shown in the result list.</p>
@@ -107,17 +139,17 @@ We&#39;ve prepared all systems for the switch and will flip it on December 31st 
 
 <p>Happy New Year, pod friends!</p>
 
-  
+
 
 </article>
 
 <article class="post">
   <header>
-    
+
     <h2 class="post-title"><a href="/Stats-2015">2015</a></h2>
   </header>
 
-  
+
       <blockquote>
 <p>CocoaPods is a dependency manager only in the sense that Apple is a cell phone manufacturer – it’s just one of their many projects.</p>
 </blockquote>
@@ -128,17 +160,17 @@ We&#39;ve prepared all systems for the switch and will flip it on December 31st 
 
 
       <p><a href="/Stats-2015">Read on →</a></p>
-  
+
 
 </article>
 
 <article class="post">
   <header>
-    
+
     <h2 class="post-title"><a href="/Creme-de-la-Pods">Introducing: Creme de la Pods</a></h2>
   </header>
 
-  
+
       <p>TL;DR: <em>You could always find out what was new with <a href="https://twitter.com/cocoapodsfeed">@CocoaPodsFeed</a> and <a href="https://feeds.cocoapods.org">feeds.cocoapods.org</a>. Now you can see new CocoaPods that have a <a href="https://guides.cocoapods.org/making/quality-indexes.html">QI</a> score of over 70 on <a href="https://twitter.com/cremedelapods">@CremeDeLaPods</a>.</em></p>
 
 <p>Keeping on top of the community&#39;s work is a challenge, with ~13,500 CocoaPods available and roughly 20 new pods every day. We work on CocoaPods to encourage  <a href="https://github.com/CocoaPods/CocoaPods#project-goals">contributions to OSS</a>. A by-product of this is that if you follow the whole stream of new CocoaPods, it can get hard to distinguish between &quot;my first library&quot; and &quot;an awesome paradigm <em>swift</em>.&quot;</p>
@@ -149,17 +181,17 @@ We&#39;ve prepared all systems for the switch and will flip it on December 31st 
 
 
       <p><a href="/Creme-de-la-Pods">Read on →</a></p>
-  
+
 
 </article>
 
 <article class="post">
   <header>
-    
+
     <h2 class="post-title"><a href="/Capital-One">Capital One</a></h2>
   </header>
 
-  
+
       <p>I&#39;m incredibly excited to announce that as of today my work on CocoaPods will be
 sponsored by Capital One.</p>
 
@@ -169,32 +201,32 @@ while finishing university.</p>
 
 
       <p><a href="/Capital-One">Read on →</a></p>
-  
+
 
 </article>
 
 <article class="post">
   <header>
-    
+
     <h2 class="post-title"><a href="/CocoaPods-0.39">CocoaPods 0.39 - tvOS and Dynamic Vendored Frameworks</a></h2>
   </header>
 
-  
+
       <p>TL;DR: <em>CocoaPods 0.39</em> has been released, with support for tvOS pods and dynamic vendored frameworks.</p>
 
 
       <p><a href="/CocoaPods-0.39">Read on →</a></p>
-  
+
 
 </article>
 
 <article class="post">
   <header>
-    
+
     <h2 class="post-title"><a href="/Running-SSH-Commands-via-Rakefiles">Running SSH Commands via Rakefiles</a></h2>
   </header>
 
-  
+
       <p>TL;DR: <em>CocoaDocs&#39; commands which used to be executed via logging in are now done via rake commands.</em></p>
 
 <p><a href="https://github.com/CocoaPods/cocoadocs.org/">CocoaDocs</a> runs a lot of CocoaPods&#39; infrastructure. It is the workhorse that allows us to provide rendered <a href="https://cocoapods.org/pods/ARAnalytics">READMEs/CHANGELOGs</a>, <a href="http://blog.cocoapods.org/CocoaPods.org-Two-point-Five/">QIs</a> and <a href="https://status.cocoapods.org">status updates</a>.</p>
@@ -203,37 +235,22 @@ while finishing university.</p>
 
 
       <p><a href="/Running-SSH-Commands-via-Rakefiles">Read on →</a></p>
-  
+
 
 </article>
 
 <article class="post">
   <header>
-    
+
     <h2 class="post-title"><a href="/Stats-Reset">CocoaPods Stats Resetting</a></h2>
   </header>
 
-  
+
       <p>TL;DR: <em>CocoaPods Stats is ready to move from it&#39;s current staging environment</em>, and we will be resetting all stats next weekend.</p>
 
 
       <p><a href="/Stats-Reset">Read on →</a></p>
-  
 
-</article>
-
-<article class="post">
-  <header>
-    
-    <h2 class="post-title"><a href="/CocoaPods-0.38">CocoaPods 0.38 - watchOS and target de-duplication</a></h2>
-  </header>
-
-  
-      <p>TL;DR: <em>CocoaPods 0.38</em> has been released, with watchOS 2 support, target de-duplication, and Stats for everyone.</p>
-
-
-      <p><a href="/CocoaPods-0.38">Read on →</a></p>
-  
 
 </article>
 
