@@ -106,7 +106,7 @@
 
 &lt;p&gt;Like any other open source project, CocoaPods is maintained and improved by a handful of folks on their spare time. There is no official roadmap and new features will depend upon the community&amp;#39;s appetite to build them! We welcome new contributors and assistance from anyone who wants to improve CocoaPods!&lt;/p&gt;
 
-&lt;p&gt;We believe that CocoaPods continues to play a significant role for iOS development. It has particularly found strong footing in alternative mobile frameworks such as &lt;a href=&quot;https://reactnative.dev/&quot;&gt;ReactNative&lt;/a&gt;, &lt;a href=&quot;https://flutter.dev/&quot;&gt;Flutter&lt;/a&gt; and &lt;a href=&quot;https://kotlinlang.org/lp/mobile/&quot;&gt;Kotlin Multiplatform&lt;/a&gt; and we hope this release provides pod authors and iOS developers with more powerful tools and features.&lt;/p&gt;
+&lt;p&gt;We believe that CocoaPods continues to play a significant role for iOS development. It has particularly found strong footing in alternative mobile frameworks such as &lt;a href=&quot;https://reactnative.dev/&quot;&gt;React Native&lt;/a&gt;, &lt;a href=&quot;https://flutter.dev/&quot;&gt;Flutter&lt;/a&gt; and &lt;a href=&quot;https://kotlinlang.org/lp/mobile/&quot;&gt;Kotlin Multiplatform&lt;/a&gt; and we hope this release provides pod authors and iOS developers with more powerful tools and features.&lt;/p&gt;
 
 &lt;p&gt;As always, we would like to thank all of our contributors who helped make this release happen!&lt;/p&gt;
 
