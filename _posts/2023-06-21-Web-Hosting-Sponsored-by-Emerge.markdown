@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "CocoaPods Web Hosting now Sponsored by Emerge Tools"
-author: segiddins
+author: samuel
 categories: sponsorship cocoapods.org website
 ---
 
