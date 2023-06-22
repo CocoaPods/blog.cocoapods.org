@@ -5,8 +5,25 @@
   <description>Updates for the fascinating developments happening in the CocoaPods world.</description>
   <link>https://blog.cocoapods.org</link>
   <atom:link href="https://blog.cocoapods.org/feed.articles.xml" rel="self" type="application/rss+xml" />
+  
+  
+  <item>
+    <title>CocoaPods Web Hosting now Sponsored by Emerge Tools</title>
+    <description>&lt;p&gt;I&amp;#39;m very happy to announce that &lt;a href=&quot;https://www.emergetools.com&quot;&gt;Emerge Tools&lt;/a&gt; is now sponsoring the web hosting costs of CocoaPods!&lt;/p&gt;
 
+&lt;p&gt;We&amp;#39;re super thankful that Emerge is stepping in to help us out with this. CocoaPods.org, Trunk, and all the other websites we maintain are a critical part of the CocoaPods ecosystem, and we&amp;#39;re glad to have Emerge&amp;#39;s support to keep them running.&lt;/p&gt;
 
+&lt;!-- more --&gt;
+
+&lt;p&gt;Emerge Tools is a suite of revolutionary products designed to supercharge mobile apps and the teams that build them. They&amp;#39;re a small startup working in a space that is near and dear to our hearts, and when they heard that the CocoaPods maintainers had been paying for hosting out-of-pocket for years, they were eager to step up and help out.&lt;/p&gt;
+</description>
+    <pubDate>Wed, 21 Jun 2023 00:00:00 -0700</pubDate>
+    <link>https://blog.cocoapods.org/Web-Hosting-Sponsored-by-Emerge</link>
+    <guid isPermaLink="true">https://blog.cocoapods.org/Web-Hosting-Sponsored-by-Emerge</guid>
+  </item>
+  
+  
+  
   <item>
     <title>1.11 Arrives!</title>
     <description>&lt;p&gt;&lt;em&gt;CocoaPods 1.11&lt;/em&gt; raises the minimum Ruby version to 2.6 while adding support for Ruby 3.0. It also adds support for &amp;#39;On Demand Resources&amp;#39; and contains numerous bug fixes and improvements!&lt;/p&gt;
@@ -29,7 +46,7 @@
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -48,7 +65,7 @@
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -65,7 +82,7 @@
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -77,7 +94,7 @@
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -112,13 +129,13 @@
 
 &lt;p&gt;Checkout the &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/releases/tag/1.11.0.beta.1&quot;&gt;changelog&lt;/a&gt; to see the full list of changes.&lt;/p&gt;
 </description>
-    <pubDate>Mon, 09 Aug 2021 00:00:00 +0300</pubDate>
+    <pubDate>Mon, 09 Aug 2021 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-1.11.0-beta</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.11.0-beta</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods Trunk: Remote Code Execution found</title>
     <description>&lt;p&gt;Part of the server-side validation for uploading a new CocoaPod to the central repository of Podspecs &lt;a href=&quot;https://blog.cocoapods.org/CocoaPods-Trunk/&quot;&gt;(trunk)&lt;/a&gt; could be exploited to execute arbitrary shell commands on the trunk server. &lt;/p&gt;
@@ -165,13 +182,13 @@
 
 &lt;p&gt;If you&amp;#39;re not sure of the email address you used to use, use &lt;code&gt;pod trunk info [pod_name]&lt;/code&gt; to see the connected email accounts.&lt;/p&gt;
 </description>
-    <pubDate>Mon, 19 Apr 2021 00:00:00 +0300</pubDate>
+    <pubDate>Mon, 19 Apr 2021 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-Trunk-RCE</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-Trunk-RCE</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>1.10 Beta Begins!</title>
     <description>&lt;p&gt;&lt;em&gt;CocoaPods 1.10&lt;/em&gt; drops support for Ruby 2.0, adds support for Ruby 2.7 and adds initial support for Xcode 12 as well as a revamped XCFramework integration process!&lt;/p&gt;
@@ -204,7 +221,7 @@
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -216,7 +233,7 @@
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -235,7 +252,7 @@
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -245,7 +262,7 @@
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -262,13 +279,13 @@
 
 &lt;p&gt;Checkout the &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/releases/tag/1.10.0.beta.1&quot;&gt;changelog&lt;/a&gt; to see the full list of changes.&lt;/p&gt;
 </description>
-    <pubDate>Fri, 17 Jul 2020 00:00:00 +0300</pubDate>
+    <pubDate>Fri, 17 Jul 2020 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-1.10.0-beta</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.10.0-beta</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 1.9 Beta has arrived!</title>
     <description>&lt;p&gt;&lt;em&gt;CocoaPods 1.9&lt;/em&gt; adds support for XCFrameworks, configuration-based dependencies for pod authors, code coverage in generated schemes, and other enhancements and bug fixes!&lt;/p&gt;
@@ -285,7 +302,7 @@
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -302,7 +319,7 @@
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -317,7 +334,7 @@
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -329,7 +346,7 @@
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -338,7 +355,7 @@
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -356,7 +373,7 @@
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -369,7 +386,7 @@
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -390,7 +407,7 @@
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -407,7 +424,7 @@
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -424,7 +441,7 @@
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -433,7 +450,7 @@
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -451,7 +468,7 @@
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -483,7 +500,7 @@
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -493,7 +510,7 @@
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -508,13 +525,13 @@
 
 &lt;p&gt;Checkout the &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/releases/tag/1.9.0.beta.1&quot;&gt;changelog&lt;/a&gt; to see the full list of changes.&lt;/p&gt;
 </description>
-    <pubDate>Mon, 16 Dec 2019 00:00:00 +0200</pubDate>
+    <pubDate>Mon, 16 Dec 2019 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-1.9.0-beta</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.9.0-beta</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 1.8 Beta is Here!</title>
     <description>&lt;p&gt;&lt;em&gt;CocoaPods 1.8&lt;/em&gt; switches the CDN as the default spec repo source and comes with a few enhancements!&lt;/p&gt;
@@ -539,7 +556,7 @@
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -550,7 +567,7 @@
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -559,7 +576,7 @@
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -569,7 +586,7 @@
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -588,7 +605,7 @@
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -608,7 +625,7 @@
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -617,7 +634,7 @@
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -646,7 +663,7 @@
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -663,7 +680,7 @@
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -686,7 +703,7 @@
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -722,7 +739,7 @@
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -743,7 +760,7 @@
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -762,7 +779,7 @@
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -794,7 +811,7 @@
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -824,7 +841,7 @@
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -834,7 +851,7 @@
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -847,13 +864,13 @@
 
 &lt;p&gt;🚀&lt;/p&gt;
 </description>
-    <pubDate>Mon, 05 Aug 2019 00:00:00 +0300</pubDate>
+    <pubDate>Mon, 05 Aug 2019 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-1.8.0-beta</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.8.0-beta</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 1.7.2 &#8212; Master Repo CDN is Finalized!</title>
     <description>&lt;p&gt;&lt;em&gt;CocoaPods 1.7.2&lt;/em&gt; brings with it the final version of CDN support for the &lt;a href=&quot;https://github.com/CocoaPods/Specs&quot;&gt;trunk specs repo&lt;/a&gt;. &lt;/p&gt;
@@ -923,7 +940,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -933,7 +950,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -942,7 +959,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -954,7 +971,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -969,13 +986,13 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 
 &lt;p&gt;🚀&lt;/p&gt;
 </description>
-    <pubDate>Fri, 14 Jun 2019 00:00:00 +0300</pubDate>
+    <pubDate>Fri, 14 Jun 2019 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-1.7.2</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.7.2</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 1.7.0 Beta!</title>
     <description>&lt;p&gt;&lt;em&gt;CocoaPods 1.7.0&lt;/em&gt; expands heavily on the improved underlying infrastructure of prior releases with support for multiple Swift versions, app specs and more!&lt;/p&gt;
@@ -996,7 +1013,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1011,7 +1028,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1024,7 +1041,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1037,7 +1054,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1078,7 +1095,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1101,13 +1118,13 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 
   &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app_spec&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;SampleApp&amp;#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;app_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;source_files&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Sample/*.swift&amp;#39;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;  
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1118,7 +1135,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1131,7 +1148,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1152,7 +1169,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1162,7 +1179,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1213,7 +1230,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1225,7 +1242,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1240,7 +1257,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1251,17 +1268,17 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
   &lt;span class=&quot;c1&quot;&gt;# ... rest of root spec entries go here&lt;/span&gt;
   &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Tests&amp;#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;source_files&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Tests/**/*.swift&amp;#39;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scheme&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;ss&quot;&gt;:launch_arguments&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Arg1&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Arg2&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scheme&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; 
+      &lt;span class=&quot;ss&quot;&gt;:launch_arguments&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Arg1&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Arg2&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
       &lt;span class=&quot;ss&quot;&gt;:environment_variables&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Key1&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Val1&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;   
 &lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1305,7 +1322,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1316,7 +1333,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1339,7 +1356,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1349,7 +1366,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1366,13 +1383,13 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 
 &lt;p&gt;🚀&lt;/p&gt;
 </description>
-    <pubDate>Fri, 22 Feb 2019 00:00:00 +0200</pubDate>
+    <pubDate>Fri, 22 Feb 2019 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-1.7.0-beta</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.7.0-beta</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 1.6.0 Beta Begins!</title>
     <description>&lt;p&gt;&lt;em&gt;CocoaPods 1.6.0&lt;/em&gt; release continues our focus on stability, performance and scalability for large projects.&lt;/p&gt;
@@ -1401,7 +1418,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1425,7 +1442,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1482,7 +1499,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1492,7 +1509,7 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1509,13 +1526,13 @@ A &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989#issuecomme
 
 &lt;p&gt;&amp;lt;3&lt;/p&gt;
 </description>
-    <pubDate>Thu, 16 Aug 2018 00:00:00 +0300</pubDate>
+    <pubDate>Thu, 16 Aug 2018 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-1.6.0-beta</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.6.0-beta</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 1.5.0 &#8212; Swift Static Libraries</title>
     <description>&lt;p&gt;&lt;em&gt;CocoaPods 1.5.0&lt;/em&gt; comes with native support for building Swift pods as static libraries.&lt;/p&gt;
@@ -1548,7 +1565,7 @@ CocoaPods will now store the specs repo that a Pod has been sourced from:&lt;/p&
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1563,7 +1580,7 @@ CocoaPods will now store the specs repo that a Pod has been sourced from:&lt;/p&
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1587,7 +1604,7 @@ CocoaPods will now store the specs repo that a Pod has been sourced from:&lt;/p&
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1597,7 +1614,7 @@ CocoaPods will now store the specs repo that a Pod has been sourced from:&lt;/p&
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1609,13 +1626,13 @@ So, if you&amp;#39;re feeling like &lt;code&gt;pod install&lt;/code&gt; is takin
 
 &lt;p&gt;Checkout the &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/releases/tag/1.5.0&quot;&gt;changelog&lt;/a&gt; to get the full list of changes.&lt;/p&gt;
 </description>
-    <pubDate>Wed, 04 Apr 2018 00:00:00 +0300</pubDate>
+    <pubDate>Wed, 04 Apr 2018 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-1.5.0</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.5.0</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>New Service: CocoaPods Metadata generation</title>
     <description>&lt;p&gt;This week we shipped a new behind-the-scenes service for CocoaPods authors: &lt;a href=&quot;https://github.com/CocoaPods/cocoapods-metadata-service&quot;&gt;cocoapods-metadata-service&lt;/a&gt; it handles
@@ -1642,7 +1659,7 @@ generate a set of useful metrics for each pod:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1668,7 +1685,7 @@ spm_support
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1683,7 +1700,7 @@ Basically:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1696,7 +1713,7 @@ rendered_changelog_url
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1722,13 +1739,13 @@ example with &lt;a href=&quot;https://www.youtube.com/watch?v=KpX0jRDEv14&amp;li
 &lt;p&gt;As we rely more on this service, we can continue to provide the rich web-experience with far less dependencies on hard
 to maintain infrastructure, which paves the way for CocoaPods to continue being a useful resource for a very long time.&lt;/p&gt;
 </description>
-    <pubDate>Fri, 16 Mar 2018 00:00:00 +0200</pubDate>
+    <pubDate>Fri, 16 Mar 2018 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-Metadata-Service</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-Metadata-Service</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 1.4.0 &#8212; Feature packed!</title>
     <description>&lt;p&gt;&lt;em&gt;CocoaPods 1.4.0&lt;/em&gt; comes packed with new features such as app host support for tests, script phases, static framework support and a new Swift version DSL!&lt;/p&gt;
@@ -1745,7 +1762,7 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1758,7 +1775,7 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1794,7 +1811,7 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1813,7 +1830,7 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1845,7 +1862,7 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1872,7 +1889,7 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1898,7 +1915,7 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1908,7 +1925,7 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1921,7 +1938,7 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1935,7 +1952,7 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -1963,7 +1980,7 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -1982,7 +1999,7 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -2042,7 +2059,7 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -2052,7 +2069,7 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -2067,7 +2084,7 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -2077,7 +2094,7 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -2119,13 +2136,13 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
 
 &lt;p&gt;&amp;lt;3&lt;/p&gt;
 </description>
-    <pubDate>Thu, 18 Jan 2018 00:00:00 +0200</pubDate>
+    <pubDate>Thu, 18 Jan 2018 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-1.4.0</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.4.0</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 1.3.0 &#8212; Test specifications and performance improvements</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 1.3.0&lt;/em&gt; has been released, which includes support for test specifications and performance improvements specifically around rebuilding your project and preparation for Xcode 9 support!&lt;/p&gt;
@@ -2138,7 +2155,7 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -2162,13 +2179,13 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
   &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Tests&amp;#39;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;source_files&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Tests/*.{h,m}&amp;#39;&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;test_spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dependency&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;OCMock&amp;#39;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# This dependency will only be linked with your tests.&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;  
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -2183,7 +2200,7 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -2196,7 +2213,7 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -2234,13 +2251,13 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
 
 &lt;p&gt;CocoaPods 1.3.0 is an important milestone for CocoaPods as it is maturing as the standard library for iOS dependency management. We would like to thank all contributors for their support and time spent to improve this project!&lt;/p&gt;
 </description>
-    <pubDate>Tue, 01 Aug 2017 00:00:00 +0300</pubDate>
+    <pubDate>Tue, 01 Aug 2017 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-1.3.0</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.3.0</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaDocs documentation sun-setting</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaDocs&lt;/em&gt; will stop generating DocSets for new libraries and versions using CocoaPods towards the end of May.&lt;/p&gt;
@@ -2263,13 +2280,13 @@ to maintain infrastructure, which paves the way for CocoaPods to continue being 
 
 &lt;p&gt;If you decide to give it a shot, let me know once you have a prototype and I&amp;#39;ll happily provide as many resources as I can. We can set up web-hooks from CocoaPods Trunk too.&lt;/p&gt;
 </description>
-    <pubDate>Tue, 28 Mar 2017 00:00:00 +0300</pubDate>
+    <pubDate>Tue, 28 Mar 2017 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaDocs-Documentation-Sunsetting</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaDocs-Documentation-Sunsetting</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods Specs Repo Sharding</title>
     <description>&lt;p&gt;In March, CocoaPods hit an unfortunate problem with our &lt;a href=&quot;http://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem/&quot;&gt;Specs Repo&lt;/a&gt; being rate limited. &lt;/p&gt;
@@ -2307,13 +2324,13 @@ git checkout v0.32.1
 
 &lt;p&gt;We are planning to do it on Friday November the 11th, so there will be scheduled downtime on pushing new Pods to Trunk during the process of updating and verifying that it was successful.&lt;/p&gt;
 </description>
-    <pubDate>Fri, 28 Oct 2016 00:00:00 +0300</pubDate>
+    <pubDate>Fri, 28 Oct 2016 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/Sharding</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Sharding</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 1.1.0 - Xcode 8 support, improved support for new Swift versions, extensions, frameworks, and more</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 1.1.0&lt;/em&gt; has been released, and it comes with improved support for extensions, frameworks, and new Swift versions, as well as Xcode 8 support and error handling improvements.&lt;/p&gt;
@@ -2382,13 +2399,13 @@ git checkout v0.32.1
 
 &lt;p&gt;CocoaPods 1.1.0 was a huge release, so congrats to everyone! Checkout the &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/releases/tag/1.1.0&quot;&gt;Changelog&lt;/a&gt; to get the full list of changes.&lt;/p&gt;
 </description>
-    <pubDate>Wed, 19 Oct 2016 00:00:00 +0300</pubDate>
+    <pubDate>Wed, 19 Oct 2016 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-1.1.0</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.1.0</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>2016 CocoaPods State of the Union</title>
     <description>&lt;p&gt;Apple have their annual WWDC keynote and Developer State of the Union.
@@ -2406,13 +2423,13 @@ Last year, we tried out a new &lt;a href=&quot;https://github.com/CocoaPods/sotu
 
 &lt;p&gt;All of the details, as well as the lottery registration link, are available at &lt;a href=&quot;https://sotu.cocoapods.org/&quot;&gt;https://sotu.cocoapods.org/&lt;/a&gt;. We&amp;#39;ll be closing the lottery and announcing the lucky entrants in one week (on June 5th), so hurry up and register!&lt;/p&gt;
 </description>
-    <pubDate>Sun, 29 May 2016 00:00:00 +0300</pubDate>
+    <pubDate>Sun, 29 May 2016 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/2016-CocoaPods-State-of-the-Union</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/2016-CocoaPods-State-of-the-Union</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods App 1.0</title>
     <description>&lt;p&gt;After about a &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods-app/graphs/contributors&quot;&gt;year of work&lt;/a&gt;, with the release of &lt;a href=&quot;http://blog.cocoapods.org/CocoaPods-1.0/&quot;&gt;CocoaPods 1.0&lt;/a&gt;, the corresponding Mac App is also ready for public usage. &lt;/p&gt;
@@ -2519,13 +2536,13 @@ Last year, we tried out a new &lt;a href=&quot;https://github.com/CocoaPods/sotu
 
 &lt;p&gt;We have &lt;a href=&quot;https://github.com/cocoapods/cocoapods-app/issues&quot;&gt;a lot of ideas&lt;/a&gt; for where the app can go, and some &lt;a href=&quot;https://github.com/cocoapods/cocoapods-app/issues?q=is%3Aissue+is%3Aopen+label%3A%22easy+first+step%22&quot;&gt;low-hanging fruit&lt;/a&gt; for contributors. &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods-app#building-for-development&quot;&gt;Why not help us with take it somewhere new?&lt;/a&gt;&lt;/p&gt;
 </description>
-    <pubDate>Wed, 11 May 2016 00:00:00 +0300</pubDate>
+    <pubDate>Wed, 11 May 2016 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-App-1.0</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-App-1.0</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 1.0</title>
     <description>&lt;p&gt;I&amp;#39;m incredibly happy to say that, after an incredible four and a half years of development, we just released CocoaPods 1.0. It&amp;#39;s been a long road to get here, but the journey has told the story of the larger Cocoa open source community -- from new versions of Xcode to new languages and platforms, CocoaPods has grown over the years to support a staggering number of developers.&lt;/p&gt;
@@ -2627,13 +2644,13 @@ Last year, we tried out a new &lt;a href=&quot;https://github.com/CocoaPods/sotu
 
 &lt;p&gt;🎉 &lt;a href=&quot;https://twitter.com/segiddins&quot;&gt;segiddins&lt;/a&gt;, &lt;a href=&quot;https://github.com/segiddins&quot;&gt;Patch Master &amp;amp; Bundler of Joy&lt;/a&gt;&lt;/p&gt;
 </description>
-    <pubDate>Tue, 10 May 2016 00:00:00 +0300</pubDate>
+    <pubDate>Tue, 10 May 2016 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-1.0</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.0</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Master spec-repo rate limiting post&#x2011;mortem</title>
     <description>&lt;p&gt;&lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/4989&quot;&gt;Recently&lt;/a&gt; we were made aware of issues that our users had when
@@ -2714,7 +2731,7 @@ clone of the Master spec-repo from a shallow to a full clone:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -2725,7 +2742,7 @@ $ git fetch --unshallow
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -2741,13 +2758,13 @@ general for their continued generous sponsorship of hosting resources.&lt;/p&gt;
 &lt;a href=&quot;https://github.com/DanielTomlinson&quot;&gt;@DanielTomlinson&lt;/a&gt;, and &lt;a href=&quot;https://github.com/mrackwitz&quot;&gt;@mrackwitz&lt;/a&gt;, for their hard
 work on implementing these solutions as soon as they did.&lt;/p&gt;
 </description>
-    <pubDate>Wed, 04 May 2016 00:00:00 +0300</pubDate>
+    <pubDate>Wed, 04 May 2016 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Master-Spec-Repo-Rate-Limiting-Post-Mortem</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods Socks available for the next four weeks.</title>
     <description>&lt;p&gt;​
@@ -2757,13 +2774,13 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 
 &lt;p&gt;We don&amp;#39;t want to use CocoaPods&amp;#39; popularity to make money. So, we are putting all profits into a charity. Want to know more? Go see &lt;a href=&quot;https://cocoapods.org/socks&quot;&gt;cocoapods.org/socks&lt;/a&gt;.&lt;/p&gt;
 </description>
-    <pubDate>Mon, 22 Feb 2016 00:00:00 +0200</pubDate>
+    <pubDate>Mon, 22 Feb 2016 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/Socks</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Socks</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 1.0 Migration Guide</title>
     <description>&lt;h4 id=&quot;major-1-0-changes-tl-dr&quot;&gt;Major 1.0 changes TL:DR&lt;/h4&gt;
@@ -2797,7 +2814,7 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -2821,7 +2838,7 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -2834,7 +2851,7 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -2844,7 +2861,7 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -2853,7 +2870,7 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -2864,7 +2881,7 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -2877,7 +2894,7 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -2898,7 +2915,7 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -2907,7 +2924,7 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -2928,7 +2945,7 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -2973,13 +2990,13 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 
 &lt;p&gt;🎉&lt;/p&gt;
 </description>
-    <pubDate>Wed, 03 Feb 2016 00:00:00 +0200</pubDate>
+    <pubDate>Wed, 03 Feb 2016 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-1.0-Migration-Guide</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-1.0-Migration-Guide</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>RGSoC</title>
     <description>&lt;p&gt;During Summer 2015, we had the delightful opportunity to contribute to CocoaPods as part of Rails Girls Summer of Code (RGSoC). We were generously hosted and coached by GitHub. How did two newbie developers begin to work on open source, you might ask?&lt;/p&gt;
@@ -3069,13 +3086,13 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 
 &lt;p&gt;It does take time to mentor but if you look at it as an investment to bring more contributors to open source it is time well spent. We also encourage other developers to take the opportunity to learn and contribute to open source.&lt;/p&gt;
 </description>
-    <pubDate>Fri, 29 Jan 2016 00:00:00 +0200</pubDate>
+    <pubDate>Fri, 29 Jan 2016 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/RGSoC</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/RGSoC</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>App 1.0</title>
     <description>&lt;p&gt;TLDR: CocoaPods now has a Mac App that provides a hosted Ruby experience, go check out the web page for it: &lt;a href=&quot;https://cocoapods.org/app&quot;&gt;cocoapods.org/app&lt;/a&gt;.&lt;/p&gt;
@@ -3178,13 +3195,13 @@ work on implementing these solutions as soon as they did.&lt;/p&gt;
 
 &lt;p&gt;For example, I know when most people try attack this problem they try to solve the pod discovery problem, but I&amp;#39;m not sure if we can do better than the website in the native app. Would love some ideas on ways we could improve.&lt;/p&gt;
 </description>
-    <pubDate>Tue, 12 Jan 2016 00:00:00 +0200</pubDate>
+    <pubDate>Tue, 12 Jan 2016 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-App</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-App</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Release Versions Only</title>
     <description>&lt;p&gt;The main CocoaPods website, &lt;a href=&quot;https://cocoapods.org&quot;&gt;cocoapods.org&lt;/a&gt;, lets you search for all versions of a pod.
@@ -3200,13 +3217,13 @@ We&amp;#39;ve prepared all systems for the switch and will flip it on December 3
 
 &lt;p&gt;Happy New Year, pod friends!&lt;/p&gt;
 </description>
-    <pubDate>Tue, 29 Dec 2015 00:00:00 +0200</pubDate>
+    <pubDate>Tue, 29 Dec 2015 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/Release-Versions-Only</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Release-Versions-Only</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>2015</title>
     <description>&lt;blockquote&gt;
@@ -3408,13 +3425,13 @@ We&amp;#39;ve prepared all systems for the switch and will flip it on December 3
 
 &lt;/div&gt;
 </description>
-    <pubDate>Wed, 18 Nov 2015 00:00:00 +0200</pubDate>
+    <pubDate>Wed, 18 Nov 2015 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/Stats-2015</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Stats-2015</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Introducing: Creme de la Pods</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;You could always find out what was new with &lt;a href=&quot;https://twitter.com/cocoapodsfeed&quot;&gt;@CocoaPodsFeed&lt;/a&gt; and &lt;a href=&quot;https://feeds.cocoapods.org&quot;&gt;feeds.cocoapods.org&lt;/a&gt;. Now you can see new CocoaPods that have a &lt;a href=&quot;https://guides.cocoapods.org/making/quality-indexes.html&quot;&gt;QI&lt;/a&gt; score of over 70 on &lt;a href=&quot;https://twitter.com/cremedelapods&quot;&gt;@CremeDeLaPods&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
@@ -3449,13 +3466,13 @@ We&amp;#39;ve prepared all systems for the switch and will flip it on December 3
 
 &lt;p&gt;&lt;img src=&quot;https://camo.githubusercontent.com/cf5c440e71f6731b22d5d014d183709906bab61a/687474703a2f2f7777772e746865706c757370617065722e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031352f30342f332e676966&quot;&gt;&lt;/p&gt;
 </description>
-    <pubDate>Sat, 07 Nov 2015 00:00:00 +0200</pubDate>
+    <pubDate>Sat, 07 Nov 2015 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/Creme-de-la-Pods</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Creme-de-la-Pods</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Capital One</title>
     <description>&lt;p&gt;I&amp;#39;m incredibly excited to announce that as of today my work on CocoaPods will be
@@ -3488,13 +3505,13 @@ One.&lt;/p&gt;
 again to the generous folks at Capital One for making it possible for me to do
 so!&lt;/p&gt;
 </description>
-    <pubDate>Tue, 27 Oct 2015 00:00:00 +0200</pubDate>
+    <pubDate>Tue, 27 Oct 2015 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/Capital-One</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Capital-One</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 0.39 - tvOS and Dynamic Vendored Frameworks</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 0.39&lt;/em&gt; has been released, with support for tvOS pods and dynamic vendored frameworks.&lt;/p&gt;
@@ -3515,7 +3532,7 @@ for tvOS&lt;/a&gt; in your podspec, as seen below:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -3528,7 +3545,7 @@ for tvOS&lt;/a&gt; in your podspec, as seen below:&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -3556,7 +3573,7 @@ such as URL reachability.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -3566,7 +3583,7 @@ such as URL reachability.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -3576,13 +3593,13 @@ such as URL reachability.&lt;/p&gt;
 &lt;p&gt;For all the details, don’t miss the
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/releases/tag/0.39.0&quot;&gt;Changelog&lt;/a&gt;!&lt;/p&gt;
 </description>
-    <pubDate>Fri, 09 Oct 2015 00:00:00 +0300</pubDate>
+    <pubDate>Fri, 09 Oct 2015 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-0.39</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.39</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Running SSH Commands via Rakefiles</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaDocs&amp;#39; commands which used to be executed via logging in are now done via rake commands.&lt;/em&gt;&lt;/p&gt;
@@ -3601,7 +3618,7 @@ such as URL reachability.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -3616,7 +3633,7 @@ such as URL reachability.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -3627,7 +3644,7 @@ such as URL reachability.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -3644,7 +3661,7 @@ such as URL reachability.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -3653,7 +3670,7 @@ such as URL reachability.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -3675,7 +3692,7 @@ such as URL reachability.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -3684,13 +3701,13 @@ such as URL reachability.&lt;/p&gt;
 
 &lt;p&gt;So, next time you hear people complaining about a chore you&amp;#39;ve become used to, take heed and try to automate the problem away.&lt;/p&gt;
 </description>
-    <pubDate>Wed, 26 Aug 2015 00:00:00 +0300</pubDate>
+    <pubDate>Wed, 26 Aug 2015 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/Running-SSH-Commands-via-Rakefiles</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Running-SSH-Commands-via-Rakefiles</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods Stats Resetting</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods Stats is ready to move from it&amp;#39;s current staging environment&lt;/em&gt;, and we will be resetting all stats next weekend.&lt;/p&gt;
@@ -3703,13 +3720,13 @@ such as URL reachability.&lt;/p&gt;
 
 &lt;p&gt;So, next week I will migrate the stats server to production and everything will be back to zero downloads / installs again.&lt;/p&gt;
 </description>
-    <pubDate>Sun, 09 Aug 2015 00:00:00 +0300</pubDate>
+    <pubDate>Sun, 09 Aug 2015 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/Stats-Reset</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Stats-Reset</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 0.38 - watchOS and target de-duplication</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 0.38&lt;/em&gt; has been released, with watchOS 2 support, target de-duplication, and Stats for everyone.&lt;/p&gt;
@@ -3729,7 +3746,7 @@ for watchOS&lt;/a&gt; in the Podspec, as seen below:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -3742,7 +3759,7 @@ for watchOS&lt;/a&gt; in the Podspec, as seen below:&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -3777,7 +3794,7 @@ If you relied on that, you can still use the Clang file checking macro &lt;a hre
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -3789,7 +3806,7 @@ If you relied on that, you can still use the Clang file checking macro &lt;a hre
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -3855,7 +3872,7 @@ Because of that, we relinquished that approach and made the underlying installer
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -3871,7 +3888,7 @@ Because of that, we relinquished that approach and made the underlying installer
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -3917,7 +3934,7 @@ Special thanks to all the new contributors we had for this release, especially f
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -3927,7 +3944,7 @@ Special thanks to all the new contributors we had for this release, especially f
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -3937,13 +3954,13 @@ Special thanks to all the new contributors we had for this release, especially f
 &lt;p&gt;For all the details, don’t miss the
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/releases/tag/0.38.0&quot;&gt;Changelog&lt;/a&gt;!&lt;/p&gt;
 </description>
-    <pubDate>Tue, 21 Jul 2015 00:00:00 +0300</pubDate>
+    <pubDate>Tue, 21 Jul 2015 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-0.38</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.38</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods Stats</title>
     <description>&lt;p&gt;People have been asking for years about feedback on how many downloads their libraries have. We&amp;#39;ve been thinking about the problem for a about as long too, and finally ended up asking &lt;a href=&quot;http://segment.com&quot;&gt;Segment&lt;/a&gt; if they would provide a backend for the project.&lt;/p&gt;
@@ -3982,7 +3999,7 @@ Special thanks to all the new contributors we had for this release, especially f
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -4002,7 +4019,7 @@ Special thanks to all the new contributors we had for this release, especially f
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -4049,13 +4066,13 @@ Special thanks to all the new contributors we had for this release, especially f
 
 &lt;p&gt;Checking in your Pods directory will mean that the download count for the pods used will rarely be affected, but the installations will be the exact same. They only register once per project, so multiple developers on the same project running &lt;code&gt;pod install&lt;/code&gt; will not raise this number.&lt;/p&gt;
 </description>
-    <pubDate>Wed, 24 Jun 2015 00:00:00 +0300</pubDate>
+    <pubDate>Wed, 24 Jun 2015 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/Stats</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Stats</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods.org v2.5</title>
     <description>&lt;p&gt;After our awesome State of the Union, I pushed the new version of the CocoaPods website to Heroku. It comes with a bunch of new features, some new pages and a few interface tweaks, let&amp;#39;s go through what&amp;#39;s new.&lt;/p&gt;
@@ -4106,13 +4123,13 @@ Special thanks to all the new contributors we had for this release, especially f
 
 &lt;p&gt;I&amp;#39;m super happy with the changes to the website, I think it makes it easier than ever to discover higher quality libraries that might not have hit the big-time yet. Everyone can let out a sigh of relief now, we can figure out the best &lt;a href=&quot;https://cocoapods.org/?q=lang%3Aswift%20json&quot;&gt;Swift JSON ORM&lt;/a&gt;.&lt;/p&gt;
 </description>
-    <pubDate>Tue, 09 Jun 2015 00:00:00 +0300</pubDate>
+    <pubDate>Tue, 09 Jun 2015 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods.org-Two-point-Five</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods.org-Two-point-Five</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>2015 CocoaPods State of the Union</title>
     <description>&lt;p&gt;Apple have their annual WWDC keynote and Developer State of the Union.
@@ -4130,13 +4147,13 @@ Last year we ended up with a waiting list almost double the amount we could get 
 
 &lt;p&gt;All of the details, as well as the lottery registration link, are available at &lt;a href=&quot;https://sotu.cocoapods.org/&quot;&gt;https://sotu.cocoapods.org/&lt;/a&gt;. We&amp;#39;ll be closing the lottery and announcing the lucky entrants on Thursday, so hurry up and register!&lt;/p&gt;
 </description>
-    <pubDate>Mon, 01 Jun 2015 00:00:00 +0300</pubDate>
+    <pubDate>Mon, 01 Jun 2015 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/2015-CocoaPods-State-of-the-Union</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/2015-CocoaPods-State-of-the-Union</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 0.37 - Pod Caching and Custom Module Maps</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 0.37&lt;/em&gt; has been released, with a new pod download cache and support for custom module maps.&lt;/p&gt;
@@ -4161,7 +4178,7 @@ file in a Podspec.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -4171,7 +4188,7 @@ file in a Podspec.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -4181,13 +4198,13 @@ file in a Podspec.&lt;/p&gt;
 &lt;p&gt;For all the details, don’t miss the
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/0.37.0/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;!&lt;/p&gt;
 </description>
-    <pubDate>Sun, 03 May 2015 00:00:00 +0300</pubDate>
+    <pubDate>Sun, 03 May 2015 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-0.37</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.37</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Test Jam 2015</title>
     <description>&lt;p&gt;Over the weekend over 150 people met up in meetups, and many joined online, to try and improve the foundational libraries that the Cocoa community rely on.  We made more than 30 pull requests and a lot of people got more exposure to testing in Xcode. Read on for stats.&lt;/p&gt;
@@ -4215,7 +4232,7 @@ file in a Podspec.&lt;/p&gt;
 
 &lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;Writing tests with cats for the &lt;a href=&quot;https://twitter.com/CocoaPods&quot;&gt;@CocoaPods&lt;/a&gt; Test Jam 😻 &lt;a href=&quot;http://t.co/DVxJyEIXZT&quot;&gt;pic.twitter.com/DVxJyEIXZT&lt;/a&gt;&lt;/p&gt;&amp;mdash; Michele Titolo (@micheletitolo) &lt;a href=&quot;https://twitter.com/micheletitolo/status/589553068502450176&quot;&gt;April 18, 2015&lt;/a&gt;&lt;/blockquote&gt;
 
-&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;One of the greatest things about &lt;a href=&quot;https://twitter.com/CocoaPods&quot;&gt;@CocoaPods&lt;/a&gt; test jam is seeing different peoples approaches to testing legacy code.&lt;/p&gt;&amp;mdash; squarefrog (@squarefrog) &lt;a href=&quot;https://twitter.com/squarefrog/status/589561399782825986&quot;&gt;April 18, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;One of the greatest things about &lt;a href=&quot;https://twitter.com/CocoaPods&quot;&gt;@CocoaPods&lt;/a&gt; test jam is seeing different peoples approaches to testing legacy code.&lt;/p&gt;&amp;mdash; squarefrog (@squarefrog) &lt;a href=&quot;https://twitter.com/squarefrog/status/589561399782825986&quot;&gt;April 18, 2015&lt;/a&gt;&lt;/blockquote&gt; 
 
 &lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;For the &lt;a href=&quot;https://twitter.com/CocoaPods&quot;&gt;@CocoaPods&lt;/a&gt; Test Jam I added code coverage to Form! &amp;#10;&amp;#10;&lt;a href=&quot;https://t.co/HJbqDp5uQD&quot;&gt;https://t.co/HJbqDp5uQD&lt;/a&gt;&lt;/p&gt;&amp;mdash; Elvis Nuñez (@3lvis) &lt;a href=&quot;https://twitter.com/3lvis/status/589540740956614656&quot;&gt;April 18, 2015&lt;/a&gt;&lt;/blockquote&gt;
 
@@ -4324,13 +4341,13 @@ file in a Podspec.&lt;/p&gt;
 
 &lt;p&gt;If you&amp;#39;re interested in doing community work with CocoaPods we&amp;#39;re always interested in working with more people on ideas like this. You can get in touch with us via &lt;a href=&quot;mailto:info@cocoapods.org?subject=I%20have%20community%20ideas&amp;body=Hello%20there!%20I%20have%20some%20cool%20ideas%20around%20community%20events&quot;&gt;info@cocoapods.org&lt;/a&gt; ( this goes to Kyle, Samuel, Eloy and myself.)&lt;/p&gt;
 </description>
-    <pubDate>Sun, 19 Apr 2015 00:00:00 +0300</pubDate>
+    <pubDate>Sun, 19 Apr 2015 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/Jamming-2015</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Jamming-2015</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Preparations for the Test Jam</title>
     <description>&lt;p&gt;The Testjam is this weekend (April 18-19). Let&amp;#39;s give as much details as possible:&lt;/p&gt;
@@ -4422,13 +4439,13 @@ file in a Podspec.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.bignerdranch.com/blog/dependency-injection-ios/&quot;&gt;Dependency Injection, iOS and You&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    <pubDate>Mon, 13 Apr 2015 00:00:00 +0300</pubDate>
+    <pubDate>Mon, 13 Apr 2015 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/Prepare-to-Jam</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Prepare-to-Jam</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Automating Everything</title>
     <description>&lt;p&gt;A few nights ago, I put out a release of CocoaPods that was unable to actually download new pods. Hoping to learn from that mistake, I turned to automation to ensure the team would never make the same mistake again.&lt;/p&gt;
@@ -4447,13 +4464,13 @@ file in a Podspec.&lt;/p&gt;
 
 &lt;p&gt;Additionally, automation has the benefit of being operator-agnostic. As an open source project, there&amp;#39;s a steady churn of contributors. We want to look towards the future and make sure that we&amp;#39;re not leaving compartmentalized knowledge in any one member of the team, so that any future member can seamlessly step into any role. Basically, when I say &amp;#39;automate everything&amp;#39;, I really mean it -- when I&amp;#39;ve automated something, I can put it out of my mind, confident that it will work. (Sounds familiar to those of you who write unit tests?)&lt;/p&gt;
 </description>
-    <pubDate>Mon, 06 Apr 2015 00:00:00 +0300</pubDate>
+    <pubDate>Mon, 06 Apr 2015 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/Automating-Everything</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Automating-Everything</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaDocs Co-located</title>
     <description>&lt;p&gt;TL;DR: &lt;a href=&quot;http://cocoadocs.org&quot;&gt;CocoaDocs.org&lt;/a&gt; just got &lt;a href=&quot;https://github.com/realm/jazzy&quot;&gt;Jazzy&lt;/a&gt; support, became more stable, and is now sending stats to our status page.&lt;/p&gt;
@@ -4476,13 +4493,13 @@ file in a Podspec.&lt;/p&gt;
 
 &lt;p&gt;In the &lt;a href=&quot;https://github.com/CocoaPods/cocoadocs.org/issues/320&quot;&gt;process&lt;/a&gt; of moving I added one more feature. We now send data to the &lt;a href=&quot;http://status.cocoapods.org&quot;&gt;CocoaPods status&lt;/a&gt; page saying how many pods have been documented in the last 24hrs. Hopefully this should result in some useful insight into &amp;quot;is it working?&amp;quot; and give a sense of how much work it is doing.&lt;/p&gt;
 </description>
-    <pubDate>Mon, 23 Mar 2015 00:00:00 +0200</pubDate>
+    <pubDate>Mon, 23 Mar 2015 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaDocs-Colo</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaDocs-Colo</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods.org Take Two</title>
     <description>&lt;p&gt;TL;DR: &lt;a href=&quot;http://cocoapods.org&quot;&gt;CocoaPods.org&lt;/a&gt; version 2.1 has been released, with support for inline deep search results, and pod pages.&lt;/p&gt;
@@ -4518,7 +4535,7 @@ file in a Podspec.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -4560,7 +4577,7 @@ file in a Podspec.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -4583,7 +4600,7 @@ file in a Podspec.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -4621,7 +4638,7 @@ file in a Podspec.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -4650,13 +4667,13 @@ file in a Podspec.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;http://dbgrandi.github.io&quot;&gt;David Grandinetti&lt;/a&gt;, &lt;a href=&quot;http://lazerwalker.com&quot;&gt;Mike Lazer-Walker&lt;/a&gt;, &lt;a href=&quot;http://tang.io&quot;&gt;Phil Tang&lt;/a&gt;, &lt;a href=&quot;http://modocache.svbtle.com&quot;&gt;Brian Gesiak&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/dannyhertz&quot;&gt;Danny Hertz&lt;/a&gt; on Quality/Popularity Metrics&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    <pubDate>Mon, 16 Mar 2015 00:00:00 +0200</pubDate>
+    <pubDate>Mon, 16 Mar 2015 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods.org-Take-Two</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods.org-Take-Two</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 0.36 - Framework and Swift Support</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 0.36&lt;/em&gt; has been released, with the long-awaited support for Frameworks and Swift.&lt;/p&gt;
@@ -4736,7 +4753,7 @@ But with frameworks, you have to make sure that you reference them more specific
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -4746,14 +4763,14 @@ But with frameworks, you have to make sure that you reference them more specific
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
 &lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -4763,7 +4780,7 @@ But with frameworks, you have to make sure that you reference them more specific
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -4801,7 +4818,7 @@ This is important for ensuring everybody in your team uses the same reference of
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -4811,7 +4828,7 @@ This is important for ensuring everybody in your team uses the same reference of
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -4821,13 +4838,13 @@ This is important for ensuring everybody in your team uses the same reference of
 &lt;p&gt;For all the details, don’t miss the
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/0.36.0/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;!&lt;/p&gt;
 </description>
-    <pubDate>Wed, 11 Mar 2015 00:00:00 +0200</pubDate>
+    <pubDate>Wed, 11 Mar 2015 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-0.36</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.36</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Test Jam</title>
     <description>&lt;p&gt;Last year, around this time, we ran a &lt;a href=&quot;http://blog.cocoapods.org/CocoaPods-Bug-Bash/&quot;&gt;Bug Bash&lt;/a&gt; over a weekend. It went beautifully. We triaged a whole lot of issues, got a lot of minor issues fixed and found some new members for the core team.&lt;/p&gt;
@@ -4862,13 +4879,13 @@ Locations: NYC / SF / + More&lt;/p&gt;
 
 &lt;p&gt;🎉&lt;/p&gt;
 </description>
-    <pubDate>Sat, 21 Feb 2015 00:00:00 +0200</pubDate>
+    <pubDate>Sat, 21 Feb 2015 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/Test-Jammin</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Test-Jammin</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>The captain leaves the bridge</title>
     <description>&lt;p&gt;TL:DR I&amp;#39;ve had a fantastic 5 years making CocoaPods what it is today, but now it is time to care for my other babies: my new job, my house boat, and my actual baby!!! I will still work on CocoaPods, but not as much. Thank you all for a great 5 years!&lt;/p&gt;
@@ -4951,13 +4968,13 @@ Locations: NYC / SF / + More&lt;/p&gt;
 
 &lt;p&gt;For now, keep being awesome. With &amp;lt;3 from Amsterdam.&lt;/p&gt;
 </description>
-    <pubDate>Mon, 02 Feb 2015 00:00:00 +0200</pubDate>
+    <pubDate>Mon, 02 Feb 2015 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/The-captain-leaves-the-bridge</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/The-captain-leaves-the-bridge</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Pod Authors Guide to CocoaPods Frameworks</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 0.36&lt;/em&gt; will bring the long-awaited support for Frameworks and Swift.
@@ -5023,7 +5040,7 @@ But with frameworks, you have to make sure that you reference them more specific
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -5037,7 +5054,7 @@ But with frameworks, you have to make sure that you reference them more specific
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -5059,7 +5076,7 @@ Furthermore we don&amp;#39;t have to apply the build rules to the resources ours
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -5074,7 +5091,7 @@ Furthermore we don&amp;#39;t have to apply the build rules to the resources ours
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -5087,7 +5104,7 @@ The default modulemap looks basically always the same:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -5102,7 +5119,7 @@ The default modulemap looks basically always the same:&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -5131,7 +5148,7 @@ The same has to apply for import statements in Umbrella Headers and effect the m
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -5150,7 +5167,7 @@ The same has to apply for import statements in Umbrella Headers and effect the m
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -5195,7 +5212,7 @@ This isn&amp;#39;t recommeded for most cases.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -5213,7 +5230,7 @@ This isn&amp;#39;t recommeded for most cases.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -5236,7 +5253,7 @@ This isn&amp;#39;t recommeded for most cases.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -5247,7 +5264,7 @@ This isn&amp;#39;t recommeded for most cases.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -5258,7 +5275,7 @@ This isn&amp;#39;t recommeded for most cases.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -5268,7 +5285,7 @@ This isn&amp;#39;t recommeded for most cases.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -5303,7 +5320,7 @@ This isn&amp;#39;t recommeded for most cases.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -5313,7 +5330,7 @@ This isn&amp;#39;t recommeded for most cases.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -5323,13 +5340,13 @@ This isn&amp;#39;t recommeded for most cases.&lt;/p&gt;
 &lt;p&gt;For all the details, take a look into the
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/pull/2835&quot;&gt;PR&lt;/a&gt;!&lt;/p&gt;
 </description>
-    <pubDate>Thu, 25 Dec 2014 00:00:00 +0200</pubDate>
+    <pubDate>Thu, 25 Dec 2014 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Search Engine</title>
     <description>&lt;p&gt;TL;DR:
@@ -5465,7 +5482,7 @@ Both only load what they need after forking.
 Before we fork any of these, we &lt;a href=&quot;https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/unicorn.rb#L15-L21&quot;&gt;open up channels&lt;/a&gt; so the web workers can communicate with the search process and the analytics process.&lt;/p&gt;
 
 &lt;p&gt;When a web worker forks, it &lt;a href=&quot;https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/unicorn.rb#L38-L39&quot;&gt;chooses one of the above channels&lt;/a&gt; to communicate with the search engine and analytics process.
-Web workers are very thin – they &lt;a href=&quot;https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L238&quot;&gt;only send the queries to the search engine process&lt;/a&gt;.
+Web workers are very thin – they &lt;a href=&quot;https://github.com/CocoaPods/search.cocoapods.org/blob/eeb25b8aad023936f0db9f19a73ce0ac4985d012/lib/search.rb#L238&quot;&gt;only send the queries to the search engine process&lt;/a&gt;. 
 This means any web worker can be restarted without problem, as they are relatively light.&lt;/p&gt;
 
 &lt;h3 id=&quot;handling-queries&quot;&gt;Handling queries&lt;/h3&gt;
@@ -5509,13 +5526,13 @@ It will be the culmination of &lt;em&gt;months&lt;/em&gt; (seriously!) of volunt
 
 &lt;p&gt;Please leave your ideas if you have an idea to add.&lt;/p&gt;
 </description>
-    <pubDate>Mon, 15 Dec 2014 00:00:00 +0200</pubDate>
+    <pubDate>Mon, 15 Dec 2014 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/search-engine</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/search-engine</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Metrics API</title>
     <description>&lt;p&gt;TL;DR:
@@ -5583,13 +5600,13 @@ If you do, let us know.&lt;/p&gt;
 
 &lt;p&gt;Go forth and measure!&lt;/p&gt;
 </description>
-    <pubDate>Thu, 11 Dec 2014 00:00:00 +0200</pubDate>
+    <pubDate>Thu, 11 Dec 2014 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/metrics-api</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/metrics-api</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 0.35 and Molinillo</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 0.35&lt;/em&gt; has been released, with major improvements to the dependency resolution process, &lt;a href=&quot;https://stripe.com/blog/stripe-open-source-retreat&quot;&gt;thanks to Stripe&amp;#39;s support&lt;/a&gt;. Making the 0.35 release possible is the concurrent release of &lt;a href=&quot;https://github.com/CocoaPods/Molinillo&quot;&gt;Molinillo&lt;/a&gt; 0.1, our new dependency resolution module.&lt;/p&gt;
@@ -5608,7 +5625,7 @@ If you do, let us know.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -5620,7 +5637,7 @@ If you do, let us know.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -5631,7 +5648,7 @@ If you do, let us know.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -5643,7 +5660,7 @@ If you do, let us know.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -5664,7 +5681,7 @@ If you do, let us know.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -5674,7 +5691,7 @@ If you do, let us know.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -5689,7 +5706,7 @@ If you do, let us know.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -5701,7 +5718,7 @@ If you do, let us know.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -5724,7 +5741,7 @@ If you do, let us know.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -5734,7 +5751,7 @@ If you do, let us know.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -5744,13 +5761,13 @@ If you do, let us know.&lt;/p&gt;
 &lt;p&gt;For all the details, don’t miss the
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;!&lt;/p&gt;
 </description>
-    <pubDate>Wed, 19 Nov 2014 00:00:00 +0200</pubDate>
+    <pubDate>Wed, 19 Nov 2014 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-0.35</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.35</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>2014</title>
     <description>&lt;p&gt;CocoaPods is a reflection on the Cocoa community, a mirror that reflects the effort of thousands on individual contributions to a greater idea of sharing and helping each other to improve. As the community grows, so does the tooling around it, growing on both complexity and size.&lt;/p&gt;
@@ -5816,13 +5833,13 @@ If you do, let us know.&lt;/p&gt;
 
 &lt;p&gt;On a personal note. It&amp;#39;s been super gratifying to work on such a high profile tool used by so many people. I think that CocoaPods considerably lowers the barrier to entry for new programmers, and makes it easy for the experienced to improve their codebases by covering the entire ground from library discovery to Xcode integration. This is the fourth year since the first CocoaPods commit and it has been the best so far.&lt;/p&gt;
 </description>
-    <pubDate>Tue, 18 Nov 2014 00:00:00 +0200</pubDate>
+    <pubDate>Tue, 18 Nov 2014 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/Stats-2014</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Stats-2014</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Starting Open Source</title>
     <description>&lt;p&gt;On July the 7th I attended the &lt;a href=&quot;http://www.meetup.com/CocoaHeads-Stockholm/&quot;&gt;CocoaHeads Stockholm&lt;/a&gt; meetup. For this particular meetup the brilliant, but unknown to me at the time, &lt;a href=&quot;https://twitter.com/orta&quot;&gt;Orta Therox&lt;/a&gt; held a talk about open source, &lt;a href=&quot;http://cocoapods.org/&quot;&gt;CocoaPods&lt;/a&gt; and how they work at &lt;a href=&quot;https://artsy.net/&quot;&gt;Artsy&lt;/a&gt;.&lt;/p&gt;
@@ -5891,13 +5908,13 @@ If you do, let us know.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://media.giphy.com/media/q9fohf0Erd50A/giphy.gif&quot; alt=&quot;You&amp;#39;re awesome&quot;&gt;&lt;/p&gt;
 </description>
-    <pubDate>Sat, 25 Oct 2014 00:00:00 +0300</pubDate>
+    <pubDate>Sat, 25 Oct 2014 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/starting-open-source</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/starting-open-source</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Coins</title>
     <description>&lt;p&gt;Physical objects for abstract ephemeral work.&lt;/p&gt;
@@ -5958,13 +5975,13 @@ If you do, let us know.&lt;/p&gt;
 
 &lt;p style=&quot;text-align:right&quot;&gt;&lt;em&gt;I&#39;m not looking forward to mailing these!&lt;/em&gt;&lt;/p&gt;
 </description>
-    <pubDate>Wed, 22 Oct 2014 00:00:00 +0300</pubDate>
+    <pubDate>Wed, 22 Oct 2014 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/Coins</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Coins</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 0.34</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 0.34&lt;/em&gt; which includes the work sponsored by
@@ -5988,7 +6005,7 @@ CocoaPods community.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -5998,7 +6015,7 @@ CocoaPods community.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -6038,7 +6055,7 @@ Benaiteau&lt;/a&gt;. Here is how it works:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -6049,7 +6066,7 @@ Benaiteau&lt;/a&gt;. Here is how it works:&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -6149,7 +6166,7 @@ and private Podspecs I would recommend to check them to avoid any issue.&lt;/p&g
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -6159,7 +6176,7 @@ and private Podspecs I would recommend to check them to avoid any issue.&lt;/p&g
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -6169,13 +6186,13 @@ and private Podspecs I would recommend to check them to avoid any issue.&lt;/p&g
 &lt;p&gt;For all the details, don’t miss the
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;.&lt;/p&gt;
 </description>
-    <pubDate>Fri, 26 Sep 2014 00:00:00 +0300</pubDate>
+    <pubDate>Fri, 26 Sep 2014 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-0.34</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.34</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>pod lib create v2</title>
     <description>&lt;p&gt;&lt;code&gt;pod lib create&lt;/code&gt; has been our way of trying to encourage standards, and to make it easy to create a new library. Before today it would leave a &lt;a href=&quot;http://code.dblock.org/reorganizing-cocoapod-folder-structure-for-unit-and-integration-testing&quot;&gt;lot of setup&lt;/a&gt; at the developer&amp;#39;s discretion. The new version automates a lot of common problems away and starts you with a new library structure. Read on for details.&lt;/p&gt;
@@ -6200,13 +6217,13 @@ and private Podspecs I would recommend to check them to avoid any issue.&lt;/p&g
 
 &lt;p&gt;This update is available today because of how Fabio built templates to allow for custom repos, and it definitely accepts &lt;a href=&quot;https://github.com/CocoaPods/pod-template&quot;&gt;pull requests and issues&lt;/a&gt;.&lt;/p&gt;
 </description>
-    <pubDate>Thu, 26 Jun 2014 00:00:00 +0300</pubDate>
+    <pubDate>Thu, 26 Jun 2014 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/Pod-Lib-Create</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Pod-Lib-Create</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Pod Roulette Hackathon SF Summary</title>
     <description>&lt;iframe src=&quot;https://docs.google.com/file/d/0B_iY-nlLiaNqdm16QTA5Nk9yTm8/preview&quot; width=&quot;100%&quot; height=&quot;480&quot;&gt;&lt;/iframe&gt;
@@ -6250,13 +6267,13 @@ and private Podspecs I would recommend to check them to avoid any issue.&lt;/p&g
 &lt;p&gt;&lt;a href=&quot;/assets/blog_img/Hackathon-Summary/welcome.jpg&quot;&gt;&lt;img src=&quot;/assets/blog_img/Hackathon-Summary/welcome.jpg&quot; width=&quot;50%&quot; style=&quot;float:right;&quot;&gt;&lt;/a&gt;
 &lt;a shref=&quot;/assets/blog_img/Hackathon-Summary/office.jpg&quot;&gt;&lt;img src=&quot;/assets/blog_img/Hackathon-Summary/office.jpg&quot; width=&quot;50%&quot; style=&quot;float:right;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
-    <pubDate>Thu, 12 Jun 2014 00:00:00 +0300</pubDate>
+    <pubDate>Thu, 12 Jun 2014 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/Hackathon-Summary</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Hackathon-Summary</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Stripe's Open Source Retreat</title>
     <description>&lt;p&gt;Today, I am beyond excited to announce that I will be working full-time on CocoaPods this autumn, courtesy of Stripe&amp;#39;s &lt;a href=&quot;https://stripe.com/blog/open-source-retreat-grantees&quot;&gt;Open Source Retreat&lt;/a&gt;.&lt;/p&gt;
@@ -6278,13 +6295,13 @@ With this rewrite, we will be a giant leap closer to CocoaPods 1.0.&lt;/p&gt;
 
 &lt;p&gt;The entire CocoaPods team and I are incredibly grateful to &lt;a href=&quot;https://stripe.com/&quot;&gt;Stripe&lt;/a&gt; for supporting our work and sharing our visions for the future of open-source.&lt;/p&gt;
 </description>
-    <pubDate>Mon, 09 Jun 2014 00:00:00 +0300</pubDate>
+    <pubDate>Mon, 09 Jun 2014 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/Stripe-Open-Source-Retreat</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Stripe-Open-Source-Retreat</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Pod Roulette Hackathon - San Francisco - 7th June 2014</title>
     <description>&lt;p&gt;Have you heard of &lt;a href=&quot;http://podroulette.com&quot;&gt;pod-roulette&lt;/a&gt;? If not, here&amp;#39;s their elevator pitch:&lt;/p&gt;
@@ -6309,13 +6326,13 @@ With this rewrite, we will be a giant leap closer to CocoaPods 1.0.&lt;/p&gt;
 
 &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src=&quot;https://secure.meetup.com/script/21021123101537681383/api/mu.btns.js?id=a74a4o9ar6ca0btqqmtk1k5uv2&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;mu-bootjs&quot;);&lt;/script&gt;
 </description>
-    <pubDate>Sat, 31 May 2014 00:00:00 +0300</pubDate>
+    <pubDate>Sat, 31 May 2014 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/Pod-Roulette-Hackathon</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Pod-Roulette-Hackathon</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>On Launching CocoaDocs Version 2</title>
     <description>&lt;p&gt;In March 2013 I uploaded the &lt;a href=&quot;https://github.com/CocoaPods/cocoadocs.org/commit/93e9896b04f79eb09be28a9056671b1d23f3143d&quot;&gt;initial commit&lt;/a&gt; for &lt;a href=&quot;http://cocoadocs.org&quot;&gt;CocoaDocs&lt;/a&gt;. This action triggered a roller-coaster &lt;a href=&quot;http://orta.github.io/on/being/27/#cocoadocs&quot;&gt;year for me&lt;/a&gt;. I&amp;#39;m super excited to announce the second iteration of CocoaDocs is now running and &lt;a href=&quot;http://cocoadocs.org/docsets/ReactiveCocoa/2.3.1/&quot;&gt;parsing&lt;/a&gt; &lt;a href=&quot;http://cocoadocs.org/docsets/ARAnalytics/2.7.2/&quot;&gt;new&lt;/a&gt; &lt;a href=&quot;http://cocoadocs.org/docsets/BlocksKit/2.2.3/&quot;&gt;Docsets&lt;/a&gt;.&lt;/p&gt;
@@ -6371,13 +6388,13 @@ With this rewrite, we will be a giant leap closer to CocoaPods 1.0.&lt;/p&gt;
 
 &lt;p&gt;CocoaDocs could not have existed without help from &lt;a href=&quot;http://gentlebytes.com/appledoc/&quot;&gt;appledoc&lt;/a&gt;, &lt;a href=&quot;/assets/blog_img/cocoadocs/danger.jpg&quot;&gt;Danger&lt;/a&gt;, the &lt;a href=&quot;http://cocoapods.org/about&quot;&gt;CocoaPods Dev Team&lt;/a&gt; and everyone who has contributed a library.&lt;/p&gt;
 </description>
-    <pubDate>Mon, 26 May 2014 00:00:00 +0300</pubDate>
+    <pubDate>Mon, 26 May 2014 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaDocs2-Launch</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaDocs2-Launch</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods AltLabs - San Francisco - 5th June 2014</title>
     <description>&lt;p&gt;It&amp;#39;s been a busy week, with the introduction of Trunk and CocoaPods 0.33.
@@ -6413,13 +6430,13 @@ over if you are in San Francisco for either events.&lt;/p&gt;
 
 &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src=&quot;https://secure.meetup.com/script/21021123101537681383/api/mu.btns.js?id=a74a4o9ar6ca0btqqmtk1k5uv2&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;mu-bootjs&quot;);&lt;/script&gt;
 </description>
-    <pubDate>Fri, 23 May 2014 00:00:00 +0300</pubDate>
+    <pubDate>Fri, 23 May 2014 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-AltLabs</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-AltLabs</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 0.33</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 0.33 has been released. It is shiny and brings a huge change
@@ -6500,7 +6517,7 @@ completion script with the following commands:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -6512,7 +6529,7 @@ completion script with the following commands:&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -6556,7 +6573,7 @@ so getting started has never been easier.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -6566,7 +6583,7 @@ so getting started has never been easier.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -6576,13 +6593,13 @@ so getting started has never been easier.&lt;/p&gt;
 &lt;p&gt;For all the details, don’t miss the
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;.&lt;/p&gt;
 </description>
-    <pubDate>Wed, 21 May 2014 00:00:00 +0300</pubDate>
+    <pubDate>Wed, 21 May 2014 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-0.33</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.33</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Claim Your Pods</title>
     <description>&lt;p&gt;Today we are introducing the ‘Trunk’ web-service. An awesome new way for podspec
@@ -6609,9 +6626,9 @@ little more complicated.&lt;/p&gt;
 to claim their pods. This will set initial ownership for your libraries
 within the ‘Trunk’ web-service allowing you, and the people you allow, to push new
 specs for the given library. To do this we&amp;#39;ll need you to fill out
-this &lt;a href=&quot;https://trunk.cocoapods.org/claims/new&quot;&gt;form&lt;/a&gt; with the email address
-you would like use to identify with as an owner and the pod name you&amp;#39;re
-claiming. Be sure to use the email address you use with Github so the
+this &lt;a href=&quot;https://trunk.cocoapods.org/claims/new&quot;&gt;form&lt;/a&gt; with the email address 
+you would like use to identify with as an owner and the pod name you&amp;#39;re 
+claiming. Be sure to use the email address you use with Github so the 
 commit logs will show your Github account.&lt;/p&gt;
 
 &lt;h3 id=&quot;claim-collisions&quot;&gt;Claim collisions&lt;/h3&gt;
@@ -6633,17 +6650,17 @@ contributors through the &lt;a href=&quot;http://guides.cocoapods.org/making/get
 estimate this will take a week or so.&lt;/p&gt;
 
 &lt;p&gt;After this any new specs you submit will default to your ownership. In
-the future ownership claims will be handled by the CocoaPods dev team.
-One important side effect of this new workflow is how submitting pods
+the future ownership claims will be handled by the CocoaPods dev team. 
+One important side effect of this new workflow is how submitting pods 
 will change besides just using the &lt;code&gt;push&lt;/code&gt; command. &lt;/p&gt;
 
-&lt;p&gt;Currently many spec authors rely on Travis to validate the correctness
-of their new spec versions. &lt;em&gt;We will no longer be using Travis for CI builds.&lt;/em&gt;
-When submitting a new version of your podspec the command line tool will
+&lt;p&gt;Currently many spec authors rely on Travis to validate the correctness 
+of their new spec versions. &lt;em&gt;We will no longer be using Travis for CI builds.&lt;/em&gt; 
+When submitting a new version of your podspec the command line tool will 
 run a local &lt;code&gt;pod spec lint&lt;/code&gt; verifying the spec&amp;#39;s validity locally. &lt;/p&gt;
 
-&lt;p&gt;After submitting a new version of a spec any revisions to that version must
-be submitted as a pull request to the &lt;a href=&quot;https://github.com/CocoaPods/Specs&quot;&gt;master repo&lt;/a&gt;.
+&lt;p&gt;After submitting a new version of a spec any revisions to that version must 
+be submitted as a pull request to the &lt;a href=&quot;https://github.com/CocoaPods/Specs&quot;&gt;master repo&lt;/a&gt;. 
 Because of this I would recommend that you thoroughly test your spec with the linting
 &lt;a href=&quot;http://guides.cocoapods.org/terminal/commands.html#pod_lib_lint&quot;&gt;tools&lt;/a&gt;
 and by using it in your real applications and/or demo applications to make sure
@@ -6653,9 +6670,9 @@ everything works as expected. This is &lt;em&gt;your&lt;/em&gt; responsibility f
     <link>https://blog.cocoapods.org/Claim-Your-Pods</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Claim-Your-Pods</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods Trunk</title>
     <description>&lt;p&gt;After a year of architecture design and hard work, we are proud to introduce the ‘Trunk’ web-service, which will dramatically improve the user-experience of podspec publishers.&lt;/p&gt;
@@ -6768,7 +6785,7 @@ Just keep in mind that if two files are available CocoaPods will prefer the JSON
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -6778,7 +6795,7 @@ Just keep in mind that if two files are available CocoaPods will prefer the JSON
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -6787,7 +6804,7 @@ Just keep in mind that if two files are available CocoaPods will prefer the JSON
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -6797,7 +6814,7 @@ Just keep in mind that if two files are available CocoaPods will prefer the JSON
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -6806,7 +6823,7 @@ Just keep in mind that if two files are available CocoaPods will prefer the JSON
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -6816,7 +6833,7 @@ Just keep in mind that if two files are available CocoaPods will prefer the JSON
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -6825,9 +6842,9 @@ Just keep in mind that if two files are available CocoaPods will prefer the JSON
     <link>https://blog.cocoapods.org/CocoaPods-Trunk</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-Trunk</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Cocoa Kucha 4 - San Francisco - 28th May 2014</title>
     <description>&lt;p&gt;&lt;a href=&quot;https://twitter.com/orta&quot;&gt;Orta&lt;/a&gt; has been kind enough to organise yet another
@@ -6877,13 +6894,13 @@ after the first day of the #inspect conference. Join our &lt;a href=&quot;http:/
 
 &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src=&quot;https://secure.meetup.com/script/21021123101537681383/api/mu.btns.js?id=a74a4o9ar6ca0btqqmtk1k5uv2&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;mu-bootjs&quot;);&lt;/script&gt;
 </description>
-    <pubDate>Fri, 02 May 2014 00:00:00 +0300</pubDate>
+    <pubDate>Fri, 02 May 2014 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/Cocoa-Kucha-4</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Cocoa-Kucha-4</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 3rd WWDC Meetup: 2nd June 2014</title>
     <description>&lt;p&gt;Apple have their developers state of the union address. We have ours. We&amp;#39;re working with the &lt;a href=&quot;http://www.altconf.com&quot;&gt;Alt Conference&lt;/a&gt; to have a great opening event to the WWDC week: The CocoaPodsAlt State of the Union. You should come along.&lt;/p&gt;
@@ -6914,13 +6931,13 @@ The meetup will be hosted at the &lt;a href=&quot;https://www.twilio.com/&quot;&
 
 &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s); js.id=id;js.async=true;js.src=&quot;https://secure.meetup.com/script/21021123101537681383/api/mu.btns.js?id=a74a4o9ar6ca0btqqmtk1k5uv2&quot;;fjs.parentNode.insertBefore(js,fjs);}}(document,&quot;script&quot;,&quot;mu-bootjs&quot;);&lt;/script&gt;
 </description>
-    <pubDate>Mon, 21 Apr 2014 00:00:00 +0300</pubDate>
+    <pubDate>Mon, 21 Apr 2014 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-WWDC-Party</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-WWDC-Party</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 0.32</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPod 0.32 is here! It brings a vastly improved &lt;code&gt;update&lt;/code&gt;
@@ -6935,7 +6952,7 @@ requested CocoaPods features:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -6945,7 +6962,7 @@ requested CocoaPods features:&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -6973,7 +6990,7 @@ is already supported at the DSL level.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -6983,7 +7000,7 @@ is already supported at the DSL level.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -6992,7 +7009,7 @@ is already supported at the DSL level.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -7002,7 +7019,7 @@ is already supported at the DSL level.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -7062,7 +7079,7 @@ gifs):&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -7072,7 +7089,7 @@ gifs):&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -7082,13 +7099,13 @@ gifs):&lt;/p&gt;
 &lt;p&gt;For all the details, don’t miss the
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;.&lt;/p&gt;
 </description>
-    <pubDate>Tue, 15 Apr 2014 00:00:00 +0300</pubDate>
+    <pubDate>Tue, 15 Apr 2014 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-0.32</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.32</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>AppIe Acquires CocoaPods</title>
     <description>&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; We hope you enjoyed our April Fools’ day prank! We are still an independent open-source project and fully committed to you, our users. In case it wasn’t completely clear to you, you &lt;em&gt;may&lt;/em&gt; have thought that this post mentions a big well-known technology company, however, it in fact mentions ‘Appie’, which –with our sans-serif font– looks different when spelled with a capital ‘I’ ;) &lt;a href=&quot;https://twitter.com/AppieDuran/status/450975104395390976/photo/1&quot;&gt;Appie&lt;/a&gt; is Eloy’s dog, we are not sure whether or not this prank was planned years ahead…&lt;/p&gt;
@@ -7143,13 +7160,13 @@ See you on soon on an Xcode near you!&lt;/p&gt;
 
 &lt;p&gt;*Here&amp;#39;s &lt;a href=&quot;https://twitter.com/AppieDuran/status/450975104395390976/photo/1&quot;&gt;a company portrait of AppIe&lt;/a&gt;.&lt;/p&gt;
 </description>
-    <pubDate>Tue, 01 Apr 2014 00:00:00 +0300</pubDate>
+    <pubDate>Tue, 01 Apr 2014 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/Big-News</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Big-News</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 0.31</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;The bug bash has been a massive success: all the tickets have been triaged at least once, almost 80 were closed, with 16 Pull Requests sent to fix or enhance CocoaPods. The result? CocoaPods 0.31!&lt;/em&gt;&lt;/p&gt;
@@ -7160,22 +7177,22 @@ See you on soon on an Xcode near you!&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
-&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;  4 meetups world wide,
-  33 people,
-  16 pull requests,
-  6  claimed issues still being worked on,
-  86 issues confirmed as existing,
+&lt;pre class=&#39;highlight&#39;&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;  4 meetups world wide, 
+  33 people, 
+  16 pull requests, 
+  6  claimed issues still being worked on, 
+  86 issues confirmed as existing, 
   55 closed issues, and a total of 428 triage actions by participants.
 &lt;/code&gt;&lt;/pre&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -7207,7 +7224,7 @@ See you on soon on an Xcode near you!&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -7217,7 +7234,7 @@ See you on soon on an Xcode near you!&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -7227,13 +7244,13 @@ See you on soon on an Xcode near you!&lt;/p&gt;
 &lt;p&gt;For all the details, don&amp;#39;t miss the
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;.&lt;/p&gt;
 </description>
-    <pubDate>Mon, 31 Mar 2014 00:00:00 +0300</pubDate>
+    <pubDate>Mon, 31 Mar 2014 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-0.31</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.31</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 0.30</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 0.30 dramatically reduces setup time &amp;amp; download size, introduces compatibility adjustments for Xcode 5.1 and the Rainforest!&lt;/em&gt;&lt;/p&gt;
@@ -7254,7 +7271,7 @@ See you on soon on an Xcode near you!&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -7269,7 +7286,7 @@ $ CocoaPods/bin/pod --version
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -7278,7 +7295,7 @@ $ CocoaPods/bin/pod --version
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -7290,7 +7307,7 @@ $ CocoaPods/bin/pod --version
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -7315,7 +7332,7 @@ $ CocoaPods/bin/pod --version
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -7325,7 +7342,7 @@ $ CocoaPods/bin/pod --version
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -7335,13 +7352,13 @@ $ CocoaPods/bin/pod --version
 &lt;p&gt;For all the details, don&amp;#39;t miss the
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;.&lt;/p&gt;
 </description>
-    <pubDate>Sat, 29 Mar 2014 00:00:00 +0200</pubDate>
+    <pubDate>Sat, 29 Mar 2014 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-0.30</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.30</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods Bug Bash</title>
     <description>&lt;p&gt;With the announcement that Fabio will be &lt;a href=&quot;/SoundCloud/&quot;&gt;working full time on CocoaPods&lt;/a&gt; (thanks &lt;a href=&quot;https://soundcloud.com/&quot;&gt;SoundCloud!&lt;/a&gt;) for three months, we looked for ways to get the most bang for our buck on his time. In true Open Source style we looked at ways of getting people to help out cleaning out the GitHub issues. &lt;/p&gt;
@@ -7373,13 +7390,13 @@ $ CocoaPods/bin/pod --version
 &lt;li&gt;&lt;a href=&quot;http://www.rubymotion.com&quot;&gt;RubyMotion&lt;/a&gt; - An awesome toolchain that lets you quickly develop and test iOS and OS X using Ruby.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    <pubDate>Fri, 14 Mar 2014 00:00:00 +0200</pubDate>
+    <pubDate>Fri, 14 Mar 2014 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-Bug-Bash</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-Bug-Bash</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Guides and Blog Deploys with Travis-CI</title>
     <description>&lt;p&gt;TL;DR Both the Guides and Blog now auto-deploy when we push to master.&lt;/p&gt;
@@ -7408,7 +7425,7 @@ $ CocoaPods/bin/pod --version
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -7418,7 +7435,7 @@ $ CocoaPods/bin/pod --version
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -7435,7 +7452,7 @@ $ CocoaPods/bin/pod --version
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -7447,7 +7464,7 @@ $ CocoaPods/bin/pod --version
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -7458,7 +7475,7 @@ $ CocoaPods/bin/pod --version
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -7468,7 +7485,7 @@ $ CocoaPods/bin/pod --version
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -7485,7 +7502,7 @@ $ CocoaPods/bin/pod --version
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -7510,7 +7527,7 @@ env:
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -7519,13 +7536,13 @@ env:
 
 &lt;p&gt;So that&amp;#39;s how we have our Travis deploys setup now. CocoaPods is a community effort, so lowering the barrier for contributions has been one of our goals. This new setup does just that. Edit away!&lt;/p&gt;
 </description>
-    <pubDate>Mon, 10 Mar 2014 00:00:00 +0200</pubDate>
+    <pubDate>Mon, 10 Mar 2014 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/Guides-And-Blog-Travis-Deploy</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Guides-And-Blog-Travis-Deploy</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>SoundCloud Announcement</title>
     <description>&lt;p&gt;Today at the &lt;a href=&quot;http://mdevcon.com&quot;&gt;mdevcon&lt;/a&gt; conference we have been glad to announce that &lt;a href=&quot;https://soundcloud.com&quot;&gt;SoundCloud&lt;/a&gt; in collaboration with the &lt;a href=&quot;http://foundation.travis-ci.org&quot;&gt;Travis Foundation&lt;/a&gt; will sponsor CocoaPods development.&lt;/p&gt;
@@ -7558,13 +7575,13 @@ env:
 
 &lt;p&gt;Eloy and I are very thankful to SoundCloud, Travis, and the great people there that share our passion and for helping us to help you.&lt;/p&gt;
 </description>
-    <pubDate>Sat, 08 Mar 2014 00:00:00 +0200</pubDate>
+    <pubDate>Sat, 08 Mar 2014 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/SoundCloud</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/SoundCloud</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Search API Version 1</title>
     <description>&lt;p&gt;I&amp;#39;m going to break up the doom &amp;amp; gloom around the &lt;a href=&quot;/Repairing-Our-Broken-Specs-Repository/&quot;&gt;Specs Repo change&lt;/a&gt; with some good news. We have opened up v1 of our search API!&lt;/p&gt;
@@ -7579,7 +7596,7 @@ env:
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -7589,7 +7606,7 @@ env:
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -7598,7 +7615,7 @@ env:
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -7610,7 +7627,7 @@ start-at: The offset in the set of results [Default: 0].
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -7619,7 +7636,7 @@ start-at: The offset in the set of results [Default: 0].
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -7629,7 +7646,7 @@ start-at: The offset in the set of results [Default: 0].
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -7642,7 +7659,7 @@ start-at: The offset in the set of results [Default: 0].
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -7652,7 +7669,7 @@ start-at: The offset in the set of results [Default: 0].
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -7672,7 +7689,7 @@ start-at: The offset in the set of results [Default: 0].
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -7685,7 +7702,7 @@ Accept: application/vnd.cocoapods.org+flat.ids.json; version=1
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -7704,7 +7721,7 @@ Accept: application/vnd.cocoapods.org+flat.ids.json; version=1
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -7724,7 +7741,7 @@ curl &lt;span class=&quot;s1&quot;&gt;&amp;#39;http://search.cocoapods.org/api/p
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -7733,7 +7750,7 @@ curl &lt;span class=&quot;s1&quot;&gt;&amp;#39;http://search.cocoapods.org/api/p
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -7750,7 +7767,7 @@ curl &lt;span class=&quot;s1&quot;&gt;&amp;#39;http://search.cocoapods.org/api/p
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -7761,7 +7778,7 @@ curl &lt;span class=&quot;s1&quot;&gt;&amp;#39;http://search.cocoapods.org/api/p
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -7774,7 +7791,7 @@ http://search.cocoapods.org/api/v1/pods.flat.ids.json?query=test
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -7785,13 +7802,13 @@ http://search.cocoapods.org/api/v1/pods.flat.ids.json?query=test
 
 &lt;p&gt;Have fun with it - we are curious what you all are coming up with! Personally, I&amp;#39;d love a CocoaPod that parsed &lt;a href=&quot;https://github.com/floere/picky/wiki/results-format-and-structure&quot;&gt;Picky-style results&lt;/a&gt; and provided it to other applications &amp;lt;3&lt;/p&gt;
 </description>
-    <pubDate>Sun, 02 Feb 2014 00:00:00 +0200</pubDate>
+    <pubDate>Sun, 02 Feb 2014 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/Search-API-Version-1</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Search-API-Version-1</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Cocoa Komittee - NYC</title>
     <description>&lt;p&gt;One should avoid repeating oneself. New York City is where we started running &lt;a href=&quot;http://blog.cocoapods.org/Cocoa-Kucha/&quot;&gt;Cocoa Kuchas&lt;/a&gt; last year and whilst there&amp;#39;s a lot more stories to tell here it&amp;#39;s time to move on.&lt;/p&gt;
@@ -7908,13 +7925,13 @@ http://search.cocoapods.org/api/v1/pods.flat.ids.json?query=test
   &lt;p&gt;I use Specta, Expecta and OCMockito. I&#39;ve also been using Barista for integration tests. Everything is automatically run on Travis. Tools I use: Cocoapods, Bundler (so I can have a specific Cocoapoads version per project), Rake and xctool.&lt;/p&gt;
 &lt;/div&gt;
 </description>
-    <pubDate>Sat, 01 Feb 2014 00:00:00 +0200</pubDate>
+    <pubDate>Sat, 01 Feb 2014 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/The-Kommittee-NYC</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/The-Kommittee-NYC</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Repairing Our Broken Specs Repository</title>
     <description>&lt;p&gt;&lt;em&gt;Note: If you got this problem after running &lt;code&gt;gem update&lt;/code&gt;, &lt;a href=&quot;#i-got-linked-here-after-updating-my-gems,-what-to-do?&quot;&gt;jump here&lt;/a&gt; to find a solution.&lt;/em&gt;&lt;/p&gt;
@@ -7933,7 +7950,7 @@ commands:&lt;/p&gt;
 &lt;pre class=&#39;highlight&#39;&gt;&lt;code&gt;
     $ sudo rm -fr ~/.cocoapods/repos/master
     $ pod setup
-
+    
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;NOTE 1:&lt;/strong&gt; If you have any local commits or changes to the Specs repository
@@ -8016,7 +8033,7 @@ CocoaPods and its architecture.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -8030,7 +8047,7 @@ pod setup
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -8039,7 +8056,7 @@ pod setup
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -8052,7 +8069,7 @@ Please consult http://blog.cocoapods.org/Repairing-Our-Broken-Specs-Repository/ 
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -8061,7 +8078,7 @@ Please consult http://blog.cocoapods.org/Repairing-Our-Broken-Specs-Repository/ 
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -8072,7 +8089,7 @@ Setup completed
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -8085,17 +8102,17 @@ Setup completed
 &lt;a href=&quot;https://twitter.com/SmileyKeith&quot;&gt;@SmileyKeith&lt;/a&gt;, and
 &lt;a href=&quot;https://twitter.com/alloy&quot;&gt;@alloy&lt;/a&gt;&lt;/p&gt;
 </description>
-    <pubDate>Thu, 30 Jan 2014 00:00:00 +0200</pubDate>
+    <pubDate>Thu, 30 Jan 2014 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/Repairing-Our-Broken-Specs-Repository</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Repairing-Our-Broken-Specs-Repository</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Cocoa Kucha 3 - Berlin - 22nd Jan 2014</title>
-    <description>&lt;p&gt;And just like that the next Cocoa Kucha was declared. As part of a world-wide community
-outreach program I&amp;#39;ve been in talks with &lt;a href=&quot;http://chris.eidhof.nl&quot;&gt;Chris Eidhof&lt;/a&gt; and &lt;a href=&quot;http://www.kurutepe.com&quot;&gt;Engin Kurutepe&lt;/a&gt;
+    <description>&lt;p&gt;And just like that the next Cocoa Kucha was declared. As part of a world-wide community 
+outreach program I&amp;#39;ve been in talks with &lt;a href=&quot;http://chris.eidhof.nl&quot;&gt;Chris Eidhof&lt;/a&gt; and &lt;a href=&quot;http://www.kurutepe.com&quot;&gt;Engin Kurutepe&lt;/a&gt; 
 about running a Cocoa Kucha with the &lt;a href=&quot;http://cocoaheads-berlin.github.io&quot;&gt;CocoaHeads Berlin&lt;/a&gt;.&lt;/p&gt;
 
 &lt;!-- more --&gt;
@@ -8106,7 +8123,7 @@ talks related to Objective-C for 6 minutes and 20 seconds. The speaker must go
 though 20 slides, 20 seconds per slide. This keeps them to the point and makes
 it a lot easier for people to get started.&lt;/p&gt;
 
-&lt;p&gt;As the timeframe for the event is smaller than I normally plan, I&amp;#39;d like to open the doors to speakers.
+&lt;p&gt;As the timeframe for the event is smaller than I normally plan, I&amp;#39;d like to open the doors to speakers. 
 &lt;a href=&quot;https://github.com/CocoaPods/blog.cocoapods.org/pull/8&quot;&gt;We accept pull requests including yourself on the roster&lt;/a&gt;. Like most CocoaHead Berlin events is hosted at &lt;a href=&quot;http://www.codekollektiv.de/&quot;&gt;CodeKollektiv&lt;/a&gt; and starts at 19h. Add it to your kalendar.&lt;/p&gt;
 
 &lt;p&gt;Currently confirmed for the 22nd:&lt;/p&gt;
@@ -8124,13 +8141,13 @@ it a lot easier for people to get started.&lt;/p&gt;
 
 &lt;p&gt;You can keep up to date by either watching my &lt;a href=&quot;https://github.com/orta/life/issues/17&quot;&gt;organization issue&lt;/a&gt;, or by keeping track on the &lt;a href=&quot;https://groups.google.com/forum/?hl=de#!topic/berlin-cocoaheads/VPxPyrCohX0&quot;&gt;CocoaHeads google&lt;/a&gt; group.&lt;/p&gt;
 </description>
-    <pubDate>Tue, 07 Jan 2014 00:00:00 +0200</pubDate>
+    <pubDate>Tue, 07 Jan 2014 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/Cocoa-Kucha-3-Berlin</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Cocoa-Kucha-3-Berlin</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 0.29</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 0.29 introduces the pod try subcommand, the social media URL
@@ -8174,7 +8191,7 @@ user interface elements – or to quickly get up to speed on how to use it.&lt;/
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -8184,7 +8201,7 @@ user interface elements – or to quickly get up to speed on how to use it.&lt;/
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -8209,7 +8226,7 @@ ask for an URL.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -8219,7 +8236,7 @@ ask for an URL.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -8255,7 +8272,7 @@ deserves a quick mention.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -8265,7 +8282,7 @@ deserves a quick mention.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -8275,13 +8292,13 @@ deserves a quick mention.&lt;/p&gt;
 &lt;p&gt;For all the details, don&amp;#39;t miss the
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;.&lt;/p&gt;
 </description>
-    <pubDate>Tue, 24 Dec 2013 00:00:00 +0200</pubDate>
+    <pubDate>Tue, 24 Dec 2013 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-0.29</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.29</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Cocoa Kucha 2 - 16 Jan 2014</title>
     <description>&lt;p&gt;Cocoa Kucha is back, this time in London on the 16th of January. I&amp;#39;m excited to
@@ -8320,13 +8337,13 @@ Damien DeVille, a software engineer at the ever popular Realmac Software.&lt;/p&
 keep up to date, and the &lt;a href=&quot;http://www.meetup.com/NSLondon/events/155953132/&quot;&gt;event&lt;/a&gt;
 will allow RSVPs 2 weeks before on the 2nd of January.&lt;/p&gt;
 </description>
-    <pubDate>Tue, 17 Dec 2013 00:00:00 +0200</pubDate>
+    <pubDate>Tue, 17 Dec 2013 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/Cocoa-Kucha-2</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Cocoa-Kucha-2</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Cool URIs don't change.</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;We broke some URIs but this is how we ensure people still get the info they were looking for.&lt;/em&gt;&lt;/p&gt;
@@ -8341,7 +8358,7 @@ will allow RSVPs 2 weeks before on the 2nd of January.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -8381,14 +8398,14 @@ will allow RSVPs 2 weeks before on the 2nd of January.&lt;/p&gt;
   &lt;span class=&quot;c1&quot;&gt;# and either redirect to the new site with the same query.&lt;/span&gt;
 
    &lt;span class=&quot;n&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
-     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ROUTES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;http&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ROUTES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;http&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
        &lt;span class=&quot;n&quot;&gt;redirect&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ROUTES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;302&lt;/span&gt;
      &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
        &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;NEW_URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ROUTES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query_string&lt;/span&gt;
       &lt;span class=&quot;n&quot;&gt;redirect&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;302&lt;/span&gt;
      &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt; 
 
  &lt;span class=&quot;c1&quot;&gt;# If we&amp;#39;ve missed anything just go to the root of the new URL&lt;/span&gt;
 
@@ -8399,20 +8416,20 @@ will allow RSVPs 2 weeks before on the 2nd of January.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
 &lt;/div&gt;
 &lt;p&gt;The repo can be found here &lt;a href=&quot;https://github.com/orta/CocoaPods-Docs-Redirector/&quot;&gt;github.com/orta/CocoaPods-Docs-Redirector/&lt;/a&gt;&lt;/p&gt;
 </description>
-    <pubDate>Mon, 02 Dec 2013 00:00:00 +0200</pubDate>
+    <pubDate>Mon, 02 Dec 2013 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/Cool-URIs-Don't-Change</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Cool-URIs-Don't-Change</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods Beta</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods just got a facelift.&lt;/em&gt;&lt;/p&gt;
@@ -8471,13 +8488,13 @@ will allow RSVPs 2 weeks before on the 2nd of January.&lt;/p&gt;
 
 &lt;p&gt;Let us know what you think either on twitter (&lt;a href=&quot;http://twitter.com/CocoaPods&quot;&gt;@CocoaPods&lt;/a&gt;) or if your idea is too big for 140 characters, &lt;a href=&quot;https://github.com/cocoapods/cocoapods.org/issues&quot;&gt;write us an issue&lt;/a&gt;. This was a team effort, and I&amp;#39;m super proud to have been a part of it. !m!&lt;/p&gt;
 </description>
-    <pubDate>Sun, 24 Nov 2013 00:00:00 +0200</pubDate>
+    <pubDate>Sun, 24 Nov 2013 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/Beta</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Beta</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 0.28</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;CocoaPods 0.28 introduces support for plugins.&lt;/em&gt;&lt;/p&gt;
@@ -8520,7 +8537,7 @@ has the following &lt;code&gt;cocoapods_plugin.rb&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -8530,7 +8547,7 @@ has the following &lt;code&gt;cocoapods_plugin.rb&lt;/code&gt;:&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -8539,7 +8556,7 @@ has the following &lt;code&gt;cocoapods_plugin.rb&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -8549,7 +8566,7 @@ has the following &lt;code&gt;cocoapods_plugin.rb&lt;/code&gt;:&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -8568,7 +8585,7 @@ can find the &lt;strong&gt;complete&lt;/strong&gt; implementation of the &lt;cod
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -8611,7 +8628,7 @@ can find the &lt;strong&gt;complete&lt;/strong&gt; implementation of the &lt;cod
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -8639,7 +8656,7 @@ account to finalize APIs.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -8649,7 +8666,7 @@ account to finalize APIs.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -8659,13 +8676,13 @@ account to finalize APIs.&lt;/p&gt;
 &lt;p&gt;For all the details, don&amp;#39;t miss the
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;.&lt;/p&gt;
 </description>
-    <pubDate>Thu, 14 Nov 2013 00:00:00 +0200</pubDate>
+    <pubDate>Thu, 14 Nov 2013 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-0.28</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.28</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods → CocoaPodsFeed</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;New library notifications have moved from the &lt;a href=&quot;http://twitter.com/CocoaPods&quot;&gt;@CocoaPods&lt;/a&gt; twitter to the &lt;a href=&quot;http://twitter.com/CocoaPodsFeed&quot;&gt;@CocoaPodsFeed&lt;/a&gt; twitter account&lt;/em&gt;&lt;/p&gt;
@@ -8680,13 +8697,13 @@ account to finalize APIs.&lt;/p&gt;
 
 &lt;p&gt;To deal with this effectively we&amp;#39;ve moved out notifications on to a separate twitter account allowing the CocoaPods twitter feed to become a relatively low-chaff high information yield source for those interested in keeping up on Objective-C Open Source.&lt;/p&gt;
 </description>
-    <pubDate>Thu, 07 Nov 2013 00:00:00 +0200</pubDate>
+    <pubDate>Thu, 07 Nov 2013 00:00:00 -0800</pubDate>
     <link>https://blog.cocoapods.org/CocoaPodsFeed</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPodsFeed</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 0.27 and improved installation UX</title>
     <description>&lt;p&gt;TL;DR: &lt;em&gt;Compilation as part of the CocoaPods gem install process is dead. Long
@@ -8789,7 +8806,7 @@ and better frame our suggestions in context. But I digress, for now.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -8800,7 +8817,7 @@ and better frame our suggestions in context. But I digress, for now.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -8812,7 +8829,7 @@ and better frame our suggestions in context. But I digress, for now.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -8825,7 +8842,7 @@ and better frame our suggestions in context. But I digress, for now.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -8851,7 +8868,7 @@ and better frame our suggestions in context. But I digress, for now.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -8861,7 +8878,7 @@ and better frame our suggestions in context. But I digress, for now.&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -8899,7 +8916,7 @@ the following insights:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -8909,7 +8926,7 @@ the following insights:&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -8919,7 +8936,7 @@ the following insights:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -8929,7 +8946,7 @@ the following insights:&lt;/p&gt;
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -8944,13 +8961,13 @@ the following insights:&lt;/p&gt;
   &lt;code&gt;Makefile&lt;/code&gt; and possibly &lt;code&gt;extconf.h&lt;/code&gt;) and use those to build your extensions.
   Here’s &lt;a href=&quot;http://bit.ly/1a9tp25&quot;&gt;our final solution&lt;/a&gt;.&lt;/p&gt;
 </description>
-    <pubDate>Thu, 24 Oct 2013 00:00:00 +0300</pubDate>
+    <pubDate>Thu, 24 Oct 2013 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-0.27-and-improved-installation-UX</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.27-and-improved-installation-UX</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Cocoa Kucha - 20 Nov 2013</title>
     <description>&lt;p&gt;CocoaPods is more than just a tool, CocoaPods is a community of over a thousand &lt;a href=&quot;https://github.com/CocoaPods/Specs/graphs/contributors&quot;&gt;commiters&lt;/a&gt;, six thousand Podspecs and hundreds of thousands of &lt;a href=&quot;http://rubygems.org/gems/cocoapods&quot;&gt;users&lt;/a&gt;. To say the community is growing is a mild &lt;a href=&quot;https://github.com/CocoaPods/Specs/graphs/code-frequency&quot;&gt;understatement&lt;/a&gt;. One of the cool things about a big community is that there&amp;#39;s the chance that people will get clumped enough together to make meeting up and sharing ideas a possible. I&amp;#39;d like to announce our first attempt at trying to bring people together, starting in New York City this November.&lt;/p&gt;
@@ -8976,13 +8993,13 @@ the following insights:&lt;/p&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/jflinter/&quot;&gt;&lt;img src=&quot;/assets/blog_img/github_octokitty.png&quot; alt=&quot;jflinter&quot;&gt;&lt;/a&gt;  Jack Flintermann - &lt;a href=&quot;http://twitter.com/jflinter&quot;&gt;@jflinter&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    <pubDate>Sun, 13 Oct 2013 00:00:00 +0300</pubDate>
+    <pubDate>Sun, 13 Oct 2013 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/Cocoa-Kucha</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Cocoa-Kucha</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>CocoaPods 0.26</title>
     <description>&lt;p&gt;Today we are releasing CocoaPods 0.26.&lt;/p&gt;
@@ -9011,7 +9028,7 @@ team: &lt;a href=&quot;https://twitter.com/kylefuller&quot;&gt;Kyle Fuller&lt;/a
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -9021,7 +9038,7 @@ team: &lt;a href=&quot;https://twitter.com/kylefuller&quot;&gt;Kyle Fuller&lt;/a
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -9031,13 +9048,13 @@ team: &lt;a href=&quot;https://twitter.com/kylefuller&quot;&gt;Kyle Fuller&lt;/a
 &lt;p&gt;For all the details, don&amp;#39;t miss the
 &lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/blob/master/CHANGELOG.md&quot;&gt;Changelog&lt;/a&gt;.&lt;/p&gt;
 </description>
-    <pubDate>Tue, 08 Oct 2013 00:00:00 +0300</pubDate>
+    <pubDate>Tue, 08 Oct 2013 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/CocoaPods-0.26</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/CocoaPods-0.26</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>On Design</title>
     <description>&lt;p&gt;Interested in finding the CocoaPods Logo? Check out our &lt;a href=&quot;https://github.com/CocoaPods/shared_resources/tree/master/media&quot;&gt;Media Pack&lt;/a&gt;.&lt;/p&gt;
@@ -9082,9 +9099,9 @@ team: &lt;a href=&quot;https://twitter.com/kylefuller&quot;&gt;Kyle Fuller&lt;/a
     <link>https://blog.cocoapods.org/redesign</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/redesign</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Why we don't accept donations</title>
     <description>&lt;p&gt;TL;DR: While we very much appreciate the sentiment, the project (as an entity) does not accept financial donations. &lt;/p&gt;
@@ -9128,9 +9145,9 @@ team: &lt;a href=&quot;https://twitter.com/kylefuller&quot;&gt;Kyle Fuller&lt;/a
     <link>https://blog.cocoapods.org/Why-we-dont-accept-donations</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Why-we-dont-accept-donations</guid>
   </item>
-
-
-
+  
+  
+  
   <item>
     <title>Using Acknowledgements</title>
     <description>&lt;p&gt;CocoaPods will generate two &amp;#39;Acknowledgements&amp;#39; files for each target specified in your Podfile. If the pods are coming from the master repo, then they must include one. Private pods don&amp;#39;t require one. These contain the License details for each Pod and for most of the part having them in your acknowledgements will be enough to conform to the license.&lt;/p&gt;
@@ -9147,7 +9164,7 @@ that generate the text in your &lt;code&gt;Podfile&lt;/code&gt; like this:&lt;/p
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -9161,7 +9178,7 @@ that generate the text in your &lt;code&gt;Podfile&lt;/code&gt; like this:&lt;/p
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -9170,7 +9187,7 @@ that generate the text in your &lt;code&gt;Podfile&lt;/code&gt; like this:&lt;/p
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -9188,7 +9205,7 @@ that generate the text in your &lt;code&gt;Podfile&lt;/code&gt; like this:&lt;/p
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -9201,7 +9218,7 @@ that generate the text in your &lt;code&gt;Podfile&lt;/code&gt; like this:&lt;/p
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -9214,7 +9231,7 @@ that generate the text in your &lt;code&gt;Podfile&lt;/code&gt; like this:&lt;/p
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
@@ -9223,7 +9240,7 @@ that generate the text in your &lt;code&gt;Podfile&lt;/code&gt; like this:&lt;/p
 &lt;div class=&quot;highlight&quot;&gt;      &lt;/article&gt;
       &lt;/article&gt;
       &lt;/section&gt;
-
+      
       &lt;div style=&quot;background-color:white;&quot;&gt;
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
@@ -9251,18 +9268,18 @@ that generate the text in your &lt;code&gt;Podfile&lt;/code&gt; like this:&lt;/p
       &lt;/article&gt;
       &lt;/section&gt;
       &lt;/div&gt;
-
+      
       &lt;section class=&quot;container&quot;&gt;
       &lt;article class=&quot;row&quot;&gt;
       &lt;article class=&quot;content col-md-8 col-md-offset-2&quot;&gt;
 &lt;/div&gt;
 &lt;p&gt;Further details can be found in &lt;a href=&quot;http://martinhicks.net/2012/04/how-to-create-license-section-in-ios-settings-app&quot;&gt;Martin Hicks&amp;#39;s blog&lt;/a&gt;&lt;/p&gt;
 </description>
-    <pubDate>Sat, 10 Aug 2013 00:00:00 +0300</pubDate>
+    <pubDate>Sat, 10 Aug 2013 00:00:00 -0700</pubDate>
     <link>https://blog.cocoapods.org/Acknowledgements</link>
     <guid isPermaLink="true">https://blog.cocoapods.org/Acknowledgements</guid>
   </item>
-
-
+  
+  
 </channel>
 </rss>

@@ -40,10 +40,10 @@ task :serve => 'serve:drafts'
 
 desc 'Deploy the site to the gh_pages branch and push'
 task :deploy do
-  FileUtils.rm_rf '_gh-pages'
-  puts 'Cloning gh-pages branch...'
-  url = `git ls-remote --get-url origin`
-  puts `git clone #{url.strip} _gh-pages`
+  # FileUtils.rm_rf '_gh-pages'
+  # puts 'Cloning gh-pages branch...'
+  # url = `git ls-remote --get-url origin`
+  # puts `git clone #{url.strip} _gh-pages`
   Dir.chdir('_gh-pages') do
     puts `git checkout gh-pages`
   end
@@ -68,10 +68,10 @@ task :deploy do
 
     puts `git ls-files --deleted -z | xargs -0 git rm;`
     puts `git add .`
-    puts `git commit -m "Deploy"`
+    # puts `git commit -m "Deploy"`
 
-    puts 'Pushing to github.'
-    puts `git push --quiet > /dev/null 2>&1`
+    # puts 'Pushing to github.'
+    # puts `git push --quiet > /dev/null 2>&1`
   end
 end
 
