@@ -5,7 +5,7 @@ author: orta
 categories: cocoapods trunk
 ---
 
-Over the last month, security researchers at [evasec.io](https://evasec.io) have been reached out to us about three separate vulnerabilities in CocoaPods Trunk. We've been working with them to patch these  issues as they come up. Looking at all three combined, I felt we needed to reset the user sessions again, which is why I'm writing on the blog post instead of [working on Puzzmo](https://www.theverge.com/23929222/puzzmo-newspaper-games-crossword-zach-gage) which just shipped this week.
+Over the last month, security researchers at [evasec.io](https://evasec.io)(EVA) have been reached out to us about three separate vulnerabilities in CocoaPods Trunk. We've been working with them to patch these  issues as they come up. Looking at all three combined, I felt we needed to reset the user sessions again, which is why I'm writing on the blog post instead of [working on Puzzmo](https://www.theverge.com/23929222/puzzmo-newspaper-games-crossword-zach-gage) which just shipped this week.
 
 The three issues key issues reported, and fixed, are:
  
@@ -47,7 +47,7 @@ EVA reported this on October 26th, and we had it fixed in under 24 hours.
 
 ### Worst case scenario
 
-Like with the [RCE in 2021](https://blog.cocoapods.org/CocoaPods-Trunk-RCE/) I can't prove these have been exploited. However, just because it hasn't been proved, doesn't mean it hasn't happened. 8 years is a long time for these to have existed in trunk. 
+Like with the [RCE in 2021](https://blog.cocoapods.org/CocoaPods-Trunk-RCE/) I can't prove these have been actively used. However, just because it hasn't been proved, doesn't mean it hasn't happened. 8 years is a long time for these to have existed in trunk. 
 
 The worst case scenario is that an attacker could have used this technique to get access to our trunk database. The trunk database contains the same emails which are public in the git history of the Specs repo. The table of information in the database which should not be seen are session keys. These keys act like unique passwords to accounts, and session keys are used to connect authenticated users to pods. We are wiping all session keys.
 
