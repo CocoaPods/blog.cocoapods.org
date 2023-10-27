@@ -35,7 +35,7 @@ EVA reported this on September 20th, and we had it fixed within 2 days.
 
 To verify that an email address that someone requested to use was something which we could send to, we relied on a library for validating the email address. This library calls the OS's `host` command to handle some of that work. [Host is a DNS tool](https://en.wikipedia.org/wiki/Host_(Unix)) installed on most Unix systems which can use used to verify the domain exists. The library does not sanitize the input, so it was possible to inject shell commands into the lookup process. 
 
-This worked by submitting to trunk that you had an 'email address' which could successfully pass the `host` lookup, but still continue execution into the bash shell. At that point you have full server access.
+This worked by submitting to trunk that you had an 'email address' which could successfully pass the `host` lookup, but still continue execution into the shell. At that point you have full server access.
 
 EVA reported this on September 20th, and we had it fixed within 2 days.
 
@@ -53,9 +53,11 @@ The worst case scenario is that an attacker could have used this technique to ge
 
 ### For more information
 
+We want to offer our thanks to [evasec.io](https://evasec.io)(EVA) for their thorough reports!
+
 CocoaPods is ran by a set of volunteers in their spare time. If you have any questions or comments about this advisory:
 
 * Open an issue in [the trunk repo](https://github.com/CocoaPods/trunk.cocoapods.org)
 * Email us at our private security email: [info@cocoapods.org](mailto:info@cocoapods.org)
 
-If you're not sure of the email address you used to use, use `pod trunk info [pod_name]` to see the connected email accounts.
+If you're not sure of the email address you used for a pod, use `pod trunk info [pod_name]` to see the connected email accounts.
