@@ -24,9 +24,7 @@ concurrency:
 jobs:
   # Build job
   build:
-    runs-on: ubuntu-20.04
-    container:
-      image: python:2.7.18-buster
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -36,7 +34,9 @@ jobs:
           ruby-version: '2.7' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
- 
+      - uses: MatteoH2O1999/setup-python@v2
+        with:
+            python-version: '2.7'     
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
