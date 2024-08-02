@@ -15,4 +15,27 @@ Since Swift Package Managers announcement last 9 years, members of the core team
 
 However, with time - these links become more tenuous too, jobs change, people move to new ecosystems and we've slowly been moving CocoaPods to an place where work only happens when something external causes it. That could be security issues like I've reported the last few years on the blog, or Xcode breaking changes which require us to tweak some settings and make a new build.
 
-If CocoaPods' only audience were native developers, CocoaPods' usage should be on the decline, however, that is not the case. The popularity of React Native and Flutter have ensured that [most metrics of usage/traffic](https://www.ruby-toolbox.com/projects/cocoapods) have been steadily rising over time. This 
+If CocoaPods' only audience were native Cocoa developers, CocoaPods' usage should be on the decline, however, that is not the case. The popularity of React Native and Flutter have ensured that [most metrics of usage/traffic](https://www.ruby-toolbox.com/projects/cocoapods) have been steadily rising over time. All while the motivations for the folks who maintain dwindles due to ecosystem changes which they moved with.
+
+### Our plans
+
+Strictly speaking, __we don't plan on changing how we're maintaining CocoaPods__. We're just going to start being clear how CocoaPods has been maintained for the last few years:
+
+- We will make sure to handle systemic security issues to trunk
+- We will aim to make at least 2 releases a year to keep up-to-date with Xcode updates
+- We will aim to look at support requests for trunk every 6 months
+- We will keep the website infrastructure running
+
+What we will not be doing:
+
+- We don't actively follow GitHub issues as a support avenue for individuals
+- We aren't planning on active CocoaPods development in terms of new features
+- We aren't going to make guarantees about handling Pull Requests from people adding new features, or application-level bugs
+
+### New contributors
+
+This is where people would normally say "If we had more volunteers or money etc" but we're not sure that
+
+### Long term plans
+
+On a very long term basis, we can drastically simplify the security of CocoaPods trunk by converting the Specs repo to be read-only,
