@@ -11,7 +11,7 @@ CocoaPods is about 13 years old now, and the landscape of iOS development has ch
 
 In [2015](https://x.com/orta/status/672436829250052102), Apple announce that the CocoaPods project [had been Sherlocked](https://www.npr.org/2024/06/17/g-s1-4912/apple-app-store-obsolete-sherlocked-tapeacall-watson-copy) because they were going to be creating their own package manager: Swift Package Manager. This move effectively took all the wind out of the sails of CocoaPods, slowing active development of the project as competing with Apple on their own turf is rarely a battle worth your volunteer hours.
 
-Since Swift Package Managers announcement last 9 years, members of the core team have individually had reasons for continual maintenance: a sense of duty, being employed to work on libraries or apps which use CocoaPods, working on build infra for large projects where CocoaPods is a key part of the build process or just a love of the community.
+Since Swift Package Managers announcement 9 years ago, members of the core team have individually had reasons for continual maintenance: a sense of duty, being employed to work on libraries or apps which use CocoaPods, working on build infra for large projects where CocoaPods is a key part of the build process or just a love of the community.
 
 However, with time - these links become more tenuous too, jobs change, people move to new ecosystems and we've slowly been moving CocoaPods to an place where work only happens when something external causes it. That could be security issues like I've reported the last few years on the blog, or Xcode breaking changes which require us to tweak some settings and make a new build.
 
@@ -29,6 +29,7 @@ Strictly speaking, __we don't plan on changing how we're maintaining CocoaPods__
 - We will aim to make at least 2 releases a year to keep up-to-date with Xcode updates
 - We will aim to look at support requests for trunk every 6 months
 - We will keep the website infrastructure from not falling over completely
+- We are open to PRs which make CocoaPods more future-friendly
 
 What we will not be doing:
 
@@ -48,9 +49,12 @@ We're open to the idea that multiple people who are well motivated to do the nec
 
 We are discussing that on a very long, multi-year, basis we can drastically simplify the security of CocoaPods trunk by converting the Specs Repo to be read-only. Infrastructure like the Specs repo and the CDN would still operate as long as GitHub and jsDelivr continue to exist, which is pretty likely to be a very long time. **This will keep all existing builds working**.
 
-We'd do this by offering a date when Trunk (our CocoaPods Specs repo authentication server) will be disabled, as trunk would be the main target in a supply-chain attack, this would nix all the key issues there. I think we'd be open to this changing if there is a popular alternative client for the Specs Repo was maintained and used by a reasonable number of the community.
+At least for projects like React Native, this could be fine as-is, as most of their libraries come via npm instead of the Trunk, I can't talk to how Flutter's ecosystem works as I have no exposure to it. 
+
+We'd make the Specs repo read-only by offering a date when Trunk (our CocoaPods Specs repo authentication server) will be disabled. As trunk is the main target in a supply-chain attack, this would nix all the key issues there. I think we'd be open to this changing if there is a popular alternative client for the Specs Repo was maintained and used by a reasonable number of the community.
+
+We would have a specific blog post with a comprehensive plan if/when this idea settles with us.
 
 #### I use CocoaPods as a Hidden Abstraction in My Project
 
 Ouch, yeah, sorry. Open source falls apart from apathy and maintainer life-changes and there hasn't been incentives for new folks to get involved as volunteers for years. If you're commercially exposed here, then we're open to chatting - I think no-one on the current team is interested in working on this full time but that doesn't mean we can't find ways to have others who consider this a part of their job role taking over part of what keeps CocoaPods ticking. You can mail all of us at info@cocoapods.org or me personally at cocoapods@orta.io if you prefer.
-
