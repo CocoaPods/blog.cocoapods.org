@@ -53,8 +53,11 @@ At least for projects like React Native, this could be fine as-is, as most of th
 
 We'd make the Specs repo read-only by offering a date when Trunk (our CocoaPods Specs repo authentication server) will be disabled. As trunk is the main target in a supply-chain attack, this would nix all the key issues there. I think we'd be open to this changing if there is a popular alternative client for the Specs Repo was maintained and used by a reasonable number of the community.
 
-We would have a specific blog post with a comprehensive plan if/when this idea settles with us.
+We would have a specific blog post with a comprehensive plan if/when this idea settles with us, and to be very explicit: the announced date would be years away.
 
-#### I use CocoaPods as a Hidden Abstraction in My Project
+#### I use CocoaPods as a Hidden Abstraction in My Framework
 
-Ouch, yeah, sorry. Open source falls apart from apathy and maintainer life-changes and there hasn't been incentives for new folks to get involved as volunteers for years. If you're commercially exposed here, then we're open to chatting - I think no-one on the current team is interested in working on this full time but that doesn't mean we can't find ways to have others who consider this a part of their job role taking over part of what keeps CocoaPods ticking. You can mail all of us at info@cocoapods.org or me personally at cocoapods@orta.io if you prefer.
+E.g. I maintain Unity, React Native, Flutter etc. A lot of these projects will (and should) be migrating to Swift Package Manager with time. As specified above, we are not breaking anything but bugs you may raise are unlikely to get fixed. 
+
+If you run these sorts of frameworks and are commercially exposed here, then we're open to chatting - I think no-one on the current team is interested in working on this full time but that doesn't mean we can't find ways to have others who consider this a part of _their job role_ taking over parts of what keeps CocoaPods ticking. You can mail all of us at info@cocoapods.org or me personally at cocoapods@orta.io if you prefer.
+
