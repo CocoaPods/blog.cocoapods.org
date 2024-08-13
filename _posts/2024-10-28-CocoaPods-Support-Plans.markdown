@@ -7,7 +7,7 @@ categories: cocoapods
 
 **TLDR: We're still keeping it ticking, but we're being more up-front that CocoaPods is in maintenance mode.**
 
-CocoaPods is about 13 years old now, and the landscape of iOS development has changed a lot in that time. I remember the fragmented islets of small shared libraries (like: ASIHTTPRequest, Nimbus, SBJson, SSToolkit, iCarousel) with tricky upgrade instructions and complicated build setups. CocoaPods simplified that process enough that it turned into the de-facto way to share code in the iOS and Mac community.
+CocoaPods is about 13 years old now, and the landscape of iOS development has changed a lot in that time. I remember the fragmented islets of small shared libraries (like: ASIHTTPRequest, Three20, SBJson, SSToolkit, iCarousel) with tricky upgrade instructions and complicated build setups. CocoaPods simplified that process enough that it turned into the de-facto way to share code in the iOS and Mac community.
 
 In [2015](https://x.com/orta/status/672436829250052102), Apple announce that the CocoaPods project [had been Sherlocked](https://www.npr.org/2024/06/17/g-s1-4912/apple-app-store-obsolete-sherlocked-tapeacall-watson-copy) because they were going to be creating their own package manager: Swift Package Manager. This move effectively took all the wind out of the sails of CocoaPods, slowing active development of the project as competing with Apple on their own turf is rarely a battle worth your volunteer hours.
 
@@ -35,7 +35,7 @@ What we will not be doing:
 
 - We don't actively follow GitHub issues as a support avenue for individuals
 - We aren't planning on active CocoaPods development in terms of new features
-- We aren't going to make guarantees about handling Pull Requests from people adding new features, or application-level bugs
+- We aren't going to make guarantees about handling PRs from people adding new features, or application-level bugs
 
 ### New contributors
 
@@ -53,7 +53,7 @@ At least for projects like React Native, this could be fine as-is, as most of th
 
 We'd make the Specs repo read-only by offering a date when Trunk (our CocoaPods Specs repo authentication server) will be disabled. As trunk is the main target in a supply-chain attack, this would nix all the key issues there. I think we'd be open to this changing if there is a popular alternative client for the Specs Repo was maintained and used by a reasonable number of the community.
 
-We would have a specific blog post with a comprehensive plan if/when this idea settles with us, and to be very explicit: the announced date would be years away.
+We would have a specific blog post with a comprehensive plan if/when this idea settles with us, and to be very explicit: _the announced date would be years away._
 
 #### I use CocoaPods as a Hidden Abstraction in My Framework
 
@@ -61,3 +61,7 @@ E.g. I maintain Unity, React Native, Flutter etc. A lot of these projects will (
 
 If you run these sorts of frameworks and are commercially exposed here, then we're open to chatting - I think no-one on the current team is interested in working on this full time but that doesn't mean we can't find ways to have others who consider this a part of _their job role_ taking over parts of what keeps CocoaPods ticking. You can mail all of us at info@cocoapods.org or me personally at cocoapods@orta.io if you prefer.
 
+
+### Plodding on
+
+Long term maintenance of public infra is often a long grind with the occasional thanks, so I want to try leave this on a "thanks" and give a shout out of all the folks who have been helping to keep the project alive: Eloy, Fabio, Danielle, Dmimitis, Eric, Samuel, Paul, Igor, Boris, Florian, Keith, Karla, Emma, Marin, Michele, Joshua, Delisa, Kyle, Oliver, Hugo, Nate, Muhammed, Ben, and Marius . Plus, anyone who ended up in the CocoaPods Slack!
