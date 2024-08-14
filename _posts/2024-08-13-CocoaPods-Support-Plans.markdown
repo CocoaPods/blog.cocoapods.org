@@ -64,4 +64,4 @@ If you run these sorts of frameworks and are commercially exposed here, then we'
 
 ### Plodding on
 
-Long term maintenance of public infra is often a long grind with the occasional thanks, so I want to try leave this on a "thanks" and give a shout out of all the folks who have been helping to keep the project alive: Eloy, Fabio, Danielle, Dmimitis, Eric, Samuel, Paul, Igor, Boris, Florian, Keith, Karla, Emma, Marin, Michele, Joshua, Delisa, Kyle, Olivier, Hugo, Nate, Muhammed, Ben, and Marius . Plus, anyone who ended up in the CocoaPods Slack!
+Long term maintenance of public infra is often a long grind with the occasional thanks, so I want to try leave this on a "thanks" and give a shout out of all the folks who have been helping to keep the project alive: Eloy, Fabio, Danielle, Dimitris, Eric, Samuel, Paul, Igor, Boris, Florian, Keith, Karla, Emma, Marin, Michele, Joshua, Delisa, Kyle, Olivier, Hugo, Nate, Muhammed, Ben, and Marius . Plus, anyone who ended up in the CocoaPods Slack!
