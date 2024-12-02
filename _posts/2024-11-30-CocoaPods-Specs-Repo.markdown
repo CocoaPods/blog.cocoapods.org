@@ -33,7 +33,7 @@ I will trigger a test run, giving automation a chance to break early
 
 ### December 2nd 2026
 
-I will switch trunk to not accept new Podspecs permanently . This is a Wednesday after American Thanksgiving, so I think there should be enough time.
+I will switch trunk to not accept new Podspecs permanently. This is a Wednesday after American Thanksgiving, so I think folks won't be in rush mode.
 
 ## Contact
 
