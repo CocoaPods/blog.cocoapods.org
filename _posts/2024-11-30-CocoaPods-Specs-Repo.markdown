@@ -37,6 +37,6 @@ I will switch trunk to not accept new Podspecs permanently. This is a Wednesday 
 
 ## Contact
 
-These dates are not set in stone, and maybe someone out there has a good reason for us to amend the timeline. I don't think I'm amiable to moving it forwards, but within reason there's space for backwards.
+These dates are not set in stone, and maybe someone out there has a good reason for us to amend the timeline. I don't think I'm amenable to moving it forwards, but within reason there's space for backwards.
 
 If you have questions, you can contact the team via info@cocoapods.org, me personally at cocoapods@orta.io or reach out to me via Bluesky: [@orta.io](https://bsky.app/profile/orta.io/).
