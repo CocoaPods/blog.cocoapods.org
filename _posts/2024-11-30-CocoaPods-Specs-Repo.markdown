@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "CocoaPods Trunk Read-only Plan"
+title: "CocoaPods Trunk Read-only Plan"
 author: orta
-categories: cocoapods 
+categories: cocoapods
 ---
 
-**TLDR: In two years we plan to turn CocoaPods trunk to be read-only. At that point, no new versions or pods will be added to trunk.**
+**TLDR: In two years we plan to turn CocoaPods trunk to be read-only. At that point, no new versions or pods will be added to trunk.** - Note, this post has been updated in May 2025.
 
 Last month I wrote about how CocoaPods is currently being maintained, I also noted that we were discussing converting the main CocoaPods spec repo "trunk" to be read-only:
 
@@ -15,11 +15,17 @@ I plan to implement the read-only mode so that when someone submits a new Podspe
 
 Making the switch will not break builds for people using CocoaPods in 2026 onwards, but at that point, you're not getting any more updates to dependencies which come though CocoaPods trunk. This shouldn't affect people who use CocoaPods with their own specs repos, or have all of their dependencies vendored (e.g. they all come from npm.)
 
+_May 2025_ Update: Since this post was originally written, we've had enough security researchers abusing scripting capabilities in CocoaPods that we are now introducing a block on allowing new CocoaPods to use the [`prepare_command`](https://guides.cocoapods.org/syntax/podspec.html#prepare_command) field in a Podspec. Any existing Pods using [`prepare_command`](https://guides.cocoapods.org/syntax/podspec.html#prepare_command) are hard-coded to bypass this check.
+
 ## Timeline
 
 My goal is to send 2 very hard-to-miss notifications en-masse, and then do a test run a month before the final shutdown.
 
-### Jan 2025
+### May 2025
+
+We are stopping new CocoaPods from being added which use the [`prepare_command`](https://guides.cocoapods.org/syntax/podspec.html#prepare_command) field
+
+### Mid-late 2025
 
 I will email all email addresses for people who have contributed a Podspec, informing them of the impending switch to read-only, and linking them to this blog post.
 
