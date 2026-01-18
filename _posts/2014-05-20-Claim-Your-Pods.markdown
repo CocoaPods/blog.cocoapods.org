@@ -30,7 +30,7 @@ For the next few days we will be taking applications from spec authors
 to claim their pods. This will set initial ownership for your libraries
 within the ‘Trunk’ web-service allowing you, and the people you allow, to push new
 specs for the given library. To do this we'll need you to fill out
-this [form](https://trunk.cocoapods.org/claims/new) with the email address 
+this [form](https://trunk.cocoapods.org/disputes) with the email address 
 you would like use to identify with as an owner and the pod name you're 
 claiming. Be sure to use the email address you use with Github so the 
 commit logs will show your Github account.
