@@ -5,18 +5,18 @@ author: orta
 categories: cocoapods trunk
 ---
 
-Hey folks, strange enough we got two separate security folks pointing out the same flaw in Trunk within a week of each other. I've shipped the fixes a month ago it's was worth both explaining what was fixed and giving credit to the two researchers: [splitline](https://github.com/splitline) from [DEVCORE](https://devco.re/en/) and [Joshua Rogers](https://joshua.hu/) from [AISLE](https://aisle.com/) Research Team.
+Hey folks, strange enough we got two separate security folks pointing out the same flaw in Trunk within a week of each other. I've shipped the fixes a month ago, it's worth both explaining what was fixed and giving credit to the two researchers: [splitline](https://github.com/splitline) from [DEVCORE](https://devco.re/en/) and [Joshua Rogers](https://joshua.hu/) from [AISLE](https://aisle.com/) Research Team.
 
 <!-- more -->
 
-When you sign up to CocoaPods trunk, rather than having you set up a password in the CLI we email you a token which you click to verify your current session as being valid. So you would register with:
+When you sign up to CocoaPods trunk, rather than having you set up a password in the CLI we email you a token which you click to verify your current session as being valid. So, you would register by running this command:
 
 ```
 > pod trunk register orta.therox@gmail.com
 [!] Please verify the session by clicking the link in the verification email that has been sent to orta.therox@gmail.com
 ```
 
-That verification email would look like:
+That triggers a verification email, which would have looked like :
 
 ```
 Hi Orta Therox,
@@ -35,7 +35,7 @@ Accepting the token by clicking the link sets up the authentication for my local
 
 The flaw here is that `51efd813` is a _relatively_ small space of characters, and we didn't have any protection around someone requesting a verification for basically every possible token (e.g. `11111111` to `ffffffff`.)
 
-[splitline](https://github.com/splitline) fom DEVCORE sent me a very interesting way to think about it, with a proof of concept script by ding a [birthday attack](https://en.wikipedia.org/wiki/Birthday_attack).
+[splitline](https://github.com/splitline) fom DEVCORE sent me a very interesting way to think about it, with a proof of concept script by using a [birthday attack](https://en.wikipedia.org/wiki/Birthday_attack).
 
 Step 1: Register a lot of times for the email you want, to increase the odds of it working.
 Step 2: Send random verification requests to Trunk
