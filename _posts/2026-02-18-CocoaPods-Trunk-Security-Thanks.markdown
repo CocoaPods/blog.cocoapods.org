@@ -37,9 +37,9 @@ The flaw here is that `51efd813` is a _relatively_ small space of characters, an
 
 [splitline](https://github.com/splitline) fom DEVCORE sent me a very interesting way to think about it, with a proof of concept script by using a [birthday attack](https://en.wikipedia.org/wiki/Birthday_attack).
 
-Step 1: Register a lot of times for the email you want, to increase the odds of it working.
-Step 2: Send random verification requests to Trunk
-Step 3: Check all of the sessions to see if they were verified
+- Step 1: Register a lot of times for the email you want, to increase the odds of it working.
+- Step 2: Send random verification requests to Trunk
+- Step 3: Check all of the sessions to see if they were verified
 
 With a reasonable enough amount of time, and tens of thousands of requests on each step, you can verify a token for an email address you don't own.
 
