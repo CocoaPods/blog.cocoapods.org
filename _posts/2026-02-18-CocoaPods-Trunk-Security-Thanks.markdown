@@ -5,7 +5,7 @@ author: orta
 categories: cocoapods trunk
 ---
 
-Hey folks, strange enough we got two separate security folks pointing out the same flaw in Trunk within a week of each other. I've shipped a fix this morning and thought it was worth both explaining what was fixed and giving credit to the two researchers: [splitline](https://github.com/splitline) fom DEVCORE and [Joshua Roger](https://joshua.hu/)
+Hey folks, strange enough we got two separate security folks pointing out the same flaw in Trunk within a week of each other. I've shipped the fixes a month ago it's was worth both explaining what was fixed and giving credit to the two researchers: [splitline](https://github.com/splitline) from [DEVCORE](https://devco.re/en/) and [Joshua Rogers](https://joshua.hu/) from [AISLE](https://aisle.com/) Research Team.
 
 <!-- more -->
 
@@ -55,7 +55,7 @@ The worst case scenario is that an attacker could have used this technique to ge
 
 ### For more information
 
-We want to offer our thanks to [splitline](https://github.com/splitline) fom DEVCORE and [Joshua Roger](https://joshua.hu/) for their thorough reporting! They mentioned a few other things not noted in this blog post but we fixed around XSS and our throttler.
+We want to offer our thanks to [splitline](https://github.com/splitline) from [DEVCORE](https://devco.re/en/) and [Joshua Rogers](https://joshua.hu/) from [AISLE](https://aisle.com/) Research Team for their thorough reporting! They mentioned a few other things not noted in this blog post but we fixed around XSS and our throttler.
 
 CocoaPods is ran by a set of volunteers in their spare time. If you have any questions or comments about this advisory:
 
