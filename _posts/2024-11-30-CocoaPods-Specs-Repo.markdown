@@ -33,9 +33,9 @@ I will email all email addresses for people who have contributed a Podspec, info
 
 I will, again, email all email addresses for people who have contributed a Podspec, informing them of the impending switch to read-only, and linking them to this blog post, noting that they have roughly a month before we do a test run of going read-only.
 
-### November 1-7th 2026
+### November 2-6th 2026
 
-I will trigger a test run, giving automation a chance to break early
+I will trigger a test run of not accepting new Podspecs, giving automation a chance to break early and for people to really start having those conversations.
 
 ### December 2nd 2026
 
@@ -45,4 +45,4 @@ I will switch trunk to not accept new Podspecs permanently. This is a Wednesday 
 
 These dates are not set in stone, and maybe someone out there has a good reason for us to amend the timeline. I don't think I'm amenable to moving it forwards, but within reason there's space for backwards.
 
-If you have questions, you can contact the team via info@cocoapods.org, me personally at cocoapods@orta.io or reach out to me via Bluesky: [@orta.io](https://bsky.app/profile/orta.io/).
+If you have questions, you can contact the team via <info@cocoapods.org>, me personally at <cocoapods@orta.io> or reach out to me via Bluesky: [@orta.io](https://bsky.app/profile/orta.io/).
